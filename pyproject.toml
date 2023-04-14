@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "toolkit5G"
-version = "0.1"
+version = "R23a.0.6"
 authors = [
   { name="Gigayasa", email="vikram@gigayasa.com" },
 ]
