@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: toolkit5G
-Version: 0.1
+Version: 0.6
 Summary: A Toolkit package written in python for 5G NR
 Author-email: Gigayasa <vikram@gigayasa.com>
 Project-URL: Homepage, https://gigayasawireless.github.io/5GToolkit/index.html
