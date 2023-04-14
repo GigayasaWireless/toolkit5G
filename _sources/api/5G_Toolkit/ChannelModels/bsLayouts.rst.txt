@@ -1,0 +1,22 @@
+.. _BS-Layouts:
+
+BS Layouts
+===========
+
+
+Hexagonal Layout
+----------------
+
+.. autoclass:: toolkit5G.channelModels.simulationLayout.bsLayouts.HexagonalLayout
+   :members:
+   :exclude-members: call, build
+
+     
+
+Rectangular Layout
+------------------
+
+.. autoclass:: toolkit5G.channelModels.simulationLayout.bsLayouts.RectangularLayout
+   :members:
+   :exclude-members: call, build   
+  

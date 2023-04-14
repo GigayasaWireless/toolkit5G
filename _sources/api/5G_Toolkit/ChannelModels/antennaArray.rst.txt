@@ -1,0 +1,105 @@
+
+.. _Antenna-Array:
+
+Antenna Array
+=============
+
+
+This module provides classes and the functions that implements Antenna Array.
+
+Antenna Array is a set of multiple connected antennas, called as *antenna elements* that work together as a single antenna.
+Current implementation support different types of antenna elements such as *3GPP 38.901*, *Hertzian Dipole* and *Linear Dipole*, 
+different types of array structures such as *Uniform Linear Array* (ULA), *Uniform Planar Array* (UPA) and 
+*Multi Panel Array* (MPA) as specified in 3GPP TR 38.901.
+The class :class:`AntennaArrays` implement the MPA.
+
+
+.. autoclass:: toolkit5G.channelModels.antennaArrays.AntennaArrays
+   :members:
+   :exclude-members: call, build, displayAntennaArrayFactor, displayArray, displayAntennaRadiationPattern, getFeildVectors 
+   
+   
+
+
+**Example:**
+
+**3GPP_38.901 Antenna Array**
+
+In the following code snippet only one array of angles [alpha,beta,gama] = [0,0,0] passed. i.e., all the  panels are assumed to have the same orienatation.
+The num of orientation angles can be either one or num of panel and should not exceed the num of panel Mg*Ng = 1.
+i.e., :attr:`orientationperPanel` is a numpy array with dimension (1,3) or (Mg*Ng,3).
+
+Also here only one :attr:`polarizationSlantAngle`  (psa)  = 0  passed. i.e., all the antenna elements per panel are assumed to have the same psa 0 radians.
+The num of psa can be either one or num of panel and should not exceed the num of panel Mg*Ng = 1.
+i.e., psa is either a scalar (int or float) or a numpy array of shape (Mg*Ng,). 
+
+
+.. code-block:: Python
+
+     
+   >>> antArrayObj = AntennaArrays(antennaType     = "3GPP_38.901",
+   ...                             centerFrequency = 3*10**9,
+   ...                             arrayStructure  = np.array([1, 1, 1, 1, 1]),
+   ...                             antennaSpacing  = np.array([0.5, 0.5, 0.5, 0.5]))
+   >>> antArrayObj(orientationperPanel    = np.array([[0, 0, 0]]),
+                   polarizationSlantAngle = 0)
+   >>> antArrayObj.displayAntennaRadiationPattern()                
+
+
+The following figure displays the radiation pattern of a 3GPP_38.901 antenna element. User can display such plot by calling the 
+method :meth:`displayAntennaRadiationPattern()`
+
+.. image:: ../../figures/antenna_3gpp_radiationplot.png
+  :width: 800
+  :alt: Radiation Pattern
+
+
+
+**Hertzina Dipole Antenna Array**
+
+In the following code snippet the num of orientation angles equals the number of panel Mg*Ng = 2.
+The num of orientation angles can be either one or num of panel and should not exceed the num of panel. 
+Here the num of psa is also 2.
+The num of psa can be either one or num of panel and should not exceed the num of panel Mg*Ng = 2.
+
+
+.. code-block:: Python
+
+   >>> antArrayObj = AntennaArrays(antennaType     = "HERTZIAN_DIPOLE",
+   ...                             centerFrequency = 3*10**9,
+   ...                             arrayStructure  = np.array([1, 2, 1, 1, 1]),
+   ...                             antennaSpacing  = np.array([0.5, 0.5, 0.5, 0.5]))
+   >>> antArrayObj(orientationperPanel    = np.array([[0, 0, 0], [90*np.pi/180,90/180*np.pi,90*np.pi/180]]),
+                   polarizationSlantAngle = np.array([0,90*np.pi/180]))
+   >>> antArrayObj.displayAntennaRadiationPattern()                 
+
+
+The radiation pattern for this example looks as follows:
+
+.. image:: ../../figures/hertzian_dipole_radiation_pattern.png
+  :width: 500
+  :alt: Radiation Pattern
+
+
+**OMNI Antenna Array**
+
+In this example, We instantiate :class:`AntennaArrays` class with antenna type as "OMNI" with `antParameters` which is length of antenna element = c/fc.
+i.e., 3*10**8/3*10**9 for "OMNI".
+
+.. code-block:: Python
+
+   >>> antArrayObj = AntennaArrays(antennaType     = "OMNI",
+                                   centerFrequency = 3*10**9,
+                                   arrayStructure  = np.array([1, 1, 1, 1, 1]),
+                                   antennaSpacing  = np.array([0.5, 0.5, 0.5, 0.5]),
+                                   antParameters   = 3*10**8/3*10**9)
+   >>> antArrayObj(orientationperPanel    = np.array([[0, 0, 0]]),
+                   polarizationSlantAngle = 0)
+
+ 
+   
+   
+
+
+  
+  

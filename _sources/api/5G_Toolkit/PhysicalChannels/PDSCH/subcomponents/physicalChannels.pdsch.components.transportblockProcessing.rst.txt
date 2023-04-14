@@ -1,0 +1,45 @@
+Transport Block Processing
+**************************
+
+
+
+Transport Block Processing: Transmitter
+---------------------------------------
+Example
+   
+.. code-block:: python
+
+   #tbLen ---> Transport Block Size
+   numBatch = 5 #Number of User equipments
+   tblock   = np.random.randint(2,                  
+                             size  = (numBatch, tbLen), 
+                             dtype = int) # Generate the bits for transport block
+
+   tbProcess  = TransportBlockTxProcessing() # Object for processing the transport blocks
+   crcTBlock  = tbProcess(tblock) # Attach the CRC based on 38.212
+
+
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCH.TransportBlockTxProcessing
+   :members:
+   :exclude-members: call, build, step3, step4, NumREwithinRB, ScalingFactor   
+
+
+
+Transport Block Processing: Receiver
+------------------------------------
+Example
+
+.. code-block:: python
+
+   #rTBwithCRC ---> Block of bits after Code Block Aggregation
+   
+   rtbProcess     = TransportBlockRxProcessing() # Object for processing the transport blocks 
+   rTBlock1, chk1 = rtbProcess(rTBwithCRC) # Remove the CRC based on 38.212
+   
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCH.TransportBlockRxProcessing
+   :members:
+   :exclude-members: call, build 
+
+
+
+

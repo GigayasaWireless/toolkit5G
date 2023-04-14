@@ -1,0 +1,14 @@
+Symbol Mapping
+==============
+The symbol mapper is used to map multiple bits on-to symbol based on "QAM" or "PSK" mapping. These symbols are processed
+by lower physical layer for transmission over the wireless channel. At receiver, the log likelihood ratios or the hard bits
+can be recovered from the estimated symbols using the symbol demapper.
+
+**Table of Contents**
+
+.. toctree::
+    :maxdepth: 1
+
+    symbolMapping.mapper
+    symbolMapping.demapper
+

@@ -1,0 +1,70 @@
+
+
+Sequence Generation
+====================
+
+In this example, 
+	* ``interlacedTransmission`` - Interlaced Transmission is disabled 
+	* ``pucch_ResourceCommon``   - Common resource configuration 
+	* ``intraSlotFreqHopping``   - Disabling Intra Slot Frequency Hopping 
+	* ``pucch_GroupHopping``     - Disabling Group Hopping 
+	
+.. code-block:: python
+
+   pucch_ResourceCommon    = True #Selecting the resource set
+   interlacedTransmission  = False #Enabling/Disabling the Interlaced Transmission
+   intraSlotFreqHopping    = False #Enabling/Disabling the Intra Slot Frequency Hopping
+   slotNumber              = 2 #Slot Number
+   nID                     = 157 #Hopping ID
+   pucch_GroupHopping      = 'Neither' #Enabling/Disabling the Group or/and Sequence Hopping
+   m_CS                    = np.array([0]) #Cyclic Shift Offset based on the information content
+   initialCycShift         = None #Initial Cyclic Shift
+   numofSymbols            = None #Number of Symbols
+   symbolIndex_start       = None #Starting Symbol Index
+   indexPUCCH              = 7 #Index of the resource set, if Common resource configuration is enabled
+   numInterlacedRBs        = None #Number of Interlaced Resource Blocks
+   
+   if interlacedTransmission == True: #if Interlaced Transmission is enabled
+      nHop = 0 # frequency hopping is disabled
+      Format1_Sequence  = np.zeros((numBatches, numInterlacedRBs, 12)).astype(complex)
+      Format1_SeqGenobj = PUCCHFormat1Sequence(pucch_ResourceCommon, intraSlotFreqHopping, interlacedTransmission) #PUCCH Format 1 Sequence Generation Object
+      Format1_Seq       = Format1_SeqGenobj(m_CS, nID, slotNumber, nHop, pucch_GroupHopping, symb, symbolIndex_start, numofSymbols, initialCycShift, indexPUCCH, numInterlacedRBs) #Generates Format 1 sequence
+      Sequence  = Format1_Seq
+   else: #if Interlaced Transmission is enabled
+      hoppingRefVar     = 1 if intraSlotFreqHopping == False else 2
+      Format1_Sequence  = np.zeros((numBatches, 1, 12 * hoppingRefVar)).astype(complex) # number of hops = 2 (0, 1)---> Specific sequence based on group hopping
+    
+      nHop              = 0 # if frequency hopping is enabled/disabled, first hop frequency hopping index if enabled
+      Format1_SeqGenobj = PUCCHFormat1Sequence(pucch_ResourceCommon, intraSlotFreqHopping, interlacedTransmission) #PUCCH Format 1 Sequence Generation Object
+      Format1_Seq       = Format1_SeqGenobj(m_CS, nID, slotNumber, nHop, pucch_GroupHopping, symb, symbolIndex_start, numofSymbols, initialCycShift, indexPUCCH, numInterlacedRBs) #Generates Format 1 sequence
+      Format1_Sequence[..., 0:12] = Format1_Seq
+         if intraSlotFreqHopping == True:
+	     nHop              = 1 # if frequency hopping is enabled, second hop frequency hopping index
+	     Format1_SeqGenobj = PUCCHFormat1Sequence(pucch_ResourceCommon, intraSlotFreqHopping, interlacedTransmission) #PUCCH Format 1 Sequence Generation Object
+	     Format1_Seq       = Format1_SeqGenobj(m_CS, nID, slotNumber, nHop, pucch_GroupHopping, symb, symbolIndex_start, numofSymbols, initialCycShift, indexPUCCH, numInterlacedRBs) #Generates Format 1 sequence
+	     Format1_Sequence[..., 12:] = Format1_Seq
+
+
+
+.. autoclass:: toolkit5G.SequenceGeneration.PUCCHFormat1Sequence
+   :members:
+   :exclude-members: call, build, resourceSet
+   
+.. rubric:: References
+
+[1]. (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'
+
+[2]. (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '6.3.2.4 PUCCH Format 1'
+
+[3]. (3GPP TS 38.213 version 16.5.0 Release 16) 5G;NR;Physical layer procedures for control ' 9.2.1 PUCCH Resource Sets'
+
+[4]. Book - 5G NR in Bullets, Edition 1
+
+   
+
+
+   
+     
+
+
+  

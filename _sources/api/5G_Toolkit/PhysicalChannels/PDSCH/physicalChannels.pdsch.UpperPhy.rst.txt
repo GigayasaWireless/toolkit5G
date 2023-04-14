@@ -1,0 +1,17 @@
+PDSCH: Upper Physical layer Chain
+=================================
+This module implements the upper physical layer of physical downlink shared channel (PDSCH). It consists of transport
+block processing, code-block segmentation, LDPC encoder, rate matching and code-block concatenation as shown below.
+
+.. image:: ../../../figures/PhysicalChannels/PDSCHUpperPhy.svg
+  :width: 800
+  :alt: Alternative text
+
+The details of the input-output interface are provided in following sub-section.
+
+
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCHUpperPhy
+   :members:
+   :exclude-members: call, build
+
+

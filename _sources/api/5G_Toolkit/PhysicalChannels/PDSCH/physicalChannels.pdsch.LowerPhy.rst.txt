@@ -1,0 +1,14 @@
+PDSCH: Lower Physical layer Chain
+#################################
+This module implements the lower physical layer of physical downlink shared channel (PDSCH). It consists of scrambling,
+symbol mapping, layer mapping and resource mapping as shown below.
+
+.. image:: ../../../figures/PhysicalChannels/PDSCHLowerPhy.svg
+  :width: 800
+  :alt: Alternative text
+
+The details of the input-output interface are provided in following sub-section.
+
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build

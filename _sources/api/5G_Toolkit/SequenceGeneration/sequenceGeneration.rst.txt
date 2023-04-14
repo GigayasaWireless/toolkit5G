@@ -1,0 +1,83 @@
+Sequence Generation
+===================
+The sequence generation (package) provides modules for generating all the reference signal standardized by 3GPP for 5G NR
+systems. The reference signal (RS) and their utilities for downlink and uplink provided respectively in table1 and table2.
+
+.. list-table:: Table-1: Downlink Reference Signal and its utility
+   :widths: 25 25 25
+   :header-rows: 1
+
+   * - Reference Signal
+     - Utility
+     - Purpose
+   * - Primary synchronization signal (PSS)
+     - Time synchronization
+     - SSB
+   * - Secondary synchronization signal (PSS)
+     - Frequency synchronization
+     - SSB
+   * - Pseudo random (PN) sequence
+     - Random variable generator
+     - NA
+   * - Channel state information RS (CSI-RS)
+     - Downlink CSI estimation
+     - Downlink CSI Acquisition
+   * - Demodulation reference signal (DMRS)
+     - Equalization
+     - PBCH
+   * - Demodulation reference signal (DMRS)
+     - Equalization
+     - PDCCH
+   * - Demodulation reference signal (DMRS)
+     - Equalization
+     - PDSCH
+   * - Positioning reference signal (PRS)
+     - Delay, angle estimation
+     - Position Estimation
+
+
+
+
+.. list-table:: Table-2: Uplink Reference Signal and its utility
+   :widths: 25 25 25
+   :header-rows: 1
+
+   * - Reference Signal
+     - Utility
+     - Purpose
+   * - Sounding reference signal (SRS) [*]_
+     - Uplink CSI estimation
+     - Uplink CSI Acquisition
+   * - Demodulation reference signal (DMRS)*
+     - Equalization
+     - PUSCH
+   * - Demodulation reference signal (DMRS)*
+     - Equalization
+     - PUCCH
+   * - PRACH Preamble
+     - UL Synchronization
+     - PRACH
+
+
+These reference signals are used for various purposes such as link adaptation, rank adaptation, initial access, synchronization,
+precoding, data decoding and position estimation etc. in uplink and downlink. The reference signal supported by 5G toolkit
+are explained in detailed in following sections. The packages generates these 3GPP compliant reference signals in for link
+level and system level simulations. Moreover, these reference signal can be directly mapped to OFDM resource grid and used
+for transmission over wireless channel for simulation using [??].
+
+.. [*] These features will be released in upcoming versions.
+
+**Table of Contents**
+
+.. toctree::
+    :maxdepth: 1
+
+    sequenceGeneration.pss
+    sequenceGeneration.sss
+    sequenceGeneration.dmrs
+    sequenceGeneration.prs
+    sequenceGeneration.csirs
+    sequenceGeneration.pnSequence
+    sequenceGeneration.SequenceGenerationFormat0
+    sequenceGeneration.SequenceGenerationFormat1
+    sequenceGeneration.LowPAPRSequenceGeneration

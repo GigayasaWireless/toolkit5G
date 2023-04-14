@@ -1,0 +1,14 @@
+Payload Generation
+==================
+The payload generation modules return the information bits corresponding to inputs passed. These bits are processed by respective chains. Similarly at the receiver,
+the module accepts the received bits and convert them into information parameters.
+
+
+**Table of Contents**
+
+.. toctree::
+    :maxdepth: 2
+
+    MIB/payloadGeneration.mib
+    DCI/payloadGeneration.dci
+

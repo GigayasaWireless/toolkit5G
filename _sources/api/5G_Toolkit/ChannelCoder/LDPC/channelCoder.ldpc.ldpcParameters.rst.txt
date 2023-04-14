@@ -1,0 +1,25 @@
+LDPC Parameters Computation
+===========================
+This is used for computing the LDPC parameters at the transmitter and receiver for LDPC encoding and decoding. The details
+about the usage and interface is provided in upcoming sub-sections.
+
+.. code-block:: python
+
+   coderate = 0.650390625 #Code Rate
+   #tbLength ---> Transport Block size
+   #decBits  ---> LDPC Decoded Block
+
+   ldpcParam   = LDPCparameters(coderate, tbLength) #Object that performs Code Block Aggregation
+   baseGraph   = ldpcParam.baseGraph # Defines the basegraph to be used by the LDPC.
+   liftfactor  = ldpcParam.liftingfactor # Defines the lifting factor to be used by the LDPC codec for the given TB size and code-rate.
+   N        = ldpcParam.n             # Length of LDPC codeword after internal truncation
+   N_ldpc   = ldpcParam.n_ldpc        # Length of LDPC codeword before internal truncation
+   K        = ldpcParam.k_ldpc        # Number of information bits input to LDPC encoder.
+   Ncb      = ldpcParam.numCodeBlocks # Number of codeblocks the transport block is to be segmented into.
+
+
+The details of the input output interface is shown below:
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPC.LDPCparameters
+    :members:
+    :exclude-members: call, build

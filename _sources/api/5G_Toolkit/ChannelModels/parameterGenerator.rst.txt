@@ -1,0 +1,140 @@
+.. _Channel-Parameter-Generator:
+
+Channel Parameter Generator
+===========================
+
+This module provides classes and functions that generate parameters required to compute cluster level channel coefficients.
+Channel parameters include correlated Large Scale Parametes (LSPs) such as path loss, delay spread, angular spreads of departure, 
+angular spreads of arrival, both in azimuth, elevation direction. Small Scale Parameters (SSPs) such as cluster delays, cluster powers and cluster/ray angles.
+
+
+The class :class:`ParameterGenerator` allows the user to generate all the parameters required to simulate cluster level channel.
+This class internally uses objects of class :class:`GenerateChannelParametersPerState`, which generates all the parameters per state, i.e., either LOS/NLOS.
+The following table lists all the attributes of the class :class:`ParameterGenerator`, which capture the parameters necessary to generate cluster level 
+channel coefficients.
+ 
+
+
++--------------------------------------------------------------+-----------------------------------------+
+|                                                              |                                         |
+|                  Parameter name                              |      Attribute                          |
+|                                                              |                                         |
++===========+==================================================+=========================================+                                     
+|           |      Azimuth Arrival angle                       |  :attr:`phi_LOS_AOA`                    |
+|           +--------------------------------------------------+-----------------------------------------+ 
+|           |      Azimuth Departure angle                     |  :attr:`phi_LOS_AOD`                    |
+|           +--------------------------------------------------+-----------------------------------------+
+| LOS angles|      Zenith Arrival angle                        |  :attr:`theta_LOS_ZOA`                  |
+|           +--------------------------------------------------+-----------------------------------------+
+|           |      Zenith Departure angle                      |  :attr:`theta_LOS_ZOD`                  |    
++-----------+--------------------------------------------------+-----------------------------------------+
+|           |      Shadow Fading                               |  :attr:`SF`                             |
+|           +--------------------------------------------------+-----------------------------------------+ 
+|           |      Rician K factor                             |  :attr:`Kfactor`                        |
+|           +--------------------------------------------------+-----------------------------------------+
+| LSPs      |      Delay Spread                                |  :attr:`DS`                             |
+|           +--------------------------------------------------+-----------------------------------------+
+|           |    Azimuth angular Spread of Departure           |  :attr:`ASD`                            |  
+|           +--------------------------------------------------+-----------------------------------------+
+|           |    Azimuth angular Spread of Arrival             |  :attr:`ASA`                            |  
+|           +--------------------------------------------------+-----------------------------------------+
+|           |    Zenith angular Spread of Departure            |  :attr:`ZSD`                            | 
+|           +--------------------------------------------------+-----------------------------------------+
+|           |    Zenith angular Spread of Departure            |  :attr:`ZSA`                            | 
+|           +--------------------------------------------------+-----------------------------------------+
+|           |     Path Loss                                    |  :attr:`pathLoss`                       | 
++-----------+--------------------------------------------------+-----------------------------------------+
+|           |   Cluster Azimuth angular Spread of Arrival      |  :attr:`cASA`                           |
+|           +--------------------------------------------------+-----------------------------------------+ 
+|           |   Cluster Azimuth angular Spread of Arrival      |  :attr:`cASD`                           |
+|           +--------------------------------------------------+-----------------------------------------+
+| SSPs      |   Cluster Zenith angular Spread of Arrival       |  :attr:`cZSA`                           |
+|           +--------------------------------------------------+-----------------------------------------+
+|           |   Cluster delays                                 |  :attr:`tau_n`                          | 
+|           +--------------------------------------------------+-----------------------------------------+
+|           |   Cluster Power                                  |  :attr:`Pn`                             |  
+|           +--------------------------------------------------+-----------------------------------------+
+|           | Azimuth angle of Arrival per ray per cluster     |  :attr:`phi_nm_AOA`                     |  
+|           +--------------------------------------------------+-----------------------------------------+
+|           | Azimuth angle of Departure per ray per cluster   |  :attr:`phi_nm_AOD`                     | 
+|           +--------------------------------------------------+-----------------------------------------+
+|           | Zenith angle of Arrival per ray per cluster      |  :attr:`theta_nm_ZOA`                   | 
+|           +--------------------------------------------------+-----------------------------------------+
+|           | Zenith angle of Departure per ray per cluster    |  :attr:`theta_nm_ZOD`                   | 
++-----------+--------------------------------------------------+-----------------------------------------+
+|                                                              |                                         |
+|       Cross Polarization Power Ratio per ray per cluster     |  :attr:`XPRnm`                          |
+|                                                              |                                         |
++--------------------------------------------------------------+-----------------------------------------+ 
+                                                             
+
+
+
+.. autoclass:: toolkit5G.channelModels.parameterGenerator.ParameterGenerator
+    :members:
+    :exclude-members: call, build
+
+
+.. autoclass:: toolkit5G.channelModels.parameterGenerator.GenerateChannelParametersPerState
+    :members:
+    :exclude-members: call, build
+
+
+**Example:**
+
+
+.. code-block:: Python
+
+  # terrain or scenario for BS-UE links "UMa"
+  >>> terrain     = np.array(["UMa","UMi","InH-OO"])
+  # links simulated at two carrier frequencies in GHz
+  >>> carrierFreq = np.array([3,5])
+  >>> numCarriers = carrierFreq.shape[0]
+  # vector of Antenna Array objects at UE or Rx side
+  >>> ueAntennaArray = np.empty(numCarriers, dtype=object)
+  >>> for i in range(carrierFreq.size):
+  >>>   ueAntennaArray[i] = AntennaArrays(antennaType     = "OMNI", 
+  ...                                     centerFrequency = carrierFreq[i],
+  ...                                     arrayStructure  = np.array([1,1,1,1,1]),
+  ...                                     antennaSpacing  =  np.array([0.5,0.5,0.5,0.5]))
+  # vector of Antenna Array objects at BS or Tx side                                    
+  >>> bsAntennaArray = np.empty(numCarriers, dtype=object)
+  >>> for i in range(carrierFreq.size):
+  >>>   bsAntennaArray[i] = AntennaArrays(antennaType ="3GPP_38.901",
+  ...                                     centerFrequency=carrierFreq[i],
+  ...                                     arrayStructure = np.array([1,1,1,1,1]),
+  ...                                     antennaSpacing =  np.array([0.5,0.5,0.5,0.5]))
+  # simulating BS Layout and UE drops with the following configuration                                   
+  >>> simLayoutObj = SimulationLayout(numOfBS = 19,
+  ...                                 numOfUE = 100,
+  ...                                 heightOfBS = 25,
+  ...                                 heightOfUE = 10, 
+  ...                                 ISD = 500,
+  ...                                 layoutType = "Hexagonal",
+  ...                                 numOfSectorsPerSite = 3,
+  ...                                 minUEBSDistance = 35)                                                                       
+  >>> simLayoutObj(terrain, carrierFreq, ueAntennaArray, bsAntennaArray)
+  # displaying the topology of simulation layout
+  >>> simLayoutObj.display2DTopology()
+  # Instantiating ParameterGenerator class with the following parameters
+  >>> paramGenObj = ParameterGenerator(fc = carrierFreq,
+  ...                                  terrain = terrain,
+  ...                                  locBS = simLayoutObj.BSLocations + simLayoutObj.BStracks,
+  ...                                  locUE = simLayoutObj.UELocations + simLayoutObj.UEtracks,
+  ...                                  d3D   = simLayoutObj.d3D,
+  ...                                  d2D   = simLayoutObj.d2D)
+  # Passing link state vector as input                               
+  >>> paramGenObj(simLayoutObj.linkState) 
+  # Now user can print all the parameters as follows. 
+  # Below shows printing of path loss and cluster delays.
+  # Same way user can print all the other parameters 
+  # Printing Path Loss for the given scenario
+  >>> paramGenObj.pathLoss                              
+  # Printing cluster delays
+  >>> paramGenObj.tau_n
+
+
+
+
+
+

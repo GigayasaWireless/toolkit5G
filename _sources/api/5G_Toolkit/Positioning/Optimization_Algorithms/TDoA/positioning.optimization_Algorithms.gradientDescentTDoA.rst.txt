@@ -1,0 +1,73 @@
+Gradient Descent for TDoA
+=========================
+The :math:`\text{4G}^\text{th}` and :math:`\text{5G}^\text{th}` generation of wireless networks uses time difference of arrival
+methods to estimate the position of node. The nomenclature of the methods is detailed below.
+
+
+.. list-table:: Table-1: TDoA in 4G and 5G Networks
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Generation
+     - Method
+     - Measurement
+     - Optimization methods
+   * - 4G
+     - OTDoA
+     - RSTD
+     - NewtonRaphson, GradientDescent
+   * - 5G
+     - DL-TDoA
+     - RSTD
+     - NewtonRaphson, GradientDescent
+   * - 5G
+     - UL-TDoA
+     - UL-RTOA
+     - NewtonRaphson, GradientDescent
+
+In 5G, the ToA estimates suffers from calibration impairments and antenna to base-band delays which propagates in-accuracies
+in the position estimates. However, the TDoA measurements are computed by taking difference of all ToA measurements with respect to
+one reference ToA measurement which can cancel the fixed receiver antenna to base-band delay across all the measurements.
+This makes TDoA measurements more robust to these impairments in comparison to ToA measurements.
+The major challenges with TDoA based positioning are two.
+
+- No close-form optimization method for estimating the nodes location.
+    - High complexity.
+- In case reference ToA measurement is NLoS, positioning accuracy degrades significantly.
+
+Hence, TDoA based positioning methods rely on iterative optimization methods. One such optimization method is **Gradient
+Descent** (GD) which has low complexity iteration in comparison to **Newton Raphson** (NR) method but needs more iterations to
+converge to local/global optima. The comparison between the two methods is shown below:
+
+.. list-table:: Table-2: Performance comparison between Gradient Descent and Newton Raphson algorithm.
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Method
+     - Per iteration complexity
+     - Convergence
+     - Utility
+   * - Gradient Descent
+     - :math:`\text{N}`
+     - Slow
+     - Low power, low cost
+   * - Newton Raphson
+     - :math:`\text{N}^2`
+     - Fast
+     - Low latency
+
+where N denotes the number of measurements used for positioning.
+
+The input output interface for usage of Gradient Descent algorithm is provided below.
+
+.. autoclass:: toolkit5G.Positioning.GradientDescentTDoA
+   :members:
+   :exclude-members: call, build
+
+Newton Raphson for TDoA
+=======================
+The details of input output interface for usage is detailed below.
+
+.. autoclass:: toolkit5G.Positioning.NewtonRaphsonTDoA
+   :members:
+   :exclude-members: call, build

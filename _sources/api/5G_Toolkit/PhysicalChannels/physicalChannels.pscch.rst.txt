@@ -1,0 +1,199 @@
+Physical Sidelink Control Channel (PSCCH)
+======================================
+This module implements the physical Sidelink control channel.The complete physical layer chain at the transmitter and
+receiver is divided into upper physical layer chain (upperPhy) and lower physical layer chain (lowerPhy).The upper
+physical layer consists of 24 Bit CRC addition, Polar Encoding and, rate matching.On the other hand, the lower physical
+layer module implements scrambling, modulation (symbol mapping),and resource mapping. It return the OFDM resource grid
+for sub-carrier/sub-band specific precoding/beamforming and other RF specific processing. These modules provides the high
+level APIs for the PDSCH chains.
+
+PSCCH Transmitter
+*****************
+The details about the transmitter side of the PDSCH are provided in [3GPPTS38211pscch]_, [3GPPTS38212pscch]_ and
+[COMST.2021.3057017]_. The chain is bi-parted into upper physical layer and lower physical layer section to entertain
+both the link-level and system level simulations. The details of the APIs is provided in following sub-sections.
+
+.. image:: ../../figures/PhysicalChannels/PSCCH_TX.svg
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+.. autoclass:: src.PhysicalChannels.PSCCH.pscchUpperPhy.PscchUpperPhy
+   :members:
+   :exclude-members: call, build
+
+.. autoclass:: src.PhysicalChannels.PSCCH.pscchLowerPhy.PscchLowerPhy
+   :members:
+   :exclude-members: call, build
+
+PSCCH Receiver
+*****************
+The details about the Receiver side of the PDSCH are provided in [3GPPTS38211pscch]_, [3GPPTS38212pscch]_ and
+[COMST.2021.3057017]_. The chain is bi-parted into upper physical layer and lower physical layer section to entertain
+both the link-level and system level simulations. The details of the APIs is provided in following sub-sections.
+
+.. image:: ../../figures/PhysicalChannels/PSCCH_RX.svg
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+.. autoclass:: src.PhysicalChannels.PSCCH.pscchLowerPhyDecoder.PscchLowerPhyDecoder
+   :members:
+   :exclude-members: call, build
+
+.. autoclass:: src.PhysicalChannels.PSCCH.pscchUpperPhyDecoder.PscchUpperPhyDecoder
+   :members:
+   :exclude-members: call, build
+   
+PSCCH Components
+*****************
+
+.. image:: ../../figures/PhysicalChannels/PDCCHBlocks.svg
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+
+CRC Attachment
+~~~~~~~~~~~~~~
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+RNTI Masking
+~~~~~~~~~~~~
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+
+Input Bit Interleaver
+~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+Polar Coder
+~~~~~~~~~~~
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+
+Rate Matching
+~~~~~~~~~~~~~
+
+Sub-block Interleaver
+"""""""""""""""""""""
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+Bit Selection
+"""""""""""""
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+
+Channel Interleaver
+"""""""""""""""""""
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+
+Scrambling
+~~~~~~~~~~
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+
+
+Symbol Mapping/Modulation
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+
+Resource Mapping
+~~~~~~~~~~~~~~~~
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+

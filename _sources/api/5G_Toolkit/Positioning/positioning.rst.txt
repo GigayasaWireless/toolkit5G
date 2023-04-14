@@ -1,0 +1,56 @@
+Position Estimation
+====================
+This package is used for estimating the location of a device using 5G Networks. 5G has standardized the positioning reference
+signal (PRS), methods and procedures to localize a node in either uplink or downlink based on power, angle or time/delay
+measurements as illustrated in table-1.
+
+.. list-table:: Table-1: Positioning in 5G Networks
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Method
+     - Measurements
+     - ``positioningMethod``
+     - ``optimizationMethod``
+   * - DL-TDoA
+     - TDoA
+     - TDoA
+     - NewtonRaphson, GradientDescent
+   * - UL-TDoA
+     - TDoA
+     - TDoA
+     - NewtonRaphson, GradientDescent
+   * - DL-AoD
+     - RSRP, AoD
+     - AOD
+     - LeastSquare, NewtonRaphson, GradientDescent
+   * - UL-AoA
+     - RSRP, AoD, RToA
+     - TDoA
+     - NewtonRaphson, GradientDescent
+   * - m-RTT
+     - RSRP, AoD, RToA
+     - TDoA
+     - LeastSquare, NewtonRaphson, GradientDescent
+   * - ECID
+     - RSRP
+     - Not supported
+     - Not supported
+
+
+Position Estimation
+-------------------
+
+.. autoclass:: toolkit5G.Positioning.Position_Estimation
+   :members:
+   :exclude-members: call, build
+
+
+Submodules
+----------
+
+.. toctree::
+    :maxdepth: 4
+
+    Time_Estimation/positioning.toaEstimation
+    Optimization_Algorithms/positioning.optimization_Algorithms

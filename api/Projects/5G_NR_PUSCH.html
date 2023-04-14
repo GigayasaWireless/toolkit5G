@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPU Configuration and Imports &mdash; 5G Toolkit R23a documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/gigayasa.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> 5G Toolkit
+            <img src="../../_static/logo28.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                R23a.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About Us</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#install-5g-toolkit">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#dependent-libraries">Dependent Libraries:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about.html#license-bwsim">License BWSim</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.html">Sequence Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.pss.html">Primary Synchronization Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.sss.html">Secondary Synchronization Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.dmrs.html">Demodulation Reference Sequence (DMRS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.prs.html">Positioning Reference Sequence (PRS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.csirs.html">Channel State Information Reference Sequence (CSI-RS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.pnSequence.html">Pseudo Random (PN) Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html">PUCCH Format 0 Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html">PUCCH Format 1 Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html">Low PAPR Sequence Type 1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#cyclic-shift-hopping">Cyclic Shift Hopping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#group-and-sequence-hopping">Group And Sequence Hopping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/resourceMapping.html">Resource Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/resourceMapping.pucch.html">Physical Uplink Control Channel (PUCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format0.html">PUCCH Format-0</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/Format0/ResourceMappingFormat0.html">PUCCH Format 0 Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/Format0/ResourceDemappingFormat0.html">PUCCH Format 0 Resource De-Mapping</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format1.html">PUCCH Format-1</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/Format1/ResourceMappingFormat1.html">PUCCH Format-1 Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/Format1/ResourceDemappingFormat1.html">PUCCH Format-1 Resource De-Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/Format1/SpreadingFormat1.html">PUCCH Format-1 Spreading</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/Format1/DespreadingFormat1.html">PUCCH Format-1 De-Spreading</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format2.html">PUCCH Format-2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format3.html">PUCCH Format-3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format4.html">PUCCH Format-4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/resourceMapping.ssb.html">Synchronization Signal Block (SSB) Grid Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/resourceMapping.ssbGeneration.html">Synchronization Signal Block (SSB) Resource Mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/resourceMapping.dmrsPDSCH.html">Physical Downlink Shared Channel-DMRS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/resourceMapping.ptrsPDSCH.html">Physical Downlink Shared Channel-PTRS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/resourceMapping.csirs.html">Channel state Information reference signal (CSI-RS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/resourceMapping.pdcch.html">Physical Control Channel (PDCCH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ResourceMapping/resourceMapping.prs.html">Positioning Reference Signal (PRS)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.html">Physical Channels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pdsch.html">Physical Downlink Shared Channel (PDSCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pdsch.html#pdsch-transmitter">PDSCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/physicalChannels.pdsch.UpperPhy.html">PDSCH: Upper Physical layer Chain</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/physicalChannels.pdsch.LowerPhy.html">PDSCH: Lower Physical layer Chain</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pdsch.html#pdsch-receiver">PDSCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/physicalChannels.pdsch.UpperPhyDecoder.html">PDSCH: Upper Physical layer Chain Decoder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/physicalChannels.pdsch.LowerPhyDecoder.html">PDSCH: Lower Physical layer Chain Decoder</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pdsch.html#pdsch-components">PDSCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.computeTBsize.html">Transport Block Size Computation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.transportblockProcessing.html">Transport Block Processing</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockSegmentation.html">Code Block Segmentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.ldpcCodec.html">Low Density Parity Check Codes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockConcatenation.html">Code Block Concatenation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.scrambling.html">Scrambling: PDSCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.layermapping.html">Layer Mapper</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.resourceMapping.html">Physical Downlink Shared Channel-DMRS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html">Physical Downlink Control Channel (PDCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-transmitter">PDCCH Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-receiver">PDCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-components">PDCCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.rnti.html">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html">Physical Broadcast Channel (PBCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-transmitter">PBCH Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-receiver">PBCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-components">PBCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.modulation.html">Modulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pusch.html">Physical Uplink Shared Channel (PUSCH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pucch.html">Physical Uplink Control Channel (PUCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PUCCH/Format0.html">PUCCH Format 0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PUCCH/Format1.html">PUCCH Format 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PUCCH/Format2.html">PUCCH Format 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PUCCH/Format3.html">PUCCH Format 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/PUCCH/Format4.html">PUCCH Format 4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.prach.html">Physical Random Access Channel (PRACH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-transmitter">PSCCH Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-receiver">PSCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#crc-attachment">CRC Attachment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#rnti-masking">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#input-bit-interleaver">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#polar-coder">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#rate-matching">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#scrambling">Scrambling</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#symbol-mapping-modulation">Symbol Mapping/Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#resource-mapping">Resource Mapping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/PayloadGeneration/payloadGeneration.html">Payload Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html">Master Information Block (MIB)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#mib-generation">MIB Generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#mib-extraction">MIB Extraction</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/PayloadGeneration/DCI/payloadGeneration.dci.html">Downlink Control Information (DCI)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/channelCoder.html">Forward Error Correction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html">Low Density Parity Check Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-encoder">LDPC Encoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-decoder">LDPC Decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-codec-subcomponents">LDPC Codec Subcomponents</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.ldpcParameters.html">LDPC Parameters Computation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingTransmitter.html">Codeblock Processing: Transmitter</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingReceiver.html">Codeblock Processing: Receiver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html">Polar Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-encoder">Polar Encoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-decoder">Polar Decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-codec-components">Polar Codec Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.components.html">Code-block Processing: Transmitter</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.components.html#code-block-processing-receiver">Code-block Processing: Receiver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.components.html#input-bit-interleavers">Input Bit Interleavers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html">Reed Muller Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-encoder-5g">Reed Muller Encoder 5G</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-decoder-5g">Reed Muller Decoder 5G</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/Ratematcher/ratematcher.html">Rate matching</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html">Rate matching for LDPC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html">Bit Interleaver for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-de-interleaver">Bit De-interleaver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Ratematcher/PolarCoder/ratematcher.polarcoder.html">Rate matching for Polar coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html">Bit Selection for Polar Coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.html">Interleavers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html">PBCH Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#id1">PBCH Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#pbch-deinterleaver">PBCH DeInterleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html">Input Bit Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#id1">Input Bit Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#input-bit-deinterleaver">Input Bit DeInterleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html">Sub Block Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#id1">Sub Block Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#id4">Sub Block Interleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html">Channel Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#id1">Channel Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html">Bit Interleavers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#bit-deinterleaver">Bit Deinterleaver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/OFDM/ofdm.html">Orthogonal Frequency Division Multiplexing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/OFDM/ofdm.html#ofdm-modulator">OFDM: Modulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/OFDM/ofdm.html#ofdm-demodulator">OFDM: Demodulator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/ChannelProcessing/channelProcessing.html">Channel Processing and Hardware Impairment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelProcessing/channelProcessing.applyChannel.html">Apply Channel to Transmitted Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelProcessing/channelProcessing.addNoise.html">Add Noise and CFO at Receiver</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/SymbolMapping/symbolMapping.html">Symbol Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SymbolMapping/symbolMapping.mapper.html">Mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/SymbolMapping/symbolMapping.demapper.html">Demapper</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/Scrambler/scrambler.html">Scrambling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Scrambler/scrambler.scrambler.html">Scrambler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Scrambler/scrambler.deScrambler.html">Descrambler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Scrambler/scrambler.rntiMasking.html">RNTI Masking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/ChannelModels/channelModels.html">Channel Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelModels/arrayAntennas.html">Antenna Elements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/arrayAntennas.html#gpp-38-901-antenna-element">3GPP_38_901 Antenna Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/arrayAntennas.html#hertzian-dipole-antenna-element">Hertzian Dipole Antenna Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/arrayAntennas.html#linear-dipole-antenna-element">Linear Dipole Antenna Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelModels/antennaArray.html">Antenna Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelModels/mobilityModels.html">Mobility Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/mobilityModels.html#random-walk">Random-Walk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/mobilityModels.html#circular-route">Circular Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/mobilityModels.html#vehicle-drops-on-highways">Vehicle Drops on HighWays</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelModels/nodeMobility.html">Node Mobility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelModels/bsLayouts.html">BS Layouts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/bsLayouts.html#hexagonal-layout">Hexagonal Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/bsLayouts.html#rectangular-layout">Rectangular Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelModels/ueDrops.html">UE Drops</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/ueDrops.html#rectangular-drop">Rectangular Drop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/ueDrops.html#circular-drop">Circular Drop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/ChannelModels/ueDrops.html#hexagonal-drop">Hexagonal Drop</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelModels/simulationLayout.html">Simulation Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/ChannelModels/parameterGenerator.html">Channel Parameter Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/CRC/crc.html">Cyclic Redundancy Check</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/CRC/crc.crcEncoder.html">CRC Encoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/CRC/crc.crcDecoder.html">CRC Decoder</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../5G_Toolkit/Positioning/positioning.html">Position Estimation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Positioning/positioning.html#id1">Position Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../5G_Toolkit/Positioning/positioning.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Positioning/Time_Estimation/positioning.toaEstimation.html">Time of Arrival (ToA)/Delay Estimation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Positioning/Time_Estimation/methods/positioning.toaEstimation.dftToA.html">DFT based Method</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Positioning/Time_Estimation/methods/positioning.toaEstimation.espritToA.html">ESPRIT based ToA Estimation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Positioning/Time_Estimation/methods/positioning.toaEstimation.musicToA.html">MUSIC based ToA Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../5G_Toolkit/Positioning/Optimization_Algorithms/positioning.optimization_Algorithms.html">Optimization Algorithms</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.gradientDescentTDoA.html">Gradient Descent for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.gradientDescentTDoA.html#newton-raphson-for-tdoa">Newton Raphson for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../5G_Toolkit/Positioning/Optimization_Algorithms/ToA/positioning.optimization_Algorithms.leastSquareToA.html">ToA Least Square Estimate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorials/Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html">Reed Muller Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#table-of-content">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#python-libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#g-toolkit-libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#mapper-and-demapper-parameters">Mapper and Demapper Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#simulation-parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#performance-evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#performance-plot">Performance Plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Tutorial3/Tutorial3_PolarCodes.html">Polar Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#table-of-content">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#import-libraries">Import libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#python-libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#g-toolkit-libraries">5G Toolkit libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#symbol-mapping-configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#polar-coder-configurations">Polar Coder Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#simulation-awgn-channel">Simulation: AWGN Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#performance-evaluations">Performance Evaluations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html">Low Density Parity Check (LDPC) Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#python-libraries">Python LIbraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#g-toolkit-libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#symbol-mapping-configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#simulation-awgn-channel">Simulation: AWGN Channel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#ldpc-parameters">LDPC Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#simulation-procedure">Simulation Procedure</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#performance-evaluation">Performance Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html">Initial Access in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#external-libaries">External Libaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#g-toolkit-modules">5G Toolkit Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#system-parameters">System Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#pbch-information">PBCH Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#transmission-side-processing">Transmission-side Processing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#generate-primary-synchronization-sequence">Generate Primary Synchronization Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#generate-secondary-synchronization-sequence-sss">Generate Secondary Synchronization Sequence (<strong>SSS</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#generate-demodulation-reference-sequence-dmrs">Generate Demodulation Reference Sequence (<strong>DMRS</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#generate-the-pbch-payload">Generate the PBCH Payload</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#construct-ssb-grid">Construct SSB Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#mapping-ssb-to-transmission-grid-for-odfm">Mapping SSB to Transmission Grid for ODFM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#ofdm-modulator">OFDM-Modulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#analog-beamforming">Analog Beamforming</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#channel-generation">Channel Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#pass-tx-signal-through-wireless-channel">Pass Tx signal through Wireless Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#noise-addition-at-receiver">Noise addition at receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#ssb-receiver-side">SSB Receiver Side</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#receiver-combining">Receiver combining</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#pss-detection-largest-peak">PSS Detection: largest peak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#largest-peak">Largest peak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#ofdm-demodulation-resource-grid-reconstruction">OFDM Demodulation: Resource Grid reconstruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#ssb-extaction-from-resource-grid">SSB Extaction from Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#extracted-ssb">Extracted SSB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#comparing-transmitted-and-received-ssb-grid">Comparing Transmitted and Received SSB Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#spectrum-analysis">Spectrum Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#sss-detection-pss-channel-assisted-cell-id-estimation">(SSS Detection: PSS channel assisted) + Cell-ID estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#dmrs-parameters-detection-dmrs-sequence-generation">DMRS Parameters Detection + DMRS Sequence Generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#channel-estimation-and-pbch-symbol-equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#pbch-decoding">PBCH Decoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#information-aggregation">Information Aggregation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#performance-evaluations-ber-cell-ids-dmrs-parameter-detection">Performance Evaluations: BER + Cell-IDs + DMRS Parameter Detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#cell-ids-detection">Cell-IDs Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#dmrs-parameter-detection">DMRS Parameter Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial5/SSB_End2End.html#ber-computation">BER computation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html">BER Performance of PUCCH Format 0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#python-libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#g-toolkit-libraries">5G ToolKit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#simulation-parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#format-0">Format 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#format-0-decoder">Format 0 Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#m-cs-estimation">M_CS Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#information-content-based-on-mcs-value">Information content based on MCS value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#performance-evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#performance-plot">Performance Plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Projects.html">Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Project1/learning2Demap.html">Learning to Demap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Project1/learning2Demap.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project1/learning2Demap.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#import-python-libraries">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#import-5g-toolkit-modules">Import 5G Toolkit Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Project1/learning2Demap.html#learning-to-demap-the-symbols">Learning to Demap the Symbols</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#input-output-mapping-for-m-4">Input Output Mapping for M = 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#input-output-mapping-for-m-6">Input Output Mapping for M = 6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#input-output-mapping-for-m-8">Input Output Mapping for M = 8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Project1/learning2Demap.html#throughput-and-ber-performance-of-llrnet">Throughput and BER Performance of <em>LLRnet</em></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#id1">Import Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#simulation-parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#pdsch-parameters">PDSCH Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#llrnet-parameters">LLRnet Parameters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Project1/learning2Demap.html#training-framework">Training Framework</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Project1/learning2Demap.html#deployment-framework">Deployment Framework</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Project1/learning2Demap.html#simulation-section">Simulation Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Project1/learning2Demap.html#performance-evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#throughput-vs-snr-db-for-16-qam-64-qam-and-256-qam">Throughput vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Project1/learning2Demap.html#throughput-vs-snr-db-for-16-qam">Throughput vs SNR (dB) for 16-QAM.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Project1/learning2Demap.html#throughput-vs-snr-db-for-64-qam">Throughput vs SNR (dB) for 64-QAM.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Project1/learning2Demap.html#throughput-vs-snr-db-for-256-qam">Throughput vs SNR (dB) for 256-QAM.</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#bit-error-rate-ber-vs-snr-db-for-16-qam-64-qam-and-256-qam">Bit Error rate (BER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Project1/learning2Demap.html#ber-vs-snr-for-64-qam">BER vs SNR for 64-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Project1/learning2Demap.html#ber-vs-snr-for-256-qam">BER vs SNR for 256-QAM</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#block-error-rate-bler-vs-snr-db-for-16-qam-64-qam-and-256-qam">Block Error Rate (BLER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Project1/learning2Demap.html#bler-vs-snr-for-16-qam">BLER vs SNR for 16-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Project1/learning2Demap.html#bler-vs-snr-for-64-qam">BLER vs SNR for 64-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Project1/learning2Demap.html#bler-vs-snr-for-256-qam">BLER vs SNR for 256-QAM</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#complexity-analysis">Complexity Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Project1/learning2Demap.html#conclusion">Conclusion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#positives-of-the-llrnet">Positives of the LLRnet:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Project1/learning2Demap.html#limitations-of-the-llrnet">Limitations of the LLRnet:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Project2/project2.html">Imitation Learning for Position Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Project3/project3.html">Channel Interpolation based on SRCNN and DnCNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Project4/project4.html">Comparative Study of Reed Muller codes, Polar Codes and LDPC codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Project5/project5.html">Channel Quality Estimation in 5G and Beyond Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Project6/project6.html">Hybrid Automatic repeat Request in 5G and Beyond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Project7/project7.html">Symbol Constellation learning using Auto-encoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Project8/project8.html">Downlink Synchronization using SSB in 5G systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Project9/project9.html">Uplink Synchronization using PRACH in 5G systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Project10/project10.html">Physical downlink control Channel in 5G</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Preview_of_Next_Release/FeatureList.html">Tentetive list of Feature</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Preview_of_Next_Release/FeatureList.html#in-progress-to-be-released-soon">In Progress (To be Released soon):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Preview_of_Next_Release/FeatureList.html#next-quarter">Next Quarter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Preview_of_Next_Release/FeatureList.html#before-september-2023">Before September 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Preview_of_Next_Release/FeatureList.html#before-march-2024">Before March 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Built_using_5G_Toolkit/builtUsing5GToolkit.html">Research work carried out using 5G Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WeekChallenge/challenge.html">Challenge Of this Week</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../WeekChallenge/challengeOftheWeek.html">Solution of this Months Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../WeekChallenge/challengeArxiv.html">Arxiv-ed Challenges</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../License/license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../License/license.html#trademarks">Trademarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../License/license.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../License/license.html#content">Content</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">5G Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>GPU Configuration and Imports</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<style>h3 {display: block !important}</style>
+<div style="margin-bottom:15px;">
+    <table>
+        <td style="padding: 0px 0px;">
+            <a href=" https://colab.research.google.com/github/NVlabs/sionna/blob/main/api/Projects/5G_NR_PUSCH.ipynb" style="vertical-align:text-bottom">
+                <img alt="Colab logo" src="../../../_static/colab_logo.svg" style="width: 40px; min-width: 40px">
+            </a>
+        </td>
+        <td style="padding: 4px 0px;">
+            <a href=" https://colab.research.google.com/github/nvlabs/sionna/blob/main/api/Projects/5G_NR_PUSCH.ipynb" style="vertical-align:text-bottom">
+                Run in Google Colab
+            </a>
+        </td>
+
+        <td style="padding: 0px 15px;">
+        </td>
+
+        <td class="wy-breadcrumbs-aside" style="padding: 0 30px;">
+            <a href="https://github.com/nvlabs/sionna/blob/main/api/Projects/5G_NR_PUSCH.ipynb" style="vertical-align:text-bottom">
+                <i class="fa fa-github" style="font-size:24px;"></i>
+                View on GitHub
+            </a>
+        </td>
+
+        <td class="wy-breadcrumbs-aside" style="padding: 0 35px;">
+            <a href="../api/Projects/5G_NR_PUSCH.ipynb" download target="_blank" style="vertical-align:text-bottom">
+                <i class="fa fa-download" style="font-size:24px;"></i>
+                Download notebook
+            </a>
+
+        </td>
+    </table>
+
+</div><div class="section" id="GPU-Configuration-and-Imports">
+<h1>GPU Configuration and Imports<a class="headerlink" href="#GPU-Configuration-and-Imports" title="Permalink to this heading"></a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">time</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Configure the notebook to use only a single GPU and allocate only as much memory as needed</span>
+<span class="c1"># For more details, see https://www.tensorflow.org/guide/gpu</span>
+<span class="n">gpus</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of GPUs available :&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">gpus</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">gpus</span><span class="p">:</span>
+    <span class="n">gpu_num</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Number of the GPU to be used</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1">#tf.config.set_visible_devices([], &#39;GPU&#39;)</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">set_visible_devices</span><span class="p">(</span><span class="n">gpus</span><span class="p">[</span><span class="n">gpu_num</span><span class="p">],</span> <span class="s1">&#39;GPU&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Only GPU number&#39;</span><span class="p">,</span> <span class="n">gpu_num</span><span class="p">,</span> <span class="s1">&#39;used.&#39;</span><span class="p">)</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">set_memory_growth</span><span class="p">(</span><span class="n">gpus</span><span class="p">[</span><span class="n">gpu_num</span><span class="p">],</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Number of GPUs available : 2
+Only GPU number 0 used.
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Import Sionna</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sionna</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1"># Install Sionna if package is not already installed</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;pip install sionna&quot;</span><span class="p">)</span>
+    <span class="kn">import</span> <span class="nn">sionna</span>
+
+<span class="c1"># Load the required Sionna components</span>
+<span class="kn">from</span> <span class="nn">sionna.nr</span> <span class="kn">import</span> <span class="n">PUSCHConfig</span><span class="p">,</span> <span class="n">PUSCHTransmitter</span><span class="p">,</span> <span class="n">PUSCHReceiver</span>
+<span class="kn">from</span> <span class="nn">sionna.channel</span> <span class="kn">import</span> <span class="n">AWGN</span><span class="p">,</span> <span class="n">RayleighBlockFading</span><span class="p">,</span> <span class="n">OFDMChannel</span><span class="p">,</span> <span class="n">TimeChannel</span><span class="p">,</span> <span class="n">time_lag_discrete_time_channel</span>
+<span class="kn">from</span> <span class="nn">sionna.channel.tr38901</span> <span class="kn">import</span> <span class="n">AntennaArray</span><span class="p">,</span> <span class="n">UMi</span><span class="p">,</span> <span class="n">UMa</span><span class="p">,</span> <span class="n">RMa</span>
+<span class="kn">from</span> <span class="nn">sionna.channel</span> <span class="kn">import</span> <span class="n">gen_single_sector_topology</span> <span class="k">as</span> <span class="n">gen_topology</span>
+<span class="kn">from</span> <span class="nn">sionna.utils</span> <span class="kn">import</span> <span class="n">compute_ber</span><span class="p">,</span> <span class="n">ebnodb2no</span><span class="p">,</span> <span class="n">sim_ber</span>
+<span class="kn">from</span> <span class="nn">sionna.ofdm</span> <span class="kn">import</span> <span class="n">KBestDetector</span><span class="p">,</span> <span class="n">LinearDetector</span>
+<span class="kn">from</span> <span class="nn">sionna.mimo</span> <span class="kn">import</span> <span class="n">StreamManagement</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="A-Hello-World-Example">
+<h1>A Hello World Example<a class="headerlink" href="#A-Hello-World-Example" title="Permalink to this heading"></a></h1>
+<p>Let us start with a simple “Hello, World!” example in which we will simulate PUSCH transmissions from a single transmitter to a single receiver over an AWGN channel.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Create a PUSCH configuration with default settings</span>
+<span class="n">pusch_config</span> <span class="o">=</span> <span class="n">PUSCHConfig</span><span class="p">()</span>
+
+<span class="c1"># Instantiate a PUSCHTransmitter from the PUSCHConfig</span>
+<span class="n">pusch_transmitter</span> <span class="o">=</span> <span class="n">PUSCHTransmitter</span><span class="p">(</span><span class="n">pusch_config</span><span class="p">)</span>
+
+<span class="c1"># Create a PUSCHReceiver using the PUSCHTransmitter</span>
+<span class="n">pusch_receiver</span> <span class="o">=</span> <span class="n">PUSCHReceiver</span><span class="p">(</span><span class="n">pusch_transmitter</span><span class="p">)</span>
+
+<span class="c1"># AWGN channel</span>
+<span class="n">channel</span> <span class="o">=</span> <span class="n">AWGN</span><span class="p">()</span>
+
+<span class="c1"># Simulate transmissions over the AWGN channel</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">no</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># Noise variance</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">pusch_transmitter</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span> <span class="c1"># Generate transmit signal and info bits</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">channel</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">no</span><span class="p">])</span> <span class="c1"># Simulate channel output</span>
+
+<span class="n">b_hat</span> <span class="o">=</span> <span class="n">pusch_receiver</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">no</span><span class="p">])</span> <span class="c1"># Recover the info bits</span>
+
+<span class="c1"># Compute BER</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BER:&quot;</span><span class="p">,</span> <span class="n">compute_ber</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">b_hat</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+BER: 0.0
+</pre></div></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2023, Gigayasa Wireless Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

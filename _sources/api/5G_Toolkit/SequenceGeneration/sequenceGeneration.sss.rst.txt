@@ -1,0 +1,54 @@
+Secondary Synchronization Signal
+================================
+The secondary synchronization signal (SSS) is a gold-sequence of length 127 generated using :math:`N_{ID}^1` and :math:`N_{ID}^2`.
+It is used for Cell ID-2 detection and frequency synchronization which aims to mitigate the carrier offsets and centre of
+the SSB grid at the user equipment (UE). The detailed implementation of the SSS is provided in [3GPPTS38211_SSS]_.
+
+..  important::
+    * SSS is an constituent of synchronization signal block (SSB). It is loaded in the middle (across frequency) of third symbol of the SSB.
+
+**If** :math:`N_{ID}^1` and :math:`N_{ID}^2` **is scalar:**
+
+.. code-block:: Python
+
+    nID1        = 25              # Cell ID-2 for SSS generation
+    nID2        = 1               # Cell ID-2 for SSS generation
+    sss         = SSS(nID1, nID2) # Generate PSS object using this cell ID-2.
+    sssSequence = sss()           # Generate [1x127] pss sequence using 'sss' object
+
+**If** :math:`N_{ID}^1` **is scaler and** :math:`N_{ID}^2` **is NumPy array:**
+
+.. code-block:: Python
+
+    nID1        = 204                 # Cell ID-2 for SSS generation
+    nID2        = np.array([1,0,2,1]) # Cell ID-2 for SSS generation
+    sss         = SSS(nID1, nID2)     # Generate PSS object using this cell ID-2.
+    sssSequence = sss()               # Generate [4x127] pss sequence using 'sss' object for each cell-ID2
+
+**If** :math:`N_{ID}^1` **is NumPy array and** :math:`N_{ID}^2` **is scaler:**
+
+.. code-block:: Python
+
+    nID1        = np.array([98, 213]) # Cell ID-2 for SSS generation
+    nID2        = 2                   # Cell ID-2 for SSS generation
+    sss         = SSS(nID1, nID2)     # Generate PSS object using this cell ID-2.
+    sssSequence = sss()               # Generate [2x127] pss sequence using 'sss' object for each cell-ID2
+
+**If** :math:`N_{ID}^1` **and** :math:`N_{ID}^2` **are NumPy array:**
+
+.. code-block:: Python
+
+    nID1        = np.array([101,45,21]) # Cell ID-2 for SSS generation
+    nID2        = np.array([  1, 0, 2]) # Cell ID-2 for SSS generation
+    sss         = SSS(nID1, nID2)       # Generate PSS object using this cell ID-2.
+    sssSequence = sss()                 # Generate [3x127] pss sequence using 'sss' object for each cell-ID2
+
+
+The details about the input-output interface of the SSS implementation is provided below.
+
+.. autoclass:: toolkit5G.SequenceGeneration.SSS
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_SSS] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

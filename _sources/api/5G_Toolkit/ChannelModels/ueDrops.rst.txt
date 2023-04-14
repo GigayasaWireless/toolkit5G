@@ -1,0 +1,32 @@
+
+.. _UE-Drops:
+
+UE Drops
+=========
+    
+      
+Rectangular Drop
+-----------------
+
+.. autoclass:: toolkit5G.channelModels.simulationLayout.ueDrops.RectangularDrop
+   :members:   
+   :exclude-members: call, build
+   :noindex: 
+
+
+Circular Drop
+--------------
+
+.. autoclass:: toolkit5G.channelModels.simulationLayout.ueDrops.CircularDrop
+   :members:   
+   :exclude-members: call, build   
+   :noindex:
+
+  
+Hexagonal Drop
+--------------
+
+.. autoclass:: toolkit5G.channelModels.simulationLayout.ueDrops.HexagonalDrop
+   :members:   
+   :exclude-members: call, build 
+   :noindex:

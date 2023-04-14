@@ -1,0 +1,9 @@
+ESPRIT based ToA Estimation
+=============================================================================
+This module implements a method for estimating the delays using Estimation of Signal Parameters via Rotational Invariance
+Techniques (ESPRIT) method.
+
+
+.. autoclass:: toolkit5G.Positioning.ESPRIT_ToA
+   :members:
+   :exclude-members: call, build

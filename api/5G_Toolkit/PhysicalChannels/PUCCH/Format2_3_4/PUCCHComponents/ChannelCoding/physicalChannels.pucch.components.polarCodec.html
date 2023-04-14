@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polar Codes &mdash; 5G Toolkit R23a documentation</title>
+      <link rel="stylesheet" href="../../../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../../_static/css/gigayasa.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../../../" id="documentation_options" src="../../../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../../../_static/jquery.js"></script>
+        <script src="../../../../../../../_static/underscore.js"></script>
+        <script src="../../../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../../../../_static/doctools.js"></script>
+        <script src="../../../../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../../../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../../../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../../../../../about.html" />
+    <link rel="index" title="Index" href="../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../../../index.html" class="icon icon-home"> 5G Toolkit
+            <img src="../../../../../../../_static/logo28.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                R23a.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../about.html">About Us</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../about.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../about.html#install-5g-toolkit">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../about.html#dependent-libraries">Dependent Libraries:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../about.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../about.html#license-bwsim">License BWSim</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../5Gtoolkit.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.html">Sequence Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.pss.html">Primary Synchronization Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.sss.html">Secondary Synchronization Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.dmrs.html">Demodulation Reference Sequence (DMRS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.prs.html">Positioning Reference Sequence (PRS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.csirs.html">Channel State Information Reference Sequence (CSI-RS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.pnSequence.html">Pseudo Random (PN) Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html">PUCCH Format 0 Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html">PUCCH Format 1 Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html">Low PAPR Sequence Type 1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#cyclic-shift-hopping">Cyclic Shift Hopping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#group-and-sequence-hopping">Group And Sequence Hopping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../ResourceMapping/resourceMapping.html">Resource Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ResourceMapping/resourceMapping.pucch.html">Physical Uplink Control Channel (PUCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/resourceMapping.pucch.format0.html">PUCCH Format-0</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/Format0/ResourceMappingFormat0.html">PUCCH Format 0 Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/Format0/ResourceDemappingFormat0.html">PUCCH Format 0 Resource De-Mapping</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/resourceMapping.pucch.format1.html">PUCCH Format-1</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/Format1/ResourceMappingFormat1.html">PUCCH Format-1 Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/Format1/ResourceDemappingFormat1.html">PUCCH Format-1 Resource De-Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/Format1/SpreadingFormat1.html">PUCCH Format-1 Spreading</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/Format1/DespreadingFormat1.html">PUCCH Format-1 De-Spreading</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/resourceMapping.pucch.format2.html">PUCCH Format-2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/resourceMapping.pucch.format3.html">PUCCH Format-3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ResourceMapping/PUCCH/resourceMapping.pucch.format4.html">PUCCH Format-4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ResourceMapping/resourceMapping.ssb.html">Synchronization Signal Block (SSB) Grid Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ResourceMapping/resourceMapping.ssbGeneration.html">Synchronization Signal Block (SSB) Resource Mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ResourceMapping/resourceMapping.dmrsPDSCH.html">Physical Downlink Shared Channel-DMRS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ResourceMapping/resourceMapping.ptrsPDSCH.html">Physical Downlink Shared Channel-PTRS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ResourceMapping/resourceMapping.csirs.html">Channel state Information reference signal (CSI-RS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ResourceMapping/resourceMapping.pdcch.html">Physical Control Channel (PDCCH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ResourceMapping/resourceMapping.prs.html">Positioning Reference Signal (PRS)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../physicalChannels.html">Physical Channels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../physicalChannels.pdsch.html">Physical Downlink Shared Channel (PDSCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pdsch.html#pdsch-transmitter">PDSCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/physicalChannels.pdsch.UpperPhy.html">PDSCH: Upper Physical layer Chain</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/physicalChannels.pdsch.LowerPhy.html">PDSCH: Lower Physical layer Chain</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pdsch.html#pdsch-receiver">PDSCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/physicalChannels.pdsch.UpperPhyDecoder.html">PDSCH: Upper Physical layer Chain Decoder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/physicalChannels.pdsch.LowerPhyDecoder.html">PDSCH: Lower Physical layer Chain Decoder</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pdsch.html#pdsch-components">PDSCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/subcomponents/physicalChannels.pdsch.components.computeTBsize.html">Transport Block Size Computation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/subcomponents/physicalChannels.pdsch.components.transportblockProcessing.html">Transport Block Processing</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockSegmentation.html">Code Block Segmentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/subcomponents/physicalChannels.pdsch.components.ldpcCodec.html">Low Density Parity Check Codes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/subcomponents/physicalChannels.pdsch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockConcatenation.html">Code Block Concatenation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/subcomponents/physicalChannels.pdsch.components.scrambling.html">Scrambling: PDSCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/subcomponents/physicalChannels.pdsch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/subcomponents/physicalChannels.pdsch.components.layermapping.html">Layer Mapper</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDSCH/subcomponents/physicalChannels.pdsch.components.resourceMapping.html">Physical Downlink Shared Channel-DMRS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../physicalChannels.pdcch.html">Physical Downlink Control Channel (PDCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pdcch.html#pdcch-transmitter">PDCCH Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pdcch.html#pdcch-receiver">PDCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pdcch.html#pdcch-components">PDCCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDCCH/subcomponents/physicalChannels.pdcch.components.rnti.html">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDCCH/subcomponents/physicalChannels.pdcch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PDCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../physicalChannels.pbch.html">Physical Broadcast Channel (PBCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pbch.html#pbch-transmitter">PBCH Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pbch.html#pbch-receiver">PBCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pbch.html#pbch-components">PBCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PBCH/subcomponents/physicalChannels.pbch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PBCH/subcomponents/physicalChannels.pbch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../PBCH/subcomponents/physicalChannels.pbch.components.modulation.html">Modulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../physicalChannels.pusch.html">Physical Uplink Shared Channel (PUSCH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../physicalChannels.pucch.html">Physical Uplink Control Channel (PUCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Format0.html">PUCCH Format 0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Format1.html">PUCCH Format 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Format2.html">PUCCH Format 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Format3.html">PUCCH Format 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Format4.html">PUCCH Format 4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../physicalChannels.prach.html">Physical Random Access Channel (PRACH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../physicalChannels.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pscch.html#pscch-transmitter">PSCCH Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pscch.html#pscch-receiver">PSCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../physicalChannels.pscch.html#crc-attachment">CRC Attachment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../physicalChannels.pscch.html#rnti-masking">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../physicalChannels.pscch.html#input-bit-interleaver">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../physicalChannels.pscch.html#polar-coder">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../physicalChannels.pscch.html#rate-matching">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../physicalChannels.pscch.html#scrambling">Scrambling</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../physicalChannels.pscch.html#symbol-mapping-modulation">Symbol Mapping/Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../physicalChannels.pscch.html#resource-mapping">Resource Mapping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../PayloadGeneration/payloadGeneration.html">Payload Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../PayloadGeneration/MIB/payloadGeneration.mib.html">Master Information Block (MIB)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../PayloadGeneration/MIB/payloadGeneration.mib.html#mib-generation">MIB Generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../PayloadGeneration/MIB/payloadGeneration.mib.html#mib-extraction">MIB Extraction</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../PayloadGeneration/DCI/payloadGeneration.dci.html">Downlink Control Information (DCI)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../ChannelCoder/channelCoder.html">Forward Error Correction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelCoder/LDPC/channelCoder.ldpc.html">Low Density Parity Check Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-encoder">LDPC Encoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-decoder">LDPC Decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-codec-subcomponents">LDPC Codec Subcomponents</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ChannelCoder/LDPC/channelCoder.ldpc.ldpcParameters.html">LDPC Parameters Computation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingTransmitter.html">Codeblock Processing: Transmitter</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingReceiver.html">Codeblock Processing: Receiver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelCoder/PolarCoder/channelCoder.polar.html">Polar Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-encoder">Polar Encoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-decoder">Polar Decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-codec-components">Polar Codec Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ChannelCoder/PolarCoder/channelCoder.polar.components.html">Code-block Processing: Transmitter</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ChannelCoder/PolarCoder/channelCoder.polar.components.html#code-block-processing-receiver">Code-block Processing: Receiver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../ChannelCoder/PolarCoder/channelCoder.polar.components.html#input-bit-interleavers">Input Bit Interleavers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html">Reed Muller Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-encoder-5g">Reed Muller Encoder 5G</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-decoder-5g">Reed Muller Decoder 5G</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Ratematcher/ratematcher.html">Rate matching</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Ratematcher/LDPC/ratematcher.ldpc.html">Rate matching for LDPC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html">Bit Interleaver for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-de-interleaver">Bit De-interleaver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Ratematcher/PolarCoder/ratematcher.polarcoder.html">Rate matching for Polar coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html">Bit Selection for Polar Coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Interleaver/interleavers.html">Interleavers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Interleaver/interleavers.pbchInterleavers.html">PBCH Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Interleaver/interleavers.pbchInterleavers.html#id1">PBCH Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Interleaver/interleavers.pbchInterleavers.html#pbch-deinterleaver">PBCH DeInterleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Interleaver/interleavers.polar.inputBitInterleaver.html">Input Bit Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Interleaver/interleavers.polar.inputBitInterleaver.html#id1">Input Bit Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Interleaver/interleavers.polar.inputBitInterleaver.html#input-bit-deinterleaver">Input Bit DeInterleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Interleaver/interleavers.polar.subBlockInterleaver.html">Sub Block Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Interleaver/interleavers.polar.subBlockInterleaver.html#id1">Sub Block Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Interleaver/interleavers.polar.subBlockInterleaver.html#id4">Sub Block Interleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Interleaver/interleavers.polar.channelInterleaver.html">Channel Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Interleaver/interleavers.polar.channelInterleaver.html#id1">Channel Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Interleaver/interleavers.polar.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Interleaver/interleavers.lpdc.bitInterleaver.html">Bit Interleavers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Interleaver/interleavers.lpdc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Interleaver/interleavers.lpdc.bitInterleaver.html#bit-deinterleaver">Bit Deinterleaver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../OFDM/ofdm.html">Orthogonal Frequency Division Multiplexing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../OFDM/ofdm.html#ofdm-modulator">OFDM: Modulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../OFDM/ofdm.html#ofdm-demodulator">OFDM: Demodulator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../ChannelProcessing/channelProcessing.html">Channel Processing and Hardware Impairment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelProcessing/channelProcessing.applyChannel.html">Apply Channel to Transmitted Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelProcessing/channelProcessing.addNoise.html">Add Noise and CFO at Receiver</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../SymbolMapping/symbolMapping.html">Symbol Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SymbolMapping/symbolMapping.mapper.html">Mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../SymbolMapping/symbolMapping.demapper.html">Demapper</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Scrambler/scrambler.html">Scrambling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Scrambler/scrambler.scrambler.html">Scrambler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Scrambler/scrambler.deScrambler.html">Descrambler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Scrambler/scrambler.rntiMasking.html">RNTI Masking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../ChannelModels/channelModels.html">Channel Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelModels/arrayAntennas.html">Antenna Elements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/arrayAntennas.html#gpp-38-901-antenna-element">3GPP_38_901 Antenna Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/arrayAntennas.html#hertzian-dipole-antenna-element">Hertzian Dipole Antenna Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/arrayAntennas.html#linear-dipole-antenna-element">Linear Dipole Antenna Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelModels/antennaArray.html">Antenna Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelModels/mobilityModels.html">Mobility Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/mobilityModels.html#random-walk">Random-Walk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/mobilityModels.html#circular-route">Circular Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/mobilityModels.html#vehicle-drops-on-highways">Vehicle Drops on HighWays</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelModels/nodeMobility.html">Node Mobility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelModels/bsLayouts.html">BS Layouts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/bsLayouts.html#hexagonal-layout">Hexagonal Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/bsLayouts.html#rectangular-layout">Rectangular Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelModels/ueDrops.html">UE Drops</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/ueDrops.html#rectangular-drop">Rectangular Drop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/ueDrops.html#circular-drop">Circular Drop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../ChannelModels/ueDrops.html#hexagonal-drop">Hexagonal Drop</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelModels/simulationLayout.html">Simulation Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ChannelModels/parameterGenerator.html">Channel Parameter Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../CRC/crc.html">Cyclic Redundancy Check</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../CRC/crc.crcEncoder.html">CRC Encoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../CRC/crc.crcDecoder.html">CRC Decoder</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../Positioning/positioning.html">Position Estimation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Positioning/positioning.html#id1">Position Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../Positioning/positioning.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Positioning/Time_Estimation/positioning.toaEstimation.html">Time of Arrival (ToA)/Delay Estimation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Positioning/Time_Estimation/methods/positioning.toaEstimation.dftToA.html">DFT based Method</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Positioning/Time_Estimation/methods/positioning.toaEstimation.espritToA.html">ESPRIT based ToA Estimation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Positioning/Time_Estimation/methods/positioning.toaEstimation.musicToA.html">MUSIC based ToA Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../Positioning/Optimization_Algorithms/positioning.optimization_Algorithms.html">Optimization Algorithms</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.gradientDescentTDoA.html">Gradient Descent for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.gradientDescentTDoA.html#newton-raphson-for-tdoa">Newton Raphson for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../Positioning/Optimization_Algorithms/ToA/positioning.optimization_Algorithms.leastSquareToA.html">ToA Least Square Estimate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../Tutorials/Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html">Reed Muller Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#table-of-content">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#python-libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#g-toolkit-libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#mapper-and-demapper-parameters">Mapper and Demapper Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#simulation-parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#performance-evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#performance-plot">Performance Plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html">Polar Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#table-of-content">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#import-libraries">Import libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#python-libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#g-toolkit-libraries">5G Toolkit libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#symbol-mapping-configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#polar-coder-configurations">Polar Coder Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#simulation-awgn-channel">Simulation: AWGN Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#performance-evaluations">Performance Evaluations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html">Low Density Parity Check (LDPC) Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#python-libraries">Python LIbraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#g-toolkit-libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#symbol-mapping-configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#simulation-awgn-channel">Simulation: AWGN Channel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#ldpc-parameters">LDPC Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#simulation-procedure">Simulation Procedure</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#performance-evaluation">Performance Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html">Initial Access in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#external-libaries">External Libaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#g-toolkit-modules">5G Toolkit Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#system-parameters">System Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#pbch-information">PBCH Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#transmission-side-processing">Transmission-side Processing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#generate-primary-synchronization-sequence">Generate Primary Synchronization Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#generate-secondary-synchronization-sequence-sss">Generate Secondary Synchronization Sequence (<strong>SSS</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#generate-demodulation-reference-sequence-dmrs">Generate Demodulation Reference Sequence (<strong>DMRS</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#generate-the-pbch-payload">Generate the PBCH Payload</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#construct-ssb-grid">Construct SSB Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#mapping-ssb-to-transmission-grid-for-odfm">Mapping SSB to Transmission Grid for ODFM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#ofdm-modulator">OFDM-Modulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#analog-beamforming">Analog Beamforming</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#channel-generation">Channel Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#pass-tx-signal-through-wireless-channel">Pass Tx signal through Wireless Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#noise-addition-at-receiver">Noise addition at receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#ssb-receiver-side">SSB Receiver Side</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#receiver-combining">Receiver combining</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#pss-detection-largest-peak">PSS Detection: largest peak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#largest-peak">Largest peak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#ofdm-demodulation-resource-grid-reconstruction">OFDM Demodulation: Resource Grid reconstruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#ssb-extaction-from-resource-grid">SSB Extaction from Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#extracted-ssb">Extracted SSB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#comparing-transmitted-and-received-ssb-grid">Comparing Transmitted and Received SSB Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#spectrum-analysis">Spectrum Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#sss-detection-pss-channel-assisted-cell-id-estimation">(SSS Detection: PSS channel assisted) + Cell-ID estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#dmrs-parameters-detection-dmrs-sequence-generation">DMRS Parameters Detection + DMRS Sequence Generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#channel-estimation-and-pbch-symbol-equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#pbch-decoding">PBCH Decoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#information-aggregation">Information Aggregation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#performance-evaluations-ber-cell-ids-dmrs-parameter-detection">Performance Evaluations: BER + Cell-IDs + DMRS Parameter Detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#cell-ids-detection">Cell-IDs Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#dmrs-parameter-detection">DMRS Parameter Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial5/SSB_End2End.html#ber-computation">BER computation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html">BER Performance of PUCCH Format 0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#python-libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#g-toolkit-libraries">5G ToolKit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#simulation-parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#format-0">Format 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#format-0-decoder">Format 0 Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#m-cs-estimation">M_CS Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#information-content-based-on-mcs-value">Information content based on MCS value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#performance-evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#performance-plot">Performance Plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../Projects/Projects.html">Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html">Learning to Demap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#import-python-libraries">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#import-5g-toolkit-modules">Import 5G Toolkit Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#learning-to-demap-the-symbols">Learning to Demap the Symbols</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#input-output-mapping-for-m-4">Input Output Mapping for M = 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#input-output-mapping-for-m-6">Input Output Mapping for M = 6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#input-output-mapping-for-m-8">Input Output Mapping for M = 8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#throughput-and-ber-performance-of-llrnet">Throughput and BER Performance of <em>LLRnet</em></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#id1">Import Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#simulation-parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#pdsch-parameters">PDSCH Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#llrnet-parameters">LLRnet Parameters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#training-framework">Training Framework</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#deployment-framework">Deployment Framework</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#simulation-section">Simulation Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#performance-evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-16-qam-64-qam-and-256-qam">Throughput vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-16-qam">Throughput vs SNR (dB) for 16-QAM.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-64-qam">Throughput vs SNR (dB) for 64-QAM.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-256-qam">Throughput vs SNR (dB) for 256-QAM.</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#bit-error-rate-ber-vs-snr-db-for-16-qam-64-qam-and-256-qam">Bit Error rate (BER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#ber-vs-snr-for-64-qam">BER vs SNR for 64-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#ber-vs-snr-for-256-qam">BER vs SNR for 256-QAM</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#block-error-rate-bler-vs-snr-db-for-16-qam-64-qam-and-256-qam">Block Error Rate (BLER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#bler-vs-snr-for-16-qam">BLER vs SNR for 16-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#bler-vs-snr-for-64-qam">BLER vs SNR for 64-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#bler-vs-snr-for-256-qam">BLER vs SNR for 256-QAM</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#complexity-analysis">Complexity Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#conclusion">Conclusion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#positives-of-the-llrnet">Positives of the LLRnet:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../Projects/Project1/learning2Demap.html#limitations-of-the-llrnet">Limitations of the LLRnet:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Projects/Project2/project2.html">Imitation Learning for Position Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Projects/Project3/project3.html">Channel Interpolation based on SRCNN and DnCNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Projects/Project4/project4.html">Comparative Study of Reed Muller codes, Polar Codes and LDPC codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Projects/Project5/project5.html">Channel Quality Estimation in 5G and Beyond Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Projects/Project6/project6.html">Hybrid Automatic repeat Request in 5G and Beyond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Projects/Project7/project7.html">Symbol Constellation learning using Auto-encoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Projects/Project8/project8.html">Downlink Synchronization using SSB in 5G systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Projects/Project9/project9.html">Uplink Synchronization using PRACH in 5G systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Projects/Project10/project10.html">Physical downlink control Channel in 5G</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../Preview_of_Next_Release/FeatureList.html">Tentetive list of Feature</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Preview_of_Next_Release/FeatureList.html#in-progress-to-be-released-soon">In Progress (To be Released soon):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Preview_of_Next_Release/FeatureList.html#next-quarter">Next Quarter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Preview_of_Next_Release/FeatureList.html#before-september-2023">Before September 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../Preview_of_Next_Release/FeatureList.html#before-march-2024">Before March 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../Built_using_5G_Toolkit/builtUsing5GToolkit.html">Research work carried out using 5G Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../WeekChallenge/challenge.html">Challenge Of this Week</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../WeekChallenge/challengeOftheWeek.html">Solution of this Months Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../WeekChallenge/challengeArxiv.html">Arxiv-ed Challenges</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../License/license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../License/license.html#trademarks">Trademarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../License/license.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../License/license.html#content">Content</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../../../index.html">5G Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Polar Codes</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="polar-codes">
+<h1>Polar Codes<a class="headerlink" href="#polar-codes" title="Permalink to this heading"></a></h1>
+<p>This package provides the <strong>Polar Encoder</strong> and <strong>Polar Decoder</strong> build on the top of Sionna modules to provide low level
+3GPP 5G-NR standards complaint API which can be used with all the uplink and downlink channel. The Polar coders can be
+easily integrated with rate matching, code block segmentation and concatenation. Polar coders are used by broadcast and
+control channels for conveying small payload size over the wireless channels. 5G uses Polar codes for following chains
+where A, N and E are polar encoder input length, mother codeword length and Payload length respectively:</p>
+<table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-text">Table-1: Polar codes and its configurations for different channels <a class="reference internal" href="#bioglio" id="id1"><span>[Bioglio]</span></a></span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Physical Chains</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\text{I}_{SEG}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\text{I}_{IL}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\text{I}_{BIL}\)</span></p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>N</p></th>
+<th class="head"><p>E</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PBCH</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>32+24</p></td>
+<td><p>512</p></td>
+<td><p>864</p></td>
+</tr>
+<tr class="row-odd"><td><p>PDCCH</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1 to 140</p></td>
+<td><p>32 to 512</p></td>
+<td><p>25 to 8192</p></td>
+</tr>
+<tr class="row-even"><td><p>PUCCH-Format3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>12 to 1706</p></td>
+<td><p>32 to 1024</p></td>
+<td><p>18 to 8192</p></td>
+</tr>
+<tr class="row-odd"><td><p>PUCCH-Format4</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>12 to 1706</p></td>
+<td><p>32 to 1024</p></td>
+<td><p>31 to 16384</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>Polar code is used in 5G for control and broadcast information in uplink and downlink channel which generally has has small payload size and require very high reliability.</p></li>
+</ul>
+</div>
+<p>The reliability results for Polar codes are shown in following figure-1 where bit error rate results are plotted against
+signal to noise ratio (SNR) for various block-lengths relevant to downlink control channel.</p>
+<a class="reference internal image-reference" href="api/5G_Toolkit/PhysicalChannels/PUCCH/figures/ChannelCoding/SNRvsBER_Polar.png"><img alt="Alternative text" src="api/5G_Toolkit/PhysicalChannels/PUCCH/figures/ChannelCoding/SNRvsBER_Polar.png" style="width: 800px;" /></a>
+<div class="section" id="polar-encoder">
+<h2>Polar Encoder<a class="headerlink" href="#polar-encoder" title="Permalink to this heading"></a></h2>
+<p>The details of Polar Encoder is provided in section 5.3.1 of <a class="reference internal" href="#gppts38212polar" id="id2"><span>[3GPPTS38212Polar]</span></a>. There are few examples to illustrate
+how to use Polar Encoder for simulations:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">nBatches</span><span class="o">=</span> <span class="mi">5</span>       <span class="c1"># Number of Batches to Encode</span>
+<span class="n">K</span>       <span class="o">=</span> <span class="mi">56</span>      <span class="c1"># Number of bits to encode</span>
+<span class="n">E</span>       <span class="o">=</span> <span class="mi">864</span>     <span class="c1"># Rate matching bits</span>
+<span class="n">purpose</span> <span class="o">=</span> <span class="s2">&quot;PDCCH&quot;</span> <span class="c1"># The channel for which the Polar Encoder | Dimension = (numBatches, K)</span>
+<span class="n">verbose</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="c1"># Bits to encode</span>
+<span class="n">bits</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">nBatches</span><span class="p">,</span> <span class="n">K</span><span class="p">)))</span>
+
+<span class="c1"># Create Object for Polar Encoding</span>
+<span class="n">encoder</span> <span class="o">=</span> <span class="n">PolarEncoder5G</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">E</span><span class="p">,</span> <span class="n">purpose</span><span class="p">,</span><span class="n">verbose</span><span class="p">)</span>
+<span class="n">codeword</span><span class="o">=</span> <span class="n">encoder</span><span class="p">(</span><span class="n">bits</span><span class="p">)</span> <span class="c1"># Generate Encoded Bits using the Encoder Object | Dimension = (numBatches, N)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">encoder</span><span class="o">.</span><span class="n">N</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The details about the input-output interface of the PolarEncoder module is provided below.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit5G.ChannelCoder.PolarEncoder5G">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.ChannelCoder.</span></span><span class="sig-name descname"><span class="pre">PolarEncoder5G</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">purpose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../../../_modules/toolkit5G/ChannelCoder/PolarCoder/polarEncoder5G.html#PolarEncoder5G"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.ChannelCoder.PolarEncoder5G" title="Permalink to this definition"></a></dt>
+<dd><p>This module implements a 5G standards complaint Encoder for Polar Codes. The modules is built on the top on Sionna
+Polar Decoder with modifications to provide low level API for section 5.3.1 of 38.212 specifications <a class="reference internal" href="#gppts38212polar" id="id3"><span>[3GPPTS38212Polar]</span></a>.
+Moreover, it corrects the broken standards complaince and optimize the implementation for performance and memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>K</strong> (<em>int</em>) – Number of information bits to encode.</p></li>
+<li><p><strong>E</strong> – Number of target bits after rate matching.</p></li>
+<li><p><strong>purpose</strong> (<em>str</em>) – Defines the physical channel for which the Polar Decoder is being used. It is used computation of N (number
+of coded bits at the out of Polar Decoder) <span class="math notranslate nohighlight">\(\in \{\)</span> “PBCH”, “PDCCH”, “PUCCH” <span class="math notranslate nohighlight">\(\}\)</span>.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Defaults to False. If True, rate-matching parameters will be printed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Input</dt>
+<dd class="field-even"><p><strong>inputs</strong> (<em>[…,K], tf.float32</em>) – 2+D tensor containing the channel logits/llr values.</p>
+</dd>
+<dt class="field-odd">Output</dt>
+<dd class="field-odd"><p><em>[…,N], np.float32</em> – 2+D tensor  containing hard-decided estimates of all <cite>k</cite>
+information bits.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – [Error]: Invalid value for “”K”” for UCI:PUCCH!</p></li>
+<li><p><strong>Exception</strong> – [Error]: Invalid value for “”purpose””!</p></li>
+<li><p><strong>ValueError</strong> – [Polar Encoder]: ‘input’ must a numpy array of numbers!</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the decoding <cite>list size</cite> is not provided by 3GPP
+<a class="reference internal" href="#gppts38212polar" id="id4"><span>[3GPPTS38212Polar]</span></a>, the consortium has agreed on a <cite>list size</cite> of 8 for the
+5G decoding reference curves <a class="reference internal" href="#bioglio" id="id5"><span>[Bioglio]</span></a>.</p>
+<p>All list-decoders apply <cite>CRC-aided</cite> decoding, however, the non-list
+decoders (<cite>“SC”</cite> and <cite>“BP”</cite>) cannot materialize the CRC leading to an
+effective rate-loss.</p>
+</div>
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelCoder.PolarEncoder5G.N">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">N</span></span><a class="headerlink" href="#toolkit5G.ChannelCoder.PolarEncoder5G.N" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the Codeword length of mother Polar code. Calculated based on Section 5.3.1 of TS 38.212.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="polar-decoder">
+<h2>Polar Decoder<a class="headerlink" href="#polar-decoder" title="Permalink to this heading"></a></h2>
+<p>The Polar decoder can be implemented using multiple methods and each method provides a trades off between accuracy and
+complexity as shown below.</p>
+<table class="colwidths-given docutils align-default" id="id10">
+<caption><span class="caption-text">Performance Comparison of Different Polar Decoding Methods.</span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Complexity</p></th>
+<th class="head"><p>Performance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“SC”</p></td>
+<td><p>–</p></td>
+<td><p>Low (1)</p></td>
+<td><p>Poor (1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>“SCL”</p></td>
+<td><p>list_size</p></td>
+<td><p>High (2)</p></td>
+<td><p>Good (2)</p></td>
+</tr>
+<tr class="row-even"><td><p>“hybSCL”</p></td>
+<td><p>list_size</p></td>
+<td><p>Highest (3)</p></td>
+<td><p>Best (3)</p></td>
+</tr>
+<tr class="row-odd"><td><p>“BP”</p></td>
+<td><p>num_iter</p></td>
+<td><p>Lowest (0)</p></td>
+<td><p>Poorest (0)</p></td>
+</tr>
+</tbody>
+</table>
+<p>which uses implementations provided by Sionna.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">logits</span>  <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">codeword</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Logits/LLR to decode the bits | Dimension = (numBatches, N)</span>
+
+<span class="n">K</span>         <span class="o">=</span> <span class="mi">56</span>       <span class="c1"># Number of bits to encode</span>
+<span class="n">E</span>         <span class="o">=</span> <span class="mi">864</span>      <span class="c1"># Rate matching bits</span>
+<span class="n">dec_type</span>  <span class="o">=</span> <span class="s1">&#39;SC&#39;</span>     <span class="c1"># Polar Decoder Type is &quot;Successive Cancellation type&quot;.</span>
+<span class="n">crcType</span>   <span class="o">=</span> <span class="s1">&#39;CRC24C&#39;</span> <span class="c1"># CRC used for error detection (not relevant in this case.)</span>
+<span class="n">purpose</span>   <span class="o">=</span> <span class="s1">&#39;PDCCH&#39;</span>  <span class="c1"># Physical channel for whose to decode the payload.</span>
+<span class="n">list_size</span> <span class="o">=</span> <span class="mi">8</span>        <span class="c1"># List Size (not relevant in this case.)</span>
+<span class="n">num_iter</span>  <span class="o">=</span> <span class="mi">20</span>       <span class="c1"># Number of iterations (not relevant in this case.)</span>
+
+<span class="c1"># Create Object for Polar Decoder</span>
+<span class="n">decoder</span> <span class="o">=</span> <span class="n">PolarDecoder5G</span><span class="p">(</span><span class="n">K</span> <span class="o">=</span> <span class="n">K</span><span class="p">,</span> <span class="n">E</span> <span class="o">=</span> <span class="n">E</span><span class="p">,</span> <span class="n">purpose</span> <span class="o">=</span> <span class="n">purpose</span><span class="p">)</span>
+<span class="n">bitEst</span>  <span class="o">=</span> <span class="n">decoder</span><span class="p">(</span><span class="n">logits</span><span class="p">)</span> <span class="c1"># Recover information Bits using the Decoder Object | Dimension = (numBatches, K)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit5G.ChannelCoder.PolarDecoder5G">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.ChannelCoder.</span></span><span class="sig-name descname"><span class="pre">PolarDecoder5G</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crcType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'CRC24C'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">purpose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'PDCCH'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">tf.float32</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../../../_modules/toolkit5G/ChannelCoder/PolarCoder/polarDecoder5G.html#PolarDecoder5G"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.ChannelCoder.PolarDecoder5G" title="Permalink to this definition"></a></dt>
+<dd><p>This module implements a 5G standards complaint decoder for Polar Codes. The modules is built on the top on Sionna
+Polar Decoder with modifications to provide low level API for section 5.3.1 of 38.212 specifications <a class="reference internal" href="#gppts38212polar" id="id6"><span>[3GPPTS38212Polar]</span></a>.
+Moreover, it corrects the broken standards complaince and optimize the implementation for performance and memory.
+The class inherits from the Keras layer class and can be used as layer in a Keras model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>K</strong> (<em>int</em>) – Number of information bits to encode.</p></li>
+<li><p><strong>E</strong> – Number of target bits after rate matching.</p></li>
+<li><p><strong>dec_type</strong> (<em>str</em>) – Polar Decoder type. It can be <span class="math notranslate nohighlight">\(\in \{\)</span> “SC”, “SCL”, “hybSCL”, “BP” <span class="math notranslate nohighlight">\(\}\)</span>. Default value is “SC”.</p></li>
+<li><p><strong>crcType</strong> (<em>str</em>) – CRC Type used error detection. It is used for hybrid SCL decoding. <span class="math notranslate nohighlight">\(\in \{\)</span> “CRC24A”, “CRC24B”, “CRC24C”,
+“CRC16”, “CRC11”, “CRC6” <span class="math notranslate nohighlight">\(\}\)</span>. Default value is “CRC24C”. Only required for <code class="docutils literal notranslate"><span class="pre">dec_types</span></code> is “SCL”.</p></li>
+<li><p><strong>purpose</strong> (<em>str</em>) – Defines the physical channel for which the Polar Decoder is being used. It is used computation of N (number
+of coded bits at the out of Polar Decoder) <span class="math notranslate nohighlight">\(\in \{\)</span> “PBCH”, “PDCCH”, “PUCCH” <span class="math notranslate nohighlight">\(\}\)</span>. Default value
+is “PDCCH”.</p></li>
+<li><p><strong>list_size</strong> (<em>int</em>) – Defining the list size iff list-decoding is used. Only required for <code class="docutils literal notranslate"><span class="pre">dec_types</span></code> {“SCL”, “hybSCL”}. Default
+value is 8.</p></li>
+<li><p><strong>num_iter</strong> (<em>int</em>) – Defining the number of BP iterations. Only required for dec_type “BP”. Default value is 20.</p></li>
+<li><p><strong>output_dtype</strong> (<em>tf.DType</em>) – Defaults to tf.float32. Defines the output datatype of the layer
+(internal precision remains tf.float32).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Input</dt>
+<dd class="field-even"><p><strong>inputs</strong> (<em>[…,N], np.float32</em>) – 2+D array containing the channel logits/llr values.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Polar Decoder doesn’t accept binary inputs. In case only hard information is available, convert the bits to logits: <span class="math notranslate nohighlight">\(2\times\text{inputs}-1\)</span> and pass it to Polar Decoder.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Output</dt>
+<dd class="field-odd"><p><em>[…,K], tf.float32</em> – 2+D tensor  containing hard-decided estimates of all <cite>k</cite>
+information bits.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – “[Polar Decoder]: Invalid <code class="docutils literal notranslate"><span class="pre">crcType</span></code>!”</p></li>
+<li><p><strong>ValueError</strong> – “[Polar Decoder]: Unknown value for <code class="docutils literal notranslate"><span class="pre">dec_type</span></code>.”</p></li>
+<li><p><strong>ValueError</strong> – “[Polar Decoder]: Invalid input dtype!”</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the decoding <cite>list size</cite> is not provided by 3GPP
+<a class="reference internal" href="#gppts38212polar" id="id7"><span>[3GPPTS38212Polar]</span></a>, the consortium has agreed on a <cite>list size</cite> of 8 for the
+5G decoding reference curves <a class="reference internal" href="#bioglio" id="id8"><span>[Bioglio]</span></a>.</p>
+<p>All list-decoders apply <cite>CRC-aided</cite> decoding, however, the non-list
+decoders (<cite>“SC”</cite> and <cite>“BP”</cite>) cannot materialize the CRC leading to an
+effective rate-loss.</p>
+</div>
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelCoder.PolarDecoder5G.E">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">E</span></span><a class="headerlink" href="#toolkit5G.ChannelCoder.PolarDecoder5G.E" title="Permalink to this definition"></a></dt>
+<dd><p>Number of rate matched bits (target Bits, Defined as E in Section 5.3.1 of TS 38.212).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelCoder.PolarDecoder5G.K">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">K</span></span><a class="headerlink" href="#toolkit5G.ChannelCoder.PolarDecoder5G.K" title="Permalink to this definition"></a></dt>
+<dd><p>Number of information bits passed as returned by Polar Decoder (mother Polar code).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelCoder.PolarDecoder5G.N">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">N</span></span><a class="headerlink" href="#toolkit5G.ChannelCoder.PolarDecoder5G.N" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the Codeword length of mother Polar code. Calculated based on Section 5.3.1 of TS 38.212.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelCoder.PolarDecoder5G.dec_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dec_type</span></span><a class="headerlink" href="#toolkit5G.ChannelCoder.PolarDecoder5G.dec_type" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the Decoder type used for decoding the codeword. Its a string type</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelCoder.PolarDecoder5G.llr_max">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">llr_max</span></span><a class="headerlink" href="#toolkit5G.ChannelCoder.PolarDecoder5G.llr_max" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the Maximum LLR value for internal calculations. Its the saturation value of LLR. Its afloat type</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelCoder.PolarDecoder5G.output_dtype">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_dtype</span></span><a class="headerlink" href="#toolkit5G.ChannelCoder.PolarDecoder5G.output_dtype" title="Permalink to this definition"></a></dt>
+<dd><p>Output dtype of decoder.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="polar-codec-components">
+<h2>Polar Codec Components<a class="headerlink" href="#polar-codec-components" title="Permalink to this heading"></a></h2>
+<p>The Polar Codec in 5G consists of multiple other components to implement the complete physical chain. These modules are
+discussed in following subsections:</p>
+<div class="toctree-wrapper compound">
+</div>
+<dl>
+<dt>References:</dt><dd><dl class="citation">
+<dt class="label" id="gppts38212polar"><span class="brackets">3GPPTS38212Polar</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>,<a href="#id4">3</a>,<a href="#id6">4</a>,<a href="#id7">5</a>)</span></dt>
+<dd><p>3GPP TS 38.211 “Physical channels and modulation (Release 17)”, V17.1.0 (2022-03).</p>
+</dd>
+<dt class="label" id="bioglio"><span class="brackets">Bioglio</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id5">2</a>,<a href="#id8">3</a>)</span></dt>
+<dd><ol class="upperalpha simple" start="22">
+<li><p>Bioglio, C. Condo and I. Land, “Design of Polar Codes in 5G New Radio,” in IEEE Communications Surveys &amp; Tutorials, vol. 23, no. 1, pp. 29-40, First quarter 2021.</p></li>
+</ol>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2023, Gigayasa Wireless Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

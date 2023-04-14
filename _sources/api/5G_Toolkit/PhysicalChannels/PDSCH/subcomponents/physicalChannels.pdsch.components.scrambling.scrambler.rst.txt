@@ -1,0 +1,2 @@
+.. include::  ../../../Scrambler/scrambler.rst
+.. include::  ../../../Scrambler/scrambler.scrambler.rst

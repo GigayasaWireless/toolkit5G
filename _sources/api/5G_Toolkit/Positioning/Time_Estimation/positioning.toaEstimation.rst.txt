@@ -1,0 +1,24 @@
+Time of Arrival (ToA)/Delay Estimation
+======================================
+This modules is used for estimating delays or time of arrival (ToA) of a received signal with respect to transmitted
+signal. The details about the input arguments of this module is provide in table below:
+
+.. image:: ../../../figures/Positioning/ToAEstimation/ToA_Estimation.png
+  :width: 800
+  :alt: Alternative text
+
+.. autoclass:: toolkit5G.Positioning.ToAEstimation
+   :members:
+   :exclude-members: call, build
+
+
+The details about the ToA estimation methods used in this package are discussed below.
+
+**TOA/Delay Estimation Methods**
+
+.. toctree::
+    :maxdepth: 2
+
+    methods/positioning.toaEstimation.dftToA
+    methods/positioning.toaEstimation.espritToA
+    methods/positioning.toaEstimation.musicToA

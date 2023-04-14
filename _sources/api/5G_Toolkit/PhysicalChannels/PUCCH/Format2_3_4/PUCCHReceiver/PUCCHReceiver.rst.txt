@@ -1,0 +1,81 @@
+PUCCH Receiver
+===============
+
+PUCCH: Upper Physical Layer Chain
+**********************************
+
+The procedures for upper physical layer processing for PUCCH Format 2,3,4 are similar
+
+This module implements the receiver chain of upper physical layer processing involving the following algorithms based on transmitter algorithms as described in Section 6.3 of [3GPPTS38212_pucch]_ and Section 6.3.2 of [3GPPTS38211_pucch]_. The UCI Block to be processed is generated based on the payload size and number of user equipments.
+    
+    * Symbol De-Mapping
+        
+        The symbol estimates are demodulated based on the modulation order as described in Sections 6.3.2.5.2 of [3GPPTS38211_pucch_format2] and 6.3.2.6.2 of [3GPPTS38211_pucch_formats3and4]
+        
+    * De-Scrambling
+    
+        The Log Likelihood Ratios are descrambled based on the concept specified in Sections of 6.3.2.5.1 [3GPPTS38211_pucch_format2] and 6.3.2.6.1 of [3GPPTS38211_pucch_formats3and4]
+        
+    * Code Block Segregation | Opposite to Code Block Concatenation
+    
+        The descrambled data is then segregated into number of code blocks based on the concept specified in Section 6.3.1.5 of [3GPPTS38212_pucch].
+        
+    * De-Rate Matching
+    
+        The segregated code blocks are then de-rate matched based on the concept as specified in Section 6.3.1.4 of [3GPPTS38212_pucch]. 
+        
+    * Channel De-Coder
+    
+        The De-Rate matched code blocks are then decoded as described in Sectio 6.3.1.3 of [3GPPTS38212_pucch].
+        
+    * Code Block Aggregation | Opposite to Code Block Segmentation
+    
+        The decoded code blocks are then aggregated also involving CRC detachment. 
+        
+Example: UCI sequence block is not inputted and for format 4
+
+.. code-block:: python
+
+   snr            = 100000      # SNR
+   modOrder       = 2           # Modulation Order
+   formatPUCCH    = 'Format 4'  # PUCCH Format
+   rnti           = 45976       # Radio network Temporary Identifier
+   nID            = 545         # Data Scrambling Identity
+   numInfoBits    = 1654        # Payload size (Number of Information bits)
+   numOfSegments  = 2           # Number of code blocks
+   E              = 1792        # Rate matching output sequence length
+   N              = 1024        # Number of channel coded bits
+   K              = 838         # Bumber of bits to be coded (After Segmentation)
+	   
+   Equalized_Symbols ---> Equalized Symbols 
+   
+   pucchUpperPHYDecoder_Obj = PUCCHUpperPHYDecoder(snr, modOrder, formatPUCCH, rnti, nID, numOfSegments, numInfoBits, E, N, K) # Object performing PUCCH Upper physical layer chain for format 2,3,4
+   pucchUpperPHYDecoder     = pucchUpperPHYDecoder_Obj(Equalized_Symbols) # Returns the Transmitted UCI Block and its CRC check
+
+Example: UCI sequence block is inputted and for format 2
+
+.. code-block:: python
+
+   snr            = 100000      # SNR
+	 modOrder       = 2           # Modulation Order
+	 formatPUCCH    = 'Format 2'  # PUCCH Format
+	 rnti           = 10779       # Radio network Temporary Identifier
+	 nID            = 377         # Data Scrambling Identity
+	 numInfoBits    = 40          # Payload size (Number of Information bits)
+	 numOfSegments  = 1           # Number of code blocks
+	 E              = 8192        # Rate matching output sequence length
+	 N              = 512        # Number of channel coded bits
+	 K              = 51         # Bumber of bits to be coded (After Segmentation)
+   
+   Equalized_Symbols ---> Equalized Symbols 
+   
+   pucchUpperPHYDecoder_Obj = PUCCHUpperPHYDecoder(snr, modOrder, formatPUCCH, rnti, nID, numOfSegments, numInfoBits, E, N, K) # Object performing PUCCH Upper physical layer chain for format 2,3,4
+   pucchUpperPHYDecoder     = pucchUpperPHYDecoder_Obj(Equalized_Symbols) # Returns the Transmitted UCI Block and its CRC check
+
+.. autoclass:: toolkit5G.PhysicalChannels.PUCCHUpperPHYDecoder
+   :members:
+   :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_pucch] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation
+    .. [3GPPTS38212_pucch] (3GPP TS 38.212 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation

@@ -1,0 +1,103 @@
+
+
+Sequence Generation
+====================
+
+In this example, 
+	* ``interlacedTransmission`` - Interlaced Transmission is enabled 
+	* ``pucch_ResourceCommon``   - Common resource configuration 
+	* ``intraSlotFreqHopping``   - Enabling Intra Slot Frequency Hopping 
+	* ``pucch_GroupHopping``     - Enabling Group Hopping 
+	
+.. code-block:: python
+
+   numBatches             = 7    #Number of User Equipments
+   interlacedTransmission = True #Enabling/Disabling the Interlaced Transmission
+   pucch_ResourceCommon   = True #Selecting the resource set
+   numberOfSymb           = None #Number of Symbols
+   symbolIndex_start      = None #Starting Symbol Index
+   initial_CyclicShift    = None #Initial Cyclic Shift
+   indexPUCCH             = 0    #Index of the resource set, if Common resource configuration is enabled
+   intraSlotFreqHopping   = False #Enabling/Disabling the Intra Slot Frequency Hopping
+   nID                    = 658   #Hopping ID
+   pucch_GroupHopping     = 'Enable' #Enabling/Disabling the Group or/and Sequence Hopping
+   slotNumber             = 1      #Slot Number
+   m_CS                   = np.array([ 9,  9, 10,  4,  7, 10,  6]) #Cyclic Shift Offset based on the information content
+   numInterlacedRBs       = 10 #Number of Interlaced ResourceBlocks
+
+   Format0_SeqGenobj = PUCCHFormat0Sequence(intraSlotFreqHopping, interlacedTransmission, pucch_ResourceCommon) #Sequence Generation Object
+   Format0_Seq       = Format0_SeqGenobj(numBatches, m_CS, nID, slotNumber, pucch_GroupHopping, initial_CyclicShift, numberOfSymb, symbolIndex_start, indexPUCCH, numInterlacedRBs) #Generates the PUCCH Format0 Sequence
+
+The example below considers, 
+	* ``interlacedTransmission`` - Interlaced Transmission is disabled 
+	* ``pucch_ResourceCommon``   - Dedicated resource configuration 
+	* ``intraSlotFreqHopping``   - Disabling Intra Slot Frequency Hopping 
+	* ``pucch_GroupHopping``     - Disabling Group Hopping
+	
+.. code-block:: python
+      
+   numBatches	           = 2 #Number of User Equipments
+   interlacedTransmission = False #Enabling/Disabling the Interlaced Transmission
+   pucch_ResourceCommon   = False #Selecting the resource set
+   numberOfSymb           = 1 #Number of Symbols
+   start_SymbIndex        = 5 #Starting Symbol Index
+   indexPUCCH             = None #Index of the resource set, if Common resource configuration is enabled
+   initial_CyclicShift    = 4 #Initial Cyclic Shift
+   intraSlotFreqHopping   = False #Enabling/Disabling the Intra Slot Frequency Hopping
+   nID                    = 287 #Hopping ID
+   pucch_GroupHopping     = 'Disable' #Enabling/Disabling the Group or/and Sequence Hopping
+   slotNumber             = 8 #Slot Number
+   m_CS                   = np.array([0, 7]) #Cyclic Shift Offset based on the information content
+   numInterlacedRBs       = None #Number of Interlaces
+
+   Format0_SeqGenobj = PUCCHFormat0Sequence(intraSlotFreqHopping, interlacedTransmission, pucch_ResourceCommon) #Sequence Generation Object
+   Format0_Seq       = Format0_SeqGenobj(numBatches, m_CS, nID, slotNumber, pucch_GroupHopping, initial_CyclicShift, numberOfSymb, symbolIndex_start, indexPUCCH, numInterlacedRBs) #Generates the PUCCH Format0 Sequence
+
+In this example, 
+	* ``interlacedTransmission`` - Interlaced Transmission is enabled 
+	* ``pucch_ResourceCommon``   - Dedicated resource configuration 
+	* ``intraSlotFreqHopping``   - Disabling Intra Slot Frequency Hopping 
+	* ``pucch_GroupHopping``     - Disabling Group Hopping 
+
+
+.. code-block:: python
+
+   numBatches             = 1 #Number of User Equipments
+   interlacedTransmission = True #Enabling/Disabling the Interlaced Transmission
+   pucch_ResourceCommon   = False #Selecting the resource set
+   numberOfSymb           = 1 #Number of Symbols
+   start_SymbIndex        = 5 #Starting Symbol Index
+   indexPUCCH             = None #Index of the resource set, if Common resource configuration is enabled
+   initial_CyclicShift    = 7 #Initial Cyclic Shift
+   intraSlotFreqHopping   = False #Enabling/Disabling the Intra Slot Frequency Hopping
+   nID                    = 408 #Hopping ID
+   pucch_GroupHopping     = 'Disable' #Enabling/Disabling the Group or/and Sequence Hopping
+   slotNumber             = 2 #Slot Number
+   m_CS                   = np.array([10]) #Cyclic Shift Offset based on the information content
+   numInterlacedRBs       = 11 #Number of Interlaced ResourceBlocks
+   
+   Format0_SeqGenobj = PUCCHFormat0Sequence(intraSlotFreqHopping, interlacedTransmission, pucch_ResourceCommon) #Sequence Generation Object
+   Format0_Seq       = Format0_SeqGenobj(numBatches, m_CS, nID, slotNumber, pucch_GroupHopping, initial_CyclicShift, numberOfSymb, symbolIndex_start, indexPUCCH, numInterlacedRBs) #Generates the PUCCH Format0 Sequence
+   
+.. autoclass:: toolkit5G.SequenceGeneration.PUCCHFormat0Sequence
+   :members:
+   :exclude-members: call, build, resourceSet
+   
+.. rubric:: References
+
+[1]. (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'
+
+[2]. (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '6.3.2.3 PUCCH Format 0'
+
+[3]. (3GPP TS 38.213 version 16.5.0 Release 16) 5G;NR;Physical layer procedures for control ' 9.2.1 PUCCH Resource Sets'
+
+[4]. Book - 5G NR in Bullets, Edition 1
+
+   
+
+
+   
+     
+
+
+  

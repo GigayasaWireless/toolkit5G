@@ -1,0 +1,150 @@
+.. _Simulation-Layout:
+
+Simulation Layout
+=================
+
+This module provides classes and the functions that implements Simulation Layout.
+Simulation Layout correspond to deploying Base Stations (BSs) and dropping user equipments (UEs) in a chosen geometry.
+Current implementation support different types of BS layouts such as "Hexagonal"
+and "Rectangular", different types of UE drops such as "Hexagonal",  "Rectangular" and "Circular".
+
+The class :class:`SimulationLayout` allows the user to deploy BSs, as well as UEs in a particular geometry.
+The user can access the state of each link using the class attribute :attr:`linkState` , locations of BSs using  :attr:`BSLocations`,
+tracks or locations of BS across snapshots using :attr:`BStracks`, 
+velocities of each BS using :attr:`BSvelocityVector` and BS orientations using :attr:`bsOrientation` 
+
+
+.. autoclass:: toolkit5G.channelModels.simulationLayout.SimulationLayout
+    :members:
+    :exclude-members: call, build, display2DTopology, getParameterGenerator
+
+
+
+.. automethod:: toolkit5G.channelModels.simulationLayout.simulationLayout.SimulationLayout.display2DTopology
+    :noindex:
+
+
+
+.. automethod:: toolkit5G.channelModels.simulationLayout.simulationLayout.SimulationLayout.getParameterGenerator
+    :noindex:    
+
+
+
+
+**Example:**    
+
+**When terrain and carrierFreq passed as arrays:**
+
+.. code-block:: Python
+
+    # Instantiating SimulationLayout class
+    >>> simLayoutObj = SimulationLayout(numOfBS = 19,
+    ...                                numOfUE = 100,
+    ...                                heightOfBS = 25,
+    ...                                heightOfUE = 10,
+    ...                                ISD = 500,
+    ...                                layoutType = "Hexagonal",
+    ...                                numOfSectorsPerSite = 3,
+    ...                                minUEBSDistance = 35)
+    # terrain correspond to BS-UE, UE-UE and BS-BS links
+    >>> terrain   = np.array(["UMi","InH-OO","InF-SL"])
+    # array of 2 carrier frequencies 5.09329365 GHz, 1.2794876 GHz
+    >>> carrierFreq   = np.array([5.09329365, 1.2794876])    
+    >>> simLayoutObj(terrain, carrierFreq)
+    # Displaying Layout
+    >>> simLayoutObj.display2DTopology()
+
+The following figure displays the topology of the layout in 2D. User can display such plot by calling the 
+method :meth:`display2DTopology()`
+
+.. image:: ../../figures/layout_plot_example1.png
+  :width: 500
+  :alt: layoutPlot1
+    
+    
+**When the passed terrain is Indoor Factory:**
+
+
+.. code-block:: Python
+    
+    
+    # Instantiating SimulationLayout class
+    >>> simLayoutObj = SimulationLayout(numOfBS = np.array([19, 3]),
+    ...                                numOfUE = 100, 
+    ...                                heightOfBS = 10,
+    ...                                heightOfUE = 2,
+    ...                                ISD = 10, 
+    ...                                layoutType = "Rectangular") 
+    # calling with terrain as "InF-DL"   
+    >>> simLayoutObj(terrain = "InF-DL",
+                     carrierFreq = 3, 
+                     heightOfRoom = 7, 
+                     clutterHeight = 5, clutterSize = 2, clutterDensity = 0.45)
+
+    # displaying layout
+    >>> simLayoutObj.display2DTopology()
+
+For this example the layout plot looks as following
+
+.. image:: ../../figures/layout_plot_example2.png
+  :width: 500
+  :alt: layoutPlot2
+
+   
+**Passing AntennaArrays objects:**
+
+The following code snippet shows how to pass the objects of class :class:`AntennaArrays` for deployment on the BSs,
+as well as on the UEs for each carrier frequency after instantiating :class:`SimulationLayout` class
+
+
+.. code-block:: Python
+
+
+    >>> terrain     = np.array(["RMa","UMa","InH-OO"])
+    >>> carrierFreq = np.array([3,5])
+    >>> numCarriers = carrierFreq.shape[0]
+    # Antenna Array object vector corresponding to each carrier frequency at UE side.
+    >>> ueAntennaArray = np.empty(numCarriers, dtype=object)
+    >>> for i in range(carrierFreq.size):
+    ...    ueAntennaArray[i] = AntennaArrays(antennaType = "OMNI", 
+    ...                                      centerFrequency = carrierFreq[i],
+    ...                                      arrayStructure  = np.array([1,1,1,1,1]),
+    ...                                      antennaSpacing  =  np.array([0.5,0.5,0.5,0.5]))
+    # Antenna Array object vector corresponding to each carrier frequency at BS side.
+    >>> bsAntennaArray = np.empty(numCarriers, dtype=object)
+    >>> for i in range(carrierFreq.size):
+    ...    bsAntennaArray[i] = AntennaArrays(antennaType ="3GPP_38.901",
+    ...                                      centerFrequency=carrierFreq[i],
+    ...                                      arrayStructure = np.array([1,1,1,1,1]),
+    ...                                      antennaSpacing =  np.array([0.5,0.5,0.5,0.5]))
+    # Instantiating SimulationLayout class
+    >>> simLayoutObj = SimulationLayout(numOfBS = 19,
+    ...                                 numOfUE = 100,
+    ...                                 heightOfBS = 25,
+    ...                                 heightOfUE = 10, 
+    ...                                 ISD = 500,
+    ...                                 layoutType = "Hexagonal",
+    ...                                 numOfSectorsPerSite = 3,
+    ...                                 minUEBSDistance = 35)
+    # Calling simLayoutObj with Antenna Array vectors both at BS, UE side                                            
+    >>> simLayoutObj(terrain, carrierFreq, ueAntennaArray, bsAntennaArray)
+    # displaying layout
+    >>> simLayoutObj.display2DTopology()
+
+
+
+
+For this example the layout plot looks as following
+
+.. image:: ../../figures/layout_plot_example3.png
+  :width: 500
+  :alt: layoutPlot3
+
+       
+
+**References**:
+
+.. _[3GPP TR 38.901]: 3GPP TR 38.901 "Study on channel model for frequencies from 0.5 to 100 GHz (Release 17)", V17.0.0 (2022-03).
+ 
+
+    

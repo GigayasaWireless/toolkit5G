@@ -1,0 +1,9 @@
+Scrambling: PUCCH
+******************
+
+.. toctree::
+    :maxdepth: 10
+
+    physicalChannels.pucch.components.scrambling.scrambler.rst
+    physicalChannels.pucch.components.scrambling.descrambler.rst
+

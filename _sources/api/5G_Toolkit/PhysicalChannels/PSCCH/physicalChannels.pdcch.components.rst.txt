@@ -1,0 +1,146 @@
+PSCCH: Components
+#################################
+This module implements the physical sidelink shared channel.
+CRC Attachment
+**************
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+RNTI Masking
+************
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+   
+Input Bit Interleaver
+*********************
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+   
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+
+Polar Coder
+***********
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+   
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+
+Rate Matching
+*************
+
+Sub-block Interleaver
+---------------------
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+   
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+Bit Selection
+-------------
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+   
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+   
+
+Channel Interleaver
+-------------------
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+   
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+
+Scrambling
+**********
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+   
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+
+
+Symbol Mapping/Modulation
+*************************
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+   
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+   
+   
+Resource Mapping
+****************
+
+
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+   
+.. autoclass:: src.PhysicalChannels.PDSCHLowerPhy
+   :members:
+   :exclude-members: call, build
+   
+

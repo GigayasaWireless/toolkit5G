@@ -1,0 +1,32 @@
+Input Bit Interleaver
+=====================
+The input bit interleaver is used by all the downlink chains using **polar codes** chain before CRC encoder. It helps in
+reducing the complexity of the receiver by early termination. This interleaver places the parity bits immediately after
+the information bits which enables the receiver to sequentially check the parity bits without waiting to buffer the complete
+information block.
+
+.. Important::
+    Input Bit Interleaver reduces the complexity, improves false alarm rate and reduces decoding delays of a 5G user equipment.
+
+
+.. Note::
+    In 5G, Input Bit Interleaver is used in downlink (PBCH and PDCCH) only.
+
+
+Input Bit Interleaver
+---------------------
+The details about the implementation, usage and application interface is provided in following sections.
+
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.InputBitInterleaver
+    :members:
+    :exclude-members: call, build
+
+Input Bit DeInterleaver
+-----------------------
+The details about the implementation, usage and application interface is provided in following sections.
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.InputBitDeInterleaver
+    :members:
+    :exclude-members: call, build
+

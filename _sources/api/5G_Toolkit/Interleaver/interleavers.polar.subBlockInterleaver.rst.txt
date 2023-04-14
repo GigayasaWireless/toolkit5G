@@ -1,0 +1,31 @@
+Sub Block Interleaver
+=====================
+The sub-block interleaver rearranges the sub-blocks of the polar encoded codewords. The block fading is very common in wireless
+communication which can severely corrupt a sub-block of data. The performance of many channel codes is sensitive to block
+errors. To handle such scenarios, 5G uses sub-block interleaver which helps in spreading such errors across the complete
+codeword length. This makes the polar codes more robust to burst errors. Such interleaver has been used in 4G and other
+wireless standards as well.
+
+.. Important::
+    Sub-block interleaving improves the robustness of the polar codes against the burst errors.
+
+.. Note::
+    Length of vector passes to **sub-block interleaver** must be multiple of 32.
+
+
+Sub Block Interleaver
+---------------------
+The details about the implementation, usage and application interface is provided in following sections.
+
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving
+    :members:
+    :exclude-members: call, build
+
+Sub Block Interleaver
+---------------------
+The details about the implementation, usage and application interface is provided in following sections.
+
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving
+    :members:
+    :exclude-members: call, build
+

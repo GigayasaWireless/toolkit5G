@@ -1,0 +1,22 @@
+Bit Selection for LDPC
+======================
+Forward error correction is used in 5G for correction of bits in error. 5G supports primarily three channel coders:
+
+Bit Selection
+*************
+The details about the input-output interface of the Mapper modules is provided below.
+
+.. autoclass:: toolkit5G.Ratematcher.LDPC.BitSelection
+    :members:
+    :exclude-members: call, build
+
+
+Bit De-selection
+****************
+The details about the input-output interface of the Mapper modules is provided below.
+
+.. autoclass:: toolkit5G.Ratematcher.LDPC.BitDeselection
+    :members:
+    :exclude-members: call, build
+
+

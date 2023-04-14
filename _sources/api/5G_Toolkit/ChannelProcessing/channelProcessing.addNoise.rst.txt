@@ -1,0 +1,12 @@
+Add Noise and CFO at Receiver
+=============================
+This module add the additive white Gaussian noise and apply the carrier frequency offset to the input signal. The details
+about the input and output interface of the module are provided below.
+
+.. Note::
+    The multiplicative model is used for carrier frequency offset (CFO).
+
+
+.. autoclass:: toolkit5G.ChannelProcessing.AddNoise
+    :members:
+    :exclude-members: call, build

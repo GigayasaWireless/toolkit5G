@@ -1,0 +1,38 @@
+Channel Coder
+==============
+
+The channel coding of Physial Uplink Control Channel is implemented after the code block segmentation which includes two channel coding algorithms based on the payload size.The implementation is compliant with section 6.3.1.3 of [3GPPTS38212]_.
+
+	* UCI encoded by **Channel Coding of Small Block Lengths** 
+	
+	* UCI encoded by **Polar Coder**
+	
+For the Payload size greater than 11 bits, UCI is coded by *Polar Coder*
+
+	* If the number of bits :math:`\text{K}_{r}`  in each code block :math:`\text{r}`,is between 18 and 25, it is Polar coded by setting, 
+	
+		* :math:`\text{n}_{max}`     = 10
+		* :math:`\text{I}_{IL}`      = 0
+		* :math:`\text{n}_{PC}`      = 3
+		* :math:`\text{n}_{PC}^{wm}` = 1 if :math:`\text{E}_{r}` - :math:`\text{K}_{r}` + 3 > 192 else 0, where :math:`\text{E}_{r}` is the rate matching output sequence length
+			
+		
+	* If the number of bits :math:`\text{K}_{r}`  in each code block :math:`\text{r}`,is > 30, it is Polar coded by setting,
+	
+		* :math:`\text{n}_{max}`     = 10
+		* :math:`\text{I}_{IL}`      = 0
+		* :math:`\text{n}_{PC}`      = 0
+		* :math:`\text{n}_{PC}^{wm}` = 0
+	
+And, for the Payload size less than 12 bits, UCI is coded by *Channel Coding of Small Block Lengths*
+
+		
+.. toctree::
+    :maxdepth: 5
+    		
+     PolarCoder/channelCoder.polar.rst
+     SBL/channelCoder.sbl.rst
+
+
+References:
+    .. [3GPPTS38212] (3GPP TS 38.212 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation

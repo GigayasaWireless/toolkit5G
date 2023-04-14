@@ -1,0 +1,161 @@
+Polar Codes
+==============================
+This package provides the **Polar Encoder** and **Polar Decoder** build on the top of Sionna modules to provide low level
+3GPP 5G-NR standards complaint API which can be used with all the uplink and downlink channel. The Polar coders can be
+easily integrated with rate matching, code block segmentation and concatenation. Polar coders are used by broadcast and
+control channels for conveying small payload size over the wireless channels. 5G uses Polar codes for following chains
+where A, N and E are polar encoder input length, mother codeword length and Payload length respectively:
+
+.. list-table:: Table-1: Polar codes and its configurations for different channels [Bioglio]_
+   :widths: 25 25 25 25 25 25 25
+   :header-rows: 1
+
+   * - Physical Chains
+     - :math:`\text{I}_{SEG}`
+     - :math:`\text{I}_{IL}`
+     - :math:`\text{I}_{BIL}`
+     - A
+     - N
+     - E
+   * - PBCH
+     - 0
+     - 1
+     - 0
+     - 32+24
+     - 512
+     - 864
+   * - PDCCH
+     - 0
+     - 1
+     - 0
+     - 1 to 140
+     - 32 to 512
+     - 25 to 8192
+   * - PUCCH-Format3
+     - 0
+     - 0
+     - 1
+     - 12 to 1706
+     - 32 to 1024
+     - 18 to 8192
+   * - PUCCH-Format4
+     - 1
+     - 0
+     - 1
+     - 12 to 1706
+     - 32 to 1024
+     - 31 to 16384
+
+
+
+..  important::
+    * Polar code is used in 5G for control and broadcast information in uplink and downlink channel which generally has has small payload size and require very high reliability.
+
+The reliability results for Polar codes are shown in following figure-1 where bit error rate results are plotted against
+signal to noise ratio (SNR) for various block-lengths relevant to downlink control channel.
+
+.. image:: ../../../figures/ChannelCoding/SNRvsBER_Polar.png
+  :width: 800
+  :alt: Alternative text
+
+
+Polar Encoder
+*************
+The details of Polar Encoder is provided in section 5.3.1 of [3GPPTS38212Polar]_. There are few examples to illustrate
+how to use Polar Encoder for simulations:
+
+.. code-block:: Python
+
+    nBatches= 5       # Number of Batches to Encode
+    K       = 56      # Number of bits to encode
+    E       = 864     # Rate matching bits
+    purpose = "PDCCH" # The channel for which the Polar Encoder | Dimension = (numBatches, K)
+    verbose = False
+    # Bits to encode
+    bits    = np.float32(np.random.randint(2, size=(nBatches, K)))
+
+    # Create Object for Polar Encoding
+    encoder = PolarEncoder5G(K, E, purpose,verbose)
+    codeword= encoder(bits) # Generate Encoded Bits using the Encoder Object | Dimension = (numBatches, N)
+    print("N: "+str(encoder.N))
+
+
+The details about the input-output interface of the PolarEncoder module is provided below.
+
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarEncoder5G
+    :members:
+    :exclude-members: call, build
+
+
+Polar Decoder
+*************
+The Polar decoder can be implemented using multiple methods and each method provides a trades off between accuracy and
+complexity as shown below.
+
+.. list-table:: Performance Comparison of Different Polar Decoding Methods.
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Method
+     - Parameters
+     - Complexity
+     - Performance
+   * - “SC”
+     - --
+     - Low (1)
+     - Poor (1)
+   * - “SCL”
+     - list_size
+     - High (2)
+     - Good (2)
+   * - “hybSCL”
+     - list_size
+     - Highest (3)
+     - Best (3)
+   * - “BP”
+     - num_iter
+     - Lowest (0)
+     - Poorest (0)
+
+
+which uses implementations provided by Sionna.
+
+.. code-block:: Python
+
+    logits  = 100*(2*codeword-1) # Logits/LLR to decode the bits | Dimension = (numBatches, N)
+
+    K         = 56       # Number of bits to encode
+    E         = 864      # Rate matching bits
+    dec_type  = 'SC'     # Polar Decoder Type is "Successive Cancellation type".
+    crcType   = 'CRC24C' # CRC used for error detection (not relevant in this case.)
+    purpose   = 'PDCCH'  # Physical channel for whose to decode the payload.
+    list_size = 8        # List Size (not relevant in this case.)
+    num_iter  = 20       # Number of iterations (not relevant in this case.)
+
+    # Create Object for Polar Decoder
+    decoder = PolarDecoder5G(K = K, E = E, purpose = purpose)
+    bitEst  = decoder(logits) # Recover information Bits using the Decoder Object | Dimension = (numBatches, K)
+
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarDecoder5G
+    :members:
+    :exclude-members: call, build
+
+
+Polar Codec Components
+**********************
+The Polar Codec in 5G consists of multiple other components to implement the complete physical chain. These modules are
+discussed in following subsections:
+
+.. toctree::
+    :maxdepth: 3
+
+    channelCoder.polar.components
+
+
+
+References:
+    .. [3GPPTS38212Polar] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).
+
+    .. [Bioglio] V. Bioglio, C. Condo and I. Land, "Design of Polar Codes in 5G New Radio," in IEEE Communications Surveys & Tutorials, vol. 23, no. 1, pp. 29-40, First quarter 2021.

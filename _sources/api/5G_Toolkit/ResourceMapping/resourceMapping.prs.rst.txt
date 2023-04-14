@@ -1,0 +1,51 @@
+Positioning Reference Signal (PRS)
+==================================
+This module loads the positioning reference signal (PRS) in the resource grid based on the inputs configured. The details
+of the PRS resource mapping is provided in Section 7.4.1.7.3 of [3GPPTS38211_PRSRM]_.
+
+
+**Generating PRS Resource Grid**:
+
+.. code-block:: Python
+
+    subcarrierSpacing = 30000 # subcarrier spacing
+    numRBs            = 28    # number of Resource Grids
+
+    dl_PRS_NumSymbols           = 12   # Number of OFDM symbols occupied by PRS
+    dl_PRS_CombSizeN            = 4    # COMB size-N
+    dl_PRS_ResourceSymbolOffset = 2    # PRS symbol offset
+    dl_PRS_ReOffset             = 0    # RE offset in PRS
+    dl_PRS_SequenceID           = 1031 # PRS Sequence ID.
+
+    # Number of slots per frame
+    numSlotsPerFrame            = int(10*(subcarrierSpacing/15000))
+    slotNumber                  = 9    # Index of slot where the PRS is loaded
+    betaPRS                     = 1    # power scaling factor of PRS per ofdm symbol
+
+    # Object for generating the PRS Resource Grid
+    prsMapper = ResourceMapperPRS(betaPRS, dl_PRS_CombSizeN, dl_PRS_ReOffset,
+                                  dl_PRS_ResourceSymbolOffset, dl_PRS_NumSymbols, dl_PRS_SequenceID)
+
+    # Generate the PRS Resource Grid
+    prsGrid   = prsMapper(slotNumber, numRBs)
+
+
+**Display the PRS Resource Grid**:
+
+.. code-block:: Python
+
+    fig, ax = prsMapper.displayResourceGrid()
+
+
+.. image:: ../../figures/ResourceMapping/prsGrid.png
+  :width: 800
+  :alt: Alternative text
+
+
+.. autoclass:: toolkit5G.ResourceMapping.ResourceMapperPRS
+   :members:
+   :exclude-members: call, build
+
+
+References:
+    .. [3GPPTS38211_PRSRM] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'

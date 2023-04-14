@@ -1,0 +1,64 @@
+Receiver Chain
+=======================
+This class performs receiver chain of Upper Physical Processing of Physical Uplink Shared Channel which involves the following algorithms.
+    
+    * Symbol De-Mapping
+    
+        The estimated symbols are then demodulated based on the concept specified in the Section 6.3.1.2 of [3GPPTS38211_pusch]    
+    * Code Block Segregation | Opposite to Concatenation
+    
+        The demodulated symbols are then segregated according to the description given in the Section 6.2.6 of [3GPPTS38212_pusch]    
+    
+    * De-Rate Matching
+    
+        De-Rate matching of code blocks involves two process as described in the Section 6.2.5 of [3GPPTS38212_pusch]
+    
+        * *Bit De-Interleaver*
+        
+        * *Bit De-Selection*
+        
+    * Channel Decoding (LDPC)
+    
+        The code blocks then undergoes LDPC decoding as described in the Section 6.2.4 of [3GPPTS38212_pusch]    
+    
+    * Code Block Aggregation | Opposite to Segmentation
+    
+        The LDPC decoded code blocks are then converted into a single transport block of data as described in the Section 6.2.3 of [3GPPTS38212_pusch]    
+    
+    * Transport Block Processing (CRC Detachment)
+    
+        Detachment of CRC bits to the transport block as described in the Section 6.2.1 of [3GPPTS38212_pusch]   
+        
+Example:
+
+.. code-block:: python
+
+   symbolsPerSlot     = 10 #Number of Symbols per slot
+   numRB              = 50 #Number of Resource Blocks
+   scalingField       = '00' #Scaling field
+   mcsIndex           = 5 #Modulation Coding scheme index
+   additionalOverhead = 12 #Additional Overheads
+   numlayers          = [4, 0] #Number of layers
+   numTBs             = 1 #Number of Transport Blocks
+   rvid1              = [1] #Redundancy Version ID for transport block 
+   dmrsREs            = 3 #Number of Resource Elements allocated for the additional DMRS
+   verbose            = False #Provide information regarding the progress in the execution
+   enableLBRM         = [False] #Disabling the Limited Buffer Rate Matching
+   snr                = 1000
+   verbose            = False ##Disabling from displaying information about the progress in the execution of the modules.
+   #symbolEstimates ---> Equalized Data
+   
+   puschRx            = PUSCHDecoderUpperPhy(numTBs, mcsIndex, symbolsPerSlot, numRB, numlayers, scalingField, rvid1, additionalOverhead, dmrsREs, enableLBRM, verbose ) #Object processing the receiver chain of Upper Physial Layer processing of PUSCH
+   puschDataRx        = puschRx(symbolEstimates, snr) # returns the Information bits and CRC check
+      
+.. autoclass:: toolkit5G.PhysicalChannels.PUSCHDecoderUpperPhy
+   :members:
+   :exclude-members: call, build   
+
+.. rubric:: References
+
+[1]. 5G NR in Bullets, edition 1, Chris Jhonson.
+
+[2]. 3GPP TS 38.212 version 16 Section 6.2
+
+[3]. 3GPP TS 38.212 version 16 Section 6.3.1.2   

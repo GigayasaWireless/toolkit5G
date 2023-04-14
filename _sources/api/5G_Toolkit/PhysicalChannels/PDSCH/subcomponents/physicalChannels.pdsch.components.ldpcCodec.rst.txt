@@ -1,0 +1,1 @@
+.. include::  ../../../ChannelCoder/LDPC/channelCoder.ldpc.rst

@@ -1,0 +1,20 @@
+Rate matching for Small Block Length 5G
+========================================
+
+This module implements the Rate Matching for the channel codingof small block length 5G
+
+The details about the input-output interface of the Mapper modules is provided below.
+
+Rate Matching
+--------------
+
+.. autoclass:: toolkit5G.Ratematcher.ChannelCodingOfSmallBlockLength.RateMatchingSBL
+    :members:
+    :exclude-members: call, build
+    
+    
+De-Rate Matching
+-----------------
+.. autoclass:: toolkit5G.Ratematcher.ChannelCodingOfSmallBlockLength.RateDeMatchingSBL
+    :members:
+    :exclude-members: call, build

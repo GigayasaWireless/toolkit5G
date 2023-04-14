@@ -1,0 +1,22 @@
+Downlink Control Information (DCI)
+==================================
+Its a 32 bit payload transmitted using PBCH channel. The payload carries information related to following parameters.
+
+..  important::
+    * SSS is an constituent of synchronization signal block (SSB). It is loaded in the middle (across frequency) of third symbol of the SSB.
+
+
+The details about the input-output interface of the SSS implementation is provided below.
+
+
+.. autoclass:: toolkit5G.PayloadGeneration.DCIGeneration
+    :members:
+    :exclude-members: call, build
+    
+
+.. autoclass:: toolkit5G.PayloadGeneration.DCIExtraction
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_dci] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

@@ -1,0 +1,56 @@
+Code Block Concatenation
+************************
+
+Codeblock Concatenation: Transmitter
+------------------------------------
+Each codeblock is individually channel coded and broken further into 1 or 2 codeblock segments. All these codeblock
+segments are concatenated by the last module of the upper physical layer chain. The implementation is compliant with
+section 5.5 of [3GPPTS38212_LDPC]_. An example to demonstrate the implementation is shown below:
+
+.. code-block:: python
+
+   # rmBits ---> Rate Matched Output Block after Interleaving
+
+   codeword   = CodeBlockConcatenation()(rmBits) #Performs Code Block Concatenation
+
+The details of the API of **codeblock concatenation** is detailed below.
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPC.CodeBlockConcatenation
+    :members:
+    :exclude-members: call, build
+
+
+Code-block Segregation: Receiver
+--------------------------------
+The block performs the opposite of code-block concatenation. It breaks the received codeword into multiple codeblock-segments
+for rate matching.
+
+Example, if number of groups in rate matching is 1
+
+.. code-block:: python
+
+   #numCBGrp1 ---> Number of Code Blocks in Group 1
+   #numRMOP1  ---> Number of Rate Matched Output Bits of Group 1
+   #codeword  ---> Demodulated Symbol Block
+
+   cbSegregation  = CodeBlockSegregation(numCBGrp1, numRMOP1) #Performs Code Block Segregation
+   cbSegregateLLR = cbSegregation(codeword)
+
+Example, if number of groups in rate matching is 2
+
+.. code-block:: python
+
+   #numCBGrp1 ---> Number of Code Blocks in Group 1 as in bit selection of rate matching
+   #numRMOP1  ---> Number of Rate Matched Output Bits of Group 1
+   #numCBGrp2 ---> Number of Code Blocks in Group 2 as in bit selection of rate matching
+   #numRMOP2  ---> Number of Rate Matched Output Bits of Group 2
+   #codeword  ---> Demodulated Symbol Block
+
+   cbSegregation  = CodeBlockSegregation(numCBGrp1, numRMOP1, numCBGrp2, numRMOP2) #Performs Code Block Segregation
+   cbSegregateLLR = cbSegregation(codeword)
+
+The details of the input output interface of **codeblock segregation** is shown below:
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPC.CodeBlockSegregation
+    :members:
+    :exclude-members: call, build

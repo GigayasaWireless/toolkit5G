@@ -1,0 +1,100 @@
+# Install 5G Toolkit
+This page takes the user through the complete process of installing all the packages to the point where they can use the
+5G toolkit easily in a Jupyter Notebook. 
+
+## Detailed Installation on Ubuntu
+
+### Update Ubuntu system**
+
+The complete process starts with an Ubuntu update
+~~~
+sudo apt-get update
+~~~
+
+**Install Python**
+
+Those who don't have Python on their system can install by running the following command.
+~~~
+sudo apt-get install pythonX.Y
+~~~
+For version 3.7 of Python, you can run the following:
+~~~
+sudo apt-get install python3.7
+~~~
+The installation status can be confirmed with following commands:
+~~~
+python3 --version
+~~~
+or
+~~~
+python --version
+~~~
+
+**Install PIP3**
+
+Now, we need to install package manager for installing any package/library for Python. 
+~~~
+sudo apt install python3-pip
+~~~
+
+When the installation is complete, verify the installation by checking the pip version:
+~~~
+pip3 --version
+~~~
+
+**Install Miniconda**
+
+If Anaconda is already installed on your system, then you can skip this step. The following instructions install the 
+Miniconda which is a lighter version of Anaconda. First we will download miniconda using the command:
+~~~
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+~~~
+Followed by, installing miniconda using the downloaded package.
+~~~
+bash Miniconda3-latest-Linux-x86_64.sh
+~~~
+Once the installation is completed, we can check the version installed Conda on our system:
+~~~
+conda --v
+~~~
+Now, we will use conda to create a new environment for python 3.7:
+~~~
+conda create -n myenv python==3.7
+~~~
+Finally, we will activate the created environment by executing
+~~~
+conda activate myenv
+~~~
+We will install everything from further now in this environment.
+
+**Install Jupyter Notebook**
+
+We will install Jupyter for interactive scripting in Python.
+~~~
+pip3 install Jupyter
+~~~
+
+**Install 5G Toolkit**
+
+Finally, we are ready to install 5G Toolkit:
+~~~
+pip install git+https://github.com/GigayasaWireless/toolkit5G.git#egg=toolkit5G
+~~~
+Once the installation is complete the user can verify the installation by the output of the pip show command:
+~~~
+pip3 show toolkit5G
+~~~
+
+**Final Confirmation**
+
+open Jupyter Notebook
+~~~
+jupyter notebook
+~~~
+
+Create a new script and run "import toolkit5G as tk" in one of the cell. If it imports successfully, the package has been
+installed. 
+
+## Detailed Installation on Windows
+
+yyyy

@@ -1,0 +1,13 @@
+.. _Node-Mobility:
+
+Node Mobility
+=============
+
+
+This module provides classes and the functions that implements Node Mobility.
+The class :class:`NodeMobility` implement the mobility of each node in the simulation. 
+
+
+.. autoclass:: toolkit5G.channelModels.nodeMobility.NodeMobility
+   :members:
+   :exclude-members: call, build

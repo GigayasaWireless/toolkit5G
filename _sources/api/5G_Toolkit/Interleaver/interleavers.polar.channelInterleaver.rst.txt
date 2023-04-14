@@ -1,0 +1,29 @@
+Channel Interleaver
+===================
+The channel interleaver is used by rate matcher of Polar codec after bit Selection. Its a triangular interleaver which
+creates a isosceles triangular buffer and insert data into this buffer row-wise and reads it column wise. This interleaver
+is include in 5G only for uplink channels to improve the performance of Polar codes for higher order QAM constellations.
+
+.. Important::
+    Channel Interleaver improves the coding performance of Polar codec for higher order QAM constellation in uplink..
+
+
+.. Note::
+    In 5G, Channel Interleaver is used in uplink (PUSCH and PUCCH) only.
+
+Channel Interleaver
+-------------------
+The details about the implementation, usage and application interface is provided in following sections.
+
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver
+    :members:
+    :exclude-members: call, build
+
+Channel De-interleaver
+----------------------
+The details about the implementation, usage and application interface is provided in following sections.
+
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver
+    :members:
+    :exclude-members: call, build
+

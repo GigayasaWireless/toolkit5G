@@ -1,0 +1,110 @@
+Physical Downlink Shared Channel-PTRS
+=====================================
+This modules generates a resource grid with demodulation reference signal (DMRS) for physical downlink shared channel (PDSCH)
+mapped to a resource grid.
+
+**Generating PDSCH-DMRS Resource Grid**:
+
+.. code-block:: Python
+
+    betaDMRS               = 1
+    pdschMappingType       = "PDSCH-mapping-type-A"   # "PDSCH mapping type A" or "PDSCH mapping type B"
+    configurationType      = "Configuration-type-1"   # "Configuration-type-1" or "Configuration-type-2"
+    dmrsTypeAPosition      = "pos2"  # first DMRS symbol location
+    dmrsAdditionalPosition = "pos0"  # Number of additional DMRS
+    maxLength              = "len2"
+
+    ## Duration of DMRS
+    ld           = 6 # number of symbols for DMRS transmission.
+    l0           = 2
+    l1           = 11
+    rank         = 4
+
+    numRBs       = 20
+    scs          = 30000
+    slotNumber   = 11
+    scramblingID = 13544
+    nSCID        = 1
+    rmDMRSpdsch  = ResourceMapperDMRSPDSCH(pdschMappingType, configurationType, dmrsTypeAPosition, maxLength, dmrsAdditionalPosition, l0, ld, l1)
+    resourceGrid = rmDMRSpdsch(numRBs, rank, slotNumber, scramblingID, nSCID)
+
+
+**Display the DMRS-PDSCH Resource Grid**:
+
+.. code-block:: Python
+
+    fig0, ax0 = rmDMRSpdsch.displayResourceGrid()
+
+
+.. image:: ../../figures/ResourceMapping/dmrsPDSCHresourceGrid_I.png
+  :width: 800
+  :alt: Alternative text
+
+**Display the DMRS-PDSCH CDM Grid**:
+
+.. code-block:: Python
+
+    fig1, ax1 = rmDMRSpdsch.displayCDMPattern()
+
+
+.. image:: ../../figures/ResourceMapping/dmrsPDSCHcdmGrid_I.png
+  :width: 800
+  :alt: Alternative text
+
+
+
+**Generating DMRS-PDSCH Resource Grid**:
+
+.. code-block:: Python
+
+    pdschMappingType       = "PDSCH-mapping-type-B" # PDSCH mapping types indicate whether reference for resource allocation is symbol = 0 or configures symol location
+    maxLength              = "len2" # Indicate whether single symbol DMRS or Double symbol DMRS is used.
+    betaDMRS               = 1
+    configurationType      = "Configuration-type-2" # Control the density and pilot location of DMRS in Resource Grid
+    dmrsTypeAPosition      = "pos3" # first DMRS symbol location
+    dmrsAdditionalPosition = "pos0" # Number of additional DMRS
+
+    l0   = 4  # DMRS symbol-0
+    l1   = 11 # DMRS symbol-1
+    ld   = 7  # Duration of DMRS
+    rank = 12 # number of layers to transmit
+
+    numRBs       = 12
+    scs          = 30000
+    slotNumber   = 11
+    scramblingID = 13544 # or Cell-ID for Initial Access
+    nSCID        = 1
+    rmDMRSpdsch  = ResourceMapperDMRSPDSCH(pdschMappingType, configurationType, dmrsTypeAPosition, maxLength, dmrsAdditionalPosition, l0, ld, l1)
+    resourceGrid = rmDMRSpdsch(numRBs, rank, slotNumber, scramblingID, nSCID)
+
+
+**Display the DMRS-PDSCH Resource Grid**:
+
+.. code-block:: Python
+
+    fig0, ax0 = rmDMRSpdsch.displayResourceGrid()
+
+
+.. image:: ../../figures/ResourceMapping/dmrsPDSCHresourceGrid_II.png
+  :width: 800
+  :alt: Alternative text
+
+**Display the DMRS-PDSCH CDM Grid**:
+
+.. code-block:: Python
+
+    fig1, ax1 = rmDMRSpdsch.displayCDMPattern()
+
+
+.. image:: ../../figures/ResourceMapping/dmrsPDSCHcdmGrid_II.png
+  :width: 800
+  :alt: Alternative text
+
+
+.. autoclass:: toolkit5G.ResourceMapping.ResourceMapperPTRSPDSCH
+   :members:
+   :exclude-members: call, build
+
+
+References:
+    .. [3GPPTS38211_pdschDMRS] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'

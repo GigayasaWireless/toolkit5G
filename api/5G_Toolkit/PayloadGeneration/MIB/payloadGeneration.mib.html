@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Master Information Block (MIB) &mdash; 5G Toolkit R23a documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/gigayasa.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../../../about.html" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Downlink Control Information (DCI)" href="../DCI/payloadGeneration.dci.html" />
+    <link rel="prev" title="Payload Generation" href="../payloadGeneration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> 5G Toolkit
+            <img src="../../../../_static/logo28.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                R23a.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About Us</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../about.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../about.html#install-5g-toolkit">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../about.html#dependent-libraries">Dependent Libraries:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../about.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../about.html#license-bwsim">License BWSim</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../5Gtoolkit.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.html">Sequence Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.pss.html">Primary Synchronization Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.sss.html">Secondary Synchronization Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.dmrs.html">Demodulation Reference Sequence (DMRS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.prs.html">Positioning Reference Sequence (PRS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.csirs.html">Channel State Information Reference Sequence (CSI-RS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.pnSequence.html">Pseudo Random (PN) Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html">PUCCH Format 0 Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html">PUCCH Format 1 Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html">Low PAPR Sequence Type 1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#cyclic-shift-hopping">Cyclic Shift Hopping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#group-and-sequence-hopping">Group And Sequence Hopping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ResourceMapping/resourceMapping.html">Resource Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.pucch.html">Physical Uplink Control Channel (PUCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ResourceMapping/PUCCH/resourceMapping.pucch.format0.html">PUCCH Format-0</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../ResourceMapping/PUCCH/Format0/ResourceMappingFormat0.html">PUCCH Format 0 Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ResourceMapping/PUCCH/Format0/ResourceDemappingFormat0.html">PUCCH Format 0 Resource De-Mapping</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../ResourceMapping/PUCCH/resourceMapping.pucch.format1.html">PUCCH Format-1</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../ResourceMapping/PUCCH/Format1/ResourceMappingFormat1.html">PUCCH Format-1 Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ResourceMapping/PUCCH/Format1/ResourceDemappingFormat1.html">PUCCH Format-1 Resource De-Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ResourceMapping/PUCCH/Format1/SpreadingFormat1.html">PUCCH Format-1 Spreading</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ResourceMapping/PUCCH/Format1/DespreadingFormat1.html">PUCCH Format-1 De-Spreading</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../ResourceMapping/PUCCH/resourceMapping.pucch.format2.html">PUCCH Format-2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ResourceMapping/PUCCH/resourceMapping.pucch.format3.html">PUCCH Format-3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ResourceMapping/PUCCH/resourceMapping.pucch.format4.html">PUCCH Format-4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.ssb.html">Synchronization Signal Block (SSB) Grid Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.ssbGeneration.html">Synchronization Signal Block (SSB) Resource Mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.dmrsPDSCH.html">Physical Downlink Shared Channel-DMRS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.ptrsPDSCH.html">Physical Downlink Shared Channel-PTRS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.csirs.html">Channel state Information reference signal (CSI-RS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.pdcch.html">Physical Control Channel (PDCCH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.prs.html">Positioning Reference Signal (PRS)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.html">Physical Channels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pdsch.html">Physical Downlink Shared Channel (PDSCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pdsch.html#pdsch-transmitter">PDSCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/physicalChannels.pdsch.UpperPhy.html">PDSCH: Upper Physical layer Chain</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/physicalChannels.pdsch.LowerPhy.html">PDSCH: Lower Physical layer Chain</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pdsch.html#pdsch-receiver">PDSCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/physicalChannels.pdsch.UpperPhyDecoder.html">PDSCH: Upper Physical layer Chain Decoder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/physicalChannels.pdsch.LowerPhyDecoder.html">PDSCH: Lower Physical layer Chain Decoder</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pdsch.html#pdsch-components">PDSCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.computeTBsize.html">Transport Block Size Computation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.transportblockProcessing.html">Transport Block Processing</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockSegmentation.html">Code Block Segmentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.ldpcCodec.html">Low Density Parity Check Codes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockConcatenation.html">Code Block Concatenation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.scrambling.html">Scrambling: PDSCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.layermapping.html">Layer Mapper</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.resourceMapping.html">Physical Downlink Shared Channel-DMRS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pdcch.html">Physical Downlink Control Channel (PDCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pdcch.html#pdcch-transmitter">PDCCH Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pdcch.html#pdcch-receiver">PDCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pdcch.html#pdcch-components">PDCCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.rnti.html">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pbch.html">Physical Broadcast Channel (PBCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pbch.html#pbch-transmitter">PBCH Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pbch.html#pbch-receiver">PBCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pbch.html#pbch-components">PBCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.modulation.html">Modulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pusch.html">Physical Uplink Shared Channel (PUSCH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pucch.html">Physical Uplink Control Channel (PUCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/PUCCH/Format0.html">PUCCH Format 0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/PUCCH/Format1.html">PUCCH Format 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/PUCCH/Format2.html">PUCCH Format 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/PUCCH/Format3.html">PUCCH Format 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/PUCCH/Format4.html">PUCCH Format 4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.prach.html">Physical Random Access Channel (PRACH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#pscch-transmitter">PSCCH Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#pscch-receiver">PSCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#crc-attachment">CRC Attachment</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#rnti-masking">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#input-bit-interleaver">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#polar-coder">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#rate-matching">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#scrambling">Scrambling</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#symbol-mapping-modulation">Symbol Mapping/Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#resource-mapping">Resource Mapping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../payloadGeneration.html">Payload Generation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Master Information Block (MIB)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mib-generation">MIB Generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mib-extraction">MIB Extraction</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../DCI/payloadGeneration.dci.html">Downlink Control Information (DCI)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ChannelCoder/channelCoder.html">Forward Error Correction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelCoder/LDPC/channelCoder.ldpc.html">Low Density Parity Check Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-encoder">LDPC Encoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-decoder">LDPC Decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-codec-subcomponents">LDPC Codec Subcomponents</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelCoder/LDPC/channelCoder.ldpc.ldpcParameters.html">LDPC Parameters Computation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingTransmitter.html">Codeblock Processing: Transmitter</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingReceiver.html">Codeblock Processing: Receiver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelCoder/PolarCoder/channelCoder.polar.html">Polar Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-encoder">Polar Encoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-decoder">Polar Decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-codec-components">Polar Codec Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelCoder/PolarCoder/channelCoder.polar.components.html">Code-block Processing: Transmitter</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelCoder/PolarCoder/channelCoder.polar.components.html#code-block-processing-receiver">Code-block Processing: Receiver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelCoder/PolarCoder/channelCoder.polar.components.html#input-bit-interleavers">Input Bit Interleavers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html">Reed Muller Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-encoder-5g">Reed Muller Encoder 5G</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-decoder-5g">Reed Muller Decoder 5G</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Ratematcher/ratematcher.html">Rate matching</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Ratematcher/LDPC/ratematcher.ldpc.html">Rate matching for LDPC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html">Bit Interleaver for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-de-interleaver">Bit De-interleaver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Ratematcher/PolarCoder/ratematcher.polarcoder.html">Rate matching for Polar coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html">Bit Selection for Polar Coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Interleaver/interleavers.html">Interleavers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Interleaver/interleavers.pbchInterleavers.html">PBCH Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Interleaver/interleavers.pbchInterleavers.html#id1">PBCH Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Interleaver/interleavers.pbchInterleavers.html#pbch-deinterleaver">PBCH DeInterleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Interleaver/interleavers.polar.inputBitInterleaver.html">Input Bit Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Interleaver/interleavers.polar.inputBitInterleaver.html#id1">Input Bit Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Interleaver/interleavers.polar.inputBitInterleaver.html#input-bit-deinterleaver">Input Bit DeInterleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Interleaver/interleavers.polar.subBlockInterleaver.html">Sub Block Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Interleaver/interleavers.polar.subBlockInterleaver.html#id1">Sub Block Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Interleaver/interleavers.polar.subBlockInterleaver.html#id4">Sub Block Interleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Interleaver/interleavers.polar.channelInterleaver.html">Channel Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Interleaver/interleavers.polar.channelInterleaver.html#id1">Channel Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Interleaver/interleavers.polar.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Interleaver/interleavers.lpdc.bitInterleaver.html">Bit Interleavers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Interleaver/interleavers.lpdc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Interleaver/interleavers.lpdc.bitInterleaver.html#bit-deinterleaver">Bit Deinterleaver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../OFDM/ofdm.html">Orthogonal Frequency Division Multiplexing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../OFDM/ofdm.html#ofdm-modulator">OFDM: Modulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../OFDM/ofdm.html#ofdm-demodulator">OFDM: Demodulator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ChannelProcessing/channelProcessing.html">Channel Processing and Hardware Impairment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelProcessing/channelProcessing.applyChannel.html">Apply Channel to Transmitted Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelProcessing/channelProcessing.addNoise.html">Add Noise and CFO at Receiver</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../SymbolMapping/symbolMapping.html">Symbol Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../SymbolMapping/symbolMapping.mapper.html">Mapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../SymbolMapping/symbolMapping.demapper.html">Demapper</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Scrambler/scrambler.html">Scrambling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Scrambler/scrambler.scrambler.html">Scrambler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Scrambler/scrambler.deScrambler.html">Descrambler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Scrambler/scrambler.rntiMasking.html">RNTI Masking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../ChannelModels/channelModels.html">Channel Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelModels/arrayAntennas.html">Antenna Elements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/arrayAntennas.html#gpp-38-901-antenna-element">3GPP_38_901 Antenna Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/arrayAntennas.html#hertzian-dipole-antenna-element">Hertzian Dipole Antenna Element</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/arrayAntennas.html#linear-dipole-antenna-element">Linear Dipole Antenna Element</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelModels/antennaArray.html">Antenna Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelModels/mobilityModels.html">Mobility Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/mobilityModels.html#random-walk">Random-Walk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/mobilityModels.html#circular-route">Circular Route</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/mobilityModels.html#vehicle-drops-on-highways">Vehicle Drops on HighWays</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelModels/nodeMobility.html">Node Mobility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelModels/bsLayouts.html">BS Layouts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/bsLayouts.html#hexagonal-layout">Hexagonal Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/bsLayouts.html#rectangular-layout">Rectangular Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelModels/ueDrops.html">UE Drops</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/ueDrops.html#rectangular-drop">Rectangular Drop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/ueDrops.html#circular-drop">Circular Drop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/ueDrops.html#hexagonal-drop">Hexagonal Drop</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelModels/simulationLayout.html">Simulation Layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html">Channel Parameter Generator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../CRC/crc.html">Cyclic Redundancy Check</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../CRC/crc.crcEncoder.html">CRC Encoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../CRC/crc.crcDecoder.html">CRC Decoder</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Positioning/positioning.html">Position Estimation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Positioning/positioning.html#id1">Position Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Positioning/positioning.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Positioning/Time_Estimation/positioning.toaEstimation.html">Time of Arrival (ToA)/Delay Estimation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Positioning/Time_Estimation/methods/positioning.toaEstimation.dftToA.html">DFT based Method</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Positioning/Time_Estimation/methods/positioning.toaEstimation.espritToA.html">ESPRIT based ToA Estimation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Positioning/Time_Estimation/methods/positioning.toaEstimation.musicToA.html">MUSIC based ToA Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../Positioning/Optimization_Algorithms/positioning.optimization_Algorithms.html">Optimization Algorithms</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.gradientDescentTDoA.html">Gradient Descent for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.gradientDescentTDoA.html#newton-raphson-for-tdoa">Newton Raphson for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Positioning/Optimization_Algorithms/ToA/positioning.optimization_Algorithms.leastSquareToA.html">ToA Least Square Estimate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html">Reed Muller Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#table-of-content">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#python-libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#g-toolkit-libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#mapper-and-demapper-parameters">Mapper and Demapper Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#simulation-parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#performance-evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#performance-plot">Performance Plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html">Polar Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#table-of-content">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#import-libraries">Import libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#python-libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#g-toolkit-libraries">5G Toolkit libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#symbol-mapping-configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#polar-coder-configurations">Polar Coder Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#simulation-awgn-channel">Simulation: AWGN Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#performance-evaluations">Performance Evaluations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html">Low Density Parity Check (LDPC) Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#python-libraries">Python LIbraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#g-toolkit-libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#symbol-mapping-configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#simulation-awgn-channel">Simulation: AWGN Channel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#ldpc-parameters">LDPC Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#simulation-procedure">Simulation Procedure</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#performance-evaluation">Performance Evaluation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html">Initial Access in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#external-libaries">External Libaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#g-toolkit-modules">5G Toolkit Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#system-parameters">System Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#pbch-information">PBCH Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#transmission-side-processing">Transmission-side Processing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#generate-primary-synchronization-sequence">Generate Primary Synchronization Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#generate-secondary-synchronization-sequence-sss">Generate Secondary Synchronization Sequence (<strong>SSS</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#generate-demodulation-reference-sequence-dmrs">Generate Demodulation Reference Sequence (<strong>DMRS</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#generate-the-pbch-payload">Generate the PBCH Payload</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#construct-ssb-grid">Construct SSB Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#mapping-ssb-to-transmission-grid-for-odfm">Mapping SSB to Transmission Grid for ODFM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#ofdm-modulator">OFDM-Modulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#analog-beamforming">Analog Beamforming</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#channel-generation">Channel Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#pass-tx-signal-through-wireless-channel">Pass Tx signal through Wireless Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#noise-addition-at-receiver">Noise addition at receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#ssb-receiver-side">SSB Receiver Side</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#receiver-combining">Receiver combining</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#pss-detection-largest-peak">PSS Detection: largest peak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#largest-peak">Largest peak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#ofdm-demodulation-resource-grid-reconstruction">OFDM Demodulation: Resource Grid reconstruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#ssb-extaction-from-resource-grid">SSB Extaction from Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#extracted-ssb">Extracted SSB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#comparing-transmitted-and-received-ssb-grid">Comparing Transmitted and Received SSB Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#spectrum-analysis">Spectrum Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#sss-detection-pss-channel-assisted-cell-id-estimation">(SSS Detection: PSS channel assisted) + Cell-ID estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#dmrs-parameters-detection-dmrs-sequence-generation">DMRS Parameters Detection + DMRS Sequence Generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#channel-estimation-and-pbch-symbol-equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#pbch-decoding">PBCH Decoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#information-aggregation">Information Aggregation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#performance-evaluations-ber-cell-ids-dmrs-parameter-detection">Performance Evaluations: BER + Cell-IDs + DMRS Parameter Detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#cell-ids-detection">Cell-IDs Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#dmrs-parameter-detection">DMRS Parameter Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial5/SSB_End2End.html#ber-computation">BER computation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html">BER Performance of PUCCH Format 0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#python-libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#g-toolkit-libraries">5G ToolKit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#simulation-parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#format-0">Format 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#format-0-decoder">Format 0 Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#m-cs-estimation">M_CS Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#information-content-based-on-mcs-value">Information content based on MCS value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#performance-evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/Tutorial8/pucchFormat0_Tutorial.html#performance-plot">Performance Plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Projects/Projects.html">Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html">Learning to Demap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#import-python-libraries">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#import-5g-toolkit-modules">Import 5G Toolkit Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#learning-to-demap-the-symbols">Learning to Demap the Symbols</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#input-output-mapping-for-m-4">Input Output Mapping for M = 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#input-output-mapping-for-m-6">Input Output Mapping for M = 6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#input-output-mapping-for-m-8">Input Output Mapping for M = 8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#throughput-and-ber-performance-of-llrnet">Throughput and BER Performance of <em>LLRnet</em></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#id1">Import Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#simulation-parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#pdsch-parameters">PDSCH Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#llrnet-parameters">LLRnet Parameters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#training-framework">Training Framework</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#deployment-framework">Deployment Framework</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#simulation-section">Simulation Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#performance-evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-16-qam-64-qam-and-256-qam">Throughput vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-16-qam">Throughput vs SNR (dB) for 16-QAM.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-64-qam">Throughput vs SNR (dB) for 64-QAM.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-256-qam">Throughput vs SNR (dB) for 256-QAM.</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#bit-error-rate-ber-vs-snr-db-for-16-qam-64-qam-and-256-qam">Bit Error rate (BER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#ber-vs-snr-for-64-qam">BER vs SNR for 64-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#ber-vs-snr-for-256-qam">BER vs SNR for 256-QAM</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#block-error-rate-bler-vs-snr-db-for-16-qam-64-qam-and-256-qam">Block Error Rate (BLER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#bler-vs-snr-for-16-qam">BLER vs SNR for 16-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#bler-vs-snr-for-64-qam">BLER vs SNR for 64-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#bler-vs-snr-for-256-qam">BLER vs SNR for 256-QAM</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#complexity-analysis">Complexity Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#conclusion">Conclusion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#positives-of-the-llrnet">Positives of the LLRnet:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Projects/Project1/learning2Demap.html#limitations-of-the-llrnet">Limitations of the LLRnet:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Projects/Project2/project2.html">Imitation Learning for Position Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Projects/Project3/project3.html">Channel Interpolation based on SRCNN and DnCNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Projects/Project4/project4.html">Comparative Study of Reed Muller codes, Polar Codes and LDPC codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Projects/Project5/project5.html">Channel Quality Estimation in 5G and Beyond Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Projects/Project6/project6.html">Hybrid Automatic repeat Request in 5G and Beyond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Projects/Project7/project7.html">Symbol Constellation learning using Auto-encoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Projects/Project8/project8.html">Downlink Synchronization using SSB in 5G systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Projects/Project9/project9.html">Uplink Synchronization using PRACH in 5G systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Projects/Project10/project10.html">Physical downlink control Channel in 5G</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Preview_of_Next_Release/FeatureList.html">Tentetive list of Feature</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../Preview_of_Next_Release/FeatureList.html#in-progress-to-be-released-soon">In Progress (To be Released soon):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Preview_of_Next_Release/FeatureList.html#next-quarter">Next Quarter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Preview_of_Next_Release/FeatureList.html#before-september-2023">Before September 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Preview_of_Next_Release/FeatureList.html#before-march-2024">Before March 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Built_using_5G_Toolkit/builtUsing5GToolkit.html">Research work carried out using 5G Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../WeekChallenge/challenge.html">Challenge Of this Week</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../WeekChallenge/challengeOftheWeek.html">Solution of this Months Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../WeekChallenge/challengeArxiv.html">Arxiv-ed Challenges</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../License/license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../License/license.html#trademarks">Trademarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../License/license.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../License/license.html#content">Content</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">5G Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../5Gtoolkit.html">API Documentation</a> &raquo;</li>
+          <li><a href="../payloadGeneration.html">Payload Generation</a> &raquo;</li>
+      <li>Master Information Block (MIB)</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="master-information-block-mib">
+<h1>Master Information Block (MIB)<a class="headerlink" href="#master-information-block-mib" title="Permalink to this heading"></a></h1>
+<p>Its a 32 bit payload transmitted using PBCH channel. The payload carries information related to following parameters.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>MIB Module generates the complete payload consisting of 24 bit MIB payload 7 additional timing bits and 1 choice bit.</p></li>
+</ul>
+</div>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Table-1: Content of PBCH Payload/MIB</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Payload</p></th>
+<th class="head"><p>Information</p></th>
+<th class="head"><p>Size</p></th>
+<th class="head"><p>Dependent Variable</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>choiceBit</p></td>
+<td><p>choiceBit</p></td>
+<td><p>1</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>MIB</p></td>
+<td><p>subCarrierSpacingCommon</p></td>
+<td><p>1</p></td>
+<td><p>Carrier frequency</p></td>
+</tr>
+<tr class="row-even"><td><p>MIB</p></td>
+<td><p>DMRSTypeAPosition</p></td>
+<td><p>1</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>MIB</p></td>
+<td><p>controlResourceSet0</p></td>
+<td><p>4</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>MIB</p></td>
+<td><p>searchSpace0</p></td>
+<td><p>4</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>MIB</p></td>
+<td><p>cellBarred</p></td>
+<td><p>1</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-even"><td><p>MIB</p></td>
+<td><p>intraFrequencyReselection</p></td>
+<td><p>1</p></td>
+<td><p>NA</p></td>
+</tr>
+<tr class="row-odd"><td><p>MIB</p></td>
+<td><p>ssbSubCarrierOffset</p></td>
+<td><p>4-5</p></td>
+<td><p>Carrier frequency</p></td>
+</tr>
+<tr class="row-even"><td><p>MIB</p></td>
+<td><p>ssbIndex</p></td>
+<td><p>0-3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nssbCandidatesInHrf</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>MIB/ATI</p></td>
+<td><p>systemFrameNumber</p></td>
+<td><p>4+6</p></td>
+<td><p>NA</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="mib-generation">
+<h2>MIB Generation<a class="headerlink" href="#mib-generation" title="Permalink to this heading"></a></h2>
+<p>The details about the input-output interface of the MIB generation is provided below.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.PayloadGeneration.</span></span><span class="sig-name descname"><span class="pre">MIBGeneration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">carrierFreq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">choiceBit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subCarrierSpacing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmrsPosition</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cResourceSetZero</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">searchSpaceZero</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellBarred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intraFrequencyReselection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">systemFrameNumber</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssbSubCarrierOffset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hrfBit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssbIndex</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/toolkit5G/PayloadGeneration/MIB/mibGeneration.html#MIBGeneration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration" title="Permalink to this definition"></a></dt>
+<dd><p>Generates the PBCH payload. It generates 32 bit PBCH information consisting of 24 MIB + 7 additional timing bits and
+choice bit. The title is slightly misnomer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carrierFreq</strong> (<em>number</em>) – Defines the carrier frequency considered for simulation <span class="math notranslate nohighlight">\(\in [0.5, 52.6]\)</span> GHz.</p></li>
+<li><p><strong>choiceBit</strong> (<em>number</em>) – Defines the choice bit from MIB information <span class="math notranslate nohighlight">\(\in \{0, 1\}\)</span>.</p></li>
+<li><p><strong>subCarrierSpacingCommon</strong> (<em>number</em>) – Defines subCarrierSpacingCommon information for SSB which <span class="math notranslate nohighlight">\(\in \{15000, 30000\}\)</span> for frequency range-1
+(<code class="docutils literal notranslate"><span class="pre">carrierFreq</span></code> &lt; 6 GHz) and <span class="math notranslate nohighlight">\(\in \{120000, 240000\}\)</span> for frequency range-1 (6 GHz &lt;<code class="docutils literal notranslate"><span class="pre">carrierFreq</span></code>
+&lt; 52.6 GHz). Indicates the Subcarrier spacing for SIB1, Msg.2/4 for initial access and SI-messages.</p></li>
+<li><p><strong>DMRSTypeAPosition</strong> (<em>str</em>) – Defines dmrs-TypeA-Position information in MIB. It is used to indicate position of (first) DL DM-RS. <span class="math notranslate nohighlight">\(\in \{\text{&quot;pos2&quot;, &quot;pos3&quot;}\}\)</span></p></li>
+<li><p><strong>controlResourceSet0</strong> (<em>(N,), int</em>) – Defines common ControlResourceSet (CORESET). It is one of the most crucial information for UE to decode the SIB1.</p></li>
+<li><p><strong>searchSpace0</strong> (<em>(N,), int</em>) – Defines searchSpace0 in MIB. It is one of the most crucial information for UE to decode the SIB1.</p></li>
+<li><p><strong>cellBarred</strong> (<em>int</em>) – Defines cellBarred in MIB <span class="math notranslate nohighlight">\(\in \{0, 1\}\)</span>. This field indicates whether or not UEs in the cell are allowed to access the cell;
+‘barred’ indicates, the UEs are not allowed to access the cell.</p></li>
+<li><p><strong>intraFrequencyReselection</strong> (<em>int</em>) – Defines intraFrequencyReselection in MIB <span class="math notranslate nohighlight">\(\in \{0, 1\}\)</span>. This field controls cell selection/reselection
+to intra-frequency cells when the highest ranked cell is barred (as indicated by cellBarred) or treated as
+barred by the UE.</p></li>
+<li><p><strong>systemFrameNumber</strong> (<em>int</em>) – Defines system frame number <span class="math notranslate nohighlight">\(\in \{0, 1, \dots, 1023\}\)</span> requires 10 bits for representation. The 6 MSB
+bits of the 10-bit SFN are carried by MIB-IE from higher layers and the 4 LSB bits of the SFN are conveyed
+in the PBCH transport block as part of channel coding (i.e. outside the MIB encoding).</p></li>
+<li><p><strong>ssbSubCarrierOffset</strong> (<em>(N,), int</em>) – Defines <span class="math notranslate nohighlight">\(\text{k}_{SSB}\)</span> indicates the frequency domain offset between SSB and the overall resource block
+grid in number of subcarriers. For FR1, it takes 24 values <span class="math notranslate nohighlight">\(\in \{0, 1, \dots, 23\}\)</span> and for FR2 it takes
+12 values <span class="math notranslate nohighlight">\(\in \{0, 1, \dots, 11\}\)</span>. This field may indicate that this cell does not provide SIB1 and that there
+is hence no common CORESET. In this case, the field pdcch-ConfigSIB1 may indicate the frequency positions where
+the UE may (not) find a SS/PBCH with a control resource set and search space for SIB1</p></li>
+<li><p><strong>hrfBit</strong> (<em>int</em>) – Defines the half frame bit <span class="math notranslate nohighlight">\(\in \{0, 1\}\)</span>. This bit is cleared (set to 0) if SSB is broadcasted in the
+first half-frame or set to 1 otherwise. This information is combined with SSB index for frame synchronization.</p></li>
+<li><p><strong>ssbIndex</strong> (<em>(N,), int</em>) – Defines the index of the SSB within SSB burst set <span class="math notranslate nohighlight">\(\in \{0, 1, \dots, \text{L}_\text{max}-1\}\)</span>.</p></li>
+<li><p><strong>cellID</strong> (<em>int</em>) – Defines the cell-ID <span class="math notranslate nohighlight">\(\in \{0, 1, \dots, 1007\}\)</span>.</p></li>
+<li><p><strong>nssbCandidatesInHrf</strong> (<em>int</em>) – Defines the maximum number of candidate SSBs (<span class="math notranslate nohighlight">\(\text{L}_\text{max}\)</span>) within an SS burst set. The values
+of this parameter depends upon the carrier frequency.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">controlResourceSet0</span></code> and <code class="docutils literal notranslate"><span class="pre">searchSpace0</span></code> is the most important information the UE should know in order
+for it to monitor for scheduling (PDCCH) of SIB1.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The size of <code class="docutils literal notranslate"><span class="pre">controlResourceSet0</span></code>, <code class="docutils literal notranslate"><span class="pre">searchSpace0</span></code>, <code class="docutils literal notranslate"><span class="pre">ssbIndex</span></code> and <code class="docutils literal notranslate"><span class="pre">ssbSubCarrierOffset</span></code> must be consistent.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Input</dt>
+<dd class="field-odd"><p><strong>No input required.</strong></p>
+</dd>
+<dt class="field-even">Output</dt>
+<dd class="field-even"><p><em>[N, 32], np.complex64</em></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – [Error]: CORESET-0 should either be scalar or array with size 1 oo size matching with searchSpace0, ssbIndex and ssbSubCarrierOffset!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: searchSpace0 should either be scalar or array with size 1 oo size matching with CORESET-0, ssbIndex and ssbSubCarrierOffset!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ssbSubCarrierOffset should either be scalar or array with size 1 oo size matching with CORESET-0, searchSpace0 and ssbIndex!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ssbIndex should either be scalar or array with size 1 oo size matching with CORESET-0, searchSpace0 and ssbSubCarrierOffset!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: carrierFreq must be integer or Float type!</p></li>
+<li><p><strong>Exception</strong> – [Error]: Carrier frequency is not supported!n Carrier frequency must be within 0.5GHz to 52.6 GHz!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: Choice Bit must be integer or Float type or boolean!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: Choice Bit should take only 0 ot 1 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: controlResourceSet0 must be integer or int array!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: controlResourceSet0 should take only between 0 to 15 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: controlResourceSet0 should take only between 0 to 15 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: searchSpace0 must be integer!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: searchSpace0 should take only between 0 to 15 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: searchSpace0 should take only between 0 to 15 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: cellBarred flag must be String type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: cellBarred take either a value “”barred”” or “”notBarred””!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: intraFrequencyReselection flag must be String type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: intraFrequencyReselection take either a value “”allowed”” or “”notAllowed””!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: hrfBit must be integer or Float type or boolean!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: hrfBit should take only 0 ot 1 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: systemFrameNumber must be integer or Float type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: systemFrameNumber should take value between 0 and 1023!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ssbIndex must be integer or integer array!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ssbIndex should take only between 0 to “+str(self.nssbCandidatesInHrf)+”value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ssbIndex should take only between 0 to “+str(self.nssbCandidatesInHrf)+”value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: dmrsTypeAPosition must be string type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: dmrsTypeAPosition take either a value “”typeA”” or “”typeB””!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: subCarrierSpacingCommon must be integer or Float type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: subCarrierSpacingCommon must be 15kHz or 30kHz for Frequency range-1!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: subCarrierSpacingCommon must be 120kHz or 240kHz for Frequency range-2!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: Carrier frequency must be integer or Float type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: Carrier frequency must be in the range 0.5GHz to 100GHz!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: The number of SSBs must be integer or Float type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: The number of SSBs in a HF must be positive!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: For carrier frequency range-1 [&lt;3GHz], [3GHz-6GHz], [&gt;6GHz], the number of Beams must be less than 4, 8, 64 respectively!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: The ssbSubCarrierOffset must be integer or int array!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: The ssbSubCarrierOffset must be positive!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: For carrier frequency range-1, 2, the ssbSubCarrierOffset must be &lt;= to 22 and 11 respectively!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: The ssbSubCarrierOffset must be positive!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: For carrier frequency range-1, 2, the ssbSubCarrierOffset must be &lt;= to 22 and 11 respectively!</p></li>
+<li><p><strong>Exception</strong> – [Error]: Currently not supporting carrier frequencies above 52.6GHz</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.carrierFreq">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">carrierFreq</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.carrierFreq" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the carrier frequency considered for SSB transmission</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.cellBarred">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cellBarred</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.cellBarred" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the cellBarred parameter carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.choiceBit">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">choiceBit</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.choiceBit" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the choice bit carried by PBCH</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.controlResourceSet0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">controlResourceSet0</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.controlResourceSet0" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the control resource set-0 parameter carried by PBCH</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.displayParameters">
+<span class="sig-name descname"><span class="pre">displayParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/toolkit5G/PayloadGeneration/MIB/mibGeneration.html#MIBGeneration.displayParameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.displayParameters" title="Permalink to this definition"></a></dt>
+<dd><p>Displays all the MIB Parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Defines the index (if multiple MIBs are to be generated) of the MIB whose parameters are to be generated.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.dmrsTypeAPosition">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dmrsTypeAPosition</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.dmrsTypeAPosition" title="Permalink to this definition"></a></dt>
+<dd><p>Defines dmrsTypeAPosition parameter carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.hrfBit">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hrfBit</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.hrfBit" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the half frame bit parameter carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.intraFrequencyReselection">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">intraFrequencyReselection</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.intraFrequencyReselection" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the intraFrequencyReselection parameter  carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.nssbCandidatesInHrf">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nssbCandidatesInHrf</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.nssbCandidatesInHrf" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the maximum number of candidate SSBs ( <span class="math notranslate nohighlight">\(\text{L}_\text{max}\)</span> ) within an SS burst set</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.searchSpace0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">searchSpace0</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.searchSpace0" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the search space-0 parameter carried by PBCH</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.ssbIndex">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ssbIndex</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.ssbIndex" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the SSB Index value carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.ssbSubCarrierOffset">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ssbSubCarrierOffset</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.ssbSubCarrierOffset" title="Permalink to this definition"></a></dt>
+<dd><p>Defines <span class="math notranslate nohighlight">\(\text{k}_\text{SSB}\)</span> indicates the frequency domain offset between SSB and the overall resource
+block grid in number of subcarriers.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.subCarrierSpacingCommon">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">subCarrierSpacingCommon</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.subCarrierSpacingCommon" title="Permalink to this definition"></a></dt>
+<dd><p>Defines subCarrierSpacingCommon parameter carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBGeneration.systemFrameNumber">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">systemFrameNumber</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBGeneration.systemFrameNumber" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the system frame number carried by PBCH</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="mib-extraction">
+<h2>MIB Extraction<a class="headerlink" href="#mib-extraction" title="Permalink to this heading"></a></h2>
+<p>The details about the input-output interface of the MIB extraction is provided below.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.PayloadGeneration.</span></span><span class="sig-name descname"><span class="pre">MIBExtraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">carrierFreq</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/toolkit5G/PayloadGeneration/MIB/mibExtraction.html#MIBExtraction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction" title="Permalink to this definition"></a></dt>
+<dd><p>Extracts the PBCH parameters (MIB, additional bits and choice bit) from the PBCH payload. It extracts</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>carrierFreq</strong> (<em>number</em>) – Defines the carrier frequency considered for simulation <span class="math notranslate nohighlight">\(\in [0.5, 52.6]\)</span> GHz.</p></li>
+<li><p><strong>nssbCandidatesInHrf</strong> (<em>int</em>) – Defines the maximum number of candidate SSBs (<span class="math notranslate nohighlight">\(\text{L}_\text{max}\)</span>.) within an SS burst set depends
+upon the carrier frequency.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Input</dt>
+<dd class="field-even"><p><strong>payLoadSeq</strong> (<em>(N, 32) int</em>) – MIB payload sequences</p>
+</dd>
+<dt class="field-odd">Output</dt>
+<dd class="field-odd"><p><strong>None</strong></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – [Error]: CORESET-0 should either be scalar or array with size 1 oo size matching with searchSpace0, ssbIndex and ssbSubCarrierOffset!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: searchSpace0 should either be scalar or array with size 1 oo size matching with CORESET-0, ssbIndex and ssbSubCarrierOffset!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ssbSubCarrierOffset should either be scalar or array with size 1 oo size matching with CORESET-0, searchSpace0 and ssbIndex!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ssbIndex should either be scalar or array with size 1 oo size matching with CORESET-0, searchSpace0 and ssbSubCarrierOffset!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: carrierFreq must be integer or Float type!</p></li>
+<li><p><strong>Exception</strong> – [Error]: Carrier frequency is not supported!n Carrier frequency must be within 0.5GHz to 52.6 GHz!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: Choice Bit must be integer or Float type or boolean!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: Choice Bit should take only 0 ot 1 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: controlResourceSet0 must be integer or int array!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: controlResourceSet0 should take only between 0 to 15 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: controlResourceSet0 should take only between 0 to 15 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: searchSpace0 must be integer!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: searchSpace0 should take only between 0 to 15 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: searchSpace0 should take only between 0 to 15 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: cellBarred flag must be String type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: cellBarred take either a value “”barred”” or “”notBarred””!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: intraFrequencyReselection flag must be String type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: intraFrequencyReselection take either a value “”allowed”” or “”notAllowed””!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: hrfBit must be integer or Float type or boolean!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: hrfBit should take only 0 ot 1 value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: systemFrameNumber must be integer or Float type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: systemFrameNumber should take value between 0 and 1023!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ssbIndex must be integer or integer array!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ssbIndex should take only between 0 to “+str(self.nssbCandidatesInHrf)+”value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ssbIndex should take only between 0 to “+str(self.nssbCandidatesInHrf)+”value!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: dmrsTypeAPosition must be string type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: dmrsTypeAPosition take either a value “”typeA”” or “”typeB””!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: subCarrierSpacingCommon must be integer or Float type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: subCarrierSpacingCommon must be 15kHz or 30kHz for Frequency range-1!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: subCarrierSpacingCommon must be 120kHz or 240kHz for Frequency range-2!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: Carrier frequency must be integer or Float type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: Carrier frequency must be in the range 0.5GHz to 100GHz!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: The number of SSBs must be integer or Float type!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: The number of SSBs in a HF must be positive!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: For carrier frequency range-1 [&lt;3GHz], [3GHz-6GHz], [&gt;6GHz], the number of Beams must be less than 4, 8, 64 respectively!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: The ssbSubCarrierOffset must be integer or int array!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: The ssbSubCarrierOffset must be positive!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: For carrier frequency range-1, 2, the ssbSubCarrierOffset must be &lt;= to 22 and 11 respectively!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: The ssbSubCarrierOffset must be positive!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: For carrier frequency range-1, 2, the ssbSubCarrierOffset must be &lt;= to 22 and 11 respectively!</p></li>
+<li><p><strong>Exception</strong> – [Error]: Currently not supporting carrier frequencies above 52.6GHz</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.carrierFreq">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">carrierFreq</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.carrierFreq" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the carrier frequency considered for SSB transmission</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.cellBarred">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cellBarred</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.cellBarred" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the cellBarred parameter carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.choiceBit">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">choiceBit</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.choiceBit" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the choice bit carried by PBCH</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.controlResourceSet0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">controlResourceSet0</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.controlResourceSet0" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the control resource set-0 parameter carried by PBCH</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.displayParameters">
+<span class="sig-name descname"><span class="pre">displayParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/toolkit5G/PayloadGeneration/MIB/mibExtraction.html#MIBExtraction.displayParameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.displayParameters" title="Permalink to this definition"></a></dt>
+<dd><p>Displays all the MIB Parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Defines the index (if multiple MIBs are to be generated) of the MIB whose parameters are to be generated.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.dmrsTypeAPosition">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dmrsTypeAPosition</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.dmrsTypeAPosition" title="Permalink to this definition"></a></dt>
+<dd><p>Defines dmrsTypeAPosition parameter carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.hrfBit">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hrfBit</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.hrfBit" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the half frame bit parameter carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.intraFrequencyReselection">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">intraFrequencyReselection</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.intraFrequencyReselection" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the intraFrequencyReselection parameter  carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.nssbCandidatesInHrf">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nssbCandidatesInHrf</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.nssbCandidatesInHrf" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the maximum number of candidate SSBs ( <span class="math notranslate nohighlight">\(\text{L}_\text{max}\)</span> ) within an SS burst set</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.searchSpace0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">searchSpace0</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.searchSpace0" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the search space-0 parameter carried by PBCH</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.ssbIndex">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ssbIndex</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.ssbIndex" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the SSB Index value carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.ssbSubCarrierOffset">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ssbSubCarrierOffset</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.ssbSubCarrierOffset" title="Permalink to this definition"></a></dt>
+<dd><p>Defines <span class="math notranslate nohighlight">\(\text{k}_\text{SSB}\)</span> indicates the frequency domain offset between SSB and the overall resource
+block grid in number of subcarriers.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.subCarrierSpacingCommon">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">subCarrierSpacingCommon</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.subCarrierSpacingCommon" title="Permalink to this definition"></a></dt>
+<dd><p>Defines subCarrierSpacingCommon parameter carried by PBCH payload</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.PayloadGeneration.MIBExtraction.systemFrameNumber">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">systemFrameNumber</span></span><a class="headerlink" href="#toolkit5G.PayloadGeneration.MIBExtraction.systemFrameNumber" title="Permalink to this definition"></a></dt>
+<dd><p>Defines the system frame number carried by PBCH</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl>
+<dt>References:</dt><dd><dl class="citation">
+<dt class="label" id="gppts38211-mib"><span class="brackets">3GPPTS38211_MIB</span></dt>
+<dd><p>3GPP TS 38.211 “Physical channels and modulation (Release 17)”, V17.1.0 (2022-03).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../payloadGeneration.html" class="btn btn-neutral float-left" title="Payload Generation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../DCI/payloadGeneration.dci.html" class="btn btn-neutral float-right" title="Downlink Control Information (DCI)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2023, Gigayasa Wireless Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

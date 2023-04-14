@@ -1,0 +1,8 @@
+MUSIC based ToA Estimation
+======================================
+This module implements a method for estimating the delays using **MU**\ ltiple **SI**\ gnal **C**\ lassification (MUSIC)
+method.
+
+.. autoclass:: toolkit5G.Positioning.MUSIC_ToA
+   :members:
+   :exclude-members: call, build

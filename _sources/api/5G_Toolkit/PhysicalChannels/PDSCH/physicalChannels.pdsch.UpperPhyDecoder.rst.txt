@@ -1,0 +1,12 @@
+PDSCH: Upper Physical layer Chain Decoder
+#########################################
+This module implements the physical downlink shared channel.
+
+.. image:: ../../../figures/PhysicalChannels/PDSCHUpperPhyDecoder.png
+  :width: 800
+  :alt: Alternative text
+
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCHDecoderUpperPhy
+   :members:
+   :exclude-members: call, build
+

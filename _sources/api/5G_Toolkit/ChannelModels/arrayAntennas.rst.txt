@@ -1,0 +1,48 @@
+.. _Antenna-Elements:
+
+Antenna Elements
+================
+
+This module provides classes and the functions that implements antenna elements of an array. 
+The class :class:`Antenna_3GPP_38901` implements the 3GPP_38901 antenaa element specified in TR 38.901.
+Classes :class:`Antenna_HertzianDipole` and :class:`Antenna_LinearDipole` implement Hertzian, Linear Dipole antenna element respectively.
+
+
+
+.. _3GPP38901:
+
+3GPP_38_901 Antenna Element
+---------------------------
+ 
+.. autoclass:: toolkit5G.channelModels.antennaArrays.arrayAntennas.Antenna_3GPP_38901
+   :members:
+   :exclude-members: call, build
+
+
+
+.. _HertzianDipole: 
+
+Hertzian Dipole Antenna Element
+-------------------------------      
+   
+.. autoclass:: toolkit5G.channelModels.antennaArrays.arrayAntennas.Antenna_HertzianDipole
+   :members:
+   :exclude-members: call, build 
+   
+
+
+.. _LinearDipole:
+    
+Linear Dipole Antenna Element
+-----------------------------  
+ 
+.. autoclass:: toolkit5G.channelModels.antennaArrays.arrayAntennas.Antenna_LinearDipole
+   :members:
+   :exclude-members: call, build       
+
+
+
+.. note::
+   All the classes have the following attributes :attr:`fieldTheta`, :attr:`fieldPhi` from which the user can access the
+   antenna field vectors in zenith, azimuth directions respectively.
+  

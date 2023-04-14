@@ -1,0 +1,8 @@
+DFT based Method
+================
+This module implements a method for estimating the delays using Discrete Fourier Transform (DFT) method.
+
+
+.. autoclass:: toolkit5G.Positioning.DFT_ToA
+   :members:
+   :exclude-members: call, build

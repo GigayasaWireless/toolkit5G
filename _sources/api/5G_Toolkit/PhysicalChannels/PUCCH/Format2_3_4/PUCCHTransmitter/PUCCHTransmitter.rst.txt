@@ -1,0 +1,71 @@
+PUCCH Transmitter
+=================
+
+PUCCH: Upper Physical Layer Chain
+**********************************
+
+The procedures for upper physical layer processing for PUCCH Format 2,3,4 are similar
+
+This module implements the transmitter chain of upper physical layer processing involving the following algorithms as described in Section 6.3 of [3GPPTS38212_pucch]_ and Section 6.3.2 of [3GPPTS38211_pucch]_. The UCI Block to be processed is generated based on the payload size and number of user equipments.
+    
+        * Code block Segmentation and CRC Attachment of the UCI Block
+            
+            The code block segmentation divides the UCI Block into number of code blocks based on certain condition on number of information bits and number of target bits. And if, the UCI Block involves segmentation, the CRC bits are attached. 
+        
+        * Channel Coder 
+        
+            Each of the code blocks is then channel coded by either Polar coder or channel coding by small block lengths based on the payload size as specified by 3GPP.
+               
+        * Rate Matching 
+        
+            The channel coded code blocks are then rate matched as described in Section 6.3.1.4 of [3GPPTS38212_pucch]. 
+         
+        * Code block Concatenation
+        
+            The rate matched code blocks are then concatenated to match the number of target bits as described in Section 6.3.1.5 of [3GPPTS38212_pucch].
+            
+        * Scrambling
+        
+            The concatenated block is then scrambled based on the concept specified in Sections of 6.3.2.5.1 [3GPPTS38211_pucch_format2] and 6.3.2.6.1 of [3GPPTS38211_pucch_formats3and4]
+        
+        * Symbol Mapping
+        
+            The scrambled data is then modulated based on the modulation order as described in Sections 6.3.2.5.2 of [3GPPTS38211_pucch_format2] and 6.3.2.6.2 of [3GPPTS38211_pucch_formats3and4]
+            
+Some examples is given below for better unerstanding of the concepts.
+
+Example: UCI sequence block is not inputted and for format 4
+
+.. code-block:: python
+
+   formatPUCCH  = 'Format 4' # PUCCH Format
+   numBatches   = 5          # Number of User Equipments
+   numInfoBits  = 1654       # Payload size (Number of Information bits)
+   UCIBlock     = None       # UCI Sequence Block
+   modOrder     = 2          # Modulation Order
+   nID          = 545        # Data Scrambling Identity
+   rnti         = 45976      # Radio network Temporary Identifier
+   
+   pucchUpperPHY_Obj = PUCCHUpperPHY(formatPUCCH, numInfoBits, modOrder, nID, rnti, numBatches) # Object performing PUCCH Upper physical layer chain for format 2,3,4
+   pucchUpperPHY     = pucchUpperPHY_Obj() # Returns modulated symbols
+
+Example: UCI sequence block is inputted and for format 2
+
+.. code-block:: python
+
+   formatPUCCH  = 'Format 2' # PUCCH Format
+   numBatches   = 4          # Number of User Equipments
+   numInfoBits  = 40         # Payload size (Number of Information bits)
+   UCIBlock     = np.random.randint(2, size = (numBatches, numInfoBits)) # UCI Sequence Block
+   modOrder     = 2          # Modulation Order
+   nID          = 377        # Data Scrambling Identity
+   rnti         = 10779      # Radio network Temporary Identifier
+   
+   pucchUpperPHY_Obj = PUCCHUpperPHY(formatPUCCH, numInfoBits, modOrder, nID, rnti, numBatches) # Object performing PUCCH Upper physical layer chain for format 2,3,4
+   pucchUpperPHY     = pucchUpperPHY_Obj() # Returns modulated symbols
+
+.. autoclass:: toolkit5G.PhysicalChannels.PUCCHUpperPHY
+   :members:
+   :exclude-members: call, build
+
+    

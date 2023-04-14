@@ -1,0 +1,51 @@
+Cyclic Redundancy Check
+=======================
+The cyclic redundancy check is used for error detection in the payload bits. At the transmitter side, the ``CRCEncoder``
+is add the parity bits at the end of payload information. These parity bits are used by ``CRCDecoder`` at the receiver to
+detect errors in the received payload bits. These parity bits are computed using a generator polynomial whose order is equal
+to the number of parity bits. The 3GPP has standardized 6 generator polynomials for parity bits generation of certain length
+which are used by the different physical chains. The details about these polynomials are given below.
+
+.. list-table:: Table-2: Uplink Reference Signal and its utility
+   :widths: 5 5 50 10
+   :header-rows: 1
+
+   * - ``crcType``
+     - Length
+     - Generator Polynomial
+     - Usage
+   * - "CRC24A"
+     - 24
+     - :math:`g_{CRC24A}(D) = D^{24} + D^{23} + D^{18} + D^{17} + D^{14} + D^{11} + D^{10} + D^{7} + D^{6} + D^{5} + D^{4} + D^{3} + D + 1`
+     - PDSCH, PUSCH-TB
+   * - "CRC24B"
+     - 24
+     - :math:`g_{CRC24A}(D) = D^{24} + D^{23} + D^{6} + D^{5} + D + 1`
+     - PDSCH, PUSCH(shared)-CB
+   * - "CRC24C"
+     - 24
+     - :math:`g_{CRC24A}(D) = D^{24} + D^{23} + D^{21} + D^{20} + D^{17} + D^{15} + D^{13} + D^{12} + D^{8} + D^{4} + D^{2} + D + 1`
+     - PDCCH, PBCH
+   * - "CRC16"
+     - 16
+     - :math:`g_{CRC24A}(D) = D^{16} + D^{12} + D^{5} + 1`
+     - PDSCH, PUSCH-TB
+   * - "CRC11"
+     - 11
+     - :math:`g_{CRC24A}(D) = D^{11} + D^{10} + D^{9} + D^{5} + 1`
+     - PUCCH, PUSCH(control)-CB
+   * - "CRC6"
+     - 6
+     - :math:`g_{CRC24A}(D) = D^{6} + D^{5}  + 1`
+     - PUCCH, PUSCH(control)-CB
+
+The details about the implementation, usage and application interface is provided in following sections.
+
+**Table of Contents**
+
+.. toctree::
+    :maxdepth: 10
+
+    crc.crcEncoder
+    crc.crcDecoder
+

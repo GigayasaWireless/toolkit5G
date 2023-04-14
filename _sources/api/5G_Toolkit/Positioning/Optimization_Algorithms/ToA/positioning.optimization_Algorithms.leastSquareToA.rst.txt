@@ -1,0 +1,16 @@
+ToA Least Square Estimate
+=========================
+This module estimates the position of the target node using time of arrival (ToA) measurements based on the least square
+framework.
+
+An example to estimate the position based on the ToA measurement is given in following block.
+
+.. code-block::
+
+    toaEstimate = []
+
+The details of the input output interface to use this module is provided in following sub-section.
+
+.. autoclass:: toolkit5G.Positioning.LeastSquareToA
+   :members:
+   :exclude-members: call, build

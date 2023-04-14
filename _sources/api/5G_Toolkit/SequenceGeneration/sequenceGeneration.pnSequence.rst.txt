@@ -1,0 +1,36 @@
+Pseudo Random (PN) Sequence
+===========================
+The pseudo-random sequence is used for generating all the sequence used as reference signal in 5G. The 3GPP has defined
+a sequence generation method ofr 5G in section 5.2.1 of [3GPPTS38211_PN]_ which uses two 31 length initial Gold sequences.
+The first initialization sequence is fixed and second initialization sequence is generated using a seed (:math:`c_{init}`).
+This seed allows the base-station (BS) and user equipment (UE) to reproduce the PN sequence exactly.
+
+..  important::
+    * The seed (:math:`c_{init}`) value is computed using an equation standardized by 3GPP for each reference signal.
+
+**If** seed (:math:`c_{init}`) **is scalar:**
+
+.. code-block:: Python
+
+    c_init     = 25                  # seed value for generating the PN Sequence
+    seqLength  = 120                 # Length of the PN Sequence
+    pnObject   = PNSequence(c_init)  # Object for generating the PN sequence
+    pnSequence = pnObject(seqLength) # Generate [1x120] pn sequence using pnObject
+
+**If** seed (:math:`c_{init}`) **is NumPy Array:**
+
+.. code-block:: Python
+
+    c_init     = np.array([11,21359,2780]) # Cell ID-2 for SSS generation
+    seqLength  = 161                       # Length of the PN Sequence
+    pnObject   = PNSequence(c_init)        # Object for generating the PN sequence
+    pnSequence = pnObject(seqLength)       # Generate [3x161] pss sequence using pnObject
+
+The details about the input-output interface of the SSS implementation is provided below.
+
+.. autoclass:: toolkit5G.SequenceGeneration.PNSequence
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_PN] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

@@ -1,0 +1,18 @@
+Sub Block Interleaver for Polar Coder
+=====================================
+Forward error correction is used in 5G for correction of bits in error. 5G supports primarily three channel coders:
+
+
+The details about the input-output interface of the Mapper modules is provided below.
+
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving
+    :members:
+    :exclude-members: build
+
+
+
+The details about the input-output interface of the Mapper modules is provided below.
+
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving
+    :members:
+    :exclude-members: build

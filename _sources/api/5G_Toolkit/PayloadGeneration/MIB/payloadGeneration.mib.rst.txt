@@ -1,0 +1,78 @@
+Master Information Block (MIB)
+================================
+Its a 32 bit payload transmitted using PBCH channel. The payload carries information related to following parameters.
+
+
+..  important::
+    * MIB Module generates the complete payload consisting of 24 bit MIB payload 7 additional timing bits and 1 choice bit.
+
+
+.. list-table:: Table-1: Content of PBCH Payload/MIB
+   :widths: 25 50 25 25
+   :header-rows: 1
+
+   * - Payload
+     - Information
+     - Size
+     - Dependent Variable
+   * - choiceBit
+     - choiceBit
+     - 1
+     - NA
+   * - MIB
+     - subCarrierSpacingCommon
+     - 1
+     - Carrier frequency
+   * - MIB
+     - DMRSTypeAPosition
+     - 1
+     - NA
+   * - MIB
+     - controlResourceSet0
+     - 4
+     - NA
+   * - MIB
+     - searchSpace0
+     - 4
+     - NA
+   * - MIB
+     - cellBarred
+     - 1
+     - NA
+   * - MIB
+     - intraFrequencyReselection
+     - 1
+     - NA
+   * - MIB
+     - ssbSubCarrierOffset
+     - 4-5
+     - Carrier frequency
+   * - MIB
+     - ssbIndex
+     - 0-3
+     - ``nssbCandidatesInHrf``
+   * - MIB/ATI
+     - systemFrameNumber
+     - 4+6
+     - NA
+
+
+MIB Generation
+**************
+The details about the input-output interface of the MIB generation is provided below.
+
+.. autoclass:: toolkit5G.PayloadGeneration.MIBGeneration
+    :members:
+    :exclude-members: call, build
+    
+MIB Extraction
+**************
+The details about the input-output interface of the MIB extraction is provided below.
+
+.. autoclass:: toolkit5G.PayloadGeneration.MIBExtraction
+    :members:
+    :exclude-members: call, build, bin_array
+
+
+References:
+    .. [3GPPTS38211_MIB] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

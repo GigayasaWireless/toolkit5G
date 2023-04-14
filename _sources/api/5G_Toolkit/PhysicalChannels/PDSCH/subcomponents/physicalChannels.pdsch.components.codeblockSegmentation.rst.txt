@@ -1,0 +1,49 @@
+Code Block Segmentation
+***********************
+Codeblock segmentation allows the physical layer to process large transport blocks to make the best use of the capabilities
+of the encoder and decoders. To make the best use of the structure of the LDPC codes the inputs shall be passed in a certain
+format with the bound on the upper limit of the inputs that LDPC codec can process. In case transport block sizes exceed
+the upper limit, it is broken into multiple smaller sub-blocks called codeblocks which are individually processed by LDPC
+encoder/decoder and ratemater/dematcher at transmitter and receiver respectively. The implementations are discussed in details
+in upcoming sub-sections.
+
+
+Codeblock Segmentation: Transmitter
+------------------------------------
+The codeblock segmentation breaks the large transport block into small codeblock which are processed individually a defined
+in Section 5.3.2 of [3GPPTS38212_LDPC]_. The example demonstrate a way to use the ``CodeBlockSegmentation`` module.
+
+.. code-block:: python
+
+   coderate = 0.650390625 #Code Rate
+   #crcTBlock ---> Transport Block with CRC bits attached
+
+   cbSegment   = CodeBlockSegmentation(coderate) # Object for processing the code blocks
+   codeblocks  = cbSegment(crcTBlock) # Attach the segment the TB and attach the CRC to TB based on 38.212
+
+
+The API for codeblock segmentation is as follows.
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPC.CodeBlockSegmentation
+    :members:
+    :exclude-members: call, build
+
+Code Block Aggregation: Receiver
+--------------------------------
+It performs opposite of code-block segmentation at the receiver to reconstruct the transport block to pass it for
+transport block processing at receiver before forwarding to MAC layer. Example is understand the usage is shown below.
+
+.. code-block:: python
+
+   coderate = 0.650390625 #Code Rate
+   #tbLen ---> Transport Block size
+   #decBits ---> LDPC Decoded Block
+
+   cbAggregate = CodeBlockAggregation(coderate, tbLen) #Object that performs Code Block Aggregation
+   rTBwithCRC  = cbAggregate(decBits) #Output after Code Block Aggregation
+
+The details of the API of **codeblock aggregation** is shown below:
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPC.CodeBlockAggregation
+    :members:
+    :exclude-members: call, build

@@ -1,0 +1,54 @@
+Channel State Information Reference Sequence (CSI-RS)
+=====================================================
+The channel state information reference signal (CSI-RS) is used in 5G-NR systems to estimate the channel state information
+in downlink (DL). The reference signal is generated using the scrambling ID (``scramblingID``), slot-index (``slotNumber``)
+and, OFDM symbol index (``ofdmSymbolNumber``).
+
+..  important::
+    * The seed (:math:`c_{init}`) value is computed using scramblingID, slotNumber and ofdmSymbolNumber.
+
+
+**If** ``slotNumber`` **and** ``symbolNumber`` **are scalar:**
+
+.. code-block:: Python
+
+    scramblingID     = 198  # scrambling ID
+    slotNumber       = 5    # slot Index where CSIRS is loaded
+    ofdmSymbolNumber = 4    # ofdm symbol Index
+    csirsLength      = 600  # CSIRS length per ofdm symbol Index
+
+    csirsObject      = CSIRS(scramblingID, slotNumber, ofdmSymbolNumber)
+    csirsSequence    = csirsObject(csirsLength)
+
+**If** ``slotNumber`` **is scalar and** ``symbolNumber`` **is NumPy Array:**
+
+.. code-block:: Python
+
+    scramblingID     = 1075                  # DL CSIRS ID
+    slotNumber       = 5                     # slot Index where CSIRS is loaded
+    ofdmSymbolNumber = np.array([2,3,4,5,6]) # ofdm symbol Index
+    csirsLength      = 600                   # CSIRS length per ofdm symbol Index
+
+    csirsObject      = CSIRS(scramblingID, slotNumber, ofdmSymbolNumber)
+    csirsSequence    = csirsObject(csirsLength)
+
+**If** ``slotNumber`` **and** ``symbolNumber`` **are NumPy Array:**
+
+.. code-block:: Python
+
+    scramblingID     = 187                   # DL CSIRS ID
+    slotNumber       = np.array([0,0,1,1])   # slot Index where CSIRS is loaded
+    ofdmSymbolNumber = np.array([2,3,4,5]) # ofdm symbol Index
+    csirsLength      = 864                   # CSIRS length per ofdm symbol Index
+
+    csirsObject      = CSIRS(scramblingID, slotNumber, ofdmSymbolNumber)
+    csirsSequence    = csirsObject(csirsLength)
+
+The details about the input-output interface of the SSS implementation is provided below.
+
+.. autoclass:: toolkit5G.SequenceGeneration.CSIRS
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_CSIRS] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

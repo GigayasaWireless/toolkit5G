@@ -1,0 +1,2 @@
+.. include::  ../../../Ratematcher/LDPC/ratematcher.ldpc.rst
+.. include::  ../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.rst

@@ -1,0 +1,16 @@
+PDSCH: Lower Physical layer Chain Decoder
+=========================================
+This module implements receiver side of PDSCH lower physical downlink shared channel. It consists of channel estimation,
+symbol equalization, layer demapping, symbol demapping and descrambling.
+
+.. image:: ../../../figures/PhysicalChannels/PDSCHLowerPhyDecoder.svg
+  :width: 800
+  :alt: Alternative text
+
+The details of the input-output interface for lower physical layer decoder is provided below.
+
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCHDecoderLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
