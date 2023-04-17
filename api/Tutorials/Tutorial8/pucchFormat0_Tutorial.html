@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BER Performance of PUCCH Format 0 &mdash; 5G Toolkit R23a documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -12,14 +13,15 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -35,15 +37,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../index.html" class="icon icon-home"> 5G Toolkit
-            <img src="../../../_static/logo28.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            5G Toolkit
+              <img src="../../../_static/logo28.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                R23a.1
+                R23a.0.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -51,27 +57,94 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About Us</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../about.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../about.html#install-5g-toolkit">Install 5G Toolkit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../about.html#dependent-libraries">Dependent Libraries:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../about.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../about.html#license-bwsim">License BWSim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install 5G Toolkit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#id1">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#dependent-libraries">Dependent Libraries:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#license-bwsim">License BWSim</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.html">Sequence Generation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.pss.html">Primary Synchronization Signal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.sss.html">Secondary Synchronization Signal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.dmrs.html">Demodulation Reference Sequence (DMRS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.prs.html">Positioning Reference Sequence (PRS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.csirs.html">Channel State Information Reference Sequence (CSI-RS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.pnSequence.html">Pseudo Random (PN) Sequence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html">PUCCH Format 0 Sequence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html">PUCCH Format 1 Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.pss.html">Primary Synchronization Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.pss.html#toolkit5G.SequenceGeneration.PSS"><code class="docutils literal notranslate"><span class="pre">PSS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.sss.html">Secondary Synchronization Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.sss.html#toolkit5G.SequenceGeneration.SSS"><code class="docutils literal notranslate"><span class="pre">SSS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.dmrs.html">Demodulation Reference Sequence (DMRS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.dmrs.html#toolkit5G.SequenceGeneration.DMRS"><code class="docutils literal notranslate"><span class="pre">DMRS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.prs.html">Positioning Reference Sequence (PRS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.prs.html#toolkit5G.SequenceGeneration.PRS"><code class="docutils literal notranslate"><span class="pre">PRS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.csirs.html">Channel State Information Reference Sequence (CSI-RS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.csirs.html#toolkit5G.SequenceGeneration.CSIRS"><code class="docutils literal notranslate"><span class="pre">CSIRS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.pnSequence.html">Pseudo Random (PN) Sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.pnSequence.html#toolkit5G.SequenceGeneration.PNSequence"><code class="docutils literal notranslate"><span class="pre">PNSequence</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html">PUCCH Format 0 Sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.controlInfo"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.controlInfo</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.indexPUCCH"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.indexPUCCH</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.initial_CyclicShift"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.initial_CyclicShift</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.m_CS"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.m_CS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.nID"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numBatches"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numBatches</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numInterlacedRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numInterlacedRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numberOfSymb"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numberOfSymb</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.pucch_GroupHopping"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.pucch_GroupHopping</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.seqNumber"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.seqNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.slotNumber"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.slotNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.start_SymbIndex"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.start_SymbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html">PUCCH Format 1 Sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.indexPUCCH"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.indexPUCCH</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.initial_CyclicShift"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.initial_CyclicShift</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.m_CS"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.m_CS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.maxNumPRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.maxNumPRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.nHop"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.nHop</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.nID"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.numInterlacedRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.numInterlacedRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.numRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.numRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.numberOfSymb"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.numberOfSymb</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.pucch_GroupHopping"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.pucch_GroupHopping</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.slotNumber"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.slotNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.start_SymbIndex"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.start_SymbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html">Low PAPR Sequence Type 1</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#cyclic-shift-hopping">Cyclic Shift Hopping</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#group-and-sequence-hopping">Group And Sequence Hopping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.cyclicShift"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.cyclicShift</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.delta"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.delta</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.groupNumber"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.groupNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.m"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.m</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.seqNumber"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.seqNumber</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#cyclic-shift-hopping">Cyclic Shift Hopping</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.CyclicShiftHopping"><code class="docutils literal notranslate"><span class="pre">CyclicShiftHopping</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#group-and-sequence-hopping">Group And Sequence Hopping</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.GroupNumber"><code class="docutils literal notranslate"><span class="pre">GroupNumber</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -95,13 +168,49 @@
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format4.html">PUCCH Format-4</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssb.html">Synchronization Signal Block (SSB) Grid Generation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssbGeneration.html">Synchronization Signal Block (SSB) Resource Mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.dmrsPDSCH.html">Physical Downlink Shared Channel-DMRS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ptrsPDSCH.html">Physical Downlink Shared Channel-PTRS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.csirs.html">Channel state Information reference signal (CSI-RS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.pdcch.html">Physical Control Channel (PDCCH)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.prs.html">Positioning Reference Signal (PRS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssb.html">Synchronization Signal Block (SSB) Grid Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSB_Grid</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.displayGrid"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.displayGrid()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.dmrsIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.dmrsIndices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.pbchIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.pbchIndices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.pssIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.pssIndices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.sssIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.sssIndices</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssbGeneration.html">Synchronization Signal Block (SSB) Resource Mapping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ssbGeneration.html#toolkit5G.ResourceMapping.ResourceMapperSSB"><code class="docutils literal notranslate"><span class="pre">ResourceMapperSSB</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.dmrsPDSCH.html">Physical Downlink Shared Channel-DMRS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.dmrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperDMRSPDSCH"><code class="docutils literal notranslate"><span class="pre">ResourceMapperDMRSPDSCH</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.dmrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperDMRSPDSCH.displayCDMPattern"><code class="docutils literal notranslate"><span class="pre">ResourceMapperDMRSPDSCH.displayCDMPattern()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.dmrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperDMRSPDSCH.displayResourceGrid"><code class="docutils literal notranslate"><span class="pre">ResourceMapperDMRSPDSCH.displayResourceGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ptrsPDSCH.html">Physical Downlink Shared Channel-PTRS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.ptrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperPTRSPDSCH"><code class="docutils literal notranslate"><span class="pre">ResourceMapperPTRSPDSCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.csirs.html">Channel state Information reference signal (CSI-RS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.csirs.html#toolkit5G.ResourceMapping.ResourceMapperCSIRS"><code class="docutils literal notranslate"><span class="pre">ResourceMapperCSIRS</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.csirs.html#toolkit5G.ResourceMapping.ResourceMapperCSIRS.displayCDMPattern"><code class="docutils literal notranslate"><span class="pre">ResourceMapperCSIRS.displayCDMPattern()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.csirs.html#toolkit5G.ResourceMapping.ResourceMapperCSIRS.displayResourceGrid"><code class="docutils literal notranslate"><span class="pre">ResourceMapperCSIRS.displayResourceGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.pdcch.html">Physical Control Channel (PDCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.pdcch.html#toolkit5G.ResourceMapping.ResourceMappingPDCCH"><code class="docutils literal notranslate"><span class="pre">ResourceMappingPDCCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.prs.html">Positioning Reference Signal (PRS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ResourceMapping/resourceMapping.prs.html#toolkit5G.ResourceMapping.ResourceMapperPRS"><code class="docutils literal notranslate"><span class="pre">ResourceMapperPRS</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.html">Physical Channels</a><ul>
@@ -132,8 +241,14 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html">Physical Downlink Control Channel (PDCCH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-transmitter">PDCCH Transmitter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-receiver">PDCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-transmitter">PDCCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#toolkit5G.PhysicalChannels.PDCCH"><code class="docutils literal notranslate"><span class="pre">PDCCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-receiver">PDCCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#toolkit5G.PhysicalChannels.PDCCHDecoder"><code class="docutils literal notranslate"><span class="pre">PDCCHDecoder</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-components">PDCCH Components</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.rnti.html">RNTI Masking</a></li>
@@ -147,8 +262,14 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html">Physical Broadcast Channel (PBCH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-transmitter">PBCH Transmitter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-receiver">PBCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-transmitter">PBCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#toolkit5G.PhysicalChannels.PBCH"><code class="docutils literal notranslate"><span class="pre">PBCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-receiver">PBCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#toolkit5G.PhysicalChannels.PBCHDecoder"><code class="docutils literal notranslate"><span class="pre">PBCHDecoder</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-components">PBCH Components</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
@@ -173,7 +294,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.prach.html">Physical Random Access Channel (PRACH)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-transmitter">PSCCH Transmitter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-receiver">PSCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-receiver">PSCCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhyDecoder.PscchUpperPhyDecoder"><code class="docutils literal notranslate"><span class="pre">PscchUpperPhyDecoder</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#crc-attachment">CRC Attachment</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#rnti-masking">RNTI Masking</a></li>
@@ -191,17 +315,52 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/payloadGeneration.html">Payload Generation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html">Master Information Block (MIB)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#mib-generation">MIB Generation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#mib-extraction">MIB Extraction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#mib-generation">MIB Generation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#toolkit5G.PayloadGeneration.MIBGeneration"><code class="docutils literal notranslate"><span class="pre">MIBGeneration</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/DCI/payloadGeneration.dci.html">Downlink Control Information (DCI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#mib-extraction">MIB Extraction</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#toolkit5G.PayloadGeneration.MIBExtraction"><code class="docutils literal notranslate"><span class="pre">MIBExtraction</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/DCI/payloadGeneration.dci.html">Downlink Control Information (DCI)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/DCI/payloadGeneration.dci.html#toolkit5G.PayloadGeneration.DCIGeneration"><code class="docutils literal notranslate"><span class="pre">DCIGeneration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/PayloadGeneration/DCI/payloadGeneration.dci.html#toolkit5G.PayloadGeneration.DCIExtraction"><code class="docutils literal notranslate"><span class="pre">DCIExtraction</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/channelCoder.html">Forward Error Correction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html">Hamming Coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#id1">Hamming coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingEncoder.HammingEncoder"><code class="docutils literal notranslate"><span class="pre">HammingEncoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#hamming-decoder">Hamming Decoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingDecoder"><code class="docutils literal notranslate"><span class="pre">HammingDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#hamming-decoder-sphere-decoding">Hamming Decoder - Sphere Decoding</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingSphereDecoder"><code class="docutils literal notranslate"><span class="pre">HammingSphereDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#hamming-decoder-syndrome-based-decoding">Hamming Decoder - Syndrome Based Decoding</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingSyndromeDecoder"><code class="docutils literal notranslate"><span class="pre">HammingSyndromeDecoder</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html">Low Density Parity Check Codes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-encoder">LDPC Encoder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-decoder">LDPC Decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-encoder">LDPC Encoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#toolkit5G.ChannelCoder.LDPCEncoder5G"><code class="docutils literal notranslate"><span class="pre">LDPCEncoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-decoder">LDPC Decoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#toolkit5G.ChannelCoder.LDPCDecoder5G"><code class="docutils literal notranslate"><span class="pre">LDPCDecoder5G</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-codec-subcomponents">LDPC Codec Subcomponents</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.ldpcParameters.html">LDPC Parameters Computation</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingTransmitter.html">Codeblock Processing: Transmitter</a></li>
@@ -211,8 +370,14 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html">Polar Codes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-encoder">Polar Encoder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-decoder">Polar Decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-encoder">Polar Encoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#toolkit5G.ChannelCoder.PolarEncoder5G"><code class="docutils literal notranslate"><span class="pre">PolarEncoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-decoder">Polar Decoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#toolkit5G.ChannelCoder.PolarDecoder5G"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-codec-components">Polar Codec Components</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.components.html">Code-block Processing: Transmitter</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.components.html#code-block-processing-receiver">Code-block Processing: Receiver</a></li>
@@ -222,14 +387,33 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html">Reed Muller Codes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-encoder-5g">Reed Muller Encoder 5G</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-decoder-5g">Reed Muller Decoder 5G</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-encoder-5g">Reed Muller Encoder 5G</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#toolkit5G.ChannelCoder.ReedMullerEncoder5G"><code class="docutils literal notranslate"><span class="pre">ReedMullerEncoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-decoder-5g">Reed Muller Decoder 5G</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#toolkit5G.ChannelCoder.ReedMullerDecoder5G"><code class="docutils literal notranslate"><span class="pre">ReedMullerDecoder5G</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/ratematcher.html">Rate matching</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html">Rate matching for LDPC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters"><code class="docutils literal notranslate"><span class="pre">RatematchParameters</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.baseGraph"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.baseGraph</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.enableLBRM"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.enableLBRM</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.k0"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.k0</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.liftingFactor"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.liftingFactor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.modOrder"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.modOrder</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.numCodeBlocks"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.numCodeBlocks</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.numCodedBits"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.numCodedBits</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.numLayers"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.numLayers</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.rvID"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.rvID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.tbSize"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.tbSize</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
@@ -243,64 +427,152 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/ratematcher.polarcoder.html">Rate matching for Polar coder</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaving</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaving</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html">Bit Selection for Polar Coder</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-selection">Bit Selection</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.html">Interleavers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html">PBCH Interleaver</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#id1">PBCH Interleaver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#pbch-deinterleaver">PBCH DeInterleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#id1">PBCH Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#toolkit5G.PhysicalChannels.PBCH.PBCHInterleaver"><code class="docutils literal notranslate"><span class="pre">PBCHInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#pbch-deinterleaver">PBCH DeInterleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#toolkit5G.PhysicalChannels.PBCH.PBCHDeInterleaver"><code class="docutils literal notranslate"><span class="pre">PBCHDeInterleaver</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html">Input Bit Interleaver</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#id1">Input Bit Interleaver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#input-bit-deinterleaver">Input Bit DeInterleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#id1">Input Bit Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.InputBitInterleaver"><code class="docutils literal notranslate"><span class="pre">InputBitInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#input-bit-deinterleaver">Input Bit DeInterleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.InputBitDeInterleaver"><code class="docutils literal notranslate"><span class="pre">InputBitDeInterleaver</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html">Sub Block Interleaver</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#id1">Sub Block Interleaver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#id4">Sub Block Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#id1">Sub Block Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaving</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#id4">Sub Block Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaving</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html">Channel Interleaver</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#id1">Channel Interleaver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#id1">Channel Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html">Bit Interleavers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#bit-deinterleaver">Bit Deinterleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#toolkit5G.Ratematcher.LDPC.BitInterleaver"><code class="docutils literal notranslate"><span class="pre">BitInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#bit-deinterleaver">Bit Deinterleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#toolkit5G.Ratematcher.LDPC.BitDeinterleaver"><code class="docutils literal notranslate"><span class="pre">BitDeinterleaver</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/OFDM/ofdm.html">Orthogonal Frequency Division Multiplexing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/OFDM/ofdm.html#ofdm-modulator">OFDM: Modulator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/OFDM/ofdm.html#ofdm-demodulator">OFDM: Demodulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/OFDM/ofdm.html#ofdm-modulator">OFDM: Modulator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/OFDM/ofdm.html#toolkit5G.OFDM.OFDMModulator"><code class="docutils literal notranslate"><span class="pre">OFDMModulator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/OFDM/ofdm.html#ofdm-demodulator">OFDM: Demodulator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/OFDM/ofdm.html#toolkit5G.OFDM.OFDMDemodulator"><code class="docutils literal notranslate"><span class="pre">OFDMDemodulator</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/ChannelProcessing/channelProcessing.html">Channel Processing and Hardware Impairment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ChannelProcessing/channelProcessing.applyChannel.html">Apply Channel to Transmitted Signal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ChannelProcessing/channelProcessing.addNoise.html">Add Noise and CFO at Receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ChannelProcessing/channelProcessing.applyChannel.html">Apply Channel to Transmitted Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelProcessing/channelProcessing.applyChannel.html#toolkit5G.ChannelProcessing.ApplyChannel"><code class="docutils literal notranslate"><span class="pre">ApplyChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/ChannelProcessing/channelProcessing.addNoise.html">Add Noise and CFO at Receiver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelProcessing/channelProcessing.addNoise.html#toolkit5G.ChannelProcessing.AddNoise"><code class="docutils literal notranslate"><span class="pre">AddNoise</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/SymbolMapping/symbolMapping.html">Symbol Mapping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SymbolMapping/symbolMapping.mapper.html">Mapper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SymbolMapping/symbolMapping.demapper.html">Demapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SymbolMapping/symbolMapping.mapper.html">Mapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SymbolMapping/symbolMapping.mapper.html#toolkit5G.SymbolMapping.Mapper"><code class="docutils literal notranslate"><span class="pre">Mapper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/SymbolMapping/symbolMapping.demapper.html">Demapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/SymbolMapping/symbolMapping.demapper.html#toolkit5G.SymbolMapping.Demapper"><code class="docutils literal notranslate"><span class="pre">Demapper</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.html">Scrambling</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html">Scrambler</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html">Descrambler</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.rntiMasking.html">RNTI Masking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html">Scrambler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler"><code class="docutils literal notranslate"><span class="pre">Scrambler</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.Lmax"><code class="docutils literal notranslate"><span class="pre">Scrambler.Lmax</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.c_init"><code class="docutils literal notranslate"><span class="pre">Scrambler.c_init</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.id"><code class="docutils literal notranslate"><span class="pre">Scrambler.id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.nID"><code class="docutils literal notranslate"><span class="pre">Scrambler.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.purpose"><code class="docutils literal notranslate"><span class="pre">Scrambler.purpose</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.q"><code class="docutils literal notranslate"><span class="pre">Scrambler.q</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.rnti"><code class="docutils literal notranslate"><span class="pre">Scrambler.rnti</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.ssbIndex"><code class="docutils literal notranslate"><span class="pre">Scrambler.ssbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html">Descrambler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler"><code class="docutils literal notranslate"><span class="pre">DeScrambler</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.Lmax"><code class="docutils literal notranslate"><span class="pre">DeScrambler.Lmax</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.c_init"><code class="docutils literal notranslate"><span class="pre">DeScrambler.c_init</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.id"><code class="docutils literal notranslate"><span class="pre">DeScrambler.id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.nID"><code class="docutils literal notranslate"><span class="pre">DeScrambler.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.purpose"><code class="docutils literal notranslate"><span class="pre">DeScrambler.purpose</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.q"><code class="docutils literal notranslate"><span class="pre">DeScrambler.q</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.rnti"><code class="docutils literal notranslate"><span class="pre">DeScrambler.rnti</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.ssbIndex"><code class="docutils literal notranslate"><span class="pre">DeScrambler.ssbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.rntiMasking.html">RNTI Masking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.rntiMasking.html#toolkit5G.Scrambler.RNTImasking"><code class="docutils literal notranslate"><span class="pre">RNTImasking</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Scrambler/scrambler.rntiMasking.html#toolkit5G.Scrambler.RNTImasking.rnti"><code class="docutils literal notranslate"><span class="pre">RNTImasking.rnti</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/channelModels.html">Channel Models</a><ul>
@@ -334,14 +606,24 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.html">Cyclic Redundancy Check</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.crcEncoder.html">CRC Encoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.crcDecoder.html">CRC Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.crcEncoder.html">CRC Encoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.crcEncoder.html#toolkit5G.CRC.CRCEncoder"><code class="docutils literal notranslate"><span class="pre">CRCEncoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.crcDecoder.html">CRC Decoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.crcDecoder.html#toolkit5G.CRC.CRCDecoder"><code class="docutils literal notranslate"><span class="pre">CRCDecoder</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/Positioning/positioning.html">Position Estimation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Positioning/positioning.html#id1">Position Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Positioning/positioning.html#id1">Position Estimation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Positioning/positioning.html#toolkit5G.Positioning.Position_Estimation"><code class="docutils literal notranslate"><span class="pre">Position_Estimation</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/Positioning/positioning.html#submodules">Submodules</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/Positioning/Time_Estimation/positioning.toaEstimation.html">Time of Arrival (ToA)/Delay Estimation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Positioning/Time_Estimation/positioning.toaEstimation.html#toolkit5G.Positioning.ToAEstimation"><code class="docutils literal notranslate"><span class="pre">ToAEstimation</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Positioning/Time_Estimation/methods/positioning.toaEstimation.dftToA.html">DFT based Method</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Positioning/Time_Estimation/methods/positioning.toaEstimation.espritToA.html">ESPRIT based ToA Estimation</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/Positioning/Time_Estimation/methods/positioning.toaEstimation.musicToA.html">MUSIC based ToA Estimation</a></li>
@@ -361,47 +643,49 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Tutorials.html">Tutorials</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html">Reed Muller Codes in 5G</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#table-of-content">Table of content:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#import-libraries">Import Libraries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#python-libraries">Python Libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#g-toolkit-libraries">5G Toolkit Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#Table-of-content:">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#mapper-and-demapper-parameters">Mapper and Demapper Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#simulation-parameters">Simulation Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#simulation">Simulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#performance-evaluation">Performance Evaluation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#performance-plot">Performance Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#Mapper-and-Demapper-Parameters">Mapper and Demapper Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#Simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#Performance-Evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial2/Tutorial2_ReedMullerCodes.html#Performance-Plot">Performance Plot</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html">Polar Codes in 5G</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#table-of-content">Table of content:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#import-libraries">Import libraries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#python-libraries">Python Libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#g-toolkit-libraries">5G Toolkit libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#Table-of-content:">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#Import-libraries">Import libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#5G-Toolkit-libraries">5G Toolkit libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#symbol-mapping-configurations">Symbol Mapping Configurations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#polar-coder-configurations">Polar Coder Configurations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#simulation-awgn-channel">Simulation: AWGN Channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#performance-evaluations">Performance Evaluations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#Symbol-Mapping-Configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#Polar-Coder-Configurations">Polar Coder Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#Simulation:-AWGN-Channel">Simulation: AWGN Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial3/Tutorial3_PolarCodes.html#Performance-Evaluations">Performance Evaluations</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html">Low Density Parity Check (LDPC) Codes in 5G</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#import-libraries">Import Libraries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#python-libraries">Python LIbraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#g-toolkit-libraries">5G Toolkit Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#Python-LIbraries">Python LIbraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#symbol-mapping-configurations">Symbol Mapping Configurations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#simulation-awgn-channel">Simulation: AWGN Channel</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#ldpc-parameters">LDPC Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#simulation-procedure">Simulation Procedure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#Symbol-Mapping-Configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#Simulation:-Variation-in-Reliability-with-code-rate-for-fixed-block-length">Simulation: <em>Variation in Reliability with code-rate for fixed block-length</em></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#LDPC-Parameters">LDPC Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#Simulation-Procedure">Simulation Procedure</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#performance-evaluation">Performance Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#Performance-Evaluation:-BER-vs-SNR-for-different-code-rates">Performance Evaluation: BER vs SNR for different code-rates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#Simulation:-Variation-in-Reliability-with-block-length-for-fixed-coderate">Simulation: <em>Variation in Reliability with block-length for fixed coderate</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial4/Tutorial4_LDPCCodes.html#Performance-Evaluation:-BER-vs-SNR-for-different-block-lengths">Performance Evaluation: BER vs SNR for different block lengths</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial5/SSB_End2End.html">Initial Access in 5G</a><ul>
@@ -570,9 +854,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../Tutorials.html">Tutorials</a> &raquo;</li>
-      <li>BER Performance of PUCCH Format 0</li>
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Tutorials.html">Tutorials</a></li>
+      <li class="breadcrumb-item active">BER Performance of PUCCH Format 0</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -581,31 +865,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<div class="section" id="ber-performance-of-pucch-format-0">
+  <section id="ber-performance-of-pucch-format-0">
 <h1>BER Performance of PUCCH Format 0<a class="headerlink" href="#ber-performance-of-pucch-format-0" title="Permalink to this heading"></a></h1>
 <p>PUCCH Format 0 in 5G is used to transfer 1 or 2 HARQ acknowledgements
 and/or a Scheduling Request (SR). It occupies 1 Resource Block in the
@@ -614,7 +874,7 @@ codes are - locally testable, - locally decodable</p>
 <p>In this tutorial, we will analyze the bit error rate performance of
 PUCCH Format 0 for different link conditions characterized by signal to
 noise ratio(SNR). The content of the tutorial is as follows:</p>
-<div class="section" id="table-of-contents">
+<section id="table-of-contents">
 <h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="#simulation-parameters">Simulation Parameters</a></p></li>
@@ -626,10 +886,10 @@ value</a></p></li>
 <li><p><a class="reference external" href="#simulation">Simulation</a></p></li>
 <li><p><a class="reference external" href="#performance-evaluation">Performance Evaluation</a></p></li>
 </ul>
-</div>
-<div class="section" id="import-libraries">
+</section>
+<section id="import-libraries">
 <h2>Import Libraries<a class="headerlink" href="#import-libraries" title="Permalink to this heading"></a></h2>
-<div class="section" id="python-libraries">
+<section id="python-libraries">
 <h3>Python Libraries<a class="headerlink" href="#python-libraries" title="Permalink to this heading"></a></h3>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -641,8 +901,8 @@ value</a></p></li>
 <span class="kn">import</span> <span class="nn">numpy</span>      <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="g-toolkit-libraries">
+</section>
+<section id="g-toolkit-libraries">
 <h3>5G ToolKit Libraries<a class="headerlink" href="#g-toolkit-libraries" title="Permalink to this heading"></a></h3>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -656,9 +916,9 @@ value</a></p></li>
 <span class="kn">from</span> <span class="nn">toolkit5G.PhysicalChannels</span>      <span class="kn">import</span> <span class="n">MCSEstimation</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="simulation-parameters">
+</section>
+</section>
+<section id="simulation-parameters">
 <h2>Simulation Parameters<a class="headerlink" href="#simulation-parameters" title="Permalink to this heading"></a></h2>
 <p>The simulation parameters are:</p>
 <ul class="simple">
@@ -842,8 +1102,8 @@ enabled/disabled</p></li>
 <span class="n">Starting</span> <span class="n">PRB</span>               <span class="p">:</span> <span class="mi">168</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="format-0">
+</section>
+<section id="format-0">
 <h2>Format 0<a class="headerlink" href="#format-0" title="Permalink to this heading"></a></h2>
 <p>This method generates the sequence and maps it onto the resources
 allocated.</p>
@@ -896,16 +1156,16 @@ numOfInterlaces          : None
 
 <strong>********************Resource Mapping************************</strong>
 OFDM Grid                : (853, 3300, 14)</pre>
-</div>
-<div class="section" id="format-0-decoder">
+</section>
+<section id="format-0-decoder">
 <h2>Format 0 Decoder<a class="headerlink" href="#format-0-decoder" title="Permalink to this heading"></a></h2>
 <p>This method decodes the sequences mapped on the OFDM Grid.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pucchFormat0DecoderObj</span> <span class="o">=</span> <span class="n">PUCCHFormat0Decoder</span><span class="p">(</span><span class="n">numofSymbols</span><span class="p">,</span> <span class="n">symbolIndex_start</span><span class="p">)</span>
 <span class="n">pucchFormat0DecoderOp</span>  <span class="o">=</span> <span class="n">pucchFormat0DecoderObj</span><span class="p">(</span><span class="n">pucchFormat0Grid</span><span class="p">,</span> <span class="n">intraSlotFreqHopping</span><span class="p">,</span> <span class="n">interlacedTransmission</span><span class="p">,</span> <span class="n">pucch_ResourceCommon</span><span class="p">,</span> <span class="n">indexPUCCH</span><span class="p">,</span> <span class="n">numInterlacedRBs</span><span class="p">,</span> <span class="n">startingPRB</span><span class="p">,</span> <span class="n">secondHopPRB</span><span class="p">,</span> <span class="n">numOfInterlaces</span><span class="p">,</span> <span class="n">interlaceIndex_0</span><span class="p">,</span> <span class="n">interlaceIndex_1</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="m-cs-estimation">
+</section>
+<section id="m-cs-estimation">
 <h2>M_CS Estimation<a class="headerlink" href="#m-cs-estimation" title="Permalink to this heading"></a></h2>
 <p>This method estimates the cyclic shift offset, thereby estimating the
 information bits</p>
@@ -1005,8 +1265,8 @@ information bits</p>
  <span class="s1">&#39;2-HARQ&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="information-content-based-on-mcs-value">
+</section>
+<section id="information-content-based-on-mcs-value">
 <h2>Information content based on MCS value<a class="headerlink" href="#information-content-based-on-mcs-value" title="Permalink to this heading"></a></h2>
 <p>This converts the estimated cyclic shift offest value to the information
 bits based on the control information transmitted</p>
@@ -1031,8 +1291,8 @@ bits based on the control information transmitted</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">853</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="simulation">
+</section>
+<section id="simulation">
 <h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading"></a></h2>
 <p>This subsection performs the simulation which involve following steps:</p>
 <ul class="simple">
@@ -1187,15 +1447,15 @@ SNR-Index: 19| SNR: 1000.0
 BER1 : 0.0
 -------------------------------------------------------------
 BER  : 0.0</pre>
-</div>
-<div class="section" id="performance-evaluation">
+</section>
+<section id="performance-evaluation">
 <h2>Performance Evaluation<a class="headerlink" href="#performance-evaluation" title="Permalink to this heading"></a></h2>
 <p>The script plots SNR in dB vs BER performance for . It can be observed
 that the control information is received with a reliablilty of</p>
 <ul class="simple">
 <li><p>BER = <span class="math notranslate nohighlight">\(10^{-2}\)</span> at an SNR value of 0 dB.</p></li>
 </ul>
-<div class="section" id="performance-plot">
+<section id="performance-plot">
 <h3>Performance Plot<a class="headerlink" href="#performance-plot" title="Permalink to this heading"></a></h3>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
@@ -1216,9 +1476,9 @@ that the control information is received with a reliablilty of</p>
         Figure
     </div>
     <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAAA10dzkAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjQuMywgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/MnkTPAAAACXBIWXMAAA9hAAAPYQGoP6dpAABrgklEQVR4nO3dd3hT1R8G8DfpSGc6adM2La1ggTKlgLKHClSGIFtEpj8ZoggqezsQEVSmOMoeKkNFQUCpogzZe0sXXZTSvZvz+6M0NHSQtmlvm7yf58nT3JuTc785hPJyx7kyIYQAEREREZkMudQFEBEREVHVYgAkIiIiMjEMgEREREQmhgGQiIiIyMQwABIRERGZGAZAIiIiIhPDAEhERERkYhgAiYiIiEwMAyARERGRiWEAJCIiIjIxDIBEREREJoYBkIiIiMjEMAASERERmRgGQCIiIiITwwBIREREZGIYAImIiIhMDAMgERERkYlhACQiIiIyMQyARERERCaGAZCIiIjIxDAAEhEREZkYBkAiIiIiE8MASERERGRiGACJiIiITAwDIBEREZGJYQAkIiIiMjEMgEREREQmhgGQiIiIyMQwABIRERGZGAZAIiIiIhPDAEhERERkYhgAiYiIiEwMAyARERGRiWEAJCIiIjIxDIBEREREJoYBkIiIiMjEMABSjbVu3TrIZDKdR61atdCpUyfs2bOnSPtH2xZ+jBgxQttu3rx5Oq9ZWFjAx8cHr732GmJiYvSqbcSIETp9KBQK1KtXD3PnzkVmZqahhgAAEBoaih49esDZ2RkymQyTJk0yaP9UslmzZsHHxwfm5uZwdHQssd2j3ylLS0v4+fnhrbfeQmJiYpF28fHxxfbTqFEjdOrUqcj62NhYTJs2DY0bN4adnR2srKzw5JNP4q233sKNGzeKtD98+DAGDhwILy8vWFpawsHBAW3atMHq1auRlpambefr64uePXsWW8vJkychk8mwbt26Ej83kP/9LOnvXYsWLUp9b3WUnp6OefPmISQkpEzvW758OerXrw+FQgE/Pz/Mnz8fOTk5lVMkkR7MpS6AqKKCg4NRv359CCEQExODFStWoFevXvjpp5/Qq1cvnbb9+/fHlClTivRRq1atIuv27dsHBwcHpKamYv/+/fj0009x5MgRnD17FhYWFo+ty9raGn/88QcA4P79+9i6dSsWLFiAq1evYvv27eX8tEW9/fbbOH78OL799luoVCp4eHgYrG8q2Y8//ogPPvgAM2fORFBQEBQKxWPfU/CdSklJwa+//orPP/8c//77L44cOQKZTFauOv7991/07NkTQgi88cYbaN26NSwtLXHt2jVs2rQJrVq1wv3797Xt586diwULFqBNmzZYuHAh6tSpg/T0dBw5cgTz5s3D9evXsWzZsnLVUpqJEyfi5Zdf1llnZ2dn8O1UtvT0dMyfPx8Aig3jxfnggw8we/ZsTJs2DV27dsWJEycwa9Ys3LlzB2vXrq3EaolKIYhqqODgYAFAnDhxQmd9enq6UCgUYsiQITrrAYgJEyY8tt+5c+cKAOLu3bs660eOHCkAiD/++OOxfQwfPlzY2toWWd++fXsBQERGRj62j9JoNBqRnp4uhBCibt26IigoqEL9FZabmysyMzMN1p+xev/99wUAERsb+9i2JX2nhg0bJgCIv//+u9R2BRo2bCg6duyoXU5KShIqlUp4e3uLiIiIYt/z/fffa59/9913AoAYPXq00Gg0RdomJyeL3377Tbtcu3Zt0aNHj2L7PXHihAAggoODi329wO3btwUA8cknn5Tarryys7NFTk5OpfRdnLt37woAYu7cuXq1j4+PF1ZWVuJ///ufzvoPPvhAyGQycenSpUqokujxeAiYjI6VlRUsLS312ktXFgWHq2JjY8vdxzPPPAMACAsLAwAkJyfjnXfegZ+fHywtLeHl5YVJkybpHIYD8g9fv/HGG1izZg0aNGgAhUKB9evXQyaT4ebNm9i7d6/2sFpoaCgAIDw8HK+88grc3NygUCjQoEEDfPrpp9BoNNp+Cw7PLV68GO+//z78/PygUChw6NAh7eHI8+fPY8CAAXBwcICzszMmT56M3NxcXLt2Dd27d4e9vT18fX2xePFinZozMzMxZcoUNGvWTPve1q1b48cffywyLgWfb+PGjWjQoAFsbGzQtGnTYg/lX716FUOGDIG7uzsUCgV8fHzw6quvIisrS9smJiYGr7/+OtRqtfZw6/z585Gbm/vYPyONRoPFixdrD9e5ubnh1VdfRWRkpLaNr68vZs2aBQBwd3eHTCbDvHnzHtv3ox79PpTVV199hZiYGCxevBhqtbrYNv3799c+X7BgAZycnPDFF18Uu8fR3t4eXbt2LVctFXXx4kW8+OKLcHJy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' width=640.0/>
-</div></div>
-</div>
-</div>
+</div></section>
+</section>
+</section>
 
 
            </div>

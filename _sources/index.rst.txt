@@ -24,7 +24,6 @@ systems. It is designed to work well with CPUs, GPUs and TPUs.
    <iframe width="620" height="350" src="https://www.youtube.com/embed/6L4HBA3z1I8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </center>
 
-|
    
 
 Salient Features
@@ -100,7 +99,7 @@ More Information
    :maxdepth: 3
    :caption: Contents:
 
-   about
+   install
    api/5G_Toolkit/5Gtoolkit
    api/Tutorials/Tutorials
    api/Projects/Projects

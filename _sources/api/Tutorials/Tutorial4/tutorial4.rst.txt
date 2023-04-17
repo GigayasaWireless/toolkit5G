@@ -1,3 +1,0 @@
-Reed Muller Codes and their performance for AWGN and Rayleigh Channels
-======================================================================
-Hello1

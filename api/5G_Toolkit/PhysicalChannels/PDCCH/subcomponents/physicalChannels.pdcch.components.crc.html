@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyclic Redundency Check &mdash; 5G Toolkit R23a documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
@@ -12,14 +13,15 @@
     <script src="../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
-        <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinx_highlight.js"></script>
         <script src="../../../../../_static/clipboard.min.js"></script>
         <script src="../../../../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="../../../../../about.html" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
@@ -33,15 +35,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../../index.html" class="icon icon-home"> 5G Toolkit
-            <img src="../../../../../_static/logo28.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            5G Toolkit
+              <img src="../../../../../_static/logo28.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                R23a.1
+                R23a.0.8
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -49,27 +55,94 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../../../about.html">About Us</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../about.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../about.html#install-5g-toolkit">Install 5G Toolkit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../about.html#dependent-libraries">Dependent Libraries:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../about.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../about.html#license-bwsim">License BWSim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../install.html">Install 5G Toolkit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#id1">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#dependent-libraries">Dependent Libraries:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#license-bwsim">License BWSim</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../5Gtoolkit.html">API Documentation</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.html">Sequence Generation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.pss.html">Primary Synchronization Signal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.sss.html">Secondary Synchronization Signal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.dmrs.html">Demodulation Reference Sequence (DMRS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.prs.html">Positioning Reference Sequence (PRS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.csirs.html">Channel State Information Reference Sequence (CSI-RS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.pnSequence.html">Pseudo Random (PN) Sequence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html">PUCCH Format 0 Sequence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html">PUCCH Format 1 Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.pss.html">Primary Synchronization Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.pss.html#toolkit5G.SequenceGeneration.PSS"><code class="docutils literal notranslate"><span class="pre">PSS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.sss.html">Secondary Synchronization Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.sss.html#toolkit5G.SequenceGeneration.SSS"><code class="docutils literal notranslate"><span class="pre">SSS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.dmrs.html">Demodulation Reference Sequence (DMRS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.dmrs.html#toolkit5G.SequenceGeneration.DMRS"><code class="docutils literal notranslate"><span class="pre">DMRS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.prs.html">Positioning Reference Sequence (PRS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.prs.html#toolkit5G.SequenceGeneration.PRS"><code class="docutils literal notranslate"><span class="pre">PRS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.csirs.html">Channel State Information Reference Sequence (CSI-RS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.csirs.html#toolkit5G.SequenceGeneration.CSIRS"><code class="docutils literal notranslate"><span class="pre">CSIRS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.pnSequence.html">Pseudo Random (PN) Sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.pnSequence.html#toolkit5G.SequenceGeneration.PNSequence"><code class="docutils literal notranslate"><span class="pre">PNSequence</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html">PUCCH Format 0 Sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.controlInfo"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.controlInfo</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.indexPUCCH"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.indexPUCCH</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.initial_CyclicShift"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.initial_CyclicShift</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.m_CS"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.m_CS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.nID"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numBatches"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numBatches</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numInterlacedRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numInterlacedRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numberOfSymb"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numberOfSymb</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.pucch_GroupHopping"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.pucch_GroupHopping</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.seqNumber"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.seqNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.slotNumber"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.slotNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.start_SymbIndex"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.start_SymbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html">PUCCH Format 1 Sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.indexPUCCH"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.indexPUCCH</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.initial_CyclicShift"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.initial_CyclicShift</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.m_CS"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.m_CS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.maxNumPRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.maxNumPRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.nHop"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.nHop</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.nID"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.numInterlacedRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.numInterlacedRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.numRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.numRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.numberOfSymb"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.numberOfSymb</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.pucch_GroupHopping"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.pucch_GroupHopping</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.slotNumber"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.slotNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.start_SymbIndex"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.start_SymbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html">Low PAPR Sequence Type 1</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#cyclic-shift-hopping">Cyclic Shift Hopping</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#group-and-sequence-hopping">Group And Sequence Hopping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.cyclicShift"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.cyclicShift</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.delta"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.delta</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.groupNumber"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.groupNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.m"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.m</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.seqNumber"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.seqNumber</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#cyclic-shift-hopping">Cyclic Shift Hopping</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.CyclicShiftHopping"><code class="docutils literal notranslate"><span class="pre">CyclicShiftHopping</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#group-and-sequence-hopping">Group And Sequence Hopping</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.GroupNumber"><code class="docutils literal notranslate"><span class="pre">GroupNumber</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -93,13 +166,49 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../ResourceMapping/PUCCH/resourceMapping.pucch.format4.html">PUCCH Format-4</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssb.html">Synchronization Signal Block (SSB) Grid Generation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssbGeneration.html">Synchronization Signal Block (SSB) Resource Mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.dmrsPDSCH.html">Physical Downlink Shared Channel-DMRS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ptrsPDSCH.html">Physical Downlink Shared Channel-PTRS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.csirs.html">Channel state Information reference signal (CSI-RS)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.pdcch.html">Physical Control Channel (PDCCH)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.prs.html">Positioning Reference Signal (PRS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssb.html">Synchronization Signal Block (SSB) Grid Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSB_Grid</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.displayGrid"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.displayGrid()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.dmrsIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.dmrsIndices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.pbchIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.pbchIndices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.pssIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.pssIndices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.sssIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.sssIndices</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssbGeneration.html">Synchronization Signal Block (SSB) Resource Mapping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ssbGeneration.html#toolkit5G.ResourceMapping.ResourceMapperSSB"><code class="docutils literal notranslate"><span class="pre">ResourceMapperSSB</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.dmrsPDSCH.html">Physical Downlink Shared Channel-DMRS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.dmrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperDMRSPDSCH"><code class="docutils literal notranslate"><span class="pre">ResourceMapperDMRSPDSCH</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.dmrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperDMRSPDSCH.displayCDMPattern"><code class="docutils literal notranslate"><span class="pre">ResourceMapperDMRSPDSCH.displayCDMPattern()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.dmrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperDMRSPDSCH.displayResourceGrid"><code class="docutils literal notranslate"><span class="pre">ResourceMapperDMRSPDSCH.displayResourceGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ptrsPDSCH.html">Physical Downlink Shared Channel-PTRS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.ptrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperPTRSPDSCH"><code class="docutils literal notranslate"><span class="pre">ResourceMapperPTRSPDSCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.csirs.html">Channel state Information reference signal (CSI-RS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.csirs.html#toolkit5G.ResourceMapping.ResourceMapperCSIRS"><code class="docutils literal notranslate"><span class="pre">ResourceMapperCSIRS</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.csirs.html#toolkit5G.ResourceMapping.ResourceMapperCSIRS.displayCDMPattern"><code class="docutils literal notranslate"><span class="pre">ResourceMapperCSIRS.displayCDMPattern()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.csirs.html#toolkit5G.ResourceMapping.ResourceMapperCSIRS.displayResourceGrid"><code class="docutils literal notranslate"><span class="pre">ResourceMapperCSIRS.displayResourceGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.pdcch.html">Physical Control Channel (PDCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.pdcch.html#toolkit5G.ResourceMapping.ResourceMappingPDCCH"><code class="docutils literal notranslate"><span class="pre">ResourceMappingPDCCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.prs.html">Positioning Reference Signal (PRS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ResourceMapping/resourceMapping.prs.html#toolkit5G.ResourceMapping.ResourceMapperPRS"><code class="docutils literal notranslate"><span class="pre">ResourceMapperPRS</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../physicalChannels.html">Physical Channels</a><ul class="current">
@@ -130,8 +239,14 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="reference internal" href="../../physicalChannels.pdcch.html">Physical Downlink Control Channel (PDCCH)</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pdcch.html#pdcch-transmitter">PDCCH Transmitter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pdcch.html#pdcch-receiver">PDCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pdcch.html#pdcch-transmitter">PDCCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../physicalChannels.pdcch.html#toolkit5G.PhysicalChannels.PDCCH"><code class="docutils literal notranslate"><span class="pre">PDCCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pdcch.html#pdcch-receiver">PDCCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../physicalChannels.pdcch.html#toolkit5G.PhysicalChannels.PDCCHDecoder"><code class="docutils literal notranslate"><span class="pre">PDCCHDecoder</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4 current"><a class="reference internal" href="../../physicalChannels.pdcch.html#pdcch-components">PDCCH Components</a><ul class="current">
 <li class="toctree-l5 current"><a class="current reference internal" href="#">Cyclic Redundency Check</a></li>
 <li class="toctree-l5"><a class="reference internal" href="physicalChannels.pdcch.components.rnti.html">RNTI Masking</a></li>
@@ -145,8 +260,14 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../physicalChannels.pbch.html">Physical Broadcast Channel (PBCH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pbch.html#pbch-transmitter">PBCH Transmitter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pbch.html#pbch-receiver">PBCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pbch.html#pbch-transmitter">PBCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../physicalChannels.pbch.html#toolkit5G.PhysicalChannels.PBCH"><code class="docutils literal notranslate"><span class="pre">PBCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pbch.html#pbch-receiver">PBCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../physicalChannels.pbch.html#toolkit5G.PhysicalChannels.PBCHDecoder"><code class="docutils literal notranslate"><span class="pre">PBCHDecoder</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pbch.html#pbch-components">PBCH Components</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
@@ -171,7 +292,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../physicalChannels.prach.html">Physical Random Access Channel (PRACH)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../physicalChannels.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pscch.html#pscch-transmitter">PSCCH Transmitter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pscch.html#pscch-receiver">PSCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pscch.html#pscch-receiver">PSCCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhyDecoder.PscchUpperPhyDecoder"><code class="docutils literal notranslate"><span class="pre">PscchUpperPhyDecoder</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../physicalChannels.pscch.html#crc-attachment">CRC Attachment</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../physicalChannels.pscch.html#rnti-masking">RNTI Masking</a></li>
@@ -189,17 +313,52 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../PayloadGeneration/payloadGeneration.html">Payload Generation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../PayloadGeneration/MIB/payloadGeneration.mib.html">Master Information Block (MIB)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../PayloadGeneration/MIB/payloadGeneration.mib.html#mib-generation">MIB Generation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../PayloadGeneration/MIB/payloadGeneration.mib.html#mib-extraction">MIB Extraction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../PayloadGeneration/MIB/payloadGeneration.mib.html#mib-generation">MIB Generation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../PayloadGeneration/MIB/payloadGeneration.mib.html#toolkit5G.PayloadGeneration.MIBGeneration"><code class="docutils literal notranslate"><span class="pre">MIBGeneration</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../PayloadGeneration/DCI/payloadGeneration.dci.html">Downlink Control Information (DCI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../PayloadGeneration/MIB/payloadGeneration.mib.html#mib-extraction">MIB Extraction</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../PayloadGeneration/MIB/payloadGeneration.mib.html#toolkit5G.PayloadGeneration.MIBExtraction"><code class="docutils literal notranslate"><span class="pre">MIBExtraction</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../PayloadGeneration/DCI/payloadGeneration.dci.html">Downlink Control Information (DCI)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../PayloadGeneration/DCI/payloadGeneration.dci.html#toolkit5G.PayloadGeneration.DCIGeneration"><code class="docutils literal notranslate"><span class="pre">DCIGeneration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../PayloadGeneration/DCI/payloadGeneration.dci.html#toolkit5G.PayloadGeneration.DCIExtraction"><code class="docutils literal notranslate"><span class="pre">DCIExtraction</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../ChannelCoder/channelCoder.html">Forward Error Correction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../ChannelCoder/HammingCoder/channelCoder.hamming.html">Hamming Coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/HammingCoder/channelCoder.hamming.html#id1">Hamming coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingEncoder.HammingEncoder"><code class="docutils literal notranslate"><span class="pre">HammingEncoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/HammingCoder/channelCoder.hamming.html#hamming-decoder">Hamming Decoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingDecoder"><code class="docutils literal notranslate"><span class="pre">HammingDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/HammingCoder/channelCoder.hamming.html#hamming-decoder-sphere-decoding">Hamming Decoder - Sphere Decoding</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingSphereDecoder"><code class="docutils literal notranslate"><span class="pre">HammingSphereDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/HammingCoder/channelCoder.hamming.html#hamming-decoder-syndrome-based-decoding">Hamming Decoder - Syndrome Based Decoding</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingSyndromeDecoder"><code class="docutils literal notranslate"><span class="pre">HammingSyndromeDecoder</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../ChannelCoder/LDPC/channelCoder.ldpc.html">Low Density Parity Check Codes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-encoder">LDPC Encoder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-decoder">LDPC Decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-encoder">LDPC Encoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/LDPC/channelCoder.ldpc.html#toolkit5G.ChannelCoder.LDPCEncoder5G"><code class="docutils literal notranslate"><span class="pre">LDPCEncoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-decoder">LDPC Decoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/LDPC/channelCoder.ldpc.html#toolkit5G.ChannelCoder.LDPCDecoder5G"><code class="docutils literal notranslate"><span class="pre">LDPCDecoder5G</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-codec-subcomponents">LDPC Codec Subcomponents</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/LDPC/channelCoder.ldpc.ldpcParameters.html">LDPC Parameters Computation</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingTransmitter.html">Codeblock Processing: Transmitter</a></li>
@@ -209,8 +368,14 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../ChannelCoder/PolarCoder/channelCoder.polar.html">Polar Codes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-encoder">Polar Encoder</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-decoder">Polar Decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-encoder">Polar Encoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/PolarCoder/channelCoder.polar.html#toolkit5G.ChannelCoder.PolarEncoder5G"><code class="docutils literal notranslate"><span class="pre">PolarEncoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-decoder">Polar Decoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/PolarCoder/channelCoder.polar.html#toolkit5G.ChannelCoder.PolarDecoder5G"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/PolarCoder/channelCoder.polar.html#polar-codec-components">Polar Codec Components</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/PolarCoder/channelCoder.polar.components.html">Code-block Processing: Transmitter</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/PolarCoder/channelCoder.polar.components.html#code-block-processing-receiver">Code-block Processing: Receiver</a></li>
@@ -220,14 +385,33 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html">Reed Muller Codes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-encoder-5g">Reed Muller Encoder 5G</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-decoder-5g">Reed Muller Decoder 5G</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-encoder-5g">Reed Muller Encoder 5G</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#toolkit5G.ChannelCoder.ReedMullerEncoder5G"><code class="docutils literal notranslate"><span class="pre">ReedMullerEncoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-decoder-5g">Reed Muller Decoder 5G</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#toolkit5G.ChannelCoder.ReedMullerDecoder5G"><code class="docutils literal notranslate"><span class="pre">ReedMullerDecoder5G</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Ratematcher/ratematcher.html">Rate matching</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html">Rate matching for LDPC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters"><code class="docutils literal notranslate"><span class="pre">RatematchParameters</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.baseGraph"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.baseGraph</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.enableLBRM"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.enableLBRM</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.k0"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.k0</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.liftingFactor"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.liftingFactor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.modOrder"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.modOrder</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.numCodeBlocks"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.numCodeBlocks</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.numCodedBits"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.numCodedBits</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.numLayers"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.numLayers</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.rvID"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.rvID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.tbSize"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.tbSize</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
@@ -241,64 +425,152 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../Ratematcher/PolarCoder/ratematcher.polarcoder.html">Rate matching for Polar coder</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaving</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaving</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html">Bit Selection for Polar Coder</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-selection">Bit Selection</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Interleaver/interleavers.html">Interleavers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../Interleaver/interleavers.pbchInterleavers.html">PBCH Interleaver</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.pbchInterleavers.html#id1">PBCH Interleaver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.pbchInterleavers.html#pbch-deinterleaver">PBCH DeInterleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.pbchInterleavers.html#id1">PBCH Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Interleaver/interleavers.pbchInterleavers.html#toolkit5G.PhysicalChannels.PBCH.PBCHInterleaver"><code class="docutils literal notranslate"><span class="pre">PBCHInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.pbchInterleavers.html#pbch-deinterleaver">PBCH DeInterleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Interleaver/interleavers.pbchInterleavers.html#toolkit5G.PhysicalChannels.PBCH.PBCHDeInterleaver"><code class="docutils literal notranslate"><span class="pre">PBCHDeInterleaver</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../Interleaver/interleavers.polar.inputBitInterleaver.html">Input Bit Interleaver</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.inputBitInterleaver.html#id1">Input Bit Interleaver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.inputBitInterleaver.html#input-bit-deinterleaver">Input Bit DeInterleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.inputBitInterleaver.html#id1">Input Bit Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Interleaver/interleavers.polar.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.InputBitInterleaver"><code class="docutils literal notranslate"><span class="pre">InputBitInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.inputBitInterleaver.html#input-bit-deinterleaver">Input Bit DeInterleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Interleaver/interleavers.polar.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.InputBitDeInterleaver"><code class="docutils literal notranslate"><span class="pre">InputBitDeInterleaver</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../Interleaver/interleavers.polar.subBlockInterleaver.html">Sub Block Interleaver</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.subBlockInterleaver.html#id1">Sub Block Interleaver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.subBlockInterleaver.html#id4">Sub Block Interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.subBlockInterleaver.html#id1">Sub Block Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Interleaver/interleavers.polar.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaving</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.subBlockInterleaver.html#id4">Sub Block Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Interleaver/interleavers.polar.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaving</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../Interleaver/interleavers.polar.channelInterleaver.html">Channel Interleaver</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.channelInterleaver.html#id1">Channel Interleaver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.channelInterleaver.html#id1">Channel Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Interleaver/interleavers.polar.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.polar.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Interleaver/interleavers.polar.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../Interleaver/interleavers.lpdc.bitInterleaver.html">Bit Interleavers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.lpdc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.lpdc.bitInterleaver.html#bit-deinterleaver">Bit Deinterleaver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.lpdc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Interleaver/interleavers.lpdc.bitInterleaver.html#toolkit5G.Ratematcher.LDPC.BitInterleaver"><code class="docutils literal notranslate"><span class="pre">BitInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Interleaver/interleavers.lpdc.bitInterleaver.html#bit-deinterleaver">Bit Deinterleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Interleaver/interleavers.lpdc.bitInterleaver.html#toolkit5G.Ratematcher.LDPC.BitDeinterleaver"><code class="docutils literal notranslate"><span class="pre">BitDeinterleaver</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../OFDM/ofdm.html">Orthogonal Frequency Division Multiplexing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../OFDM/ofdm.html#ofdm-modulator">OFDM: Modulator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../OFDM/ofdm.html#ofdm-demodulator">OFDM: Demodulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../OFDM/ofdm.html#ofdm-modulator">OFDM: Modulator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../OFDM/ofdm.html#toolkit5G.OFDM.OFDMModulator"><code class="docutils literal notranslate"><span class="pre">OFDMModulator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../OFDM/ofdm.html#ofdm-demodulator">OFDM: Demodulator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../OFDM/ofdm.html#toolkit5G.OFDM.OFDMDemodulator"><code class="docutils literal notranslate"><span class="pre">OFDMDemodulator</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../ChannelProcessing/channelProcessing.html">Channel Processing and Hardware Impairment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../ChannelProcessing/channelProcessing.applyChannel.html">Apply Channel to Transmitted Signal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../ChannelProcessing/channelProcessing.addNoise.html">Add Noise and CFO at Receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ChannelProcessing/channelProcessing.applyChannel.html">Apply Channel to Transmitted Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelProcessing/channelProcessing.applyChannel.html#toolkit5G.ChannelProcessing.ApplyChannel"><code class="docutils literal notranslate"><span class="pre">ApplyChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ChannelProcessing/channelProcessing.addNoise.html">Add Noise and CFO at Receiver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../ChannelProcessing/channelProcessing.addNoise.html#toolkit5G.ChannelProcessing.AddNoise"><code class="docutils literal notranslate"><span class="pre">AddNoise</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../SymbolMapping/symbolMapping.html">Symbol Mapping</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../SymbolMapping/symbolMapping.mapper.html">Mapper</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../SymbolMapping/symbolMapping.demapper.html">Demapper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../SymbolMapping/symbolMapping.mapper.html">Mapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../SymbolMapping/symbolMapping.mapper.html#toolkit5G.SymbolMapping.Mapper"><code class="docutils literal notranslate"><span class="pre">Mapper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../SymbolMapping/symbolMapping.demapper.html">Demapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../SymbolMapping/symbolMapping.demapper.html#toolkit5G.SymbolMapping.Demapper"><code class="docutils literal notranslate"><span class="pre">Demapper</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Scrambler/scrambler.html">Scrambling</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html">Scrambler</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html">Descrambler</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../Scrambler/scrambler.rntiMasking.html">RNTI Masking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html">Scrambler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler"><code class="docutils literal notranslate"><span class="pre">Scrambler</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.Lmax"><code class="docutils literal notranslate"><span class="pre">Scrambler.Lmax</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.c_init"><code class="docutils literal notranslate"><span class="pre">Scrambler.c_init</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.id"><code class="docutils literal notranslate"><span class="pre">Scrambler.id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.nID"><code class="docutils literal notranslate"><span class="pre">Scrambler.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.purpose"><code class="docutils literal notranslate"><span class="pre">Scrambler.purpose</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.q"><code class="docutils literal notranslate"><span class="pre">Scrambler.q</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.rnti"><code class="docutils literal notranslate"><span class="pre">Scrambler.rnti</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.ssbIndex"><code class="docutils literal notranslate"><span class="pre">Scrambler.ssbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html">Descrambler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler"><code class="docutils literal notranslate"><span class="pre">DeScrambler</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.Lmax"><code class="docutils literal notranslate"><span class="pre">DeScrambler.Lmax</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.c_init"><code class="docutils literal notranslate"><span class="pre">DeScrambler.c_init</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.id"><code class="docutils literal notranslate"><span class="pre">DeScrambler.id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.nID"><code class="docutils literal notranslate"><span class="pre">DeScrambler.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.purpose"><code class="docutils literal notranslate"><span class="pre">DeScrambler.purpose</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.q"><code class="docutils literal notranslate"><span class="pre">DeScrambler.q</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.rnti"><code class="docutils literal notranslate"><span class="pre">DeScrambler.rnti</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.ssbIndex"><code class="docutils literal notranslate"><span class="pre">DeScrambler.ssbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Scrambler/scrambler.rntiMasking.html">RNTI Masking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Scrambler/scrambler.rntiMasking.html#toolkit5G.Scrambler.RNTImasking"><code class="docutils literal notranslate"><span class="pre">RNTImasking</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Scrambler/scrambler.rntiMasking.html#toolkit5G.Scrambler.RNTImasking.rnti"><code class="docutils literal notranslate"><span class="pre">RNTImasking.rnti</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../ChannelModels/channelModels.html">Channel Models</a><ul>
@@ -332,14 +604,24 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../CRC/crc.html">Cyclic Redundancy Check</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../CRC/crc.crcEncoder.html">CRC Encoder</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../CRC/crc.crcDecoder.html">CRC Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../CRC/crc.crcEncoder.html">CRC Encoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../CRC/crc.crcEncoder.html#toolkit5G.CRC.CRCEncoder"><code class="docutils literal notranslate"><span class="pre">CRCEncoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../CRC/crc.crcDecoder.html">CRC Decoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../CRC/crc.crcDecoder.html#toolkit5G.CRC.CRCDecoder"><code class="docutils literal notranslate"><span class="pre">CRCDecoder</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Positioning/positioning.html">Position Estimation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../Positioning/positioning.html#id1">Position Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Positioning/positioning.html#id1">Position Estimation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Positioning/positioning.html#toolkit5G.Positioning.Position_Estimation"><code class="docutils literal notranslate"><span class="pre">Position_Estimation</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../Positioning/positioning.html#submodules">Submodules</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../Positioning/Time_Estimation/positioning.toaEstimation.html">Time of Arrival (ToA)/Delay Estimation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Positioning/Time_Estimation/positioning.toaEstimation.html#toolkit5G.Positioning.ToAEstimation"><code class="docutils literal notranslate"><span class="pre">ToAEstimation</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../Positioning/Time_Estimation/methods/positioning.toaEstimation.dftToA.html">DFT based Method</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../Positioning/Time_Estimation/methods/positioning.toaEstimation.espritToA.html">ESPRIT based ToA Estimation</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../Positioning/Time_Estimation/methods/positioning.toaEstimation.musicToA.html">MUSIC based ToA Estimation</a></li>
@@ -359,47 +641,49 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../Tutorials/Tutorials.html">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html">Reed Muller Codes in 5G</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#table-of-content">Table of content:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#import-libraries">Import Libraries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#python-libraries">Python Libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#g-toolkit-libraries">5G Toolkit Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Table-of-content:">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#mapper-and-demapper-parameters">Mapper and Demapper Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#simulation-parameters">Simulation Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#simulation">Simulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#performance-evaluation">Performance Evaluation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#performance-plot">Performance Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Mapper-and-Demapper-Parameters">Mapper and Demapper Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Performance-Evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Performance-Plot">Performance Plot</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html">Polar Codes in 5G</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#table-of-content">Table of content:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#import-libraries">Import libraries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#python-libraries">Python Libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#g-toolkit-libraries">5G Toolkit libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Table-of-content:">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Import-libraries">Import libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#5G-Toolkit-libraries">5G Toolkit libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#symbol-mapping-configurations">Symbol Mapping Configurations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#polar-coder-configurations">Polar Coder Configurations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#simulation-awgn-channel">Simulation: AWGN Channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#performance-evaluations">Performance Evaluations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Symbol-Mapping-Configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Polar-Coder-Configurations">Polar Coder Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Simulation:-AWGN-Channel">Simulation: AWGN Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Performance-Evaluations">Performance Evaluations</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html">Low Density Parity Check (LDPC) Codes in 5G</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#import-libraries">Import Libraries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#python-libraries">Python LIbraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#g-toolkit-libraries">5G Toolkit Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Python-LIbraries">Python LIbraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#symbol-mapping-configurations">Symbol Mapping Configurations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#simulation-awgn-channel">Simulation: AWGN Channel</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#ldpc-parameters">LDPC Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#simulation-procedure">Simulation Procedure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Symbol-Mapping-Configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Simulation:-Variation-in-Reliability-with-code-rate-for-fixed-block-length">Simulation: <em>Variation in Reliability with code-rate for fixed block-length</em></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#LDPC-Parameters">LDPC Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Simulation-Procedure">Simulation Procedure</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#performance-evaluation">Performance Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Performance-Evaluation:-BER-vs-SNR-for-different-code-rates">Performance Evaluation: BER vs SNR for different code-rates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Simulation:-Variation-in-Reliability-with-block-length-for-fixed-coderate">Simulation: <em>Variation in Reliability with block-length for fixed coderate</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Performance-Evaluation:-BER-vs-SNR-for-different-block-lengths">Performance Evaluation: BER vs SNR for different block lengths</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Tutorials/Tutorial5/SSB_End2End.html">Initial Access in 5G</a><ul>
@@ -568,11 +852,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../5Gtoolkit.html">API Documentation</a> &raquo;</li>
-          <li><a href="../../physicalChannels.html">Physical Channels</a> &raquo;</li>
-          <li><a href="../../physicalChannels.pdcch.html">Physical Downlink Control Channel (PDCCH)</a> &raquo;</li>
-      <li>Cyclic Redundency Check</li>
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../5Gtoolkit.html">API Documentation</a></li>
+          <li class="breadcrumb-item"><a href="../../physicalChannels.html">Physical Channels</a></li>
+          <li class="breadcrumb-item"><a href="../../physicalChannels.pdcch.html">Physical Downlink Control Channel (PDCCH)</a></li>
+      <li class="breadcrumb-item active">Cyclic Redundency Check</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -581,31 +865,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<div class="section" id="cyclic-redundency-check">
+  <section id="cyclic-redundency-check">
 <h1>Cyclic Redundency Check<a class="headerlink" href="#cyclic-redundency-check" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
@@ -614,7 +874,7 @@
 </li>
 </ul>
 </div>
-</div>
+</section>
 
 
            </div>

@@ -1,0 +1,40 @@
+Hamming Coder
+========================
+The purpose of Hamming codes is to detect and correct errors that may occur during digital data transmission. Hamming
+codes are a type of linear error-correcting code that adds redundant bits to the data message to create a codeword with
+a specific structure that can detect and correct errors
+
+Hamming coder
+**********************
+This coder can process multiple batches and codewords simultaneous shown in following three examples:
+
+The details about the input-output interface of the Reed Muller modules is provided below.
+
+
+.. autoclass:: toolkit5G.ChannelCoder.HammingCoder.hammingEncoder.HammingEncoder
+    :members:
+    :exclude-members: call, build
+
+Hamming Decoder
+**********************
+Note that, the ``hardOutput`` must be set to False if the input codeword contains the log likelihood ratio (**LLR**)
+values of each bit and True for returning estimated bits.
+
+.. autoclass:: toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingDecoder
+    :members:
+    :exclude-members: call, build
+
+Hamming Decoder - Sphere Decoding
+*********************************
+.. autoclass:: toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingSphereDecoder
+    :members:
+    :exclude-members: call, build
+
+
+Hamming Decoder - Syndrome Based Decoding
+*****************************************
+.. autoclass:: toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingSyndromeDecoder
+    :members:
+    :exclude-members: call, build
+
+

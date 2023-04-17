@@ -6,6 +6,7 @@ Forward error correction is used in 5G for correction of bits in error. 5G suppo
 .. toctree::
     :maxdepth: 1
 
+    HammingCoder/channelCoder.hamming
     LDPC/channelCoder.ldpc
     PolarCoder/channelCoder.polar
     ReedMullerCoder/channelCoder.reedMuller

@@ -2,99 +2,40 @@
 This page takes the user through the complete process of installing all the packages to the point where they can use the
 5G toolkit easily in a Jupyter Notebook. 
 
-## Detailed Installation on Ubuntu
+## How to install 5G Toolkit:
+5G Toolkit can be installed easily using pip. The details of the installation are provided below. The modules and 
+libraries of 5G Toolkit are written in Python and is compatible with Python version >= 3.7.
 
-### Update Ubuntu system**
-
-The complete process starts with an Ubuntu update
+## Install 5G Toolkit
+If you are using pip for installation of packages, then run following in your terminal in your target environment.
 ~~~
-sudo apt-get update
-~~~
-
-**Install Python**
-
-Those who don't have Python on their system can install by running the following command.
-~~~
-sudo apt-get install pythonX.Y
-~~~
-For version 3.7 of Python, you can run the following:
-~~~
-sudo apt-get install python3.7
-~~~
-The installation status can be confirmed with following commands:
-~~~
-python3 --version
-~~~
-or
-~~~
-python --version
+pip install https://github.com/GigayasaWireless/toolkit5G/raw/main/toolkit5G-0.7-py3-none-any.whl
 ~~~
 
-**Install PIP3**
-
-Now, we need to install package manager for installing any package/library for Python. 
+To confirm installation of the library, you can check the installation library:
 ~~~
-sudo apt install python3-pip
+pip show toolkit5G
 ~~~
 
-When the installation is complete, verify the installation by checking the pip version:
-~~~
-pip3 --version
-~~~
+## Dependent Libraries:
+5G Toolkit is dependent on the following libraries:
+  - NumPy
+  - SciPy
+  - Matplotlib
+  - Sionna
 
-**Install Miniconda**
+## Detailed Installation Procedure
+This section covers detailed installation procedure for Windows (10 and 11), Ubuntu (20.04 and 22.04). It covers following
+steps
+ - Installing Python
+ - Install, create and use virtual environment using [Conda](https://docs.conda.io/en/latest/miniconda.html) or [Environment](https://docs.python.org/3/library/venv.html).
+ - Install Jupyter Notebook
+ - Install 5G Toolkit
+ - Import and use Toolkit in Jupyter Notebook.
 
-If Anaconda is already installed on your system, then you can skip this step. The following instructions install the 
-Miniconda which is a lighter version of Anaconda. First we will download miniconda using the command:
-~~~
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-~~~
-Followed by, installing miniconda using the downloaded package.
-~~~
-bash Miniconda3-latest-Linux-x86_64.sh
-~~~
-Once the installation is completed, we can check the version installed Conda on our system:
-~~~
-conda --v
-~~~
-Now, we will use conda to create a new environment for python 3.7:
-~~~
-conda create -n myenv python==3.7
-~~~
-Finally, we will activate the created environment by executing
-~~~
-conda activate myenv
-~~~
-We will install everything from further now in this environment.
+Please click [here for detailed installation procedure](detailedInstall).
 
-**Install Jupyter Notebook**
-
-We will install Jupyter for interactive scripting in Python.
-~~~
-pip3 install Jupyter
-~~~
-
-**Install 5G Toolkit**
-
-Finally, we are ready to install 5G Toolkit:
-~~~
-pip install git+https://github.com/GigayasaWireless/toolkit5G.git#egg=toolkit5G
-~~~
-Once the installation is complete the user can verify the installation by the output of the pip show command:
-~~~
-pip3 show toolkit5G
-~~~
-
-**Final Confirmation**
-
-open Jupyter Notebook
-~~~
-jupyter notebook
-~~~
-
-Create a new script and run "import toolkit5G as tk" in one of the cell. If it imports successfully, the package has been
-installed. 
-
-## Detailed Installation on Windows
-
-yyyy
+## License BWSim
+The 5G toolkit requires an active license for usage. The new users can request a one month trial license for 5G Toolkit 
+through this link [Request Trial License](https://gigayasa.com/request-trial/). Furthermore, you can purchase an annual 
+or perpetual license [Purchase License](https://gigayasa.com/request-pricing/).
