@@ -1,3 +1,0 @@
-Symbol Constellation learning using Auto-encoders
-=================================================
-Project-7

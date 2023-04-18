@@ -9,7 +9,7 @@ libraries of 5G Toolkit are written in Python and is compatible with Python vers
 ## Install 5G Toolkit
 If you are using pip for installation of packages, then run following in your terminal in your target environment.
 ~~~
-pip install https://github.com/GigayasaWireless/toolkit5G/raw/main/toolkit5G-0.7-py3-none-any.whl
+pip install https://github.com/GigayasaWireless/toolkit5G/raw/main/toolkit5G-0.9-py3-none-any.whl
 ~~~
 
 To confirm installation of the library, you can check the installation library:
@@ -35,7 +35,20 @@ steps
 
 Please click [here for detailed installation procedure](detailedInstall).
 
-## License BWSim
+## License 5G Toolkit
 The 5G toolkit requires an active license for usage. The new users can request a one month trial license for 5G Toolkit 
 through this link [Request Trial License](https://gigayasa.com/request-trial/). Furthermore, you can purchase an annual 
 or perpetual license [Purchase License](https://gigayasa.com/request-pricing/).
+
+## Activate the 5G Toolkit License
+ - Download the **Central-Hub** shared with you over the email.
+ - Unzip and run the executable file.
+ - Once the installation is complete, open the **Central-Hub** from your applications.
+ - Login if you have the Gigayasa account, otherwise:
+   - Create an account with Gigayasa.
+   - Verify your email
+   - Log into the Central-Hub.
+ - Now fetch the License key shared with you over the email.
+ - Activate your License.
+ - If activation is successful, please close the Central-Hub.
+ - You are good to go please open the jupyter Notebook and try to "import toolkit5G as tk"

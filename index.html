@@ -23,10 +23,9 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="_static/js/theme.js"></script>
-    <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Install 5G Toolkit" href="install.html" /> 
+    <link rel="next" title="Release Notes" href="releaseNotes.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,7 +41,7 @@
               <img src="_static/logo28.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                R23a.0.8
+                R23a.0.9
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -54,12 +53,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install 5G Toolkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#id1">Install 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#dependent-libraries">Dependent Libraries:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#license-bwsim">License BWSim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#license-5g-toolkit">License 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
@@ -639,6 +640,19 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/Tutorials/Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html">Hamming Codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Hamming-Codes-Parameters">Hamming Codes Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Simulation-Setup">Simulation Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Performance-Evaluation:-SNR-vs-BER">Performance Evaluation: SNR vs BER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Performance-Evaluation:-SNR-vs-BLER">Performance Evaluation: SNR vs BLER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Conclusions">Conclusions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html">Reed Muller Codes in 5G</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Table-of-content:">Table of content:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Import-Libraries">Import Libraries</a><ul>
@@ -686,47 +700,47 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html">Initial Access in 5G</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#import-libraries">Import Libraries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#external-libaries">External Libaries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#g-toolkit-modules">5G Toolkit Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#External-Libaries">External Libaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#5G-Toolkit-Modules">5G Toolkit Modules</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#system-parameters">System Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#pbch-information">PBCH Information</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#transmission-side-processing">Transmission-side Processing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#generate-primary-synchronization-sequence">Generate Primary Synchronization Sequence</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#generate-secondary-synchronization-sequence-sss">Generate Secondary Synchronization Sequence (<strong>SSS</strong>)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#generate-demodulation-reference-sequence-dmrs">Generate Demodulation Reference Sequence (<strong>DMRS</strong>)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#generate-the-pbch-payload">Generate the PBCH Payload</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#construct-ssb-grid">Construct SSB Grid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#mapping-ssb-to-transmission-grid-for-odfm">Mapping SSB to Transmission Grid for ODFM</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#ofdm-modulator">OFDM-Modulator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#analog-beamforming">Analog Beamforming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#System-Parameters">System Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#PBCH-Information">PBCH Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Transmission-side-Processing">Transmission-side Processing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Generate-Primary-Synchronization-Sequence-(PSS)">Generate Primary Synchronization Sequence (PSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Generate-Secondary-Synchronization-Sequence-(SSS)">Generate Secondary Synchronization Sequence (<strong>SSS</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Generate-Demodulation-Reference-Sequence-(DMRS)">Generate Demodulation Reference Sequence (<strong>DMRS</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Generate-the-PBCH-Payload">Generate the PBCH Payload</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Construct-SSB-Grid">Construct SSB Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Mapping-SSB-to-Transmission-Grid-for-ODFM">Mapping SSB to Transmission Grid for ODFM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#OFDM-Modulator">OFDM-Modulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Analog-Beamforming">Analog Beamforming</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#channel-generation">Channel Generation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#pass-tx-signal-through-wireless-channel">Pass Tx signal through Wireless Channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#noise-addition-at-receiver">Noise addition at receiver</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#ssb-receiver-side">SSB Receiver Side</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#receiver-combining">Receiver combining</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#pss-detection-largest-peak">PSS Detection: largest peak</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#largest-peak">Largest peak</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#ofdm-demodulation-resource-grid-reconstruction">OFDM Demodulation: Resource Grid reconstruction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#ssb-extaction-from-resource-grid">SSB Extaction from Resource Grid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#extracted-ssb">Extracted SSB</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#comparing-transmitted-and-received-ssb-grid">Comparing Transmitted and Received SSB Grid</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#spectrum-analysis">Spectrum Analysis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#sss-detection-pss-channel-assisted-cell-id-estimation">(SSS Detection: PSS channel assisted) + Cell-ID estimation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#dmrs-parameters-detection-dmrs-sequence-generation">DMRS Parameters Detection + DMRS Sequence Generation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#channel-estimation-and-pbch-symbol-equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#pbch-decoding">PBCH Decoding</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#information-aggregation">Information Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Channel-Generation">Channel Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Pass-Tx-signal-through-Wireless-Channel">Pass Tx signal through Wireless Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Noise-addition-at-receiver">Noise addition at receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#SSB-Receiver-Side">SSB Receiver Side</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Receiver-combining">Receiver combining</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#PSS-Detection:-largest-peak">PSS Detection: largest peak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Largest-peak">Largest peak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#OFDM-Demodulation:-Resource-Grid-reconstruction">OFDM Demodulation: Resource Grid reconstruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#SSB-Extaction-from-Resource-Grid">SSB Extaction from Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Extracted-SSB">Extracted SSB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Comparing-Transmitted-and-Received-SSB-Grid">Comparing Transmitted and Received SSB Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Spectrum-Analysis">Spectrum Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#(SSS-Detection:-PSS-channel-assisted)-+-Cell-ID-estimation">(SSS Detection: PSS channel assisted) + Cell-ID estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#DMRS-Parameters-Detection-+-DMRS-Sequence-Generation">DMRS Parameters Detection + DMRS Sequence Generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Channel-Estimation-and-PBCH-Symbol-Equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#PBCH-Decoding">PBCH Decoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Information-Aggregation">Information Aggregation</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#performance-evaluations-ber-cell-ids-dmrs-parameter-detection">Performance Evaluations: BER + Cell-IDs + DMRS Parameter Detection</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#cell-ids-detection">Cell-IDs Detection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#dmrs-parameter-detection">DMRS Parameter Detection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#ber-computation">BER computation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Performance-Evaluations:-BER-+-Cell-IDs-+-DMRS-Parameter-Detection">Performance Evaluations: BER + Cell-IDs + DMRS Parameter Detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Cell-IDs-Detection">Cell-IDs Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#DMRS-Parameter-Detection">DMRS Parameter Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#BER-computation">BER computation</a></li>
 </ul>
 </li>
 </ul>
@@ -754,54 +768,54 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/Projects/Projects.html">Projects</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html">Learning to Demap</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#table-of-contents">Table of Contents</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#import-libraries">Import Libraries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#import-python-libraries">Import Python Libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#import-5g-toolkit-modules">Import 5G Toolkit Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Table-of-Contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Import-Python-Libraries">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Import-5G-Toolkit-Modules">Import 5G Toolkit Modules</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#learning-to-demap-the-symbols">Learning to Demap the Symbols</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#input-output-mapping-for-m-4">Input Output Mapping for M = 4</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#input-output-mapping-for-m-6">Input Output Mapping for M = 6</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#input-output-mapping-for-m-8">Input Output Mapping for M = 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Learning-to-Demap-the-Symbols">Learning to Demap the Symbols</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Input-Output-Mapping-for-M-=-4">Input Output Mapping for M = 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Input-Output-Mapping-for-M-=-6">Input Output Mapping for M = 6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Input-Output-Mapping-for-M-=-8">Input Output Mapping for M = 8</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#throughput-and-ber-performance-of-llrnet">Throughput and BER Performance of <em>LLRnet</em></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Throughput-and-BER-Performance-of-LLRnet">Throughput and BER Performance of <em>LLRnet</em></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#id1">Import Libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#simulation-parameters">Simulation Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#pdsch-parameters">PDSCH Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#llrnet-parameters">LLRnet Parameters</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#training-framework">Training Framework</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#deployment-framework">Deployment Framework</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#PDSCH-Parameters">PDSCH Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#LLRnet-Parameters">LLRnet Parameters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Training-Framework">Training Framework</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Deployment-Framework">Deployment Framework</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#simulation-section">Simulation Section</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#performance-evaluation">Performance Evaluation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-16-qam-64-qam-and-256-qam">Throughput vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-16-qam">Throughput vs SNR (dB) for 16-QAM.</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-64-qam">Throughput vs SNR (dB) for 64-QAM.</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#throughput-vs-snr-db-for-256-qam">Throughput vs SNR (dB) for 256-QAM.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Simulation-Section">Simulation Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Performance-Evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Throughput-vs-SNR-(dB)-for-16-QAM,-64-QAM-and,-256-QAM.">Throughput vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Throughput-vs-SNR-(dB)-for-16-QAM.">Throughput vs SNR (dB) for 16-QAM.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Throughput-vs-SNR-(dB)-for-64-QAM.">Throughput vs SNR (dB) for 64-QAM.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Throughput-vs-SNR-(dB)-for-256-QAM.">Throughput vs SNR (dB) for 256-QAM.</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#bit-error-rate-ber-vs-snr-db-for-16-qam-64-qam-and-256-qam">Bit Error rate (BER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#ber-vs-snr-for-64-qam">BER vs SNR for 64-QAM</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#ber-vs-snr-for-256-qam">BER vs SNR for 256-QAM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Bit-Error-rate-(BER)-vs-SNR-(dB)-for-16-QAM,-64-QAM-and,-256-QAM.">Bit Error rate (BER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#BER-vs-SNR-for-64-QAM">BER vs SNR for 64-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#BER-vs-SNR-for-256-QAM">BER vs SNR for 256-QAM</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#block-error-rate-bler-vs-snr-db-for-16-qam-64-qam-and-256-qam">Block Error Rate (BLER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#bler-vs-snr-for-16-qam">BLER vs SNR for 16-QAM</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#bler-vs-snr-for-64-qam">BLER vs SNR for 64-QAM</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#bler-vs-snr-for-256-qam">BLER vs SNR for 256-QAM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Block-Error-Rate-(BLER)-vs-SNR-(dB)-for-16-QAM,-64-QAM-and,-256-QAM.">Block Error Rate (BLER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#BLER-vs-SNR-for-16-QAM">BLER vs SNR for 16-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#BLER-vs-SNR-for-64-QAM">BLER vs SNR for 64-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#BLER-vs-SNR-for-256-QAM">BLER vs SNR for 256-QAM</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#complexity-analysis">Complexity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Complexity-Analysis">Complexity Analysis</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#conclusion">Conclusion</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#positives-of-the-llrnet">Positives of the LLRnet:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#limitations-of-the-llrnet">Limitations of the LLRnet:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Conclusion">Conclusion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Positives-of-the-LLRnet:">Positives of the LLRnet:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Limitations-of-the-LLRnet:">Limitations of the LLRnet:</a></li>
 </ul>
 </li>
 </ul>
@@ -811,7 +825,31 @@
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project4/project4.html">Comparative Study of Reed Muller codes, Polar Codes and LDPC codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project5/project5.html">Channel Quality Estimation in 5G and Beyond Networks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project6/project6.html">Hybrid Automatic repeat Request in 5G and Beyond</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/Projects/Project7/project7.html">Symbol Constellation learning using Auto-encoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html">Constellation Learning in an AWGN Channel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#PHY-layer-as-AutoEncoder">PHY layer as AutoEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Steps">Steps</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Importing-Libraries">Importing Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Parameters-of-AutoEncoder">Parameters of AutoEncoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Training-Data">Training Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Testing-Data">Testing Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Normalization-Functions">Normalization Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Defining-AutoEncoder-Model">Defining AutoEncoder Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Training-AutoEncoder">Training AutoEncoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Defining-Tx,-Channel-and-Rx-from-Trained-AutoEncoder">Defining Tx, Channel and Rx from Trained AutoEncoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Block-Error-Rate-(BLER)-performance">Block Error Rate (BLER) performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Hamming-Codes">Hamming Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Importing-necessary-libraries">Importing necessary libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Transmitter">Transmitter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#BLER-plot-:-comparison-of-AutoEncoder-BLER-with-base-line-(n,k)-Hamming-Code-BLER">BLER plot : comparison of AutoEncoder BLER with base line (n,k) Hamming Code BLER</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Constellation-Learning">Constellation Learning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#learned-constellation-plot">learned constellation plot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#References">References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project8/project8.html">Downlink Synchronization using SSB in 5G systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project9/project9.html">Uplink Synchronization using PRACH in 5G systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project10/project10.html">Physical downlink control Channel in 5G</a></li>
@@ -874,7 +912,10 @@ provide interactive interfaces to analyze the performance of the methods and dev
 systems. It is designed to work well with CPUs, GPUs and TPUs.</p>
 <center>
 <iframe width="620" height="350" src="https://www.youtube.com/embed/6L4HBA3z1I8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center><section id="salient-features">
+</center><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="salient-features">
 <h2>Salient Features<a class="headerlink" href="#salient-features" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Highly Moduler Design</p></li>
@@ -901,7 +942,7 @@ systems. It is designed to work well with CPUs, GPUs and TPUs.</p>
 </section>
 </section>
 <section id="g-toolkit-version-documentation">
-<h1>5G Toolkit R23a.0.8 Documentation<a class="headerlink" href="#g-toolkit-version-documentation" title="Permalink to this heading"></a></h1>
+<h1>5G Toolkit R23a.0.9 Documentation<a class="headerlink" href="#g-toolkit-version-documentation" title="Permalink to this heading"></a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Version<span class="colon">:</span></dt>
 <dd class="field-odd"><p>R23a</p>
@@ -930,14 +971,15 @@ systems. It is designed to work well with CPUs, GPUs and TPUs.</p>
 <p><a href="#id4"><span class="problematic" id="id5">|5G Toolkit|</span></a> documentation provides a detailed understanding of the product. A high-level overview of the complete
 toolkit is given below. It will enable you to locate the things they might be looking for:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="about.html"><span class="doc">Part 1: About</span></a> discusses the installation process and the other libraries required to install the product.</p></li>
-<li><p><a class="reference internal" href="api/5G_Toolkit/5Gtoolkit.html"><span class="doc">Part 2: API Documentation</span></a> provides the details of the input-output interface of all the modules along with examples demonstrating their usage.</p></li>
-<li><p><a class="reference internal" href="api/Tutorials/Tutorials.html"><span class="doc">Part 3: Tutorials</span></a> guides you to use the toolkit using a set of simple well illustrated tutorials. These tutorials cover Channel codes, physical chains and wireless channels. More tutorials will be added along the way.</p></li>
-<li><p><a class="reference internal" href="api/Projects/Projects.html"><span class="doc">Part 4: Projects</span></a> are the guides and lay out the recipes to solve some complex challenging problems using the toolkit. It provided the codes to implement some of the state of the art research work (paper) using the modules of the toolkit.</p></li>
-<li><p><a class="reference internal" href="api/Preview_of_Next_Release/FeatureList.html"><span class="doc">Part 5: Tentative list of features</span></a> arrange the list of features that will be released in upcoming quarters.</p></li>
-<li><p><a class="reference internal" href="api/Built_using_5G_Toolkit/builtUsing5GToolkit.html"><span class="doc">Part 6: Research work carried out using 5G Toolkit</span></a> list down the work that used <strong>5G Toolkit</strong>.</p></li>
-<li><p><a class="reference internal" href="api/WeekChallenge/challenge.html"><span class="doc">Part 7: Challenge of this week</span></a> is an initiative by <a class="reference external" href="https://gigayasa.com/">Gigayasa</a> to excite young researchers to about wireless communication. The board will float a research problem every month and interested researchers can solve the problem using 5G Toolkit and share the code repository with us on <a class="reference external" href="mailto:support&#37;&#52;&#48;gigayasa&#46;com">support<span>&#64;</span>gigayasa<span>&#46;</span>com</a>. The best responses will be rewarded. We will provide the solution of each problem at the end of the month.</p></li>
-<li><p><a class="reference internal" href="api/License/license.html"><span class="doc">Part 8: Licenses</span></a> describes the license and copyright related to 5G Toolkit.</p></li>
+<li><p><a class="reference internal" href="releaseNotes.html"><span class="doc">Part 1: ReleaseNotes</span></a> provides the list of features supported by the latest release of 5G Toolkit.</p></li>
+<li><p><a class="reference internal" href="install.html"><span class="doc">Part 2: Install 5G Toolkit</span></a> discusses the installation process and the other libraries required to install the product.</p></li>
+<li><p><a class="reference internal" href="api/5G_Toolkit/5Gtoolkit.html"><span class="doc">Part 3: API Documentation</span></a> provides the details of the input-output interface of all the modules along with examples demonstrating their usage.</p></li>
+<li><p><a class="reference internal" href="api/Tutorials/Tutorials.html"><span class="doc">Part 4: Tutorials</span></a> guides you to use the toolkit using a set of simple well illustrated tutorials. These tutorials cover Channel codes, physical chains and wireless channels. More tutorials will be added along the way.</p></li>
+<li><p><a class="reference internal" href="api/Projects/Projects.html"><span class="doc">Part 5: Projects</span></a> are the guides and lay out the recipes to solve some complex challenging problems using the toolkit. It provided the codes to implement some of the state of the art research work (paper) using the modules of the toolkit.</p></li>
+<li><p><a class="reference internal" href="api/Preview_of_Next_Release/FeatureList.html"><span class="doc">Part 6: Tentative list of features</span></a> arrange the list of features that will be released in upcoming quarters.</p></li>
+<li><p><a class="reference internal" href="api/Built_using_5G_Toolkit/builtUsing5GToolkit.html"><span class="doc">Part 7: Research work carried out using 5G Toolkit</span></a> list down the work that used <strong>5G Toolkit</strong>.</p></li>
+<li><p><a class="reference internal" href="api/WeekChallenge/challenge.html"><span class="doc">Part 8: Challenge of this week</span></a> is an initiative by <a class="reference external" href="https://gigayasa.com/">Gigayasa</a> to excite young researchers to about wireless communication. The board will float a research problem every month and interested researchers can solve the problem using 5G Toolkit and share the code repository with us on <a class="reference external" href="mailto:support&#37;&#52;&#48;gigayasa&#46;com">support<span>&#64;</span>gigayasa<span>&#46;</span>com</a>. The best responses will be rewarded. We will provide the solution of each problem at the end of the month.</p></li>
+<li><p><a class="reference internal" href="api/License/license.html"><span class="doc">Part 9: Licenses</span></a> describes the license and copyright related to 5G Toolkit.</p></li>
 </ul>
 </section>
 <section id="looking-for-help">
@@ -950,12 +992,14 @@ possible. Please feel free to request new features or reach us out on <a class="
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install 5G Toolkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#id1">Install 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#dependent-libraries">Dependent Libraries:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#license-bwsim">License BWSim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#license-5g-toolkit">License 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
@@ -1062,6 +1106,15 @@ possible. Please feel free to request new features or reach us out on <a class="
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/Tutorials/Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html">Hamming Codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Import-Libraries">Import Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Hamming-Codes-Parameters">Hamming Codes Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Simulation-Setup">Simulation Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Performance-Evaluation:-SNR-vs-BER">Performance Evaluation: SNR vs BER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Performance-Evaluation:-SNR-vs-BLER">Performance Evaluation: SNR vs BLER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Conclusions">Conclusions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html">Reed Muller Codes in 5G</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Table-of-content:">Table of content:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Import-Libraries">Import Libraries</a></li>
@@ -1090,15 +1143,15 @@ possible. Please feel free to request new features or reach us out on <a class="
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html">Initial Access in 5G</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#import-libraries">Import Libraries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#system-parameters">System Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#pbch-information">PBCH Information</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#transmission-side-processing">Transmission-side Processing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#channel-generation">Channel Generation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#pass-tx-signal-through-wireless-channel">Pass Tx signal through Wireless Channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#noise-addition-at-receiver">Noise addition at receiver</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#ssb-receiver-side">SSB Receiver Side</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#performance-evaluations-ber-cell-ids-dmrs-parameter-detection">Performance Evaluations: BER + Cell-IDs + DMRS Parameter Detection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Import-Libraries">Import Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#System-Parameters">System Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#PBCH-Information">PBCH Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Transmission-side-Processing">Transmission-side Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Channel-Generation">Channel Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Pass-Tx-signal-through-Wireless-Channel">Pass Tx signal through Wireless Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Noise-addition-at-receiver">Noise addition at receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#SSB-Receiver-Side">SSB Receiver Side</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial5/SSB_End2End.html#Performance-Evaluations:-BER-+-Cell-IDs-+-DMRS-Parameter-Detection">Performance Evaluations: BER + Cell-IDs + DMRS Parameter Detection</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html">BER Performance of PUCCH Format 0</a><ul>
@@ -1117,13 +1170,13 @@ possible. Please feel free to request new features or reach us out on <a class="
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/Projects/Projects.html">Projects</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html">Learning to Demap</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#table-of-contents">Table of Contents</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#import-libraries">Import Libraries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#learning-to-demap-the-symbols">Learning to Demap the Symbols</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#throughput-and-ber-performance-of-llrnet">Throughput and BER Performance of <em>LLRnet</em></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#simulation-section">Simulation Section</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#performance-evaluation">Performance Evaluation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#conclusion">Conclusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Table-of-Contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Import-Libraries">Import Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Learning-to-Demap-the-Symbols">Learning to Demap the Symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Throughput-and-BER-Performance-of-LLRnet">Throughput and BER Performance of <em>LLRnet</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Simulation-Section">Simulation Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Performance-Evaluation">Performance Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Conclusion">Conclusion</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project2/project2.html">Imitation Learning for Position Estimation</a></li>
@@ -1131,7 +1184,16 @@ possible. Please feel free to request new features or reach us out on <a class="
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project4/project4.html">Comparative Study of Reed Muller codes, Polar Codes and LDPC codes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project5/project5.html">Channel Quality Estimation in 5G and Beyond Networks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project6/project6.html">Hybrid Automatic repeat Request in 5G and Beyond</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/Projects/Project7/project7.html">Symbol Constellation learning using Auto-encoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html">Constellation Learning in an AWGN Channel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#PHY-layer-as-AutoEncoder">PHY layer as AutoEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Steps">Steps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Importing-necessary-libraries">Importing necessary libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Transmitter">Transmitter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#BLER-plot-:-comparison-of-AutoEncoder-BLER-with-base-line-(n,k)-Hamming-Code-BLER">BLER plot : comparison of AutoEncoder BLER with base line (n,k) Hamming Code BLER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#learned-constellation-plot">learned constellation plot</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#References">References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project8/project8.html">Downlink Synchronization using SSB in 5G systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project9/project9.html">Uplink Synchronization using PRACH in 5G systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project10/project10.html">Physical downlink control Channel in 5G</a></li>
@@ -1173,7 +1235,7 @@ possible. Please feel free to request new features or reach us out on <a class="
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="install.html" class="btn btn-neutral float-right" title="Install 5G Toolkit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="releaseNotes.html" class="btn btn-neutral float-right" title="Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

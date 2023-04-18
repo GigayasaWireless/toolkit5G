@@ -4,13 +4,13 @@ Projects
 .. toctree::
     :maxdepth: 4
 
-    Project1/learning2Demap.rst
+    Project1/learning2Demap.ipynb
     Project2/project2
     Project3/project3
     Project4/project4
     Project5/project5
     Project6/project6
-    Project7/project7
+    Project7/E2E_Learning_for_Physical_Layer.ipynb
     Project8/project8
     Project9/project9
     Project10/project10

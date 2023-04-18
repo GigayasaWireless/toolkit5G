@@ -1,6 +1,0 @@
-# About Us
-We at Gigayasa design premium research and development tools for Cellular Wireless Communications. We have designed 5G
-simulator (based on 3GPP release 15/16) and 5G toolkit (based on 3GPP release 17). We are working on many new exciting 
-features and use-cases as listed [](api/Preview_of_Next_Release/FeatureList). We are always excited to hear from our 
-current and potential future customers about our products. Moreover, if you are interested in any new feature please 
-reach us at support@gigayasa.com. We will provide the requested feature(s) in one of our upcoming releases.

@@ -3,8 +3,7 @@ This page takes the user through the complete process of installing all the pack
 5G toolkit easily in a Jupyter Notebook. 
 
 ## Detailed Installation on Ubuntu
-
-### Update Ubuntu system**
+**Update Ubuntu system**
 
 The complete process starts with an Ubuntu update
 ~~~
@@ -17,15 +16,19 @@ Those who don't have Python on their system can install by running the following
 ~~~
 sudo apt-get install pythonX.Y
 ~~~
+
 For version 3.7 of Python, you can run the following:
 ~~~
 sudo apt-get install python3.7
 ~~~
+
 The installation status can be confirmed with following commands:
 ~~~
 python3 --version
 ~~~
+
 or
+
 ~~~
 python --version
 ~~~
@@ -49,22 +52,27 @@ Miniconda which is a lighter version of Anaconda. First we will download minicon
 ~~~
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ~~~
+
 Followed by, installing miniconda using the downloaded package.
 ~~~
 bash Miniconda3-latest-Linux-x86_64.sh
 ~~~
+
 Once the installation is completed, we can check the version installed Conda on our system:
 ~~~
 conda --v
 ~~~
+
 Now, we will use conda to create a new environment for python 3.7:
 ~~~
 conda create -n myenv python==3.7
 ~~~
+
 Finally, we will activate the created environment by executing
 ~~~
 conda activate myenv
 ~~~
+
 We will install everything from further now in this environment.
 
 **Install Jupyter Notebook**
@@ -79,7 +87,7 @@ pip3 install Jupyter
 Finally, we are ready to install 5G Toolkit:
 
 ~~~
-pip install https://github.com/GigayasaWireless/toolkit5G/raw/main/toolkit5G-0.7-py3-none-any.whl
+pip install https://github.com/GigayasaWireless/toolkit5G/raw/main/toolkit5G-0.9-py3-none-any.whl
 ~~~
 
 Once the installation is complete the user can verify the installation by the output of the pip show command:
@@ -95,7 +103,7 @@ jupyter notebook
 ~~~
 
 Create a new script and run "import toolkit5G as tk" in one of the cell. If it imports successfully, the package has been
-installed. 
+installed. If it shows "License Error", then you will have to activate the License as described on [installation page](install.md#activate-the-5g-toolkit-license).
 
 ## Detailed Installation on Windows
 This section will be updated soon.

@@ -3,9 +3,10 @@ Tutorials
 
 .. toctree::
     :maxdepth: 4
-
+    
+    Tutorial1/BER_Analysis_of_Hamming_Codes.ipynb
     Tutorial2/Tutorial2_ReedMullerCodes.ipynb
     Tutorial3/Tutorial3_PolarCodes.ipynb
     Tutorial4/Tutorial4_LDPCCodes.ipynb
-    Tutorial5/SSB_End2End.rst
+    Tutorial5/SSB_End2End.ipynb
     Tutorial8/pucchFormat0_Tutorial.rst

@@ -1,4 +1,0 @@
-Cyclic Redundancy Checks in 5G and their performance analysis
-=============================================================
-Hello1
-
