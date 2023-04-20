@@ -2,7 +2,7 @@
 
 5G Tookit provides a rich set of 3GPP standards compliant modules and libraries. 
 These modules can be used for reseach and development on physical channelss and procedures in uplink and downlink.
-For more details follow our 5G Toolkit webpage ()[https://gigayasawireless.github.io/toolkit5G/]
+For more details follow our 5G Toolkit [webpage](https://gigayasawireless.github.io/toolkit5G/)
 
 # Features Highlight: 5G Toolkit R23a
 
@@ -33,7 +33,7 @@ For more details follow our 5G Toolkit webpage ()[https://gigayasawireless.githu
 * Other standards compliant Modules
   * Scramblers for all the chains.
   * Interleavers for all the chains.
-  * Layer Mappers for Shared Chains.
+  * Layer Mappers for shared chains.
 * OFDM and Resource mapping
   * Standards complaint OFDM implementation.
   * Resource Mapping for all the Physical channels.
@@ -46,4 +46,4 @@ For more details follow our 5G Toolkit webpage ()[https://gigayasawireless.githu
   * Multi-frequency Simulations
   * OFDM Channel
 * Sidelink Channels
-  * Implements Shared, Control and aBroadcast channels
+  * Implements Shared, Control and Broadcast channels
