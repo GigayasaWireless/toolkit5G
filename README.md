@@ -1,7 +1,9 @@
+![toolkit5G-logo](./logo/toolkit5G_Git.svg) 
+
 # toolkit5G
 
 5G Tookit provides a rich set of 3GPP standards compliant modules and libraries. 
-These modules can be used for reseach and development on physical channelss and procedures in uplink and downlink.
+These modules can be used for reseach and development on physical channels and procedures in uplink and downlink.
 For more details follow our 5G Toolkit [webpage](https://gigayasawireless.github.io/toolkit5G/)
 
 # Features Highlight: 5G Toolkit R23a
