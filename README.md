@@ -1,4 +1,4 @@
-![toolkit5G-logo](./logo/toolkit5G_Git.svg) 
+![toolkit5G-logo](./logo/5GToolkitLogoTM.svg) 
 
 # toolkit5G
 
