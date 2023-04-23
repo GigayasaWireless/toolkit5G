@@ -1,25 +1,27 @@
 # Install 5G Toolkit
 This page takes the user through the complete process of installing all the packages to the point where they can use the
-5G toolkit easily in a Jupyter Notebook. 
+5G toolkit easily in a Jupyter Notebook.
+![](_static/installationProcess.png)
 
-## Detailed Installation on Ubuntu
-**Update Ubuntu system**
+# Detailed Installation on Ubuntu
+
+## Update Ubuntu system
 
 The complete process starts with an Ubuntu update
 ~~~
 sudo apt-get update
 ~~~
 
-**Install Python**
+## Install Python
 
 Those who don't have Python on their system can install by running the following command.
 ~~~
 sudo apt-get install pythonX.Y
 ~~~
 
-For version 3.7 of Python, you can run the following:
+For version 3.11 of Python, you can run the following:
 ~~~
-sudo apt-get install python3.7
+sudo apt-get install python3.11
 ~~~
 
 The installation status can be confirmed with following commands:
@@ -33,7 +35,7 @@ or
 python --version
 ~~~
 
-**Install PIP3**
+## Install PIP
 
 Now, we need to install package manager for installing any package/library for Python. 
 ~~~
@@ -42,10 +44,10 @@ sudo apt install python3-pip
 
 When the installation is complete, verify the installation by checking the pip version:
 ~~~
-pip3 --version
+pip --version
 ~~~
 
-**Install Miniconda**
+## Install Miniconda
 
 If Anaconda is already installed on your system, then you can skip this step. The following instructions install the 
 Miniconda which is a lighter version of Anaconda. First we will download miniconda using the command:
@@ -63,9 +65,9 @@ Once the installation is completed, we can check the version installed Conda on 
 conda --v
 ~~~
 
-Now, we will use conda to create a new environment for python 3.7:
+Now, we will use conda to create a new environment for python 3.11:
 ~~~
-conda create -n myenv python==3.7
+conda create -n myenv python==3.11
 ~~~
 
 Finally, we will activate the created environment by executing
@@ -75,27 +77,155 @@ conda activate myenv
 
 We will install everything from further now in this environment.
 
-**Install Jupyter Notebook**
+## Install Jupyter Notebook
 
 We will install Jupyter for interactive scripting in Python.
 ~~~
-pip3 install Jupyter
+pip install Jupyter
 ~~~
 
-**Install 5G Toolkit**
+## Install 5G Toolkit
 
 Finally, we are ready to install 5G Toolkit:
 
+The **template command** for installation is given below:
+![](_static/Install_Toolkit.png)
+
+**For Python 3.7**:
+
 ~~~
-pip install https://github.com/GigayasaWireless/toolkit5G/raw/main/toolkit5G-0.9-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_7/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.8**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_8/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.9**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_9/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.10**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_10/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.11**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_11/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+
+Once the installation is complete the user can verify the installation by the output of the pip show command:
+~~~
+pip show toolkit5G
+~~~
+
+## Final Confirmation
+
+open Jupyter Notebook
+~~~
+jupyter notebook
+~~~
+
+
+Create a new script and run "import toolkit5G as tk" in one of the cell. If it imports successfully, the package has been
+installed. If it shows "License Error", then you will have to activate the License as described on [installation page](install.md#activate-the-5g-toolkit-license).
+
+~~~
+import toolkit5G as tk
+tk.__version__
+~~~
+
+# Detailed Installation on Windows 10/11
+
+## Install Python
+To be updated!
+
+## Install PIP
+To be updated!
+
+When the installation is complete, verify the installation by checking the pip version:
+~~~
+pip --version
+~~~
+
+## Install Miniconda
+To be updated!
+
+Once the installation is completed, we can check the version installed Conda on our system:
+~~~
+conda --v
+~~~
+
+Now, we will use conda to create a new environment for python 3.11:
+~~~
+conda create -n myenv python==3.11
+~~~
+
+Finally, we will activate the created environment by executing
+~~~
+conda activate myenv
+~~~
+
+We will install everything from further now in this environment.
+
+## Install Jupyter Notebook
+
+We will install Jupyter for interactive scripting in Python.
+~~~
+pip install Jupyter
+~~~
+
+## Install 5G Toolkit
+
+Finally, we are ready to install 5G Toolkit:
+
+The **template command** for installation is given below:
+![](_static/Install_Toolkit.png)
+
+**For Python 3.7**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_7/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.8**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_8/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.9**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_9/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.10**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_10/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.11**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_11/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 Once the installation is complete the user can verify the installation by the output of the pip show command:
 ~~~
-pip3 show toolkit5G
+pip show toolkit5G
 ~~~
 
-**Final Confirmation**
+## Final Confirmation
 
 open Jupyter Notebook
 ~~~
@@ -105,5 +235,7 @@ jupyter notebook
 Create a new script and run "import toolkit5G as tk" in one of the cell. If it imports successfully, the package has been
 installed. If it shows "License Error", then you will have to activate the License as described on [installation page](install.md#activate-the-5g-toolkit-license).
 
-## Detailed Installation on Windows
-This section will be updated soon.
+~~~
+import toolkit5G as tk
+tk.__version__
+~~~

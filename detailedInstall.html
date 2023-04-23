@@ -40,7 +40,7 @@
               <img src="_static/logo28.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                R23a.0.9
+                R23a.0.10
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -55,7 +55,8 @@
 <li class="toctree-l1"><a class="reference internal" href="releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install 5G Toolkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#id1">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-window-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Window 10/11</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#dependent-libraries">Dependent Libraries:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#license-5g-toolkit">License 5G Toolkit</a></li>
@@ -398,6 +399,16 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/ratematcher.html">Rate matching</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html">Rate matching for LDPC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html">Bit Interleaver for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-de-interleaver">Bit De-interleaver</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters"><code class="docutils literal notranslate"><span class="pre">RatematchParameters</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.baseGraph"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.baseGraph</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.enableLBRM"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.enableLBRM</span></code></a></li>
@@ -411,22 +422,12 @@
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.tbSize"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.tbSize</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html">Bit Interleaver for LDPC</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-de-interleaver">Bit De-interleaver</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/ratematcher.polarcoder.html">Rate matching for Polar coder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaving</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaving</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#sub-block-interleaver">Sub-block Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#sub-block-de-interleaver">Sub-block De-interleaver</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html">Bit Selection for Polar Coder</a><ul>
@@ -435,8 +436,8 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#channel-interleaver">Channel Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#channel-de-interleaver">Channel De-interleaver</a></li>
 </ul>
 </li>
 </ul>
@@ -901,21 +902,26 @@
   <section id="install-5g-toolkit">
 <h1>Install 5G Toolkit<a class="headerlink" href="#install-5g-toolkit" title="Permalink to this heading"></a></h1>
 <p>This page takes the user through the complete process of installing all the packages to the point where they can use the
-5G toolkit easily in a Jupyter Notebook.</p>
+5G toolkit easily in a Jupyter Notebook.
+<img alt="" src="_images/installationProcess.png" /></p>
+</section>
 <section id="detailed-installation-on-ubuntu">
-<h2>Detailed Installation on Ubuntu<a class="headerlink" href="#detailed-installation-on-ubuntu" title="Permalink to this heading"></a></h2>
-<p><strong>Update Ubuntu system</strong></p>
+<h1>Detailed Installation on Ubuntu<a class="headerlink" href="#detailed-installation-on-ubuntu" title="Permalink to this heading"></a></h1>
+<section id="update-ubuntu-system">
+<h2>Update Ubuntu system<a class="headerlink" href="#update-ubuntu-system" title="Permalink to this heading"></a></h2>
 <p>The complete process starts with an Ubuntu update</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
 </pre></div>
 </div>
-<p><strong>Install Python</strong></p>
+</section>
+<section id="install-python">
+<h2>Install Python<a class="headerlink" href="#install-python" title="Permalink to this heading"></a></h2>
 <p>Those who don’t have Python on their system can install by running the following command.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">pythonX</span><span class="o">.</span><span class="n">Y</span>
 </pre></div>
 </div>
-<p>For version 3.7 of Python, you can run the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python3</span><span class="mf">.7</span>
+<p>For version 3.11 of Python, you can run the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python3</span><span class="mf">.11</span>
 </pre></div>
 </div>
 <p>The installation status can be confirmed with following commands:</p>
@@ -926,16 +932,20 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
-<p><strong>Install PIP3</strong></p>
+</section>
+<section id="install-pip">
+<h2>Install PIP<a class="headerlink" href="#install-pip" title="Permalink to this heading"></a></h2>
 <p>Now, we need to install package manager for installing any package/library for Python.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span>
 </pre></div>
 </div>
 <p>When the installation is complete, verify the installation by checking the pip version:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="o">--</span><span class="n">version</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
-<p><strong>Install Miniconda</strong></p>
+</section>
+<section id="install-miniconda">
+<h2>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this heading"></a></h2>
 <p>If Anaconda is already installed on your system, then you can skip this step. The following instructions install the
 Miniconda which is a lighter version of Anaconda. First we will download miniconda using the command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
@@ -949,8 +959,8 @@ Miniconda which is a lighter version of Anaconda. First we will download minicon
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">v</span>
 </pre></div>
 </div>
-<p>Now, we will use conda to create a new environment for python 3.7:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">myenv</span> <span class="n">python</span><span class="o">==</span><span class="mf">3.7</span>
+<p>Now, we will use conda to create a new environment for python 3.11:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">myenv</span> <span class="n">python</span><span class="o">==</span><span class="mf">3.11</span>
 </pre></div>
 </div>
 <p>Finally, we will activate the created environment by executing</p>
@@ -958,31 +968,138 @@ Miniconda which is a lighter version of Anaconda. First we will download minicon
 </pre></div>
 </div>
 <p>We will install everything from further now in this environment.</p>
-<p><strong>Install Jupyter Notebook</strong></p>
+</section>
+<section id="install-jupyter-notebook">
+<h2>Install Jupyter Notebook<a class="headerlink" href="#install-jupyter-notebook" title="Permalink to this heading"></a></h2>
 <p>We will install Jupyter for interactive scripting in Python.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">Jupyter</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Jupyter</span>
 </pre></div>
 </div>
-<p><strong>Install 5G Toolkit</strong></p>
+</section>
+<section id="id1">
+<h2>Install 5G Toolkit<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
 <p>Finally, we are ready to install 5G Toolkit:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.9</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<p>The <strong>template command</strong> for installation is given below:
+<img alt="" src="_images/Install_Toolkit.png" /></p>
+<p><strong>For Python 3.7</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_7</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.8</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_8</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.9</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_9</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.10</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_10</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.11</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_11</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
 <p>Once the installation is complete the user can verify the installation by the output of the pip show command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">show</span> <span class="n">toolkit5G</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">show</span> <span class="n">toolkit5G</span>
 </pre></div>
 </div>
-<p><strong>Final Confirmation</strong></p>
+</section>
+<section id="final-confirmation">
+<h2>Final Confirmation<a class="headerlink" href="#final-confirmation" title="Permalink to this heading"></a></h2>
 <p>open Jupyter Notebook</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
 </pre></div>
 </div>
 <p>Create a new script and run “import toolkit5G as tk” in one of the cell. If it imports successfully, the package has been
 installed. If it shows “License Error”, then you will have to activate the License as described on <a class="reference internal" href="install.html#activate-the-5g-toolkit-license"><span class="std std-ref">installation page</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">toolkit5G</span> <span class="k">as</span> <span class="nn">tk</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
 </section>
-<section id="detailed-installation-on-windows">
-<h2>Detailed Installation on Windows<a class="headerlink" href="#detailed-installation-on-windows" title="Permalink to this heading"></a></h2>
-<p>This section will be updated soon.</p>
+</section>
+<section id="detailed-installation-on-windows-10-11">
+<h1>Detailed Installation on Windows 10/11<a class="headerlink" href="#detailed-installation-on-windows-10-11" title="Permalink to this heading"></a></h1>
+<section id="id2">
+<h2>Install Python<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>To be updated!</p>
+</section>
+<section id="id3">
+<h2>Install PIP<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<p>To be updated!</p>
+<p>When the installation is complete, verify the installation by checking the pip version:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>Install Miniconda<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<p>To be updated!</p>
+<p>Once the installation is completed, we can check the version installed Conda on our system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">v</span>
+</pre></div>
+</div>
+<p>Now, we will use conda to create a new environment for python 3.11:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">myenv</span> <span class="n">python</span><span class="o">==</span><span class="mf">3.11</span>
+</pre></div>
+</div>
+<p>Finally, we will activate the created environment by executing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">myenv</span>
+</pre></div>
+</div>
+<p>We will install everything from further now in this environment.</p>
+</section>
+<section id="id5">
+<h2>Install Jupyter Notebook<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<p>We will install Jupyter for interactive scripting in Python.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Jupyter</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>Install 5G Toolkit<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<p>Finally, we are ready to install 5G Toolkit:</p>
+<p>The <strong>template command</strong> for installation is given below:
+<img alt="" src="_images/Install_Toolkit.png" /></p>
+<p><strong>For Python 3.7</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_7</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.8</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_8</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.9</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_9</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.10</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_10</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.11</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_11</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p>Once the installation is complete the user can verify the installation by the output of the pip show command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">show</span> <span class="n">toolkit5G</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2>Final Confirmation<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<p>open Jupyter Notebook</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>Create a new script and run “import toolkit5G as tk” in one of the cell. If it imports successfully, the package has been
+installed. If it shows “License Error”, then you will have to activate the License as described on <a class="reference internal" href="install.html#activate-the-5g-toolkit-license"><span class="std std-ref">installation page</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">toolkit5G</span> <span class="k">as</span> <span class="nn">tk</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
 </section>
 </section>
 

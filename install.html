@@ -42,7 +42,7 @@
               <img src="_static/logo28.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                R23a.0.9
+                R23a.0.10
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -57,7 +57,8 @@
 <li class="toctree-l1"><a class="reference internal" href="releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Install 5G Toolkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-5g-toolkit-on-ubuntu-20-04-22-04-and-window-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Window 10/11</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dependent-libraries">Dependent Libraries:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#license-5g-toolkit">License 5G Toolkit</a></li>
@@ -400,6 +401,16 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/ratematcher.html">Rate matching</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html">Rate matching for LDPC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html">Bit Interleaver for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-de-interleaver">Bit De-interleaver</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters"><code class="docutils literal notranslate"><span class="pre">RatematchParameters</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.baseGraph"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.baseGraph</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.enableLBRM"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.enableLBRM</span></code></a></li>
@@ -413,22 +424,12 @@
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.tbSize"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.tbSize</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html">Bit Interleaver for LDPC</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-de-interleaver">Bit De-interleaver</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/ratematcher.polarcoder.html">Rate matching for Polar coder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaving</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaving</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#sub-block-interleaver">Sub-block Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#sub-block-de-interleaver">Sub-block De-interleaver</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html">Bit Selection for Polar Coder</a><ul>
@@ -437,8 +438,8 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#channel-interleaver">Channel Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#channel-de-interleaver">Channel De-interleaver</a></li>
 </ul>
 </li>
 </ul>
@@ -902,17 +903,63 @@
              
   <section id="install-5g-toolkit">
 <h1>Install 5G Toolkit<a class="headerlink" href="#install-5g-toolkit" title="Permalink to this heading"></a></h1>
-<p>This page takes the user through the complete process of installing all the packages to the point where they can use the
-5G toolkit easily in a Jupyter Notebook.</p>
+<p>This page takes the user through the complete process of installing the 5G Toolkit. It also provides a detailed installation
+procedure for new users.</p>
 <section id="how-to-install-5g-toolkit">
 <h2>How to install 5G Toolkit:<a class="headerlink" href="#how-to-install-5g-toolkit" title="Permalink to this heading"></a></h2>
-<p>5G Toolkit can be installed easily using pip. The details of the installation are provided below. The modules and
-libraries of 5G Toolkit are written in Python and is compatible with Python version &gt;= 3.7.</p>
+<p>5G Toolkit can be installed easily using pip which comes pre-installed with Python-3. The details of the installation are
+provided below. The modules and libraries of 5G Toolkit are written in Python and is compatible with all Python versions &gt;= 3.7.4.</p>
 </section>
-<section id="id1">
-<h2>Install 5G Toolkit<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h2>
+<section id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Subject</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Architecture</p></td>
+<td><p>x86_64</p></td>
+</tr>
+<tr class="row-odd"><td><p>Operating System</p></td>
+<td><p>Linux/Windows</p></td>
+</tr>
+<tr class="row-even"><td><p>Python</p></td>
+<td><p>&gt;=3.7.4 and &lt; 3.12</p></td>
+</tr>
+</tbody>
+</table>
+<p class="callout warning"><strong>Note</strong>: The users with any other operating system and architecture can request 
+the package at toolkit5g@gigayasa.com. We will create a new package for the requested configurations and provide installation
+procedure on this page itself.</p>
+</section>
+<section id="install-5g-toolkit-on-ubuntu-20-04-22-04-and-window-10-11">
+<h2>Install 5G Toolkit on Ubuntu (20.04/22.04) and Window 10/11<a class="headerlink" href="#install-5g-toolkit-on-ubuntu-20-04-22-04-and-window-10-11" title="Permalink to this heading"></a></h2>
 <p>If you are using pip for installation of packages, then run following in your terminal in your target environment.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.9</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<p class="callout warning"><strong>Note</strong>: "--no-cache-dir" flag is used to block pip from using cached version 
+of the package for installation. Users can remove it if not relevant for them. </p>
+<p>The <strong>template command</strong> for installation is given below:
+<img alt="" src="_images/Install_Toolkit.png" /></p>
+<p><strong>For Python 3.7</strong>:</p>
+<p class="callout warning"> <strong>Note</strong>: Initial version of Python 3.7 is buggy. Hence, only Python>=3.7.4 is supported. </p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_7</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.8</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_8</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.9</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_9</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.10</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_10</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</pre></div>
+</div>
+<p><strong>For Python 3.11</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_11</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
 <p>To confirm installation of the library, you can check the installation library:</p>
@@ -922,6 +969,7 @@ libraries of 5G Toolkit are written in Python and is compatible with Python vers
 </section>
 <section id="dependent-libraries">
 <h2>Dependent Libraries:<a class="headerlink" href="#dependent-libraries" title="Permalink to this heading"></a></h2>
+<p><img alt="" src="_images/libraries1.png" /></p>
 <p>5G Toolkit is dependent on the following libraries:</p>
 <ul class="simple">
 <li><p>NumPy</p></li>
@@ -929,6 +977,27 @@ libraries of 5G Toolkit are written in Python and is compatible with Python vers
 <li><p>Matplotlib</p></li>
 <li><p>Sionna</p></li>
 </ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Subject</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NumPy</p></td>
+<td><p>&gt; 1.16</p></td>
+</tr>
+<tr class="row-odd"><td><p>SciPy</p></td>
+<td><p>&gt;=1.6.0</p></td>
+</tr>
+<tr class="row-even"><td><p>matplotlib</p></td>
+<td><p>&gt; 3.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sionna</p></td>
+<td><p>&lt;=0.14 (For version 0.14 LLVM may create problem)</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="detailed-installation-procedure">
 <h2>Detailed Installation Procedure<a class="headerlink" href="#detailed-installation-procedure" title="Permalink to this heading"></a></h2>

@@ -33,3 +33,4 @@ The details about the input-output interface of the PSS implementation is provid
 
 References:
     .. [3GPPTS38211_PSS] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).
+

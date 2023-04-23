@@ -1,5 +1,7 @@
 # Release Notes
 
+![](_static/toolkit5G_Git.svg)
+
 * Uplink and Downlink Chains
   * Provides high-level and low level modules for all the uplink downlink chains.
   * Support shared channels, control channels, broadcast channels and random access channels.

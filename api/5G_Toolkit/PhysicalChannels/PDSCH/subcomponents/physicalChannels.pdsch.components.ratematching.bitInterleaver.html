@@ -44,7 +44,7 @@
               <img src="../../../../../_static/logo28.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                R23a.0.9
+                R23a.0.10
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
@@ -59,7 +59,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../install.html">Install 5G Toolkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#id1">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-window-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Window 10/11</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#dependent-libraries">Dependent Libraries:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
@@ -402,6 +403,16 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../Ratematcher/ratematcher.html">Rate matching</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html">Rate matching for LDPC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html">Bit Interleaver for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-de-interleaver">Bit De-interleaver</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters"><code class="docutils literal notranslate"><span class="pre">RatematchParameters</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.baseGraph"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.baseGraph</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.enableLBRM"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.enableLBRM</span></code></a></li>
@@ -415,22 +426,12 @@
 <li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.tbSize"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.tbSize</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html">Bit Interleaver for LDPC</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-de-interleaver">Bit De-interleaver</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../Ratematcher/PolarCoder/ratematcher.polarcoder.html">Rate matching for Polar coder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaving</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaving</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#sub-block-interleaver">Sub-block Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#sub-block-de-interleaver">Sub-block De-interleaver</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html">Bit Selection for Polar Coder</a><ul>
@@ -439,8 +440,8 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#channel-interleaver">Channel Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#channel-de-interleaver">Channel De-interleaver</a></li>
 </ul>
 </li>
 </ul>
@@ -908,78 +909,22 @@
              
   <section id="bit-interleaver-for-ldpc">
 <h1>Bit Interleaver for LDPC<a class="headerlink" href="#bit-interleaver-for-ldpc" title="Permalink to this heading"></a></h1>
-<p>Forward error correction is used in 5G for correction of bits in error. 5G supports primarily three channel coders:</p>
+<p>The bit interleaver is used in LDPC to minimize the damage caused by frequency selective channels to LDPC codes’s error
+correction capability. LDPC codes perform poorly for burst errors. The bit interleaver distribute the localized erroneous
+bits across the length of the block which results in improved performance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Bit interleaver improves the LDPC performance against burst and symbols errors.</p>
+</div>
 <section id="bit-interleaver">
 <h2>Bit Interleaver<a class="headerlink" href="#bit-interleaver" title="Permalink to this heading"></a></h2>
-<p>The details about the input-output interface of the Mapper modules is provided below.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="toolkit5G.Ratematcher.LDPC.BitDeinterleaver">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.Ratematcher.LDPC.</span></span><span class="sig-name descname"><span class="pre">BitDeinterleaver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modOrder</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/toolkit5G/Ratematcher/LDPC/Interleavers/bitDeinterleaverLDPC.html#BitDeinterleaver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.Ratematcher.LDPC.BitDeinterleaver" title="Permalink to this definition"></a></dt>
-<dd><p>This class performs Bit De-Interleaving part of Rate Matching for LDPC.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>modOrder</strong> (<em>int</em>) – Defines modulation order or number of bits per symbols in symbol mapping/de-mapping. It takes integer values
-from set <span class="math notranslate nohighlight">\(\in \{1, 2, 4, 6, 8, 10\}\)</span>.</p>
-</dd>
-<dt class="field-even">Input<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>inBits</strong> (<em>[k,], list where k can be either 1 or 2.</em>) – A list of codewords containing either soft or hard bit information. The list can have either 1 or 2 codeword-segments
-based on the condition specified in 3GPP TS 38.212 version 16 Section 5.4.2.1. The dimension of codeword-segments-i
-is [<span class="math notranslate nohighlight">\(\dots\)</span>, <span class="math notranslate nohighlight">\(\text{N}_\text{G}^\text{i}\)</span>, <span class="math notranslate nohighlight">\(\text{E}_\text{i}\)</span>] where <span class="math notranslate nohighlight">\(\text{N}_\text{cb} = \sum_{\text{i}=0}^{\text{k}} \text{N}_\text{G}^\text{i}\)</span>
-and <span class="math notranslate nohighlight">\(\text{E}_\text{i}\)</span> is number of rate-matched bits for codeword-segments-i. The details of computation
-of <span class="math notranslate nohighlight">\(\text{N}_\text{G}^\text{i}\)</span> and <span class="math notranslate nohighlight">\(\text{E}_\text{i}\)</span> are provided in section 5.4.2.1 of <a class="reference internal" href="../../physicalChannels.pdsch.html#gppts38212pdsch" id="id1"><span>[3GPPTS38212pdsch]</span></a>.</p>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The number of bits per codeword-segment must be a multiple of <code class="docutils literal notranslate"><span class="pre">modOrder</span></code>.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Output<span class="colon">:</span></dt>
-<dd class="field-odd"><p>[k,], list where <code class="docutils literal notranslate"><span class="pre">k</span></code> is defined in input. – The shape of each codeword-segments in the output matches the shape of each codeword-segments in the input list.</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>ValueError</strong> – [Error]: ‘inBits’ must be a Python list type variable!</p></li>
-<li><p><strong>ValueError</strong> – [Error]: length of input List can either be 1 or 2!</p></li>
-<li><p><strong>ValueError</strong> – [Error]: ‘modOrder’ must be an integer!</p></li>
-<li><p><strong>ValueError</strong> – [Error]: modOrder must take value from the set {1, 2, 4, 6, 8, 10}</p></li>
-<li><p><strong>ValueError</strong> – [Error]: ‘Number of Bits’ must be an integer!</p></li>
-<li><p><strong>ValueError</strong> – [Error]: ‘Number of Bits’ must be an integer multiple of ‘modOrder’!</p></li>
-<li><p><strong>ValueError</strong> – [Error]: ‘Number of Bits-2’ must be an integer!</p></li>
-<li><p><strong>ValueError</strong> – [Error]: ‘Number of Bits-2’ must be an integer multiple of ‘modOrder’!</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py property">
-<dt class="sig sig-object py" id="toolkit5G.Ratematcher.LDPC.BitDeinterleaver.modOrder">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">modOrder</span></span><a class="headerlink" href="#toolkit5G.Ratematcher.LDPC.BitDeinterleaver.modOrder" title="Permalink to this definition"></a></dt>
-<dd><p>Modulation Order</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="toolkit5G.Ratematcher.LDPC.BitDeinterleaver.numBits1">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numBits1</span></span><a class="headerlink" href="#toolkit5G.Ratematcher.LDPC.BitDeinterleaver.numBits1" title="Permalink to this definition"></a></dt>
-<dd><p>Number of Rate matched output bits of group 1</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="toolkit5G.Ratematcher.LDPC.BitDeinterleaver.numBits2">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numBits2</span></span><a class="headerlink" href="#toolkit5G.Ratematcher.LDPC.BitDeinterleaver.numBits2" title="Permalink to this definition"></a></dt>
-<dd><p>Number of Rate matched output bits of group 2</p>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="bit-de-interleaver">
-<h2>Bit De-interleaver<a class="headerlink" href="#bit-de-interleaver" title="Permalink to this heading"></a></h2>
 <p>The details about the input-output interface of the Mapper modules is provided below.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="toolkit5G.Ratematcher.LDPC.BitInterleaver">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.Ratematcher.LDPC.</span></span><span class="sig-name descname"><span class="pre">BitInterleaver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modOrder</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/toolkit5G/Ratematcher/LDPC/Interleavers/bitInterleaverLDPC.html#BitInterleaver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.Ratematcher.LDPC.BitInterleaver" title="Permalink to this definition"></a></dt>
 <dd><p>This class performs Bit Interleaving part pf Rate Matching for LDPC. Bit Interleaving only re-orders the bit sequence
 it doesn’t alter the length or shape of the input bits. The details of the implementation of Bit Interleaver for LDPC
-are provided in section 5.4.2.2 of <a class="reference internal" href="../../physicalChannels.pdsch.html#gppts38212pdsch" id="id2"><span>[3GPPTS38212pdsch]</span></a>.</p>
+are provided in section 5.4.2.2 of <a class="reference internal" href="../../physicalChannels.pdsch.html#gppts38212pdsch" id="id1"><span>[3GPPTS38212pdsch]</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>modOrder</strong> (<em>int</em>) – Defines modulation order or number of bits per symbols in symbol mapping/de-mapping. It takes integer values
@@ -990,7 +935,7 @@ from set <span class="math notranslate nohighlight">\(\in \{1, 2, 4, 6, 8, 10\}\
 specified in 3GPP TS 38.212 version 16 Section 5.4.2.1. The dimension of codeword-segments-i is
 [<span class="math notranslate nohighlight">\(\dots\)</span>, <span class="math notranslate nohighlight">\(\text{N}_\text{G}^\text{i}\)</span>, <span class="math notranslate nohighlight">\(\text{E}_\text{i}\)</span>] where <span class="math notranslate nohighlight">\(\text{N}_\text{cb} = \sum_{\text{i}=0}^{\text{k}} \text{N}_\text{G}^\text{i}\)</span>
 and <span class="math notranslate nohighlight">\(\text{E}_\text{i}\)</span> is number of rate-matched bits for codeword-segments-i. The details of computation
-of <span class="math notranslate nohighlight">\(\text{N}_\text{G}^\text{i}\)</span> and <span class="math notranslate nohighlight">\(\text{E}_\text{i}\)</span> are provided in section 5.4.2.1 of <a class="reference internal" href="../../physicalChannels.pdsch.html#gppts38212pdsch" id="id3"><span>[3GPPTS38212pdsch]</span></a>.</p>
+of <span class="math notranslate nohighlight">\(\text{N}_\text{G}^\text{i}\)</span> and <span class="math notranslate nohighlight">\(\text{E}_\text{i}\)</span> are provided in section 5.4.2.1 of <a class="reference internal" href="../../physicalChannels.pdsch.html#gppts38212pdsch" id="id2"><span>[3GPPTS38212pdsch]</span></a>.</p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -1035,6 +980,68 @@ which ensure that rate matched bits fit into the allocated time-frequency OFDM r
 <dt class="sig sig-object py" id="toolkit5G.Ratematcher.LDPC.BitInterleaver.numBits2">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numBits2</span></span><a class="headerlink" href="#toolkit5G.Ratematcher.LDPC.BitInterleaver.numBits2" title="Permalink to this definition"></a></dt>
 <dd><p>Number of rate matched output bits of the code blocks belonging to group 2</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="bit-de-interleaver">
+<h2>Bit De-interleaver<a class="headerlink" href="#bit-de-interleaver" title="Permalink to this heading"></a></h2>
+<p>The details about the input-output interface of the Mapper modules is provided below.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit5G.Ratematcher.LDPC.BitDeinterleaver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.Ratematcher.LDPC.</span></span><span class="sig-name descname"><span class="pre">BitDeinterleaver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modOrder</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../../_modules/toolkit5G/Ratematcher/LDPC/Interleavers/bitDeinterleaverLDPC.html#BitDeinterleaver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.Ratematcher.LDPC.BitDeinterleaver" title="Permalink to this definition"></a></dt>
+<dd><p>This class performs Bit De-Interleaving part of Rate Matching for LDPC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>modOrder</strong> (<em>int</em>) – Defines modulation order or number of bits per symbols in symbol mapping/de-mapping. It takes integer values
+from set <span class="math notranslate nohighlight">\(\in \{1, 2, 4, 6, 8, 10\}\)</span>.</p>
+</dd>
+<dt class="field-even">Input<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>inBits</strong> (<em>[k,], list where k can be either 1 or 2.</em>) – A list of codewords containing either soft or hard bit information. The list can have either 1 or 2 codeword-segments
+based on the condition specified in 3GPP TS 38.212 version 16 Section 5.4.2.1. The dimension of codeword-segments-i
+is [<span class="math notranslate nohighlight">\(\dots\)</span>, <span class="math notranslate nohighlight">\(\text{N}_\text{G}^\text{i}\)</span>, <span class="math notranslate nohighlight">\(\text{E}_\text{i}\)</span>] where <span class="math notranslate nohighlight">\(\text{N}_\text{cb} = \sum_{\text{i}=0}^{\text{k}} \text{N}_\text{G}^\text{i}\)</span>
+and <span class="math notranslate nohighlight">\(\text{E}_\text{i}\)</span> is number of rate-matched bits for codeword-segments-i. The details of computation
+of <span class="math notranslate nohighlight">\(\text{N}_\text{G}^\text{i}\)</span> and <span class="math notranslate nohighlight">\(\text{E}_\text{i}\)</span> are provided in section 5.4.2.1 of <a class="reference internal" href="../../physicalChannels.pdsch.html#gppts38212pdsch" id="id3"><span>[3GPPTS38212pdsch]</span></a>.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The number of bits per codeword-segment must be a multiple of <code class="docutils literal notranslate"><span class="pre">modOrder</span></code>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Output<span class="colon">:</span></dt>
+<dd class="field-odd"><p>[k,], list where <code class="docutils literal notranslate"><span class="pre">k</span></code> is defined in input. – The shape of each codeword-segments in the output matches the shape of each codeword-segments in the input list.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – [Error]: ‘inBits’ must be a Python list type variable!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: length of input List can either be 1 or 2!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ‘modOrder’ must be an integer!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: modOrder must take value from the set {1, 2, 4, 6, 8, 10}</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ‘Number of Bits’ must be an integer!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ‘Number of Bits’ must be an integer multiple of ‘modOrder’!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ‘Number of Bits-2’ must be an integer!</p></li>
+<li><p><strong>ValueError</strong> – [Error]: ‘Number of Bits-2’ must be an integer multiple of ‘modOrder’!</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.Ratematcher.LDPC.BitDeinterleaver.modOrder">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">modOrder</span></span><a class="headerlink" href="#toolkit5G.Ratematcher.LDPC.BitDeinterleaver.modOrder" title="Permalink to this definition"></a></dt>
+<dd><p>Modulation Order</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.Ratematcher.LDPC.BitDeinterleaver.numBits1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numBits1</span></span><a class="headerlink" href="#toolkit5G.Ratematcher.LDPC.BitDeinterleaver.numBits1" title="Permalink to this definition"></a></dt>
+<dd><p>Number of Rate matched output bits of group 1</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.Ratematcher.LDPC.BitDeinterleaver.numBits2">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numBits2</span></span><a class="headerlink" href="#toolkit5G.Ratematcher.LDPC.BitDeinterleaver.numBits2" title="Permalink to this definition"></a></dt>
+<dd><p>Number of Rate matched output bits of group 2</p>
 </dd></dl>
 
 </dd></dl>

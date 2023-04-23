@@ -1,7 +1,12 @@
 Rate matching for Polar coder
 =============================
-Forward error correction is used in 5G for correction of bits in error. 5G supports primarily three channel coders:
+The rate-matching matches the encoded bits to number of target bits. Its consists of three modules:
 
+- Sub-block Interleaving
+- Bit Selection
+- Channel Interleavers
+
+The details about these modules are provided in following sections:
 
 .. toctree::
     :maxdepth: 1

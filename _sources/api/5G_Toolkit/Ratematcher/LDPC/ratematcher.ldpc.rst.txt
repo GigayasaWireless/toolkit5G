@@ -1,18 +1,25 @@
 Rate matching for LDPC
 ======================
-Forward error correction is used in 5G for correction of bits in error. 5G supports primarily three channel coders:
+This module matches the encoded bits to number of target bits. Its consists of two modules:
 
-The details about the input-output interface of the Mapper modules is provided below.
+- Bit Selection
+- Bit Interleaver
 
-
-.. autoclass:: toolkit5G.Ratematcher.LDPC.RatematchParameters
-    :members:
-    :exclude-members: call, build
-    
+The details about these modules are provided in following sections:
 
 .. toctree::
     :maxdepth: 1
 
     BitSelection/ratematcher.ldpc.bitSelection
     Interleavers/ratematcher.ldpc.bitInterleaver
+
+
+The parameters required to configure the LDPC rate matching can be generated using following module.
+
+.. autoclass:: toolkit5G.Ratematcher.LDPC.RatematchParameters
+    :members:
+    :exclude-members: call, build
+    
+
+
 

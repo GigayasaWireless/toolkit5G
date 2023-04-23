@@ -1,15 +1,62 @@
 # Install 5G Toolkit
-This page takes the user through the complete process of installing all the packages to the point where they can use the
-5G toolkit easily in a Jupyter Notebook. 
+This page takes the user through the complete process of installing the 5G Toolkit. It also provides a detailed installation 
+procedure for new users.
 
 ## How to install 5G Toolkit:
-5G Toolkit can be installed easily using pip. The details of the installation are provided below. The modules and 
-libraries of 5G Toolkit are written in Python and is compatible with Python version >= 3.7.
+5G Toolkit can be installed easily using pip which comes pre-installed with Python-3. The details of the installation are 
+provided below. The modules and libraries of 5G Toolkit are written in Python and is compatible with all Python versions >= 3.7.4.
 
-## Install 5G Toolkit
+## System Requirements
+
+| Subject          | Value                                          |
+|------------------|------------------------------------------------|
+| Architecture     | x86_64                                         |
+| Operating System | Linux/Windows                                  |
+| Python           | \>=3.7.4 and < 3.12                            |
+
+<p class="callout warning"><strong>Note</strong>: The users with any other operating system and architecture can request 
+the package at toolkit5g@gigayasa.com. We will create a new package for the requested configurations and provide installation
+procedure on this page itself.</p>
+
+## Install 5G Toolkit on Ubuntu (20.04/22.04) and Window 10/11
 If you are using pip for installation of packages, then run following in your terminal in your target environment.
+
+<p class="callout warning"><strong>Note</strong>: "--no-cache-dir" flag is used to block pip from using cached version 
+of the package for installation. Users can remove it if not relevant for them. </p>
+
+The **template command** for installation is given below:
+![](_static/Install_Toolkit.png)
+
+**For Python 3.7**:
+
+<p class="callout warning"> <strong>Note</strong>: Initial version of Python 3.7 is buggy. Hence, only Python>=3.7.4 is supported. </p>
+
 ~~~
-pip install https://github.com/GigayasaWireless/toolkit5G/raw/main/toolkit5G-0.9-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_7/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.8**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_8/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.9**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_9/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.10**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_10/toolkit5G-0.10-py3-none-any.whl
+~~~
+
+**For Python 3.11**:
+
+~~~
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_11/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 To confirm installation of the library, you can check the installation library:
@@ -18,11 +65,21 @@ pip show toolkit5G
 ~~~
 
 ## Dependent Libraries:
+![](_static/libraries1.png)
+
 5G Toolkit is dependent on the following libraries:
   - NumPy
   - SciPy
   - Matplotlib
   - Sionna
+
+
+| Subject          | Value                                             |
+|------------------|---------------------------------------------------|
+| NumPy            | > 1.16                                            |
+| SciPy            | >=1.6.0                                           |
+| matplotlib       | > 3.4                                             |
+| Sionna           | <=0.14 (For version 0.14 LLVM may create problem) |
 
 ## Detailed Installation Procedure
 This section covers detailed installation procedure for Windows (10 and 11), Ubuntu (20.04 and 22.04). It covers following

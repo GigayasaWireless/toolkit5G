@@ -1,17 +1,23 @@
 Channel Interleaver for Polar Coder
 ===================================
-Forward error correction is used in 5G for correction of bits in error. 5G supports primarily three channel coders:
+Channel Interleaver is a low complexity version of Polar coded modulation (PCM). It improves the diversity gain for higher
+modulation order. The downlink broadcast and control channels always use QPSK modulation order hence does not require
+channel interleavers. It is an interleaver designed based on isoceles triangles whose sides are calculated based on the
+number of the target bits.
 
+Channel Interleaver
+**********************
 
-The details about the input-output interface of the Mapper modules is provided below.
+The details about the input-output interface of the channel interleaver modules is provided below.
 
 .. autoclass:: toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver
     :members:
     :exclude-members: call, build
 
+Channel De-interleaver
+**********************
 
-
-The details about the input-output interface of the Mapper modules is provided below.
+The details about the input-output interface of the channel de-interleaver modules is provided below.
 
 .. autoclass:: toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver
     :members:
