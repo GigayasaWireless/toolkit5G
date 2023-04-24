@@ -60,7 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install 5G Toolkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#system-requirements">System Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-window-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Window 10/11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#dependent-libraries">Dependent Libraries:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
@@ -301,14 +301,12 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#crc-attachment">CRC Attachment</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#rnti-masking">RNTI Masking</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#input-bit-interleaver">Input Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#polar-coder">Polar Coder</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#rate-matching">Rate Matching</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#scrambling">Scrambling</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#symbol-mapping-modulation">Symbol Mapping/Modulation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#resource-mapping">Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
 </ul>
 </li>
 </ul>
@@ -908,7 +906,7 @@
   <section id="physical-broadcast-channel-pbch">
 <h1>Physical Broadcast Channel (PBCH)<a class="headerlink" href="#physical-broadcast-channel-pbch" title="Permalink to this heading"></a></h1>
 <p>This module implements the physical broadcast channel. The implementation of these modules is based on <a class="reference internal" href="#gppts38211pbch" id="id1"><span>[3GPPTS38211pbch]</span></a>.</p>
-<a class="reference internal image-reference" href="../../../_images/PBCH.svg"><img alt="Alternative text" class="align-center" src="../../../_images/PBCH.svg" width="800" /></a>
+<a class="reference internal image-reference" href="../../../_images/PBCHn.png"><img alt="Alternative text" class="align-center" src="../../../_images/PBCHn.png" style="width: 800px;" /></a>
 <section id="pbch-transmitter">
 <h2>PBCH Transmitter<a class="headerlink" href="#pbch-transmitter" title="Permalink to this heading"></a></h2>
 <dl class="py class">
@@ -1137,7 +1135,7 @@ of this parameter depends upon the carrier frequency.</p></li>
 </section>
 <section id="pbch-components">
 <h2>PBCH Components<a class="headerlink" href="#pbch-components" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../../../_images/PBCH.svg"><img alt="Alternative text" class="align-center" src="../../../_images/PBCH.svg" width="800" /></a>
+<a class="reference internal image-reference" href="../../../_images/PBCHn.svg"><img alt="Alternative text" class="align-center" src="../../../_images/PBCHn.svg" width="800" /></a>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a><ul>

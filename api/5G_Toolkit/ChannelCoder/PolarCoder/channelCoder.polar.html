@@ -60,7 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../install.html">Install 5G Toolkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../install.html#system-requirements">System Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-window-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Window 10/11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../install.html#dependent-libraries">Dependent Libraries:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
@@ -301,14 +301,12 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#crc-attachment">CRC Attachment</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#rnti-masking">RNTI Masking</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#input-bit-interleaver">Input Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#polar-coder">Polar Coder</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#rate-matching">Rate Matching</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#scrambling">Scrambling</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#symbol-mapping-modulation">Symbol Mapping/Modulation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.pscch.html#resource-mapping">Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
 </ul>
 </li>
 </ul>
@@ -913,7 +911,7 @@ easily integrated with rate matching, code block segmentation and concatenation.
 control channels for conveying small payload size over the wireless channels. 5G uses Polar codes for following chains
 where A, N and E are polar encoder input length, mother codeword length and Payload length respectively:</p>
 <table class="docutils align-default" id="id9">
-<caption><span class="caption-number">Table 20 </span><span class="caption-text">Table-1: Polar codes and its configurations for different channels <a class="reference internal" href="../../PhysicalChannels/PUCCH/Format2_3_4/PUCCHComponents/ChannelCoding/physicalChannels.pucch.components.polarCodec.html#bioglio" id="id1"><span>[Bioglio]</span></a></span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 25 </span><span class="caption-text">Table-1: Polar codes and its configurations for different channels <a class="reference internal" href="../../PhysicalChannels/PUCCH/Format2_3_4/PUCCHComponents/ChannelCoding/physicalChannels.pucch.components.polarCodec.html#bioglio" id="id1"><span>[Bioglio]</span></a></span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 14%" />
 <col style="width: 14%" />
@@ -1050,7 +1048,7 @@ effective rate-loss.</p>
 <p>The Polar decoder can be implemented using multiple methods and each method provides a trades off between accuracy and
 complexity as shown below.</p>
 <table class="docutils align-default" id="id10">
-<caption><span class="caption-number">Table 21 </span><span class="caption-text">Performance Comparison of Different Polar Decoding Methods.</span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 26 </span><span class="caption-text">Performance Comparison of Different Polar Decoding Methods.</span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />

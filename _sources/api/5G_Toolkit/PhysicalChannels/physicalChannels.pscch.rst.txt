@@ -13,187 +13,64 @@ The details about the transmitter side of the PDSCH are provided in [3GPPTS38211
 [COMST.2021.3057017]_. The chain is bi-parted into upper physical layer and lower physical layer section to entertain
 both the link-level and system level simulations. The details of the APIs is provided in following sub-sections.
 
-.. image:: ../../figures/PhysicalChannels/PSCCH_TX.svg
+.. image:: ../../figures/PhysicalChannels/PSCCHE2ETx.png
   :width: 800
   :alt: Alternative text
   :align: center
+
 
 .. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhy.PscchUpperPhy
    :members:
    :exclude-members: call, build
 
+
 .. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhy.PscchLowerPhy
    :members:
    :exclude-members: call, build
 
+
 PSCCH Receiver
 *****************
+
 The details about the Receiver side of the PDSCH are provided in [3GPPTS38211pscch]_, [3GPPTS38212pscch]_ and
 [COMST.2021.3057017]_. The chain is bi-parted into upper physical layer and lower physical layer section to entertain
 both the link-level and system level simulations. The details of the APIs is provided in following sub-sections.
 
-.. image:: ../../figures/PhysicalChannels/PSCCH_RX.svg
+.. image:: ../../figures/PhysicalChannels/PSCCHE2ERx.png
   :width: 800
   :alt: Alternative text
   :align: center
+
 
 .. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhyDecoder.PscchLowerPhyDecoder
    :members:
    :exclude-members: call, build
 
+
 .. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhyDecoder.PscchUpperPhyDecoder
    :members:
    :exclude-members: call, build
-   
+
+
 PSCCH Components
 *****************
 
-.. image:: ../../figures/PhysicalChannels/PDCCHBlocks.svg
+.. image:: ../../figures/PhysicalChannels/PSCCHBlocksTx.png
   :width: 800
   :alt: Alternative text
   :align: center
 
+.. image:: ../../figures/PhysicalChannels/PSCCHBlocksRx.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
 
-CRC Attachment
-~~~~~~~~~~~~~~
+.. toctree::
+    :maxdepth: 10
 
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-RNTI Masking
-~~~~~~~~~~~~
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-
-Input Bit Interleaver
-~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-Polar Coder
-~~~~~~~~~~~
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-
-Rate Matching
-~~~~~~~~~~~~~
-
-Sub-block Interleaver
-"""""""""""""""""""""
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-Bit Selection
-"""""""""""""
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-
-Channel Interleaver
-"""""""""""""""""""
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-
-Scrambling
-~~~~~~~~~~
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-
-
-Symbol Mapping/Modulation
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-
-Resource Mapping
-~~~~~~~~~~~~~~~~
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
-.. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
-   :members:
-   :exclude-members: call, build
-
-
+    PSCCH/subcomponents/physicalChannels.pdcch.components.crc.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.polar.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.rst

@@ -2,33 +2,50 @@ Physical Downlink Control Channel (PDCCH)
 =========================================
 This module implements the physical downlink control channel. The implementation of these modules is based on [3GPPTS38211pdcch]_.
 
-.. image:: ../../figures/PhysicalChannels/PDCCHE2E.svg
+
+PDCCH Transmitter
+-----------------
+
+.. image:: ../../figures/PhysicalChannels/PDCCHE2E.png
   :width: 800
   :alt: Alternative text
   :align: center
 
-
-PDCCH Transmitter
------------------
 
 .. autoclass:: toolkit5G.PhysicalChannels.PDCCH
    :members:
    :exclude-members: call, build
 
+
 PDCCH Receiver
 --------------
+
+.. image:: ../../figures/PhysicalChannels/PDCCHRxE2E.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
 
 .. autoclass:: toolkit5G.PhysicalChannels.PDCCHDecoder
    :members:
    :exclude-members: call, build
 
+
 PDCCH Components
 ----------------
 
-.. image:: ../../figures/PhysicalChannels/PDCCHBlocks.svg
+.. image:: ../../figures/PhysicalChannels/PDCCHTxBlocks.png
   :width: 800
   :alt: Alternative text
   :align: center
+
+
+.. image:: ../../figures/PhysicalChannels/PDCCHRxBlocks.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+
 
 .. toctree::
     :maxdepth: 10

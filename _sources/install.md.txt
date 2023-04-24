@@ -18,14 +18,14 @@ provided below. The modules and libraries of 5G Toolkit are written in Python an
 the package at toolkit5g@gigayasa.com. We will create a new package for the requested configurations and provide installation
 procedure on this page itself.</p>
 
-## Install 5G Toolkit on Ubuntu (20.04/22.04) and Window 10/11
+## Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)
 If you are using pip for installation of packages, then run following in your terminal in your target environment.
-
-<p class="callout warning"><strong>Note</strong>: "--no-cache-dir" flag is used to block pip from using cached version 
-of the package for installation. Users can remove it if not relevant for them. </p>
 
 The **template command** for installation is given below:
 ![](_static/Install_Toolkit.png)
+
+<p class="callout warning"><strong>Note</strong>: "--no-cache-dir" flag is used to block pip from using cached version 
+of the package for installation. Users can remove it if not relevant for them. </p>
 
 **For Python 3.7**:
 
@@ -65,7 +65,11 @@ pip show toolkit5G
 ~~~
 
 ## Dependent Libraries:
-![](_static/libraries1.png)
+[![PythonLogo](_static/python.png)](https://www.python.org/)
+[![NumPyLogo](_static/NumPy.png)](https://github.com/numpy/numpy)
+[![SciPyLogo](_static/SciPy.png)](https://github.com/scipy/scipy)
+[![maplotlibLogo](_static/maplotlib.png)](https://github.com/matplotlib/matplotlib)
+
 
 5G Toolkit is dependent on the following libraries:
   - NumPy

@@ -2,7 +2,7 @@ Physical Broadcast Channel (PBCH)
 =================================
 This module implements the physical broadcast channel. The implementation of these modules is based on [3GPPTS38211pbch]_.
 
-.. image:: ../../figures/PhysicalChannels/PBCH.svg
+.. image:: ../../figures/PhysicalChannels/PBCHn.png
   :width: 800
   :alt: Alternative text
   :align: center
@@ -24,7 +24,7 @@ PBCH Receiver
 PBCH Components
 ---------------
 
-.. image:: ../../figures/PhysicalChannels/PBCH.svg
+.. image:: ../../figures/PhysicalChannels/PBCHn.svg
   :width: 800
   :alt: Alternative text
   :align: center

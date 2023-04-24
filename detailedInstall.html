@@ -56,7 +56,7 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install 5G Toolkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#system-requirements">System Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-window-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Window 10/11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#dependent-libraries">Dependent Libraries:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#license-5g-toolkit">License 5G Toolkit</a></li>
@@ -297,14 +297,12 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#crc-attachment">CRC Attachment</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#rnti-masking">RNTI Masking</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#input-bit-interleaver">Input Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#polar-coder">Polar Coder</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#rate-matching">Rate Matching</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#scrambling">Scrambling</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#symbol-mapping-modulation">Symbol Mapping/Modulation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#resource-mapping">Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
 </ul>
 </li>
 </ul>
@@ -909,18 +907,19 @@
 <h1>Detailed Installation on Ubuntu<a class="headerlink" href="#detailed-installation-on-ubuntu" title="Permalink to this heading"></a></h1>
 <section id="update-ubuntu-system">
 <h2>Update Ubuntu system<a class="headerlink" href="#update-ubuntu-system" title="Permalink to this heading"></a></h2>
-<p>The complete process starts with an Ubuntu update</p>
+<p>Lets start by updating the system:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
 </pre></div>
 </div>
 </section>
 <section id="install-python">
 <h2>Install Python<a class="headerlink" href="#install-python" title="Permalink to this heading"></a></h2>
-<p>Those who don’t have Python on their system can install by running the following command.</p>
+<p>Those who don’t have Python on their system can install by running the following command (The ones who use conda
+environment can skip this and install python directly using conda environment as described in upcoming subsection).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">pythonX</span><span class="o">.</span><span class="n">Y</span>
 </pre></div>
 </div>
-<p>For version 3.11 of Python, you can run the following:</p>
+<p>For example Python 3.11 can be installed directly using the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python3</span><span class="mf">.11</span>
 </pre></div>
 </div>
@@ -932,15 +931,16 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
+<p>It shall return the version of python installed using the above command.</p>
 </section>
 <section id="install-pip">
 <h2>Install PIP<a class="headerlink" href="#install-pip" title="Permalink to this heading"></a></h2>
-<p>Now, we need to install package manager for installing any package/library for Python.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span>
+<p>PIP is automatically installed by python package, you can check the version of PIP to confirm the installation</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
-<p>When the installation is complete, verify the installation by checking the pip version:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="o">--</span><span class="n">version</span>
+<p>In case above command doesn’t produce expected output, please install PIP using following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span>
 </pre></div>
 </div>
 </section>
@@ -959,7 +959,8 @@ Miniconda which is a lighter version of Anaconda. First we will download minicon
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">v</span>
 </pre></div>
 </div>
-<p>Now, we will use conda to create a new environment for python 3.11:</p>
+<p>Now, we will use conda to create a new environment for python 3.11 (this command will automatically install python 3.11
+in the target environment):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">myenv</span> <span class="n">python</span><span class="o">==</span><span class="mf">3.11</span>
 </pre></div>
 </div>
@@ -967,11 +968,11 @@ Miniconda which is a lighter version of Anaconda. First we will download minicon
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">myenv</span>
 </pre></div>
 </div>
-<p>We will install everything from further now in this environment.</p>
+<p>We will install everything from further now in this environment only.</p>
 </section>
 <section id="install-jupyter-notebook">
 <h2>Install Jupyter Notebook<a class="headerlink" href="#install-jupyter-notebook" title="Permalink to this heading"></a></h2>
-<p>We will install Jupyter for interactive scripting in Python.</p>
+<p>Install Jupyter for interactive scripting in Python.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Jupyter</span>
 </pre></div>
 </div>
@@ -1012,12 +1013,13 @@ Miniconda which is a lighter version of Anaconda. First we will download minicon
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
 </pre></div>
 </div>
-<p>Create a new script and run “import toolkit5G as tk” in one of the cell. If it imports successfully, the package has been
-installed. If it shows “License Error”, then you will have to activate the License as described on <a class="reference internal" href="install.html#activate-the-5g-toolkit-license"><span class="std std-ref">installation page</span></a>.</p>
+<p>Create a new jupyter notebook and run the following lines of code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">toolkit5G</span> <span class="k">as</span> <span class="nn">tk</span>
 <span class="n">tk</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
+<p>The toolkit is successfully installed if it shows the toolkit5G version. Otherwise, something went wrong. If it shows
+“License Error”, then you will have to activate the License as described on <a class="reference internal" href="install.html#activate-the-5g-toolkit-license"><span class="std std-ref">installation page</span></a>.</p>
 </section>
 </section>
 <section id="detailed-installation-on-windows-10-11">
@@ -1041,7 +1043,8 @@ installed. If it shows “License Error”, then you will have to activate the L
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="o">--</span><span class="n">v</span>
 </pre></div>
 </div>
-<p>Now, we will use conda to create a new environment for python 3.11:</p>
+<p>Now, we will use conda to create a new environment for python 3.11 (this command will automatically install python 3.11
+in the target environment):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">myenv</span> <span class="n">python</span><span class="o">==</span><span class="mf">3.11</span>
 </pre></div>
 </div>
@@ -1049,11 +1052,11 @@ installed. If it shows “License Error”, then you will have to activate the L
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">myenv</span>
 </pre></div>
 </div>
-<p>We will install everything from further now in this environment.</p>
+<p>We will install everything from further now in this environment only.</p>
 </section>
 <section id="id5">
 <h2>Install Jupyter Notebook<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
-<p>We will install Jupyter for interactive scripting in Python.</p>
+<p>Install Jupyter for interactive scripting in Python.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Jupyter</span>
 </pre></div>
 </div>
@@ -1094,12 +1097,13 @@ installed. If it shows “License Error”, then you will have to activate the L
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
 </pre></div>
 </div>
-<p>Create a new script and run “import toolkit5G as tk” in one of the cell. If it imports successfully, the package has been
-installed. If it shows “License Error”, then you will have to activate the License as described on <a class="reference internal" href="install.html#activate-the-5g-toolkit-license"><span class="std std-ref">installation page</span></a>.</p>
+<p>Create a new jupyter notebook and run the following lines of code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">toolkit5G</span> <span class="k">as</span> <span class="nn">tk</span>
 <span class="n">tk</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
+<p>The toolkit is successfully installed if it shows the toolkit5G version. Otherwise, something went wrong. If it shows
+“License Error”, then you will have to activate the License as described on <a class="reference internal" href="install.html#activate-the-5g-toolkit-license"><span class="std std-ref">installation page</span></a>.</p>
 </section>
 </section>
 

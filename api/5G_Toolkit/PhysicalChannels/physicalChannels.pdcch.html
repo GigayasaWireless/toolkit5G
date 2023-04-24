@@ -60,7 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install 5G Toolkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#system-requirements">System Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-window-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Window 10/11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#dependent-libraries">Dependent Libraries:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
@@ -301,14 +301,12 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#crc-attachment">CRC Attachment</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#rnti-masking">RNTI Masking</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#input-bit-interleaver">Input Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#polar-coder">Polar Coder</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#rate-matching">Rate Matching</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#scrambling">Scrambling</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#symbol-mapping-modulation">Symbol Mapping/Modulation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="physicalChannels.pscch.html#resource-mapping">Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
 </ul>
 </li>
 </ul>
@@ -908,9 +906,9 @@
   <section id="physical-downlink-control-channel-pdcch">
 <h1>Physical Downlink Control Channel (PDCCH)<a class="headerlink" href="#physical-downlink-control-channel-pdcch" title="Permalink to this heading"></a></h1>
 <p>This module implements the physical downlink control channel. The implementation of these modules is based on <a class="reference internal" href="#gppts38211pdcch" id="id1"><span>[3GPPTS38211pdcch]</span></a>.</p>
-<a class="reference internal image-reference" href="../../../_images/PDCCHE2E.svg"><img alt="Alternative text" class="align-center" src="../../../_images/PDCCHE2E.svg" width="800" /></a>
 <section id="pdcch-transmitter">
 <h2>PDCCH Transmitter<a class="headerlink" href="#pdcch-transmitter" title="Permalink to this heading"></a></h2>
+<a class="reference internal image-reference" href="../../../_images/PDCCHE2E.png"><img alt="Alternative text" class="align-center" src="../../../_images/PDCCHE2E.png" style="width: 800px;" /></a>
 <dl class="py class">
 <dt class="sig sig-object py" id="toolkit5G.PhysicalChannels.PDCCH">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.PhysicalChannels.</span></span><span class="sig-name descname"><span class="pre">PDCCH</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnti</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nID</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/PhysicalChannels/PDCCH/pdcch.html#PDCCH"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.PhysicalChannels.PDCCH" title="Permalink to this definition"></a></dt>
@@ -985,6 +983,7 @@ generated by the chain can be directly inserted into SSB Grid.</p>
 </section>
 <section id="pdcch-receiver">
 <h2>PDCCH Receiver<a class="headerlink" href="#pdcch-receiver" title="Permalink to this heading"></a></h2>
+<a class="reference internal image-reference" href="../../../_images/PDCCHRxE2E.png"><img alt="Alternative text" class="align-center" src="../../../_images/PDCCHRxE2E.png" style="width: 800px;" /></a>
 <dl class="py class">
 <dt class="sig sig-object py" id="toolkit5G.PhysicalChannels.PDCCHDecoder">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.PhysicalChannels.</span></span><span class="sig-name descname"><span class="pre">PDCCHDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rnti</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decoderType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">demappingMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'maxlog'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/PhysicalChannels/PDCCH/pdcchDecoder.html#PDCCHDecoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.PhysicalChannels.PDCCHDecoder" title="Permalink to this definition"></a></dt>
@@ -1076,7 +1075,8 @@ generated by the chain can be directly inserted into SSB Grid.</p>
 </section>
 <section id="pdcch-components">
 <h2>PDCCH Components<a class="headerlink" href="#pdcch-components" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../../../_images/PDCCHBlocks.svg"><img alt="Alternative text" class="align-center" src="../../../_images/PDCCHBlocks.svg" width="800" /></a>
+<a class="reference internal image-reference" href="../../../_images/PDCCHTxBlocks.png"><img alt="Alternative text" class="align-center" src="../../../_images/PDCCHTxBlocks.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/PDCCHRxBlocks.png"><img alt="Alternative text" class="align-center" src="../../../_images/PDCCHRxBlocks.png" style="width: 800px;" /></a>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a><ul>
@@ -1160,13 +1160,46 @@ generated by the chain can be directly inserted into SSB Grid.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html#sub-block-interleaver">Sub Block Interleaver</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html#sub-block-interleaver">Sub Block Interleaver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.subblockInterleaver.html">Sub Block Interleaver for Polar Coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.subblockInterleaver.html#sub-block-interleaver">Sub-block Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.subblockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaving</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html#bit-selection">Bit Selection</a><ul class="simple">
+<li class="toctree-l4"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.subblockInterleaver.html#sub-block-de-interleaver">Sub-block De-interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.subblockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaving</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html#channel-interleaver">Channel Interleaver</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html#bit-selection">Bit Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.bitSelection.html">Bit Selection for Polar Coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.bitSelection.html#bit-selection">Bit Selection</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.bitSelection.html#toolkit5G.Ratematcher.PolarCoder.BitSelection"><code class="docutils literal notranslate"><span class="pre">BitSelection</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.bitSelection.html#bit-de-selection">Bit De-selection</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.bitSelection.html#toolkit5G.Ratematcher.PolarCoder.BitDeSelection"><code class="docutils literal notranslate"><span class="pre">BitDeSelection</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html#channel-interleaver">Channel Interleaver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.channelInterleaver.html">Channel Interleaver for Polar Coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.channelInterleaver.html#channel-interleaver">Channel Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
