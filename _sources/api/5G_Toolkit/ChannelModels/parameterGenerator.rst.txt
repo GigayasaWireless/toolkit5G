@@ -9,9 +9,9 @@ angular spreads of arrival, both in azimuth, elevation direction. Small Scale Pa
 
 
 The class :class:`ParameterGenerator` allows the user to generate all the parameters required to simulate cluster level channel.
-This class internally uses objects of class :class:`GenerateChannelParametersPerState`, which generates all the parameters per state, i.e., either LOS/NLOS.
 The following table lists all the attributes of the class :class:`ParameterGenerator`, which capture the parameters necessary to generate cluster level 
 channel coefficients.
+The method :method:`displayClusters` displays the clusters.
  
 
 
@@ -70,14 +70,12 @@ channel coefficients.
 
 
 
-.. autoclass:: toolkit5G.channelModels.parameterGenerator.ParameterGenerator
+.. autoclass:: toolkit5G.ChannelModels.ParameterGenerator
     :members:
     :exclude-members: call, build
 
-
-.. autoclass:: toolkit5G.channelModels.parameterGenerator.GenerateChannelParametersPerState
-    :members:
-    :exclude-members: call, build
+.. automethod:: toolkit5G.ChannelModels.parameterGenerator.parameterGenerator.ParameterGenerator.displayClusters
+    :noindex:  
 
 
 **Example:**
@@ -97,6 +95,7 @@ channel coefficients.
   ...                                     centerFrequency = carrierFreq[i],
   ...                                     arrayStructure  = np.array([1,1,1,1,1]),
   ...                                     antennaSpacing  =  np.array([0.5,0.5,0.5,0.5]))
+  ...  ueAntennaArray[i]()
   # vector of Antenna Array objects at BS or Tx side                                    
   >>> bsAntennaArray = np.empty(numCarriers, dtype=object)
   >>> for i in range(carrierFreq.size):
@@ -104,34 +103,36 @@ channel coefficients.
   ...                                     centerFrequency=carrierFreq[i],
   ...                                     arrayStructure = np.array([1,1,1,1,1]),
   ...                                     antennaSpacing =  np.array([0.5,0.5,0.5,0.5]))
+  ...   bsAntennaArray[i]() 
   # simulating BS Layout and UE drops with the following configuration                                   
-  >>> simLayoutObj = SimulationLayout(numOfBS = 19,
-  ...                                 numOfUE = 100,
-  ...                                 heightOfBS = 25,
-  ...                                 heightOfUE = 10, 
-  ...                                 ISD = 500,
-  ...                                 layoutType = "Hexagonal",
-  ...                                 numOfSectorsPerSite = 3,
-  ...                                 minUEBSDistance = 35)                                                                       
-  >>> simLayoutObj(terrain, carrierFreq, ueAntennaArray, bsAntennaArray)
+  >>> simLayout = SimulationLayout(numOfBS = 19,
+  ...                              numOfUE = 100,
+  ...                              heightOfBS = 25,
+  ...                              heightOfUE = 10, 
+  ...                              ISD = 500,
+  ...                              layoutType = "Hexagonal",
+  ...                              numOfSectorsPerSite = 3,
+  ...                              minUEBSDistance = 35)                                                                       
+  >>> simLayout(terrain, carrierFreq, ueAntennaArray, bsAntennaArray)
   # displaying the topology of simulation layout
-  >>> simLayoutObj.display2DTopology()
-  # Instantiating ParameterGenerator class with the following parameters
-  >>> paramGenObj = ParameterGenerator(fc = carrierFreq,
-  ...                                  terrain = terrain,
-  ...                                  locBS = simLayoutObj.BSLocations + simLayoutObj.BStracks,
-  ...                                  locUE = simLayoutObj.UELocations + simLayoutObj.UEtracks,
-  ...                                  d3D   = simLayoutObj.d3D,
-  ...                                  d2D   = simLayoutObj.d2D)
-  # Passing link state vector as input                               
-  >>> paramGenObj(simLayoutObj.linkState) 
+  >>> simLayout.display2DTopology()
+  # Instantiating ParameterGenerator class
+  >>> paramGen = ParameterGenerator(simLayout.carrierFrequency, simLayout.terrain, simLayout.BSLocations + simLayout.BStracks, simLayout.UELocations + simLayout.UEtracks)
+  >>> paramGen(simLayout.linkState)
   # Now user can print all the parameters as follows. 
   # Below shows printing of path loss and cluster delays.
   # Same way user can print all the other parameters 
   # Printing Path Loss for the given scenario
-  >>> paramGenObj.pathLoss                              
+  >>> paramGen.pathLoss                              
   # Printing cluster delays
-  >>> paramGenObj.tau_n
+  >>> paramGen.tau_n
+  
+  
+  
+  
+  
+ 
+  
 
 
 

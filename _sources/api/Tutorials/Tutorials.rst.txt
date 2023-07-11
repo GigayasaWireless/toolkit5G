@@ -9,4 +9,6 @@ Tutorials
     Tutorial3/Tutorial3_PolarCodes.ipynb
     Tutorial4/Tutorial4_LDPCCodes.ipynb
     Tutorial5/SSB_End2End.ipynb
+    Tutorial6/tutorial6.rst
     Tutorial8/pucchFormat0_Tutorial.rst
+    Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.ipynb

@@ -19,12 +19,12 @@ both the link-level and system level simulations. The details of the APIs is pro
   :align: center
 
 
-.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhy.PscchUpperPhy
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhy.PSCCHUpperPhy
    :members:
    :exclude-members: call, build
 
 
-.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhy.PscchLowerPhy
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhy.PSCCHLowerPhy
    :members:
    :exclude-members: call, build
 
@@ -42,12 +42,12 @@ both the link-level and system level simulations. The details of the APIs is pro
   :align: center
 
 
-.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhyDecoder.PscchLowerPhyDecoder
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhyDecoder.PSCCHLowerPhyDecoder
    :members:
    :exclude-members: call, build
 
 
-.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhyDecoder.PscchUpperPhyDecoder
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhyDecoder.PSCCHUpperPhyDecoder
    :members:
    :exclude-members: call, build
 

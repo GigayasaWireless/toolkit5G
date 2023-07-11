@@ -1,0 +1,89 @@
+PDSCH Lower Phy Configurations
+==============================
+The PDSCH Lower Phy Configuration class receives any existing parameters for PDSCH lower Phy chain, based on which the
+rest of the parameters required to invoke PDSCH Lower Phy chain are generated as per 3GPP standards.
+
+The Lower Phy config can be called with no arguments or all the parameters set to none, causing the class to generate all
+the parameters from scratch as shown below
+
+--------
+
+.. code-block:: python
+
+    pdschParamGen = PDSCHLowerPhyConfiguration(verbose = True)
+
+
+.. parsed-literal::
+
+    ************ PDSCH Parameters *************
+
+           pdschMappingType: PDSCH-mapping-type-A
+                startSymbol: 2
+                 numSymbols: 5
+                   betaDMRS: 1
+                       rank: 8
+          configurationType: Configuration-type-2
+                  maxLength: len1
+          dmrsTypeAPosition: pos3
+     dmrsAdditionalPosition: pos3
+               Duration, ld: 5
+           Start symbol, l0: 3
+         Start symbol-1, l1: 11
+              num of Layers: 8
+
+    ********************************************
+
+
+It can also be called with certain parameters already assigned. The remaining parameters will be generated based on the
+these parameters passed by user.
+
+.. note::
+    The unconfigured parameters will be selected randomly from the possible set of legit choices. These choices are
+shortlisted based on the passed input parameters/configuration.
+
+**Passing the Configuration Partially**
+
+.. code-block:: python
+
+    pdschMappingType       = "PDSCH-mapping-type-A"
+    dmrsTypeAPosition      = "pos2"
+    dmrsAdditionalPosition = "pos0"
+    rank                   = 1
+
+    pdschParamGen          = PDSCHLowerPhyConfiguration(pdschMappingType = pdschMappingType, dmrsTypeAPosition = dmrsTypeAPosition,
+                                                    dmrsAdditionalPosition = dmrsAdditionalPosition, rank = rank )
+
+
+.. parsed-literal::
+
+    ************ PDSCH Parameters *************
+
+           pdschMappingType: PDSCH-mapping-type-A
+                startSymbol: 1
+                 numSymbols: 10
+                   betaDMRS: 1
+                       rank: 1
+          configurationType: Configuration-type-1
+                  maxLength: len2
+          dmrsTypeAPosition: pos2
+     dmrsAdditionalPosition: pos0
+               Duration, ld: 10
+           Start symbol, l0: 2
+         Start symbol-1, l1: 11
+              num of Layers: 1
+
+    ********************************************
+
+
+.. Note::
+
+    If you are partially passing arguments, 3GPP standards should be taken into consideration, contradictions may end up
+    in an error.
+
+------
+
+.. autoclass:: toolkit5G.Configurations.PDSCHLowerPhyConfiguration
+    :members:
+    :exclude-members: call, build
+
+

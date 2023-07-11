@@ -106,6 +106,7 @@ More Information
    api/5G_Toolkit/5Gtoolkit
    api/Tutorials/Tutorials
    api/Projects/Projects
+   api/Integration_with_SDR/Integration_with_SDRs
    api/Preview_of_Next_Release/FeatureList
    api/Built_using_5G_Toolkit/builtUsing5GToolkit
    api/WeekChallenge/challenge

@@ -9,12 +9,15 @@ PDSCH. The resource mapping for different channels and reference signal is illus
 .. toctree::
     :maxdepth: 3
 
-
-    resourceMapping.pucch
     resourceMapping.ssb
     resourceMapping.ssbGeneration
     resourceMapping.dmrsPDSCH
     resourceMapping.ptrsPDSCH
-    resourceMapping.csirs
     resourceMapping.pdcch
+    resourceMapping.coreset
+    resourceMapping.searchSpace
+    resourceMapping.csirs
     resourceMapping.prs
+    resourceMapping.pucch
+    resourceMapping.s_ssb
+    resourceMapping.pscch

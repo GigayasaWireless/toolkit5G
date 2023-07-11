@@ -7,10 +7,45 @@ symbol equalization, layer demapping, symbol demapping and descrambling.
   :width: 800
   :alt: Alternative text
 
+------------
+
+An Example of how to initialize and call PDSCH Lower Phy Decoder
+
+.. code-block:: python
+
+    modOrder          = 2
+    isChannelPerfect  = True
+    isEqualized       = False
+
+    pdschDecoderLowerPhyChain = PDSCHDecoderLowerPhy(modOrder,isChannelPerfect,isEqualized)
+
+    #resourceGrid: A numpy array of size (numBatches x numRx x numRxAntennas x numSymbols x numSubcarriers)
+    #pdschIndices: A tuple of size (numBatches, numBSs, portIndices, subcarrierIndices, symbolsIndices)
+    rnti              = np.array([32015, 50374, 36064])
+    nID               = np.array([831, 798, 382])
+    snr               = 10**3
+    #channelEstimates: A numpy array of size (numBatches x numRx x numRxAntennas x numTx x numTxAntennas x numSymbols x numSubcarriers)
+    numTBs            =  1
+    demappingMethod   = "app"
+    constellationType = "qam"
+    hard_out          = False
+    LLRs              = pdschDecoderLowerPhyChain(resourceGrid,pdschIndices,rnti,nID,snr,channelEstimates,numTBs,demappingMethod,constellationType,hard_out)
+
+
+
+------------
+
 The details of the input-output interface for lower physical layer decoder is provided below.
 
 .. autoclass:: toolkit5G.PhysicalChannels.PDSCHDecoderLowerPhy
    :members:
    :exclude-members: call, build
+
+------------
+
+.. note::
+
+    It is to be taken into consideration that the Lower Phy Decoder arguments should be consistent with the corresponding
+    transmitter side Upper Phy and Lower Phy or else the implementation may collapse
 
 

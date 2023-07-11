@@ -2,7 +2,8 @@ Channel State Information Reference Sequence (CSI-RS)
 =====================================================
 The channel state information reference signal (CSI-RS) is used in 5G-NR systems to estimate the channel state information
 in downlink (DL). The reference signal is generated using the scrambling ID (``scramblingID``), slot-index (``slotNumber``)
-and, OFDM symbol index (``ofdmSymbolNumber``).
+and, OFDM symbol index (``ofdmSymbolNumber``). The implementation details of CSI-RS are provided in section 7.4.1.5 of 3GPP
+TS 38.211 [3GPPTS38211_CSIRS]_.
 
 ..  important::
     * The seed (:math:`c_{init}`) value is computed using scramblingID, slotNumber and ofdmSymbolNumber.

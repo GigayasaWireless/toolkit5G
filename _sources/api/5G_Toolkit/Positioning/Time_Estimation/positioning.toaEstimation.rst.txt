@@ -3,14 +3,97 @@ Time of Arrival (ToA)/Delay Estimation
 This modules is used for estimating delays or time of arrival (ToA) of a received signal with respect to transmitted
 signal. The details about the input arguments of this module is provide in table below:
 
-.. image:: ../../../figures/Positioning/ToAEstimation/ToA_Estimation.png
+.. image:: ../../../figures/Positioning/ToAEstimation/ToA_Estimation.svg
   :width: 800
   :alt: Alternative text
+
+
+------------
+
+The following examples demonstrates the way to estimate delays an ToA using 5G Toolkit.
+
+**Code example for ToA Estimation based on ESPRIT Method**
+
+.. code-block:: Python
+
+    # shape of Hf: (numSubcarriers, numObservations)
+    # scs is number storing sub-carrier spacing
+    # ``numberOfPath`` or L denotes number of strongest paths whose ToA is to be estimated.
+    toaEstimation = ToAEstimation("ESPRIT", shape = Hf.shape)
+    Lpath         = 4
+    delays        = np.sort(toaEstimation(H = Hf, numberOfPath=Lpath, subCarrierSpacing=scs))
+    toaEst        = delays[0]
+
+
+
+**Code example for ToA Estimation based on MUSIC Algorithm**
+
+.. code-block:: Python
+
+    # shape of Hf: (numSubcarriers, numObservations)
+    # ``scs`` is number storing sub-carrier spacing
+    # ``numberOfPath`` or L denotes number of strongest paths whose ToA is to be estimated.
+    L         = 12
+    min_delay = 10**(-8)
+    max_delay = 2.5*10**(-6)
+    toaEstimation = ToAEstimation("MUSIC", numSamples=1024)
+    delays        = np.sort(toaEstimation(H = Hf, numberOfPath=L, subCarrierSpacing=scs,
+                                          min_delay=min_delay, max_delay=max_delay,
+                                          prominence=0.05, height = 0.05))
+    toaEst        = delays[0]
+
+
+.. code-block:: Python
+
+    toaEstimation.display()
+
+.. image:: ../../../figures/Positioning/ToAEstimation/musicSpectrum.svg
+  :width: 800
+  :align: center
+  :alt: Alternative text
+
+
+
+------------
+
+**Code example for ToA Estimation based on DFT Method**
+
+.. code-block:: Python
+
+    # shape of Hf: (numSubcarriers, numObservations)
+    # ``scs`` is number storing sub-carrier spacing
+    # ``numberOfPath`` or L denotes number of strongest paths whose ToA is to be estimated.
+    L             = 12
+    toaEstimation = ToAEstimation("DFT", oversamplingFactor=8)
+    delays        = np.sort(toaEstimation(H = Hf, numberOfPath=L, subCarrierSpacing=scs,
+                                          prominence=0.05, height = 0.05))
+    toaEst        = delays[0]
+
+
+.. code-block:: Python
+
+    toaEstimation.display()
+
+.. image:: ../../../figures/Positioning/ToAEstimation/dftPDP.svg
+  :width: 800
+  :align: center
+  :alt: Alternative text
+
+
+------------
+
+**API Documentation**
+
+The following section provides the detailed documentation of the API for ToAEstimation Class.
 
 .. autoclass:: toolkit5G.Positioning.ToAEstimation
    :members:
    :exclude-members: call, build
 
+
+
+
+------------
 
 The details about the ToA estimation methods used in this package are discussed below.
 

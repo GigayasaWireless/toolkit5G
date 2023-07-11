@@ -1,0 +1,112 @@
+PDSCH Upper Phy Configurations
+==============================
+The PDSCH Upper Phy Configuration class receives any existing parameters for PDSCH upper Phy chain, based on which the
+rest of the parameters required to invoke PDSCH Upper Phy chain are generated as per 3GPP standards.
+
+------
+
+The Upper Phy config can be called with no arguments or all the parameters set to none, causing the class to generate all
+the parameters from scratch as shown below.
+
+.. code-block:: python
+
+    pdschParamGen = PDSCHUpperPhyConfiguration(verbose = True)
+
+.. parsed-literal::
+
+    ************ PDSCH Parameters *************
+
+           pdschMappingType: PDSCH-mapping-type-B
+                startSymbol: 9
+                 numSymbols: 4
+                   betaDMRS: 1
+                       rank: 8
+          configurationType: Configuration-type-2
+                  maxLength: len1
+          dmrsTypeAPosition: pos2
+     dmrsAdditionalPosition: pos2
+               Duration, ld: 4
+           Start symbol, l0: 9
+         Start symbol-1, l1: 11
+              num of Layers: 8
+
+    ********************************************
+    ********************************************
+     number of Layer-0: 4
+       numTargetBits-1: 30672
+     number of Layer-0: 4
+       numTargetBits-2: 30672
+              tbsize-1: 9480
+              tbsize-2: 9480
+
+                numTBs: 2
+                numCBs: 2
+             numLayers: 8 | LayerperTB: [4 4]
+                 numRB: 213
+              coderate: 0.306640625
+              modOrder: 1
+    additionalOverhead: 0
+    numberTargetBits: 61344
+    ********************************************
+
+
+It can also be called with certain parameters already assigned around which the unassigned parameters are built.
+
+.. code-block:: python
+
+    numTBs   = 2
+    numRB    = 216
+    rank     = 6
+    mcsTable = 'pdschTable2'
+
+    pdschParamGen = PDSCHUpperPhyConfiguration(numTBs = numTBs, numRB=numRB ,rank = rank, mcsTable = mcsTable, verbose = True )
+
+
+.. parsed-literal::
+
+    ************ PDSCH Parameters *************
+
+           pdschMappingType: PDSCH-mapping-type-B
+                startSymbol: 0
+                 numSymbols: 4
+                   betaDMRS: 1
+                       rank: 6
+          configurationType: Configuration-type-1
+                  maxLength: len1
+          dmrsTypeAPosition: pos3
+     dmrsAdditionalPosition: pos1
+               Duration, ld: 4
+           Start symbol, l0: 0
+         Start symbol-1, l1: 11
+              num of Layers: 6
+
+    ********************************************
+    ********************************************
+     number of Layer-0: 3
+       numTargetBits-1: 186624
+     number of Layer-0: 3
+       numTargetBits-2: 186624
+              tbsize-1: 129128
+              tbsize-2: 129128
+
+                numTBs: 2
+                numCBs: 16
+             numLayers: 6 | LayerperTB: [3 3]
+                 numRB: 216
+              coderate: 0.6943359375
+              modOrder: 8
+    additionalOverhead: 0
+    numberTargetBits: 373248
+    ********************************************
+
+--------
+
+.. Tip::
+
+    The Upper Phy config class calls Lower phy config within it.
+
+--------
+
+.. autoclass:: toolkit5G.Configurations.PDSCHUpperPhyConfiguration
+    :members:
+    :exclude-members: call, build

@@ -3,6 +3,46 @@ MUSIC based ToA Estimation
 This module implements a method for estimating the delays using **MU**\ ltiple **SI**\ gnal **C**\ lassification (MUSIC)
 method.
 
+------------
+
+**Code example**
+
+.. code-block:: Python
+
+    # shape of Hf: (numSubcarriers, numObservations)
+    L         = 12
+    min_delay = 10**(-8)
+    max_delay = 2.5*10**(-6)
+    music     = MUSIC_ToA()
+    delays    = music(Hf, numberOfPath=L, subCarrierSpacing=scs, min_delay=min_delay, max_delay=max_delay)
+
+
+.. code-block:: Python
+
+    fig, ax = music.displayMUSICSpectrum()
+
+.. image:: ../../../../figures/Positioning/ToAEstimation/musicSpectrum.svg
+  :width: 800
+  :align: center
+  :alt: Alternative text
+
+
+.. code-block:: Python
+
+    fig, ax = music.displayEigenValues(0, 30)
+
+.. image:: ../../../../figures/Positioning/ToAEstimation/EigenValues.svg
+  :width: 800
+  :align: center
+  :alt: Alternative text
+
+
+------------
+
+**API Documentation**
+
+The following documentation provides the details about the input and output API for MUSIC algorithm for ToA Estimation.
+
 .. autoclass:: toolkit5G.Positioning.MUSIC_ToA
    :members:
    :exclude-members: call, build

@@ -1,0 +1,13 @@
+Utilities
+===============
+
+This Package provides the many simple functions which can used while working on problems related to digital communications
+such as decimal to binary convertor etc.
+
+**Table of Contents**
+
+.. toctree::
+    :maxdepth: 1
+
+    utils.decimal2Binary
+

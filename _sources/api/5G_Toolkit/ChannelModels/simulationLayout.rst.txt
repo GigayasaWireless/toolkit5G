@@ -11,21 +11,31 @@ and "Rectangular", different types of UE drops such as "Hexagonal",  "Rectangula
 The class :class:`SimulationLayout` allows the user to deploy BSs, as well as UEs in a particular geometry.
 The user can access the state of each link using the class attribute :attr:`linkState` , locations of BSs using  :attr:`BSLocations`,
 tracks or locations of BS across snapshots using :attr:`BStracks`, 
-velocities of each BS using :attr:`BSvelocityVector` and BS orientations using :attr:`bsOrientation` 
+velocities of each UE using :attr:`UEvelocityVector` and BS orientations using :attr:`bsOrientation` respectively.
+
+The method :method:`display2DTopology` displays the 2D topology of layout.
+The method :method:`display2DLocationsOfBS` displays the 2D locations of Base Stations (BSs) and the method :method:`display2DLocationsOfUE` displays the 2D locations of User Equipments (UEs).
+The method :method:`getParameterGenerator` fetches an object of the class :class:`ParameterGenerator` after instantiating the class :class:`SimulationLayout`. 
 
 
-.. autoclass:: toolkit5G.channelModels.simulationLayout.SimulationLayout
+.. autoclass:: toolkit5G.ChannelModels.SimulationLayout
     :members:
     :exclude-members: call, build, display2DTopology, getParameterGenerator
 
 
-
-.. automethod:: toolkit5G.channelModels.simulationLayout.simulationLayout.SimulationLayout.display2DTopology
+.. automethod:: toolkit5G.ChannelModels.simulationLayout.simulationLayout.SimulationLayout.display2DTopology
     :noindex:
 
 
+.. automethod:: toolkit5G.ChannelModels.simulationLayout.simulationLayout.SimulationLayout.display2DLocationsOfBS
+    :noindex:
 
-.. automethod:: toolkit5G.channelModels.simulationLayout.simulationLayout.SimulationLayout.getParameterGenerator
+
+.. automethod:: toolkit5G.ChannelModels.simulationLayout.simulationLayout.SimulationLayout.display2DLocationsOfUE
+    :noindex:    
+
+
+.. automethod:: toolkit5G.ChannelModels.simulationLayout.simulationLayout.SimulationLayout.getParameterGenerator
     :noindex:    
 
 
@@ -110,6 +120,7 @@ as well as on the UEs for each carrier frequency after instantiating :class:`Sim
     ...                                      centerFrequency = carrierFreq[i],
     ...                                      arrayStructure  = np.array([1,1,1,1,1]),
     ...                                      antennaSpacing  =  np.array([0.5,0.5,0.5,0.5]))
+    ...    ueAntennaArray[i]()
     # Antenna Array object vector corresponding to each carrier frequency at BS side.
     >>> bsAntennaArray = np.empty(numCarriers, dtype=object)
     >>> for i in range(carrierFreq.size):
@@ -117,6 +128,7 @@ as well as on the UEs for each carrier frequency after instantiating :class:`Sim
     ...                                      centerFrequency=carrierFreq[i],
     ...                                      arrayStructure = np.array([1,1,1,1,1]),
     ...                                      antennaSpacing =  np.array([0.5,0.5,0.5,0.5]))
+    ...    bsAntennaArray[i]()
     # Instantiating SimulationLayout class
     >>> simLayoutObj = SimulationLayout(numOfBS = 19,
     ...                                 numOfUE = 100,
@@ -140,7 +152,65 @@ For this example the layout plot looks as following
   :width: 500
   :alt: layoutPlot3
 
-       
+
+
+.. _BS-Layouts:
+
+BS Layouts
+----------
+
+.. autoclass:: toolkit5G.ChannelModels.SimulationLayout
+   :members:
+   :exclude-members: call, build
+
+Hexagonal Layout
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: toolkit5G.ChannelModels.simulationLayout.HexagonalLayout
+   :members:
+   :exclude-members: call, build
+
+
+Rectangular Layout
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: toolkit5G.ChannelModels.simulationLayout.RectangularLayout
+   :members:
+   :exclude-members: call, build
+
+
+
+.. _UE-Drops:
+
+UE Drops
+---------
+
+
+Rectangular Drop
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: toolkit5G.ChannelModels.simulationLayout.RectangularDrop
+   :members:
+   :exclude-members: call, build
+   :noindex:
+
+
+Circular Drop
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: toolkit5G.ChannelModels.simulationLayout.CircularDrop
+   :members:
+   :exclude-members: call, build
+   :noindex:
+
+
+Hexagonal Drop
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: toolkit5G.ChannelModels.simulationLayout.HexagonalDrop
+   :members:
+   :exclude-members: call, build
+   :noindex:
 
 **References**:
 

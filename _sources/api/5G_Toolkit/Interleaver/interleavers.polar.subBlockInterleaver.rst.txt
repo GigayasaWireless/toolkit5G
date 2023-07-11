@@ -17,7 +17,7 @@ Sub Block Interleaver
 ---------------------
 The details about the implementation, usage and application interface is provided in following sections.
 
-.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaver
     :members:
     :exclude-members: call, build
 
@@ -25,7 +25,7 @@ Sub Block Interleaver
 ---------------------
 The details about the implementation, usage and application interface is provided in following sections.
 
-.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaver
     :members:
     :exclude-members: call, build
 

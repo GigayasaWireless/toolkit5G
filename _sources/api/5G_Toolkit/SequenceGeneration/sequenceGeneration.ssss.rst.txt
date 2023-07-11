@@ -1,0 +1,56 @@
+Sidelink Secondary Synchronization Signal
+#########################################
+The sidelink-secondary synchronization signal (S-SSS) is a gold-sequence of length 127 generated using :math:`N_{ID,1}^{SL}`
+and :math:`N_{ID,2}^{SL}`. It is used for sidelink cell ID-2 detection and frequency synchronization which aims to mitigate
+the carrier offsets and centre of the S-SSB grid at the sidelink user equipment (UE). The detailed implementation of the
+S-SSS is provided in [3GPPTS38211_S_SSS]_.
+
+..  important::
+    * S-SSS is an constituent of sidelink synchronization signal block (S-SSB). It is loaded in the middle 127 subcarrier (across frequency) of :math:`4^\text{th}` and :math:`5^\text{th}` symbol of the S-SSB.
+
+**If** :math:`N_{ID,1}^{SL}` and :math:`N_{ID,2}^{SL}` **is scalar:**
+
+.. code-block:: Python
+
+    nID1         = 25                # Cell ID-2 for SSS generation
+    nID2         = 1                 # Cell ID-2 for SSS generation
+    ssss         = S_SSS(nID1, nID2) # Generate PSS object using this cell ID-2.
+    ssssSequence = ssss()            # Generate [1x127] pss sequence using 'sss' object
+
+**If** :math:`N_{ID,1}^{SL}` **is scaler and** :math:`N_{ID,2}^{SL}` **is NumPy array:**
+
+.. code-block:: Python
+
+    nID1         = 204                 # Cell ID-2 for SSS generation
+    nID2         = np.array([1,0,1,1]) # Cell ID-2 for SSS generation
+    ssss         = S_SSS(nID1, nID2)   # Generate PSS object using this cell ID-2.
+    ssssSequence = ssss()              # Generate [4x127] pss sequence using 'sss' object for each cell-ID2
+
+**If** :math:`N_{ID,1}^{SL}` **is NumPy array and** :math:`N_{ID,2}^{SL}` **is scaler:**
+
+.. code-block:: Python
+
+    nID1         = np.array([98, 213]) # Cell ID-2 for SSS generation
+    nID2         = 2                   # Cell ID-2 for SSS generation
+    ssss         = S_SSS(nID1, nID2)   # Generate PSS object using this cell ID-2.
+    ssssSequence = ssss()              # Generate [2x127] pss sequence using 'sss' object for each cell-ID2
+
+**If** :math:`N_{ID,1}^{SL}` **and** :math:`N_{ID,2}^{SL}` **are NumPy array:**
+
+.. code-block:: Python
+
+    nID1         = np.array([101,45,21]) # Cell ID-2 for SSS generation
+    nID2         = np.array([  1, 0, 1]) # Cell ID-2 for SSS generation
+    ssss         = S_SSS(nID1, nID2)     # Generate PSS object using this cell ID-2.
+    ssssSequence = ssss()                # Generate [3x127] pss sequence using 'sss' object for each cell-ID2
+
+
+The details about the input-output interface of the SSS implementation is provided below.
+
+.. autoclass:: toolkit5G.SequenceGeneration.S_SSS
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_S_SSS] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).
+

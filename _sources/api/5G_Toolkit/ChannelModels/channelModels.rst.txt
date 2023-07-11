@@ -1,10 +1,10 @@
-
 Channel Models
-==============
+===============
 
 This is the module which provides functions and classes that implement channel modeling compliant with 3GPP.
 
-Channel modeling correrspond to five important sub modules namely :ref:`Antenna-Array`, Node Mobility, :ref:`Simulation-Layout`, :ref:`Channel-Parameter-Generator` and Channel Coefficient Generator.
+Channel modeling correrspond to five important sub modules namely :ref:`Antenna-Array`, :ref:`Node-Mobility`,
+:ref:`Simulation-Layout`, :ref:`Channel-Parameter-Generator` and :ref:`Channel-Coefficient-Generator`
 The class :class:`AntennaArrays` implements the antenna array both at the transmitter and receiver side.
 :class:`NodeMobility` allows the users to simulate the channel across multiple snapshots. i.e., It provides the flexibility to simulate the channel
 considering the mobility of nodes at both ends of the link. 
@@ -23,18 +23,12 @@ the class :class:`Antenna_LinearDipole` implements Linear Dipole antenna.
 BS layout implementation and the UE drop implementation can be found from the modules :ref:`BS-Layouts` and :ref:`UE-Drops` respectively. 
 
 
-.. toctree::
-   :maxdepth: 2
 
-   arrayAntennas
+.. toctree::
+   :maxdepth: 3
+
    antennaArray
-   mobilityModels
    nodeMobility
-   bsLayouts
-   ueDrops
    simulationLayout
    parameterGenerator
-   
-
-
-   
+   channelGenerator

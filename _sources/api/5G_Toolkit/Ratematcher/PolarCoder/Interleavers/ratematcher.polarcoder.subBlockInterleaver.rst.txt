@@ -11,7 +11,7 @@ Sub-block Interleaver
 
 The details about the input-output interface of the sub-block interleaver is provided in following module:
 
-.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaver
     :members:
     :exclude-members: call, build
 
@@ -22,6 +22,6 @@ Sub-block De-interleaver
 The details about the input-output interface of the sub-block de-interleaver used at the decoder is provided in following
 module:
 
-.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaver
     :members:
     :exclude-members: call, build

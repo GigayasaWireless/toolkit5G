@@ -11,29 +11,29 @@ systems. The reference signal (RS) and their utilities for downlink and uplink p
      - Utility
      - Purpose
    * - Primary synchronization signal (PSS)
-     - Time synchronization
+     - DL Time synchronization
      - SSB
-   * - Secondary synchronization signal (PSS)
-     - Frequency synchronization
+   * - Secondary synchronization signal (SSS)
+     - DL Frequency synchronization
      - SSB
+   * - Channel state information RS (CSI-RS)
+     - DL CSI estimation, Beam management
+     - DL CSI Acquisition
+   * - Demodulation reference signal (DMRS)
+     - Equalization for DL Broadcast Channel
+     - PBCH
+   * - Demodulation reference signal (DMRS)
+     - Equalization for DL Control Channel
+     - PDCCH
+   * - Demodulation reference signal (DMRS)
+     - Equalization for DL Shared Channel
+     - PDSCH
+   * - Positioning reference signal (PRS)
+     - Delay, Angle and Carrier phase estimation
+     - Position Estimation
    * - Pseudo random (PN) sequence
      - Random variable generator
      - NA
-   * - Channel state information RS (CSI-RS)
-     - Downlink CSI estimation
-     - Downlink CSI Acquisition
-   * - Demodulation reference signal (DMRS)
-     - Equalization
-     - PBCH
-   * - Demodulation reference signal (DMRS)
-     - Equalization
-     - PDCCH
-   * - Demodulation reference signal (DMRS)
-     - Equalization
-     - PDSCH
-   * - Positioning reference signal (PRS)
-     - Delay, angle estimation
-     - Position Estimation
 
 
 
@@ -49,14 +49,34 @@ systems. The reference signal (RS) and their utilities for downlink and uplink p
      - Uplink CSI estimation
      - Uplink CSI Acquisition
    * - Demodulation reference signal (DMRS)*
-     - Equalization
+     - Equalization for UL Shared Channel
      - PUSCH
    * - Demodulation reference signal (DMRS)*
-     - Equalization
+     - Equalization for UL Control Channel
      - PUCCH
    * - PRACH Preamble
      - UL Synchronization
      - PRACH
+
+.. list-table:: Table-4: Sidelink Reference Signal and its utility
+   :widths: 25 25 25
+   :header-rows: 1
+
+   * - Reference Signal
+     - Utility
+     - Purpose
+   * - Sidelink Primary Synchronization Signal (S-PSS)
+     - Sidelink Time Synchronization
+     - Sidelink-SSB
+   * - Sidelink Secondary Synchronization Signal (S-SSS)
+     - Sidelink Frequency Synchronization
+     - Sidelink-SSB
+   * - Demodulation reference signal (DMRS)
+     - Equalization for Sidelink Broadcast Channel
+     - PSBCH
+   * - Demodulation reference signal (DMRS)
+     - Equalization for Sidelink Control Channel
+     - PSCCH
 
 
 These reference signals are used for various purposes such as link adaptation, rank adaptation, initial access, synchronization,
@@ -81,3 +101,5 @@ for transmission over wireless channel for simulation using [??].
     sequenceGeneration.SequenceGenerationFormat0
     sequenceGeneration.SequenceGenerationFormat1
     sequenceGeneration.LowPAPRSequenceGeneration
+    sequenceGeneration.spss
+    sequenceGeneration.ssss

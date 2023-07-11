@@ -5,7 +5,7 @@ Forward error correction is used in 5G for correction of bits in error. 5G suppo
 
 The details about the input-output interface of the Mapper modules is provided below.
 
-.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaving
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaver
     :members:
     :exclude-members: build
 
@@ -13,6 +13,6 @@ The details about the input-output interface of the Mapper modules is provided b
 
 The details about the input-output interface of the Mapper modules is provided below.
 
-.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaving
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaver
     :members:
     :exclude-members: build

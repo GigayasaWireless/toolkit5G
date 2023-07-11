@@ -7,8 +7,65 @@ symbol mapping, layer mapping and resource mapping as shown below.
   :width: 800
   :alt: Alternative text
 
+------------
+
+An Example of how to initialize and call the PDSCH lower PHY
+
+.. code-block:: Python
+
+    pdschMappingType       = 'PDSCH-mapping-type-B'
+    maxLength              = 'len1'
+    startSymbol            = 0
+    numSymbols             = 7
+    betaDMRS               = 1
+    configurationType      = 'Configuration-type-1'
+    dmrsTypeAPosition      = 'pos2'
+    dmrsAdditionalPosition = 'pos2'
+    ld                     = 7
+    l0                     = 0
+    l1                     = 11
+    rank                   = 1
+    scramblingID           = 57775
+    nSCID                  = 0
+    pdschLowerPhyChain = PDSCHLowerPhy(pdschMappingType, configurationType, dmrsTypeAPosition, maxLength, dmrsAdditionalPosition, l0, ld, l1)
+    rnti         = np.random.randint(65536, size=numBSs*numBatches)
+    nID          = np.random.randint(1024,  size=numBSs*numBatches)
+    bits2        = codeword[1] if numTBs == 2 else None
+    resourceGrid = pdschLowerPhyChain(codeword[0], numRB, rank, slotNumber, scramblingID, nSCID, rnti, nID, modOrder, startSymbol, bits2 = bits2)
+
+
+------------
+The `codeword[0]` and `bits2` refers to the CRC added, LDPC encoded and rate matched codewords derived from ``pdschUpperPhy`` class
+
+------------
+
+Results:
+The Resultant CDM Grid:
+
+``pdschLowerPhyChain.displayDMRSGrid()``
+
+.. image:: ../../../figures/PhysicalChannels/PDSCHCDM.png
+  :width: 800
+  :alt: Alternative text
+
+The  Resultant Resource Grid:
+
+``pdschLowerPhyChain.displayResourceGrid()``
+
+.. image:: ../../../figures/PhysicalChannels/PDSCHResGrid.png
+  :width: 800
+  :alt: Alternative text
+
+------------
+
 The details of the input-output interface are provided in following sub-section.
 
 .. autoclass:: toolkit5G.PhysicalChannels.PDSCHLowerPhy
    :members:
-   :exclude-members: call, build
+   :exclude-members: call, build, displayDMRSGrid, displayResourceGrid
+
+.. automethod:: toolkit5G.PhysicalChannels.PDSCHLowerPhy.displayDMRSGrid
+    :noindex:
+
+.. automethod:: toolkit5G.PhysicalChannels.PDSCHLowerPhy.displayResourceGrid
+    :noindex:

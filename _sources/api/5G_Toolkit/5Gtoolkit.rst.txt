@@ -39,6 +39,7 @@ discussed below in table-1.
 
 
 
+
 .. toctree::
     :maxdepth: 3
 
@@ -55,4 +56,8 @@ discussed below in table-1.
     Scrambler/scrambler
     ChannelModels/channelModels
     CRC/crc
+    MIMOProcessing/mimoprocessing
+    ReceiverAlgorithms/receiverAlgorithms
     Positioning/positioning
+    Configurations/configurations
+    Utils/utils

@@ -1,0 +1,8 @@
+DFT based AoA Method
+====================
+This module implements a method for estimating the delays using Discrete Fourier Transform (DFT) method.
+
+
+.. autoclass:: toolkit5G.Positioning.DFT_DoA
+   :members:
+   :exclude-members: call, build

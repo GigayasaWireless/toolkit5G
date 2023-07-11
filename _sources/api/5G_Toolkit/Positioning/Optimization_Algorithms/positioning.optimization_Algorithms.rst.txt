@@ -5,13 +5,17 @@ based on time (:math:`\in \{` ToA, TDoA, RTT :math:`\}`), angle (:math:`\in \{` 
 (RSRP). Different optimization framework can be used for estimating the location. 5G toolkit provides least square,
 Gradient descent and Newton Raphson based algorithms which are discussed below.
 
+------------
+
 **Optimizing Algorithm for TDoA**
 
 .. toctree::
     :maxdepth: 1
 
-    TDoA/positioning.optimization_Algorithms.gradientDescentTDoA
+    TDoA/positioning.optimization_Algorithms.TDoA
 
+
+------------
 
 **Optimizing Algorithm for ToA**
 
@@ -19,3 +23,12 @@ Gradient descent and Newton Raphson based algorithms which are discussed below.
     :maxdepth: 1
 
     ToA/positioning.optimization_Algorithms.leastSquareToA
+
+------------
+
+**Optimizing Algorithm for DoA**
+
+.. toctree::
+    :maxdepth: 1
+
+    DoA/positioning.optimization_Algorithms.DoA
