@@ -133,7 +133,7 @@ We will be more than happy to help you in installation.
 ## Install Miniconda
 
 1. Download the Miniconda installer from this link:
- **Please install the latest version of the installer from this link https://docs.conda.io/en/latest/miniconda.html. Following link might be outdated**
+ **Please install the latest version of the installer from this [link](https://docs.conda.io/en/latest/miniconda.html). Following link might be outdated**
 
    * For 32 bit version of Windows: [Download Miniconda Installer](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86.exe)
    * For 64 bit version of Windows: [Download Miniconda Installer](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe)

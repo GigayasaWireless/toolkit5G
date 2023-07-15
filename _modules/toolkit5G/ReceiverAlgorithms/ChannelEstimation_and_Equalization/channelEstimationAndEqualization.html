@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toolkit5G.ReceiverAlgorithms.ChannelEstimation_and_Equalization.channelEstimationAndEqualization &mdash; 5G Toolkit R23a documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/gigayasa.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+        <script src="../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            5G Toolkit
+              <img src="../../../../_static/logo28.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                R23a.0.11
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../releaseNotes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">Install 5G Toolkit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#dependent-libraries">Dependent Libraries:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#video-tutorial-installation-on-ubuntu">Video Tutorial: Installation on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#video-tutorial-installation-on-window">Video Tutorial: Installation on Window</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.html">Sequence Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.pss.html">Primary Synchronization Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.pss.html#toolkit5G.SequenceGeneration.PSS"><code class="docutils literal notranslate"><span class="pre">PSS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.sss.html">Secondary Synchronization Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.sss.html#toolkit5G.SequenceGeneration.SSS"><code class="docutils literal notranslate"><span class="pre">SSS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.dmrs.html">Demodulation Reference Sequence (DMRS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.dmrs.html#toolkit5G.SequenceGeneration.DMRS"><code class="docutils literal notranslate"><span class="pre">DMRS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.prs.html">Positioning Reference Sequence (PRS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.prs.html#toolkit5G.SequenceGeneration.PRS"><code class="docutils literal notranslate"><span class="pre">PRS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.csirs.html">Channel State Information Reference Sequence (CSI-RS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.csirs.html#toolkit5G.SequenceGeneration.CSIRS"><code class="docutils literal notranslate"><span class="pre">CSIRS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.pnSequence.html">Pseudo Random (PN) Sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.pnSequence.html#toolkit5G.SequenceGeneration.PNSequence"><code class="docutils literal notranslate"><span class="pre">PNSequence</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html">PUCCH Format 0 Sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.controlInfo"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.controlInfo</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.indexPUCCH"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.indexPUCCH</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.initial_CyclicShift"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.initial_CyclicShift</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.m_CS"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.m_CS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.nID"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numBatches"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numBatches</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numInterlacedRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numInterlacedRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.numberOfSymb"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.numberOfSymb</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.pucch_GroupHopping"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.pucch_GroupHopping</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.seqNumber"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.seqNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.slotNumber"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.slotNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat0.html#toolkit5G.SequenceGeneration.PUCCHFormat0Sequence.start_SymbIndex"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat0Sequence.start_SymbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html">PUCCH Format 1 Sequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.indexPUCCH"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.indexPUCCH</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.initial_CyclicShift"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.initial_CyclicShift</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.m_CS"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.m_CS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.maxNumPRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.maxNumPRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.nHop"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.nHop</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.nID"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.numInterlacedRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.numInterlacedRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.numRBs"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.numRBs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.numberOfSymb"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.numberOfSymb</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.pucch_GroupHopping"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.pucch_GroupHopping</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.slotNumber"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.slotNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.start_SymbIndex"><code class="docutils literal notranslate"><span class="pre">PUCCHFormat1Sequence.start_SymbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html">Low PAPR Sequence Type 1</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.cyclicShift"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.cyclicShift</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.delta"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.delta</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.groupNumber"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.groupNumber</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.m"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.m</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.LowPAPRSeqType1.seqNumber"><code class="docutils literal notranslate"><span class="pre">LowPAPRSeqType1.seqNumber</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#cyclic-shift-hopping">Cyclic Shift Hopping</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.CyclicShiftHopping"><code class="docutils literal notranslate"><span class="pre">CyclicShiftHopping</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#group-and-sequence-hopping">Group And Sequence Hopping</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.LowPAPRSequenceGeneration.html#toolkit5G.SequenceGeneration.GroupNumber"><code class="docutils literal notranslate"><span class="pre">GroupNumber</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.spss.html">Sidelink Primary Synchronization Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.spss.html#toolkit5G.SequenceGeneration.S_PSS"><code class="docutils literal notranslate"><span class="pre">S_PSS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.ssss.html">Sidelink Secondary Synchronization Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SequenceGeneration/sequenceGeneration.ssss.html#toolkit5G.SequenceGeneration.S_SSS"><code class="docutils literal notranslate"><span class="pre">S_SSS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.html">Resource Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.ssb.html">Synchronization Signal Block (SSB) Grid Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSB_Grid</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.dmrsIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.dmrsIndices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.pbchIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.pbchIndices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.pssIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.pssIndices</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.ssb.html#toolkit5G.ResourceMapping.SSB_Grid.sssIndices"><code class="docutils literal notranslate"><span class="pre">SSB_Grid.sssIndices</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.ssbGeneration.html">Synchronization Signal Block (SSB) Resource Mapping</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.ssbGeneration.html#toolkit5G.ResourceMapping.ResourceMapperSSB"><code class="docutils literal notranslate"><span class="pre">ResourceMapperSSB</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.dmrsPDSCH.html">Physical Downlink Shared Channel-DMRS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.dmrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperDMRSPDSCH"><code class="docutils literal notranslate"><span class="pre">ResourceMapperDMRSPDSCH</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.dmrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperDMRSPDSCH.displayCDMPattern"><code class="docutils literal notranslate"><span class="pre">ResourceMapperDMRSPDSCH.displayCDMPattern()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.dmrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperDMRSPDSCH.displayResourceGrid"><code class="docutils literal notranslate"><span class="pre">ResourceMapperDMRSPDSCH.displayResourceGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.ptrsPDSCH.html">Physical Downlink Shared Channel-PTRS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.ptrsPDSCH.html#toolkit5G.ResourceMapping.ResourceMapperPTRSPDSCH"><code class="docutils literal notranslate"><span class="pre">ResourceMapperPTRSPDSCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.pdcch.html">Physical Downlink Control Channel (PDCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.pdcch.html#toolkit5G.ResourceMapping.ResourceMappingPDCCH"><code class="docutils literal notranslate"><span class="pre">ResourceMappingPDCCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.coreset.html">Control Resource Set</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.coreset.html#toolkit5G.ResourceMapping.CORESET"><code class="docutils literal notranslate"><span class="pre">CORESET</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.searchSpace.html">Search Space Set</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.searchSpace.html#toolkit5G.ResourceMapping.SearchSpaceSet"><code class="docutils literal notranslate"><span class="pre">SearchSpaceSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.csirs.html">Channel state Information reference signal (CSI-RS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.csirs.html#toolkit5G.ResourceMapping.ResourceMapperCSIRS"><code class="docutils literal notranslate"><span class="pre">ResourceMapperCSIRS</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.csirs.html#toolkit5G.ResourceMapping.ResourceMapperCSIRS.displayCDMPattern"><code class="docutils literal notranslate"><span class="pre">ResourceMapperCSIRS.displayCDMPattern()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.csirs.html#toolkit5G.ResourceMapping.ResourceMapperCSIRS.displayResourceGrid"><code class="docutils literal notranslate"><span class="pre">ResourceMapperCSIRS.displayResourceGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.prs.html">Positioning Reference Signal (PRS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.prs.html#toolkit5G.ResourceMapping.ResourceMapperPRS"><code class="docutils literal notranslate"><span class="pre">ResourceMapperPRS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.pucch.html">Physical Uplink Control Channel (PUCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format0.html">PUCCH Format-0</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/Format0/ResourceMappingFormat0.html">PUCCH Format 0 Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/Format0/ResourceDemappingFormat0.html">PUCCH Format 0 Resource De-Mapping</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format1.html">PUCCH Format-1</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/Format1/ResourceMappingFormat1.html">PUCCH Format-1 Resource Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/Format1/ResourceDemappingFormat1.html">PUCCH Format-1 Resource De-Mapping</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/Format1/SpreadingFormat1.html">PUCCH Format-1 Spreading</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/Format1/DespreadingFormat1.html">PUCCH Format-1 De-Spreading</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format2.html">PUCCH Format-2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format3.html">PUCCH Format-3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format4.html">PUCCH Format-4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.s_ssb.html">Sidelink Synchronization Signal Block (S-SSB) Grid Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid.displayGrid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid.displayGrid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ResourceMapping/resourceMapping.pscch.html#toolkit5G.ResourceMapping.ResourceMappingPSCCH"><code class="docutils literal notranslate"><span class="pre">ResourceMappingPSCCH</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.html">Physical Channels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pdsch.html">Physical Downlink Shared Channel (PDSCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pdsch.html#pdsch-transmitter">PDSCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/physicalChannels.pdsch.UpperPhy.html">PDSCH: Upper Physical layer Chain</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/physicalChannels.pdsch.LowerPhy.html">PDSCH: Lower Physical layer Chain</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pdsch.html#pdsch-receiver">PDSCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/physicalChannels.pdsch.UpperPhyDecoder.html">PDSCH: Upper Physical layer Chain Decoder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/physicalChannels.pdsch.LowerPhyDecoder.html">PDSCH: Lower Physical layer Chain Decoder</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pdsch.html#pdsch-components">PDSCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.computeTBsize.html">Transport Block Size Computation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.transportblockProcessing.html">Transport Block Processing</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockSegmentation.html">Code Block Segmentation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.ldpcCodec.html">Low Density Parity Check Codes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockConcatenation.html">Code Block Concatenation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.scrambling.html">Scrambling: PDSCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.layermapping.html">Layer Mapper</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.resourceMapping.html">Physical Downlink Shared Channel-DMRS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html">Physical Downlink Control Channel (PDCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-transmitter">PDCCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#toolkit5G.PhysicalChannels.PDCCH"><code class="docutils literal notranslate"><span class="pre">PDCCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-receiver">PDCCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#toolkit5G.PhysicalChannels.PDCCHDecoder"><code class="docutils literal notranslate"><span class="pre">PDCCHDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#pdcch-components">PDCCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.rnti.html">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html">Physical Broadcast Channel (PBCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-transmitter">PBCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#toolkit5G.PhysicalChannels.PBCH"><code class="docutils literal notranslate"><span class="pre">PBCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-receiver">PBCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#toolkit5G.PhysicalChannels.PBCHDecoder"><code class="docutils literal notranslate"><span class="pre">PBCHDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#pbch-components">PBCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.modulation.html">Modulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pusch.html">Physical Uplink Shared Channel (PUSCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pusch.html#pusch-transmitter">PUSCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PUSCH/PUSCHUpperPhy.html">Transmitter Chain</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pusch.html#pusch-receiver">PUSCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PUSCH/PUSCHDecoderUpperPhy.html">Receiver Chain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pucch.html">Physical Uplink Control Channel (PUCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PUCCH/Format0.html">PUCCH Format 0</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PUCCH/Format1.html">PUCCH Format 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PUCCH/Format2.html">PUCCH Format 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PUCCH/Format3.html">PUCCH Format 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PUCCH/Format4.html">PUCCH Format 4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.prach.html">Physical Random Access Channel (PRACH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-transmitter">PSCCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhy.PSCCHUpperPhy"><code class="docutils literal notranslate"><span class="pre">PSCCHUpperPhy</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhy.PSCCHLowerPhy"><code class="docutils literal notranslate"><span class="pre">PSCCHLowerPhy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-receiver">PSCCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhyDecoder.PSCCHLowerPhyDecoder"><code class="docutils literal notranslate"><span class="pre">PSCCHLowerPhyDecoder</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhyDecoder.PSCCHUpperPhyDecoder"><code class="docutils literal notranslate"><span class="pre">PSCCHUpperPhyDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.resourceMapping.html">Resource Mapping PSCCH</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html">Physical Sidelink Broadcast Channel (PSBCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#psbch-transmitter">PSBCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#toolkit5G.PhysicalChannels.PSBCH"><code class="docutils literal notranslate"><span class="pre">PSBCH</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#toolkit5G.PhysicalChannels.PSBCHDecoder"><code class="docutils literal notranslate"><span class="pre">PSBCHDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#psbch-components">PSBCH COMPONENTS</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.crc.html">Cyclic Redundancy Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.html">Scrambling: PSBCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.resourceMapping.html">ResourceMapping: PSBCH</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/PayloadGeneration/payloadGeneration.html">Payload Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html">Master Information Block (MIB)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#mib-generation">MIB Generation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#toolkit5G.PayloadGeneration.MIBGeneration"><code class="docutils literal notranslate"><span class="pre">MIBGeneration</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#mib-extraction">MIB Extraction</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/PayloadGeneration/MIB/payloadGeneration.mib.html#toolkit5G.PayloadGeneration.MIBExtraction"><code class="docutils literal notranslate"><span class="pre">MIBExtraction</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/PayloadGeneration/DCI/payloadGeneration.dci.html">Downlink Control Information (DCI)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PayloadGeneration/DCI/payloadGeneration.dci.html#toolkit5G.PayloadGeneration.DCIGeneration"><code class="docutils literal notranslate"><span class="pre">DCIGeneration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/PayloadGeneration/DCI/payloadGeneration.dci.html#toolkit5G.PayloadGeneration.DCIExtraction"><code class="docutils literal notranslate"><span class="pre">DCIExtraction</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/channelCoder.html">Forward Error Correction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html">Hamming Coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#id1">Hamming coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingEncoder.HammingEncoder"><code class="docutils literal notranslate"><span class="pre">HammingEncoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#hamming-decoder">Hamming Decoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingDecoder"><code class="docutils literal notranslate"><span class="pre">HammingDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#hamming-decoder-sphere-decoding">Hamming Decoder - Sphere Decoding</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingSphereDecoder"><code class="docutils literal notranslate"><span class="pre">HammingSphereDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#hamming-decoder-syndrome-based-decoding">Hamming Decoder - Syndrome Based Decoding</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/HammingCoder/channelCoder.hamming.html#toolkit5G.ChannelCoder.HammingCoder.hammingDecoder.HammingSyndromeDecoder"><code class="docutils literal notranslate"><span class="pre">HammingSyndromeDecoder</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html">Low Density Parity Check Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-encoder">LDPC Encoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#toolkit5G.ChannelCoder.LDPCEncoder5G"><code class="docutils literal notranslate"><span class="pre">LDPCEncoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-decoder">LDPC Decoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#toolkit5G.ChannelCoder.LDPCDecoder5G"><code class="docutils literal notranslate"><span class="pre">LDPCDecoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#ldpc-codec-subcomponents">LDPC Codec Subcomponents</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.ldpcParameters.html">LDPC Parameters Computation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingTransmitter.html">Codeblock Processing: Transmitter</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingReceiver.html">Codeblock Processing: Receiver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html">Polar Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-encoder">Polar Encoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#toolkit5G.ChannelCoder.PolarEncoder5G"><code class="docutils literal notranslate"><span class="pre">PolarEncoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-decoder">Polar Decoder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#toolkit5G.ChannelCoder.PolarDecoder5G"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.html#polar-codec-components">Polar Codec Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.components.html">Code-block Processing: Transmitter</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.components.html#code-block-processing-receiver">Code-block Processing: Receiver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.components.html#input-bit-interleavers">Input Bit Interleavers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html">Reed Muller Codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-encoder-5g">Reed Muller Encoder 5G</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#toolkit5G.ChannelCoder.ReedMullerEncoder5G"><code class="docutils literal notranslate"><span class="pre">ReedMullerEncoder5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#reed-muller-decoder-5g">Reed Muller Decoder 5G</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelCoder/ReedMullerCoder/channelCoder.reedMuller.html#toolkit5G.ChannelCoder.ReedMullerDecoder5G"><code class="docutils literal notranslate"><span class="pre">ReedMullerDecoder5G</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/ratematcher.html">Rate matching</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html">Rate matching for LDPC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html">Bit Selection for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html">Bit Interleaver for LDPC</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/Interleavers/ratematcher.ldpc.bitInterleaver.html#bit-de-interleaver">Bit De-interleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters"><code class="docutils literal notranslate"><span class="pre">RatematchParameters</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.baseGraph"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.baseGraph</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.enableLBRM"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.enableLBRM</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.k0"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.k0</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.liftingFactor"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.liftingFactor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.modOrder"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.modOrder</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.numCodeBlocks"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.numCodeBlocks</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.numCodedBits"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.numCodedBits</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.numLayers"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.numLayers</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.rvID"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.rvID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.tbSize"><code class="docutils literal notranslate"><span class="pre">RatematchParameters.tbSize</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/PolarCoder/ratematcher.polarcoder.html">Rate matching for Polar coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html">Sub Block Interleaver for Polar Coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#sub-block-interleaver">Sub-block Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.subBlockInterleaver.html#sub-block-de-interleaver">Sub-block De-interleaver</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html">Bit Selection for Polar Coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-selection">Bit Selection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.html#bit-de-selection">Bit De-selection</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html">Channel Interleaver for Polar Coder</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#channel-interleaver">Channel Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Ratematcher/PolarCoder/Interleavers/ratematcher.polarcoder.channelInterleavers.html#channel-de-interleaver">Channel De-interleaver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.html">Interleavers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html">PBCH Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#id1">PBCH Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#toolkit5G.PhysicalChannels.PBCH.PBCHInterleaver"><code class="docutils literal notranslate"><span class="pre">PBCHInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#pbch-deinterleaver">PBCH DeInterleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.pbchInterleavers.html#toolkit5G.PhysicalChannels.PBCH.PBCHDeInterleaver"><code class="docutils literal notranslate"><span class="pre">PBCHDeInterleaver</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html">Input Bit Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#id1">Input Bit Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.InputBitInterleaver"><code class="docutils literal notranslate"><span class="pre">InputBitInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#input-bit-deinterleaver">Input Bit DeInterleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.InputBitDeInterleaver"><code class="docutils literal notranslate"><span class="pre">InputBitDeInterleaver</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html">Sub Block Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#id1">Sub Block Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaver"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#id4">Sub Block Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.subBlockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaver"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaver</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html">Channel Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#id1">Channel Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.polar.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html">Bit Interleavers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#bit-interleaver">Bit Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#toolkit5G.Ratematcher.LDPC.BitInterleaver"><code class="docutils literal notranslate"><span class="pre">BitInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#bit-deinterleaver">Bit Deinterleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Interleaver/interleavers.lpdc.bitInterleaver.html#toolkit5G.Ratematcher.LDPC.BitDeinterleaver"><code class="docutils literal notranslate"><span class="pre">BitDeinterleaver</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/OFDM/ofdm.html">Orthogonal Frequency Division Multiplexing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/OFDM/ofdm.html#ofdm-modulator">OFDM: Modulator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/OFDM/ofdm.html#toolkit5G.OFDM.OFDMModulator"><code class="docutils literal notranslate"><span class="pre">OFDMModulator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/OFDM/ofdm.html#ofdm-demodulator">OFDM: Demodulator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/OFDM/ofdm.html#toolkit5G.OFDM.OFDMDemodulator"><code class="docutils literal notranslate"><span class="pre">OFDMDemodulator</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelProcessing/channelProcessing.html">Channel Processing and Hardware Impairment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelProcessing/channelProcessing.applyChannel.html">Apply Channel to Transmitted Signal</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelProcessing/channelProcessing.applyChannel.html#toolkit5G.ChannelProcessing.ApplyChannel"><code class="docutils literal notranslate"><span class="pre">ApplyChannel</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelProcessing/channelProcessing.applyChannel.html#toolkit5G.ChannelProcessing.ApplyChannel.enableInterTxInterference"><code class="docutils literal notranslate"><span class="pre">ApplyChannel.enableInterTxInterference</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelProcessing/channelProcessing.applyChannel.html#toolkit5G.ChannelProcessing.ApplyChannel.isFrequencyDomain"><code class="docutils literal notranslate"><span class="pre">ApplyChannel.isFrequencyDomain</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelProcessing/channelProcessing.applyChannel.html#toolkit5G.ChannelProcessing.ApplyChannel.memoryConsumptionLevel"><code class="docutils literal notranslate"><span class="pre">ApplyChannel.memoryConsumptionLevel</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelProcessing/channelProcessing.addNoise.html">Add Noise and CFO at Receiver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelProcessing/channelProcessing.addNoise.html#toolkit5G.ChannelProcessing.AddNoise"><code class="docutils literal notranslate"><span class="pre">AddNoise</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/SymbolMapping/symbolMapping.html">Symbol Mapping</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SymbolMapping/symbolMapping.mapper.html">Mapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SymbolMapping/symbolMapping.mapper.html#toolkit5G.SymbolMapping.Mapper"><code class="docutils literal notranslate"><span class="pre">Mapper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/SymbolMapping/symbolMapping.demapper.html">Demapper</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/SymbolMapping/symbolMapping.demapper.html#toolkit5G.SymbolMapping.Demapper"><code class="docutils literal notranslate"><span class="pre">Demapper</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.html">Scrambling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html">Scrambler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler"><code class="docutils literal notranslate"><span class="pre">Scrambler</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.Lmax"><code class="docutils literal notranslate"><span class="pre">Scrambler.Lmax</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.c_init"><code class="docutils literal notranslate"><span class="pre">Scrambler.c_init</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.id"><code class="docutils literal notranslate"><span class="pre">Scrambler.id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.mu"><code class="docutils literal notranslate"><span class="pre">Scrambler.mu</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.nID"><code class="docutils literal notranslate"><span class="pre">Scrambler.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.purpose"><code class="docutils literal notranslate"><span class="pre">Scrambler.purpose</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.q"><code class="docutils literal notranslate"><span class="pre">Scrambler.q</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.rnti"><code class="docutils literal notranslate"><span class="pre">Scrambler.rnti</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.scrambler.html#toolkit5G.Scrambler.Scrambler.ssbIndex"><code class="docutils literal notranslate"><span class="pre">Scrambler.ssbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html">Descrambler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler"><code class="docutils literal notranslate"><span class="pre">DeScrambler</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.Lmax"><code class="docutils literal notranslate"><span class="pre">DeScrambler.Lmax</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.c_init"><code class="docutils literal notranslate"><span class="pre">DeScrambler.c_init</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.id"><code class="docutils literal notranslate"><span class="pre">DeScrambler.id</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.mu"><code class="docutils literal notranslate"><span class="pre">DeScrambler.mu</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.nID"><code class="docutils literal notranslate"><span class="pre">DeScrambler.nID</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.purpose"><code class="docutils literal notranslate"><span class="pre">DeScrambler.purpose</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.q"><code class="docutils literal notranslate"><span class="pre">DeScrambler.q</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.rnti"><code class="docutils literal notranslate"><span class="pre">DeScrambler.rnti</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.deScrambler.html#toolkit5G.Scrambler.DeScrambler.ssbIndex"><code class="docutils literal notranslate"><span class="pre">DeScrambler.ssbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.rntiMasking.html">RNTI Masking</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.rntiMasking.html#toolkit5G.Scrambler.RNTImasking"><code class="docutils literal notranslate"><span class="pre">RNTImasking</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Scrambler/scrambler.rntiMasking.html#toolkit5G.Scrambler.RNTImasking.rnti"><code class="docutils literal notranslate"><span class="pre">RNTImasking.rnti</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/channelModels.html">Channel Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/antennaArray.html">Antenna Array</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/antennaArray.html#toolkit5G.ChannelModels.AntennaArrays"><code class="docutils literal notranslate"><span class="pre">AntennaArrays</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/antennaArray.html#antenna-elements">Antenna Elements</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/antennaArray.html#gpp-38-901-antenna-element">3GPP_38_901 Antenna Element</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/antennaArray.html#hertzian-dipole-antenna-element">Hertzian Dipole Antenna Element</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/antennaArray.html#linear-dipole-antenna-element">Linear Dipole Antenna Element</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/nodeMobility.html">Node Mobility</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/nodeMobility.html#toolkit5G.ChannelModels.NodeMobility"><code class="docutils literal notranslate"><span class="pre">NodeMobility</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/nodeMobility.html#toolkit5G.ChannelModels.NodeMobility.displayRoute"><code class="docutils literal notranslate"><span class="pre">NodeMobility.displayRoute()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/nodeMobility.html#toolkit5G.ChannelModels.NodeMobility.randomizeOrientations"><code class="docutils literal notranslate"><span class="pre">NodeMobility.randomizeOrientations</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/nodeMobility.html#toolkit5G.ChannelModels.NodeMobility.timeInstances"><code class="docutils literal notranslate"><span class="pre">NodeMobility.timeInstances</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/nodeMobility.html#toolkit5G.ChannelModels.NodeMobility.typeOfMobility"><code class="docutils literal notranslate"><span class="pre">NodeMobility.typeOfMobility</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/nodeMobility.html#mobility-models">Mobility Models</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/nodeMobility.html#random-walk">Random-Walk</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/nodeMobility.html#circular-route">Circular Route</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/nodeMobility.html#vehicle-drops-on-highways">Vehicle Drops on HighWays</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html">Simulation Layout</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout"><code class="docutils literal notranslate"><span class="pre">SimulationLayout</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.BSLocations"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.BSLocations</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.ISD"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.ISD</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.UELocations"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.UELocations</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.UEdistibution"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.UEdistibution</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.UEheightDistribution"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.UEheightDistribution</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.bsAntennaArray"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.bsAntennaArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.bsRoute"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.bsRoute</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.carrierFrequency"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.carrierFrequency</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterDensity"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterDensity</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterHeight"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterHeight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterSize"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterSize</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfBS()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfUE()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.force3GPPSpatialConsistencyParameters</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.forceLOS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfBS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfRoom</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfUE</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.indoorUEfraction"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.indoorUEfraction</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutLength"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutLength</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutType"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutType</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutWidth</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.lengthOfIndoorObject</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.maxNumberOfFloors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.memoryEfficient</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minNumberOfFloors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minUEBSDistance</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfBS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfSectorsPerSite"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfSectorsPerSite</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfSnapShots"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfSnapShots</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfUE</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.radiusForCircularUEDrop"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.radiusForCircularUEDrop</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.routeType"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.routeType</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.terrain"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.terrain</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.ueAntennaArray"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.ueAntennaArray</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.ueDropMethod"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.ueDropMethod</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.ueRoute"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.ueRoute</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.widthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.widthOfIndoorObject</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#bs-layouts">BS Layouts</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#id0"><code class="docutils literal notranslate"><span class="pre">SimulationLayout</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#hexagonal-layout">Hexagonal Layout</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#rectangular-layout">Rectangular Layout</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#ue-drops">UE Drops</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#rectangular-drop">Rectangular Drop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#circular-drop">Circular Drop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/simulationLayout.html#hexagonal-drop">Hexagonal Drop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html">Channel Parameter Generator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgBuildingHeight"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgBuildingHeight</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgStreetWidth"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgStreetWidth</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationDistance</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationType</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d2D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d2D</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d3D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d3D</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.displayClusters"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.displayClusters()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteAngles"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteAngles</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteDelays"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteDelays</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForInitialPhases</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForLSPs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForSSPs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.fc</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.getChannel"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.getChannel()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.hallVolume"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.hallVolume</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.linkStateVec"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.linkStateVec</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locBS"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locBS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locUE"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locUE</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.memoryEfficient</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.surfaceArea"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.surfaceArea</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.terrain</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/channelGenerator.html">Channel Generator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/channelGenerator.html#toolkit5G.ChannelModels.ChannelGenerator"><code class="docutils literal notranslate"><span class="pre">ChannelGenerator</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ChannelModels/channelGenerator.html#toolkit5G.ChannelModels.ChannelGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ChannelGenerator.fc</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/CRC/crc.html">Cyclic Redundancy Check</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/CRC/crc.crcEncoder.html">CRC Encoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/CRC/crc.crcEncoder.html#toolkit5G.CRC.CRCEncoder"><code class="docutils literal notranslate"><span class="pre">CRCEncoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/CRC/crc.crcDecoder.html">CRC Decoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/CRC/crc.crcDecoder.html#toolkit5G.CRC.CRCDecoder"><code class="docutils literal notranslate"><span class="pre">CRCDecoder</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/MIMOProcessing/mimoprocessing.html">MIMO Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/MIMOProcessing/mimoprocessing.analogBeamforming.html">Analog Beamforming</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/MIMOProcessing/mimoprocessing.analogBeamforming.html#toolkit5G.MIMOProcessing.AnalogBeamforming"><code class="docutils literal notranslate"><span class="pre">AnalogBeamforming</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/MIMOProcessing/mimoprocessing.receiveCombining.html">Receive Combining</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/MIMOProcessing/mimoprocessing.receiveCombining.html#toolkit5G.MIMOProcessing.ReceiveCombining"><code class="docutils literal notranslate"><span class="pre">ReceiveCombining</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/MIMOProcessing/mimoprocessing.receiveCombining.html#toolkit5G.MIMOProcessing.ReceiveCombining.carrierFrequency"><code class="docutils literal notranslate"><span class="pre">ReceiveCombining.carrierFrequency</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/MIMOProcessing/mimoprocessing.receiveCombining.html#toolkit5G.MIMOProcessing.ReceiveCombining.combinerType"><code class="docutils literal notranslate"><span class="pre">ReceiveCombining.combinerType</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/MIMOProcessing/mimoprocessing.receiveCombining.html#toolkit5G.MIMOProcessing.ReceiveCombining.numDFTBeams"><code class="docutils literal notranslate"><span class="pre">ReceiveCombining.numDFTBeams</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/MIMOProcessing/mimoprocessing.receiveCombining.html#toolkit5G.MIMOProcessing.ReceiveCombining.output"><code class="docutils literal notranslate"><span class="pre">ReceiveCombining.output</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/receiverAlgorithms.html">Receiver Algorithms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/receiverAlgorithms.html#channel-estimation-and-equalization-methods">Channel Estimation and Equalization Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/ChannelEstimation_and_Equalization/receiverAlgorithms.channelEstimationAndEqualization.html">Channel Estimation and Equalization for PBCH</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/ChannelEstimation_and_Equalization/receiverAlgorithms.channelEstimationAndEqualization.html#toolkit5G.ReceiverAlgorithms.ChannelEstimationAndEqualization"><code class="docutils literal notranslate"><span class="pre">ChannelEstimationAndEqualization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/ChannelEstimation_and_Equalization/receiverAlgorithms.channelEstimationAndEqualizationPDCCH.html">Channel Estimation and Equalization for PDCCH</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/ChannelEstimation_and_Equalization/receiverAlgorithms.channelEstimationAndEqualizationPDCCH.html#toolkit5G.ReceiverAlgorithms.ChannelEstimationAndEqualizationPDCCH"><code class="docutils literal notranslate"><span class="pre">ChannelEstimationAndEqualizationPDCCH</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/receiverAlgorithms.html#parameter-estimation-methods">Parameter Estimation Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/DL_Synchronization/receiverAlgorithms.dmrsParameterDetection.html">SSB Parameters Estimation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/DL_Synchronization/receiverAlgorithms.dmrsParameterDetection.html#toolkit5G.ReceiverAlgorithms.DMRSParameterDetection"><code class="docutils literal notranslate"><span class="pre">DMRSParameterDetection</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/DL_Synchronization/receiverAlgorithms.pssDetection.html">Time Synchronization and PSS/Cell ID-2 Detection</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/DL_Synchronization/receiverAlgorithms.pssDetection.html#toolkit5G.ReceiverAlgorithms.PSSDetection"><code class="docutils literal notranslate"><span class="pre">PSSDetection</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/DL_Synchronization/receiverAlgorithms.sssDetection.html">SSS/Cell ID-1 Detection</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/DL_Synchronization/receiverAlgorithms.sssDetection.html#toolkit5G.ReceiverAlgorithms.SSSDetection"><code class="docutils literal notranslate"><span class="pre">SSSDetection</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/positioning.html">Position Estimation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/positioning.html#id1">Position Estimation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/positioning.html#toolkit5G.Positioning.PositionEstimation"><code class="docutils literal notranslate"><span class="pre">PositionEstimation</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/positioning.html#toolkit5G.Positioning.PositionEstimation.display"><code class="docutils literal notranslate"><span class="pre">PositionEstimation.display()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/positioning.html#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Time_Estimation/positioning.toaEstimation.html">Time of Arrival (ToA)/Delay Estimation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Time_Estimation/positioning.toaEstimation.html#toolkit5G.Positioning.ToAEstimation"><code class="docutils literal notranslate"><span class="pre">ToAEstimation</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Time_Estimation/methods/positioning.toaEstimation.dftToA.html">DFT based Method</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Time_Estimation/methods/positioning.toaEstimation.espritToA.html">ESPRIT based ToA Estimation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Time_Estimation/methods/positioning.toaEstimation.musicToA.html">MUSIC based ToA Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Angle_Estimation/positioning.doaEstimation.html">Direction of Arrival Estimation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Angle_Estimation/positioning.doaEstimation.html#toolkit5G.Positioning.DoAEstimation"><code class="docutils literal notranslate"><span class="pre">DoAEstimation</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Angle_Estimation/methods/positioning.doaEstimation.dftDoA.html">DFT based AoA Method</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Angle_Estimation/methods/positioning.doaEstimation.espritDoA.html">ESPRIT based DoA Estimation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Angle_Estimation/methods/positioning.doaEstimation.musicDoA.html">MUSIC based DoA Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Optimization_Algorithms/positioning.optimization_Algorithms.html">Optimization Algorithms</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.TDoA.html">Gradient Descent for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.TDoA.html#newton-raphson-for-tdoa">Newton Raphson for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Optimization_Algorithms/ToA/positioning.optimization_Algorithms.leastSquareToA.html">ToA Least Square Estimate</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Optimization_Algorithms/DoA/positioning.optimization_Algorithms.DoA.html">Gradient Descent for DoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/5G_Toolkit/Positioning/Optimization_Algorithms/DoA/positioning.optimization_Algorithms.DoA.html#newton-raphson-for-doa">Newton Raphson for DoA</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/Configurations/configurations.html">5G Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Configurations/ts38_1x/configurations.timeFrequency_5GParameters.html">3GPP Complaint Time Bandwidth Parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Configurations/ts38_1x/configurations.timeFrequency_5GParameters.html#toolkit5G.Configurations.TimeFrequency5GParameters"><code class="docutils literal notranslate"><span class="pre">TimeFrequency5GParameters</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Configurations/ts38_2x/configurations.generateValidSSBParameters.html">MIB and SSB Parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Configurations/ts38_2x/configurations.generateValidSSBParameters.html#toolkit5G.Configurations.GenerateValidSSBParameters"><code class="docutils literal notranslate"><span class="pre">GenerateValidSSBParameters</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Configurations/ts38_2x/configurations.pdschLowerPhyConfiguration.html">PDSCH Lower Phy Configurations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Configurations/ts38_2x/configurations.pdschLowerPhyConfiguration.html#toolkit5G.Configurations.PDSCHLowerPhyConfiguration"><code class="docutils literal notranslate"><span class="pre">PDSCHLowerPhyConfiguration</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Configurations/ts38_2x/configurations.pdschUpperPhyConfiguration.html">PDSCH Upper Phy Configurations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Configurations/ts38_2x/configurations.pdschUpperPhyConfiguration.html#toolkit5G.Configurations.PDSCHUpperPhyConfiguration"><code class="docutils literal notranslate"><span class="pre">PDSCHUpperPhyConfiguration</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/5G_Toolkit/Utils/utils.html">Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/5G_Toolkit/Utils/utils.decimal2Binary.html">Decimal to binary Converter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/5G_Toolkit/Utils/utils.decimal2Binary.html#toolkit5G.Utils.Decimal2Binary"><code class="docutils literal notranslate"><span class="pre">Decimal2Binary</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/Tutorials/Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html">Hamming Codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Hamming-Codes-Parameters">Hamming Codes Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Simulation-Setup">Simulation Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Performance-Evaluation:-SNR-vs-BER">Performance Evaluation: SNR vs BER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Performance-Evaluation:-SNR-vs-BLER">Performance Evaluation: SNR vs BLER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial1/BER_Analysis_of_Hamming_Codes.html#Conclusions">Conclusions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html">Reed Muller Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Table-of-content:">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Mapper-and-Demapper-Parameters">Mapper and Demapper Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Performance-Evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial2/Tutorial2_ReedMullerCodes.html#Performance-Plot">Performance Plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Tutorials/Tutorial3/Tutorial3_PolarCodes.html">Polar Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Table-of-content:">Table of content:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Import-libraries">Import libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial3/Tutorial3_PolarCodes.html#5G-Toolkit-libraries">5G Toolkit libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Symbol-Mapping-Configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Polar-Coder-Configurations">Polar Coder Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Simulation:-AWGN-Channel">Simulation: AWGN Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial3/Tutorial3_PolarCodes.html#Performance-Evaluations">Performance Evaluations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html">Low Density Parity Check (LDPC) Codes in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Python-LIbraries">Python LIbraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Symbol-Mapping-Configurations">Symbol Mapping Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Simulation:-Variation-in-Reliability-with-code-rate-for-fixed-block-length">Simulation: <em>Variation in Reliability with code-rate for fixed block-length</em></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#LDPC-Parameters">LDPC Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Simulation-Procedure">Simulation Procedure</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Performance-Evaluation:-BER-vs-SNR-for-different-code-rates">Performance Evaluation: BER vs SNR for different code-rates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Simulation:-Variation-in-Reliability-with-block-length-for-fixed-coderate">Simulation: <em>Variation in Reliability with block-length for fixed coderate</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#Performance-Evaluation:-BER-vs-SNR-for-different-block-lengths">Performance Evaluation: BER vs SNR for different block lengths</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html">Initial Access in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#External-Libaries">External Libaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#5G-Toolkit-Modules">5G Toolkit Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#System-Parameters">System Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#PBCH-Information">PBCH Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Transmission-side-Processing">Transmission-side Processing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Generate-Primary-Synchronization-Sequence-(PSS)">Generate Primary Synchronization Sequence (PSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Generate-Secondary-Synchronization-Sequence-(SSS)">Generate Secondary Synchronization Sequence (<strong>SSS</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Generate-Demodulation-Reference-Sequence-(DMRS)">Generate Demodulation Reference Sequence (<strong>DMRS</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Generate-the-PBCH-Payload">Generate the PBCH Payload</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Constellation-Diagram:-Tx">Constellation Diagram: Tx</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Construct-SSB-Grid">Construct SSB Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Mapping-SSB-to-Transmission-Grid-for-ODFM">Mapping SSB to Transmission Grid for ODFM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#OFDM-Modulator">OFDM-Modulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Analog-Beamforming">Analog Beamforming</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Channel-Generation">Channel Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Pass-Tx-signal-through-Wireless-Channel">Pass Tx signal through Wireless Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Noise-addition-at-receiver">Noise addition at receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#SSB-Receiver-Side">SSB Receiver Side</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Receiver-combining">Receiver combining</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#PSS-Detection:-largest-peak">PSS Detection: largest peak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Largest-peak">Largest peak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#OFDM-Demodulation:-Resource-Grid-reconstruction">OFDM Demodulation: Resource Grid reconstruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#SSB-Extaction-from-Resource-Grid">SSB Extaction from Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Comparing-Transmitted-and-Received-SSB-Grid">Comparing Transmitted and Received SSB Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Spectrum-Analysis">Spectrum Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#(SSS-Detection:-PSS-channel-assisted)-+-Cell-ID-estimation">(SSS Detection: PSS channel assisted) + Cell-ID estimation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#DMRS-Parameters-Detection-+-DMRS-Sequence-Generation">DMRS Parameters Detection + DMRS Sequence Generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Channel-Estimation-and-PBCH-Symbol-Equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Constellation-Diagram:-Rx">Constellation Diagram: Rx</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#PBCH-Decoding">PBCH Decoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Information-Aggregation">Information Aggregation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Performance-Evaluations:-BER-+-Cell-IDs-+-DMRS-Parameter-Detection">Performance Evaluations: BER + Cell-IDs + DMRS Parameter Detection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#Cell-IDs-Detection">Cell-IDs Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#DMRS-Parameter-Detection">DMRS Parameter Detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial5/SSB_End2End.html#BER-computation">BER computation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/tutorial6.html">3D Spatial Channel Models for Simulation in 5G and Beyond Networks: Basic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html">Generating the Wireless Channel for Mobile Users</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Antenna-Arrays">Antenna Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Node-Mobility">Node Mobility</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Simulation-Layout">Simulation Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Channel-Parameters,-Channel-Coefficients-and-OFDM-Channel">Channel Parameters, Channel Coefficients and OFDM Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Variation-in-Channel-Power-across-Time">Variation in Channel Power across Time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Animation">Animation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Functions-to-Animate-the-Plot">Functions to Animate the Plot</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Simulation-Animation">Simulation Animation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/GenerateChannelForMobileUsersNew.html#Further-Study">Further Study</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html">Genarating the Wireless Channel for Indoor Factory Scenario</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Import-Python-Libraries">Import Python Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Import-5G-Toolkit-Libraries">Import 5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Generate-Antenna-Arrays">Generate Antenna Arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Generate-Simulation-Layout">Generate Simulation Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Generate-Channel-Parameters">Generate Channel Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Generate-Channel-Coefficients">Generate Channel Coefficients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Generate-OFDM-Channel">Generate OFDM Channel</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Frequency-Domain-:-Magnitude-Response-Plot">Frequency Domain : Magnitude Response Plot</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Indoor_Factory_Terrain.html#Time-Domain-Channel-response">Time Domain Channel response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html">Wireless Channel Generation for Multiple Carrier Frequencies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Generate-Antenna-Array">Generate Antenna Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Node-Mobility">Node Mobility</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Generate-Simulation-Layout">Generate Simulation Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Generate-Channel-Parameters">Generate Channel Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Generate-Channel-Coefficients">Generate Channel Coefficients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Generate-OFDM-Channel">Generate OFDM Channel</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Frequency-Domain-:-Magnitude-Response-Plot">Frequency Domain : Magnitude Response Plot</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial6/Generate_UMa_Channel_for_Multiple_Frequencies.html#Time-Domain-Channel-response">Time Domain Channel response</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html">BER Performance of PUCCH Format 0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#table-of-contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#import-libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#python-libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#g-toolkit-libraries">5G ToolKit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#simulation-parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#format-0">Format 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#format-0-decoder">Format 0 Decoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#m-cs-estimation">M_CS Estimation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#information-content-based-on-mcs-value">Information content based on MCS value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#performance-evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial8/pucchFormat0_Tutorial.html#performance-plot">Performance Plot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html">Downlink Time of Arrival based Positioning in 5G and Beyond Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Positioning-Procedure">Positioning Procedure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Table-of-Content:">Table of Content:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Import-Libraries">Import Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Channel-Generation">Channel Generation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Channel-Parameters:">Channel Parameters:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Position-Reference-Signal">Position Reference Signal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#OFDM-Transmitter:-Create-Transmission-Grid">OFDM Transmitter: Create Transmission Grid</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Display-Transmission-Grid">Display Transmission Grid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Transmit-Beamforming">Transmit Beamforming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Pass-the-Beamformed-Grid-Through-Wireless-Channel">Pass the Beamformed Grid Through Wireless Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Add-Noise">Add Noise</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Display-Received-Resource-Grid">Display Received Resource Grid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Extracting-the-Resource-Grid">Extracting the Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Channel-Estimation-+-Interpolation">Channel Estimation + Interpolation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Display-the-quality-of-Channel-Estimates">Display the quality of Channel Estimates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#ToA-Estimation">ToA Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Visualization:-Time-of-Arrival-locus-Circles">Visualization: Time of Arrival locus Circles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Position-Estimation-+-K-Best-Measurement-Selection-(Genie-Aided)">Position Estimation + K-Best Measurement Selection (Genie Aided)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Measurement-Selection:">Measurement Selection:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Visualization-of-Positioning">Visualization of Positioning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Performance-Analysis-of-Positioning-Error-for-ToA-based-method">Performance Analysis of Positioning Error for ToA based method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Tutorials/Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Further-Study">Further Study</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/Projects/Projects.html">Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html">Learning to Demap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Table-of-Contents">Table of Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Import-Python-Libraries">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Import-5G-Toolkit-Modules">Import 5G Toolkit Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Learning-to-Demap-the-Symbols">Learning to Demap the Symbols</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Input-Output-Mapping-for-M-=-4">Input Output Mapping for M = 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Input-Output-Mapping-for-M-=-6">Input Output Mapping for M = 6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Input-Output-Mapping-for-M-=-8">Input Output Mapping for M = 8</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Throughput-and-BER-Performance-of-LLRnet">Throughput and BER Performance of <em>LLRnet</em></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#id1">Import Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#PDSCH-Parameters">PDSCH Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#LLRnet-Parameters">LLRnet Parameters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Training-Framework">Training Framework</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Deployment-Framework">Deployment Framework</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Simulation-Section">Simulation Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Performance-Evaluation">Performance Evaluation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Throughput-vs-SNR-(dB)-for-16-QAM,-64-QAM-and,-256-QAM.">Throughput vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Throughput-vs-SNR-(dB)-for-16-QAM.">Throughput vs SNR (dB) for 16-QAM.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Throughput-vs-SNR-(dB)-for-64-QAM.">Throughput vs SNR (dB) for 64-QAM.</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Throughput-vs-SNR-(dB)-for-256-QAM.">Throughput vs SNR (dB) for 256-QAM.</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Bit-Error-rate-(BER)-vs-SNR-(dB)-for-16-QAM,-64-QAM-and,-256-QAM.">Bit Error rate (BER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#BER-vs-SNR-for-64-QAM">BER vs SNR for 64-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#BER-vs-SNR-for-256-QAM">BER vs SNR for 256-QAM</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Block-Error-Rate-(BLER)-vs-SNR-(dB)-for-16-QAM,-64-QAM-and,-256-QAM.">Block Error Rate (BLER) vs SNR (dB) for 16-QAM, 64-QAM and, 256-QAM.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#BLER-vs-SNR-for-16-QAM">BLER vs SNR for 16-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#BLER-vs-SNR-for-64-QAM">BLER vs SNR for 64-QAM</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#BLER-vs-SNR-for-256-QAM">BLER vs SNR for 256-QAM</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Complexity-Analysis">Complexity Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Conclusion">Conclusion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Positives-of-the-LLRnet:">Positives of the LLRnet:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project1/learning2Demap.html#Limitations-of-the-LLRnet:">Limitations of the LLRnet:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Projects/Project2/project2.html">Imitation Learning for Position Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Projects/Project3/project3.html">Channel Interpolation based on SRCNN and DnCNN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Projects/Project4/project4.html">Comparative Study of Reed Muller codes, Polar Codes and LDPC codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Projects/Project5/project5.html">Channel Quality Estimation in 5G and Beyond Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Projects/Project6/project6.html">Hybrid Automatic repeat Request in 5G and Beyond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html">Constellation Learning in an AWGN Channel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#PHY-layer-as-AutoEncoder">PHY layer as AutoEncoder</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Steps">Steps</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Importing-Libraries">Importing Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Parameters-of-AutoEncoder">Parameters of AutoEncoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Training-Data">Training Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Testing-Data">Testing Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Normalization-Functions">Normalization Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Defining-AutoEncoder-Model">Defining AutoEncoder Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Training-AutoEncoder">Training AutoEncoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Defining-Tx,-Channel-and-Rx-from-Trained-AutoEncoder">Defining Tx, Channel and Rx from Trained AutoEncoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Block-Error-Rate-(BLER)-performance">Block Error Rate (BLER) performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Hamming-Codes">Hamming Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Importing-necessary-libraries">Importing necessary libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Transmitter">Transmitter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#BLER-plot-:-comparison-of-AutoEncoder-BLER-with-base-line-(n,k)-Hamming-Code-BLER">BLER plot : comparison of AutoEncoder BLER with base line (n,k) Hamming Code BLER</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#Constellation-Learning">Constellation Learning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#learned-constellation-plot">learned constellation plot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project7/E2E_Learning_for_Physical_Layer.html#References">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Projects/Project8/project8.html">Downlink Synchronization using SSB in 5G systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Projects/Project9/project9.html">Uplink Synchronization using PRACH in 5G systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html">Downlink TDoA Based Positioning for Millimeter Wave 5G Networks Deployed in Indoor Factory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Channel-Generation">Channel Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Channel-Parameters:">Channel Parameters:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Position-Reference-Signal">Position Reference Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#OFDM-Transmitter:-Create-Transmission-Grid">OFDM Transmitter: Create Transmission Grid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Display-Transmission-Grid">Display Transmission Grid</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Transmit-Beamforming">Transmit Beamforming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Pass-the-Beamformed-Grid-Through-Wireless-Channel">Pass the Beamformed Grid Through Wireless Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Add-Noise">Add Noise</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Display-Received-Resource-Grid">Display Received Resource Grid</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Extracting-the-Resource-Grid">Extracting the Resource Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Channel-Estimation-+-Interpolation">Channel Estimation + Interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Display-the-quality-of-Channel-Estimates">Display the quality of Channel Estimates</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#ToA-Estimation">ToA Estimation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Visualization:-Time-of-Arrival-locus-Circles">Visualization: Time of Arrival locus Circles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Position-Estimation-+-K-Best-Measurement-Selection-(Genie-Aided)">Position Estimation + K-Best Measurement Selection (Genie Aided)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Measurement-Selection:">Measurement Selection:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Visualization-of-Positioning">Visualization of Positioning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Performance-Analysis-of-Positioning-Error-for-ToA-based-method">Performance Analysis of Positioning Error for ToA based method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Projects/Project10/E2E_Downlink_TDoA_Based_Positioning_for_Millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Further-Study">Further Study</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/Integration_with_SDR/Integration_with_SDRs.html">Integration with SDRs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html">Downlink Synchronization in 5G Networks: SSB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-Python-and-SDR-Libraries">Import Python and SDR Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-5G-Toolkit-Libraries">Import 5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Emulation-Configurations">Emulation Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Transmitter-Implementation">Transmitter Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Generate-the-SSB-Grid-for-synchronization">Generate the SSB Grid for synchronization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Constellation-Diagram">Constellation Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#OFDM-Modulation:-Tx">OFDM Modulation: Tx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Receiver-Implementation">Receiver Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#OFDM-Demodulation-and-SSB-Extraction">OFDM Demodulation and SSB Extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#SSB-Grid:-Transmitter-and-Receiver">SSB Grid: Transmitter and Receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Spectrum:-Transmitted-Grid-and-Received-Grid">Spectrum: Transmitted Grid and Received Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Parameter-Estimation-for-SSB-and-PBCH">Parameter Estimation for SSB and PBCH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Channel-Estimation-and-PBCH-Symbol-Equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#PBCH-Decoding-and-Constellation">PBCH Decoding and Constellation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../api/Integration_with_SDR/SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Performance-Verification">Performance Verification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/Preview_of_Next_Release/FeatureList.html">Tentetive list of Feature</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Preview_of_Next_Release/FeatureList.html#in-progress-to-be-released-soon">In Progress (To be Released soon):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Preview_of_Next_Release/FeatureList.html#next-quarter">Next Quarter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Preview_of_Next_Release/FeatureList.html#before-september-2023">Before September 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/Preview_of_Next_Release/FeatureList.html#before-march-2024">Before March 2024</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/Built_using_5G_Toolkit/builtUsing5GToolkit.html">Research work carried out using 5G Toolkit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/WeekChallenge/challenge.html">Challenge Of this Week</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/WeekChallenge/challengeOftheWeek.html">Solution of this Months Problems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/WeekChallenge/challengeArxiv.html">Arxiv-ed Challenges</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/License/license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/License/license.html#trademarks">Trademarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/License/license.html#source-code">Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../api/License/license.html#content">Content</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">5G Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">toolkit5G.ReceiverAlgorithms.ChannelEstimation_and_Equalization.channelEstimationAndEqualization</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for toolkit5G.ReceiverAlgorithms.ChannelEstimation_and_Equalization.channelEstimationAndEqualization</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">interpolate</span>
+
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">run</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">exit</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+
+<span class="k">if</span> <span class="s2">&quot;Win&quot;</span> <span class="ow">in</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">():</span>
+    <span class="n">pathValue</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span> <span class="s1">&#39;~&#39;</span> <span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&quot;</span>        
+
+    <span class="k">if</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pathValue</span><span class="o">+</span><span class="s2">&quot;/.bootlog.log&quot;</span><span class="p">)):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">pathValue</span> <span class="o">+</span> <span class="s1">&#39;/.numpy &quot;&quot;&#39;</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;True&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">stdout</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">exit</span><span class="p">(</span><span class="s2">&quot;License Error!&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">pathValue</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span> <span class="s1">&#39;~&#39;</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="s2">&quot; &quot;</span> <span class="ow">in</span> <span class="n">pathValue</span><span class="p">:</span>
+        <span class="n">pathValue</span> <span class="o">=</span> <span class="n">pathValue</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;\ &quot;</span><span class="p">)</span>        
+
+    <span class="k">if</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pathValue</span><span class="o">+</span><span class="s2">&quot;/.bootlog.log&quot;</span><span class="p">)):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">pathValue</span><span class="o">+</span><span class="s1">&#39;/.numpy &quot;&quot;&#39;</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="s2">&quot;True&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">stdout</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">exit</span><span class="p">(</span><span class="s2">&quot;License Error!&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ChannelEstimationAndEqualization"><a class="viewcode-back" href="../../../../api/5G_Toolkit/ReceiverAlgorithms/ChannelEstimation_and_Equalization/receiverAlgorithms.channelEstimationAndEqualization.html#toolkit5G.ReceiverAlgorithms.ChannelEstimationAndEqualization">[docs]</a><span class="k">class</span> <span class="nc">ChannelEstimationAndEqualization</span><span class="p">:</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This module provides the class for channel estimation and equalization for physical broadcast chanel (PBCH). The</span>
+<span class="sd">    implementation uses **least Square** estimator with **nearest neighbour** interpolator to estimate the channel and</span>
+<span class="sd">    **zero forcing (least squares)** to equalize the received grid.</span>
+
+
+<span class="sd">    .. note::</span>
+<span class="sd">        When ``estimatorType`` is **&quot;MMSE&quot;**, ``snr`` must  be passed.</span>
+
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    estimatorType: str</span>
+<span class="sd">        Defines the estimator type. It can take values from the set :math:`\{` &quot;ZF&quot;, &quot;MMSE&quot; :math:`\}`. Default value is &quot;ZF&quot;.</span>
+<span class="sd">    interpolatorType: str</span>
+<span class="sd">        Defines the estimator type. It can take values from the set :math:`\{` &quot;NN&quot; :math:`\}`. Default value is &quot;NN&quot;.</span>
+
+
+<span class="sd">    Input</span>
+<span class="sd">    -----</span>
+<span class="sd">    rxGrid: (4, 240), np.complex</span>
+<span class="sd">        Defines the received SSB Grid.</span>
+<span class="sd">    pilots: (144,), np.complex</span>
+<span class="sd">        Defines the dmrs sequence transmitted for channel estimation</span>
+<span class="sd">    pilotLocation: (2,), Tuple of 2 NumPy arrays each of size 144.</span>
+<span class="sd">        Defines the time-frequency (n,k)s locations where DMRS-PBCH are transmitted.</span>
+
+<span class="sd">        * ``pilotLocation[0]`` contains time indices.</span>
+<span class="sd">        * ``pilotLocation[1]`` contains frequency/subcarrier indices.</span>
+<span class="sd">    dataLocations: (2,), Tuple of 2 NumPy arrays each of size 432.</span>
+<span class="sd">        Defines the time-frequency (n,k)s locations where PBCH symbols are transmitted.</span>
+
+<span class="sd">        * ``dataLocations[0]`` contains time indices.</span>
+<span class="sd">        * ``dataLocations[1]`` contains frequency/subcarrier indices.</span>
+<span class="sd">    snr: number</span>
+<span class="sd">        Defines the signal to noise ratio. This parameter is relevant only when ``estimatorType`` is **&quot;MMSE&quot;**.</span>
+
+
+<span class="sd">    Output</span>
+<span class="sd">    ------</span>
+<span class="sd">    (432,), np.complex</span>
+<span class="sd">        Returns the equalized PBCH symbols.</span>
+
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        [Error-ChannelEstimationAndEqualization]: Invalid choice of channel estimation type!</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        [Error-ChannelEstimationAndEqualization]: Invalid choice of interpolatorType type!</span>
+
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimatorType</span> <span class="o">=</span> <span class="s2">&quot;ZF&quot;</span><span class="p">,</span> <span class="n">interpolatorType</span> <span class="o">=</span> <span class="s2">&quot;NN&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">estimatorType</span>    <span class="o">=</span> <span class="n">estimatorType</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interpolatorType</span> <span class="o">=</span> <span class="n">interpolatorType</span>
+        
+    
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rxGrid</span><span class="p">,</span> <span class="n">pilots</span><span class="p">,</span> <span class="n">pilotLocation</span><span class="p">,</span> <span class="n">dataLocations</span><span class="p">,</span> <span class="n">snr</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimatorType</span> <span class="o">==</span> <span class="s2">&quot;ZF&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">channelAtPilotLocation</span> <span class="o">=</span> <span class="n">rxGrid</span><span class="p">[</span><span class="n">pilotLocation</span><span class="p">]</span><span class="o">/</span><span class="n">pilots</span>
+            
+        <span class="k">elif</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimatorType</span> <span class="o">==</span> <span class="s2">&quot;MMSE&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">channelAtPilotLocation</span> <span class="o">=</span> <span class="n">rxGrid</span><span class="p">[</span><span class="n">pilotLocation</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">pilots</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">pilots</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">snr</span><span class="p">))</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;[Error-ChannelEstimationAndEqualization]: Invalid choice of channel estimation type!&quot;</span><span class="p">)</span>
+            
+        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interpolatorType</span> <span class="o">==</span> <span class="s2">&quot;NN&quot;</span><span class="p">):</span>
+            <span class="n">nnInterpolationFunction</span>     <span class="o">=</span> <span class="n">interpolate</span><span class="o">.</span><span class="n">NearestNDInterpolator</span><span class="p">(</span><span class="n">pilotLocation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">channelAtPilotLocation</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">channelAtDataLocation</span>  <span class="o">=</span> <span class="n">nnInterpolationFunction</span><span class="p">(</span><span class="n">dataLocations</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dataEstimate</span>           <span class="o">=</span> <span class="n">rxGrid</span><span class="p">[</span><span class="n">dataLocations</span><span class="p">]</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">channelAtDataLocation</span>
+        <span class="k">elif</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interpolatorType</span> <span class="o">==</span> <span class="s2">&quot;Spline&quot;</span><span class="p">):</span>
+            <span class="k">pass</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;[Error-ChannelEstimationAndEqualization]: Invalid choice of interpolatorType type!&quot;</span><span class="p">)</span>
+            
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataEstimate</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2023, Gigayasa Wireless Private Limited.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
