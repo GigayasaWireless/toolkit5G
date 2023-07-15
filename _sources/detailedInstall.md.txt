@@ -12,48 +12,12 @@ Lets start by updating the system:
 sudo apt-get update
 ~~~
 
-## Install Python
-
-Those who don't have Python on their system can install by running the following command (The ones who use conda 
-environment can skip this and install python directly using conda environment as described in upcoming subsection).
-~~~
-sudo apt-get install pythonX.Y
-~~~
-
-For example Python 3.11 can be installed directly using the following command:
-~~~
-sudo apt-get install python3.11
-~~~
-
-The installation status can be confirmed with following commands:
-~~~
-python3 --version
-~~~
-
-or
-
-~~~
-python --version
-~~~
-It shall return the version of python installed using the above command.
-
-## Install PIP
-
-PIP is automatically installed by python package, you can check the version of PIP to confirm the installation
-~~~
-pip --version
-~~~
-
-In case above command doesn't produce expected output, please install PIP using following command:
-~~~
-sudo apt install python3-pip
-~~~
-
-
 ## Install Miniconda
 
 If Anaconda is already installed on your system, then you can skip this step. The following instructions install the 
 Miniconda which is a lighter version of Anaconda. First we will download miniconda using the command:
+
+**Please install the latest version of the Miniconda. Following version might be outdated**
 ~~~
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ~~~
@@ -71,12 +35,12 @@ conda --v
 Now, we will use conda to create a new environment for python 3.11 (this command will automatically install python 3.11 
 in the target environment):
 ~~~
-conda create -n myenv python==3.11
+conda create -n gigayasa python==3.11
 ~~~
 
 Finally, we will activate the created environment by executing
 ~~~
-conda activate myenv
+conda activate gigayasa
 ~~~
 
 We will install everything from further now in this environment only.
@@ -98,42 +62,42 @@ The **template command** for installation is given below:
 **For Python 3.7**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_7/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.8**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_8/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.9**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_9/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.10**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_10/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.11**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_11/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
-Once the installation is complete the user can verify the installation by the output of the pip show command:
-
+To confirm installation of the library, you can check the installation library:
 ~~~
 pip show toolkit5G
 ~~~
 
 ## Final Confirmation
 
-open Jupyter Notebook
+The installation will be truly successful if we are able to import the toolkit5G packages. We can verify it using 
+**Jupyter Notebook**, open the jupyter notebook using following command in your browser.
 ~~~
 jupyter notebook
 ~~~
@@ -144,26 +108,43 @@ Create a new jupyter notebook and run the following lines of code:
 import toolkit5G as tk
 tk.__version__
 ~~~
+
+The same procedure is followed in this video.
+
 The toolkit is successfully installed if it shows the toolkit5G version. Otherwise, something went wrong. If it shows 
 "License Error", then you will have to activate the License as described on [installation page](install.md#activate-the-5g-toolkit-license).
+But still if you are struggling please email us at any of the following emails:
+* toolkit5g@gigayasa.com
+* support@gigayasa.com
+* vikram@gigayasa.com
+
+We will be more than happy to help you in installation.
+
+## Video Tutorial: Installation on Ubuntu
+
+<figure class="video_container">
+    <iframe src="https://www.youtube.com/embed/C1yZh4I0X_w" frameborder="0" width="100%" height="400" allowfullscreen="true"> </iframe>
+</figure>
+
+----
 
 # Detailed Installation on Windows 10/11
 
-## Install Python
-To be updated!
-
-## Install PIP
-To be updated!
-
-When the installation is complete, verify the installation by checking the pip version:
-~~~
-pip --version
-~~~
-
 ## Install Miniconda
-To be updated!
 
-Once the installation is completed, we can check the version installed Conda on our system:
+1. Download the Miniconda installer from this link:
+ **Please install the latest version of the installer from this link https://docs.conda.io/en/latest/miniconda.html. Following link might be outdated**
+
+   * For 32 bit version of Windows: [Download Miniconda Installer](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86.exe)
+   * For 64 bit version of Windows: [Download Miniconda Installer](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe)
+
+2. Install **Miniconda** by executing this installer.
+
+## Create an environment using Conda
+
+Click on start button and find Anaconda Prompt.
+
+Once the installation is completed, we can check the Conda version installed on our system:
 ~~~
 conda --v
 ~~~
@@ -197,32 +178,34 @@ The **template command** for installation is given below:
 
 **For Python 3.7**:
 
+<p class="callout warning"> <strong>Note</strong>: Initial version of Python 3.7 is buggy. Hence, only Python>=3.7.4 is supported. </p>
+
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_7/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.8**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_8/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.9**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_9/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.10**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_10/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.11**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_11/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 Once the installation is complete the user can verify the installation by the output of the pip show command:
@@ -244,6 +227,18 @@ Create a new jupyter notebook and run the following lines of code:
 import toolkit5G as tk
 tk.__version__
 ~~~
-
 The toolkit is successfully installed if it shows the toolkit5G version. Otherwise, something went wrong. If it shows 
 "License Error", then you will have to activate the License as described on [installation page](install.md#activate-the-5g-toolkit-license).
+But still if you are struggling please email us at any of the following emails:
+* toolkit5g@gigayasa.com
+* support@gigayasa.com
+* vikram@gigayasa.com
+We will be more than happy to help you in installation.
+
+## Video Tutorial: Installation on Window
+
+<figure class="video_container">
+    <iframe src="https://www.youtube.com/embed/C1yZh4I0X_w" frameborder="0" width="100%" height="400" allowfullscreen="true"> </iframe>
+</figure>
+
+----

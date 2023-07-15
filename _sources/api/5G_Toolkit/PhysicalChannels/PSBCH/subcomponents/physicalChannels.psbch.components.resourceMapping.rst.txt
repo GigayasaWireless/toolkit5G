@@ -1,0 +1,8 @@
+ResourceMapping: PSBCH
+***********************
+
+.. toctree::
+    :maxdepth: 10
+
+    physicalChannels.psbch.components.resourceMapping.resourceMapping.rst
+

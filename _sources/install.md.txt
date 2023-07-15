@@ -32,37 +32,39 @@ of the package for installation. Users can remove it if not relevant for them. <
 <p class="callout warning"> <strong>Note</strong>: Initial version of Python 3.7 is buggy. Hence, only Python>=3.7.4 is supported. </p>
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_7/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.8**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_8/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.9**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_9/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.10**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_10/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 **For Python 3.11**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.10/package/python3_11/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.10-py3-none-any.whl
 ~~~
 
 To confirm installation of the library, you can check the installation library:
 ~~~
 pip show toolkit5G
 ~~~
+
+
 
 ## Dependent Libraries:
 [![PythonLogo](_static/python.png)](https://www.python.org/)
@@ -83,13 +85,13 @@ pip show toolkit5G
 | NumPy            | > 1.16                                            |
 | SciPy            | >=1.6.0                                           |
 | matplotlib       | > 3.4                                             |
-| Sionna           | <=0.14 (For version 0.14 LLVM may create problem) |
+| Sionna           | <=0.13 (For version 0.14 LLVM may create problem) |
 
 ## Detailed Installation Procedure
 This section covers detailed installation procedure for Windows (10 and 11), Ubuntu (20.04 and 22.04). It covers following
 steps
- - Installing Python
- - Install, create and use virtual environment using [Conda](https://docs.conda.io/en/latest/miniconda.html) or [Environment](https://docs.python.org/3/library/venv.html).
+ - Install [Conda](https://docs.conda.io/en/latest/miniconda.html)
+ - Create [virtual environment](https://docs.python.org/3/library/venv.html) and install Python in it.
  - Install Jupyter Notebook
  - Install 5G Toolkit
  - Import and use Toolkit in Jupyter Notebook.
@@ -113,3 +115,19 @@ or perpetual license [Purchase License](https://gigayasa.com/request-pricing/).
  - Activate your License.
  - If activation is successful, please close the Central-Hub.
  - You are good to go please open the jupyter Notebook and try to "import toolkit5G as tk"
+
+## Video Tutorial: Installation on Ubuntu
+
+<figure class="video_container">
+    <iframe src="https://www.youtube.com/embed/C1yZh4I0X_w" frameborder="0" width="100%" height="400" allowfullscreen="true"> </iframe>
+</figure>
+
+----
+
+## Video Tutorial: Installation on Window
+
+<figure class="video_container">
+    <iframe src="https://www.youtube.com/embed/C1yZh4I0X_w" frameborder="0" width="100%" height="400" allowfullscreen="true"> </iframe>
+</figure>
+
+----

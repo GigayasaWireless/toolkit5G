@@ -63,6 +63,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#video-tutorial-installation-on-ubuntu">Video Tutorial: Installation on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#video-tutorial-installation-on-window">Video Tutorial: Installation on Window</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../5Gtoolkit.html">API Documentation</a><ul class="current">
@@ -226,8 +228,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../ResourceMapping/PUCCH/resourceMapping.pucch.format4.html">PUCCH Format-4</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../ResourceMapping/resourceMapping.s_ssb.html">Sidelink Synchronization Signal Block (SSB) Grid Generation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ResourceMapping/resourceMapping.s_ssb.html">Sidelink Synchronization Signal Block (S-SSB) Grid Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid.displayGrid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid.displayGrid()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ResourceMapping/resourceMapping.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
@@ -343,27 +348,25 @@
 <li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.resourceMapping.html">Resource Mapping PSCCH</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html">Physical Sidelink Broadcast Channel (PSBCH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#pbch-transmitter">PBCH Transmitter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#psbch-transmitter">PSBCH Transmitter</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#toolkit5G.PhysicalChannels.PSBCH"><code class="docutils literal notranslate"><span class="pre">PSBCH</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#pbch-receiver">PBCH Receiver</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#toolkit5G.PhysicalChannels.PSBCHDecoder"><code class="docutils literal notranslate"><span class="pre">PSBCHDecoder</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#pbch-components">PBCH Components</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.polar.html">Polar Coder</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html">Rate Matching</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.scrambling.html">Scrambling: PDCCH</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#psbch-components">PSBCH COMPONENTS</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.crc.html">Cyclic Redundancy Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.html">Scrambling: PSBCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.resourceMapping.html">ResourceMapping: PSBCH</a></li>
 </ul>
 </li>
 </ul>
@@ -679,8 +682,15 @@
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.clutterDensity"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterDensity</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.clutterHeight"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.clutterSize"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterSize</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeLoS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfBS()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfUE()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.force3GPPSpatialConsistencyParameters</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.forceLOS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.forceLOS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.heightOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfRoom</span></code></a></li>
@@ -691,6 +701,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.layoutWidth"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutWidth</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.lengthOfIndoorObject</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.maxNumberOfFloors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minNumberOfFloors</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minUEBSDistance</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.ChannelModels.SimulationLayout.numOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfBS</span></code></a></li>
@@ -724,17 +735,23 @@
 <li class="toctree-l4"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgBuildingHeight"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgBuildingHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgStreetWidth"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgStreetWidth</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationDistance</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationType</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d2D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d2D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d3D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d3D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.displayClusters"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.displayClusters()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteAngles"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteAngles</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteDelays"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteDelays</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForInitialPhases</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForLSPs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForSSPs</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.fc</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.getChannel"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.getChannel()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.hallVolume"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.hallVolume</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.linkStateVec"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.linkStateVec</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locBS"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locUE"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locUE</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.surfaceArea"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.surfaceArea</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.terrain</span></code></a></li>
 </ul>
@@ -1625,6 +1642,30 @@ all assumed to be in GHz.</p>
 <dd><p>Size of the clutter for Indoor Factory scenario or terrain</p>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">correlationDistanceIndoor</span></span><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor" title="Permalink to this definition"></a></dt>
+<dd><p>This property speicifies the Radius of Circle when UE UeDropMethod chosen is “Circular”</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">correlationDistanceLoS</span></span><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS" title="Permalink to this definition"></a></dt>
+<dd><p>This property speicifies the Radius of Circle when UE UeDropMethod chosen is “Circular”</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">correlationTypeIndoor</span></span><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor" title="Permalink to this definition"></a></dt>
+<dd><p>Specifies the type of spatial/geometrical correlation to be used on the generating LoS link state!</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">correlationTypeLoS</span></span><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS" title="Permalink to this definition"></a></dt>
+<dd><p>Specifies the type of spatial/geometrical correlation to be used on the generating LoS link state!</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS">
 <span class="sig-name descname"><span class="pre">display2DLocationsOfBS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">displaySectorLabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displayPlot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/ChannelModels/simulationLayout/simulationLayout.html#SimulationLayout.display2DLocationsOfBS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS" title="Permalink to this definition"></a></dt>
@@ -1643,6 +1684,24 @@ all assumed to be in GHz.</p>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enableSpatialConsistencyIndoor</span></span><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor" title="Permalink to this definition"></a></dt>
+<dd><p>A boolean flag to enable spatial consistency for LoS State configuation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enableSpatialConsistencyLoS</span></span><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS" title="Permalink to this definition"></a></dt>
+<dd><p>A boolean flag to enable spatial consistency for LoS State configuation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">force3GPPSpatialConsistencyParameters</span></span><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters" title="Permalink to this definition"></a></dt>
+<dd><p>A boolean flag to enable spatial consistency for LoS State configuation.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1703,6 +1762,12 @@ all assumed to be in GHz.</p>
 <dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maxNumberOfFloors</span></span><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors" title="Permalink to this definition"></a></dt>
 <dd><p>Specifies the maximum number of floors for indoor scenario such as Indoor Office or Indoor Factory.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.memoryEfficient">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">memoryEfficient</span></span><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient" title="Permalink to this definition"></a></dt>
+<dd><p>A boolean flag to configure the module in memory efficency mode. This will slow the implementation but reduces the memory consumption.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1830,7 +1895,7 @@ Defaults to None.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">SimulationLayout.</span></span><span class="sig-name descname"><span class="pre">getParameterGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hallVolume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaceArea</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avgBuildingHeight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avgStreetWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delaySpread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0000000000000001e-07</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muKdB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigmaKdB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularSpreadAoD</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularSpreadAoA</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muLog10</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-7.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigmaLog10</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enableAbsoluteAngles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enableAbsoluteDelays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/ChannelModels/simulationLayout/simulationLayout.html#SimulationLayout.getParameterGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<span class="sig-prename descclassname"><span class="pre">SimulationLayout.</span></span><span class="sig-name descname"><span class="pre">getParameterGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hallVolume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaceArea</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avgBuildingHeight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avgStreetWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delaySpread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0000000000000001e-07</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muKdB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigmaKdB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularSpreadAoD</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularSpreadAoA</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muLog10</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-7.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigmaLog10</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enableAbsoluteAngles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enableAbsoluteDelays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memoryEfficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enableSpatialConsistency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correlationDistance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correlationType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Exponential'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/ChannelModels/simulationLayout/simulationLayout.html#SimulationLayout.getParameterGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Method to generate <code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterGenerator</span></code> object from <a class="reference internal" href="#id0" title="toolkit5G.ChannelModels.simulationLayout.simulationLayout.SimulationLayout"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationLayout</span></code></a> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2255,15 +2320,39 @@ all assumed to be in GHz.</p>
 <dd><p>Size of the clutter for Indoor Factory scenario or terrain</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="py property">
 <dt class="sig sig-object py" id="id22">
-<span class="sig-name descname"><span class="pre">display2DLocationsOfBS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">displaySectorLabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displayPlot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/ChannelModels/simulationLayout/simulationLayout.html#SimulationLayout.display2DLocationsOfBS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id22" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">correlationDistanceIndoor</span></span><a class="headerlink" href="#id22" title="Permalink to this definition"></a></dt>
+<dd><p>This property speicifies the Radius of Circle when UE UeDropMethod chosen is “Circular”</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id23">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">correlationDistanceLoS</span></span><a class="headerlink" href="#id23" title="Permalink to this definition"></a></dt>
+<dd><p>This property speicifies the Radius of Circle when UE UeDropMethod chosen is “Circular”</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id24">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">correlationTypeIndoor</span></span><a class="headerlink" href="#id24" title="Permalink to this definition"></a></dt>
+<dd><p>Specifies the type of spatial/geometrical correlation to be used on the generating LoS link state!</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id25">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">correlationTypeLoS</span></span><a class="headerlink" href="#id25" title="Permalink to this definition"></a></dt>
+<dd><p>Specifies the type of spatial/geometrical correlation to be used on the generating LoS link state!</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id26">
+<span class="sig-name descname"><span class="pre">display2DLocationsOfBS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">displaySectorLabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displayPlot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/ChannelModels/simulationLayout/simulationLayout.html#SimulationLayout.display2DLocationsOfBS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id26" title="Permalink to this definition"></a></dt>
 <dd><p>Method to display locations of BSs in 2D for a chosen layout.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="id23">
-<span class="sig-name descname"><span class="pre">display2DLocationsOfUE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uePointSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'royalblue'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displayPlot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/ChannelModels/simulationLayout/simulationLayout.html#SimulationLayout.display2DLocationsOfUE"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id23" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id27">
+<span class="sig-name descname"><span class="pre">display2DLocationsOfUE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uePointSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'royalblue'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">displayPlot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/ChannelModels/simulationLayout/simulationLayout.html#SimulationLayout.display2DLocationsOfUE"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id27" title="Permalink to this definition"></a></dt>
 <dd><p>Method to display initial locations of UEs (i.e., locations of UEs at the first snap-shot) in 2D.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2296,14 +2385,32 @@ Defaults to None.</p></li>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id24">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forceLOS</span></span><a class="headerlink" href="#id24" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id28">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enableSpatialConsistencyIndoor</span></span><a class="headerlink" href="#id28" title="Permalink to this definition"></a></dt>
+<dd><p>A boolean flag to enable spatial consistency for LoS State configuation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id29">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">enableSpatialConsistencyLoS</span></span><a class="headerlink" href="#id29" title="Permalink to this definition"></a></dt>
+<dd><p>A boolean flag to enable spatial consistency for LoS State configuation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id30">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">force3GPPSpatialConsistencyParameters</span></span><a class="headerlink" href="#id30" title="Permalink to this definition"></a></dt>
+<dd><p>A boolean flag to enable spatial consistency for LoS State configuation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id31">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">forceLOS</span></span><a class="headerlink" href="#id31" title="Permalink to this definition"></a></dt>
 <dd><p>A boolean flag specifying whether to force every link to Line of Sight (LOS) state or not. By default it is False.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="toolkit5G.ChannelModels.SimulationLayout.getParameterGenerator">
-<span class="sig-name descname"><span class="pre">getParameterGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hallVolume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaceArea</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avgBuildingHeight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avgStreetWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delaySpread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0000000000000001e-07</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muKdB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigmaKdB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularSpreadAoD</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularSpreadAoA</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muLog10</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-7.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigmaLog10</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enableAbsoluteAngles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enableAbsoluteDelays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/ChannelModels/simulationLayout/simulationLayout.html#SimulationLayout.getParameterGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.getParameterGenerator" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">getParameterGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hallVolume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surfaceArea</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avgBuildingHeight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avgStreetWidth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delaySpread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0000000000000001e-07</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muKdB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigmaKdB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularSpreadAoD</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularSpreadAoA</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">muLog10</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-7.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigmaLog10</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enableAbsoluteAngles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enableAbsoluteDelays</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memoryEfficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enableSpatialConsistency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correlationDistance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correlationType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Exponential'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/ChannelModels/simulationLayout/simulationLayout.html#SimulationLayout.getParameterGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.ChannelModels.SimulationLayout.getParameterGenerator" title="Permalink to this definition"></a></dt>
 <dd><p>Method to generate <a class="reference internal" href="parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator" title="toolkit5G.ChannelModels.ParameterGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a> object from <a class="reference internal" href="#id0" title="toolkit5G.ChannelModels.SimulationLayout"><code class="xref py py-class docutils literal notranslate"><span class="pre">SimulationLayout</span></code></a> class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2345,110 +2452,116 @@ Must be a boolean. Defaults to True.</p></li>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id25">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heightOfBS</span></span><a class="headerlink" href="#id25" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id32">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heightOfBS</span></span><a class="headerlink" href="#id32" title="Permalink to this definition"></a></dt>
 <dd><p>Specifies the Height of the Base Station (BS). Assumed to be in meters.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id26">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heightOfRoom</span></span><a class="headerlink" href="#id26" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id33">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heightOfRoom</span></span><a class="headerlink" href="#id33" title="Permalink to this definition"></a></dt>
 <dd><p>height of the room or ceiling in meters. Valid for Indoor scenario or terrain such as Indoor HotSpot or Indoor Factory</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id27">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heightOfUE</span></span><a class="headerlink" href="#id27" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id34">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heightOfUE</span></span><a class="headerlink" href="#id34" title="Permalink to this definition"></a></dt>
 <dd><p>Specifies the Height of the User Equipment (UE). Assumed to be in meters</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id28">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">indoorUEfraction</span></span><a class="headerlink" href="#id28" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id35">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">indoorUEfraction</span></span><a class="headerlink" href="#id35" title="Permalink to this definition"></a></dt>
 <dd><p>This property specifies the percentage of num of indoor UEs to the total number of UEs in simulation. Assumed to be specified as a ratio</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id29">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">layoutLength</span></span><a class="headerlink" href="#id29" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id36">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">layoutLength</span></span><a class="headerlink" href="#id36" title="Permalink to this definition"></a></dt>
 <dd><p>This is the property which captures Length of Rectangular layout in meters</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id30">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">layoutType</span></span><a class="headerlink" href="#id30" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id37">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">layoutType</span></span><a class="headerlink" href="#id37" title="Permalink to this definition"></a></dt>
 <dd><p>Specifies the type of Layout. i.e., the type of geometry chosen for BS deployment</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id31">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">layoutWidth</span></span><a class="headerlink" href="#id31" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id38">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">layoutWidth</span></span><a class="headerlink" href="#id38" title="Permalink to this definition"></a></dt>
 <dd><p>This is the property which captures Width of Rectangular layout in meters</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id32">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lengthOfIndoorObject</span></span><a class="headerlink" href="#id32" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id39">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lengthOfIndoorObject</span></span><a class="headerlink" href="#id39" title="Permalink to this definition"></a></dt>
 <dd><p>This property specify the length of indoor object. Assumed to be of rectangular geometry and the length is in meters</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id33">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maxNumberOfFloors</span></span><a class="headerlink" href="#id33" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id40">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">maxNumberOfFloors</span></span><a class="headerlink" href="#id40" title="Permalink to this definition"></a></dt>
 <dd><p>Specifies the maximum number of floors for indoor scenario such as Indoor Office or Indoor Factory.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id34">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">minNumberOfFloors</span></span><a class="headerlink" href="#id34" title="Permalink to this definition"></a></dt>
-<dd><p>Specifies the minimum number of floors for indoor scenario such as Indoor Office or Indoor Factory.</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="id35">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">minUEBSDistance</span></span><a class="headerlink" href="#id35" title="Permalink to this definition"></a></dt>
-<dd><p>Property specifying the minimum distance between Base Station (BS) and User Equipment (UE)</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="id36">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numOfBS</span></span><a class="headerlink" href="#id36" title="Permalink to this definition"></a></dt>
-<dd><p>Number of Base Stations (BSs) specified in the simulation</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="id37">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numOfSectorsPerSite</span></span><a class="headerlink" href="#id37" title="Permalink to this definition"></a></dt>
-<dd><p>Number of sectors per each site or micro site specified in the simulation</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="id38">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numOfSnapShots</span></span><a class="headerlink" href="#id38" title="Permalink to this definition"></a></dt>
-<dd><p>Specifies the Number of Snap Shots or the illustration of BSs and UEs at different locations or time instants</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="id39">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numOfUE</span></span><a class="headerlink" href="#id39" title="Permalink to this definition"></a></dt>
-<dd><p>Number of User Equipments (UEs) specified in the simulation</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="id40">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radiusForCircularUEDrop</span></span><a class="headerlink" href="#id40" title="Permalink to this definition"></a></dt>
-<dd><p>This property speicifies the Radius of Circle when UE UeDropMethod chosen is “Circular”</p>
-</dd></dl>
-
-<dl class="py property">
 <dt class="sig sig-object py" id="id41">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">routeType</span></span><a class="headerlink" href="#id41" title="Permalink to this definition"></a></dt>
-<dd><p>Specifies the type of track or route of each node (either BS or UE) in the simulation. Current implementation support “randomWalk”</p>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">memoryEfficient</span></span><a class="headerlink" href="#id41" title="Permalink to this definition"></a></dt>
+<dd><p>A boolean flag to configure the module in memory efficency mode. This will slow the implementation but reduces the memory consumption.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="id42">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">terrain</span></span><a class="headerlink" href="#id42" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">minNumberOfFloors</span></span><a class="headerlink" href="#id42" title="Permalink to this definition"></a></dt>
+<dd><p>Specifies the minimum number of floors for indoor scenario such as Indoor Office or Indoor Factory.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id43">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">minUEBSDistance</span></span><a class="headerlink" href="#id43" title="Permalink to this definition"></a></dt>
+<dd><p>Property specifying the minimum distance between Base Station (BS) and User Equipment (UE)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id44">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numOfBS</span></span><a class="headerlink" href="#id44" title="Permalink to this definition"></a></dt>
+<dd><p>Number of Base Stations (BSs) specified in the simulation</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id45">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numOfSectorsPerSite</span></span><a class="headerlink" href="#id45" title="Permalink to this definition"></a></dt>
+<dd><p>Number of sectors per each site or micro site specified in the simulation</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id46">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numOfSnapShots</span></span><a class="headerlink" href="#id46" title="Permalink to this definition"></a></dt>
+<dd><p>Specifies the Number of Snap Shots or the illustration of BSs and UEs at different locations or time instants</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id47">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">numOfUE</span></span><a class="headerlink" href="#id47" title="Permalink to this definition"></a></dt>
+<dd><p>Number of User Equipments (UEs) specified in the simulation</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id48">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">radiusForCircularUEDrop</span></span><a class="headerlink" href="#id48" title="Permalink to this definition"></a></dt>
+<dd><p>This property speicifies the Radius of Circle when UE UeDropMethod chosen is “Circular”</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id49">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">routeType</span></span><a class="headerlink" href="#id49" title="Permalink to this definition"></a></dt>
+<dd><p>Specifies the type of track or route of each node (either BS or UE) in the simulation. Current implementation support “randomWalk”</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id50">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">terrain</span></span><a class="headerlink" href="#id50" title="Permalink to this definition"></a></dt>
 <dd><p>Specifies the propagation terrain or scenario at which the simulation is being carried out.
 Current implementation support both Outdoor and Indoor scenario when simulation is carried out for Spatial Channel Model (SCM).             Outdoor scenario includes Rural Macro, Urban Macro, and Urban Micro.
 Indoor scenario includes Indoor Hotspot, and Indoor Factory.
@@ -2456,26 +2569,26 @@ All the Clustered Delay Line (CDL), Tapped Delay Line (TDL) model are also being
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id43">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ueAntennaArray</span></span><a class="headerlink" href="#id43" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id51">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ueAntennaArray</span></span><a class="headerlink" href="#id51" title="Permalink to this definition"></a></dt>
 <dd><p>Object(s) of the class AntnennaArrays for each carrier frequency at UE side</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id44">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ueDropMethod</span></span><a class="headerlink" href="#id44" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id52">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ueDropMethod</span></span><a class="headerlink" href="#id52" title="Permalink to this definition"></a></dt>
 <dd><p>Specifies the method of UE drop. i.e., the type of geometry chosen for UE drops</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id45">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ueRoute</span></span><a class="headerlink" href="#id45" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id53">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ueRoute</span></span><a class="headerlink" href="#id53" title="Permalink to this definition"></a></dt>
 <dd><p>Route or Track or Locations of User Equipment (UE) across snap shots.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="id46">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">widthOfIndoorObject</span></span><a class="headerlink" href="#id46" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="id54">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">widthOfIndoorObject</span></span><a class="headerlink" href="#id54" title="Permalink to this definition"></a></dt>
 <dd><p>This property specify the width of indoor object. Assumed to be of rectangular geometry and the width is in meters</p>
 </dd></dl>
 
@@ -2521,7 +2634,7 @@ All the Clustered Delay Line (CDL), Tapped Delay Line (TDL) model are also being
 </section>
 </section>
 <section id="ue-drops">
-<span id="id47"></span><h2>UE Drops<a class="headerlink" href="#ue-drops" title="Permalink to this heading"></a></h2>
+<span id="id55"></span><h2>UE Drops<a class="headerlink" href="#ue-drops" title="Permalink to this heading"></a></h2>
 <section id="rectangular-drop">
 <h3>Rectangular Drop<a class="headerlink" href="#rectangular-drop" title="Permalink to this heading"></a></h3>
 <dl class="py class">

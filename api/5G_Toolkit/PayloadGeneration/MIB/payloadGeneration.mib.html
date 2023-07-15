@@ -65,6 +65,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../install.html#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#video-tutorial-installation-on-ubuntu">Video Tutorial: Installation on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../install.html#video-tutorial-installation-on-window">Video Tutorial: Installation on Window</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../5Gtoolkit.html">API Documentation</a><ul class="current">
@@ -228,8 +230,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../../ResourceMapping/PUCCH/resourceMapping.pucch.format4.html">PUCCH Format-4</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.s_ssb.html">Sidelink Synchronization Signal Block (SSB) Grid Generation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.s_ssb.html">Sidelink Synchronization Signal Block (S-SSB) Grid Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid.displayGrid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid.displayGrid()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../ResourceMapping/resourceMapping.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
@@ -345,27 +350,25 @@
 <li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.resourceMapping.html">Resource Mapping PSCCH</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.psbch.html">Physical Sidelink Broadcast Channel (PSBCH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.psbch.html#pbch-transmitter">PBCH Transmitter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.psbch.html#psbch-transmitter">PSBCH Transmitter</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.psbch.html#toolkit5G.PhysicalChannels.PSBCH"><code class="docutils literal notranslate"><span class="pre">PSBCH</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.psbch.html#pbch-receiver">PBCH Receiver</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.psbch.html#toolkit5G.PhysicalChannels.PSBCHDecoder"><code class="docutils literal notranslate"><span class="pre">PSBCHDecoder</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.psbch.html#pbch-components">PBCH Components</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.polar.html">Polar Coder</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html">Rate Matching</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.scrambling.html">Scrambling: PDCCH</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PhysicalChannels/physicalChannels.psbch.html#psbch-components">PSBCH COMPONENTS</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.crc.html">Cyclic Redundancy Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.html">Scrambling: PSBCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.resourceMapping.html">ResourceMapping: PSBCH</a></li>
 </ul>
 </li>
 </ul>
@@ -681,8 +684,15 @@
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterDensity"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterDensity</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterHeight"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterSize"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterSize</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeLoS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfBS()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfUE()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.force3GPPSpatialConsistencyParameters</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.forceLOS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfRoom</span></code></a></li>
@@ -693,6 +703,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutWidth</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.lengthOfIndoorObject</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.maxNumberOfFloors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minNumberOfFloors</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minUEBSDistance</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfBS</span></code></a></li>
@@ -726,17 +737,23 @@
 <li class="toctree-l4"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgBuildingHeight"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgBuildingHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgStreetWidth"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgStreetWidth</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationDistance</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationType</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d2D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d2D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d3D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d3D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.displayClusters"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.displayClusters()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteAngles"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteAngles</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteDelays"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteDelays</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForInitialPhases</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForLSPs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForSSPs</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.fc</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.getChannel"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.getChannel()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.hallVolume"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.hallVolume</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.linkStateVec"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.linkStateVec</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locBS"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locUE"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locUE</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.surfaceArea"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.surfaceArea</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.terrain</span></code></a></li>
 </ul>
@@ -1324,7 +1341,7 @@
 </ul>
 </div>
 <table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 26 </span><span class="caption-text">Table-1: Content of PBCH Payload/MIB</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<caption><span class="caption-number">Table 30 </span><span class="caption-text">Table-1: Content of PBCH Payload/MIB</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 40%" />

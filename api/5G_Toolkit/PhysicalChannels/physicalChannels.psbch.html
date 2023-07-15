@@ -22,11 +22,13 @@
         <script src="../../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Payload Generation" href="../PayloadGeneration/payloadGeneration.html" />
-    <link rel="prev" title="Demapper" href="PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.symbolDemapping.html" /> 
+    <link rel="next" title="Cyclic Redundancy Check" href="PSBCH/subcomponents/physicalChannels.psbch.components.crc.html" />
+    <link rel="prev" title="Physical Sidelink Control Channel (PSCCH)" href="PSCCH/subcomponents/physicalChannels.pdcch.components.resourceMapping.resourceMapping.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -63,6 +65,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#video-tutorial-installation-on-ubuntu">Video Tutorial: Installation on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#video-tutorial-installation-on-window">Video Tutorial: Installation on Window</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../5Gtoolkit.html">API Documentation</a><ul class="current">
@@ -226,8 +230,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../ResourceMapping/PUCCH/resourceMapping.pucch.format4.html">PUCCH Format-4</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../ResourceMapping/resourceMapping.s_ssb.html">Sidelink Synchronization Signal Block (SSB) Grid Generation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ResourceMapping/resourceMapping.s_ssb.html">Sidelink Synchronization Signal Block (S-SSB) Grid Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid.displayGrid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid.displayGrid()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ResourceMapping/resourceMapping.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
@@ -343,27 +350,25 @@
 <li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
 <li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
 <li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSCCH/subcomponents/physicalChannels.pdcch.components.resourceMapping.html">Resource Mapping PSCCH</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Physical Sidelink Broadcast Channel (PSBCH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pbch-transmitter">PBCH Transmitter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#psbch-transmitter">PSBCH Transmitter</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.PhysicalChannels.PSBCH"><code class="docutils literal notranslate"><span class="pre">PSBCH</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#pbch-receiver">PBCH Receiver</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#toolkit5G.PhysicalChannels.PSBCHDecoder"><code class="docutils literal notranslate"><span class="pre">PSBCHDecoder</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#pbch-components">PBCH Components</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.html">Polar Coder</a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html">Rate Matching</a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.html">Scrambling: PDCCH</a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#psbch-components">PSBCH COMPONENTS</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.crc.html">Cyclic Redundancy Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.html">Scrambling: PSBCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.resourceMapping.html">ResourceMapping: PSBCH</a></li>
 </ul>
 </li>
 </ul>
@@ -679,8 +684,15 @@
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterDensity"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterDensity</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterHeight"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterSize"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterSize</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeLoS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfBS()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfUE()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.force3GPPSpatialConsistencyParameters</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.forceLOS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfRoom</span></code></a></li>
@@ -691,6 +703,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutWidth</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.lengthOfIndoorObject</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.maxNumberOfFloors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minNumberOfFloors</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minUEBSDistance</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfBS</span></code></a></li>
@@ -724,17 +737,23 @@
 <li class="toctree-l4"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgBuildingHeight"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgBuildingHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgStreetWidth"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgStreetWidth</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationDistance</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationType</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d2D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d2D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d3D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d3D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.displayClusters"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.displayClusters()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteAngles"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteAngles</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteDelays"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteDelays</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForInitialPhases</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForLSPs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForSSPs</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.fc</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.getChannel"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.getChannel()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.hallVolume"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.hallVolume</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.linkStateVec"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.linkStateVec</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locBS"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locUE"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locUE</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.surfaceArea"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.surfaceArea</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.terrain</span></code></a></li>
 </ul>
@@ -1314,200 +1333,295 @@
              
   <section id="physical-sidelink-broadcast-channel-psbch">
 <h1>Physical Sidelink Broadcast Channel (PSBCH)<a class="headerlink" href="#physical-sidelink-broadcast-channel-psbch" title="Permalink to this heading"></a></h1>
-<p>This module implements the physical sidelink broadcast channel. The implementation of these modules is based on <a class="reference internal" href="#gppts38211psbch" id="id1"><span>[3GPPTS38211psbch]</span></a>.</p>
-<a class="reference internal image-reference" href="../../../_images/PBCHn.png"><img alt="Alternative text" class="align-center" src="../../../_images/PBCHn.png" style="width: 800px;" /></a>
-<section id="pbch-transmitter">
-<h2>PBCH Transmitter<a class="headerlink" href="#pbch-transmitter" title="Permalink to this heading"></a></h2>
+<section id="psbch-transmitter">
+<h2>PSBCH Transmitter<a class="headerlink" href="#psbch-transmitter" title="Permalink to this heading"></a></h2>
+<a class="reference internal image-reference" href="../../../_images/PSBCHE2E.png"><img alt="Alternative text" class="align-center" src="../../../_images/PSBCHE2E.png" style="width: 800px;" /></a>
+<hr class="docutils" />
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span>        <span class="o">=</span> <span class="mi">1386</span>
+<span class="n">cellID</span>   <span class="o">=</span> <span class="mi">414</span>
+<span class="n">psbchObj</span> <span class="o">=</span> <span class="n">PSBCH</span><span class="p">(</span><span class="n">E</span><span class="p">,</span><span class="n">cellID</span><span class="p">)</span>
+<span class="n">inputBits</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">40</span><span class="p">))</span>
+<span class="n">SSSBPayload</span> <span class="o">=</span> <span class="n">psbchObj</span><span class="p">(</span><span class="n">inputBits</span><span class="p">,</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
 <dl class="py class">
 <dt class="sig sig-object py" id="toolkit5G.PhysicalChannels.PSBCH">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.PhysicalChannels.</span></span><span class="sig-name descname"><span class="pre">PSBCH</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellID</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/PhysicalChannels/PSBCH/psbch.html#PSBCH"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.PhysicalChannels.PSBCH" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Physical Sidelink Broadcast Channel (SS/PBCH) Blocks are used during the cell search procedure, i.e. UE search for
+Synchronisation Signals when scanning for a cell to camp on</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>E</strong> (<em>int</em>) – Number of Target Bits expected at the end of rate matching.</p></li>
+<li><p><strong>cellID</strong> (<em>int</em>) – Defines the cell-ID <span class="math notranslate nohighlight">\(\in \{0, 1, \dots, 1007\}\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The value of E is 1386 when number of Symbols allocated for SSB is 11 and E = 1782 when the number of symbols
+allocated for SSB is 13</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Input<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>inputBits</strong> (<em>np.ndarray</em>) – SL SSB payload bits
+It must be a 2-dimensional array</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – Flag to indicate whether verbal explanation of PSBCH transmitter is required</p></li>
+</ul>
+</dd>
+<dt class="field-even">Output<span class="colon">:</span></dt>
+<dd class="field-even"><p>[<cite>inputBits.shape[0]</cite>,E/2]: np.ndarray – Array containing the SSB payload</p>
+</dd>
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>crcEncoder</strong> (<em>object</em>)</p></li>
+<li><p><strong>bitInterleaver</strong> (<em>object</em>)</p></li>
+<li><p><strong>subBlockInterleaver</strong> (<em>object</em>)</p></li>
+<li><p><strong>channelInterleaver</strong> (<em>object</em>)</p></li>
+<li><p><strong>scrambler</strong> (<em>object</em>)</p></li>
+<li><p><strong>mapper</strong> (<em>object</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
-</section>
-<section id="pbch-receiver">
-<h2>PBCH Receiver<a class="headerlink" href="#pbch-receiver" title="Permalink to this heading"></a></h2>
+<hr class="docutils" />
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K</span>              <span class="o">=</span> <span class="mi">40</span>
+<span class="n">cellID</span>         <span class="o">=</span> <span class="mi">414</span>
+<span class="n">symbolDemapper</span> <span class="o">=</span> <span class="s2">&quot;app&quot;</span>
+<span class="n">psbchDeObj</span>     <span class="o">=</span> <span class="n">PSBCHDecoder</span><span class="p">(</span><span class="n">K</span><span class="p">,</span><span class="n">cellID</span><span class="p">,</span><span class="n">symbolDemapper</span><span class="p">)</span>
+<span class="n">intvar</span>         <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)],</span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">inputSymbols</span>   <span class="o">=</span> <span class="n">intvar</span><span class="nd">@np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="mi">2</span><span class="p">)))</span>
+<span class="n">snr</span>            <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">polarDecoder</span>   <span class="o">=</span> <span class="s2">&quot;SC&quot;</span>
+<span class="n">decodedBits</span>    <span class="o">=</span> <span class="n">psbchDeObj</span><span class="p">(</span><span class="n">inputSymbols</span><span class="p">,</span><span class="n">snr</span><span class="p">,</span><span class="n">polarDecoder</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
 <dl class="py class">
 <dt class="sig sig-object py" id="toolkit5G.PhysicalChannels.PSBCHDecoder">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.PhysicalChannels.</span></span><span class="sig-name descname"><span class="pre">PSBCHDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellID</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbolDemapper</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/PhysicalChannels/PSBCH/psbchDecoder.html#PSBCHDecoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.PhysicalChannels.PSBCHDecoder" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>K</strong> (<em>int</em>) – Defines the size of SL-SSB in terms of bits.</p></li>
+<li><p><strong>cellID</strong> (<em>int</em>) – Defines the cell-ID <span class="math notranslate nohighlight">\(\in \{0, 1, \dots, 1007\}\)</span>.</p></li>
+<li><p><strong>symbolDemapper</strong> (<em>str</em>) – Defines the technique used for symbol demapping
+can take either “app” or “maxlog”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Input<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>inputSymbols</strong> (<em>np.ndarray</em>) – It is a numpy array of size <cite>[:,(E/2]</cite>
+it denoted the received SL-SSB that is to be decoded</p></li>
+<li><p><strong>snr</strong> (<em>int or float or np.number</em>) – Defines the Signal to Noise Ratio in linear scale</p></li>
+<li><p><strong>polarDecoder</strong> (<em>str</em>) – Defines the decoding technique. It is expected to possess one string among the following <a href="#id1"><span class="problematic" id="id2">`</span></a>{“SC”, “SCL”, “SCL8”,
+“SCL32”, “hybSCL”, “BP”}.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Output<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>[</strong> (<em>,K]: np.array</em>) – The decoded SL-SSB bits</p>
+</dd>
+<dt class="field-even">Attributes<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>demapper</strong> (<em>object</em>)</p></li>
+<li><p><strong>descrambler</strong> (<em>object</em>)</p></li>
+<li><p><strong>channelDeInterleaver</strong> (<em>object</em>)</p></li>
+<li><p><strong>subBlockDeInterleaver</strong> (<em>object</em>)</p></li>
+<li><p><strong>inputDeInterleaver</strong> (<em>object</em>)</p></li>
+<li><p><strong>crcDecoder</strong> (<em>object</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
-<section id="pbch-components">
-<h2>PBCH Components<a class="headerlink" href="#pbch-components" title="Permalink to this heading"></a></h2>
-<a class="reference internal image-reference" href="../../../_images/PBCHn.svg"><img alt="Alternative text" class="align-center" src="../../../_images/PBCHn.svg" width="800" /></a>
+<hr class="docutils" />
+<section id="psbch-components">
+<h2>PSBCH COMPONENTS<a class="headerlink" href="#psbch-components" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.crc.crc.html">Cyclic Redundancy Check</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.crc.html">Cyclic Redundancy Check</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.crc.crc.html">Cyclic Redundancy Check</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.crc.crc.html#crc-encoder">CRC Encoder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.crc.crc.html#toolkit5G.CRC.CRCEncoder"><code class="docutils literal notranslate"><span class="pre">CRCEncoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.crc.crc.html#crc-decoder">CRC Decoder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.crc.crc.html#toolkit5G.CRC.CRCDecoder"><code class="docutils literal notranslate"><span class="pre">CRCDecoder</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.rnti.rnti.html">RNTI Masking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.rnti.rnti.html#toolkit5G.Scrambler.RNTImasking"><code class="docutils literal notranslate"><span class="pre">RNTImasking</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.rnti.rnti.html#toolkit5G.Scrambler.RNTImasking.rnti"><code class="docutils literal notranslate"><span class="pre">RNTImasking.rnti</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.html">Input Bit Interleaver</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html">Code-block Processing: Transmitter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#code-block-segmentation">Code-block Segmentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockSegmentation"><code class="docutils literal notranslate"><span class="pre">CodeBlockSegmentation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#code-block-concatenation">Code-block Concatenation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation"><code class="docutils literal notranslate"><span class="pre">CodeBlockConcatenation</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#code-block-processing-receiver">Code-block Processing: Receiver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#code-block-segregation">Code-block Segregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockSegregation"><code class="docutils literal notranslate"><span class="pre">CodeBlockSegregation</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.html">Input Bit Interleaver</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html">Code-block Processing: Transmitter</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#code-block-segmentation">Code-block Segmentation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockSegmentation"><code class="docutils literal notranslate"><span class="pre">CodeBlockSegmentation</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#code-block-concatenation">Code-block Concatenation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation"><code class="docutils literal notranslate"><span class="pre">CodeBlockConcatenation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#code-block-aggregation">Code-block Aggregation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockAggregation"><code class="docutils literal notranslate"><span class="pre">CodeBlockAggregation</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#code-block-processing-receiver">Code-block Processing: Receiver</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#code-block-segregation">Code-block Segregation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockSegregation"><code class="docutils literal notranslate"><span class="pre">CodeBlockSegregation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#input-bit-interleavers">Input Bit Interleavers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#input-bit-interleaver">Input Bit Interleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.InputBitInterleaver"><code class="docutils literal notranslate"><span class="pre">InputBitInterleaver</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#code-block-aggregation">Code-block Aggregation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockAggregation"><code class="docutils literal notranslate"><span class="pre">CodeBlockAggregation</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#input-bit-interleavers">Input Bit Interleavers</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#input-bit-interleaver">Input Bit Interleaver</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.InputBitInterleaver"><code class="docutils literal notranslate"><span class="pre">InputBitInterleaver</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#input-bit-deinterleaver">Input Bit Deinterleaver</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.InputBitDeInterleaver"><code class="docutils literal notranslate"><span class="pre">InputBitDeInterleaver</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.html">Polar Coder</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html">Polar Codes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#polar-encoder">Polar Encoder</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarEncoder5G"><code class="docutils literal notranslate"><span class="pre">PolarEncoder5G</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarEncoder5G.N"><code class="docutils literal notranslate"><span class="pre">PolarEncoder5G.N</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#polar-decoder">Polar Decoder</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.E"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.E</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.K"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.K</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.N"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.N</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.dec_type"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.dec_type</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.llr_max"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.llr_max</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.output_dtype"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.output_dtype</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.polar.polarCoder.html#polar-codec-components">Polar Codec Components</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#input-bit-deinterleaver">Input Bit Deinterleaver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.InputBitDeInterleaver"><code class="docutils literal notranslate"><span class="pre">InputBitDeInterleaver</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html">Rate Matching</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html#sub-block-interleaver">Sub Block Interleaver</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.subblockInterleaver.html">Sub Block Interleaver for Polar Coder</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.subblockInterleaver.html#sub-block-interleaver">Sub-block Interleaver</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.subblockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaver"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaver</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.subblockInterleaver.html#sub-block-de-interleaver">Sub-block De-interleaver</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.subblockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaver"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaver</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.html">Polar Coder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html">Polar Codes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#polar-encoder">Polar Encoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarEncoder5G"><code class="docutils literal notranslate"><span class="pre">PolarEncoder5G</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarEncoder5G.N"><code class="docutils literal notranslate"><span class="pre">PolarEncoder5G.N</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html#bit-selection">Bit Selection</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.bitSelection.html">Bit Selection for Polar Coder</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.bitSelection.html#bit-selection">Bit Selection</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.bitSelection.html#toolkit5G.Ratematcher.PolarCoder.BitSelection"><code class="docutils literal notranslate"><span class="pre">BitSelection</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.bitSelection.html#bit-de-selection">Bit De-selection</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.bitSelection.html#toolkit5G.Ratematcher.PolarCoder.BitDeSelection"><code class="docutils literal notranslate"><span class="pre">BitDeSelection</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#polar-decoder">Polar Decoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.E"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.E</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.K"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.K</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.N"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.N</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.dec_type"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.dec_type</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.llr_max"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.llr_max</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#toolkit5G.ChannelCoder.PolarDecoder5G.output_dtype"><code class="docutils literal notranslate"><span class="pre">PolarDecoder5G.output_dtype</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html#channel-interleaver">Channel Interleaver</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.channelInterleaver.html">Channel Interleaver for Polar Coder</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.channelInterleaver.html#channel-interleaver">Channel Interleaver</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.ratematching.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.polar.polarCoder.html#polar-codec-components">Polar Codec Components</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.html">Rate Matching</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.html#sub-block-interleaver">Sub Block Interleaver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.subblockInterleaver.html">Sub Block Interleaver for Polar Coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.subblockInterleaver.html#sub-block-interleaver">Sub-block Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.subblockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaver"><code class="docutils literal notranslate"><span class="pre">Subblock_Interleaver</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.html">Scrambling: PDCCH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html">Scrambling</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#scrambler">Scrambler</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler"><code class="docutils literal notranslate"><span class="pre">Scrambler</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.Lmax"><code class="docutils literal notranslate"><span class="pre">Scrambler.Lmax</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.c_init"><code class="docutils literal notranslate"><span class="pre">Scrambler.c_init</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.id"><code class="docutils literal notranslate"><span class="pre">Scrambler.id</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.mu"><code class="docutils literal notranslate"><span class="pre">Scrambler.mu</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.nID"><code class="docutils literal notranslate"><span class="pre">Scrambler.nID</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.purpose"><code class="docutils literal notranslate"><span class="pre">Scrambler.purpose</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.q"><code class="docutils literal notranslate"><span class="pre">Scrambler.q</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.rnti"><code class="docutils literal notranslate"><span class="pre">Scrambler.rnti</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.ssbIndex"><code class="docutils literal notranslate"><span class="pre">Scrambler.ssbIndex</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html">Descrambler</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler"><code class="docutils literal notranslate"><span class="pre">DeScrambler</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.Lmax"><code class="docutils literal notranslate"><span class="pre">DeScrambler.Lmax</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.c_init"><code class="docutils literal notranslate"><span class="pre">DeScrambler.c_init</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.id"><code class="docutils literal notranslate"><span class="pre">DeScrambler.id</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.mu"><code class="docutils literal notranslate"><span class="pre">DeScrambler.mu</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.nID"><code class="docutils literal notranslate"><span class="pre">DeScrambler.nID</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.purpose"><code class="docutils literal notranslate"><span class="pre">DeScrambler.purpose</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.q"><code class="docutils literal notranslate"><span class="pre">DeScrambler.q</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.rnti"><code class="docutils literal notranslate"><span class="pre">DeScrambler.rnti</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.ssbIndex"><code class="docutils literal notranslate"><span class="pre">DeScrambler.ssbIndex</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.subblockInterleaver.html#sub-block-de-interleaver">Sub-block De-interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.subblockInterleaver.html#toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaver"><code class="docutils literal notranslate"><span class="pre">Subblock_DeInterleaver</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.modulation.html">Modulation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.modulation.symbolMapping.html">Symbol Mapping</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.html#bit-selection">Bit Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.bitSelection.html">Bit Selection for Polar Coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.bitSelection.html#bit-selection">Bit Selection</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.bitSelection.html#toolkit5G.Ratematcher.PolarCoder.BitSelection"><code class="docutils literal notranslate"><span class="pre">BitSelection</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.modulation.symbolMapping.html#mapper">Mapper</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.modulation.symbolMapping.html#toolkit5G.SymbolMapping.Mapper"><code class="docutils literal notranslate"><span class="pre">Mapper</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.bitSelection.html#bit-de-selection">Bit De-selection</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.bitSelection.html#toolkit5G.Ratematcher.PolarCoder.BitDeSelection"><code class="docutils literal notranslate"><span class="pre">BitDeSelection</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.modulation.symbolDemapping.html">Demapper</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="PBCH/subcomponents/physicalChannels.pbch.components.modulation.symbolDemapping.html#toolkit5G.SymbolMapping.Demapper"><code class="docutils literal notranslate"><span class="pre">Demapper</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.html#channel-interleaver">Channel Interleaver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.channelInterleaver.html">Channel Interleaver for Polar Coder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.channelInterleaver.html#channel-interleaver">Channel Interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelInterleaver</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.channelInterleaver.html#channel-de-interleaver">Channel De-interleaver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.channelInterleaver.html#toolkit5G.Ratematcher.PolarCoder.ChannelDeInterleaver"><code class="docutils literal notranslate"><span class="pre">ChannelDeInterleaver</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.html">Scrambling: PSBCH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html">Scrambling</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#scrambler">Scrambler</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler"><code class="docutils literal notranslate"><span class="pre">Scrambler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.Lmax"><code class="docutils literal notranslate"><span class="pre">Scrambler.Lmax</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.c_init"><code class="docutils literal notranslate"><span class="pre">Scrambler.c_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.id"><code class="docutils literal notranslate"><span class="pre">Scrambler.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.mu"><code class="docutils literal notranslate"><span class="pre">Scrambler.mu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.nID"><code class="docutils literal notranslate"><span class="pre">Scrambler.nID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.purpose"><code class="docutils literal notranslate"><span class="pre">Scrambler.purpose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.q"><code class="docutils literal notranslate"><span class="pre">Scrambler.q</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.rnti"><code class="docutils literal notranslate"><span class="pre">Scrambler.rnti</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.scrambler.html#toolkit5G.Scrambler.Scrambler.ssbIndex"><code class="docutils literal notranslate"><span class="pre">Scrambler.ssbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html">Descrambler</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler"><code class="docutils literal notranslate"><span class="pre">DeScrambler</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.Lmax"><code class="docutils literal notranslate"><span class="pre">DeScrambler.Lmax</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.c_init"><code class="docutils literal notranslate"><span class="pre">DeScrambler.c_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.id"><code class="docutils literal notranslate"><span class="pre">DeScrambler.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.mu"><code class="docutils literal notranslate"><span class="pre">DeScrambler.mu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.nID"><code class="docutils literal notranslate"><span class="pre">DeScrambler.nID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.purpose"><code class="docutils literal notranslate"><span class="pre">DeScrambler.purpose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.q"><code class="docutils literal notranslate"><span class="pre">DeScrambler.q</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.rnti"><code class="docutils literal notranslate"><span class="pre">DeScrambler.rnti</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.descrambler.html#toolkit5G.Scrambler.DeScrambler.ssbIndex"><code class="docutils literal notranslate"><span class="pre">DeScrambler.ssbIndex</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.modulation.html">Modulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.modulation.symbolMapping.html">Symbol Mapping</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.modulation.symbolMapping.html#mapper">Mapper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.modulation.symbolMapping.html#toolkit5G.SymbolMapping.Mapper"><code class="docutils literal notranslate"><span class="pre">Mapper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.modulation.symbolDemapping.html">Demapper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.modulation.symbolDemapping.html#toolkit5G.SymbolMapping.Demapper"><code class="docutils literal notranslate"><span class="pre">Demapper</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.resourceMapping.html">ResourceMapping: PSBCH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.resourceMapping.resourceMapping.html">Sidelink Synchronization Signal Block (S-SSB) Grid Generation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.resourceMapping.resourceMapping.html#toolkit5G.ResourceMapping.SSSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="PSBCH/subcomponents/physicalChannels.psbch.components.resourceMapping.resourceMapping.html#toolkit5G.ResourceMapping.SSSB_Grid.displayGrid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid.displayGrid()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1516,8 +1630,8 @@
 </div>
 <dl>
 <dt>References:</dt><dd><div class="citation" id="gppts38211psbch" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">3GPPTS38211psbch</a><span class="fn-bracket">]</span></span>
-<p>(3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation</p>
+<span class="label"><span class="fn-bracket">[</span>3GPPTS38211psbch<span class="fn-bracket">]</span></span>
+<p>(3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation.</p>
 </div>
 </div>
 </dd>
@@ -1529,8 +1643,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.symbolDemapping.html" class="btn btn-neutral float-left" title="Demapper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../PayloadGeneration/payloadGeneration.html" class="btn btn-neutral float-right" title="Payload Generation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="PSCCH/subcomponents/physicalChannels.pdcch.components.resourceMapping.resourceMapping.html" class="btn btn-neutral float-left" title="Physical Sidelink Control Channel (PSCCH)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PSBCH/subcomponents/physicalChannels.psbch.components.crc.html" class="btn btn-neutral float-right" title="Cyclic Redundancy Check" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

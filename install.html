@@ -63,6 +63,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#detailed-installation-procedure">Detailed Installation Procedure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#license-5g-toolkit">License 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#video-tutorial-installation-on-ubuntu">Video Tutorial: Installation on Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#video-tutorial-installation-on-window">Video Tutorial: Installation on Window</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
@@ -226,8 +228,11 @@
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/ResourceMapping/PUCCH/resourceMapping.pucch.format4.html">PUCCH Format-4</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="api/5G_Toolkit/ResourceMapping/resourceMapping.s_ssb.html">Sidelink Synchronization Signal Block (SSB) Grid Generation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/5G_Toolkit/ResourceMapping/resourceMapping.s_ssb.html">Sidelink Synchronization Signal Block (S-SSB) Grid Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ResourceMapping/resourceMapping.s_ssb.html#toolkit5G.ResourceMapping.SSSB_Grid.displayGrid"><code class="docutils literal notranslate"><span class="pre">SSSB_Grid.displayGrid()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/5G_Toolkit/ResourceMapping/resourceMapping.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
@@ -343,27 +348,25 @@
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.html">Rate Matching</a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.html">Scrambling: PDCCH</a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.resourceMapping.html">Resource Mapping PSCCH</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html">Physical Sidelink Broadcast Channel (PSBCH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#pbch-transmitter">PBCH Transmitter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#psbch-transmitter">PSBCH Transmitter</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#toolkit5G.PhysicalChannels.PSBCH"><code class="docutils literal notranslate"><span class="pre">PSBCH</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#pbch-receiver">PBCH Receiver</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#toolkit5G.PhysicalChannels.PSBCHDecoder"><code class="docutils literal notranslate"><span class="pre">PSBCHDecoder</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#pbch-components">PBCH Components</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.polar.html">Polar Coder</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html">Rate Matching</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.scrambling.html">Scrambling: PDCCH</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/physicalChannels.psbch.html#psbch-components">PSBCH COMPONENTS</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.crc.html">Cyclic Redundancy Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.html">Scrambling: PSBCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.modulation.html">Modulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.resourceMapping.html">ResourceMapping: PSBCH</a></li>
 </ul>
 </li>
 </ul>
@@ -679,8 +682,15 @@
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterDensity"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterDensity</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterHeight"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterSize"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterSize</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeLoS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfBS()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfUE()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyIndoor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyLoS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.force3GPPSpatialConsistencyParameters</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.forceLOS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfRoom</span></code></a></li>
@@ -691,6 +701,7 @@
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutWidth</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.lengthOfIndoorObject</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.maxNumberOfFloors</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minNumberOfFloors</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minUEBSDistance</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfBS</span></code></a></li>
@@ -724,17 +735,23 @@
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgBuildingHeight"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgBuildingHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgStreetWidth"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgStreetWidth</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationDistance</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationType</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d2D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d2D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d3D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d3D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.displayClusters"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.displayClusters()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteAngles"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteAngles</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteDelays"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteDelays</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForInitialPhases</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForLSPs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForSSPs</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.fc</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.getChannel"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.getChannel()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.hallVolume"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.hallVolume</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.linkStateVec"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.linkStateVec</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locBS"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locUE"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locUE</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.surfaceArea"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.surfaceArea</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.terrain</span></code></a></li>
 </ul>
@@ -1352,23 +1369,23 @@ procedure on this page itself.</p>
 of the package for installation. Users can remove it if not relevant for them. </p>
 <p><strong>For Python 3.7</strong>:</p>
 <p class="callout warning"> <strong>Note</strong>: Initial version of Python 3.7 is buggy. Hence, only Python>=3.7.4 is supported. </p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_7</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.11</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_7</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
 <p><strong>For Python 3.8</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_8</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.11</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_8</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
 <p><strong>For Python 3.9</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_9</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.11</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_9</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
 <p><strong>For Python 3.10</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_10</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.11</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_10</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
 <p><strong>For Python 3.11</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.10</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_11</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.11</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_11</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.10</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
 </pre></div>
 </div>
 <p>To confirm installation of the library, you can check the installation library:</p>
@@ -1406,7 +1423,7 @@ of the package for installation. Users can remove it if not relevant for them. <
 <td><p>&gt; 3.4</p></td>
 </tr>
 <tr class="row-odd"><td><p>Sionna</p></td>
-<td><p>&lt;=0.14 (For version 0.14 LLVM may create problem)</p></td>
+<td><p>&lt;=0.13 (For version 0.14 LLVM may create problem)</p></td>
 </tr>
 </tbody>
 </table>
@@ -1416,8 +1433,8 @@ of the package for installation. Users can remove it if not relevant for them. <
 <p>This section covers detailed installation procedure for Windows (10 and 11), Ubuntu (20.04 and 22.04). It covers following
 steps</p>
 <ul class="simple">
-<li><p>Installing Python</p></li>
-<li><p>Install, create and use virtual environment using <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Conda</a> or <a class="reference external" href="https://docs.python.org/3/library/venv.html">Environment</a>.</p></li>
+<li><p>Install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Conda</a></p></li>
+<li><p>Create <a class="reference external" href="https://docs.python.org/3/library/venv.html">virtual environment</a> and install Python in it.</p></li>
 <li><p>Install Jupyter Notebook</p></li>
 <li><p>Install 5G Toolkit</p></li>
 <li><p>Import and use Toolkit in Jupyter Notebook.</p></li>
@@ -1448,6 +1465,20 @@ or perpetual license <a class="reference external" href="https://gigayasa.com/re
 <li><p>If activation is successful, please close the Central-Hub.</p></li>
 <li><p>You are good to go please open the jupyter Notebook and try to “import toolkit5G as tk”</p></li>
 </ul>
+</section>
+<section id="video-tutorial-installation-on-ubuntu">
+<h2>Video Tutorial: Installation on Ubuntu<a class="headerlink" href="#video-tutorial-installation-on-ubuntu" title="Permalink to this heading"></a></h2>
+<figure class="video_container">
+    <iframe src="https://www.youtube.com/embed/C1yZh4I0X_w" frameborder="0" width="100%" height="400" allowfullscreen="true"> </iframe>
+</figure>
+</section>
+<hr class="docutils" />
+<section id="video-tutorial-installation-on-window">
+<h2>Video Tutorial: Installation on Window<a class="headerlink" href="#video-tutorial-installation-on-window" title="Permalink to this heading"></a></h2>
+<figure class="video_container">
+    <iframe src="https://www.youtube.com/embed/C1yZh4I0X_w" frameborder="0" width="100%" height="400" allowfullscreen="true"> </iframe>
+</figure>
+<hr class="docutils" />
 </section>
 </section>
 

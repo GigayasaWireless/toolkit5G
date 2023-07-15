@@ -1,121 +1,126 @@
-Sidelink Synchronization Signal Block (SSB) Grid Generation
+Sidelink Synchronization Signal Block (S-SSB) Grid Generation
 ===========================================================
-THe modules maps the primary synchronization signal (PSS), secondary synchronization signal (SSS), demodulation reference
-signal (DMRS) for PBCH and PBCH payload to SSB grid. The SSB grid in 5G spans 4 OFDM symbols and 240 subcarriers (12 RBs).
-This modules can return multiple SSBs carrying same PSS, SSS but DMRS and different PBCH information which is typically
-the case when transmitting multiple SSBs in a half frame. In such cases, only the SSB index information changes across SSBs.
-The shape of the variable is shown in table-1.
+THe modules maps the sidelink primary synchronization signal (S-PSS), sidelink secondary synchronization signal (S-SSS),
+demodulation reference signal (DMRS) for PSBCH and PSBCH payload to S-SSB grid. The S-SSB grid in 5G spans 11 or 13
+OFDM symbols and 132 subcarriers (11 RBs). This modules can return multiple SSBs carrying same S-PSS, S-SSS but DMRS and
+different PSBCH information which is typically the case when transmitting multiple S-SSBs in a half frame. In such cases,
+only the S-SSB index information changes across S-SSBs. The details about the S-SSB generation is provided in section
+8.4.2 of 3GPP TS 38.211 [3GPPTS38211_SSSBGrid]_.
 
-..  important::
-    The cell-ID (:math:`\text{N}_{\text{ID}}`), half frame index (:math:`\text{n}_{\text{HF}}`) and maximum number of SSBs in a half frame (:math:`\text{L}_{\text{max}}`) should be same for all the components of SSB.
+----
 
-.. list-table:: Table-1: Sizes of the components of SSBs
-   :widths: 25 25
-   :header-rows: 1
-
-   * - Reference Signal/Payload
-     - Dimension
-   * - Primary synchronization signal (PSS)
-     - :math:`1 \times 127`
-   * - Secondary synchronization signal (PSS)
-     - :math:`1 \times 127`
-   * - Demodulation reference signal (DMRS)
-     - :math:`\text{N}_{\text{SSBs}} \times 144`
-   * - PBCH Payload
-     - :math:`\text{N}_{\text{SSBs}} \times 432`
-
-
+**Examples:**
 
 **When** :math:`\text{N}_{\text{SSBs}} = 1`:
 
-.. code-block:: Python
+.. code:: ipython3
 
-    numSSBs      = 1
-    N_ID1        = np.random.randint(336)
-    N_ID2        = np.random.randint(3)
-    N_ID         = 3*N_ID1 + N_ID2
+    flag    = np.random.randint(2)
+    numIDs  = 1 if flag else np.random.randint(1,10)
 
-    nssbCandidatesInHrf = int(np.random.choice([4,8,64]))
-    ssbIndex            = np.random.choice(nssbCandidatesInHrf, size = numSSBs)
-    hrfBit              = 0
+    nid1    = 311
+    nid2    = 1
+    nSymb   = 11
+    psbch   = 1-2*np.random.randint(2, size=(99*(nSymb-4)))
 
-    # Generate PSS sequence
-    pssObject    = PSS(N_ID2);
-    pssSequence  = pssObject()
+    sssbObj = SSSB_Grid(nid1, nid2, numSymbols = nSymb)
+    sssb    = sssbObj(psbch = psbch)
 
-    # Generate SSS sequence
-    sssObject    = SSS(N_ID1, N_ID2);
-    sssSequence  = sssObject()
+    print("************ Simulation Parameters *************")
+    print()
+    print("                   nid1: "+str(nid1))
+    print("                   nid2: "+str(nid2))
+    print("Number of S-SSB Symbols: "+str(nSymb))
+    print("         Shape of psbch: "+str(psbch.shape))
+    print("          Shape of sssb: "+str(sssb.shape))
+    print()
+    print("********************************************")
 
-    # Generate DMRS sequence
-    dmrsLen      = 144;
-    dmrsObject   = DMRS("PBCH", N_ID, ssbIndex, nssbCandidatesInHrf, hrfBit)
-    dmrsSequence = dmrsObject(dmrsLen)
 
-    # Symbol mapping object
-    mapper       = Mapper("qam", 2)
-    pbchSymbols  = mapper(np.random.randint(2, size = (numSSBs, 864))) # Generate symbols from the bits.
+.. parsed-literal::
 
-    # Generate SSB Grid
-    ssbObject    = SSB_Grid(N_ID)
-    ssb          = ssbObject(pssSequence, sssSequence, dmrsSequence, pbchSymbols) # Generate SSB Grid of shape (1, 4, 240)
+    ************ Simulation Parameters *************
 
-    # Display the location of PSS, SSS, DMRS and PBCH in SSB
-    ssbObject.displayGrid(option=1)
+                       nid1: 311
+                       nid2: 1
+    Number of S-SSB Symbols: 11
+             Shape of psbch: (693,)
+              Shape of sssb: (1, 132, 14)
 
-.. image:: ../../figures/ResourceMapping/ssbGrid.png
+    ********************************************
+
+
+.. code:: ipython3
+
+    # Display the Sidelink-SSB Grid
+    fig, ax = sssbObj.displayGrid()
+
+.. image:: ../../figures/ResourceMapping/SSSB_Grid.png
   :width: 400
   :alt: Alternative text
 
 
 **When** :math:`\text{N}_{\text{SSBs}} > 1` :
 
-.. code-block:: Python
+.. code:: ipython3
 
-    numSSBs      = 10
-    N_ID1        = np.random.randint(336)
-    N_ID2        = np.random.randint(3)
-    N_ID         = 3*N_ID1 + N_ID2
+    flag    = np.random.randint(2)
+    numIDs  = 1 if flag else np.random.randint(1,10)
 
-    nssbCandidatesInHrf = int(np.random.choice([4,8,64]))
-    ssbIndex            = np.random.choice(nssbCandidatesInHrf, size = numSSBs)
-    hrfBit              = 0
+    nid1    = np.array([311, 210, 64])
+    nid2    = np.array([0, 1, 0])
+    nSymb   = 13
+    psbch   = 1-2*np.random.randint(2, size=(3, 99*(nSymb-4)))
 
-    # Generate PSS sequence
-    pssObject    = PSS(N_ID2);
-    pssSequence  = pssObject()
+    sssbObj = SSSB_Grid(nid1, nid2, numSymbols = nSymb)
+    sssb    = sssbObj(psbch = psbch)
 
-    # Generate SSS sequence
-    sssObject    = SSS(N_ID1, N_ID2);
-    sssSequence  = sssObject()
+    print("************ Simulation Parameters *************")
+    print()
+    print("                   nid1: "+str(nid1))
+    print("                   nid2: "+str(nid2))
+    print("Number of S-SSB Symbols: "+str(nSymb))
+    print("         Shape of psbch: "+str(psbch.shape))
+    print("          Shape of sssb: "+str(sssb.shape))
+    print()
+    print("********************************************")
 
-    # Generate DMRS sequence
-    dmrsLen      = 144;
-    dmrsObject   = DMRS("PBCH", N_ID, ssbIndex, nssbCandidatesInHrf, hrfBit)
-    dmrsSequence = dmrsObject(dmrsLen)
 
-    # Symbol mapping object
-    mapper       = Mapper("qam", 2)
-    pbchSymbols  = mapper(np.random.randint(2, size = (numSSBs, 864))) # Generate symbols from the bits.
+.. parsed-literal::
 
-    # Generate SSB Grid
-    ssbObject    = SSB_Grid(N_ID)
-    ssb          = ssbObject(pssSequence, sssSequence, dmrsSequence, pbchSymbols) # Generate SSB Grid of shape (10, 4, 240)
-    # Display the location of PSS, SSS, DMRS and PBCH in SSB
-    ssbObject.displayGrid(option=0)
+    ************ Simulation Parameters *************
 
-.. image:: ../../figures/ResourceMapping/ssbHeatmap.svg
+                       nid1: [311 210  64]
+                       nid2: [0 1 0]
+    Number of S-SSB Symbols: 13
+             Shape of psbch: (3, 891)
+              Shape of sssb: (3, 132, 14)
+
+    ********************************************
+
+.. code:: ipython3
+
+    # Display the Sidelink-SSB Grid
+    fig, ax = sssbObj.displayGrid(option=0)
+
+.. image:: ../../figures/ResourceMapping/SSSB_Grid_Heatmap.svg
   :width: 400
   :alt: Alternative text
 
-More example on SSB Resource mapping can be found in Tutorials. The details about the input-output interface of the SSB_Grid
-implementation is provided below.
+
+----
+
+More example on S-SSB Resource mapping can be found in Tutorials. The details about the input-output interface of the
+SSSB_Grid implementation is provided below.
 
 
 .. autoclass:: toolkit5G.ResourceMapping.SSSB_Grid
    :members:
    :exclude-members: call, build
 
+.. automethod:: toolkit5G.ResourceMapping.SSSB_Grid.displayGrid
+    :noindex:
+
 
 References:
-    .. [3GPPTS38211_SSBGrid] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'
+    .. [3GPPTS38211_SSSBGrid] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'

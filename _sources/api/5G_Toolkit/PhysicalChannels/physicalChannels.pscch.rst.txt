@@ -3,13 +3,13 @@ Physical Sidelink Control Channel (PSCCH)
 This module implements the physical Sidelink control channel.The complete physical layer chain at the transmitter and
 receiver is divided into upper physical layer chain (upperPhy) and lower physical layer chain (lowerPhy).The upper
 physical layer consists of 24 Bit CRC addition, Polar Encoding and, rate matching.On the other hand, the lower physical
-layer module implements scrambling, modulation (symbol mapping),and resource mapping. It return the OFDM resource grid
+layer module implements scrambling, modulation (symbol mapping),and resource mapping. It returns the OFDM resource grid
 for sub-carrier/sub-band specific precoding/beamforming and other RF specific processing. These modules provides the high
-level APIs for the PDSCH chains.
+level APIs for the PSCCH chains.
 
 PSCCH Transmitter
 *****************
-The details about the transmitter side of the PDSCH are provided in [3GPPTS38211pscch]_, [3GPPTS38212pscch]_ and
+The details about the transmitter side of the PSCCH are provided in [3GPPTS38211pscch]_, [3GPPTS38212pscch]_ and
 [COMST.2021.3057017]_. The chain is bi-parted into upper physical layer and lower physical layer section to entertain
 both the link-level and system level simulations. The details of the APIs is provided in following sub-sections.
 
@@ -32,7 +32,7 @@ both the link-level and system level simulations. The details of the APIs is pro
 PSCCH Receiver
 *****************
 
-The details about the Receiver side of the PDSCH are provided in [3GPPTS38211pscch]_, [3GPPTS38212pscch]_ and
+The details about the Receiver side of the PSCCH are provided in [3GPPTS38211pscch]_, [3GPPTS38212pscch]_ and
 [COMST.2021.3057017]_. The chain is bi-parted into upper physical layer and lower physical layer section to entertain
 both the link-level and system level simulations. The details of the APIs is provided in following sub-sections.
 
@@ -74,3 +74,4 @@ PSCCH Components
     PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.rst
     PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.rst
     PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.resourceMapping.rst

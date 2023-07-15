@@ -1,47 +1,67 @@
 Physical Sidelink Broadcast Channel (PSBCH)
 ===========================================
-This module implements the physical sidelink broadcast channel. The implementation of these modules is based on [3GPPTS38211psbch]_.
 
-.. image:: ../../figures/PhysicalChannels/PBCHn.png
+PSBCH Transmitter
+-----------------
+
+.. image:: ../../figures/PhysicalChannels/PSBCHE2E.png
   :width: 800
   :alt: Alternative text
   :align: center
 
-PBCH Transmitter
-----------------
+------------------
+
+.. code:: ipython3
+
+    E        = 1386
+    cellID   = 414
+    psbchObj = PSBCH(E,cellID)
+    inputBits   = np.random.randint(2,size=(1,40))
+    SSSBPayload = psbchObj(inputBits,verbose = False)
+
+------------------
+
 .. autoclass:: toolkit5G.PhysicalChannels.PSBCH
    :members:
    :exclude-members: call, build
 
+-------------------
 
-PBCH Receiver
--------------
+.. code:: ipython3
+
+    K              = 40
+    cellID         = 414
+    symbolDemapper = "app"
+    psbchDeObj     = PSBCHDecoder(K,cellID,symbolDemapper)
+    intvar         = np.random.choice([-np.sqrt(1/2)-1j*np.sqrt(1/2),-np.sqrt(1/2)+1j*np.sqrt(1/2),np.sqrt(1/2)-1j*np.sqrt(1/2),np.sqrt(1/2)+1j*np.sqrt(1/2)],size = (2,1))
+    inputSymbols   = intvar@np.ones(shape = (1,int(E/2)))
+    snr            = 1000
+    polarDecoder   = "SC"
+    decodedBits    = psbchDeObj(inputSymbols,snr,polarDecoder)
+
+---------------------
+
 .. autoclass:: toolkit5G.PhysicalChannels.PSBCHDecoder
    :members:
    :exclude-members: call, build
 
+----------------------
 
-PBCH Components
----------------
-
-.. image:: ../../figures/PhysicalChannels/PBCHn.svg
-  :width: 800
-  :alt: Alternative text
-  :align: center
+PSBCH COMPONENTS
+----------------
 
 .. toctree::
     :maxdepth: 10
 
-    PBCH/subcomponents/physicalChannels.pbch.components.crc.rst
-    PBCH/subcomponents/physicalChannels.pbch.components.rnti.rst
-    PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.rst
-    PBCH/subcomponents/physicalChannels.pbch.components.polar.rst
-    PBCH/subcomponents/physicalChannels.pbch.components.ratematching.rst
-    PBCH/subcomponents/physicalChannels.pbch.components.scrambling.rst
-    PBCH/subcomponents/physicalChannels.pbch.components.modulation.rst
+    PSBCH/subcomponents/physicalChannels.psbch.components.crc.rst
+    PSBCH/subcomponents/physicalChannels.psbch.components.rnti.rst
+    PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.rst
+    PSBCH/subcomponents/physicalChannels.psbch.components.polar.rst
+    PSBCH/subcomponents/physicalChannels.psbch.components.ratematching.rst
+    PSBCH/subcomponents/physicalChannels.psbch.components.scrambling.rst
+    PSBCH/subcomponents/physicalChannels.psbch.components.modulation.rst
+    PSBCH/subcomponents/physicalChannels.psbch.components.resourceMapping.rst
 
 
-
-    
 References:
-    .. [3GPPTS38211psbch] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation
+    .. [3GPPTS38211psbch] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation.
