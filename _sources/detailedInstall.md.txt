@@ -62,31 +62,31 @@ The **template command** for installation is given below:
 **For Python 3.7**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.11-py3-none-any.whl
 ~~~
 
 **For Python 3.8**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.11-py3-none-any.whl
 ~~~
 
 **For Python 3.9**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.11-py3-none-any.whl
 ~~~
 
 **For Python 3.10**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.11-py3-none-any.whl
 ~~~
 
 **For Python 3.11**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.11-py3-none-any.whl
 ~~~
 
 To confirm installation of the library, you can check the installation library:
@@ -181,31 +181,31 @@ The **template command** for installation is given below:
 <p class="callout warning"> <strong>Note</strong>: Initial version of Python 3.7 is buggy. Hence, only Python>=3.7.4 is supported. </p>
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.11-py3-none-any.whl
 ~~~
 
 **For Python 3.8**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.11-py3-none-any.whl
 ~~~
 
 **For Python 3.9**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.11-py3-none-any.whl
 ~~~
 
 **For Python 3.10**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.11-py3-none-any.whl
 ~~~
 
 **For Python 3.11**:
 
 ~~~
-pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.10-py3-none-any.whl
+pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.11-py3-none-any.whl
 ~~~
 
 Once the installation is complete the user can verify the installation by the output of the pip show command:
