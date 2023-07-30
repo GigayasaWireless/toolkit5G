@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/nbsphinx-code-cells.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/gigayasa.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -59,15 +60,37 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install 5G Toolkit</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#system-requirements">System Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#dependent-libraries">Dependent Libraries:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#system-requirements">System Requirements:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#dependent-libraries">Dependent Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-miniconda">Install Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-jupyter-notebook">Install Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#id3">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#final-confirmation">Final Confirmation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#video-tutorial-installation-on-ubuntu">Video Tutorial: Installation on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#video-tutorial-installation-on-window">Video Tutorial: Installation on Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#installation-tutorial-video">Installation Tutorial: Video</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../GettingStarted.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../GettingStarted.html#understanding-api-documentation">Understanding API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../GettingStarted.html#hello-world">Hello World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../GettingStarted.html#import-python-libraries">Import Python Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#how-to-import-5g-toolkit-libraries">How to import 5G Toolkit Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#create-objects-for-all-the-modules">Create Objects for all the Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#generate-payload-bits-and-encode-them">Generate Payload bits and Encode them</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#symbol-mapping-the-encoded-bits">Symbol Mapping the Encoded Bits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#pass-through-awgn-channel">Pass through AWGN Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#demapping-the-symbols">Demapping the Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#detect-error-in-the-blocks">Detect Error in the Blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#compute-bit-and-block-error-rate">Compute Bit and Block Error Rate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#constellation-diagrams-at-the-tx-and-rx">Constellation Diagrams at the Tx and Rx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#link-level-simulation">Link Level Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#bit-block-error-rate-performance">Bit/Block Error Rate Performance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../GettingStarted.html#resources-and-scripts">Resources and Scripts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
@@ -685,15 +708,8 @@
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterDensity"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterDensity</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterHeight"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterSize"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterSize</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceLoS</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeLoS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfBS()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfUE()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyLoS</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.force3GPPSpatialConsistencyParameters</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.forceLOS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfRoom</span></code></a></li>
@@ -704,7 +720,6 @@
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutWidth</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.lengthOfIndoorObject</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.maxNumberOfFloors</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minNumberOfFloors</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minUEBSDistance</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfBS</span></code></a></li>
@@ -738,23 +753,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgBuildingHeight"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgBuildingHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgStreetWidth"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgStreetWidth</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationDistance</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationType</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d2D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d2D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d3D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d3D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.displayClusters"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.displayClusters()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteAngles"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteAngles</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteDelays"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteDelays</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForInitialPhases</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForLSPs</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForSSPs</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.fc</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.getChannel"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.getChannel()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.hallVolume"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.hallVolume</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.linkStateVec"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.linkStateVec</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locBS"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locUE"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locUE</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.surfaceArea"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.surfaceArea</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.terrain</span></code></a></li>
 </ul>
@@ -1180,6 +1189,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../Projects/Project1/learning2Demap.html#Limitations-of-the-LLRnet:">Limitations of the LLRnet:</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../Projects/Project1/learning2Demap.html#References:">References:</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../Projects/Project2/project2.html">Imitation Learning for Position Estimation</a></li>
@@ -1305,6 +1315,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../License/license.html#content">Content</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference external" href="https://discuss.gigayasa.com/">Discussion Forum</a></li>
 </ul>
 
         </div>
@@ -1429,7 +1440,7 @@
 <span class="n">carrierFrequency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="mi">28</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">])</span>  <span class="c1"># Array of two carrier frequencies in Hz</span>
 <span class="n">nBSs</span>             <span class="o">=</span> <span class="mi">21</span>                             <span class="c1"># number of BSs</span>
 <span class="n">nUEs</span>             <span class="o">=</span> <span class="mi">50</span>                             <span class="c1"># number of UEs</span>
-<span class="n">nSnapShots</span>       <span class="o">=</span> <span class="mi">10</span>                             <span class="c1"># number of SnapShots</span>
+<span class="n">nSnapShots</span>       <span class="o">=</span> <span class="mi">5</span>                             <span class="c1"># number of SnapShots</span>
 </pre></div>
 </div>
 </div>
@@ -1450,19 +1461,28 @@
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">carrierFrequency</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
     <span class="n">ueAntArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">AntennaArrays</span><span class="p">(</span><span class="n">antennaType</span>     <span class="o">=</span> <span class="s2">&quot;OMNI&quot;</span><span class="p">,</span>
                                   <span class="n">centerFrequency</span> <span class="o">=</span> <span class="n">carrierFrequency</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-                                  <span class="n">arrayStructure</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
+                                  <span class="n">arrayStructure</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
     <span class="n">ueAntArray</span><span class="p">[</span><span class="n">i</span><span class="p">]()</span>
 <span class="c1"># Radiation Pattern of Rx antenna element</span>
 <span class="n">ueAntArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">displayAntennaRadiationPattern</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_8_0.png" src="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_8_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(&lt;Figure size 960x480 with 1 Axes&gt;, &lt;Axes3D: &gt;)
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -1472,12 +1492,21 @@
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_9_0.png" src="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_9_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(&lt;Figure size 640x480 with 1 Axes&gt;, &lt;Axes: &gt;)
+</pre></div></div>
 </div>
 <p><strong>Antenna Arrays for BS</strong></p>
 <div class="nbinput docutils container">
@@ -1492,19 +1521,28 @@
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">carrierFrequency</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
     <span class="n">bsAntArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">AntennaArrays</span><span class="p">(</span><span class="n">antennaType</span>     <span class="o">=</span> <span class="s2">&quot;3GPP_38.901&quot;</span><span class="p">,</span>
                                   <span class="n">centerFrequency</span> <span class="o">=</span> <span class="n">carrierFrequency</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-                                  <span class="n">arrayStructure</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
+                                  <span class="n">arrayStructure</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]))</span>
     <span class="n">bsAntArray</span><span class="p">[</span><span class="n">i</span><span class="p">]()</span>
 <span class="c1"># Radiation Pattern of Tx antenna element</span>
 <span class="n">bsAntArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">displayAntennaRadiationPattern</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_11_0.png" src="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_11_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(&lt;Figure size 960x480 with 1 Axes&gt;, &lt;Axes3D: &gt;)
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -1514,12 +1552,21 @@
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_12_0.png" src="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_12_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(&lt;Figure size 640x480 with 1 Axes&gt;, &lt;Axes: &gt;)
+</pre></div></div>
 </div>
 </section>
 <section id="Node-Mobility">
@@ -1538,12 +1585,21 @@
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_15_0.png" src="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_15_0.png" />
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(&lt;Figure size 640x480 with 1 Axes&gt;, &lt;Axes: &gt;)
+</pre></div></div>
 </div>
 </section>
 <section id="Generate-Simulation-Layout">
@@ -1630,7 +1686,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;matplotlib.legend.Legend at 0x7f71677256d0&gt;
+&lt;matplotlib.legend.Legend at 0x7fa5e98c5110&gt;
 </pre></div></div>
 </div>
 </section>
@@ -1653,7 +1709,7 @@
 </ul>
 </li>
 </ul>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
@@ -1661,6 +1717,17 @@
 <span class="n">paramGenObj</span> <span class="o">=</span> <span class="n">simLayoutObj</span><span class="o">.</span><span class="n">getParameterGenerator</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[Warning]: Pathloss model for UMa is defined only for  2D distances &#39;d2D&#39; between 10m and 5Km! Some distances are from outside this interval!
+Ignoring for now but might result in unexpected behaviour!
+[Warning]: Pathloss model for UMa is defined only for  2D distances &#39;d2D&#39; between 10m and 5Km! Some distances are from outside this interval!
+Ignoring for now but might result in unexpected behaviour!
+</pre></div></div>
 </div>
 </section>
 <section id="Generate-Channel-Coefficients">
@@ -1671,7 +1738,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">channel.delays</span></code> with shape: <code class="docutils literal notranslate"><span class="pre">(number</span> <span class="pre">of</span> <span class="pre">carrier</span> <span class="pre">frequencies,</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">snapshots,</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">BSs,</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">UEs,</span> <span class="pre">numCluster/numPaths)</span></code></p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channel</span> <span class="o">=</span> <span class="n">paramGenObj</span><span class="o">.</span><span class="n">getChannel</span><span class="p">(</span><span class="n">applyPathLoss</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -1689,7 +1756,7 @@
 </li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fftsize</span>           <span class="o">=</span> <span class="mi">512</span>
@@ -1715,8 +1782,8 @@
 </ul>
 </li>
 </ul>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaleFig</span> <span class="o">=</span> <span class="mf">1.5</span>
@@ -1742,22 +1809,6 @@
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Text(0.5, 0.98, &#39;Channel Frequency Response at Different Carrier Frequencies&#39;)
-</pre></div></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_27_1.png" src="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_27_1.png" />
-</div>
-</div>
 </section>
 <section id="Time-Domain-Channel-response">
 <h3>Time Domain Channel response<a class="headerlink" href="#Time-Domain-Channel-response" title="Permalink to this heading"></a></h3>
@@ -1775,15 +1826,15 @@ Text(0.5, 0.98, &#39;Channel Frequency Response at Different Carrier Frequencies
 </ul>
 <p>These effects can be observed in following plots.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ht</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">ifft</span><span class="p">(</span><span class="n">Hf</span><span class="p">,</span> <span class="n">fftsize</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaleFig</span> <span class="o">=</span> <span class="mi">2</span>
@@ -1808,13 +1859,6 @@ Text(0.5, 0.98, &#39;Channel Frequency Response at Different Carrier Frequencies
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Power Delay Profile for the Different Carrier Frequencies&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_30_0.png" src="../../../_images/api_Tutorials_Tutorial6_Generate_UMa_Channel_for_Multiple_Frequencies_30_0.png" />
 </div>
 </div>
 <div class="nbinput nblast docutils container">

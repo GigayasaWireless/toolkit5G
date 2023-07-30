@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/gigayasa.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -20,12 +21,13 @@
         <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
+        <script src="_static/tabs.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API Documentation" href="api/5G_Toolkit/5Gtoolkit.html" />
+    <link rel="next" title="Getting Started" href="GettingStarted.html" />
     <link rel="prev" title="Release Notes" href="releaseNotes.html" /> 
 </head>
 
@@ -56,15 +58,37 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Install 5G Toolkit</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dependent-libraries">Dependent Libraries:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependent-libraries">Dependent Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-miniconda">Install Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-jupyter-notebook">Install Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#final-confirmation">Final Confirmation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#license-5g-toolkit">License 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#video-tutorial-installation-on-ubuntu">Video Tutorial: Installation on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#video-tutorial-installation-on-window">Video Tutorial: Installation on Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-tutorial-video">Installation Tutorial: Video</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted.html#understanding-api-documentation">Understanding API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted.html#hello-world">Hello World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GettingStarted.html#import-python-libraries">Import Python Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#how-to-import-5g-toolkit-libraries">How to import 5G Toolkit Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#create-objects-for-all-the-modules">Create Objects for all the Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#generate-payload-bits-and-encode-them">Generate Payload bits and Encode them</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#symbol-mapping-the-encoded-bits">Symbol Mapping the Encoded Bits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#pass-through-awgn-channel">Pass through AWGN Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#demapping-the-symbols">Demapping the Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#detect-error-in-the-blocks">Detect Error in the Blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#compute-bit-and-block-error-rate">Compute Bit and Block Error Rate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#constellation-diagrams-at-the-tx-and-rx">Constellation Diagrams at the Tx and Rx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#link-level-simulation">Link Level Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#bit-block-error-rate-performance">Bit/Block Error Rate Performance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted.html#resources-and-scripts">Resources and Scripts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
@@ -682,15 +706,8 @@
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterDensity"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterDensity</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterHeight"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterSize"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterSize</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceLoS</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeLoS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfBS()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfUE()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyLoS</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.force3GPPSpatialConsistencyParameters</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.forceLOS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfRoom</span></code></a></li>
@@ -701,7 +718,6 @@
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutWidth</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.lengthOfIndoorObject</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.maxNumberOfFloors</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minNumberOfFloors</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minUEBSDistance</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfBS</span></code></a></li>
@@ -735,23 +751,17 @@
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgBuildingHeight"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgBuildingHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgStreetWidth"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgStreetWidth</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationDistance</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationType</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d2D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d2D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d3D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d3D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.displayClusters"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.displayClusters()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteAngles"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteAngles</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteDelays"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteDelays</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForInitialPhases</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForLSPs</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForSSPs</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.fc</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.getChannel"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.getChannel()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.hallVolume"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.hallVolume</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.linkStateVec"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.linkStateVec</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locBS"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locUE"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locUE</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.surfaceArea"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.surfaceArea</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.terrain</span></code></a></li>
 </ul>
@@ -1177,6 +1187,7 @@
 <li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Limitations-of-the-LLRnet:">Limitations of the LLRnet:</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#References:">References:</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project2/project2.html">Imitation Learning for Position Estimation</a></li>
@@ -1302,6 +1313,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api/License/license.html#content">Content</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference external" href="https://discuss.gigayasa.com/">Discussion Forum</a></li>
 </ul>
 
         </div>
@@ -1329,87 +1341,45 @@
              
   <section id="install-5g-toolkit">
 <h1>Install 5G Toolkit<a class="headerlink" href="#install-5g-toolkit" title="Permalink to this heading"></a></h1>
-<p>This page takes the user through the complete process of installing the 5G Toolkit. It also provides a detailed installation
-procedure for new users.</p>
-<section id="how-to-install-5g-toolkit">
-<h2>How to install 5G Toolkit:<a class="headerlink" href="#how-to-install-5g-toolkit" title="Permalink to this heading"></a></h2>
-<p>5G Toolkit can be installed easily using pip which comes pre-installed with Python-3. The details of the installation are
-provided below. The modules and libraries of 5G Toolkit are written in Python and is compatible with all Python versions &gt;= 3.7.4.</p>
-</section>
+<p>This page takes the user through the complete process of installing all the packages to the point where they can use the
+5G toolkit easily in a Jupyter Notebook.</p>
 <section id="system-requirements">
-<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this heading"></a></h2>
+<h2>System Requirements:<a class="headerlink" href="#system-requirements" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Subject</p></th>
-<th class="head"><p>Value</p></th>
+<th class="head"><p>Version</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Architecture</p></td>
 <td><p>x86_64</p></td>
 </tr>
-<tr class="row-odd"><td><p>Operating System</p></td>
-<td><p>Linux/Windows</p></td>
-</tr>
-<tr class="row-even"><td><p>Python</p></td>
-<td><p>&gt;=3.7.4 and &lt; 3.12</p></td>
+<tr class="row-odd"><td><p>Python</p></td>
+<td><p>&gt;= 3.7.4 and &lt; 3.12</p></td>
 </tr>
 </tbody>
 </table>
-<p class="callout warning"><strong>Note</strong>: The users with any other operating system and architecture can request 
-the package at toolkit5g@gigayasa.com. We will create a new package for the requested configurations and provide installation
-procedure on this page itself.</p>
-</section>
-<section id="install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">
-<h2>Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)<a class="headerlink" href="#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11" title="Permalink to this heading"></a></h2>
-<p>If you are using pip for installation of packages, then run following in your terminal in your target environment.</p>
-<p>The <strong>template command</strong> for installation is given below:
-<img alt="" src="_images/Install_Toolkit.png" /></p>
-<p class="callout warning"><strong>Note</strong>: "--no-cache-dir" flag is used to block pip from using cached version 
-of the package for installation. Users can remove it if not relevant for them. </p>
-<p><strong>For Python 3.7</strong>:</p>
-<p class="callout warning"> <strong>Note</strong>: Initial version of Python 3.7 is buggy. Hence, only Python>=3.7.4 is supported. </p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.11</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_7</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.11</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
-</pre></div>
-</div>
-<p><strong>For Python 3.8</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.11</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_8</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.11</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
-</pre></div>
-</div>
-<p><strong>For Python 3.9</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.11</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_9</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.11</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
-</pre></div>
-</div>
-<p><strong>For Python 3.10</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.11</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_10</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.11</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
-</pre></div>
-</div>
-<p><strong>For Python 3.11</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GigayasaWireless</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">/</span><span class="n">raw</span><span class="o">/</span><span class="n">R23a</span><span class="mf">.0.11</span><span class="o">/</span><span class="n">package</span><span class="o">/</span><span class="n">python3_11</span><span class="o">/</span><span class="n">toolkit5G</span><span class="o">-</span><span class="mf">0.11</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
-</pre></div>
-</div>
-<p>To confirm installation of the library, you can check the installation library:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">show</span> <span class="n">toolkit5G</span>
-</pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The users with any other operating system and architecture can request the package at <a class="reference external" href="mailto:toolkit5g&#37;&#52;&#48;gigayasa&#46;com">toolkit5g<span>&#64;</span>gigayasa<span>&#46;</span>com</a> We will
+create a new package for the requested configurations and provide installation procedure on this page itself.</p>
 </div>
 </section>
 <section id="dependent-libraries">
-<h2>Dependent Libraries:<a class="headerlink" href="#dependent-libraries" title="Permalink to this heading"></a></h2>
-<p><a class="reference external" href="https://www.python.org/"><img alt="PythonLogo" src="_images/python.png" /></a>
-<a class="reference external" href="https://github.com/numpy/numpy"><img alt="NumPyLogo" src="_images/NumPy.png" /></a>
-<a class="reference external" href="https://github.com/scipy/scipy"><img alt="SciPyLogo" src="_images/SciPy.png" /></a>
-<a class="reference external" href="https://github.com/matplotlib/matplotlib"><img alt="maplotlibLogo" src="_images/maplotlib.png" /></a></p>
-<p>5G Toolkit is dependent on the following libraries:</p>
-<ul class="simple">
-<li><p>NumPy</p></li>
-<li><p>SciPy</p></li>
-<li><p>Matplotlib</p></li>
-<li><p>Sionna</p></li>
-</ul>
+<h2>Dependent Libraries<a class="headerlink" href="#dependent-libraries" title="Permalink to this heading"></a></h2>
 <table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Subject</p></th>
-<th class="head"><p>Value</p></th>
+<tr class="row-odd"><th class="head"><p>Library</p></th>
+<th class="head"><p>Version</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1427,58 +1397,165 @@ of the package for installation. Users can remove it if not relevant for them. <
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have Python environment and working Python IDE setup on your system, you can skip the initial step and
+directly jump to <a class="reference external" href="#id3">Install 5G Toolkit</a> step.</p>
+</div>
 </section>
-<section id="detailed-installation-procedure">
-<h2>Detailed Installation Procedure<a class="headerlink" href="#detailed-installation-procedure" title="Permalink to this heading"></a></h2>
-<p>This section covers detailed installation procedure for Windows (10 and 11), Ubuntu (20.04 and 22.04). It covers following
-steps</p>
+<section id="install-miniconda">
+<h2>Install Miniconda<a class="headerlink" href="#install-miniconda" title="Permalink to this heading"></a></h2>
+<p>If Anaconda is already installed on your system, then you can skip this step. The following instructions install the
+Miniconda which is a lighter version of Anaconda. First we will download miniconda using the command:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please install the latest version of the installer from <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">this link</a> .
+Following links might be outdated.</p>
+</div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-TGludXg=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-TGludXg=" name="TGludXg=" role="tab" tabindex="0">Linux</button><button aria-controls="panel-0-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-0-TGludXg=" class="sphinx-tabs-panel group-tab" id="panel-0-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><p>Lets start by updating the system:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</pre></div>
+</div>
+<p>Open the terminal, (Shortcut CTRL+ALT+T) and execute the following command in it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>Followed by, installing miniconda using the downloaded package.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>Once the installation is completed, we can check the version installed Conda on our system.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--v
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><ol class="arabic simple">
+<li><p>Download the Miniconda installer from this link:</p>
 <ul class="simple">
-<li><p>Install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Conda</a></p></li>
-<li><p>Create <a class="reference external" href="https://docs.python.org/3/library/venv.html">virtual environment</a> and install Python in it.</p></li>
-<li><p>Install Jupyter Notebook</p></li>
-<li><p>Install 5G Toolkit</p></li>
-<li><p>Import and use Toolkit in Jupyter Notebook.</p></li>
+<li><p>For 32 bit version of Windows: <a class="reference external" href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86.exe">Download Miniconda Installer</a></p></li>
+<li><p>For 64 bit version of Windows: <a class="reference external" href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe">Download Miniconda Installer</a></p></li>
 </ul>
-<p>Please click <a class="reference internal" href="detailedInstall.html"><span class="doc std std-doc">here for detailed installation procedure</span></a>.</p>
+</li>
+<li><p>Install <strong>Miniconda</strong> by executing this installer.</p></li>
+</ol>
+<p>Click on start button and find Anaconda Prompt (<strong>Not Anaconda bash</strong>). Once the installation is completed, we can check the Conda
+version installed on our system:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--v
+</pre></div>
+</div>
+</div></div>
+<p>Now, we will use conda to create a new environment for python 3.11 (this command will automatically install python 3.11
+in the target environment):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gigayasa<span class="w"> </span><span class="nv">python</span><span class="o">==</span><span class="m">3</span>.11
+</pre></div>
+</div>
+<p>Finally, we will activate the created environment by executing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>gigayasa
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>We will install everything from further now in this environment only.</p>
+</div>
+</section>
+<section id="install-jupyter-notebook">
+<h2>Install Jupyter Notebook<a class="headerlink" href="#install-jupyter-notebook" title="Permalink to this heading"></a></h2>
+<p>Install Jupyter for interactive scripting in Python. Execute the following command in the terminal in the
+created environment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>Jupyter
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Install 5G Toolkit<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<p>Finally, we are ready to install 5G Toolkit:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-KipQeXRob24gMy43Kio=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-KipQeXRob24gMy43Kio=" name="KipQeXRob24gMy43Kio=" role="tab" tabindex="0"><strong>Python 3.7</strong></button><button aria-controls="panel-1-KipQeXRob24gMy44Kio=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-KipQeXRob24gMy44Kio=" name="KipQeXRob24gMy44Kio=" role="tab" tabindex="-1"><strong>Python 3.8</strong></button><button aria-controls="panel-1-KipQeXRob24gMy45Kio=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-KipQeXRob24gMy45Kio=" name="KipQeXRob24gMy45Kio=" role="tab" tabindex="-1"><strong>Python 3.9</strong></button><button aria-controls="panel-1-KipQeXRob24gMy4xMCoq" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-KipQeXRob24gMy4xMCoq" name="KipQeXRob24gMy4xMCoq" role="tab" tabindex="-1"><strong>Python 3.10</strong></button><button aria-controls="panel-1-KipQeXRob24gMy4xMSoq" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-KipQeXRob24gMy4xMSoq" name="KipQeXRob24gMy4xMSoq" role="tab" tabindex="-1"><strong>Python 3.11</strong></button></div><div aria-labelledby="tab-1-KipQeXRob24gMy43Kio=" class="sphinx-tabs-panel group-tab" id="panel-1-KipQeXRob24gMy43Kio=" name="KipQeXRob24gMy43Kio=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.11-py3-none-any.whl
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-KipQeXRob24gMy44Kio=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-KipQeXRob24gMy44Kio=" name="KipQeXRob24gMy44Kio=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.11-py3-none-any.whl
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-KipQeXRob24gMy45Kio=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-KipQeXRob24gMy45Kio=" name="KipQeXRob24gMy45Kio=" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.11-py3-none-any.whl
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-KipQeXRob24gMy4xMCoq" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-KipQeXRob24gMy4xMCoq" name="KipQeXRob24gMy4xMCoq" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.11-py3-none-any.whl
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-KipQeXRob24gMy4xMSoq" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-KipQeXRob24gMy4xMSoq" name="KipQeXRob24gMy4xMSoq" role="tabpanel" tabindex="0"><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.11-py3-none-any.whl
+</pre></div>
+</div>
+</div></div>
+<p>To confirm installation of the library, you can check the installation library:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>show<span class="w"> </span>toolkit5G
+</pre></div>
+</div>
+<details class="summary-expand-to-understand-the-command-template">
+<summary>Expand to understand the command template</summary><p>The <strong>template command</strong> for installation is given below:</p>
+<img alt="_images/Install_Toolkit.png" src="_images/Install_Toolkit.png" />
+</details></section>
+<hr class="docutils" />
+<section id="final-confirmation">
+<h2>Final Confirmation<a class="headerlink" href="#final-confirmation" title="Permalink to this heading"></a></h2>
+<p>The installation will be truly successful if we are able to import the toolkit5G packages. We can verify it using
+<strong>Jupyter Notebook</strong>, open the jupyter notebook using following command in your browser.</p>
+<p>Create a new jupyter notebook and run the following lines of code:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">toolkit5G</span> <span class="k">as</span> <span class="nn">tk</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+<p>The toolkit is successfully installed if it shows the toolkit5G version as shown below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;R23a.0.10&#39;</span>
+</pre></div>
+</div>
+<p>Otherwise, something went wrong. If it shows “License Error”, then you will have to
+<a class="reference external" href="#activate-the-5g-toolkit-license">activate the License</a>. But still if you are struggling please email us at any of
+the following emails:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="mailto:toolkit5g&#37;&#52;&#48;gigayasa&#46;com">mailto:toolkit5g<span>&#64;</span>gigayasa<span>&#46;</span>com</a></p></li>
+<li><p><a class="reference external" href="mailto:support&#37;&#52;&#48;gigayasa&#46;com">mailto:support<span>&#64;</span>gigayasa<span>&#46;</span>com</a></p></li>
+<li><p><a class="reference external" href="mailto:vikram&#37;&#52;&#48;gigayasa&#46;com">mailto:vikram<span>&#64;</span>gigayasa<span>&#46;</span>com</a></p></li>
+</ol>
+<p>We will be more than happy to help you in installation.</p>
 </section>
 <section id="license-5g-toolkit">
 <h2>License 5G Toolkit<a class="headerlink" href="#license-5g-toolkit" title="Permalink to this heading"></a></h2>
 <p>The 5G toolkit requires an active license for usage. The new users can request a one month trial license for 5G Toolkit
-through this link <a class="reference external" href="https://gigayasa.com/request-trial/">Request Trial License</a>. Furthermore, you can purchase an annual
+through this link <a class="reference external" href="https://gigayasa.com/request-trial/">Request Trial</a>. Furthermore, you can purchase an annual
 or perpetual license <a class="reference external" href="https://gigayasa.com/request-pricing/">Purchase License</a>.</p>
 </section>
 <section id="activate-the-5g-toolkit-license">
 <h2>Activate the 5G Toolkit License<a class="headerlink" href="#activate-the-5g-toolkit-license" title="Permalink to this heading"></a></h2>
-<ul class="simple">
+<blockquote>
+<div><ol class="arabic simple">
 <li><p>Download the <strong>Central-Hub</strong> shared with you over the email.</p></li>
 <li><p>Unzip and run the executable file.</p></li>
 <li><p>Once the installation is complete, open the <strong>Central-Hub</strong> from your applications.</p></li>
-<li><p>Login if you have the Gigayasa account, otherwise:</p>
-<ul>
+<li><p>Login if you have the Gigayasa account, otherwise:</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
 <li><p>Create an account with Gigayasa.</p></li>
 <li><p>Verify your email</p></li>
 <li><p>Log into the Central-Hub.</p></li>
-</ul>
-</li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
 <li><p>Now fetch the License key shared with you over the email.</p></li>
 <li><p>Activate your License.</p></li>
 <li><p>If activation is successful, please close the Central-Hub.</p></li>
 <li><p>You are good to go please open the jupyter Notebook and try to “import toolkit5G as tk”</p></li>
-</ul>
+</ol>
+</div></blockquote>
 </section>
-<section id="video-tutorial-installation-on-ubuntu">
-<h2>Video Tutorial: Installation on Ubuntu<a class="headerlink" href="#video-tutorial-installation-on-ubuntu" title="Permalink to this heading"></a></h2>
-<figure class="video_container">
-    <iframe src="https://www.youtube.com/embed/C1yZh4I0X_w" frameborder="0" width="100%" height="400" allowfullscreen="true"> </iframe>
-</figure>
-</section>
-<hr class="docutils" />
-<section id="video-tutorial-installation-on-window">
-<h2>Video Tutorial: Installation on Window<a class="headerlink" href="#video-tutorial-installation-on-window" title="Permalink to this heading"></a></h2>
-<figure class="video_container">
-    <iframe src="https://www.youtube.com/embed/C1yZh4I0X_w" frameborder="0" width="100%" height="400" allowfullscreen="true"> </iframe>
-</figure>
-<hr class="docutils" />
+<section id="installation-tutorial-video">
+<h2>Installation Tutorial: Video<a class="headerlink" href="#installation-tutorial-video" title="Permalink to this heading"></a></h2>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-TGludXg=" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-TGludXg=" name="TGludXg=" role="tab" tabindex="0">Linux</button><button aria-controls="panel-2-V2luZG93cw==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-V2luZG93cw==" name="V2luZG93cw==" role="tab" tabindex="-1">Windows</button></div><div aria-labelledby="tab-2-TGludXg=" class="sphinx-tabs-panel group-tab" id="panel-2-TGludXg=" name="TGludXg=" role="tabpanel" tabindex="0"><center>
+<iframe width="620" height="350" src="https://www.youtube.com/embed/C1yZh4I0X_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center></div><div aria-labelledby="tab-2-V2luZG93cw==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-V2luZG93cw==" name="V2luZG93cw==" role="tabpanel" tabindex="0"><center>
+<iframe width="620" height="350" src="https://www.youtube.com/embed/C1yZh4I0X_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center></div></div>
 </section>
 </section>
 
@@ -1487,7 +1564,7 @@ or perpetual license <a class="reference external" href="https://gigayasa.com/re
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="releaseNotes.html" class="btn btn-neutral float-left" title="Release Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="api/5G_Toolkit/5Gtoolkit.html" class="btn btn-neutral float-right" title="API Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="GettingStarted.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

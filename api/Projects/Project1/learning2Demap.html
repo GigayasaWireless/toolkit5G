@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/nbsphinx-code-cells.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/gigayasa.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -59,15 +60,37 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install 5G Toolkit</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#system-requirements">System Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#dependent-libraries">Dependent Libraries:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#system-requirements">System Requirements:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#dependent-libraries">Dependent Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-miniconda">Install Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-jupyter-notebook">Install Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#id3">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#final-confirmation">Final Confirmation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#video-tutorial-installation-on-ubuntu">Video Tutorial: Installation on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#video-tutorial-installation-on-window">Video Tutorial: Installation on Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#installation-tutorial-video">Installation Tutorial: Video</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../GettingStarted.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../GettingStarted.html#understanding-api-documentation">Understanding API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../GettingStarted.html#hello-world">Hello World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../GettingStarted.html#import-python-libraries">Import Python Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#how-to-import-5g-toolkit-libraries">How to import 5G Toolkit Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#create-objects-for-all-the-modules">Create Objects for all the Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#generate-payload-bits-and-encode-them">Generate Payload bits and Encode them</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#symbol-mapping-the-encoded-bits">Symbol Mapping the Encoded Bits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#pass-through-awgn-channel">Pass through AWGN Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#demapping-the-symbols">Demapping the Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#detect-error-in-the-blocks">Detect Error in the Blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#compute-bit-and-block-error-rate">Compute Bit and Block Error Rate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#constellation-diagrams-at-the-tx-and-rx">Constellation Diagrams at the Tx and Rx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#link-level-simulation">Link Level Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#bit-block-error-rate-performance">Bit/Block Error Rate Performance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../GettingStarted.html#resources-and-scripts">Resources and Scripts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
@@ -685,15 +708,8 @@
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterDensity"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterDensity</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterHeight"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterSize"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterSize</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceLoS</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeLoS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfBS()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfUE()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyLoS</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.force3GPPSpatialConsistencyParameters</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.forceLOS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfRoom</span></code></a></li>
@@ -704,7 +720,6 @@
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutWidth</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.lengthOfIndoorObject</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.maxNumberOfFloors</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minNumberOfFloors</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minUEBSDistance</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfBS</span></code></a></li>
@@ -738,23 +753,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgBuildingHeight"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgBuildingHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgStreetWidth"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgStreetWidth</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationDistance</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationType</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d2D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d2D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d3D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d3D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.displayClusters"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.displayClusters()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteAngles"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteAngles</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteDelays"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteDelays</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForInitialPhases</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForLSPs</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForSSPs</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.fc</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.getChannel"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.getChannel()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.hallVolume"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.hallVolume</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.linkStateVec"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.linkStateVec</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locBS"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locUE"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locUE</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.surfaceArea"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.surfaceArea</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.terrain</span></code></a></li>
 </ul>
@@ -1180,6 +1189,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#Limitations-of-the-LLRnet:">Limitations of the LLRnet:</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#References:">References:</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Project2/project2.html">Imitation Learning for Position Estimation</a></li>
@@ -1305,6 +1315,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../License/license.html#content">Content</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference external" href="https://discuss.gigayasa.com/">Discussion Forum</a></li>
 </ul>
 
         </div>
@@ -1360,15 +1371,30 @@
 <li><p>Symbol Demapper.</p></li>
 </ul>
 <p>The PDSCH transmitter is compliant with 5G standards defined in <a class="reference external" href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3213">38.211</a>, <a class="reference external" href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3214">38.212</a> and <a class="reference external" href="https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3216">38.214</a>. Finally, the tutorial will teach the user to replace one of the PDSCH receiver’s module
-called Symbol Demapper with a neural network based Symbol Demapper (<strong>LLRNet</strong>).</p>
-<p>Finally, the user will be able to rapidly evaluate and compare the</p>
+called Symbol Demapper with a neural network based Symbol Demapper <a class="reference external" href="https://arxiv.org/pdf/1907.01512.pdf">(LLRNet)</a>.</p>
+<p><strong>Conventional Techniques</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Log MAP Demapper
+    - Optimal for AWGN Noise ==&gt; Highest possible data rate | Lowest possible Block error rate
+    - Complexity: Combinatorial ==&gt; Consumes a lot of power
+    - Not suitable for Internet of Things (**IoT**) devices.
+- Max log MAP Demapper
+    - Sub-Optimal performance ==&gt; 3 dB loss in performance
+    - Complexity: Linear ==&gt; Consumes a less power compared to log-MAP
+</pre></div>
+</div>
+<p><strong>Proposed Techniques</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- LLRNet
+    - B(L)ER and Throughput Performance matches Log MAP Demapper
+    - Complexity: Even lower than Max log MAP Demapper
+</pre></div>
+</div>
+<p id="section-1">Finally, the user will be able to rapidly evaluate and compare the</p>
 <ul class="simple">
 <li><p>Bit Error rate vs SNR</p></li>
 <li><p>Block Error rate vs SNR</p></li>
 <li><p>Throughput/Data rate vs SNR</p></li>
 <li><p>Computational Complexity of Log-MAP, Max-Log-MAP and LLRNet methods.</p></li>
 </ul>
-<p>Reference: - O. Shental and J. Hoydis, <a class="reference external" href="https://arxiv.org/pdf/1907.01512.pdf">“”Machine LLRning”: Learning to Softly Demodulate,”</a> 2019 IEEE Globecom Workshops (GC Wkshps), Waikoloa, HI, USA, 2019, pp. 1-7, doi: 10.1109/GCWkshps45667.2019.9024433.</p>
 <section id="Table-of-Contents">
 <h2>Table of Contents<a class="headerlink" href="#Table-of-Contents" title="Permalink to this heading"></a></h2>
 <ul class="simple">
@@ -1426,6 +1452,7 @@ called Symbol Demapper with a neural network based Symbol Demapper (<strong>LLRN
 </ul>
 </li>
 <li><p><a class="reference external" href="#Conclusion">Conclusion</a></p></li>
+<li><p><a class="reference external" href="#References:">References</a></p></li>
 </ul>
 </section>
 <section id="Import-Libraries">
@@ -1931,11 +1958,14 @@ Training Accuracy: 98.72
 <span class="k">for</span> <span class="n">modorder</span> <span class="ow">in</span> <span class="n">modOrders</span><span class="p">:</span>
 
     <span class="c1">## PDSCH-transmitter chain object</span>
-    <span class="n">pdschUpPhy</span> <span class="o">=</span> <span class="n">PDSCHUpperPhy</span><span class="p">(</span><span class="n">numSymbols</span><span class="p">,</span> <span class="n">numRBs</span><span class="p">,</span> <span class="p">[</span><span class="n">modorder</span><span class="p">,</span> <span class="n">codeRate</span><span class="p">],</span> <span class="p">[</span><span class="n">numLayers</span><span class="p">],</span> <span class="n">scalingField</span><span class="p">,</span>
-                                   <span class="n">additionalOverhead</span><span class="p">,</span> <span class="n">dmrsREs</span><span class="p">,</span> <span class="n">numTBs</span><span class="p">,</span> <span class="n">pdschTable</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">pdschUpPhy</span> <span class="o">=</span> <span class="n">PDSCHUpperPhy</span><span class="p">(</span><span class="n">numTBs</span> <span class="o">=</span> <span class="n">numTBs</span><span class="p">,</span> <span class="n">mcsIndex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">modorder</span><span class="p">,</span> <span class="n">codeRate</span><span class="p">]),</span>
+                               <span class="n">symbolsPerSlot</span> <span class="o">=</span> <span class="n">numSymbols</span><span class="p">,</span> <span class="n">numRB</span>  <span class="o">=</span> <span class="n">numRBs</span><span class="p">,</span>
+                               <span class="n">numlayers</span> <span class="o">=</span> <span class="p">[</span><span class="n">numLayers</span><span class="p">],</span> <span class="n">scalingField</span> <span class="o">=</span> <span class="n">scalingField</span><span class="p">,</span>
+                               <span class="n">additionalOverhead</span> <span class="o">=</span> <span class="n">additionalOverhead</span><span class="p">,</span> <span class="n">dmrsREs</span> <span class="o">=</span> <span class="n">dmrsREs</span><span class="p">,</span>
+                               <span class="n">pdschTable</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-    <span class="n">codewords</span>  <span class="o">=</span> <span class="n">pdschUpPhy</span><span class="p">(</span><span class="n">enableLBRM</span><span class="p">,</span> <span class="n">rvid1</span><span class="p">,</span> <span class="n">rvid2</span><span class="p">,</span> <span class="n">numBatch</span> <span class="o">=</span> <span class="n">numFrames</span><span class="p">,</span>
-                            <span class="n">numBSs</span> <span class="o">=</span> <span class="n">numBSs</span><span class="p">,</span> <span class="n">tblock1</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">tblock2</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">codewords</span>  <span class="o">=</span> <span class="n">pdschUpPhy</span><span class="p">(</span><span class="n">rvid</span> <span class="o">=</span> <span class="p">[</span><span class="n">rvid1</span><span class="p">,</span> <span class="n">rvid2</span><span class="p">],</span> <span class="n">enableLBRM</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+                            <span class="n">numBatch</span> <span class="o">=</span> <span class="n">numFrames</span><span class="p">,</span> <span class="n">numBSs</span> <span class="o">=</span> <span class="n">numBSs</span><span class="p">)</span>
 
     <span class="n">symbols</span>    <span class="o">=</span> <span class="n">Mapper</span><span class="p">(</span><span class="s2">&quot;qam&quot;</span><span class="p">,</span> <span class="n">pdschUpPhy</span><span class="o">.</span><span class="n">modOrder</span><span class="p">)(</span><span class="n">codewords</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
@@ -1946,8 +1976,12 @@ Training Accuracy: 98.72
         <span class="n">rxSymbols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">complex64</span><span class="p">(</span><span class="n">AddNoise</span><span class="p">()(</span><span class="n">symbols</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">snr</span><span class="p">))</span>
         <span class="n">llrs</span>      <span class="o">=</span> <span class="n">Demapper</span><span class="p">(</span><span class="s2">&quot;app&quot;</span><span class="p">,</span> <span class="s2">&quot;qam&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">modorder</span><span class="p">),</span> <span class="n">hard_out</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)([</span><span class="n">rxSymbols</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">snr</span><span class="p">)])</span>
         <span class="c1"># Receiver: Upper Physical layer</span>
-        <span class="n">pdschDecoderUpperPhy</span>  <span class="o">=</span> <span class="n">PDSCHDecoderUpperPhy</span><span class="p">(</span><span class="n">numTBs</span><span class="p">,</span> <span class="p">[</span><span class="n">modorder</span><span class="p">,</span> <span class="n">codeRate</span><span class="p">],</span> <span class="n">numSymbols</span><span class="p">,</span> <span class="n">numRBs</span><span class="p">,</span> <span class="p">[</span><span class="n">numLayers</span><span class="p">],</span> <span class="n">scalingField</span><span class="p">,</span>
-                                                     <span class="p">[</span><span class="n">rvid1</span><span class="p">],</span> <span class="n">additionalOverhead</span><span class="p">,</span> <span class="n">dmrsREs</span><span class="p">,</span> <span class="n">pdschTable</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">pdschDecoderUpperPhy</span>  <span class="o">=</span> <span class="n">PDSCHDecoderUpperPhy</span><span class="p">(</span><span class="n">numTBs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">modorder</span><span class="p">,</span> <span class="n">codeRate</span><span class="p">]),</span> <span class="n">numSymbols</span><span class="p">,</span>
+                                                     <span class="n">numRBs</span><span class="p">,</span> <span class="p">[</span><span class="n">numLayers</span><span class="p">],</span> <span class="n">scalingField</span><span class="p">,</span>
+                                                     <span class="n">additionalOverhead</span><span class="p">,</span> <span class="n">dmrsREs</span><span class="p">,</span>
+                                                     <span class="n">enableLBRM</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="n">pdschTable</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                                     <span class="n">rvid</span><span class="o">=</span><span class="p">[</span><span class="n">rvid1</span><span class="p">],</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
         <span class="n">tbEst</span>     <span class="o">=</span> <span class="n">pdschDecoderUpperPhy</span><span class="p">([</span><span class="n">llrs</span><span class="p">])</span>
 
         <span class="n">BER</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">mcsIdx</span><span class="p">,</span> <span class="n">snrIndex</span><span class="p">]</span>        <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">tbEst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pdschUpPhy</span><span class="o">.</span><span class="n">tblock1</span><span class="p">))</span>
@@ -1968,8 +2002,13 @@ Training Accuracy: 98.72
 
         <span class="c1"># max-log-MAP Decoder</span>
         <span class="n">llrs</span>      <span class="o">=</span> <span class="n">Demapper</span><span class="p">(</span><span class="s2">&quot;maxlog&quot;</span><span class="p">,</span> <span class="s2">&quot;qam&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">modorder</span><span class="p">),</span> <span class="n">hard_out</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)([</span><span class="n">rxSymbols</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">snr</span><span class="p">)])</span>
-        <span class="n">pdschDecoderUpperPhy</span>  <span class="o">=</span> <span class="n">PDSCHDecoderUpperPhy</span><span class="p">(</span><span class="n">numTBs</span><span class="p">,</span> <span class="p">[</span><span class="n">modorder</span><span class="p">,</span> <span class="n">codeRate</span><span class="p">],</span> <span class="n">numSymbols</span><span class="p">,</span> <span class="n">numRBs</span><span class="p">,</span> <span class="p">[</span><span class="n">numLayers</span><span class="p">],</span> <span class="n">scalingField</span><span class="p">,</span>
-                                                     <span class="p">[</span><span class="n">rvid1</span><span class="p">],</span> <span class="n">additionalOverhead</span><span class="p">,</span> <span class="n">dmrsREs</span><span class="p">,</span> <span class="n">pdschTable</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">pdschDecoderUpperPhy</span>  <span class="o">=</span> <span class="n">PDSCHDecoderUpperPhy</span><span class="p">(</span><span class="n">numTBs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">modorder</span><span class="p">,</span> <span class="n">codeRate</span><span class="p">]),</span> <span class="n">numSymbols</span><span class="p">,</span>
+                                                     <span class="n">numRBs</span><span class="p">,</span> <span class="p">[</span><span class="n">numLayers</span><span class="p">],</span> <span class="n">scalingField</span><span class="p">,</span>
+                                                     <span class="n">additionalOverhead</span><span class="p">,</span> <span class="n">dmrsREs</span><span class="p">,</span>
+                                                     <span class="n">enableLBRM</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="n">pdschTable</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                                     <span class="n">rvid</span><span class="o">=</span><span class="p">[</span><span class="n">rvid1</span><span class="p">],</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
         <span class="n">tbEst</span>     <span class="o">=</span> <span class="n">pdschDecoderUpperPhy</span><span class="p">([</span><span class="n">llrs</span><span class="p">])</span>
 
         <span class="n">BER</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">mcsIdx</span><span class="p">,</span> <span class="n">snrIndex</span><span class="p">]</span>        <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">tbEst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pdschUpPhy</span><span class="o">.</span><span class="n">tblock1</span><span class="p">))</span>
@@ -1991,8 +2030,13 @@ Training Accuracy: 98.72
 
         <span class="n">llrs</span>   <span class="o">=</span> <span class="n">llrNet</span><span class="p">(</span><span class="n">snr</span><span class="p">,</span> <span class="n">rxSymbols</span><span class="p">)</span>
         <span class="c1"># Receiver: Upper Physical layer</span>
-        <span class="n">pdschDecoderUpperPhy</span>  <span class="o">=</span> <span class="n">PDSCHDecoderUpperPhy</span><span class="p">(</span><span class="n">numTBs</span><span class="p">,</span> <span class="p">[</span><span class="n">modorder</span><span class="p">,</span> <span class="n">codeRate</span><span class="p">],</span> <span class="n">numSymbols</span><span class="p">,</span> <span class="n">numRBs</span><span class="p">,</span> <span class="p">[</span><span class="n">numLayers</span><span class="p">],</span> <span class="n">scalingField</span><span class="p">,</span>
-                                                     <span class="p">[</span><span class="n">rvid1</span><span class="p">],</span> <span class="n">additionalOverhead</span><span class="p">,</span> <span class="n">dmrsREs</span><span class="p">,</span> <span class="n">pdschTable</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="n">pdschDecoderUpperPhy</span>  <span class="o">=</span> <span class="n">PDSCHDecoderUpperPhy</span><span class="p">(</span><span class="n">numTBs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">modorder</span><span class="p">,</span> <span class="n">codeRate</span><span class="p">]),</span> <span class="n">numSymbols</span><span class="p">,</span>
+                                                     <span class="n">numRBs</span><span class="p">,</span> <span class="p">[</span><span class="n">numLayers</span><span class="p">],</span> <span class="n">scalingField</span><span class="p">,</span>
+                                                     <span class="n">additionalOverhead</span><span class="p">,</span> <span class="n">dmrsREs</span><span class="p">,</span>
+                                                     <span class="n">enableLBRM</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="n">pdschTable</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                                     <span class="n">rvid</span><span class="o">=</span><span class="p">[</span><span class="n">rvid1</span><span class="p">],</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
         <span class="n">tbEst</span>   <span class="o">=</span> <span class="n">pdschDecoderUpperPhy</span><span class="p">([</span><span class="n">llrs</span><span class="p">])</span>
 
         <span class="n">BER</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">mcsIdx</span><span class="p">,</span> <span class="n">snrIndex</span><span class="p">]</span>        <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">tbEst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pdschUpPhy</span><span class="o">.</span><span class="n">tblock1</span><span class="p">))</span>
@@ -2416,7 +2460,7 @@ _______________________________________________________
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Throughput (Mbps)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">9</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Throughput vs SNR(dB)&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">maxThroughput</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ds4</span><span class="p">[</span><span class="s2">&quot;SNRdB&quot;</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">SNRdB</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="c1"># Adding Twin Axes to plot using dataset_2</span>
 <span class="n">axr</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
@@ -2836,6 +2880,17 @@ _______________________________________________________
 </ul>
 </li>
 </ul>
+</section>
+</section>
+<section id="References:">
+<h2>References:<a class="headerlink" href="#References:" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><ol class="upperalpha simple" start="15">
+<li><p>Shental and J. Hoydis, <a class="reference external" href="https://arxiv.org/pdf/1907.01512.pdf">“”Machine LLRning”: Learning to Softly Demodulate,”</a> 2019 IEEE Globecom Workshops (GC Wkshps), Waikoloa, HI, USA, 2019, pp. 1-7, doi: 10.1109/GCWkshps45667.2019.9024433.</p></li>
+</ol>
+</li>
+<li><p>Python code for <a class="reference external" href="llrNet.py">LLRNet</a>.</p></li>
+</ul>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -2844,7 +2899,6 @@ _______________________________________________________
 </pre></div>
 </div>
 </div>
-</section>
 </section>
 </section>
 

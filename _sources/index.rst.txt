@@ -103,6 +103,7 @@ More Information
 
    releaseNotes
    install
+   GettingStarted
    api/5G_Toolkit/5Gtoolkit
    api/Tutorials/Tutorials
    api/Projects/Projects
@@ -111,6 +112,7 @@ More Information
    api/Built_using_5G_Toolkit/builtUsing5GToolkit
    api/WeekChallenge/challenge
    api/License/license
+   Discussion Forum <https://discuss.gigayasa.com/>
 
 5G Toolkit Features
 ###################################

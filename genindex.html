@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/gigayasa.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -19,6 +20,7 @@
         <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
+        <script src="_static/tabs.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -53,15 +55,37 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install 5G Toolkit</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#system-requirements">System Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#dependent-libraries">Dependent Libraries:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#system-requirements">System Requirements:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#dependent-libraries">Dependent Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-miniconda">Install Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#install-jupyter-notebook">Install Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#id3">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#final-confirmation">Final Confirmation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#license-5g-toolkit">License 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#video-tutorial-installation-on-ubuntu">Video Tutorial: Installation on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install.html#video-tutorial-installation-on-window">Video Tutorial: Installation on Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install.html#installation-tutorial-video">Installation Tutorial: Video</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="GettingStarted.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted.html#understanding-api-documentation">Understanding API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted.html#hello-world">Hello World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GettingStarted.html#import-python-libraries">Import Python Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#how-to-import-5g-toolkit-libraries">How to import 5G Toolkit Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#create-objects-for-all-the-modules">Create Objects for all the Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#generate-payload-bits-and-encode-them">Generate Payload bits and Encode them</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#symbol-mapping-the-encoded-bits">Symbol Mapping the Encoded Bits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#pass-through-awgn-channel">Pass through AWGN Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#demapping-the-symbols">Demapping the Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#detect-error-in-the-blocks">Detect Error in the Blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#compute-bit-and-block-error-rate">Compute Bit and Block Error Rate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#constellation-diagrams-at-the-tx-and-rx">Constellation Diagrams at the Tx and Rx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#link-level-simulation">Link Level Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GettingStarted.html#bit-block-error-rate-performance">Bit/Block Error Rate Performance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="GettingStarted.html#resources-and-scripts">Resources and Scripts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
@@ -679,15 +703,8 @@
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterDensity"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterDensity</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterHeight"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterSize"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterSize</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceLoS</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeLoS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfBS()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfUE()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyLoS</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.force3GPPSpatialConsistencyParameters</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.forceLOS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfRoom</span></code></a></li>
@@ -698,7 +715,6 @@
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutWidth</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.lengthOfIndoorObject</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.maxNumberOfFloors</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minNumberOfFloors</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minUEBSDistance</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfBS</span></code></a></li>
@@ -732,23 +748,17 @@
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgBuildingHeight"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgBuildingHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgStreetWidth"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgStreetWidth</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationDistance</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationType</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d2D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d2D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d3D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d3D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.displayClusters"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.displayClusters()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteAngles"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteAngles</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteDelays"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteDelays</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForInitialPhases</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForLSPs</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForSSPs</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.fc</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.getChannel"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.getChannel()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.hallVolume"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.hallVolume</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.linkStateVec"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.linkStateVec</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locBS"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locUE"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locUE</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.surfaceArea"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.surfaceArea</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.terrain</span></code></a></li>
 </ul>
@@ -1174,6 +1184,7 @@
 <li class="toctree-l4"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#Limitations-of-the-LLRnet:">Limitations of the LLRnet:</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="api/Projects/Project1/learning2Demap.html#References:">References:</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/Projects/Project2/project2.html">Imitation Learning for Position Estimation</a></li>
@@ -1299,6 +1310,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api/License/license.html#content">Content</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference external" href="https://discuss.gigayasa.com/">Discussion Forum</a></li>
 </ul>
 
         </div>
@@ -1489,6 +1501,8 @@
 </li>
       <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id21">clutterSize (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterSize">[1]</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingReceiver.html#toolkit5G.ChannelCoder.LDPC.CodeBlockAggregation">CodeBlockAggregation (class in toolkit5G.ChannelCoder.LDPC)</a>, <a href="api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockSegmentation.html#toolkit5G.ChannelCoder.LDPC.CodeBlockAggregation">[1]</a>
 
       <ul>
@@ -1501,8 +1515,6 @@
         <li><a href="api/5G_Toolkit/ChannelCoder/PolarCoder/channelCoder.polar.components.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation">(class in toolkit5G.ChannelCoder.PolarCoder)</a>, <a href="api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation">[1]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation">[2]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation">[3]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.inputBitInterleaver.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation">[4]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format2_3_4/PUCCHComponents/ChannelCoding/PolarCoder/channelCoder.polar.components.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation">[5]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format2_3_4/PUCCHComponents/CodeBlockConcatenation/physicalChannels.pucch.components.CodeBlockConcatenation.html#toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation">[6]</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.codeblockprocessingTransmitter.html#toolkit5G.ChannelCoder.LDPC.CodeBlockSegmentation">CodeBlockSegmentation (class in toolkit5G.ChannelCoder.LDPC)</a>, <a href="api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockSegmentation.html#toolkit5G.ChannelCoder.LDPC.CodeBlockSegmentation">[1]</a>
 
       <ul>
@@ -1540,18 +1552,6 @@
 </li>
       </ul></li>
       <li><a href="api/5G_Toolkit/ResourceMapping/resourceMapping.coreset.html#toolkit5G.ResourceMapping.CORESET">CORESET (class in toolkit5G.ResourceMapping)</a>
-</li>
-      <li><a href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance">correlationDistance (toolkit5G.ChannelModels.ParameterGenerator property)</a>
-</li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id22">correlationDistanceIndoor (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor">[1]</a>
-</li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id23">correlationDistanceLoS (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS">[1]</a>
-</li>
-      <li><a href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType">correlationType (toolkit5G.ChannelModels.ParameterGenerator property)</a>
-</li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id24">correlationTypeIndoor (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor">[1]</a>
-</li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id25">correlationTypeLoS (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#toolkit5G.PhysicalChannels.PBCHDecoder.crcCheck">crcCheck (toolkit5G.PhysicalChannels.PBCHDecoder property)</a>
 </li>
@@ -1631,9 +1631,9 @@
         <li><a href="api/5G_Toolkit/Positioning/Time_Estimation/positioning.toaEstimation.html#toolkit5G.Positioning.ToAEstimation.display">(toolkit5G.Positioning.ToAEstimation method)</a>
 </li>
       </ul></li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id26">display2DLocationsOfBS() (toolkit5G.ChannelModels.SimulationLayout method)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id22">display2DLocationsOfBS() (toolkit5G.ChannelModels.SimulationLayout method)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS">[1]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id27">display2DLocationsOfUE() (toolkit5G.ChannelModels.SimulationLayout method)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id23">display2DLocationsOfUE() (toolkit5G.ChannelModels.SimulationLayout method)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DTopology">display2DTopology() (toolkit5G.ChannelModels.SimulationLayout method)</a>
 </li>
@@ -1711,18 +1711,8 @@
         <li><a href="api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.ratematching.bitSelection.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.enableLBRM">(toolkit5G.Ratematcher.LDPC.RatematchParameters property)</a>, <a href="api/5G_Toolkit/Ratematcher/LDPC/ratematcher.ldpc.html#toolkit5G.Ratematcher.LDPC.RatematchParameters.enableLBRM">[1]</a>
 </li>
       </ul></li>
-      <li><a href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases">enableSpatialConsistencyForInitialPhases (toolkit5G.ChannelModels.ParameterGenerator property)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs">enableSpatialConsistencyForLSPs (toolkit5G.ChannelModels.ParameterGenerator property)</a>
-</li>
-      <li><a href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs">enableSpatialConsistencyForSSPs (toolkit5G.ChannelModels.ParameterGenerator property)</a>
-</li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id28">enableSpatialConsistencyIndoor (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor">[1]</a>
-</li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id29">enableSpatialConsistencyLoS (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS">[1]</a>
-</li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#toolkit5G.PhysicalChannels.PBCH.encBits">encBits (toolkit5G.PhysicalChannels.PBCH property)</a>
 
       <ul>
@@ -1745,11 +1735,9 @@
         <li><a href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc">(toolkit5G.ChannelModels.ParameterGenerator property)</a>
 </li>
       </ul></li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id30">force3GPPSpatialConsistencyParameters (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters">[1]</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id31">forceLOS (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id24">forceLOS (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format0/ResourceDemappingFormat0.html#toolkit5G.ResourceMapping.ResourceDeMapperFormat0.formatPUCCH">formatPUCCH (toolkit5G.ResourceMapping.ResourceDeMapperFormat0 property)</a>, <a href="api/5G_Toolkit/ResourceMapping/PUCCH/Format0/ResourceDemappingFormat0.html#toolkit5G.ResourceMapping.ResourceDeMapperFormat0.formatPUCCH">[1]</a>
 
@@ -1799,11 +1787,11 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id32">heightOfBS (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id25">heightOfBS (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS">[1]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id33">heightOfRoom (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id26">heightOfRoom (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom">[1]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id34">heightOfUE (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfUE">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id27">heightOfUE (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfUE">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.simulationLayout.HexagonalLayout">HexagonalLayout (class in toolkit5G.ChannelModels.simulationLayout)</a>
 </li>
@@ -1855,7 +1843,7 @@
         <li><a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format1/SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.indexPUCCH">(toolkit5G.SequenceGeneration.PUCCHFormat1Sequence property)</a>, <a href="api/5G_Toolkit/SequenceGeneration/sequenceGeneration.SequenceGenerationFormat1.html#toolkit5G.SequenceGeneration.PUCCHFormat1Sequence.indexPUCCH">[1]</a>
 </li>
       </ul></li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id35">indoorUEfraction (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.indoorUEfraction">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id28">indoorUEfraction (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.indoorUEfraction">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/ChannelModels/nodeMobility.html#toolkit5G.ChannelModels.nodeMobility.CircularRoute.initAngle">initAngle (toolkit5G.ChannelModels.nodeMobility.CircularRoute property)</a>
 </li>
@@ -1961,11 +1949,11 @@
 </li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.layermapping.html#toolkit5G.PhysicalChannels.PDSCH.LayerMapper">LayerMapper (class in toolkit5G.PhysicalChannels.PDSCH)</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id36">layoutLength (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutLength">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id29">layoutLength (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutLength">[1]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id37">layoutType (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutType">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id30">layoutType (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutType">[1]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id38">layoutWidth (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id31">layoutWidth (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/ChannelCoder/LDPC/channelCoder.ldpc.html#toolkit5G.ChannelCoder.LDPCDecoder5G">LDPCDecoder5G (class in toolkit5G.ChannelCoder)</a>, <a href="api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.ldpcCodec.html#toolkit5G.ChannelCoder.LDPCDecoder5G">[1]</a>
 </li>
@@ -1975,7 +1963,7 @@
 </li>
       <li><a href="api/5G_Toolkit/Positioning/Optimization_Algorithms/ToA/positioning.optimization_Algorithms.leastSquareToA.html#toolkit5G.Positioning.LeastSquareToA">LeastSquareToA (class in toolkit5G.Positioning)</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id39">lengthOfIndoorObject (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id32">lengthOfIndoorObject (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.ratematching.bitSelection.html#toolkit5G.Ratematcher.LDPC.BitDeselection.liftingFactor">liftingFactor (toolkit5G.Ratematcher.LDPC.BitDeselection property)</a>, <a href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#toolkit5G.Ratematcher.LDPC.BitDeselection.liftingFactor">[1]</a>
 
@@ -2031,7 +2019,7 @@
       </ul></li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.modulation.symbolMapping.html#toolkit5G.SymbolMapping.Mapper">Mapper (class in toolkit5G.SymbolMapping)</a>, <a href="api/5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.modulation.symbolMapping.html#toolkit5G.SymbolMapping.Mapper">[1]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.modulation.symbolMapping.html#toolkit5G.SymbolMapping.Mapper">[2]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PSBCH/subcomponents/physicalChannels.psbch.components.modulation.symbolMapping.html#toolkit5G.SymbolMapping.Mapper">[3]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.symbolMapping.html#toolkit5G.SymbolMapping.Mapper">[4]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format2_3_4/PUCCHComponents/SymbolMapping/SymbolMapping_/symbolMapping.mapper.html#toolkit5G.SymbolMapping.Mapper">[5]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format2_3_4/PUCCHComponents/SymbolMapping/physicalChannels.pucch.components.modulation.symbolMapping.html#toolkit5G.SymbolMapping.Mapper">[6]</a>, <a href="api/5G_Toolkit/SymbolMapping/symbolMapping.mapper.html#toolkit5G.SymbolMapping.Mapper">[7]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id40">maxNumberOfFloors (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id33">maxNumberOfFloors (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format1/DespreadingFormat1.html#toolkit5G.ResourceMapping.DeSpreadingFormat1.maxNumPRBs">maxNumPRBs (toolkit5G.ResourceMapping.DeSpreadingFormat1 property)</a>, <a href="api/5G_Toolkit/ResourceMapping/PUCCH/Format1/DespreadingFormat1.html#toolkit5G.ResourceMapping.DeSpreadingFormat1.maxNumPRBs">[1]</a>
 
@@ -2055,12 +2043,6 @@
       </ul></li>
       <li><a href="api/5G_Toolkit/ChannelProcessing/channelProcessing.applyChannel.html#toolkit5G.ChannelProcessing.ApplyChannel.memoryConsumptionLevel">memoryConsumptionLevel (toolkit5G.ChannelProcessing.ApplyChannel property)</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient">memoryEfficient (toolkit5G.ChannelModels.ParameterGenerator property)</a>
-
-      <ul>
-        <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id41">(toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient">[1]</a>
-</li>
-      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#toolkit5G.PhysicalChannels.PBCH.mib">mib (toolkit5G.PhysicalChannels.PBCH property)</a>
@@ -2071,9 +2053,9 @@
 </li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pbch.html#toolkit5G.PhysicalChannels.PBCHDecoder.mibRx">mibRx (toolkit5G.PhysicalChannels.PBCHDecoder property)</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id42">minNumberOfFloors (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id34">minNumberOfFloors (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors">[1]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id43">minUEBSDistance (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id35">minUEBSDistance (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/ChannelModels/nodeMobility.html#toolkit5G.ChannelModels.nodeMobility.CircularRoute.minVelocity">minVelocity (toolkit5G.ChannelModels.nodeMobility.CircularRoute property)</a>
 
@@ -2237,7 +2219,7 @@
         <li><a href="api/5G_Toolkit/ChannelModels/nodeMobility.html#toolkit5G.ChannelModels.nodeMobility.RandomWalk.numNodes">(toolkit5G.ChannelModels.nodeMobility.RandomWalk property)</a>
 </li>
       </ul></li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id44">numOfBS (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id36">numOfBS (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format0/ResourceDemappingFormat0.html#toolkit5G.ResourceMapping.ResourceDeMapperFormat0.numOfInterlaces">numOfInterlaces (toolkit5G.ResourceMapping.ResourceDeMapperFormat0 property)</a>, <a href="api/5G_Toolkit/ResourceMapping/PUCCH/Format0/ResourceDemappingFormat0.html#toolkit5G.ResourceMapping.ResourceDeMapperFormat0.numOfInterlaces">[1]</a>
 
@@ -2249,11 +2231,11 @@
         <li><a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format1/ResourceMappingFormat1.html#toolkit5G.ResourceMapping.ResourceMapperFormat1.numOfInterlaces">(toolkit5G.ResourceMapping.ResourceMapperFormat1 property)</a>, <a href="api/5G_Toolkit/ResourceMapping/PUCCH/Format1/ResourceMappingFormat1.html#toolkit5G.ResourceMapping.ResourceMapperFormat1.numOfInterlaces">[1]</a>
 </li>
       </ul></li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id45">numOfSectorsPerSite (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfSectorsPerSite">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id37">numOfSectorsPerSite (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfSectorsPerSite">[1]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id46">numOfSnapShots (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfSnapShots">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id38">numOfSnapShots (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfSnapShots">[1]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id47">numOfUE (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfUE">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id39">numOfUE (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfUE">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format0/ResourceDemappingFormat0.html#toolkit5G.ResourceMapping.ResourceDeMapperFormat0.numRBs">numRBs (toolkit5G.ResourceMapping.ResourceDeMapperFormat0 property)</a>, <a href="api/5G_Toolkit/ResourceMapping/PUCCH/Format0/ResourceDemappingFormat0.html#toolkit5G.ResourceMapping.ResourceDeMapperFormat0.numRBs">[1]</a>
 
@@ -2425,7 +2407,7 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id48">radiusForCircularUEDrop (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.radiusForCircularUEDrop">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id40">radiusForCircularUEDrop (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.radiusForCircularUEDrop">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/ChannelModels/nodeMobility.html#toolkit5G.ChannelModels.nodeMobility.CircularRoute.radiusMax">radiusMax (toolkit5G.ChannelModels.nodeMobility.CircularRoute property)</a>
 </li>
@@ -2501,7 +2483,7 @@
       </ul></li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.rnti.rnti.html#toolkit5G.Scrambler.RNTImasking">RNTImasking (class in toolkit5G.Scrambler)</a>, <a href="api/5G_Toolkit/PhysicalChannels/PDCCH/subcomponents/physicalChannels.pdcch.components.rnti.rnti.html#toolkit5G.Scrambler.RNTImasking">[1]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.rnti.rnti.html#toolkit5G.Scrambler.RNTImasking">[2]</a>, <a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format2_3_4/PUCCHComponents/Scrambler/Scrambler/scrambler.rntiMasking.html#toolkit5G.Scrambler.RNTImasking">[3]</a>, <a href="api/5G_Toolkit/Scrambler/scrambler.rntiMasking.html#toolkit5G.Scrambler.RNTImasking">[4]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id49">routeType (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.routeType">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id41">routeType (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.routeType">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/PDSCH/subcomponents/physicalChannels.pdsch.components.ratematching.bitSelection.html#toolkit5G.Ratematcher.LDPC.BitDeselection.rvID">rvID (toolkit5G.Ratematcher.LDPC.BitDeselection property)</a>, <a href="api/5G_Toolkit/Ratematcher/LDPC/BitSelection/ratematcher.ldpc.bitSelection.html#toolkit5G.Ratematcher.LDPC.BitDeselection.rvID">[1]</a>
 
@@ -2682,7 +2664,7 @@
       <li><a href="api/5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain">terrain (toolkit5G.ChannelModels.ParameterGenerator property)</a>
 
       <ul>
-        <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id50">(toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.terrain">[1]</a>
+        <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id42">(toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.terrain">[1]</a>
 </li>
       </ul></li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/PUCCH/Format1/DespreadingFormat1.html#toolkit5G.ResourceMapping.DeSpreadingFormat1.timedomainOCC">timedomainOCC (toolkit5G.ResourceMapping.DeSpreadingFormat1 property)</a>, <a href="api/5G_Toolkit/ResourceMapping/PUCCH/Format1/DespreadingFormat1.html#toolkit5G.ResourceMapping.DeSpreadingFormat1.timedomainOCC">[1]</a>
@@ -2717,11 +2699,11 @@
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id51">ueAntennaArray (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.ueAntennaArray">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id43">ueAntennaArray (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.ueAntennaArray">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id14">UEdistibution (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.UEdistibution">[1]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id52">ueDropMethod (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.ueDropMethod">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id44">ueDropMethod (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.ueDropMethod">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -2729,7 +2711,7 @@
 </li>
       <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id13">UELocations (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.UELocations">[1]</a>
 </li>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id53">ueRoute (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.ueRoute">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id45">ueRoute (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.ueRoute">[1]</a>
 </li>
       <li><a href="api/5G_Toolkit/PhysicalChannels/physicalChannels.pdcch.html#toolkit5G.PhysicalChannels.PDCCHDecoder.unmaskedBits">unmaskedBits (toolkit5G.PhysicalChannels.PDCCHDecoder property)</a>
 </li>
@@ -2739,7 +2721,7 @@
 <h2 id="W">W</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id54">widthOfIndoorObject (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.widthOfIndoorObject">[1]</a>
+      <li><a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#id46">widthOfIndoorObject (toolkit5G.ChannelModels.SimulationLayout property)</a>, <a href="api/5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.widthOfIndoorObject">[1]</a>
 </li>
   </ul></td>
 </tr></table>

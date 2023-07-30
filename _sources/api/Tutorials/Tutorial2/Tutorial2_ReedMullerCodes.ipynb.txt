@@ -341,13 +341,6 @@
     }
    ],
    "source": [
-    "BER = np.zeros((K.size, SNR.size))\n",
-    "for i in range(66):\n",
-    "    ds = np.load(\"Database/BERvsSNR\"+str(i)+\".npz\")\n",
-    "    BER = BER + ds['BER']\n",
-    "    \n",
-    "BER = BER/66\n",
-    "\n",
     "fig, ax = plt.subplots()\n",
     "\n",
     "color_tuple     = ['blue', 'orange', 'green',   'red',    'purple', 'brown',       'pink',  'gray', 'olive', 'cyan', 'black']\n",

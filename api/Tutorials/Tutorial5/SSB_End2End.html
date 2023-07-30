@@ -8,6 +8,7 @@
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/nbsphinx-code-cells.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/gigayasa.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -59,15 +60,37 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install 5G Toolkit</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#how-to-install-5g-toolkit">How to install 5G Toolkit:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#system-requirements">System Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-5g-toolkit-on-ubuntu-20-04-22-04-and-windows-10-11">Install 5G Toolkit on Ubuntu (20.04/22.04) and Windows (10/11)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#dependent-libraries">Dependent Libraries:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#detailed-installation-procedure">Detailed Installation Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#system-requirements">System Requirements:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#dependent-libraries">Dependent Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-miniconda">Install Miniconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#install-jupyter-notebook">Install Jupyter Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#id3">Install 5G Toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#final-confirmation">Final Confirmation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#license-5g-toolkit">License 5G Toolkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#activate-the-5g-toolkit-license">Activate the 5G Toolkit License</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#video-tutorial-installation-on-ubuntu">Video Tutorial: Installation on Ubuntu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../install.html#video-tutorial-installation-on-window">Video Tutorial: Installation on Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../install.html#installation-tutorial-video">Installation Tutorial: Video</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../GettingStarted.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../GettingStarted.html#understanding-api-documentation">Understanding API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../GettingStarted.html#hello-world">Hello World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../GettingStarted.html#import-python-libraries">Import Python Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#how-to-import-5g-toolkit-libraries">How to import 5G Toolkit Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#create-objects-for-all-the-modules">Create Objects for all the Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#generate-payload-bits-and-encode-them">Generate Payload bits and Encode them</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#symbol-mapping-the-encoded-bits">Symbol Mapping the Encoded Bits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#pass-through-awgn-channel">Pass through AWGN Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#demapping-the-symbols">Demapping the Symbols</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#detect-error-in-the-blocks">Detect Error in the Blocks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#compute-bit-and-block-error-rate">Compute Bit and Block Error Rate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#constellation-diagrams-at-the-tx-and-rx">Constellation Diagrams at the Tx and Rx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#link-level-simulation">Link Level Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../GettingStarted.html#bit-block-error-rate-performance">Bit/Block Error Rate Performance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../GettingStarted.html#resources-and-scripts">Resources and Scripts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../5G_Toolkit/5Gtoolkit.html">API Documentation</a><ul>
@@ -685,15 +708,8 @@
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterDensity"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterDensity</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterHeight"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.clutterSize"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.clutterSize</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationDistanceLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationDistanceLoS</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.correlationTypeLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.correlationTypeLoS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfBS()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.display2DLocationsOfUE"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.display2DLocationsOfUE()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyIndoor"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyIndoor</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.enableSpatialConsistencyLoS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.enableSpatialConsistencyLoS</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.force3GPPSpatialConsistencyParameters"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.force3GPPSpatialConsistencyParameters</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.forceLOS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.forceLOS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.heightOfRoom"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.heightOfRoom</span></code></a></li>
@@ -704,7 +720,6 @@
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.layoutWidth"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.layoutWidth</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.lengthOfIndoorObject"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.lengthOfIndoorObject</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.maxNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.maxNumberOfFloors</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minNumberOfFloors"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minNumberOfFloors</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.minUEBSDistance"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.minUEBSDistance</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/simulationLayout.html#toolkit5G.ChannelModels.SimulationLayout.numOfBS"><code class="docutils literal notranslate"><span class="pre">SimulationLayout.numOfBS</span></code></a></li>
@@ -738,23 +753,17 @@
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgBuildingHeight"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgBuildingHeight</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.avgStreetWidth"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.avgStreetWidth</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationDistance"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationDistance</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.correlationType"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.correlationType</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d2D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d2D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.d3D"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.d3D</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.displayClusters"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.displayClusters()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteAngles"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteAngles</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableAbsoluteDelays"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableAbsoluteDelays</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForInitialPhases"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForInitialPhases</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForLSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForLSPs</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.enableSpatialConsistencyForSSPs"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.enableSpatialConsistencyForSSPs</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.fc"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.fc</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.getChannel"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.getChannel()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.hallVolume"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.hallVolume</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.linkStateVec"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.linkStateVec</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locBS"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locBS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.locUE"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.locUE</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.memoryEfficient"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.memoryEfficient</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.surfaceArea"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.surfaceArea</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../5G_Toolkit/ChannelModels/parameterGenerator.html#toolkit5G.ChannelModels.ParameterGenerator.terrain"><code class="docutils literal notranslate"><span class="pre">ParameterGenerator.terrain</span></code></a></li>
 </ul>
@@ -1180,6 +1189,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../Projects/Project1/learning2Demap.html#Limitations-of-the-LLRnet:">Limitations of the LLRnet:</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../Projects/Project1/learning2Demap.html#References:">References:</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../Projects/Project2/project2.html">Imitation Learning for Position Estimation</a></li>
@@ -1305,6 +1315,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../License/license.html#content">Content</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference external" href="https://discuss.gigayasa.com/">Discussion Forum</a></li>
 </ul>
 
         </div>
@@ -1473,7 +1484,7 @@
 <span class="c1">## This class fetches valid set of 5G parameters for the system configurations</span>
 <span class="n">tfParams</span>    <span class="o">=</span> <span class="n">TimeFrequency5GParameters</span><span class="p">(</span><span class="n">bandwidthTx</span><span class="p">,</span> <span class="n">scs</span><span class="p">)</span>
 <span class="n">tfParams</span><span class="p">(</span><span class="n">nSymbolFrame</span><span class="p">,</span> <span class="n">typeCP</span> <span class="o">=</span> <span class="s2">&quot;normal&quot;</span><span class="p">)</span>
-<span class="n">nRB</span>         <span class="o">=</span> <span class="n">tfParams</span><span class="o">.</span><span class="n">N_RB</span>        <span class="c1"># SSB Grid size (Number of RBs considered for SSB transition)</span>
+<span class="n">nRB</span>         <span class="o">=</span> <span class="n">tfParams</span><span class="o">.</span><span class="n">numRBs</span>        <span class="c1"># SSB Grid size (Number of RBs considered for SSB transition)</span>
 <span class="n">Neff</span>        <span class="o">=</span> <span class="n">tfParams</span><span class="o">.</span><span class="n">Neff</span>        <span class="c1"># Number of resource blocks for Resource Grid ( exclude gaurd band | offsets : BWP)</span>
 <span class="n">Nfft</span>        <span class="o">=</span> <span class="mi">512</span>                 <span class="c1"># FFT-size for OFDM</span>
 <span class="n">lengthCP</span>    <span class="o">=</span> <span class="n">tfParams</span><span class="o">.</span><span class="n">lengthCP</span>    <span class="c1"># CP length</span>
@@ -1756,8 +1767,7 @@ by the UE.</p></td>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_19_0.png" src="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_19_0.png" />
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "f84d94f8d26e40e9a4916af6f562b1e8", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <section id="Construct-SSB-Grid">
 <h3>Construct SSB Grid<a class="headerlink" href="#Construct-SSB-Grid" title="Permalink to this heading"></a></h3>
@@ -1795,8 +1805,7 @@ by the UE.</p></td>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_21_0.png" src="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_21_0.png" />
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3ba5c3c4631441c4932513bb5b6fe6bb", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="Mapping-SSB-to-Transmission-Grid-for-ODFM">
@@ -1845,8 +1854,7 @@ by the UE.</p></td>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_23_0.png" src="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_23_0.png" />
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e03f13e7b26f4c2d9dbafb9863ddf2b4", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="OFDM-Modulator">
@@ -2028,8 +2036,13 @@ by the UE.</p></td>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_29_1.png" src="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_29_1.png" />
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "52033b5f037d4b1c8ed6d2f6e35532b2", "version_major": 2, "version_minor": 0}</script></div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "52033b5f037d4b1c8ed6d2f6e35532b2", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -2072,7 +2085,7 @@ by the UE.</p></td>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(1, 1, 1, 1, 5103, 8)
+(1, 1, 1, 1, 9695, 8)
 </pre></div></div>
 </div>
 </section>
@@ -2142,8 +2155,8 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 <span class="c1"># pssDetection   = PSSDetection(&quot;correlation&quot;, &quot;threshold&quot;)</span>
 <span class="n">pssDetection</span>   <span class="o">=</span> <span class="n">PSSDetection</span><span class="p">(</span><span class="s2">&quot;largestPeak&quot;</span><span class="p">)</span>
 <span class="n">ssboffset</span>      <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">Nfft</span><span class="o">-</span><span class="n">Neff</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">ssbRGobject</span><span class="o">.</span><span class="n">startingSubcarrierIndices</span><span class="p">)</span>
-<span class="n">pssPeakIndices</span><span class="p">,</span> <span class="n">pssCorrelation</span><span class="p">,</span> <span class="n">rN_ID2</span><span class="p">,</span> <span class="n">freqOffset</span> <span class="o">=</span> <span class="n">pssDetection</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">Nfft</span><span class="p">,</span> <span class="n">lengthCP</span> <span class="o">=</span> <span class="n">lengthCP</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                                                                  <span class="n">N_ID2</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">freqOffset</span> <span class="o">=</span> <span class="n">ssboffset</span><span class="p">)</span>
+<span class="n">pssPeakIndices</span><span class="p">,</span> <span class="n">pssCorrelation</span><span class="p">,</span> <span class="n">rN_ID2</span><span class="p">,</span> <span class="n">freqOffset</span> <span class="o">=</span> <span class="n">pssDetection</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Nfft</span><span class="p">,</span> <span class="n">lengthCP</span> <span class="o">=</span> <span class="n">lengthCP</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                                                  <span class="n">nID2</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">freqOffset</span> <span class="o">=</span> <span class="n">ssboffset</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2182,8 +2195,7 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_41_0.png" src="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_41_0.png" />
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "dab17727435d49c99957ae7972152d1c", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="OFDM-Demodulation:-Resource-Grid-reconstruction">
@@ -2201,28 +2213,11 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 </pre></div>
 </div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rxGrid</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-(4, 512)
-</pre></div></div>
-</div>
 </section>
 <section id="SSB-Extaction-from-Resource-Grid">
 <h3>SSB Extaction from Resource Grid<a class="headerlink" href="#SSB-Extaction-from-Resource-Grid" title="Permalink to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ssbSCSoffset</span>   <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">Nfft</span><span class="o">-</span><span class="n">Neff</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">ssbRGobject</span><span class="o">.</span><span class="n">startingSubcarrierIndices</span><span class="p">)</span>
@@ -2234,7 +2229,7 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 <section id="Comparing-Transmitted-and-Received-SSB-Grid">
 <h3>Comparing Transmitted and Received SSB Grid<a class="headerlink" href="#Comparing-Transmitted-and-Received-SSB-Grid" title="Permalink to this heading"></a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot SSB</span>
@@ -2253,14 +2248,13 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_48_0.png" src="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_48_0.png" />
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5009ec596ed149429dff25900f9f3b23", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="Spectrum-Analysis">
 <h3>Spectrum Analysis<a class="headerlink" href="#Spectrum-Analysis" title="Permalink to this heading"></a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot SSB</span>
@@ -2285,17 +2279,16 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_50_0.png" src="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_50_0.png" />
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "81fd0bdc10f84b478ff4ed830b581098", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="(SSS-Detection:-PSS-channel-assisted)-+-Cell-ID-estimation">
 <h3>(SSS Detection: PSS channel assisted) + Cell-ID estimation<a class="headerlink" href="#(SSS-Detection:-PSS-channel-assisted)-+-Cell-ID-estimation" title="Permalink to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sssDetection</span>   <span class="o">=</span> <span class="n">SSSDetection</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;channelAssisted&quot;</span><span class="p">,</span> <span class="n">N_ID2</span><span class="o">=</span><span class="n">rN_ID2</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sssDetection</span>   <span class="o">=</span> <span class="n">SSSDetection</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;channelAssisted&quot;</span><span class="p">,</span> <span class="n">nID2</span><span class="o">=</span><span class="n">rN_ID2</span><span class="p">)</span>
 <span class="n">rN_ID1</span>         <span class="o">=</span> <span class="n">sssDetection</span><span class="p">(</span><span class="n">ssbEstimate</span><span class="p">)</span>
 <span class="n">rN_ID</span>          <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">rN_ID1</span> <span class="o">+</span> <span class="n">rN_ID2</span>
 </pre></div>
@@ -2305,7 +2298,7 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 <section id="DMRS-Parameters-Detection-+-DMRS-Sequence-Generation">
 <h3>DMRS Parameters Detection + DMRS Sequence Generation<a class="headerlink" href="#DMRS-Parameters-Detection-+-DMRS-Sequence-Generation" title="Permalink to this heading"></a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Generate SSB object to get DMRS and PBCH Indices</span>
@@ -2313,7 +2306,7 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 <span class="n">rxDMRSIndices</span>  <span class="o">=</span> <span class="n">rxSSBobject</span><span class="o">.</span><span class="n">dmrsIndices</span>
 
 <span class="c1">## Generate DMRS sequence</span>
-<span class="n">dmrsDetection</span>  <span class="o">=</span> <span class="n">DMRSParameterDetection</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">rN_ID</span><span class="p">),</span> <span class="n">nssbCandidatesInHrf</span><span class="p">,</span> <span class="n">dmrsLen</span><span class="p">)</span>
+<span class="n">dmrsDetection</span>  <span class="o">=</span> <span class="n">DMRSParameterDetection</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">rN_ID</span><span class="p">),</span> <span class="n">nssbCandidatesInHrf</span><span class="p">)</span>
 <span class="n">rssbIndex</span><span class="p">,</span> <span class="n">rHrfBit</span> <span class="o">=</span> <span class="n">dmrsDetection</span><span class="p">(</span><span class="n">ssbEstimate</span><span class="p">)</span>
 <span class="n">rxDMRSobject</span>   <span class="o">=</span> <span class="n">DMRS</span><span class="p">(</span><span class="s2">&quot;PBCH&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">rN_ID</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">rssbIndex</span><span class="p">),</span> <span class="n">nssbCandidatesInHrf</span><span class="p">,</span> <span class="n">rHrfBit</span><span class="p">)</span>
 <span class="n">rxDMRSseq</span>      <span class="o">=</span> <span class="n">rxDMRSobject</span><span class="p">(</span><span class="n">dmrsLen</span><span class="p">)</span>
@@ -2344,7 +2337,7 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 </tbody>
 </table>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Estimating the channel at DMRS (t-f) location, interpolting for data (t-f) location and equalizing the symbols</span>
@@ -2360,7 +2353,7 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 <section id="Constellation-Diagram:-Rx">
 <h2>Constellation Diagram: Rx<a class="headerlink" href="#Constellation-Diagram:-Rx" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -2382,15 +2375,14 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_58_0.png" src="../../../_images/api_Tutorials_Tutorial5_SSB_End2End_58_0.png" />
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "06d65ebb31624fe5a6bd4a4c51a11f97", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <section id="PBCH-Decoding">
 <h3>PBCH Decoding<a class="headerlink" href="#PBCH-Decoding" title="Permalink to this heading"></a></h3>
 <p>PBCH decoder extract the MIB and ATI payload bits from the estimated/equalized symbols.</p>
 <p>Implementation of PBCH is detailed below:</p>
 <img alt="PBCHRxChain" src="../../../_images/PBCHChain.svg" /><div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## PBCH Chain for Decoding information</span>
@@ -2409,12 +2401,11 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/tenet/Downloads/Packages/5G_Toolkit/version12/Tutorials/Simulations/Tutorial-5 [SSB]/../../../toolkit5G/ChannelCoder/PolarCoder/polarDecoder.py:494: UserWarning: Required ressource allocation is large for the selected blocklength. Consider option `cpu_only=True`.
-  warnings.warn(&#34;Required ressource allocation is large &#34; \
+&lt;frozen toolkit5G.ChannelCoder.PolarCoder.polarDecoder&gt;:494: UserWarning: Required ressource allocation is large for the selected blocklength. Consider option `cpu_only=True`.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">check</span><span class="p">)):</span>
@@ -2436,7 +2427,7 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 <section id="Information-Aggregation">
 <h3>Information Aggregation<a class="headerlink" href="#Information-Aggregation" title="Permalink to this heading"></a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pbchDecoder</span><span class="o">.</span><span class="n">mibRx</span><span class="o">.</span><span class="n">displayParameters</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -2451,20 +2442,20 @@ Decoding - Decode MIB parameters - Decode ATI Parameters</p>
 Carrier Frequency:      3600000000.0
 ChoiceBit:              0
 nSsbCandidatesInHrf:    8
-subCarrierSpacingCommon:30000
+subCarrierSpacingCommon:15000
 DMRSTypeAPosition:      typeA
-controlResourceSet0:    1
-searchSpace0:           13
-cellBarred:             barred
-intraFreqReselection:   notAllowed
-systemFrameNumber:      644
+controlResourceSet0:    5
+searchSpace0:           7
+cellBarred:             notBarred
+intraFreqReselection:   allowed
+systemFrameNumber:      703
 ssbSubCarrierOffset:    2
 HRFBit:                 0
 iSSBindex:              0
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pbchObject</span><span class="o">.</span><span class="n">mib</span><span class="o">.</span><span class="n">displayParameters</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -2479,13 +2470,13 @@ iSSBindex:              0
 Carrier Frequency:      3600000000.0
 ChoiceBit:              0
 nSsbCandidatesInHrf:    8
-subCarrierSpacingCommon:30000
+subCarrierSpacingCommon:15000
 DMRSTypeAPosition:      typeA
-controlResourceSet0:    1
-searchSpace0:           13
-cellBarred:             barred
-intraFreqReselection:   notAllowed
-systemFrameNumber:      644
+controlResourceSet0:    5
+searchSpace0:           7
+cellBarred:             notBarred
+intraFreqReselection:   allowed
+systemFrameNumber:      703
 ssbSubCarrierOffset:    2
 HRFBit:                 0
 iSSBindex:              0
@@ -2498,7 +2489,7 @@ iSSBindex:              0
 <section id="Cell-IDs-Detection">
 <h3>Cell-IDs Detection<a class="headerlink" href="#Cell-IDs-Detection" title="Permalink to this heading"></a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">rN_ID</span> <span class="o">==</span> <span class="n">N_ID</span><span class="p">):</span>
@@ -2522,7 +2513,7 @@ iSSBindex:              0
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rN_ID1</span><span class="p">,</span> <span class="n">N_ID1</span>
@@ -2530,19 +2521,19 @@ iSSBindex:              0
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(3, 3)
+(142, 142)
 </pre></div></div>
 </div>
 </section>
 <section id="DMRS-Parameter-Detection">
 <h3>DMRS Parameter Detection<a class="headerlink" href="#DMRS-Parameter-Detection" title="Permalink to this heading"></a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">rssbIndex</span> <span class="o">==</span> <span class="n">ssbIndex</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
@@ -2564,7 +2555,7 @@ iSSBindex:              0
 <section id="BER-computation">
 <h3>BER computation<a class="headerlink" href="#BER-computation" title="Permalink to this heading"></a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Computing BER: Coded and Uncoded</span>
@@ -2586,7 +2577,7 @@ iSSBindex:              0
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
- (uncoded-BER, codedBER): (0.004629629629629629, 0.0)
+ (uncoded-BER, codedBER): (0.0023148148148148147, 0.0)
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
