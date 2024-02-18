@@ -1,3 +1,0 @@
-Estimating Channel and Decoding PBCH in 5G Networks
-===================================================
-Hello1

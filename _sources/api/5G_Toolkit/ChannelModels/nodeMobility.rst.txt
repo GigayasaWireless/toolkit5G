@@ -5,17 +5,12 @@ Node Mobility
 
 
 This module provides classes and the functions that implements Node Mobility.
-The class :class:`NodeMobility` implement the mobility of each node in the simulation.
-A call to a method :method:`displayRoute` displays the node route after instantiating this class and creating an object. 
+The class :class:`NodeMobility` implement the mobility of each node in the simulation. 
 
 
 .. autoclass:: toolkit5G.ChannelModels.NodeMobility
    :members:
    :exclude-members: call, build
-
-
-.. automethod:: toolkit5G.ChannelModels.nodeMobility.nodeMobility.NodeMobility.displayRoute
-    :noindex:   
 
 
 .. _Mobility-Models:
@@ -24,7 +19,7 @@ Mobility Models
 ---------------
 
 This module provides classes and functions that implement different types of mobility models to support node mobility.
-Current implementation support three mobility models namely Random-Walk, Circular and Highway drops.
+Current implementation support three mobility models namely Random-Walk , Circular and Highway drops.
 Classes :class:`RandomWalk` implement Random-Walk, :class:`CircularRoute` implement Circular route and :class:`DropVehiclesHighway` implements vehicle drops
 in highway respectively.
 

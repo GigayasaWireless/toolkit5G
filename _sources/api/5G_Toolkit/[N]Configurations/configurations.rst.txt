@@ -1,0 +1,36 @@
+5G Configurations
+==================
+5G physical layer implementation is controlled by radio resource controller and MAC scheduler using various RRC and non-
+RRC parameters which influences the 5G network performance. These parameters can be very large in number and overwhelming
+for the users select and pass for simulations. Hence, 5G-Toolkit provides configuration APIs to generate a valid set of
+parameters for simulating the relevant chains and procedures. The users can pass the parameters of their interest and the
+APIs select/returns the remaining parameters from a valid set of configurations which complies with 5G standards.
+
+.. important::
+    Current, version of toolkit-5G provides configurations for following chains and reference signals:
+        - Channel state information reference signals (CSI-RS).
+        - Sounding reference signal (SRS).
+        - Time frequency configurations which covers parameters related to:
+            - Frame structure,
+            - Numerology and bandwidth,
+            - Sampling rate and OFDM.
+        - SSB/PBCH
+        - Physical Downlink Shared Channel (PDSCH) and DMRS-PDSCH.
+            - Separately for upper physical layer and lower physical layer chains.
+
+.. note::
+    The un-configured parameters are selected randomly from a valid set of possible values.
+
+** Table of Content **
+
+
+.. toctree::
+    :maxdepth: 1
+
+    configurations.csiConfiguration
+    configurations.generateValidSSBParameters
+    configurations.pdschLowerPhyConfiguration
+    configurations.pdschUpperPhyConfiguration
+    configurations.srsConfiguration
+    configurations.ssbConfiguration
+    configurations.timeFrequency_5GParameters

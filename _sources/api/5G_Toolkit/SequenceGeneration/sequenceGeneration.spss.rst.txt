@@ -1,11 +1,11 @@
-Sidelink Primary Synchronization Signal
-########################################
+Primary Synchronization Signal for Sidelink (S-PSS)
+#####################################################
 The sidelink primary synchronization signal (S-PSS) is a m-sequence of length 127 generated using :math:`N_{ID,2}^{SL}`.
 It is used for time synchronization which aims to find the slot boundary by the user equipment (UE). The :math:`N_{ID,2}^{SL}`
 provides a cyclic shift to a base sequence as defined in [3GPPTS38211_S_PSS]_.
 
 ..  important::
-    * S-PSS is an constituent of sidelink synchronization signal block (S-SSB). It is loaded in the middle 127 subcarrier (across frequency) of :math:`2^\text{th}` and :math:`3^\text{th}` symbol of the S-SSB.
+    * S-PSS is an constituent of sidelink synchronization signal block (SSB). It is loaded in the middle 127 sub-carrier (across frequency) of second and third symbol of the S-SSB.
 
 The sidelink primary synchronization signal is generated as follows:
 

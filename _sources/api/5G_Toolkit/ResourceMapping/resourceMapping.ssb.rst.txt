@@ -114,11 +114,7 @@ implementation is provided below.
 
 .. autoclass:: toolkit5G.ResourceMapping.SSB_Grid
    :members:
-   :exclude-members: call, build, displayGrid
-
-
-.. automethod:: toolkit5G.ResourceMapping.SSB_Grid.displayGrid
-    :noindex:
+   :exclude-members: call, build
 
 
 References:

@@ -1,0 +1,232 @@
+
+Code-Books
+==========
+
+This is the module which provides functions and classes that implement DFT based Code-Books.
+Current implementation supports Type-I codebook based precoder or beamformer.
+
+
+
+Type-1 Code-Book
+----------------
+
+This module provides classes and the functions that implements Type-I CodeBook based precoder specified in sections 5.2.2.2.1,2 of TS 28.214.
+
+- The class :class:`TypeICodeBook` allows the users to precode the Tx data corresponding to PDSCH with Type-I Codebook based precoder.
+
+- A precoder `IdealPrecoder`, which is to be approximated is passed as an input to the object of this class and beam indices have been estimated using an algorithm.
+  Current implementation supports an algorithm named `SearchFree` and the class which implements this algorithm is :class:`SearchFree` [sf]_ .
+
+- Computed beam indices have been mapped to Precoder Matrix Indicator (PMI), which identifies a precoding matrix from a predefined codebook for the specified rank.
+
+- A Full Dimensional MIMO system employing a 2-dimensional panel array at the Base Station (BS) side is considered, with :math:`N1` horizontal atennas and :math:`N2` vertical antennas.
+  Dual polarized antennas have been considered, with :math:`P = 2`.
+  Thus, the total number of transmit antenna ports seen by a UE in downlink assuming single panel antenna structure at Base Station is :math:`N1*N2*P`.
+  For multi panel antenna structure, the number of transmit antenna ports is :math:`Ng*N1*N2*P`, where :math:`Ng` denotes the number of panel in vertical direction.
+
+- For a complex valued MIMO channel matrix :math:`H` of dimension :math:`Nr\times(N1*N2*P)`, (where :math:`Nr` denoted the number of UE antenna), BS pre-multiplies its transmitted data by a complex valued precoding matrix **W**
+  of dimension :math:`(N1*N2*P) \times L`, where :math:`L` denotes the transmisson rank or the number of data layers. 
+
+
+
+
+.. list-table:: Arrangement of Type-I Single Panel assuming that Tx support atleast 4 CSI-RS ports.
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Number of Layers
+     - Mode "1"
+     - Mode "2"
+     - Mode "1-2"
+   * - 1
+     - ✅
+     - ✅
+     - ❌
+   * - 2
+     - ✅
+     - ✅
+     - ❌
+   * - 3
+     - ❌
+     - ❌
+     - ✅
+   * - 4
+     - ❌
+     - ❌
+     - ✅
+   * - 5
+     - ❌
+     - ❌
+     - ✅
+   * - 6
+     - ❌
+     - ❌
+     - ✅
+   * - 7
+     - ❌
+     - ❌
+     - ✅
+   * - 8
+     - ❌
+     - ❌
+     - ✅            
+
+
+
+.. list-table:: Arrangement of Type-I Multi Panel assuming that the Tx support atleast 8 CSI-RS ports
+   :widths: 25 25 25
+   :header-rows: 1
+
+   * - Number of Layers
+     - Mode "1"
+     - Mode "2"
+   * - 1
+     - ✅
+     - ✅
+   * - 2
+     - ✅
+     - ✅
+   * - 3
+     - ✅
+     - ✅
+   * - 4
+     - ✅
+     - ✅
+
+   
+
+.. note::
+  
+  - For 4 or more ports and if the transmitted number of layers are either 1 or 2 (i.e., for rank 1 or rank 2), code book is divided in to two modes *mode "1"* and *mode "2"*.
+  - mode "1" corresponds to selecting one beam group from a set of oversampled dft beam groups.
+  - mode "2" correspond to selecting 4 beam groups respectively. [3GPPTS38214Type1CB]_  
+
+
+
+
+
+.. autoclass:: toolkit5G.MIMOProcessing.TypeICodeBook
+    :members:
+    :exclude-members: call, build
+    
+    
+
+.. autoclass:: toolkit5G.MIMOProcessing.SearchFree
+    :members:
+    :exclude-members: call, build   
+
+
+
+**Example:** 
+
+The following code snippet shows the use of type-I codebook based precoder at a carrier frequency of 3.6 GHz with a scs of 15 KHz.
+24 resouce blocks (RBs) and FFT size of 1024 have been considered for simulation.
+Number of transmitted layers are 5 under :math:`8\times32` MIMO system (i.e., 8 Rx antenna ports and 32 Tx antenna ports).
+Precoder is applied at sub-band level with a sub-band size of 4 RBs. 
+
+
+
+.. code-block:: Python
+
+    #######################################
+    #Importing necessary Python Libraries
+    #######################################
+    import os
+    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+
+    %matplotlib widget
+    import matplotlib.pyplot  as plt
+    import matplotlib.patches as mpatches
+    import matplotlib as mpl
+
+    import numpy      as np
+
+    ############################
+    #Importing toolkit5G modules
+    ############################
+
+    import toolkit5G 
+    from toolkit5G.MIMOProcessing  import TypeICodeBook
+
+    ########################
+    ## Simulation Parameters
+    ########################
+    
+    carrierFrequency = 3.6*10**9     # Carrier Frequency
+    numBatches       = 10            # Number of batches considered for simulation
+    scs              = 15*10**3      # Subcarrier Spacing for simulation
+    numRB            = 24            # Number of Resource mapping considered for simulation
+    Nfft             = 1024          # FFT Size 
+    bwpOffset        = np.random.randint(Nfft-numRB*12)
+    rank             = 5
+
+    #################################
+    # Antenna Structure at BS and UE
+    #################################
+    txAntStruture = np.array([1,1,4,4,2]) # Tx or BS Antenna Structure
+    rxAntStruture = np.array([1,1,2,2,2]) # Rx or UE Antenna Structure
+    ################################Sub-Band Channel and SVD Based SubBand Precoding########################################################################################################################
+    subBandSize      = 4 # sub-band size in PRBs
+    numSubBands      = int(numRB/subBandSize) # Number of Sub-Band Channels
+    subBandSCIndices = np.arange(bwpOffset, bwpOffset + numSubBands*subBandSize*12).reshape(numSubBands,-1) # Sub-Carrier indices corresponding to each sub-band
+    
+    ######################
+    # Digital Beamforming
+    ######################
+    [U, S, Vh] = np.linalg.svd(Hf)
+    # precoder   = np.conj(Vh.transpose(3,0,1,2,4,6,5)[...,0:rank])
+    combiner  = np.conj((U*(1/S[...,np.newaxis,:].repeat(S.shape[-1], axis = -2)))[...,0:rank].transpose(3,0,1,2,4,6,5))
+    # xBeam      = (precoder@txGrid.transpose(0,1,3,4,2)[:,np.newaxis,...,np.newaxis])[...,0]
+    
+    ############### Type-1 Code-Book based Precoding #######################################################################################################################################################
+    #############################################################
+    # Single Panel Mode 1, Mode 2 : Valid Ranks are 1 and 2
+    # Single Panel Mode 1-2       : Valid Ranks are 3,4,5,6,7,8
+    # Multi Panel Mode 1, Mode 2  : Valid Ranks are 1,2,3,4 
+    #############################################################
+
+    codebookType        = "typeI-SinglePanel"
+    AntennaStructure    = txAntStruture[-3:-1]
+    AntennaPolarization = txAntStruture[-1]
+    codebookMode        = "1-2"
+    method              = "SearchFree"
+    numIterations       =  100
+
+    type1CB  = TypeICodeBook(codebookType, AntennaStructure, AntennaPolarization)
+    numPorts = np.prod(AntennaStructure)*AntennaPolarization
+    type1Precoder = np.zeros((numBatches,Nfft,numPorts,rank), dtype="complex_")
+
+    for nsb in range(numSubBands):
+        Hk       = Hf[...,subBandSCIndices[nsb],:,:]
+        H        = (np.conj(Hk.transpose(0,1,2,3,4,6,5))@Hk).mean(-3)
+        [S2, V]  = np.linalg.eig(H)
+        for nb in range(numBatches):            
+            type1Precoder[nb,subBandSCIndices[nsb],...]  = type1CB(numIterations,V[0,0,0,nb,:,0:rank], rank, codebookMode, method)
+
+
+    a = type1Precoder[:,np.newaxis,np.newaxis,np.newaxis,:,:] 
+    b = txGrid.transpose(0,1,3,4,2)[:,np.newaxis,...,np.newaxis]
+    CBbeamFormedGrid = (a@b)[...,0]
+
+
+    print()
+    print("Type-I SP Mode1 Precoder Shape:\n", a.shape)
+    print()
+    print("CodeBook Beamformed Grid Shape:\n", CBbeamFormedGrid.shape)
+
+
+
+
+
+References:
+    .. [3GPPTS38214Type1CB] (3GPP TS 38.214 Release 17 V17.1.0); Physical layer procedures for data.
+    .. [sf] (A Search-Free Algorithm for Precoder Selection in FD-MIMO Systems with DFT-Based Codebooks. Federico Penna, Hongbing Cheng, and Jungwon Lee).
+ 
+
+    
+
+      
+
+
+   

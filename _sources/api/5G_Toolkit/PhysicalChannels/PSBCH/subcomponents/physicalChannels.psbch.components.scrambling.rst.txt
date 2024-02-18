@@ -1,9 +1,0 @@
-Scrambling: PSBCH
-*****************
-
-.. toctree::
-    :maxdepth: 10
-
-    physicalChannels.psbch.components.scrambling.scrambler.rst
-    physicalChannels.psbch.components.scrambling.descrambler.rst
-

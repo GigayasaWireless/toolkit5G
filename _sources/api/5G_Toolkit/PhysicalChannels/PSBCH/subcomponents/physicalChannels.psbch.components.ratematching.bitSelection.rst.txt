@@ -1,1 +1,0 @@
-.. include::  ../../../Ratematcher/PolarCoder/BitSelection/ratematcher.polarcoder.bitSelection.rst

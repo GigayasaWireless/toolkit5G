@@ -1,0 +1,126 @@
+Low PAPR Sequence Type 1
+========================
+The procedure of the implementation of low PAPR sequences used by SRS and/or uplink control channels in 5G networks. The
+details of the generation of this sequence are given in section 6.3.2 of [3GPPTS38211LowPAPR]_ and some of sequences parameters
+are detailed in section 9.2 of [3GPPTS38213LowPAPR]_.
+
+.. note::
+    Low PAPR Sequences are used as base sequence by reference signals transmitted by coverage constrained devices. The
+    other alternative available is gold sequence which have excellent time correlation properties but have a very high
+    PAPR which limit its usage for small form factor devices which can't transmit high power.
+
+
+**When** ``u``, ``alpha``, ``v`` **are scalar** and ``lengthOfSequence`` ** is not passed:**
+
+.. code-block:: python
+
+    u       = 3
+    alpha   = np.pi/4
+    v       = 0
+
+    delta   = 0
+    m       = 8
+
+    lowPAPR = LowPAPRSequenceType1(alpha, u, v)
+    seq     = lowPAPR(m, delta)
+
+    print("******************************************************")
+    print("               sequence: "+str(seq.shape))
+    print("******************************************************")
+
+.. parsed-literal::
+
+    ******************************************************
+                   sequence: (1, 1, 1, 96)
+    ******************************************************
+
+
+**When** ``u``, ``alpha``, ``v`` **are scalar** and ``lengthOfSequence`` ** is passed:**
+
+.. code-block:: python
+
+    u       = 28
+    alpha   = 3*np.pi/8
+    v       = 1
+
+    delta   = 0
+    m       = 8
+
+    lowPAPR = LowPAPRSequenceType1(alpha, u, v)
+    seq     = lowPAPR(m, delta, lengthOfSequence=84)
+
+    print("******************************************************")
+    print("               sequence: "+str(seq.shape))
+    print("******************************************************")
+
+.. parsed-literal::
+
+    ******************************************************
+                   sequence: (1, 1, 1, 84)
+    ******************************************************
+
+
+**When** ``u``, ``alpha``, ``v`` **are array** and ``lengthOfSequence`` ** is not passed:**
+
+.. code-block:: python
+
+    u       = np.array([3,8,11])
+    alpha   = np.array([3*np.pi/4, np.pi/4, 2*np.pi/4, 5*np.pi/4])
+    v       = 0
+
+    delta   = 0
+    m       = 32
+
+    lowPAPR = LowPAPRSequenceType1(alpha, u, v)
+    seq     = lowPAPR(m, delta)
+
+    print("******************************************************")
+    print("               sequence: "+str(seq.shape))
+    print("******************************************************")
+
+.. parsed-literal::
+
+    ******************************************************
+                   sequence: (4, 1, 3, 384)
+    ******************************************************
+
+
+**When** ``u``, ``alpha``, ``v`` **are array** and ``lengthOfSequence`` ** is passed:**
+
+.. code-block:: python
+
+    u       = np.array([3,8])
+    alpha   = np.array([3*np.pi/4, 2*np.pi/4, 5*np.pi/4])
+    v       = np.array([0,1,0,1])
+
+    delta   = 0
+    m       = 32
+
+    lowPAPR = LowPAPRSequenceType1(alpha, u, v)
+    seq     = lowPAPR(m, delta, lengthOfSequence=131)
+
+    print("******************************************************")
+    print("               sequence: "+str(seq.shape))
+    print("******************************************************")
+
+
+.. parsed-literal::
+
+    ******************************************************
+                   sequence: (3, 4, 2, 131)
+    ******************************************************
+
+
+**API Documentation**
+
+
+.. autoclass:: toolkit5G.SequenceGeneration.LowPAPRSequenceType1
+   :members:
+   :exclude-members: call, build
+
+
+References:
+    .. [3GPPTS38211LowPAPR] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation.
+
+    .. [3GPPTS38213LowPAPR] (3GPP TS 38.213 version 16.5.0 Release 16) 5G;NR;Physical layer procedures for control.
+

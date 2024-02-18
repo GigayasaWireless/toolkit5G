@@ -1,0 +1,105 @@
+Low PAPR Sequence Type 2
+========================
+The Low PAPR Sequence Type 2 is used by SRS for small bandwidths. The procedure of the implementation of low PAPR
+sequence-2 are given in section 6.3.2 of [3GPPTS38211LowPAPR]_. The details of the parameter used for low PAPR sequence-2
+generation are provided in section 9.2 of [3GPPTS38213LowPAPR]_.
+
+.. note::
+    Low PAPR Sequences are used as base sequence by reference signals transmitted by coverage constrained devices. The
+    other alternative available is gold sequence which have excellent time correlation properties but have a very high
+    PAPR which limit its usage for small form factor devices which can't transmit high power.
+
+**when** ``u_or_cinit`` **is scalar** and ``lengthOfSequence`` ** is not passed:**
+
+.. code-block:: python
+
+    u_or_cinit = 12
+    delta      = 0 # 0 or 1
+    m          = 10
+    lowPAPR = LowPAPRSequenceType2(u_or_cinit)
+    seq     = lowPAPR(m, delta)
+
+    print("******************************************************")
+    print("               sequence: "+str(seq.shape))
+    print("******************************************************")
+
+.. parsed-literal::
+
+    ******************************************************
+                   sequence: (1, 120)
+    ******************************************************
+
+**when** ``u_or_cinit`` **is scalar** and ``lengthOfSequence`` ** is passed:**
+
+.. code-block:: python
+
+    u_or_cinit = 12
+    delta      = 0 # 0 or 1
+    m          = 10
+    lowPAPR = LowPAPRSequenceType2(u_or_cinit)
+    seq     = lowPAPR(m, delta, lengthOfSequence = 60)
+
+    print("******************************************************")
+    print("               sequence: "+str(seq.shape))
+    print("******************************************************")
+
+.. parsed-literal::
+
+    ******************************************************
+                   sequence: (1, 60)
+    ******************************************************
+
+**when** ``u_or_cinit`` **is array** and ``lengthOfSequence`` ** is not passed:**
+
+.. code-block:: python
+
+    u_or_cinit = np.array([3, 5, 122])
+    delta      = 0 # 0 or 1
+    m          = 12
+    lowPAPR = LowPAPRSequenceType2(u_or_cinit)
+    seq     = lowPAPR(m, delta)
+
+    print("******************************************************")
+    print("               sequence: "+str(seq.shape))
+    print("******************************************************")
+
+.. parsed-literal::
+
+    ******************************************************
+                   sequence: (3, 144)
+    ******************************************************
+
+**when** ``u_or_cinit`` **is scalar** and ``lengthOfSequence`` ** is passed:**
+
+.. code-block:: python
+
+    u_or_cinit = np.array([35, 51, 14, 38])
+    delta      = 0 # 0 or 1
+    m          = 12
+    lowPAPR = LowPAPRSequenceType2(u_or_cinit)
+    seq     = lowPAPR(m, delta, lengthOfSequence = 151)
+
+    print("******************************************************")
+    print("               sequence: "+str(seq.shape))
+    print("******************************************************")
+
+
+.. parsed-literal::
+
+    ******************************************************
+                   sequence: (4, 151)
+    ******************************************************
+
+
+**API Documentation**
+
+.. autoclass:: toolkit5G.SequenceGeneration.LowPAPRSequenceType2
+   :members:
+   :exclude-members: call, build
+
+
+References:
+    .. [3GPPTS38211LowPAPR] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation.
+
+    .. [3GPPTS38213LowPAPR] (3GPP TS 38.213 version 16.5.0 Release 16) 5G;NR;Physical layer procedures for control.
+

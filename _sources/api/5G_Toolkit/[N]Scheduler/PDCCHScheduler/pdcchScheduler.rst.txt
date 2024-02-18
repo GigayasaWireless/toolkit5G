@@ -1,0 +1,287 @@
+PDCCH Scheduler
+===============
+
+
+The class :class:`PDCCHScheduler` implements the functionality of base station (BS) scheduling PDCCH to a certain number of UEs in a given slot. [3GPPTS38213PDCCH]_
+Scheduler allocates resources to each UE in a cell. One key system performance evaluation metric is the **PDCCH blocking probability** which indicates the percentage of user equipments
+(UEs) that cannot be scheduled by the Base Station for receiving the DCI. 
+
+Given the number of UEs and the coverage condition, Base Station can properly determine the CORESET size (i.e, number of Control Channel Elements or CCEs) to ensure the blocking probability does not exceed a specified threshold.
+The Base Station (BS) can use different PDCCH candidates with in the CORESET for scheduling different UEs. Blocking occurs for a UE when there are no non-overlapping candidates available for scheduling.
+The variable ``numCCEs`` correspond to CORESET size and ``numCandidatesUnderEachAL`` captures the number of PDCCH candiates per Aggregation Level (AL). 
+The position of different PDCCH candidates for each AL is determined using a hashing equation. For more information please refer to  section 10.1 of 3GPP TS 38.213.
+
+
+.. autoclass:: toolkit5G.Scheduler.PDCCHScheduler
+    :members:
+    :exclude-members: call, build
+    
+    
+
+
+The following figure displays the coreset region with in a BWP, where a PDCCH can be transmitted for the example shown below.
+
+
+.. image:: ../../../figures/pdcchscheduler/coreset1.png
+  :width: 800
+  :alt: coreset1
+
+
+
+
+
+.. More detailed version of the figure is given below.
+
+
+.. image:: ../../../figures/pdcchscheduler/coreset2.png
+  :width: 800
+  :alt: coreset2
+
+
+
+
+**Example:** 
+
+The following code snippet shows the use of PDCCH scheduler class.
+5 UEs have been scheduled by the Base Station (BS) having a coreset size of 54.
+The probability distribution for each aggregation level considered in the simulation is [0.4, 0.3, 0.2, 0.05, 0.05], 
+and the number of pdcch candidates under each aggregation level considered is [6,6,4,2,1] respectively.
+
+
+
+.. code-block:: Python
+    
+    #######################################
+    #Importing necessary Python Libraries
+    #######################################
+    import os
+    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+
+    %matplotlib widget
+    import matplotlib.pyplot  as plt
+    import matplotlib.patches as mpatches
+    import matplotlib as mpl
+
+    import numpy      as np
+
+    ############################
+    #Importing toolkit5G modules
+    ############################
+
+    import toolkit5G 
+    from toolkit5G.Scheduler import PDCCHScheduler
+    
+    ########################
+    ## Simulation Parameters
+    ########################
+    Nccep             = 54                      # Coreset size or Number of CCEs 
+    mu                = np.random.randint(4)    # numerlogy for sub-carrier spacing
+    numSlotsPerFrame  = 2**mu * 10              # number of slots per radio frame
+    coresetID         = 1                       # coreset ID
+    slotNumber        = 0               
+    duration          = 3                       # duration of coreset in number of ofdm symbol
+    searchSpaceType   = "USS"                   # search space type. UE specific search space
+    nci               = 0                       # variable corresponding to carrier aggregation
+
+    ############################
+    # PDCCH Scheduler Parameters
+    ############################
+    strategy                 = "Conservative" 
+    numUEs                   = 5
+    aggLevelProbDistribution = np.array([0.4, 0.3, 0.2, 0.05, 0.05]) # UE Aggregation Level Probability Distribution
+    numCandidatesUnderEachAL = np.array([6,6,4,2,1], dtype=int)      # Number of PDCCH Candidates per Aggregation Level
+
+
+    UEsUnderEachAL  = np.random.multinomial(numUEs, aggLevelProbDistribution)
+    rnti            = np.random.choice( np.arange(1,65519+1), size = (numUEs,), replace=False)
+
+    print("############################################################################################")
+    print()
+    print("Number of UEs in simulation:", numUEs)
+
+    print()
+    print("RNTI corresponding to each UE:", rnti)
+    print()
+    print("############################################################################################")
+
+    pdcchSchedulerObj = PDCCHScheduler(mu, slotNumber, coresetID, nci)
+    count, cceIndices = pdcchSchedulerObj(Nccep,searchSpaceType,UEsUnderEachAL,numCandidatesUnderEachAL,rnti,strategy)
+    numBlockedUEs     = np.sum(count)
+
+    print("############################################################################################")
+    print()
+    print("Number of UEs under each Aggregation Level:", UEsUnderEachAL)
+    print()
+    print("CCE Indices corresponding to all UEs being Scheduled:\n", cceIndices)
+    print()
+    print("Number of Blocked UEs:", numBlockedUEs)
+    print("############################################################################################")
+    print()
+    print("Available PDCCH Candidates for scheduler:\n", pdcchSchedulerObj.candidates)
+
+
+.. parsed-literal::
+
+
+    ############################################################################################
+    
+    Number of UEs in simulation: 5
+    
+    RNTI corresponding to each UE: [14766 34333  8673 37708 57818]
+    
+    ############################################################################################
+
+    ############################################################################################
+    
+    Number of UEs under each Aggregation Level: [2 1 1 0 1]
+    
+    CCE Indices corresponding to all the UEs being Scheduled:
+     [array([[51, 51],
+            [ 4,  4]]) array([[22, 23]]) array([[16, 19]]) array([-1, -1])
+     array([[ 0, 15]])]
+    
+    Number of Blocked UEs: 1
+    ############################################################################################
+    
+    Available PDCCH Candidates for scheduler:
+        array([array([[ [51],
+                        [ 6],
+                        [15],
+                        [24],
+                        [33],
+                        [42]],
+
+                      [ [ 4],
+                        [13],
+                        [22],
+                        [31],
+                        [40],
+                        [49]]]), array([[[22, 23],
+                                         [30, 31],
+                                         [40, 41],
+                                         [48, 49],
+                                         [ 4,  5],
+                                         [12, 13]]]), array([[[ 4,  5,  6,  7],
+                                                              [16, 17, 18, 19],
+                                                              [28, 29, 30, 31],
+                                                              [44, 45, 46, 47]]]),
+        array([], shape=(0, 2, 8), dtype=int64),
+        array([[[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15]]])],
+        dtype=object)
+
+
+
+
+
+
+The following figure displays the allocated PDCCH candidates in terms of CCE indices for each UE and for all the possible aggregation level.
+All the occupied or unavailable candidates are marked as **x**.
+
+
+.. image:: ../../../figures/pdcchscheduler/cand5.png
+  :width: 800
+  :alt: cand5
+
+
+
+The cce indices chosen for UEs with AL=1 is shown below:
+
+
+.. image:: ../../../figures/pdcchscheduler/cce1.png
+  :width: 800
+  :alt: cce1
+
+
+The cce indices chosen for UEs with AL=2 is shown below:
+
+
+.. image:: ../../../figures/pdcchscheduler/cce2.png
+  :width: 800
+  :alt: cce2  
+
+
+
+The cce indices chosen for UEs with AL=4 is shown below:
+
+
+.. image:: ../../../figures/pdcchscheduler/cce3.png
+  :width: 800
+  :alt: cce3
+
+
+The cce indices chosen for UEs with AL=8 is shown below:
+
+
+.. image:: ../../../figures/pdcchscheduler/cce4.png
+  :width: 800
+  :alt: cce4  
+
+
+The cce indices chosen for UEs with AL=16 is shown below:
+
+
+.. image:: ../../../figures/pdcchscheduler/cce5.png
+  :width: 800
+  :alt: cce5  
+
+
+
+
+
+The PDCCH candidates available in the CORESET region, and the chosen candidates by the scheduler is also shown below.
+The following figure shows the available AL 1 candidates.
+
+
+.. image:: ../../../figures/pdcchscheduler/cand0.png
+  :width: 800
+  :alt: cand0
+
+
+
+.. image:: ../../../figures/pdcchscheduler/cand1.png
+  :width: 800
+  :alt: cand1
+
+
+
+
+AL 2 candidates are shown below:
+
+
+.. image:: ../../../figures/pdcchscheduler/cand2.png
+  :width: 800
+  :alt: cand2
+
+
+
+
+AL 4 candidates are shown below:
+
+
+.. image:: ../../../figures/pdcchscheduler/cand3.png
+  :width: 800
+  :alt: cand3
+
+
+
+
+AL 16 candidates are shown below:
+
+
+.. image:: ../../../figures/pdcchscheduler/cand4.png
+  :width: 800
+  :alt: cand4
+
+
+
+
+
+
+
+
+References:
+    .. [3GPPTS38213PDCCH] (3GPP TS 38.213 Release 17 V17.1.0); Physical layer procedures for control.
+
+
+    

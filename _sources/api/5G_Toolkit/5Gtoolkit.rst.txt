@@ -39,7 +39,6 @@ discussed below in table-1.
 
 
 
-
 .. toctree::
     :maxdepth: 3
 
@@ -55,9 +54,8 @@ discussed below in table-1.
     SymbolMapping/symbolMapping
     Scrambler/scrambler
     ChannelModels/channelModels
+    MIMOProcessing/mimoProcessing
+    [N]Scheduler/scheduler
     CRC/crc
-    MIMOProcessing/mimoprocessing
-    ReceiverAlgorithms/receiverAlgorithms
     Positioning/positioning
-    Configurations/configurations
-    Utils/utils
+    [N]Configurations/configurations

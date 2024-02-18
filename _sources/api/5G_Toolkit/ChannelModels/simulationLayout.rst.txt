@@ -3,19 +3,16 @@
 Simulation Layout
 =================
 
-This module provides classes and the functions that implements Simulation Layout.
+This module provides classes and the functions that implements Simulation Layout. [3GPPTR38901_SimLayout]_
+
 Simulation Layout correspond to deploying Base Stations (BSs) and dropping user equipments (UEs) in a chosen geometry.
-Current implementation support different types of BS layouts such as "Hexagonal"
-and "Rectangular", different types of UE drops such as "Hexagonal",  "Rectangular" and "Circular".
+Current implementation support different types of BS layouts such as "Hexagonal" and "Rectangular", different types of UE drops such as "Hexagonal", "Rectangular" and "Circular".
 
 The class :class:`SimulationLayout` allows the user to deploy BSs, as well as UEs in a particular geometry.
-The user can access the state of each link using the class attribute :attr:`linkState` , locations of BSs using  :attr:`BSLocations`,
-tracks or locations of BS across snapshots using :attr:`BStracks`, 
-velocities of each UE using :attr:`UEvelocityVector` and BS orientations using :attr:`bsOrientation` respectively.
+The user can access the state of each link using the class attribute :attr:`linkState` , locations of BSs through :attr:`BSLocations`, tracks or locations of BS across snapshots through :attr:`BStracks`, 
+velocities of each BS through :attr:`BSvelocityVector` and BS orientations through :attr:`bsOrientation`.
 
-The method :method:`display2DTopology` displays the 2D topology of layout.
-The method :method:`display2DLocationsOfBS` displays the 2D locations of Base Stations (BSs) and the method :method:`display2DLocationsOfUE` displays the 2D locations of User Equipments (UEs).
-The method :method:`getParameterGenerator` fetches an object of the class :class:`ParameterGenerator` after instantiating the class :class:`SimulationLayout`. 
+User can access all the cluster level parameters from the method :meth:`getParameterGenerator`.
 
 
 .. autoclass:: toolkit5G.ChannelModels.SimulationLayout
@@ -25,14 +22,6 @@ The method :method:`getParameterGenerator` fetches an object of the class :class
 
 .. automethod:: toolkit5G.ChannelModels.simulationLayout.simulationLayout.SimulationLayout.display2DTopology
     :noindex:
-
-
-.. automethod:: toolkit5G.ChannelModels.simulationLayout.simulationLayout.SimulationLayout.display2DLocationsOfBS
-    :noindex:
-
-
-.. automethod:: toolkit5G.ChannelModels.simulationLayout.simulationLayout.SimulationLayout.display2DLocationsOfUE
-    :noindex:    
 
 
 .. automethod:: toolkit5G.ChannelModels.simulationLayout.simulationLayout.SimulationLayout.getParameterGenerator
@@ -97,7 +86,7 @@ method :meth:`display2DTopology()`
 For this example the layout plot looks as following
 
 .. image:: ../../figures/layout_plot_example2.png
-  :width: 500
+  :width: 800
   :alt: layoutPlot2
 
    
@@ -120,7 +109,6 @@ as well as on the UEs for each carrier frequency after instantiating :class:`Sim
     ...                                      centerFrequency = carrierFreq[i],
     ...                                      arrayStructure  = np.array([1,1,1,1,1]),
     ...                                      antennaSpacing  =  np.array([0.5,0.5,0.5,0.5]))
-    ...    ueAntennaArray[i]()
     # Antenna Array object vector corresponding to each carrier frequency at BS side.
     >>> bsAntennaArray = np.empty(numCarriers, dtype=object)
     >>> for i in range(carrierFreq.size):
@@ -128,7 +116,6 @@ as well as on the UEs for each carrier frequency after instantiating :class:`Sim
     ...                                      centerFrequency=carrierFreq[i],
     ...                                      arrayStructure = np.array([1,1,1,1,1]),
     ...                                      antennaSpacing =  np.array([0.5,0.5,0.5,0.5]))
-    ...    bsAntennaArray[i]()
     # Instantiating SimulationLayout class
     >>> simLayoutObj = SimulationLayout(numOfBS = 19,
     ...                                 numOfUE = 100,
@@ -149,7 +136,7 @@ as well as on the UEs for each carrier frequency after instantiating :class:`Sim
 For this example the layout plot looks as following
 
 .. image:: ../../figures/layout_plot_example3.png
-  :width: 500
+  :width: 800
   :alt: layoutPlot3
 
 
@@ -159,9 +146,6 @@ For this example the layout plot looks as following
 BS Layouts
 ----------
 
-.. autoclass:: toolkit5G.ChannelModels.SimulationLayout
-   :members:
-   :exclude-members: call, build
 
 Hexagonal Layout
 ~~~~~~~~~~~~~~~~
@@ -212,9 +196,14 @@ Hexagonal Drop
    :exclude-members: call, build
    :noindex:
 
-**References**:
 
-.. _[3GPP TR 38.901]: 3GPP TR 38.901 "Study on channel model for frequencies from 0.5 to 100 GHz (Release 17)", V17.0.0 (2022-03).
- 
+
+
+
+
+
+References:
+  .. [3GPPTR38901_SimLayout] (3GPP TR 38.901) "Study on channel model for frequencies from 0.5 to 100 GHz (Release 17)", V17.0.0 (2022-03).
+
 
     

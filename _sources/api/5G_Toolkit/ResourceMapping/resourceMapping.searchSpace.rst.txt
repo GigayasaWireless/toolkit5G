@@ -1,23 +1,29 @@
 Search Space Set
 ================
-The modules provides the classes and functions that implement Search Space Set.
+The modules provides the classes and functions that implement **Search Space Set**. [3GPPTS38213_SearchSpaceSet]_
 
-Search Space is defined as the predefined region in which UE perform the blind decoding.
-In the PDCCH region in DL radio frame, there can be many places where a specific PDCCH is located and UE searches all the possible locations.
-The possible location for a PDCCH differs depending on whether the PDCCH is Common or UE-specific, and also depend on what aggregation level is used.
-Set of all the possible location for PDCCH is called *Search Space Set* and  each of the possible location is called a *PDCCH Candidate*.
-The search space indicates the set of CCE locations where the UE may find its PDCCHs.
+- **Search Space** is defined as the predefined region in which UE perform the **blind decoding**.
+ 
+- In the PDCCH region in DL radio frame, there can be many places where a specific PDCCH is located and UE searches all the possible locations.
 
-There are two types of search space : the common search space and the UE-specific search space.
-A UE is required to monitor both common and UE-specific search space.
+- The possible location for a PDCCH differs depending on whether the PDCCH is Common or UE-specific, and also depend on what aggregation level is used.
 
-The common search space would carry the DCIs that are common for all UEs. For example, system information (using the SI-RNTI), paging (P-RNTI), PRACH responses (RA-RNTI),
-or UL TPC commands (TPC-PUCCH/PUSCH-RNTI).
-The UE monitors the common search space using aggregation level 4 and 8.
-Maximum number of CCEs present in common search space is 16.
+- Set of all the possible location for PDCCH is called **Search Space Set** and  each of the possible location is called a **PDCCH Candidate**.
 
-The UE-specific search space can carry DCIs for UE-specific allocations using the UE's assigned C-RNTI.
-The UE monitors the UE-specific search space at all aggregation levels {1, 2, 4, and 8}.
+- The search space indicates the set of CCE locations where the UE may find its PDCCHs.
+
+- There are two types of search space : the **common search space (CSS)** and the **UE-specific search space (USS).**
+
+- A UE is required to monitor both common and UE-specific search space.
+
+- The common search space (CSS) would carry the DCIs that are common for all UEs. For example, system information (using the SI-RNTI), paging (P-RNTI), PRACH responses (RA-RNTI),
+  or UL TPC commands (TPC-PUCCH/PUSCH-RNTI). The UE monitors the common search space using aggregation level 4 and 8.
+
+- Maximum number of CCEs present in common search space is 16.
+
+- The UE-specific search space (USS) can carry DCIs for UE-specific allocations using the UE's assigned C-RNTI.
+
+- The UE monitors the UE-specific search space at all aggregation levels {1, 2, 4, 8 and 16}.
 
 
 .. autoclass:: toolkit5G.ResourceMapping.SearchSpaceSet
@@ -25,42 +31,218 @@ The UE monitors the UE-specific search space at all aggregation levels {1, 2, 4,
    :exclude-members: call, build
 
 
-An example of CORESET is given below. After instatiation of the class :class:`SearchSpaceSet`, user can fetch the PDCCH monitoring slots and monitoring symbols with in a slot.
+
+
+
+The following figure displays the parametes of search space set from the example given below.
+
+
+.. image:: ../../figures/searchSpace/ss1.png
+  :width: 800
+  :alt: ss1
+
+
+
 
 **Example:**
 
-.. code-block:: Python
+.. code:: ipython3
+   
+   #######################################
+   # importing necessary python libraries
+   ####################################### 
+    import os
+    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
+    
+    %matplotlib widget
+    import matplotlib.pyplot  as plt
+    import matplotlib.patches as mpatches
+    import matplotlib as mpl
+    
+    import numpy      as np
 
-   # numerology
-   >>> mu = 0
-   # Number of Slots Per Radio Frame for a choosen numerology.
-   >>> numOfSlotsPerFramePerNumerology  = (2**mu)*10
-   # Type of search space set choosen. Here we choose Common Search Space or "CSS"
-   >>> ssType = "CSS"
-   # Aggregation Level 
-   >>> AL = 4
-   # duration of CORSET in number of symbols
-   >> coresetDuration = 2
-   # REG bundle Size
+.. code:: ipython3
+    
    #########################################
-   # PDCCH monitoring periodicity : ks slots 
-   #########################################
-   >>> ks = 20
-   ####################################
-   # PDCCH monitoring offset : os slots
-   ####################################
-   >> os = 0
-   ############################################################################################
-   # duration of search space set in  terms of number of slots : Ts slots and Ts<=ks for ks>=2
-   ############################################################################################
-   >> Ts = 3
-   # Instanstiating SearchSpaceSet object with above choosen parameters.
-   >>> sssObj = SearchSpaceSet(mu,ssType)
-   >>> sssObj(ks,os,Ts,AL,coresetDuration) 
-   # PDCCH monitoring slots                 
-   >>> sssObj.pdcchMonitoringSlotIndices
-   # PDCCH Monitoring Symbols With in a slot
-   >>> sssObj.pdcchMonitoringSymbolsWithinSlot 
+   # importing necessary toolkit5G libraries
+   ######################################### 
+    import sys
+    sys.path.append(".")
+    
+    from toolkit5G.ResourceMapping import SearchSpaceSet
+
+
+
+.. code:: ipython3
+
+    ########################
+    # Simulation Parameters
+    ########################
+    ############
+    # numerology
+    ############
+    mu = 0
+    ##################
+    # Number of Frames
+    ##################
+    numOfFrames = 2
+    ###########################################################
+    # Number of Slots Per Radio Frame for a choosen numerology.
+    ###########################################################
+    numOfSlotsPerFramePerNumerology  = (2**mu)*10
+    ##############
+    # slot number
+    ##############
+    slotNum = 0
+    #############################################
+    # Type of search space set. 
+    # Either Common or UE-Specific 
+    # Here we choose UE-Specific Search Space or "USS"
+    #############################################
+    ssType = "USS"
+    ###################
+    # Aggregation Level 
+    ###################
+    AL = 2
+    ############################
+    # number of PDCCH candidates
+    ############################
+    numCandidates = np.array([6,4,2,1,1], dtype=int)
+    #########################################
+    # duration of CORSET in number of symbols
+    #########################################
+    coresetDuration = 3
+    ################################
+    # coreset size in number of CCEs
+    ################################
+    coresetSize = 54
+    ###########################################################################
+    # coreset ID. 
+    # The parameter p in the hash equation from section 10.1 of 3GPP TS 38.214.
+    # Must be from the set {1,2,3}
+    ###########################################################################
+    coresetID         = 1                       
+    #########################################
+    # PDCCH monitoring periodicity : ks slots 
+    #########################################
+    ks = 10
+    ####################################
+    # PDCCH monitoring offset : os slots
+    ####################################
+    os = 2
+    ############################################################################################
+    # duration of search space set in terms of number of slots : Ts slots and Ts<=ks for ks>=2
+    ############################################################################################
+    Ts = 4
+    #######
+    # RNTI
+    ######
+    rnti  = np.random.randint(1,65519+1)
+    
+    print("#############################################################")
+    print()
+    print("Numerology:", mu)
+    print()
+    print("Number of slots per Frame:", numOfSlotsPerFramePerNumerology)
+    print()
+    print("Slot Number:", slotNum )
+    print()
+    print("RNTI value chosen:", rnti)
+    print("Search Space Set Type:", ssType)
+    print()
+    print("Aggregation Level:", AL)
+    print()
+    print("Number of Candidates under each Aggregation Level:", numCandidates)
+    print()
+    print("Coreset Size in number of CCEs:", coresetSize)
+    print()
+    print("Coreset duration in number of OFDM symbol:", coresetDuration)
+    print()
+    print("#############################################################")
+    print()
+    print("PDCCH Monitoring Periodicty in number of Slots:", ks)
+    print()
+    print("PDCCH Monitoring Offset in number of Slots:", os)
+    print()
+    print("Search Space Set duration in number of ofdm symbol:",Ts)
+    print("#############################################################")
+
+
+.. parsed-literal::
+
+    #############################################################
+    
+    Numerology: 0
+    
+    Number of slots per Frame: 10
+    
+    Slot Number: 0
+    
+    RNTI value chosen: 22051
+    Search Space Set Type: CSS
+    
+    Aggregation Level: 4
+    
+    Number of Candidates under each Aggregation Level: [2 2 4 1 1]
+    
+    Coreset Size in number of CCEs: 54
+    
+    Coreset duration in number of OFDM symbol: 2
+    
+    #############################################################
+    
+    PDCCH Monitoring Periodicty in number of Slots: 20
+    
+    PDCCH Monitoring Offset in number of Slots: 0
+    
+    Search Space Set duration in number of ofdm symbol: 3
+    #############################################################
+
+
+.. code:: ipython3
+
+    ###############################
+    # Instanstiating SearchSpaceSet
+    ###############################
+    sssObj = SearchSpaceSet(mu,ssType,numCandidates,coresetDuration,ks,os,Ts)
+    candidateCCEs = sssObj(AL,rnti,coresetSize,slotNum,coresetID)
+    
+    print()
+    print("PDCCH Candidates available in CORESET:\n", candidateCCEs)
+    print()
+    print("Slot indices where the PDCCH can be monitored in first 2 frames:", sssObj.pdcchMonitoringSlotIndices[0:numOfFrames*Ts])
+    print()
+    print("Symbol indices with in a slot where the PDCCH can be monitored:", sssObj.pdcchMonitoringSymbolsWithinSlot)
+
+
+
+.. parsed-literal::
+
+    
+    PDCCH Candidates available in CORESET:
+    [[36 37]
+    [48 49]
+    [ 8  9]
+    [22 23]]
+    
+    Slot indices where the PDCCH can be monitored in first 2 frames: [2 3 4 5 2 3 4 5]
+    
+    Symbol indices with in a slot where the PDCCH can be monitored: [0 0 1 0 0 0 0 0 0 0 0 0 0 0]
+
+
+
+
+
+
+The zoomed version of the figure is shown below.
+
+
+.. image:: ../../figures/searchSpace/ss2.png
+  :width: 800
+  :alt: ss2
+
+
 
 
 

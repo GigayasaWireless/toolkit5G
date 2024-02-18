@@ -1,0 +1,13 @@
+PDSCH Lower Physical Layer Configurations
+==========================================
+
+This API generates the configurations for lower physical layer of the physical downlink shared channel (PDSCH) or PDSCH-DMRS.
+The details of these parameters are listed below in input and output interface.
+
+.. note::
+    The un-configured parameters are selected randomly from a valid set of possible values.
+
+
+.. autoclass:: toolkit5G.Configurations.PDSCHLowerPhyConfiguration
+   :members:
+   :exclude-members: call, build

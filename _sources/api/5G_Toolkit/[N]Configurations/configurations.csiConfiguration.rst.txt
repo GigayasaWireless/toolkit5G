@@ -1,0 +1,15 @@
+Channel state information reference signal (CSI-RS) Configurations
+===================================================================
+
+This API generates the configurations for Channel state information reference signal (CSI-RS) which is used by the BS to
+acquire channel state information for downlink communication in TDD based non-reciprocal networks. The details of these
+parameters are listed below in input and output interface.
+
+
+.. note::
+    The un-configured parameters are selected randomly from a valid set of possible values.
+
+
+.. autoclass:: toolkit5G.Configurations.CSIConfiguration
+   :members:
+   :exclude-members: call, build

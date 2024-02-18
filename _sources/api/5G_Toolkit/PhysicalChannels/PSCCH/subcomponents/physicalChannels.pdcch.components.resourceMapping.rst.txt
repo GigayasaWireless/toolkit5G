@@ -1,7 +1,1 @@
-Resource Mapping PSCCH
-**********************
-
-.. toctree::
-    :maxdepth: 10
-
-    physicalChannels.pdcch.components.resourceMapping.resourceMapping.rst
+.. include::  ../../../SymbolMapping/symbolMapping.demapper.rst

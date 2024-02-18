@@ -108,10 +108,12 @@ More Information
    api/Tutorials/Tutorials
    api/Projects/Projects
    api/Integration_with_SDR/Integration_with_SDRs
+   api/LearningResources/LearningResources
    api/Preview_of_Next_Release/FeatureList
    api/Built_using_5G_Toolkit/builtUsing5GToolkit
    api/WeekChallenge/challenge
    api/License/license
+   api/Previous_Versions/PreviousVersions
    Discussion Forum <https://discuss.gigayasa.com/>
 
 5G Toolkit Features

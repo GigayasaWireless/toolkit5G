@@ -3,90 +3,24 @@
 Channel Generator
 =================
 
-This module provides classes and functions that generate or compute cluster level complex valued channel coefficients including OFDM.
-
-
-The class :class:`ChannelGenerator` allows the user to generate the channel.
-A call to a method :method:`ofdm` generates OFDM channel after instantiating this class and creating an object. 
-
-
-
+This module provides the classes that generate cluster level channel coefficients.
+The class :class:`ChannelGenerator` allows the user to generate the cluster level channel.  
+Users can access all the cluster level OFDM channel coefficients in frequency domain, time domain from the methods :meth:`ofdm` and :meth:`timeDomain` respectively.
+For more details refer [3GPPTS38901_channelGenerator]_
+ 
 
 .. autoclass:: toolkit5G.ChannelModels.ChannelGenerator
     :members:
-    :exclude-members: call, build, ofdm
+    :exclude-members: call, build, ofdm, timeDomain
 
 
 .. automethod:: toolkit5G.ChannelModels.channelGenerator.channelGenerator.ChannelGenerator.ofdm
-    :noindex:
+    :noindex:  
 
 
-
-**Example:**
-
-
-.. code-block:: Python
-
-  # terrain or scenario for BS-UE links "UMa"
-  >>> terrain     = np.array(["UMa","UMi","InH-OO"])
-  # links simulated at two carrier frequencies in Hz
-  >>> carrierFreq = np.array([3*10**9, 5*10**9])
-  >>> numCarriers = carrierFreq.shape[0]
-  # vector of Antenna Array objects at UE or Rx side at each carrier frequency and with an OMNI directional antenna element.
-  >>> ueAntennaArray = np.empty(numCarriers, dtype=object)
-  >>> for i in range(carrierFreq.size):
-  >>>   ueAntennaArray[i] = AntennaArrays(antennaType     = "OMNI", 
-  ...                                     centerFrequency = carrierFreq[i],
-  ...                                     arrayStructure  = np.array([1,1,1,1,1]),
-  ...                                     antennaSpacing  =  np.array([0.5,0.5,0.5,0.5]))
-  >>>   ueAntennaArray[i]() 
-  # vector of Antenna Array objects at BS or Tx side at each carrier frequency and with a 3GPP_38.901 parabolic antenna element.                                   
-  >>> bsAntennaArray = np.empty(numCarriers, dtype=object)
-  >>> for i in range(carrierFreq.size):
-  >>>   bsAntennaArray[i] = AntennaArrays(antennaType     = "3GPP_38.901",
-  ...                                     centerFrequency = carrierFreq[i],
-  ...                                     arrayStructure  = np.array([1,1,1,1,1]),
-  ...                                     antennaSpacing  = np.array([0.5,0.5,0.5,0.5]))
-  >>>   bsAntennaArray[i]()
-  # simulating BS Layout and UE drops by passing ueRoute, where ueRoute is an object of NodeMobility class.
-  # Here we assume that all the BSs are static and all the UEs are mobile.
-  # NodeMobility parameters
-  >>> nBSs       = 19     # number of BSs 
-  >>> nUEs       = 100    # number of UEs 
-  >>> nSnapShots = 2      # number of Snap-Shots
-  >>> timeInst = np.linspace(start = 0, stop = 10, num=nSnapShots, dtype=np.float32) # time values at each snapshot.
-  >>> UEroute = NodeMobility("randomWalk", nUEs, timeInst) # object of class NodeMobility
-  >>> UEroute()
-  # simulation layout object                                 
-  >>> simLayoutObj = SimulationLayout(numOfBS = nBSs,
-  ...                                 numOfUE = nUEs,
-  ...                                 heightOfBS = 25,
-  ...                                 heightOfUE = 10, 
-  ...                                 ISD = 500,
-  ...                                 layoutType = "Hexagonal",
-  ...                                 numOfSectorsPerSite = 3,
-  ...                                 minUEBSDistance = 35,
-                                      ueRoute = UEroute)                                                                       
-  >>> simLayoutObj(terrain, carrierFreq, ueAntennaArray, bsAntennaArray)
-  # displaying the topology of simulation layout
-  >>> simLayoutObj.display2DTopology()
-  # velocity vector 
-  >>> velocityVect =  simLayoutObj.UEvelocityVector  #(numSnapShots,numUE,3)
-  # Fetching channel parameters using simLayoutObj
-  # Returns an object of the class ParameterGenerator  
-  >>> paramGenObj = simLayoutObj.getParameterGenerator()
-  # Channel Generation
-  >>> channel = paramGenObj.getChannel(applyPathLoss = True)
-  # OFDM Channel Generation
-  >>> Nfft = 1024
-  >>> Hf   = channel.ofdm(30*10**3, Nfft, simLayoutObj.carrierFrequency) 
+.. automethod:: toolkit5G.ChannelModels.channelGenerator.channelGenerator.ChannelGenerator.timeDomain
+    :noindex:  
 
 
-
-  
-
-
-
-
-
-
+References:
+    .. [3GPPTS38901_channelGenerator] (3GPP TS 38.901 version 17.0.0 Release 17) 5G;NR;Study on channel model for frequencies from 0.5 to 100 GHz.

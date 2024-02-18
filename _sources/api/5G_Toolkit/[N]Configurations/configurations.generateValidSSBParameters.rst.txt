@@ -1,0 +1,12 @@
+SSB/PBCH Configurations
+=========================
+
+SSB Configurations generate the parameters for MIB, PBCH, SSB, PBCH-DMRS and carrier. This API details of the parameters
+generated are discussed in following section.
+
+.. note::
+    The un-configured parameters are selected randomly from a valid set of possible values.
+
+.. autoclass:: toolkit5G.Configurations.GenerateValidSSBParameters
+   :members:
+   :exclude-members: call, build

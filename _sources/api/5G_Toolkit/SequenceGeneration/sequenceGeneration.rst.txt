@@ -97,9 +97,11 @@ for transmission over wireless channel for simulation using [??].
     sequenceGeneration.dmrs
     sequenceGeneration.prs
     sequenceGeneration.csirs
+    sequenceGeneration.srs
     sequenceGeneration.pnSequence
     sequenceGeneration.SequenceGenerationFormat0
     sequenceGeneration.SequenceGenerationFormat1
-    sequenceGeneration.LowPAPRSequenceGeneration
+    sequenceGeneration.LowPAPRSequenceGeneration1
+    sequenceGeneration.LowPAPRSequenceGeneration2
     sequenceGeneration.spss
     sequenceGeneration.ssss

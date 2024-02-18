@@ -1,0 +1,20 @@
+
+Scheduler
+=========
+
+This is the module which provides functions and classes that implement scheduler functionality at Tx or Base Station (BS) side of a communication link. 
+Typically a lower MAC functionality, using which a BS chooses a particular mcs index, code rate etc,. to each serving UE in a cell.   
+
+
+
+
+
+
+.. toctree::
+   :maxdepth: 5
+
+   PDCCHScheduler/pdcchScheduler
+      
+
+
+   

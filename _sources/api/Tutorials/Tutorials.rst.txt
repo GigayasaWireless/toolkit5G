@@ -8,7 +8,9 @@ Tutorials
     Tutorial2/Tutorial2_ReedMullerCodes.ipynb
     Tutorial3/Tutorial3_PolarCodes.ipynb
     Tutorial4/Tutorial4_LDPCCodes.ipynb
-    Tutorial5/SSB_End2End.ipynb
-    Tutorial6/tutorial6.rst
+    Tutorial5/tutorial5
+    Tutorial6/Downlink_Synchronization_procedure_using_SSB.ipynb
+    Tutorial7/Link_Level_Simulation_for_Physical_Broadcast_Channels_using_CDL-A_Channels.ipynb
     Tutorial8/pucchFormat0_Tutorial.rst
-    Tutorial10/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.ipynb
+    Tutorial9/Link_Level_Simulation_for_PDSCH_in_5G.ipynb
+    Tutorial13/Beam_management_in_5G_Networks_using_SSB[P1-Procedure].ipynb

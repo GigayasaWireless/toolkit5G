@@ -1,26 +1,36 @@
+
 Channel Models
 ===============
 
-This is the module which provides functions and classes that implement channel modeling compliant with 3GPP.
+This is the module which provides functions and classes that implement channel models compliant with 3GPP 38.901.
 
-Channel modeling correrspond to five important sub modules namely :ref:`Antenna-Array`, :ref:`Node-Mobility`,
-:ref:`Simulation-Layout`, :ref:`Channel-Parameter-Generator` and :ref:`Channel-Coefficient-Generator`
-The class :class:`AntennaArrays` implements the antenna array both at the transmitter and receiver side.
-:class:`NodeMobility` allows the users to simulate the channel across multiple snapshots. i.e., It provides the flexibility to simulate the channel
-considering the mobility of nodes at both ends of the link. 
-The class :class:`SimulationLayout` implements the deployment of Base Stations (BS's) and dropping User Equipments (UE's) inside a particular geometry.
-:class:`ParameterGenearator` class provides all the parameters necessary to simulate channel coefficients, that includes Large Scale Parameters (LSP's) like
-Delay Spread, Angular Spreads both in azimuth and zenith directions, Path Loss etc., Small Scale Parameters (SSP's) like 
-cluster delays, cluster powers, cluster angular spreads and cluster/ray angles (both arrival, departure in azimuth, zenith directions).
-The class :class:`CoefficientGenearator` implements the cluster level channel coefficients for each link generated in the simulation. 
+Channel modeling correspond to five important sub modules namely :ref:`Antenna-Array`, :ref:`Node-Mobility`,
+:ref:`Simulation-Layout`, :ref:`Channel-Parameter-Generator` and :ref:`Channel-Generator`. 
 
 
-The implementation of antenna element corresponding to class :class:`AntennaArrays` can be found from the module :ref:`Antenna-Elements`.
-The class :class:`Antenna_3GPP_38901` implements 3GPP 38.901 antenna element.
-The class :class:`Antenna_HertzianDipole` implements Hertzina Dipole antenna and 
-the class :class:`Antenna_LinearDipole` implements Linear Dipole antenna.
+- The class :class:`AntennaArrays` implements the antenna array both at the transmitter and receiver side.
 
-BS layout implementation and the UE drop implementation can be found from the modules :ref:`BS-Layouts` and :ref:`UE-Drops` respectively. 
+- The :class:`NodeMobility` allows the users to simulate the channel across multiple snapshots. i.e., It provides the flexibility to simulate the channel.
+  considering the mobility of nodes at both ends of the link. 
+
+- The class :class:`SimulationLayout` implements the deployment of Base Stations (BS's) and dropping User Equipments (UE's) inside a particular geometry.
+
+- The :class:`ParameterGenearator` provides all the parameters necessary to simulate channel coefficients, that includes both Large Scale Parameters (LSP's) and Small Scale Parameters (SSP's).
+
+   - LSPs include Delay Spread, Angular Spreads both in azimuth and zenith directions, Path Loss etc.,
+
+   - SSPs include cluster delays, cluster powers, cluster angular spreads and cluster/ray angles (both arrival, departure in azimuth, zenith directions).
+  
+- The :class:`ChannelGenearator` generate the cluster level channel coefficients both in time and frequency domain.  
+
+
+The implementation of antenna elements corresponding to the class :class:`AntennaArrays` can be found from the module :ref:`Antenna-Elements`.
+
+   - The class :class:`Antenna_3GPP_38901` implements 3GPP 38.901 parabolic antenna element.
+   - The class :class:`Antenna_HertzianDipole` implements Hertzina Dipole antenna. 
+   - The class :class:`Antenna_LinearDipole` implements Linear Dipole antenna.
+
+BS layout and the UE drop implementation can be found from the modules :ref:`BS-Layouts` and :ref:`UE-Drops` respectively. 
 
 
 
@@ -32,3 +42,7 @@ BS layout implementation and the UE drop implementation can be found from the mo
    simulationLayout
    parameterGenerator
    channelGenerator
+      
+
+
+   

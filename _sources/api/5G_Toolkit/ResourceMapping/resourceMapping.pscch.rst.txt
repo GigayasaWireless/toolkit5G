@@ -1,49 +1,12 @@
 Physical Sidelink Control Channel (PSCCH)
 =========================================
-This module maps the Physical Control Channel (PSCCH) payload onto the resource grid as per control resource set configurations.
+This module maps the Physical Control Channel (PDCCH) payload onto the resource grid as per control resource set configurations.
 The demodulation reference signal (DMRS) for PDCCH is filled in resource grid to equalizing information at the receiver.[3GPPTS38211PSCCHRM]_
-
-An example of how to initialize and call the PSCCH resource mapping object
-
-.. code:: ipython3
-
-    Nrb                = 10
-    pscchPayload       = np.random.choice([-np.sqrt(0.5)-1j*np.sqrt(0.5),-np.sqrt(0.5)+1j*np.sqrt(0.5),+np.sqrt(0.5)-1j*np.sqrt(0.5),+np.sqrt(0.5)+1j*np.sqrt(0.5)],size = (2,270))
-    numSymbols         = 3
-    symbNumber         = np.sort(np.random.choice(np.arange(2,14), size = numSymbols, replace = False))
-    slotNumber         = int(np.random.randint(14))
-    scramblingID       = int(np.random.randint(2**16))
-
-    PSCCHResMapObj     = ResourceMappingPSCCH(Nrb)
-    resourceGrid       = PSCCHResMapObj(pscchPayload,symbNumber,slotNumber,scramblingID)
-
-    #to display the Grid
-    PSCCHResMapObj.displayResourceGrid()
-
------------------------
-
-.. image:: ../../figures/ResourceMapping/pscchResourceGrid.png
-  :width: 800
-  :alt: Alternative text
-
-------------------------
 
 .. autoclass:: toolkit5G.ResourceMapping.ResourceMappingPSCCH
    :members:
-   :exclude-members: call, build, ReturnPayloadIndices, displayResourceGrid
+   :exclude-members: call, build
 
-------------------------
-
-.. automethod:: toolkit5G.ResourceMapping.ResourceMappingPSCCH.ReturnPayloadIndices
-    :noindex:
-
-
-------------------------
-
-.. automethod:: toolkit5G.ResourceMapping.ResourceMappingPSCCH.displayResourceGrid
-    :noindex:
-
--------------------------
 
 References:
     .. [3GPPTS38211PSCCHRM] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'

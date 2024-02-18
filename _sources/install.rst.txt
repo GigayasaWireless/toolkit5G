@@ -130,6 +130,9 @@ created environment.
 
     pip install Jupyter
 
+.. important::
+    Please install Jupyter before installing the 5G-Toolkit. Some of the users experienced conflict between the dependencies of Jupyter, TensorFlow and SciPy. This result in crash in Tutorial-4.
+
 
 Install 5G Toolkit
 ------------------
@@ -138,36 +141,29 @@ Finally, we are ready to install 5G Toolkit:
 
 .. tabs::
 
-   .. group-tab:: **Python 3.7**
+   .. group-tab:: **Python 3.11**
 
         .. code-block:: bash
 
-            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.11-py3-none-any.whl
-
-   .. group-tab:: **Python 3.8**
-
-        .. code-block:: bash
-
-            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.11-py3-none-any.whl
-
-   .. group-tab:: **Python 3.9**
-
-        .. code-block:: bash
-
-            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.11-py3-none-any.whl
+            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.1/package/python3_11/toolkit5G-0.1-py3-none-any.whl
 
    .. group-tab:: **Python 3.10**
 
         .. code-block:: bash
 
-            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.11-py3-none-any.whl
+            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.1/package/python3_10/toolkit5G-0.1-py3-none-any.whl
 
-   .. group-tab:: **Python 3.11**
+   .. group-tab:: **Python 3.9**
 
         .. code-block:: bash
 
-            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.11-py3-none-any.whl
+            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.1/package/python3_9/toolkit5G-0.1-py3-none-any.whl
 
+   .. group-tab:: **Python 3.8**
+
+        .. code-block:: bash
+
+            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.1/package/python3_8/toolkit5G-0.1-py3-none-any.whl
 
 
 To confirm installation of the library, you can check the installation library:
@@ -205,7 +201,7 @@ The toolkit is successfully installed if it shows the toolkit5G version as shown
 
 .. parsed-literal::
 
-    'R23a.0.10'
+    'R24a.0.1'
 
 Otherwise, something went wrong. If it shows "License Error", then you will have to
 `activate the License <#activate-the-5g-toolkit-license>`_. But still if you are struggling please email us at any of

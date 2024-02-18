@@ -1,87 +1,109 @@
 Physical Downlink Shared Channel-PTRS
 =====================================
-This modules generates a resource grid with Phase Tracking Reference Signal (PTRS) for physical downlink shared channel (PDSCH)
+This modules generates a resource grid with demodulation reference signal (DMRS) for physical downlink shared channel (PDSCH)
 mapped to a resource grid.
 
-**Generating PDSCH-PTRS Resource Grid Case-1:**
+**Generating PDSCH-DMRS Resource Grid**:
 
 .. code-block:: Python
 
-    numBatches          = 7
-    numRB               = 20
-    pdschMappingType    = "PDSCH-mapping-type-A"
-    maxLength           = "len1"
-    startSymbol         = 0
-    numSymbols          = 4
-    configurationType   = "Configuration-type-1"
-    ld                  = numSymbols
-    rank                = 2
-    rnti               = np.random.randint(65536, size=numBSs*numBatches)
-    scramblingID  = int(np.random.randint(65535, dtype = int)) # or Cell-ID for Initial Access
-    nSCID         = int(np.random.randint(2, dtype = int))
-    #PTRS parameters
-    offsetIndex = '00'
-    lptrs = 1
-    kptrs = 2
-    RMptrspdsch  = ResourceMapperPTRSpdsch(lptrs,kptrs,offsetIndex)
-    resourceGrid = RMptrspdsch(rank,configurationType,startSymbol,ld,numRB,rnti,scramblingID,nSCID,numBatches,numBSs=1)
+    betaDMRS               = 1
+    pdschMappingType       = "PDSCH-mapping-type-A"   # "PDSCH mapping type A" or "PDSCH mapping type B"
+    configurationType      = "Configuration-type-1"   # "Configuration-type-1" or "Configuration-type-2"
+    dmrsTypeAPosition      = "pos2"  # first DMRS symbol location
+    dmrsAdditionalPosition = "pos0"  # Number of additional DMRS
+    maxLength              = "len2"
 
-**Display the PTRS-PDSCH Resource Grid:**
+    ## Duration of DMRS
+    ld           = 6 # number of symbols for DMRS transmission.
+    l0           = 2
+    l1           = 11
+    rank         = 4
+
+    numRBs       = 20
+    scs          = 30000
+    slotNumber   = 11
+    scramblingID = 13544
+    nSCID        = 1
+    rmDMRSpdsch  = ResourceMapperDMRSPDSCH(pdschMappingType, configurationType, dmrsTypeAPosition, maxLength, dmrsAdditionalPosition, l0, ld, l1)
+    resourceGrid = rmDMRSpdsch(numRBs, rank, slotNumber, scramblingID, nSCID)
+
+
+**Display the DMRS-PDSCH Resource Grid**:
 
 .. code-block:: Python
 
-    fig0, ax0 = RMptrspdsch.DisplayResourceGrid()
+    fig0, ax0 = rmDMRSpdsch.displayResourceGrid()
 
 
-.. image:: ../../figures/ResourceMapping/ptrsPDSCHresourceGrid_I.png
+.. image:: ../../figures/ResourceMapping/dmrsPDSCHresourceGrid_I.png
   :width: 800
   :alt: Alternative text
 
-**Generating PDSCH-PTRS Resource Grid Case-2:**
+**Display the DMRS-PDSCH CDM Grid**:
 
 .. code-block:: Python
 
-    numBatches          = 3
-    numRB               = 40
-    pdschMappingType    = "PDSCH-mapping-type-B"
-    maxLength           = "len2"
-    startSymbol         = 1
-    numSymbols          = 7
-    configurationType   = "Configuration-type-2"
-    ld                  = numSymbols
-    rank                = 4
-    rnti                = 12557
-    scramblingID        = 34956
-    nSCID               = 0
-    #PTRS parameters
-    offsetIndex = '00'
-    lptrs               = 4
-    kptrs               = 4
-    RMptrspdsch         = ResourceMapperPTRSpdsch(lptrs,kptrs,offsetIndex)
-    resourceGrid        = RMptrspdsch(rank,configurationType,startSymbol,ld,numRB,rnti,scramblingID,nSCID,numBatches,numBSs=1)
+    fig1, ax1 = rmDMRSpdsch.displayCDMPattern()
 
 
-**Note:**
-The Rank, Start Symbol and Number of Symbol must be chosen in accordance to the configuration, mapping types and max length
+.. image:: ../../figures/ResourceMapping/dmrsPDSCHcdmGrid_I.png
+  :width: 800
+  :alt: Alternative text
 
 
-**Display the PTRS-PDSCH Resource Grid:**
 
+**Generating DMRS-PDSCH Resource Grid**:
 
 .. code-block:: Python
 
-    fig1, ax1 = RMptrspdsch.DisplayResourceGrid()
+    pdschMappingType       = "PDSCH-mapping-type-B" # PDSCH mapping types indicate whether reference for resource allocation is symbol = 0 or configures symol location
+    maxLength              = "len2" # Indicate whether single symbol DMRS or Double symbol DMRS is used.
+    betaDMRS               = 1
+    configurationType      = "Configuration-type-2" # Control the density and pilot location of DMRS in Resource Grid
+    dmrsTypeAPosition      = "pos3" # first DMRS symbol location
+    dmrsAdditionalPosition = "pos0" # Number of additional DMRS
+
+    l0   = 4  # DMRS symbol-0
+    l1   = 11 # DMRS symbol-1
+    ld   = 7  # Duration of DMRS
+    rank = 12 # number of layers to transmit
+
+    numRBs       = 12
+    scs          = 30000
+    slotNumber   = 11
+    scramblingID = 13544 # or Cell-ID for Initial Access
+    nSCID        = 1
+    rmDMRSpdsch  = ResourceMapperDMRSPDSCH(pdschMappingType, configurationType, dmrsTypeAPosition, maxLength, dmrsAdditionalPosition, l0, ld, l1)
+    resourceGrid = rmDMRSpdsch(numRBs, rank, slotNumber, scramblingID, nSCID)
 
 
-.. image:: ../../figures/ResourceMapping/ptrsPDSCHresourceGrid_II.png
-    :width: 800
-    :alt: Alternative text
+**Display the DMRS-PDSCH Resource Grid**:
+
+.. code-block:: Python
+
+    fig0, ax0 = rmDMRSpdsch.displayResourceGrid()
+
+
+.. image:: ../../figures/ResourceMapping/dmrsPDSCHresourceGrid_II.png
+  :width: 800
+  :alt: Alternative text
+
+**Display the DMRS-PDSCH CDM Grid**:
+
+.. code-block:: Python
+
+    fig1, ax1 = rmDMRSpdsch.displayCDMPattern()
+
+
+.. image:: ../../figures/ResourceMapping/dmrsPDSCHcdmGrid_II.png
+  :width: 800
+  :alt: Alternative text
 
 
 .. autoclass:: toolkit5G.ResourceMapping.ResourceMapperPTRSPDSCH
    :members:
    :exclude-members: call, build
-
 
 
 References:

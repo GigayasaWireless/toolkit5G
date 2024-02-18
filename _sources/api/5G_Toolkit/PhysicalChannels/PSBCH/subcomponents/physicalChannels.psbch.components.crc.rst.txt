@@ -1,9 +1,0 @@
-Cyclic Redundancy Check
-========================
-
-PSBCH uses 24 Bit CRC
-
-.. toctree::
-    :maxdepth: 10
-
-    physicalChannels.psbch.components.crc.crc.rst

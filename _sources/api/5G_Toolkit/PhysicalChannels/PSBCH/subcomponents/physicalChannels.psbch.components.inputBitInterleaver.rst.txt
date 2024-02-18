@@ -1,7 +1,0 @@
-Input Bit Interleaver
-*********************
-
-.. toctree::
-    :maxdepth: 10
-
-    physicalChannels.psbch.components.inputBitInterleaver.inputBitInterleaver.rst

@@ -1,0 +1,88 @@
+Sounding Reference Sequence (SRS)
+=====================================================
+The sounding reference signal (SRS) is designed in 5G for various purposes. Some of these utilities are defined below:
+
+- Uplink sounding
+- CSI acquisition
+- Radio resource management
+- UL/DL Scheduling
+- Uplink based positioning
+
+The SRS is Zadoff-Chu based reference signal designed with the coverage and complexity limitation of UEs in mind. Its a
+multiport (up-to 4) sequence where the sequence is orthogonal for each port. The implementation details of CSI-RS are
+provided in section 7.4.1.5 of 3GPP TS 38.211 [3GPPTS38211_SRS]_.
+
+
+**If** ``sequenceId`` **is a scalar:**
+
+.. code-block:: Python
+
+    nrofSRS_Ports           = 2
+    transmissionComb        = 4
+    nrofSymbols             = 8
+    startPosition           = 6
+    nrOfCyclicShift         = 2
+    groupOrSequenceHopping  = "sequenceHopping"
+    sequenceId              = 974
+    slotIndex               = 4
+
+    length                  = 12
+
+    srs      = SRS(nrofSRS_Ports, transmissionComb, nrOfCyclicShift, groupOrSequenceHopping, sequenceId, nrofSymbols, startPosition, slotIndex)
+    sequence = srs(length)
+
+    print("******************************************************")
+    print("           SRS sequence: "+str(sequence.shape))
+    print("         Expected shape: "+str((numIDs, nrOfCyclicShift, nrofSRS_Ports, nrofSymbols, int(length))))
+    print("******************************************************")
+
+
+.. parsed-literal::
+
+    ******************************************************
+               SRS sequence: (1, 2, 2, 8, 12)
+             Expected shape: (1, 2, 2, 8, 12)
+    ******************************************************
+
+
+**If** ``sequenceId`` **is an array:**
+
+.. code-block:: Python
+
+    nrofSRS_Ports           = 4
+    transmissionComb        = 2
+    nrofSymbols             = 2
+    startPosition           = 1
+    nrOfCyclicShift         = 2
+    groupOrSequenceHopping  = "groupHopping"
+    sequenceId              = np.array([5, 10, 15])
+    slotIndex               = 1
+
+    length                  = 408
+
+    srs      = SRS(nrofSRS_Ports, transmissionComb, nrOfCyclicShift, groupOrSequenceHopping, sequenceId, nrofSymbols, startPosition, slotIndex)
+    sequence = srs(length)
+
+    print("******************************************************")
+    print("           SRS sequence: "+str(sequence.shape))
+    print("         Expected shape: "+str((numIDs, nrOfCyclicShift, nrofSRS_Ports, nrofSymbols, int(length))))
+    print("******************************************************")
+
+
+.. parsed-literal::
+
+    ******************************************************
+               SRS sequence: (3, 2, 4, 2, 408)
+             Expected shape: (3, 2, 4, 2, 408)
+    ******************************************************
+
+
+**API Documentation**
+The details about the input-output interface of the SSS implementation is provided below.
+
+.. autoclass:: toolkit5G.SequenceGeneration.SRS
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_SRS] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

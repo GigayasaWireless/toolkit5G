@@ -1,8 +1,0 @@
-Modulation
-**********
-
-.. toctree::
-    :maxdepth: 10
-
-    physicalChannels.psbch.components.modulation.symbolMapping.rst
-    physicalChannels.psbch.components.modulation.symbolDemapping.rst

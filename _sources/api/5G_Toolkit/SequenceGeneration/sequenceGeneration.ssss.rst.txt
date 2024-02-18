@@ -1,12 +1,12 @@
-Sidelink Secondary Synchronization Signal
-#########################################
+Secondary Synchronization Signal for Sidelink (S-SSS)
+#####################################################
 The sidelink-secondary synchronization signal (S-SSS) is a gold-sequence of length 127 generated using :math:`N_{ID,1}^{SL}`
 and :math:`N_{ID,2}^{SL}`. It is used for sidelink cell ID-2 detection and frequency synchronization which aims to mitigate
 the carrier offsets and centre of the S-SSB grid at the sidelink user equipment (UE). The detailed implementation of the
 S-SSS is provided in [3GPPTS38211_S_SSS]_.
 
 ..  important::
-    * S-SSS is an constituent of sidelink synchronization signal block (S-SSB). It is loaded in the middle 127 subcarrier (across frequency) of :math:`4^\text{th}` and :math:`5^\text{th}` symbol of the S-SSB.
+    * S-SSS is an constituent of sidelink synchronization signal block (S-SSB). It is loaded in the middle 127 subcarrier (across frequency) of fourth and fifth symbol of the S-SSB.
 
 **If** :math:`N_{ID,1}^{SL}` and :math:`N_{ID,2}^{SL}` **is scalar:**
 

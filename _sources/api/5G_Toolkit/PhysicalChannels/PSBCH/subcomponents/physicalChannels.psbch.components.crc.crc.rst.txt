@@ -1,5 +1,0 @@
-.. include::  ../../../CRC/crc.rst
-
-.. include:: ../../../CRC/crc.crcEncoder.rst
-
-.. include:: ../../../CRC/crc.crcDecoder.rst

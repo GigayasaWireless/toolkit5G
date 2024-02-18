@@ -6,37 +6,7 @@ This module implements the physical downlink shared channel.
   :width: 800
   :alt: Alternative text
 
-------------
-
-The following code block illustrates how to initialize and invoke PDSCH Upper Phy Decoder
-
-.. code-block:: python
-
-    numSymbols         = 13
-    numRB              = 25
-    mcsIndex           = 2
-    numlayers          = [1]
-    scalingField       = '00'
-    additionalOverhead = 0
-    dmrsREs            = 3
-    numTBs             = 1
-    mcsTable           = 'pdschTable2'
-
-
-    pdschDecoderUpperPhyChain = PDSCHDecoderUpperPhy(numSymbols,numRB,mcsIndex,numlayer,scalingfield,additionalOverhead,dmrsREs,numTBs,mcsTable)
-    #LLRs  = An array of estimated likelihood ratios (LLRs)of size (...,numTargetBits)
-
-    DecodedBits               = pdschDecoderUpperPhyChain()
-
-------------
-
-The details of the input-output interface are provided in following sub-section.
-
 .. autoclass:: toolkit5G.PhysicalChannels.PDSCHDecoderUpperPhy
    :members:
    :exclude-members: call, build
-
-.. note::
-    It is to be taken into consideration that the Upper Phy Decoder arguments should be consistent with the corresponding
-    transmitter side Upper Phy and Lower Phy or else the implementation may collapse
 

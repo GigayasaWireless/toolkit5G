@@ -1,0 +1,37 @@
+Time-Frequency 5G-Configurations
+=================================
+
+This API generates parameters related to frame structure, OFDM, sample-rate numerology, bandwidth, and other frequency related
+parameters. The details are provided in following input-output interface.
+
+.. important::
+    This configuration generate only 3GPP standards complaint values for parameters such as bandwidth (corresponding number
+    of RBs, guard band), cyclic prefix etc. However, the 5G-toolkit based simulation don't restrict to standards complaint
+    parameters. The users can pass values as per their requirements for the simulations.
+
+.. note::
+    The un-configured parameters are selected randomly from a valid set of possible values.
+
+** Examples **
+
+
+.. code-block::
+
+    ## System Parameters
+    carrierFrequency = 3.6*10**9        # Carrier frequency 3.6 GHz
+    scs         = 30*(10**3);           # Subcarrier spacing for simulation
+    bandwidthTx = 10*(10**6);           # Transmission bandwidth
+    nSymbolFrame= 140*int(scs/15000);   # Number of OFDM symbols per frame (Its a function of subcarrier spacing)
+
+    ## This class fetches valid set of 5G parameters for the system configurations
+    tfParams    = TimeFrequency5GParameters(bandwidthTx, scs)
+    tfParams(nSymbolFrame, typeCP = "normal")
+    nRB         = tfParams.numRBs        # SSB Grid size (Number of RBs considered for SSB transition)
+    Neff        = tfParams.Neff        # Number of resource blocks for Resource Grid ( exclude gaurd band | offsets : BWP)
+    Nfft        = tfParams.fftsize                 # FFT-size for OFDM
+    lengthCP    = tfParams.lengthCP    # CP length
+
+
+.. autoclass:: toolkit5G.Configurations.TimeFrequency5GParameters
+   :members:
+   :exclude-members: call, build

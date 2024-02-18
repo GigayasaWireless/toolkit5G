@@ -1,0 +1,13 @@
+Sounding Reference Signal (SRS) Configurations
+===============================================
+
+This API generates the configurations for sounding reference signal which is used by the BS to acquire channel state information
+for either uplink communication or reciprocity based downlink communication. The details of these parameters are listed
+below in input and output interface.
+
+.. note::
+    The un-configured parameters are selected randomly from a valid set of possible values.
+
+.. autoclass:: toolkit5G.Configurations.SRSConfiguration
+   :members:
+   :exclude-members: call, build
