@@ -1,0 +1,68 @@
+CRC Decoder
+===========
+CRC Decoder assumes the parity bits attached at the end of the payload to detect the errors in the information bits. If
+the CRC Check is *False*, there is error in the received data otherwise the received data is error free. CRC Decoder uses `Sionna CRC Encoder <https://nvlabs.github.io/sionna/api/mapping.html#demapping>`_
+internally. The has been design to pass input exactly same as `Sionna CRC Encoder <https://nvlabs.github.io/sionna/api/mapping.html#demapping>`_
+for compatibility.
+
+..  important::
+    * If CRC check fails, the receiver request for retransmission using hybrid automatic repeat request (**HARQ**).
+
+
+The CRC decoder can be used as follows:
+
+**CRC Encoding for 1D NumPy Arrays**
+
+.. code-block:: Python
+
+    bits       = np.random.randint(0, 2, size = (1,32)) # Bits to be Encoded
+    crcType    = "CRC24C"
+
+    ## CRC Encoding
+    crcEncoder = CRCEncoder(crcType) # Create object of CRC Encoder
+    crcBits    = crcEncoder(bits)    # Encode the bits (attach the CRC at the end)
+    ## Shape of crcBits will be (1, 56)
+
+    ## CRC Decoding
+    crcDecoder    = CRCDecoder(crcType)
+    rBits, checks = crcDecoder(crcBits)
+    ## Shape of rBits will be (1, 32), checks will be true or false
+
+
+**CRC Encoding for 2D NumPy Arrays**
+
+.. code-block:: Python
+
+    bits       = np.random.randint(0, 2, size = (21,64)) # Bits to be Encoded
+    crcType    = "CRC16"
+
+    ## CRC Encoding
+    crcBits    = CRCEncoder(crcType)(bits)    # Encode the bits (attach the CRC at the end)
+    ## Shape of Output will be (21, 80)
+
+    ## CRC Decoding
+    crcDecoder    = CRCDecoder(crcType)
+    rBits, checks = crcDecoder(crcBits)
+    ## Shape of rBits will be (21, 64) | checks is an array of dimension (21,) containing true or false
+
+**CRC Encoding for Higher dimension NumPy Arrays**
+
+.. code-block:: Python
+
+    bits       = np.random.randint(0, 2, size = (8,6,119)) # Bits to be Encoded
+    crcType    = "CRC6"
+
+    ## CRC Encoding
+    crcBits    = CRCEncoder(crcType)(bits)    # Encode the bits (attach the CRC at the end)
+    ## Shape of Output will be (8, 6, 125)
+
+    ## CRC Decoding
+    crcDecoder    = CRCDecoder(crcType)
+    rBits, checks = crcDecoder(crcBits)
+    ## Shape of rBits will be (8,6,119), checks is an array of dimension (8, 6) containing true or false
+
+The details about the input-output interface of the Mapper modules is provided below.
+
+.. autoclass:: toolkit5G.CRC.CRCDecoder
+    :members:
+    :exclude-members: call, build

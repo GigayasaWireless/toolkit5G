@@ -1,0 +1,25 @@
+Transport Block Size Computation
+********************************
+This module computes the size of the transport block expected rom the MAC layer and processed by physical layer for
+transmission over air interface. The parameters required for computation of size of transport block and module used for
+it are demonstrated in following example.
+
+.. code-block:: python
+
+   symbolsPerSlot     = 10 #Number of Symbols per slot
+   numRB              = 50 #Number of Resource Blocks
+   scalingField       = '00' #Scaling field
+   mcsIndex           = 5 #Modulation Coding scheme index
+   additionalOverhead = 12 #Additional Overheads
+   numlayers          = 4 #Number of layers
+   dmrsREs            = 3 #Number of Resource Elements allocated for the additional DMRS
+
+   #Object for computing Transport Block Size
+   tbsObj    = ComputeTransportBlockSize(dmrsREs = dmrsREs)
+   #Computes Transport Block Size
+   tbLength  = tbsObj(symbolsPerSlot, numRB, numlayers, scalingField, mcsIndex, additionalOverhead)
+
+
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCH.ComputeTransportBlockSize
+   :members:
+   :exclude-members: call, build, step3, step4, NumREwithinRB, ScalingFactor   

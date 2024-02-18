@@ -1,0 +1,64 @@
+Descrambler
+===========
+The descrambling is performed at the receiver to undo the effect of scrambling. THe descrambling is carried out in two different
+ways
+
+    1. When the scrambling is carried out between the channel coder and symbol mapper, and soft information is generated from the symbol mapper for channel decoding
+    2. When either the scrambling is carried out before the channel coder or the hard information is conveyed by the symbol mapper to channel coder.
+
+This module is used for first case only. As scrambling is an inverse process, hence for the second case the descrambling
+can be carried out simply by passing the information through a scrambler itself.
+
+..  important::
+    * Scrambling and descrambling are inverse process of itself.
+
+.. tip::
+    * For bit information, the descrambling can be carried out using ``Scrambler`` itself.
+    * For soft information (log likelihood ratios), the ``DeScrambler`` class is used.
+
+..  tip::
+    * For executing the following code, the output of a scrambler must be **bi-polarized** before passing it to the object of a ``DeScrambler`` class.
+
+**Descrambling for PBCH:**
+
+.. code-block:: Python
+
+    ## Bits to be scrambled
+    cellID  = 471 # Physical cell ID
+    Lmax    = 8   # Maximum number of candidate SS/PBCH blocks in a half frame
+
+    # Decrambler Object for PBCH
+    pbchdeScr = DeScrambler("PBCH", cellID, Lmax)
+    # Descrambling the input Bits using the object
+    descrBits = pbchdeScr(scrBits)
+
+**Descrambling for PDCCH:**
+
+.. code-block:: Python
+
+    rnti    = 1051  # RNTI value
+    nID     = 18548 # Scrambling ID
+    # Decrambler Object for PBCH
+    pbchdeScr = DeScrambler("PDCCH", rnti, nID)
+    # Descrambling the input Bits using the object
+    descrBits = pbchdeScr(scrBits)
+
+**Descrambling for PDSCH:**
+
+.. code-block:: Python
+
+    rnti    = 1151  # RNTI value
+    cbIndex = 0     # Codeblock Index
+    nID     = 39742 # Scrambling ID
+    # Decrambler Object for PBCH
+    pbchScr = DeScrambler("PDSCH", rnti, cbIndex, nID)
+    # Descrambling the input Bits using the object
+    descrBits = pbchdeScr(scrBits)
+
+The details about the input-output interface of the ``Descrambler`` is provided below.
+
+.. autoclass:: toolkit5G.Scrambler.DeScrambler
+    :members:
+    :exclude-members: call, build
+
+The examples of Descrambling and scrambling can be found in **Tutorials** [?].

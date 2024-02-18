@@ -1,0 +1,28 @@
+Bit Interleaver for LDPC
+========================
+The bit interleaver is used in LDPC to minimize the damage caused by frequency selective channels to LDPC codes's error
+correction capability. LDPC codes perform poorly for burst errors. The bit interleaver distribute the localized erroneous
+bits across the length of the block which results in improved performance.
+
+
+.. note::
+    Bit interleaver improves the LDPC performance against burst and symbols errors.
+
+Bit Interleaver
+***************
+
+The details about the input-output interface of the Mapper modules is provided below.
+
+.. autoclass:: toolkit5G.Ratematcher.LDPC.BitInterleaver
+    :members:
+    :exclude-members: call, build
+
+
+Bit De-interleaver
+******************
+The details about the input-output interface of the Mapper modules is provided below.
+
+.. autoclass:: toolkit5G.Ratematcher.LDPC.BitDeinterleaver
+    :members:
+    :exclude-members: call, build
+

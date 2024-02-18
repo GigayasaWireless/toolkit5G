@@ -1,0 +1,61 @@
+Codeblock Processing: Receiver
+===============================
+These module are implemented at the receiver to complement the procedure of codeblock processing at the transmitter.
+
+Code-block Segregation
+**********************
+The block performs the opposite of code-block concatenation. It breaks the received codeword into multiple codeblock-segments
+for rate matching.
+
+Example, if number of groups in rate matching is 1
+
+.. code-block:: python
+
+   #numCBGrp1 ---> Number of Code Blocks in Group 1
+   #numRMOP1  ---> Number of Rate Matched Output Bits of Group 1
+   #codeword  ---> Demodulated Symbol Block
+
+   cbSegregation  = CodeBlockSegregation(numCBGrp1, numRMOP1) #Performs Code Block Segregation
+   cbSegregateLLR = cbSegregation(codeword)
+
+Example, if number of groups in rate matching is 2
+
+.. code-block:: python
+
+   #numCBGrp1 ---> Number of Code Blocks in Group 1 as in bit selection of rate matching
+   #numRMOP1  ---> Number of Rate Matched Output Bits of Group 1
+   #numCBGrp2 ---> Number of Code Blocks in Group 2 as in bit selection of rate matching
+   #numRMOP2  ---> Number of Rate Matched Output Bits of Group 2
+   #codeword  ---> Demodulated Symbol Block
+
+   cbSegregation  = CodeBlockSegregation(numCBGrp1, numRMOP1, numCBGrp2, numRMOP2) #Performs Code Block Segregation
+   cbSegregateLLR = cbSegregation(codeword)
+
+The details of the input output interface of **codeblock segregation** is shown below:
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPC.CodeBlockSegregation
+    :members:
+    :exclude-members: call, build
+
+
+
+
+Codeblock Aggregation
+*********************
+It performs opposite of code-block segmentation at the receiver to reconstruct the transport block to pass it for
+transport block processing at receiver before forwarding to MAC layer. Example is understand the usage is shown below.
+
+.. code-block:: python
+
+   coderate = 0.650390625 #Code Rate
+   #tbLen ---> Transport Block size
+   #decBits ---> LDPC Decoded Block
+
+   cbAggregate = CodeBlockAggregation(coderate, tbLen) #Object that performs Code Block Aggregation
+   rTBwithCRC = cbAggregate(decBits) #Output after Code Block Aggregation
+
+The details of the API of **codeblock aggregation** is shown below:
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPC.CodeBlockAggregation
+    :members:
+    :exclude-members: call, build

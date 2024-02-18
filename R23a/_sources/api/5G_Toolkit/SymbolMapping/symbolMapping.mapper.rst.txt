@@ -1,0 +1,59 @@
+Mapper
+======
+The symbols mapper supports "QAM" and "PSK" for the modulation orders as illustrated in table-1. 5G Toolkit utilizes `Sionna <https://nvlabs.github.io/sionna/#sionna/>`_
+for QAM mapping. The application programming interface (API) is similar to that `Sionna-mapper <https://nvlabs.github.io/sionna/api/mapping.html#mapper/>`_
+for the ease of use. The generation of the symbols is based on [3GPPTS38211_map]_ Section 5.1 "Modulation mapper".
+
+.. list-table:: Table-2: Uplink Reference Signal and its utility
+   :widths: 50 50
+   :header-rows: 1
+
+   * - ``Constellation Type``
+     - ``Number of bits per symbol``
+   * - "qam"
+     - 2,4,6,8,10
+   * - "bpsk"
+     - NA (always 1).
+   * - "pi/2-bpsk"
+     - NA (always 1).
+
+..  important::
+    * Symbol mapping supports BPSK, :math:`\frac{\pi}{2}` BPSK and, QAM modulation order upto 10 (only even values).
+
+**For BPSK Symbol mapping:**
+
+.. code-block:: Python
+
+    numBits   = 100     # number of bits: should be a multiple of the modOrder
+    # Generate the bits for modulation
+    bits      = np.random.randint(2, size = numBits)
+
+    constType = "bpsk"  # Symbol mapping type
+    modOrder  = 1       # Mordulation order or number of bits per symbol
+    # Symbol mapping object
+    mapper    = Mapper(constType, modOrder)
+    symbols   = mapper(bits) # Generate symbols from the bits.
+
+**For 16-QAM Symbol mapping:**
+
+.. code-block:: Python
+
+    numBatch  = 100     # number of batches
+    numBits   = 1600    # number of bits: should be a multiple of the modOrder
+    # Generate the bits for modulation
+    bits      = np.random.randint(2, size = (numBatch, numBits))
+
+    constType = "qam"   # Symbol mapping type
+    modOrder  = 4       # Mordulation order or number of bits per symbol
+    # Symbol mapping object
+    mapper    = Mapper(constType, modOrder)
+    symbols   = mapper(bits) # Generate symbols from the bits.
+
+The details about the input-output interface of the Mapper modules is provided below.
+
+.. autoclass:: toolkit5G.SymbolMapping.Mapper
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_map] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

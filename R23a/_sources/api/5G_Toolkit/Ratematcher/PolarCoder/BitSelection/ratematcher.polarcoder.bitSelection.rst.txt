@@ -1,0 +1,33 @@
+Bit Selection for Polar Coder
+=============================
+Bit Selection is used to match the encoded bits to target bits using the circular buffer. The target bits is a reflection
+of the number of time-frequency resource allocated for payload transmission. Bit Selection performs one of the three
+operations based on the number of information bits, number of target bits and number of encoded bits:
+
+* Truncation (N>E)
+* Puncturing (N>E)
+* Repetition (N<E)
+
+The rate matching pattern is carried out based on a match pattern. The number of rate matched bits are reduced in the
+case of first two with the only different being the rate match pattern.
+
+.. note::
+    Truncation selects first E bits whereas puncturing selects E bits starting from a certain location.
+
+Bit Selection
+*************
+
+The details about the input-output interface of the bit-selection modules is provided below.
+
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.BitSelection
+    :members:
+    :exclude-members: call, build
+
+
+Bit De-selection
+****************
+The details about the input-output interface of the bit de-selection modules is provided below.
+
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.BitDeSelection
+    :members:
+    :exclude-members: call, build

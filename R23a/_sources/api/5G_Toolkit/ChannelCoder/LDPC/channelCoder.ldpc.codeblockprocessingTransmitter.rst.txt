@@ -1,0 +1,51 @@
+Codeblock Processing: Transmitter
+=================================
+Codeblock segmentation allows the physical layer to process large transport blocks to make the best use of the capabilities
+of the encoder and decoders. To make the best use of the structure of the LDPC codes the inputs shall be passed in a certain
+format with the bound on the upper limit of the inputs that LDPC codec can process. In case transport block sizes exceed
+the upper limit, it is broken into multiple smaller sub-blocks called codeblocks which are individually processed by LDPC
+encoder/decoder and ratemater/dematcher at transmitter and receiver respectively. The implementations are discussed in details
+in upcoming sub-sections.
+
+
+Codeblock Segmentation
+**********************
+The codeblock segmentation breaks the large transport block into small codeblock which are processed individually a defined
+in Section 5.3.2 of [3GPPTS38212_LDPC]_. The example demonstrate a way to use the ``CodeBlockSegmentation`` module.
+
+.. code-block:: python
+
+   coderate = 0.650390625 #Code Rate
+   #crcTBlock ---> Transport Block with CRC bits attached
+
+   cbSegment   = CodeBlockSegmentation(coderate) # Object for processing the code blocks
+   codeblocks  = cbSegment(crcTBlock) # Attach the segment the TB and attach the CRC to TB based on 38.212
+
+
+The API for codeblock segmentation is as follows.
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPC.CodeBlockSegmentation
+    :members:
+    :exclude-members: call, build
+
+
+
+
+
+Codeblock Concatenation
+***********************
+Each codeblock is individually channel coded and broken further into 1 or 2 codeblock segments. All these codeblock
+segments are concatenated by the last module of the upper physical layer chain. The implementation is compliant with
+section 5.5 of [3GPPTS38212_LDPC]_. An example to demonstrate the implementation is shown below:
+
+.. code-block:: python
+
+   # rmBits ---> Rate Matched Output Block after Interleaving
+
+   codeword   = CodeBlockConcatenation()(rmBits) #Performs Code Block Concatenation
+
+The details of the API of **codeblock concatenation** is detailed below.
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPC.CodeBlockConcatenation
+    :members:
+    :exclude-members: call, build

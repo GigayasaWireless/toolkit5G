@@ -1,0 +1,35 @@
+RNTI Masking
+============
+RNTI masking is used in PDCCH chain to scramble the crc bits using radio network temporary identifier. The RNTI masking
+allows the UE to identify whether the data is intended for unicast, multicast or broadcast. Furthermore if the data is unicast,
+it allows the UE to distinguish between different DCI formats which are carrying the same payload size but are intended
+for different purpose. The implementation details of rnti masking is provided in section 7.3.2 of [3GPPTS38212_rnti]_.
+
+..  important::
+    * RNTI masking is inverse process. The same module can be used for masking and unmasking both.
+
+The following example demonstrate the usage of the
+
+**RNTI Masking**
+
+.. code-block:: Python
+
+    K       = 56    # Number of DCI bits
+    dciBits = np.random.randint(0, 2, size = K) # Generates DCI bits
+    rnti    = 11548                      # RNTI for masking the bits
+    dciRNTI = RNTImasking(rnti)(dciBits) # Performing DCI masking
+
+**Removing the RNTI mask**
+
+.. code-block:: Python
+
+    decBits = RNTImasking(rnti)(dciRNTI) # Removing DCI mask
+
+The details about the input-output interface of the RNTI masking is provided below.
+
+.. autoclass:: toolkit5G.Scrambler.RNTImasking
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38212_rnti] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

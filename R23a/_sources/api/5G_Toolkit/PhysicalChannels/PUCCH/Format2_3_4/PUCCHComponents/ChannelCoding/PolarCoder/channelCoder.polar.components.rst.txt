@@ -1,0 +1,82 @@
+Code-block Processing: Transmitter
+==================================
+Codeblock segmentation allows the physical layer to process large transport blocks to make the best use of the capabilities
+of the encoder and decoders. The control information is often very small in size but can vary from 1 to 140 in downlink
+and from  12 to 1706 in uplink. Its import to note that Polar Encoder have good error correction capabilities small size
+input bit string in comparison to LDPC and other codes. Hence when the control information size become large the blocks
+should be split to provide required quality of service using Polar coders.
+
+Code-block Segmentation
+***********************
+The codeblock segmentation breaks the large transport block into small codeblock which are processed individually a defined
+in Section 5.3.1 of [3GPPTS38212Polar]_. The example demonstrate a way to use the ``CodeBlockSegmentation`` module.
+
+.. code-block:: Python
+
+    logits  = 100*(2*codeword-1) # Logits/LLR to decode the bits | Dimension = (numBatches, N)
+
+    K         = 56       # Number of bits to encode
+    E         = 864      # Rate matching bits
+    dec_type  = 'SC'     # Polar Decoder Type is "Successive Cancellation type".
+    crcType   = 'CRC24C' # CRC used for error detection (not relevant in this case.)
+    purpose   = 'PDCCH'  # Physical channel for whose to decode the payload.
+    list_size = 8        # List Size (not relevant in this case.)
+    num_iter  = 20       # Number of iterations (not relevant in this case.)
+
+    # Create Object for Polar Decoder
+    decoder = PolarDecoder5G(K = K, E = E, purpose = purpose)
+    bitEst  = decoder(logits) # Recover information Bits using the Decoder Object | Dimension = (numBatches, K)
+
+
+The API for codeblock segmentation is as follows.
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.CodeBlockSegmentation
+    :members:
+    :exclude-members: call, build
+
+Code-block Concatenation
+************************
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation
+    :members:
+    :exclude-members: call, build
+
+
+
+
+
+Code-block Processing: Receiver
+===============================
+
+Code-block Segregation
+***********************
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.CodeBlockSegregation
+    :members:
+    :exclude-members: call, build
+
+Code-block Aggregation
+**********************
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.CodeBlockAggregation
+    :members:
+    :exclude-members: call, build
+
+
+
+
+Input Bit Interleavers
+======================
+
+Input Bit Interleaver
+*********************
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.InputBitInterleaver
+    :members:
+    :exclude-members: call, build
+
+Input Bit Deinterleaver
+***********************
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.InputBitDeInterleaver
+    :members:
+    :exclude-members: call, build
+

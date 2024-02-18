@@ -1,0 +1,289 @@
+Install 5G Toolkit
+==================
+
+This page takes the user through the complete process of installing all the packages to the point where they can use the
+5G toolkit easily in a Jupyter Notebook.
+
+.. image:: _static/installationProcess.png
+
+Detailed Installation on Ubuntu
+===============================
+
+Update Ubuntu system
+--------------------
+
+Lets start by updating the system:
+
+.. code-block:: bash
+
+    sudo apt-get update
+
+
+Install Miniconda
+------------------
+
+If Anaconda is already installed on your system, then you can skip this step. The following instructions install the 
+Miniconda which is a lighter version of Anaconda. First we will download miniconda using the command:
+
+.. note::
+
+    Please install the latest version of the Miniconda. Following version might be outdated
+
+.. code-block:: bash
+
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+Followed by, installing miniconda using the downloaded package.
+
+.. code-block:: bash
+
+    bash Miniconda3-latest-Linux-x86_64.sh
+
+
+Once the installation is completed, we can check the version installed Conda on our system:
+
+.. code-block:: bash
+
+    conda --v
+
+------------
+
+Now, we will use conda to create a new environment for python 3.11 (this command will automatically install python 3.11 
+in the target environment):
+
+.. code-block:: bash
+
+    conda create -n gigayasa python==3.11
+
+
+Finally, we will activate the created environment by executing
+
+.. code-block:: bash
+
+    conda activate gigayasa
+
+
+We will install everything from further now in this environment only.
+
+Install Jupyter Notebook
+-------------------------
+
+Install Jupyter for interactive scripting in Python.
+
+.. code-block:: bash
+
+    pip install Jupyter
+
+
+Install 5G Toolkit
+------------------
+
+Finally, we are ready to install 5G Toolkit:
+
+The **template command** for installation is given below:
+
+.. image:: _static/Install_Toolkit.png
+
+**For Python 3.7**:
+
+.. code-block:: bash
+
+    pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.10-py3-none-any.whl
+
+
+**For Python 3.8**:
+
+.. code-block:: bash
+
+    pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.10-py3-none-any.whl
+
+
+**For Python 3.9**:
+
+.. code-block:: bash
+
+    pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.10-py3-none-any.whl
+
+
+**For Python 3.10**:
+
+.. code-block:: bash
+
+    pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.10-py3-none-any.whl
+
+
+**For Python 3.11**:
+
+.. code-block:: bash
+
+    pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.10-py3-none-any.whl
+
+
+To confirm installation of the library, you can check the installation library:
+
+.. code-block:: bash
+    pip show toolkit5G
+
+
+Final Confirmation
+-------------------
+
+The installation will be truly successful if we are able to import the toolkit5G packages. We can verify it using 
+**Jupyter Notebook**, open the jupyter notebook using following command in your browser.
+
+.. code-block:: bash
+    jupyter notebook
+
+
+Create a new jupyter notebook and run the following lines of code:
+
+.. code-block:: ipython3
+
+    import toolkit5G as tk
+    tk.__version__
+
+------------------
+
+The toolkit is successfully installed if it shows the toolkit5G version. Otherwise, something went wrong. If it shows 
+"License Error", then you will have to activate the License as described on [installation page](install.md#activate-the-5g-toolkit-license).
+But still if you are struggling please email us at any of the following emails:
+
+#. `<toolkit5g@gigayasa.com>`_
+#. `<support@gigayasa.com>`_
+#. `<vikram@gigayasa.com>`_
+
+We will be more than happy to help you in installation.
+
+Detailed Installation on Windows 10/11
+--------------------------------------
+
+Install Miniconda
+-----------------
+
+1. Download the Miniconda installer from this link:
+ **Please install the latest version of the installer from this link https://docs.conda.io/en/latest/miniconda.html. Following link might be outdated**
+
+   * For 32 bit version of Windows: `Download Miniconda Installer <https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86.exe>`_
+   * For 64 bit version of Windows: `Download Miniconda Installer <https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe>`_
+
+2. Install **Miniconda** by executing this installer.
+
+Create an environment using Conda
+---------------------------------
+
+Click on start button and find Anaconda Prompt.
+
+Once the installation is completed, we can check the Conda version installed on our system:
+
+.. code-block:: bash
+
+    conda --v
+
+
+Now, we will use conda to create a new environment for python 3.11 (this command will automatically install python 3.11 in the target environment):
+
+.. code-block:: bash
+
+    conda create -n myenv python==3.11
+
+
+Finally, we will activate the created environment by executing
+
+.. code-block:: bash
+
+    conda activate myenv
+
+
+We will install everything from further now in this environment only.
+
+Install Jupyter Notebook
+------------------------
+
+Install Jupyter for interactive scripting in Python.
+
+.. code-block:: bash
+
+    pip install Jupyter
+
+
+Install 5G Toolkit
+-------------------
+
+Finally, we are ready to install 5G Toolkit:
+
+The **template command** for installation is given below:
+
+.. image:: _static/Install_Toolkit.png
+
+**For Python 3.7**:
+
+.. note::
+
+    Initial version of Python 3.7 is buggy. Hence, only Python>=3.7.4 is supported. </p>
+
+.. code-block:: bash
+
+    pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_7/toolkit5G-0.10-py3-none-any.whl
+
+
+**For Python 3.8**:
+
+.. code-block:: bash
+
+    pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_8/toolkit5G-0.10-py3-none-any.whl
+
+
+**For Python 3.9**:
+
+.. code-block:: bash
+
+    pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_9/toolkit5G-0.10-py3-none-any.whl
+
+
+**For Python 3.10**:
+
+.. code-block:: bash
+
+    pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_10/toolkit5G-0.10-py3-none-any.whl
+
+**For Python 3.11**:
+
+.. code-block:: bash
+
+    pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R23a.0.11/package/python3_11/toolkit5G-0.10-py3-none-any.whl
+
+---------------------
+
+Once the installation is complete the user can verify the installation by the output of the pip show command:
+
+.. code-block:: bash
+
+    pip show toolkit5G
+
+
+Final Confirmation
+------------------
+
+open Jupyter Notebook
+
+.. code-block:: bash
+
+    jupyter notebook
+
+
+Create a new jupyter notebook and run the following lines of code:
+
+.. code-block:: ipython3
+
+    import toolkit5G as tk
+    tk.__version__
+
+The toolkit is successfully installed if it shows the toolkit5G version. Otherwise, something went wrong. If it shows 
+"License Error", then you will have to activate the License as described on [installation page](install.md#activate-the-5g-toolkit-license).
+But still if you are struggling please email us at any of the following emails:
+
+#. `<toolkit5g@gigayasa.com>`_
+#. `<support@gigayasa.com>`_
+#. `<vikram@gigayasa.com>`_
+
+We will be more than happy to help you in installation.

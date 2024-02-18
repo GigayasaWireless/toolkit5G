@@ -1,0 +1,63 @@
+Physical Downlink Control Channel (PDCCH)
+=========================================
+This module implements the physical downlink control channel. The implementation of these modules is based on [3GPPTS38211pdcch]_.
+
+
+PDCCH Transmitter
+-----------------
+
+.. image:: ../../figures/PhysicalChannels/PDCCHE2E.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+
+.. autoclass:: toolkit5G.PhysicalChannels.PDCCH
+   :members:
+   :exclude-members: call, build
+
+
+PDCCH Receiver
+--------------
+
+.. image:: ../../figures/PhysicalChannels/PDCCHRxE2E.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+
+.. autoclass:: toolkit5G.PhysicalChannels.PDCCHDecoder
+   :members:
+   :exclude-members: call, build
+
+
+PDCCH Components
+----------------
+
+.. image:: ../../figures/PhysicalChannels/PDCCHTxBlocks.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+
+.. image:: ../../figures/PhysicalChannels/PDCCHRxBlocks.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+
+
+.. toctree::
+    :maxdepth: 10
+
+    PDCCH/subcomponents/physicalChannels.pdcch.components.crc.rst
+    PDCCH/subcomponents/physicalChannels.pdcch.components.rnti.rst
+    PDCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.rst
+    PDCCH/subcomponents/physicalChannels.pdcch.components.polar.rst
+    PDCCH/subcomponents/physicalChannels.pdcch.components.ratematching.rst
+    PDCCH/subcomponents/physicalChannels.pdcch.components.scrambling.rst
+    PDCCH/subcomponents/physicalChannels.pdcch.components.modulation.rst
+
+
+References:
+    .. [3GPPTS38211pdcch] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation.

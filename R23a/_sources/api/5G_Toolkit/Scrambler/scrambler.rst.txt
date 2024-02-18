@@ -1,0 +1,50 @@
+Scrambling
+==========
+The scrambler is used in 5G to randomize the bits to remove the long consecutive occurrence of 1's and 0's. A scrambler
+generates the random sequence which is xor-ed with information bit bit-wise. The scrambling is performed for two purposes:
+
+    - Randomize the bit sequence or alter the probability distribution of the information bits.
+    - Reduces impact of inter-cell interference by decorrelating the interference across neighbouring cells.
+
+The scrambling is carried out for all the uplink abd downlink physical channel. For each channel, the seed used to generate
+the scrambling sequence is different. The seed is computed using parameters relevant to a particular physical chain. The
+details of the scrambling used in 5G is provided in table-1.
+
+.. list-table:: Table-1: Scrambling and Scrambling parameters in 5G
+   :widths: 25 25 25
+   :header-rows: 1
+
+   * - Physical chain
+     - Parameters
+     - Comments
+   * - PBCH
+     - :math:`L_{max}`, SFN, SSB-Index
+     - Aka :math:`1^{nd}` Scrambling
+   * - PBCH
+     - Cell-ID, SSB-Index
+     - Aka :math:`2^{nd}` Scrambling
+   * - PDCCH
+     - scambling-ID, RNTI
+     - NA
+   * - PDCCH
+     - RNTI
+     - Aka RNTI masking
+   * - PSCH
+     - scambling-ID, codeword index, RNTI
+     - PRACH
+
+
+The receiver performs the inverse process of the scrambling called **de-scrambling**. Descrambling undo the affect of scrambling
+to recover exact transmission bits. The details about the scrambling, descrambling and RNTI making is provided in upcoming
+section.
+
+**Table of Contents**
+
+.. toctree::
+    :maxdepth: 2
+
+    scrambler.scrambler
+    scrambler.deScrambler
+    scrambler.rntiMasking
+
+

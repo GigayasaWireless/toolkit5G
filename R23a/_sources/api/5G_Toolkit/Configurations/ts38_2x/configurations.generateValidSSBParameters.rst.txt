@@ -1,0 +1,46 @@
+MIB and SSB Parameters
+======================
+Master information block (MIB) abd synchronization signal block (SSB) parameters are required to implement the physical
+broadcast channel (PBCH). These are some of the most complex parameters to configure and are required for PBCH
+implementation. This module provides an API to generate these parameters as simply as possible.
+
+..  important::
+    The user can pass the bare minimum parameters which are relevant for their simulations. The module will generate the remaining parameters automatically. The parameters will be selected randomly from the set of possible legit values.
+
+--------
+
+**Generate the Valid Configurations for SSB/PBCH**
+
+.. code:: ipython3
+
+    carrierFrequency                = 1*10**9
+    lamda                           = 3e8/carrierFrequency;
+    nSCSOffset                      = 1
+    ssbParameters                   = GenerateValidSSBParameters(carrierFrequency, nSCSOffset)
+
+    isPairedBand                    = ssbParameters.isPairedBand
+    nSCSOffset                      = ssbParameters.nSCSOffset
+    choiceBit                       = ssbParameters.choiceBit
+    ssbType                         = ssbParameters.ssbType
+    subCarrierSpacingCommon         = ssbParameters.subCarrierSpacingCommon
+    ssbSubCarrierOffset             = ssbParameters.ssbSubCarrierOffset
+    nssbCandidatesInHrf             = ssbParameters.nssbCandidatesInHrf
+    DMRSTypeAPosition               = ssbParameters.DMRSTypeAPosition
+    ssbIndex                        = ssbParameters.ssbIndex
+    hrfBit                          = ssbParameters.hrfBit
+    systemFrameNumber               = ssbParameters.systemFrameNumber
+    controlResourceSet0             = ssbParameters.controlResourceSet0
+    searchSpace0                    = ssbParameters.searchSpace0
+    cellBarred                      = ssbParameters.cellBarred
+    intraFrequencyReselection       = ssbParameters.intraFrequencyReselection
+    withSharedSpectrumChannelAccess = ssbParameters.withSharedSpectrumChannelAccess
+
+
+---------
+
+The details about the input-output interface of the GenerateValidSSBParameters detailed below.
+
+.. autoclass:: toolkit5G.Configurations.GenerateValidSSBParameters
+    :members:
+    :exclude-members: call, build
+

@@ -1,0 +1,87 @@
+Direction of Arrival Estimation
+===============================
+This modules is used for estimating the 2D direction of arrival (DoA) using 2D planner antenna array as shown in fig-[?].
+The implementation expects the user to provide the antenna array parameters such as inter-antenna element spacing and
+number of antenna elements in both horizontal and vertical directions. The implementation expects more than 2 antennas
+in both the directions.
+
+.. image:: ../../../figures/Positioning/Angle_Estimation/DoA_Antenna_Array.svg
+  :width: 800
+  :alt: Alternative text
+
+5G Toolkit provides three methods for estimating the DoA as shown in table below. All these methods offers different
+performance for different computational complexity. The quality of DoA estimates with number oof antennas in both the
+directions. Higher number of antenna in vertical direction improves the accuracy of elevation angle estimates. Similarly,
+the increased number of antennas placed Horizontally improves the resolution of azimuth angle estimates.
+
+.. list-table:: Direction of Arrival Estimation Methods
+   :widths: 25 25 25 25 25
+   :header-rows: 1
+
+   * - Method
+     - Memory Complexity
+     - Computational Complexity
+     - Accuracy
+     - ``Module``
+   * - MUSIC
+     - Medium
+     - Medium
+     - Best
+     - ``MUSIC_DoA``
+   * - ESPRIT
+     - Highest
+     - Fastest
+     - Medium
+     - ``ESPRIT_DoA``
+   * - DFT
+     - Lowest
+     - Lowest
+     - Lowest
+     - ``DFT_DoA``
+
+.. NOTE::
+    The comparison stated above is within these three methods only.
+
+.. important::
+    ``DFT_DoA`` and ``MUSIC_DoA`` are not updated yet. These two methods will be provided before the end of July.
+
+
+------------
+
+The following examples illustrates the way to use the APIs to estimate the DOA using ``DoAEstimation``.
+
+**Code example**
+
+.. code-block:: Python
+
+    # Ntx, Nty, dtx, dty will be taken from antenna arrays properties
+    # Hk is estimated at the receiver.
+    # However, for perfect CSI, it can be directly taken from channel.OFDM.
+    Lpath        = 5 # Returns DoAs for 5 strongest paths
+    doaEstimator = DoAEstimation("ESPRIT", Ntx, Nty, Hk.shape[1]) # Create a ESPRIT DoA Object
+    xoA_est      = doaEstimator(Hk, Lpath, dtx, dty)    # Return 2 x 5 DoA matrix
+    # row-0 is azimuth angles for each path
+    # row-1 is elevation angles for each path
+
+
+------------
+
+The details about the input output interface of DoAEstimation is provided below.
+
+.. autoclass:: toolkit5G.Positioning.DoAEstimation
+   :members:
+   :exclude-members: call, build
+
+
+------------
+
+The details about the DoA estimation methods used in this package are discussed below.
+
+**DoA Estimation Methods**
+
+.. toctree::
+    :maxdepth: 2
+
+    methods/positioning.doaEstimation.dftDoA
+    methods/positioning.doaEstimation.espritDoA
+    methods/positioning.doaEstimation.musicDoA

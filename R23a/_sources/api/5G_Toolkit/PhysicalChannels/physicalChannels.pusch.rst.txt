@@ -1,0 +1,34 @@
+Physical Uplink Shared Channel (PUSCH)
+======================================
+This module implements the physical downlink control channel.
+
+PUSCH Transmitter
+*****************
+To be updated ????????????????.
+
+.. image:: ../../figures/PhysicalChannels/PDSCHTx.png
+  :width: 800
+  :alt: Alternative text
+
+
+.. toctree::
+    :maxdepth: 10
+
+    PUSCH/PUSCHUpperPhy.rst
+
+
+
+PUSCH Receiver
+**************
+To be updated ????????????????.
+
+.. image:: ../../figures/PhysicalChannels/PDSCHRxn.png
+  :width: 800
+  :alt: Alternative text
+
+.. toctree::
+    :maxdepth: 10
+
+    PUSCH/PUSCHDecoderUpperPhy.rst
+
+

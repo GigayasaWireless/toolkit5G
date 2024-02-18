@@ -1,0 +1,124 @@
+.. 5G_Toolkit documentation master file, created by
+   sphinx-quickstart on Wed Jan 25 19:51:54 2023.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+   
+======================================
+5G Toolkit
+======================================
+.. include:: <isonum.txt>
+
+`5G-Toolkit <https://gigayasa.com/>`_\ |trade| provides a rich library of functions and modules in
+`Python <https://www.python.org/>`_ based on `NumPy <https://numpy.org/>`_ to design algorithms for 5G and Beyond
+wireless systems. It implements `3GPP <https://www.3gpp.org/>`_ standards complaint downlink and uplink chains to
+perform multi-cell link level and system level simulations. It support variety of realistic antenna models, simulation
+models and channels to facilitates the users to carry out standards-based research, development and testing. It provides
+modules which are highly optimized for performance to reduce the prototyping time which further scales with GPUs and
+TPUs. It internally uses many modules provided by `Sionna <https://nvlabs.github.io/sionna/#sionna/>`_. The library
+provide interactive interfaces to analyze the performance of the methods and develop better understanding of the
+systems. It is designed to work well with CPUs, GPUs and TPUs.
+
+.. raw:: html
+
+   <center>
+   <iframe width="620" height="350" src="https://www.youtube.com/embed/6L4HBA3z1I8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </center>
+
+|
+
+Salient Features
+###################################
+* Highly Moduler Design
+* Support Plug and Play
+* Designed for speed and memory usage
+* Built using `NumPy <https://numpy.org/>`_ in `Python <https://www.python.org/>`_
+* Easy to integrate with Tensorflow and Pytorch
+* Ideal for Artificial Intelligence and Machine learning
+* Numerous `Tutorials <api/Tutorials/Tutorials>`_  and `Projects <api/Projects/Projects>`_  for teaching, learning and research
+* Quarterly Updates and Upgrades
+* 24x7 support
+
+
+Technical Features
+###################################
+* Provide the Uplink and Downlink Chains
+* 3GPP Standards Complaint Channel Coders
+* Supports all the 5G sequence and resource mapping
+* Supports all the 3GPP Channel Models
+* Supports diverse 5G Use cases and Features
+* Support for 5G Procedures
+
+
+===================================
+ 5G Toolkit |version| Documentation
+===================================
+
+:Version: |release|
+:Homepage: |Website|
+:Contact: |Contact|
+:Copyright: Available in public domain.
+:Technology: 5G and Beyond Networks.
+:Layer: Physical layer and Scheduler.
+:Research Areas: Channel codes, Shared channel (PxSCH), Control channel(PxCCH), Broadcast channel(PxBCH), Random Access Channel(PRACH), Beamforming, Precoding, Hybrid **A**\dvanced **A**\ntenna **S**\ystems (AAS), OFDM, Wireless channels, Antenna Arrays, Mobility, Handover, Beam management, **A**\rtificial **I**\ntelligence and **M**\achine **L**\earning (AI-ML), Type-I and Type-II Codebooks, Scheduling, **H**\ybrid **A**\utomatic **R**\epeat \Re\**q**\uest (HARQ).
+
+
+How the documentation is organized
+###################################
+
+|5G Toolkit| documentation provides a detailed understanding of the product. A high-level overview of the complete
+toolkit is given below. It will enable you to locate the things they might be looking for:
+
+* :doc:`Part 1: ReleaseNotes <releaseNotes>` provides the list of features supported by the latest release of 5G Toolkit.
+
+* :doc:`Part 2: Install 5G Toolkit <install>` discusses the installation process and the other libraries required to install the product.
+
+* :doc:`Part 3: API Documentation <api/5G_Toolkit/5Gtoolkit>` provides the details of the input-output interface of all the modules along with examples demonstrating their usage.
+
+* :doc:`Part 4: Tutorials <api/Tutorials/Tutorials>` guides you to use the toolkit using a set of simple well illustrated tutorials. These tutorials cover Channel codes, physical chains and wireless channels. More tutorials will be added along the way.
+
+* :doc:`Part 5: Projects <api/Projects/Projects>` are the guides and lay out the recipes to solve some complex challenging problems using the toolkit. It provided the codes to implement some of the state of the art research work (paper) using the modules of the toolkit.
+
+* :doc:`Part 6: Tentative list of features <api/Preview_of_Next_Release/FeatureList>` arrange the list of features that will be released in upcoming quarters.
+
+* :doc:`Part 7: Research work carried out using 5G Toolkit <api/Built_using_5G_Toolkit/builtUsing5GToolkit>` list down the work that used **5G Toolkit**.
+
+* :doc:`Part 8: Challenge of this week <api/WeekChallenge/challenge>` is an initiative by `Gigayasa <https://gigayasa.com/>`_ to excite young researchers to about wireless communication. The board will float a research problem every month and interested researchers can solve the problem using 5G Toolkit and share the code repository with us on |Contact|. The best responses will be rewarded. We will provide the solution of each problem at the end of the month.
+
+* :doc:`Part 9: Licenses <api/License/license>` describes the license and copyright related to 5G Toolkit.
+
+
+Looking for Help
+###################################
+In case you are looking for help, please post your question on our portal. We will answer your question as quickly as
+possible. Please feel free to request new features or reach us out on |Contact|.
+
+
+
+More Information
+###################################
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Contents:
+
+   releaseNotes
+   install
+   GettingStarted
+   api/5G_Toolkit/5Gtoolkit
+   api/Tutorials/Tutorials
+   api/Projects/Projects
+   api/Integration_with_SDR/Integration_with_SDRs
+   api/Preview_of_Next_Release/FeatureList
+   api/Built_using_5G_Toolkit/builtUsing5GToolkit
+   api/WeekChallenge/challenge
+   api/License/license
+   Discussion Forum <https://discuss.gigayasa.com/>
+
+5G Toolkit Features
+###################################
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+.. include:: _common_definitions.txt

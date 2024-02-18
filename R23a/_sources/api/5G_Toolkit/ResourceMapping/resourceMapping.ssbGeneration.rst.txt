@@ -1,0 +1,12 @@
+Synchronization Signal Block (SSB) Resource Mapping
+===================================================
+This module maps multiple Synchronization Signal Blocks (SSBs) on to the resource grid.
+
+
+.. autoclass:: toolkit5G.ResourceMapping.ResourceMapperSSB
+   :members:
+   :exclude-members: call, build
+
+
+References:
+    .. [3GPPTS38211_SSBRM] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'

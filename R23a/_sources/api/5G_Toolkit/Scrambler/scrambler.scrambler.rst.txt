@@ -1,0 +1,61 @@
+Scrambler
+=========
+This modules provide interface for implementing the scrambler for PBCH, PDCCH and PDSCH. The implementation details of the
+Scramblers for PDSCH, PDCCH and PBCH are provided in Section 7.3.1.1, 7.3.2.3 and 7.3.3.1 of [3GPPTS38211_Scr]_.
+
+..  important::
+    * Scrambling just randomize the bit pattern. It doesn't change the length of the input sequence
+
+The scrambled can be used as follows:
+**Scrambling for PBCH:**
+
+.. code-block:: Python
+
+    ## Bits to be scrambled
+    bits    = np.random.randint(2, size = 32)
+
+    cellID  = 471 # Physical cell ID
+    Lmax    = 8   # Maximum number of candidate SS/PBCH blocks in a half frame
+
+    # Scrambler Object for PBCH
+    pbchScr = Scrambler("PBCH", cellID, Lmax)
+    # Scrambling the input Bits using the object
+    scrBits = pbchScr(bits)
+
+**Scrambling for PDCCH:**
+
+.. code-block:: Python
+
+    numBatch= 8    # Number of batches of input bits
+    # bits for scrambling
+    bits    = np.random.randint(2, size = (numBatch, 32))
+    rnti    = 1051  # RNTI value
+    nID     = 18548 # Scrambling ID
+    # Scrambler Object for PDCCH
+    pbchScr = Scrambler("PDCCH", rnti, nID)
+    ## Scrambling the bits using object
+    scrBits = pbchScr(bits)
+
+**Scrambling for PDSCH:**
+
+.. code-block:: Python
+
+    numBatch= 8     # Number of batches
+    numBSs  = 3     # Number of BSs
+    # bits for scrambling
+    bits    = np.random.randint(2, size = (numBatch, numBSs, 512))
+    rnti    = 1151  # RNTI value
+    cbIndex = 0     # Codeblock Index
+    nID     = 39742 # Scrambling ID
+    # Scrambler Object for PDCCH
+    pbchScr = Scrambler("PDSCH", rnti, cbIndex, nID)
+    scrBits = pbchScr(bits) # Scrambling the bits using object
+
+The details about the input-output interface of the **scrambling** is provided below.
+
+.. autoclass:: toolkit5G.Scrambler.Scrambler
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_Scr] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

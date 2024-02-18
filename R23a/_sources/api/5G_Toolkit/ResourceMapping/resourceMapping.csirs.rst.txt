@@ -1,0 +1,72 @@
+Channel state Information reference signal (CSI-RS)
+===================================================
+This module generates the channel state information reference signal (CSI-RS) based on the inputs passed and map this signal
+to time-frequency (t-f) resource grid as per Section 7.4.1.5 of [3GPPTS38211_csirsRM]_. THis resource grid can be orthogonal
+frequency division multiplexed (OFDM) and transmitted over the wireless channels.
+
+
+**Generating CSI-RS Resource Grid**:
+
+.. code-block:: Python
+
+    subcarrierSpacing = 30000
+    startPRB          = 2
+    nrofPRBs          = 8
+    numSubcarriers    = 12*(nrofPRBs+startPRB)
+    Nfft              = 128
+
+    ## CSI-RS Resource Configurations___
+    rowIndex          = 5
+    nrofPorts         = 4
+    density           = 1
+    cdmType           = "fd-CDM21"
+
+    ## CSI-RS Parameters__________________________________________
+    scramblingID      = 13254
+    numSlotsPerFrame  = int(10*(subcarrierSpacing/15000))
+    slotNumber        = 5
+    #_____________________________________________________________
+
+
+    ## Time and Frequency resources____________________
+    betaCSIRS                    = 1
+    firstOFDMSymbolInTimeDomain  = 2
+    firstOFDMSymbolInTimeDomain2 = None
+    frequencyDomainAllocation    = np.array([0,0,1,0,0,0])
+
+    ## CSI-RS Resource mapping
+    rmCSIRS   = ResourceMapperCSIRS(nrofPorts, density, cdmType, scramblingID, slotNumber)
+    csirsGrid = rmCSIRS(betaCSIRS, frequencyDomainAllocation, firstOFDMSymbolInTimeDomain,
+                        firstOFDMSymbolInTimeDomain2, nrofPRBs, startPRB, Nfft)
+
+
+**Display the CSI-RS Resource Grid**:
+
+.. code-block:: Python
+
+    fig0, ax0 = rmCSIRS.displayResourceGrid()
+
+
+.. image:: ../../figures/ResourceMapping/csiRSGrid.png
+  :width: 800
+  :alt: Alternative text
+
+**Display the CSI-RS CDM Grid**:
+
+.. code-block:: Python
+
+    fig1, ax1 = rmCSIRS.displayCDMPattern()
+
+
+.. image:: ../../figures/ResourceMapping/csiRSCDMGrid.png
+  :width: 800
+  :alt: Alternative text
+
+
+.. autoclass:: toolkit5G.ResourceMapping.ResourceMapperCSIRS
+   :members:
+   :exclude-members: call, build
+
+
+References:
+    .. [3GPPTS38211_csirsRM] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'

@@ -1,0 +1,12 @@
+Physical Downlink Control Channel (PDCCH)
+=========================================
+This module maps the Physical Control Channel (PDCCH) payload onto the resource grid as per control resource set configurations.
+The demodulation reference signal (DMRS) for PDCCH is filled in resource grid to equalizing information at the receiver. [3GPPTS38211PDCCHRM]_
+
+.. autoclass:: toolkit5G.ResourceMapping.ResourceMappingPDCCH
+   :members:
+   :exclude-members: call, build
+
+
+References:
+    .. [3GPPTS38211PDCCHRM] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'

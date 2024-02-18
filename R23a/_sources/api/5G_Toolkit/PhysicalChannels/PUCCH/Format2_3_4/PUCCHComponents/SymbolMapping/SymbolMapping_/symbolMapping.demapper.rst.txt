@@ -1,0 +1,46 @@
+Demapper
+========
+Demapper class is used for demodulating the estimated "qam", "bpsk" or ":math:`\frac{\pi}{2}`-bpsk" symbols. The demapper supports two implementations
+
+    #. **Max-log-MAP**: Sub-optimal (3dB performance loss for AWGN channel) but has an order lower complexity than **Log-MAP**. It is configured using ``demapping_method`` = "maxlog"
+    #. **Log-MAP**: Optimal performance for AWGN channels. It is configured using ``demapping_method`` = "app"
+
+The decoder can be configured to return soft or hard output by using ``hard_out`` flag. The demapper for "qam" methods is
+imported from `Sionna-demapper <https://nvlabs.github.io/sionna/api/mapping.html#demapping>`_.
+
+..  important::
+    * When the output of demapper is passed to a channel coder or descrambler, the channel coder should be configured to either accept the hard inputs or the hard inputs must be converted to bipolar :math:`\{-1, 1\}` format.
+
+The demapping is performed as follows:
+
+**Log-MAP bpsk Demapper generating soft output:**
+
+.. code-block:: Python
+
+    demapMethod = "app" # Demapping method
+    constType = "bpsk"  # Symbol mapping type
+    modOrder  = 1       # Mordulation order or number of bits per symbol
+    hard_out  = False   # Whether to return hard output or soft output
+
+    # Symbol demapping object
+    demapper  = Demapper(demapMethod, constType, modOrder, hard_out = hard_out)
+    llr       = demapper([symbols, 1/snr]) # LLR Computation
+
+**Max-Log-MAP QAM Demapping generating hard output:**
+
+.. code-block:: Python
+
+    demapMethod = "maxlog" # Demapping method
+    constType = "qam"  # Symbol mapping type
+    modOrder  = 4       # Mordulation order or number of bits per symbol
+    hard_out  = True   # Whether to return hard output or soft output
+
+    # Symbol demapping object
+    demapper  = Demapper(demapMethod, constType, modOrder, hard_out = hard_out)
+    bitEst    = demapper([symbols, 1/snr]) # LLR Computation
+
+The details about the input-output interface of the Symbol demapper detailed below.
+
+.. autoclass:: toolkit5G.SymbolMapping.Demapper
+    :members:
+    :exclude-members: call, build

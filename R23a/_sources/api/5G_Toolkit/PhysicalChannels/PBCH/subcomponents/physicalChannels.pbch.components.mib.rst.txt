@@ -1,0 +1,8 @@
+PBCH Payload
+***********************
+
+.. toctree::
+    :maxdepth: 10
+
+    physicalChannels.pbch.components.mib.mib.rst
+

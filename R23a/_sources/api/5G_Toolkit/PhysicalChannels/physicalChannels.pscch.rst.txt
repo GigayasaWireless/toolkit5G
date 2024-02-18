@@ -1,0 +1,77 @@
+Physical Sidelink Control Channel (PSCCH)
+======================================
+This module implements the physical Sidelink control channel.The complete physical layer chain at the transmitter and
+receiver is divided into upper physical layer chain (upperPhy) and lower physical layer chain (lowerPhy).The upper
+physical layer consists of 24 Bit CRC addition, Polar Encoding and, rate matching.On the other hand, the lower physical
+layer module implements scrambling, modulation (symbol mapping),and resource mapping. It returns the OFDM resource grid
+for sub-carrier/sub-band specific precoding/beamforming and other RF specific processing. These modules provides the high
+level APIs for the PSCCH chains.
+
+PSCCH Transmitter
+*****************
+The details about the transmitter side of the PSCCH are provided in [3GPPTS38211pscch]_, [3GPPTS38212pscch]_ and
+[COMST.2021.3057017]_. The chain is bi-parted into upper physical layer and lower physical layer section to entertain
+both the link-level and system level simulations. The details of the APIs is provided in following sub-sections.
+
+.. image:: ../../figures/PhysicalChannels/PSCCHE2ETx.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhy.PSCCHUpperPhy
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhy.PSCCHLowerPhy
+   :members:
+   :exclude-members: call, build
+
+
+PSCCH Receiver
+*****************
+
+The details about the Receiver side of the PSCCH are provided in [3GPPTS38211pscch]_, [3GPPTS38212pscch]_ and
+[COMST.2021.3057017]_. The chain is bi-parted into upper physical layer and lower physical layer section to entertain
+both the link-level and system level simulations. The details of the APIs is provided in following sub-sections.
+
+.. image:: ../../figures/PhysicalChannels/PSCCHE2ERx.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhyDecoder.PSCCHLowerPhyDecoder
+   :members:
+   :exclude-members: call, build
+
+
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhyDecoder.PSCCHUpperPhyDecoder
+   :members:
+   :exclude-members: call, build
+
+
+PSCCH Components
+*****************
+
+.. image:: ../../figures/PhysicalChannels/PSCCHBlocksTx.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+.. image:: ../../figures/PhysicalChannels/PSCCHBlocksRx.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+.. toctree::
+    :maxdepth: 10
+
+    PSCCH/subcomponents/physicalChannels.pdcch.components.crc.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.polar.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.ratematching.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.scrambling.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.modulation.rst
+    PSCCH/subcomponents/physicalChannels.pdcch.components.resourceMapping.rst

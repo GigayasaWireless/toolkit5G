@@ -1,0 +1,36 @@
+Primary Synchronization Signal
+##############################
+Primary synchronization signal (PSS) is a m-sequence of length 127 generated using :math:`N_{ID}^2`. It is used for time
+synchronization which aims to find the slot boundary by the user equipment (UE). The :math:`N_{ID}^2` provides a cyclic
+shift to a base sequence as defined in [3GPPTS38211_PSS]_.
+
+..  important::
+    * PSS is an constituent of synchronization signal block (SSB). It is loaded in the middle (across frequency) of first symbol of the SSB.
+
+The primary synchronization signal is generated as follows:
+
+**If** :math:`N_{ID}^2` **is scalar:**
+
+.. code-block:: Python
+
+    nID2        = 1         # Cell ID-2 for PSS generation
+    pss         = PSS(nID2) # Generate PSS object using this cell ID-2.
+    pssSequence = pss()     # Generate [1x127] pss sequence using 'pss' object
+
+**If** :math:`N_{ID}^2` **is NumPy array:**
+
+.. code-block:: Python
+
+    nID2        = np.array([1,0,2,1]) # Cell ID-2 for PSS generation
+    pss         = PSS(nID2)           # Generate PSS object using this cell ID-2.
+    pssSequence = pss()               # Generate [4x127] pss sequence using 'pss' object for each cell-ID2
+
+The details about the input-output interface of the PSS implementation is provided below.
+
+.. autoclass:: toolkit5G.SequenceGeneration.PSS
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_PSS] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).
+

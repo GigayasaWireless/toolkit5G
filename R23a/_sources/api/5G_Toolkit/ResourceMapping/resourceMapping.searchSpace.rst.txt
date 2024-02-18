@@ -1,0 +1,68 @@
+Search Space Set
+================
+The modules provides the classes and functions that implement Search Space Set.
+
+Search Space is defined as the predefined region in which UE perform the blind decoding.
+In the PDCCH region in DL radio frame, there can be many places where a specific PDCCH is located and UE searches all the possible locations.
+The possible location for a PDCCH differs depending on whether the PDCCH is Common or UE-specific, and also depend on what aggregation level is used.
+Set of all the possible location for PDCCH is called *Search Space Set* and  each of the possible location is called a *PDCCH Candidate*.
+The search space indicates the set of CCE locations where the UE may find its PDCCHs.
+
+There are two types of search space : the common search space and the UE-specific search space.
+A UE is required to monitor both common and UE-specific search space.
+
+The common search space would carry the DCIs that are common for all UEs. For example, system information (using the SI-RNTI), paging (P-RNTI), PRACH responses (RA-RNTI),
+or UL TPC commands (TPC-PUCCH/PUSCH-RNTI).
+The UE monitors the common search space using aggregation level 4 and 8.
+Maximum number of CCEs present in common search space is 16.
+
+The UE-specific search space can carry DCIs for UE-specific allocations using the UE's assigned C-RNTI.
+The UE monitors the UE-specific search space at all aggregation levels {1, 2, 4, and 8}.
+
+
+.. autoclass:: toolkit5G.ResourceMapping.SearchSpaceSet
+   :members:
+   :exclude-members: call, build
+
+
+An example of CORESET is given below. After instatiation of the class :class:`SearchSpaceSet`, user can fetch the PDCCH monitoring slots and monitoring symbols with in a slot.
+
+**Example:**
+
+.. code-block:: Python
+
+   # numerology
+   >>> mu = 0
+   # Number of Slots Per Radio Frame for a choosen numerology.
+   >>> numOfSlotsPerFramePerNumerology  = (2**mu)*10
+   # Type of search space set choosen. Here we choose Common Search Space or "CSS"
+   >>> ssType = "CSS"
+   # Aggregation Level 
+   >>> AL = 4
+   # duration of CORSET in number of symbols
+   >> coresetDuration = 2
+   # REG bundle Size
+   #########################################
+   # PDCCH monitoring periodicity : ks slots 
+   #########################################
+   >>> ks = 20
+   ####################################
+   # PDCCH monitoring offset : os slots
+   ####################################
+   >> os = 0
+   ############################################################################################
+   # duration of search space set in  terms of number of slots : Ts slots and Ts<=ks for ks>=2
+   ############################################################################################
+   >> Ts = 3
+   # Instanstiating SearchSpaceSet object with above choosen parameters.
+   >>> sssObj = SearchSpaceSet(mu,ssType)
+   >>> sssObj(ks,os,Ts,AL,coresetDuration) 
+   # PDCCH monitoring slots                 
+   >>> sssObj.pdcchMonitoringSlotIndices
+   # PDCCH Monitoring Symbols With in a slot
+   >>> sssObj.pdcchMonitoringSymbolsWithinSlot 
+
+
+
+References:
+    .. [3GPPTS38213_SearchSpaceSet] (3GPP TS 38.213 version 17.5.0 Release 17) 5G;NR;Physical layer procedures for control '10.1 UE procedure for determining physical downlink control channel assignment'

@@ -1,0 +1,341 @@
+Getting Started
+=======================
+.. include:: <isonum.txt>
+
+In the section, we will first give you a quick overview on how to use the API documentation which is followed by a
+simple tutorial to get you all started with a long and exciting journey of learning and exploration.
+
+Understanding API Documentation
+-------------------------------
+The `API documentation <api/5G_Toolkit/5Gtoolkit.html>`_ provides the understanding required to use a module for
+simulation and emulation purposes. Each module expects 2 set of arguments:
+
+1. First set of arguments are expected at the time object creation (instantiation) called as **Parameters** of the module.
+2. Second set of the arguments are passed while calling the object. These are called the **Inputs**.
+
+If the module is configured correctly, it produce the one, multiple or no outputs. The type, size and shape of the
+**Outputs** is detailed in its API documentation.
+
+
+.. tip::
+    The API documentation provides the users with access to **Attributes** and some **additional methods** (such as
+    display functions) to get insights into the implementations.
+
+
+.. important::
+    From a pythonic standpoint the __init__ arguments are addressed as **Parameters** and __call__ arguments are
+    addressed as **Inputs** in the `API documentation <api/5G_Toolkit>`_.
+
+
+
+Hello World!
+------------
+Let us get you started with your first script using 5G Toolkit. Its a very simple project which will perform following
+
+- :math:`\textcolor{blue}{\text{Cyclic Redundancy Check}}`
+- :math:`\textcolor{blue}{\text{Symbol Mapping}}`
+- :math:`\textcolor{blue}{\text{Add noise}}`
+
+
+
+The block diagram of the implementation is shown below:
+
+.. image:: api/figures/GettingStarted.png
+  :width: 800
+  :alt: Alternative text
+
+
+.. note::
+    - **CRC** helps in **error detection** at the receiver. If CRC check fails, the receiver can request for retransmission of data.
+    - **Symbol Mapping** converts **bits into symbols** for transmission.
+    - **Add noise** introduce receiver noise to the transmitted signal to model **AWGN channel**.
+
+
+
+Import Python Libraries
+^^^^^^^^^^^^^^^^^^^^^^^
+We will import `NumPy <https://numpy.org/>`_, `Matplotlib <https://matplotlib.org/>`_ for linear algebra and plotting
+respectively.
+
+.. code-block:: ipython3
+
+    import os
+    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+    import numpy as np
+    %matplotlib widget
+    import matplotlib.pyplot as plt
+
+
+
+.. important::
+    The following lines of code are used to disable the GPU if its not properly set up in your system. If GPU works well
+    in your system, you can remove these lines.
+
+.. code-block:: ipython3
+
+    import os
+    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
+
+How to import 5G Toolkit Libraries
+###################################
+As understood from this diagram we require 5 modules for the whole implementation. These modules and the corresponding
+API are listed below:
+
+#. CRC Encoder: `toolkit5G.CRC.CRCEncoder <https://gigayasawireless.github.io/toolkit5G/api/5G_Toolkit/CRC/crc.crcEncoder.html>`_
+#. Symbol Mapper: `toolkit5G.SymbolMapping.Mapper <https://gigayasawireless.github.io/toolkit5G/api/5G_Toolkit/SymbolMapping/symbolMapping.mapper.html>`_
+#. AWGN Channel: `toolkit5G.ChannelProcessing.AddNoise  <https://gigayasawireless.github.io/toolkit5G/api/5G_Toolkit/ChannelProcessing/channelProcessing.addNoise.html>`_
+#. Symbol Demapper: `toolkit5G.SymbolMapping.Demapper <https://gigayasawireless.github.io/toolkit5G/api/5G_Toolkit/SymbolMapping/symbolMapping.demapper.html>`_
+#. CRC Decoder: `toolkit5G.CRC.CRCDecoder <https://gigayasawireless.github.io/toolkit5G/api/5G_Toolkit/CRC/crc.crcDecoder.html>`_
+
+These modules can be imported directly from the 5G Toolkit using the code shown below:
+
+.. code-block:: ipython3
+
+    from toolkit5G.CRC import CRCEncoder
+    from toolkit5G.CRC import CRCDecoder
+    from toolkit5G.SymbolMapping import Mapper
+    from toolkit5G.SymbolMapping import Demapper
+    from toolkit5G.ChannelProcessing import AddNoise
+
+
+.. tip::
+    It is recommended to import the required libraries alone. Aliasing is not mandatory.
+
+
+Create Objects for all the Modules
+###################################
+The following code block will generate the objects to perform the designated operation for each module. As per
+`CRC <api/5G_Toolkit/CRC>`_ and `Symbol Mapping <api/5G_Toolkit/CRC>`_ documentation, we first create the CRCEncoder,
+CRCDecoder, Mapper, Demapper and AddNoise objects.
+
+
+.. code-block:: ipython3
+
+    num_bits_per_symbol = 4
+    demapping_method    = "app"
+
+    crcEncoder    = CRCEncoder(crcType="CRC24C") # Create object of CRC Encoder
+    crcDecoder    = CRCDecoder("CRC24C")         # Create object of CRC Decoder
+    qamMapper     = Mapper("qam",num_bits_per_symbol)   # Create Mapper Object
+    qamDemapper   = Demapper(demapping_method = "app",
+                             constellation_type="qam",
+                             num_bits_per_symbol = num_bits_per_symbol,
+                             hard_out = True)           # Create Demapper Object
+    awgn          = AddNoise()
+
+
+.. note::
+    * 24 bit CRC is used for error detection.
+    * 16 QAM is used for symbol mapping
+    * **Log-MAP** Symbol Demapper is configured to return hard outputs (0/1).
+    * The symbol power will be 1 and power of noise added to the signal will be :math:`\frac{1}{\text{SNR}}`.
+
+
+
+Generate Payload bits and Encode them
+##########################################
+Generate a bit sequence randomly using randint() function from numpy.random library. Encode these bits using the crc
+encoder object.
+
+.. code-block:: ipython3
+
+    numBlocks     = 10000
+    nBitsPerBlock = 384
+    bits          = np.random.randint(0, 2, size = (numBlocks,nBitsPerBlock)) # Bits to be Encoded
+    crcBits       = crcEncoder(bits)
+
+
+Symbol Mapping the Encoded Bits
+################################
+Perform 16 QAM on the bits. i.e map each group of 4 bits to a symbol using `Mapper <api/5G_Toolkit/symbolMapping.mapper>`_
+as shown below.
+
+.. code-block:: ipython3
+
+    symbols    = qamMapper(crcBits)
+
+Pass through AWGN Channel
+##########################
+Create an AWGN Channel and pass the symbols through it. The AWGN channel will introduce the noise of power
+:math:`\frac{1}{\text{snr}}` to the transmitted signal.
+
+.. code-block:: ipython3
+
+    snr           = 70                      ## Signal to noise ratio
+    rxsymbols     = awgn(symbols, (1/snr))  ## Add AWGN noise with power = 1/SNR
+
+
+Demapping the Symbols
+######################
+The `Demapper <api/5G_Toolkit/symbolMapping.demapper>`_ is used to convert the symbols back to either LLRs or bits based
+the type of output configured.
+
+.. code-block:: ipython3
+
+    bitsEst       = qamDemapper([np.complex64(rxsymbols), 1/snr]) # Demap the symbols into bits
+
+
+Detect Error in the Blocks
+###########################
+The decoded bits is passed through CRC decoder to get the bits CRC removed bits and CRC check variable for each block.
+
+.. code-block:: ipython3
+
+    rBits, checks = crcDecoder(bitsEst) ## Compute the CRC check and remove the CRC from the bits.
+
+
+.. note::
+    If CRC check variable is **True**, then there is no error in the block. Otherwise, there is at-least one bit error in
+    the block.
+
+
+Compute Bit and Block Error Rate
+################################
+The compare the transmitted bits with the received bits to compute the bit error rate. On the other hand, block error rate
+can be computed directly from CRC-check flag.
+
+.. code-block:: ipython3
+
+    ber = np.mean(np.abs(bits-rBits)) # Compute the bit error/total number of bits
+    bler= 1-np.mean(checks)           # Compute the block error/total number of block
+
+    print("  Bit error rate = "+str(ber))
+    print("Block error rate = "+str(bler))
+
+.. parsed-literal::
+
+      Bit error rate = 6.71875e-05
+    Block error rate = 0.026599999999999957
+
+
+.. note::
+    It is not practically possible to compute the bit error rate as transmitted bits are not known at the receiver.
+    However, the receiver can compute the CRC check at the receiver without knowing the transmitted information which
+    is used to computed the BLER.
+
+
+
+Constellation Diagrams at the Tx and Rx
+#######################################
+The following diagram compares the constellation diagram of transmitted and received symbols.
+
+.. code-block:: ipython3
+
+    fig, ax = plt.subplots()
+    ax.set_aspect(True)
+
+    ax.scatter(np.real(rxsymbols), np.imag(rxsymbols), color = "red", marker=".", s=2)
+    ax.scatter(np.real(symbols), np.imag(symbols), color = "blue")
+
+    ax.set_xlabel("Real part $\mathfrak{R} \{x\}$")
+    ax.set_ylabel("Imaginary part $\mathfrak{I} \{x\}$")
+    ax.set_title("Contellation Diagram of transmitted and received symbols for 16-QAM")
+    ax.grid(which='both')
+    plt.show()
+
+
+.. image:: api/figures/Constellation.svg
+  :width: 600
+  :align: center
+  :alt: Alternative text
+
+
+
+Link Level Simulation
+######################
+The above procedure is repeated for different modulation order to analyse the SNR vs BER and BLER performance.
+
+.. code-block:: ipython3
+
+    num_bits_per_symbol = 4
+    demapping_method    = "app"
+
+    crcEncoder    = CRCEncoder(crcType="CRC24C") # Create object of CRC Encoder
+    crcDecoder    = CRCDecoder("CRC24C")         # Create object of CRC Decoder
+    awgn          = AddNoise()
+
+
+    SNRdB    = np.linspace(0,25,10)
+    SNR      = 10**(SNRdB/10)
+    modOrder = np.array([2,4,6], dtype=np.int32)
+
+    ber   = np.zeros((modOrder.size, SNR.size))
+    bler  = np.zeros((modOrder.size, SNR.size))
+
+    numBlocks     = 10000
+    nBitsPerBlock = 384
+
+    i     = 0
+    j     = 0
+    for m in modOrder:
+        qamMapper     = Mapper("qam",int(m))   # Create Mapper Object
+        qamDemapper   = Demapper(demapping_method = "app",
+                                 constellation_type="qam",
+                                 num_bits_per_symbol = int(m),
+                                 hard_out = True)           # Create Demapper Object
+
+        bits          = np.random.randint(0, 2, size = (numBlocks,nBitsPerBlock)) # Bits to be Encoded
+        crcBits       = crcEncoder(bits)
+        symbols       = qamMapper(crcBits)
+
+        j = 0
+        for snr in SNR:
+
+            rxsymbols     = awgn(symbols, (1/snr))
+            bitsEst       = qamDemapper([np.complex64(rxsymbols), np.float32(1/snr)])
+            rBits, checks = crcDecoder(bitsEst)
+
+            ber[i,j]      = np.mean(np.abs(bits-rBits))
+            bler[i,j]     = 1-np.mean(checks)
+
+            print("For modOrder = "+str(m)+" | snr = "+str(snr)+"  Bit error rate = "+str(ber[i,j]))
+            print("For modOrder = "+str(m)+" | snr = "+str(snr)+"Block error rate = "+str(bler[i,j]))
+
+            j = j + 1
+        i = i + 1
+
+
+Bit/Block Error Rate Performance
+################################
+
+.. code-block:: ipython3
+
+    fig,ax = plt.subplots()
+    for i in np.arange(modOrder.size):
+        ax.semilogy(SNRdB, ber[i], "-*")
+
+    ax.set_xlabel("SNR (dB)")
+    ax.set_ylabel("Bit error rate")
+    ax.set_title("BER vs SNR (dB) for different modulation order")
+    ax.set_xticks(SNRdB, minor=False);
+    ax.grid(which='both')
+    ax.legend(["QPSK","16QAM","64QAM"])
+    plt.show()
+
+.. image:: api/figures/BERvsSNR.svg
+  :width: 900
+  :alt: Alternative text
+
+
+
+Resources and Scripts
+----------------------
+
+1. Download the `Getting started <test_GettingStarted.html>`_ tutorial.
+2. Find the advanced `tutorial <api/Tutorials/Tutorials.html>`_.
+    - Download all the `tutorials <api/Tutorials.zip>`_.
+3. Find the advanced `projects <api/Projects/Projects.html>`_.
+    - Download all the `projects <api/Projects.zip>`_.
+
+Thanks for reading this. Feel free to contact us for assistance. Post your question on the
+`discussion forum <https://discuss.gigayasa.com/>`_,  we will answer them as soon as possible.
+
+
+
+
+
+
+

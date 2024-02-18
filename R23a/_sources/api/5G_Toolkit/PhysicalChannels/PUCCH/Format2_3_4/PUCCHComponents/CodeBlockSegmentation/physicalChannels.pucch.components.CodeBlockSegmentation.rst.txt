@@ -1,0 +1,54 @@
+Code Block Segmentation
+***********************
+Codeblock segmentation allows the physical layer to process large transport blocks to make the best use of the capabilities
+of the encoder and decoders. To make the best use of the structure of the Polar codes the inputs shall be passed in a certain
+format with the bound on the upper limit of the inputs that Polar codec can process. In case transport block sizes exceed
+the upper limit, it is broken into multiple smaller sub-blocks called codeblocks which are individually processed by Polar
+encoder/decoder and ratemater/dematcher at transmitter and receiver respectively. The implementations are discussed in details
+in upcoming sub-sections.
+
+
+Code Block Segmentation: Transmitter
+-------------------------------------
+
+The codeblock segmentation breaks the large transport block into small codeblock which are processed individually a defined
+in Section 5.2.1 of [3GPPTS38212_Polar]_. The example demonstrate a way to use the ``CodeBlockSegmentation`` module.
+
+.. code-block:: python
+
+   numBatches    = 5    # Number of user equipments
+   numTargetBits = 4224 # Number of target bits
+   #bit generation
+   bits = np.random.randint(2, size = (numBatches, 20))
+
+   segmentationObj = CodeBlockSegmentation() # Object for processing the code blocks
+   codeSegment     = segmentationObj(numTargetBits, bits) # Returns the code blocks with CRC attached based on 38.212
+
+
+The API for codeblock segmentation is as follows.
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.CodeBlockSegmentation
+    :members:
+    :exclude-members: call, I_seg, build
+
+Code Block Aggregation: Receiver
+--------------------------------
+
+It performs opposite of code-block segmentation at the receiver to reconstruct the Transmitted Block and forwarding to MAC layer. 
+Example is understand the usage is shown below.
+
+.. code-block:: python
+   
+   numBatches = 5    # Number of user equipments
+   numCBs     = 2    # Number of code blocks
+   #bit generation
+   bits = np.random.randint(2, size = (numBatches, numCBs, 20))
+   
+   aggrObj = CodeBlockAggregationPUCCH() # Object performing code block aggregation
+   aggrOp  = aggrObj(bits) # Returns transmitted block
+
+The details of the API of **codeblock aggregation** is shown below:
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.CodeBlockAggregation
+    :members:
+    :exclude-members: call, build

@@ -1,0 +1,57 @@
+Positioning Reference Sequence (PRS)
+====================================
+The positioning reference signal (PRS) is used in 5G-NR systems to estimate the location of the UE in downlink (DL). The
+reference signal is generated using DL PRS ID (``dlPRSSequenceID``), slot-index (``slotNumber``) and, OFDM symbol index
+(``ofdmSymbolNumber``). The details of PRS generation is provided in Section 7.4.1.7 of [3GPPTS38211_PRS]_.
+
+..  important::
+    * The seed (:math:`c_{init}`) value is computed using dlPRSSequenceID, slotNumber and ofdmSymbolNumber.
+
+
+**If** ``slotNumber`` **and** ``symbolNumber`` **are scalar:**
+
+.. code-block:: Python
+
+    dlPRSSequenceID  = 23   # DL PRS ID
+    slotNumber       = 5    # slot Index where PRS is loaded
+    ofdmSymbolNumber = 4    # ofdm symbol Index
+    prsLength        = 600  # PRS length per ofdm symbol Index
+
+    prsObject        = PRS(dlPRSSequenceID, slotNumber, ofdmSymbolNumber)
+    prsSequence      = prsObject(prsLength)
+
+
+
+**If** ``slotNumber`` **is scalar and** ``symbolNumber`` **is NumPy Array:**
+
+.. code-block:: Python
+
+    dlPRSSequenceID  = 1075                  # DL PRS ID
+    slotNumber       = 5                     # slot Index where PRS is loaded
+    ofdmSymbolNumber = np.array([2,3,4,5,6]) # ofdm symbol Index
+    prsLength        = 600                   # PRS length per ofdm symbol Index
+
+    prsObject        = PRS(dlPRSSequenceID, slotNumber, ofdmSymbolNumber)
+    prsSequence      = prsObject(prsLength)
+
+**If** ``slotNumber`` and ``symbolNumber`` **are NumPy Array:**
+
+.. code-block:: Python
+
+    dlPRSSequenceID  = 187                 # DL PRS ID
+    slotNumber       = np.array([0,0,1,1]) # slot Index where PRS is loaded
+    ofdmSymbolNumber = np.array([2,3,2,3]) # ofdm symbol Index
+    prsLength        = 864                 # PRS length per ofdm symbol Index
+
+    prsObject        = PRS(dlPRSSequenceID, slotNumber, ofdmSymbolNumber)
+    prsSequence      = prsObject(prsLength)
+
+
+The details about the input-output interface of the SSS implementation is provided below.
+
+.. autoclass:: toolkit5G.SequenceGeneration.PRS
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_PRS] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

@@ -1,0 +1,3 @@
+Physical Random Access Channel (PRACH)
+======================================
+This module implements the physical random access channel.

@@ -1,0 +1,57 @@
+Tentetive list of Feature
+=========================
+We are targeting following features in this list.
+
+In Progress (To be Released soon):
+************************************
+#. SRS Generation
+#. PTRS Generation
+#. Channel estimation algorithms based on:
+    #. DMRS-PDSCH
+    #. DMRS-PUSCH
+    #. CSI-RS
+    #. SRS
+#. Spatial Consistency feature in Channel Models for all the relevant parameters.
+
+
+Next Quarter
+************
+#. Device-to-Device (D2D) Communication
+    #. Channel Models
+    #. Transmitter side features
+    #. Receiver Side methods
+#. Non Terrestrial Networks (NTN)
+    #. Channel Models
+    #. Transmitter side features
+    #. Receiver Side methods
+#. Link Adaptation
+#. Rank Adaptation
+#. Positioning
+    #. Carrier Phase based Positioning
+    #. AI-ML based Positioning
+    #. Complete End-to-End features/procedures as per latest 3GPP standards
+
+Before September 2023
+*********************
+#. Scheduling Algorithms
+    #. User Selection/Priority Scheduling
+    #. Resource Allocation
+#. Ray Tracing based Channel Modelling
+#. Hybrid Beam-forming compliant with 3GPP Beamforming Architecture
+    #. Analog Beamforming
+    #. Reciprocity based Precoding
+    #. Codebook based Precoding
+        #. Type-I Codebook
+        #. Type-II Codebook
+        #. Enhanced type-II Codebooks
+
+Before March 2024
+*********************
+#. AI-ML Support for 3GPP Release 18 Features.
+#. Non-Orthogonal Multiple Access
+    #. NOMA in the Power Domain
+    #. NOMA in the Code Domain
+    #. Interference Alignment
+#. Orthogonal Time Frequency Space (OTFS) Waveform.
+#. Digital Twin Features
+#. Integrated Positioning and Sensing

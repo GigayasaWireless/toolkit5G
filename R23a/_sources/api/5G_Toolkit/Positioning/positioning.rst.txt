@@ -1,0 +1,132 @@
+Position Estimation
+====================
+This package is used for estimating the location of a device using 5G Networks. 5G has standardized the positioning reference
+signal (PRS), methods and procedures to localize a node in either uplink or downlink based on power, angle or time/delay
+measurements as illustrated in table-1.
+
+.. list-table:: Positioning in 5G Networks
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Method
+     - Measurements
+     - ``positioningMethod``
+     - ``optimizationMethod``
+   * - DL-TDoA
+     - TDOA
+     - TDOA
+     - NewtonRaphson, GradientDescent
+   * - UL-TDoA
+     - TDOA
+     - TDOA
+     - NewtonRaphson, GradientDescent
+   * - DL-AoD
+     - RSRP, AoD
+     - DOA
+     - NewtonRaphson, GradientDescent
+   * - UL-AoA
+     - RSRP, AoD, RToA
+     - DOA
+     - NewtonRaphson, GradientDescent
+   * - m-RTT
+     - RSRP, RToA
+     - TOA
+     - LeastSquare
+   * - ECID
+     - RSRP
+     - Not supported
+     - Not supported
+
+------------
+
+
+Position Estimation
+-------------------
+
+**Code example: Position Estimation using Time of Arrival Estimates**
+
+.. code-block:: Python
+
+    posEstimator = Position_Estimation(positioningMethod = "TOA", optimizationMethod = "LeastSquare")
+    # Position Estimation Object:
+        # Positioning based on: ToA
+        # Optimization Method: Least Square
+        # txPosition: (numTranmitter, 3)
+        # ToAe: (numTranmitter, )
+
+    posEstimate, errorEstimate = posEstimator(refPosition=txPosition, toa=ToAe)
+
+
+.. code-block:: Python
+
+    posEstimator.display()
+
+.. image:: ../../figures/Positioning/PositionEstimation/locusToA.svg
+  :width: 800
+  :align: center
+  :alt: Alternative text
+
+**Code example: Position Estimation using Time Difference of Arrival Estimates**
+
+.. code-block:: Python
+
+    numIterations = 10000
+    numEpochs     = 10
+    tolerance     = 0.00000001
+    stepsize      = 0.1
+    isd           = 100
+    posEstimator  = PositionEstimation(positioningMethod = "TDOA", optimizationMethod = "NewtonRaphson",
+                                       numIterationPerEpoch = numIterations, numEpochs = numEpochs,
+                                       tolerance = tolerance, stepsize = stepsize, isd = isd)
+    # Position Estimation Object:
+        # Positioning based on: TDOA
+        # Optimization Method: NewtonRaphson
+        # txPosition: (numTranmitter, 3)
+        # tdoaEst: (numTranmitter-1,)
+
+    posEstimate   = posEstimator(refPosition=txPosition, tdoa = tdoaEst)
+
+------------
+
+**Code example: Position Estimation using Direction of Arrival Estimates**
+
+.. code-block:: Python
+
+    numIterations = 10000
+    numEpochs     = 10
+    tolerance     = 0.00000001
+    stepsize      = 0.1
+    isd           = 100
+    posEstimator  = PositionEstimation(positioningMethod = "DOA", optimizationMethod = "GradientDescent",
+                                       numIterationPerEpoch = numIterations, numEpochs = numEpochs,
+                                       tolerance = tolerance, stepsize = stepsize, isd = isd)
+    # Position Estimation Object:
+        # Positioning based on: DOA
+        # Optimization Method: Gradient Descent
+        # txPosition: (numTranmitter, 3)
+        # doaEst: (numTranmitter, 2)
+
+    posEstimate   = posEstimator(refPosition=txPosition, doa = doaEst)
+
+------------
+
+**API Documentation**
+
+The following section provides the details about the input and output interface for Position Estimator.
+
+.. autoclass:: toolkit5G.Positioning.PositionEstimation
+   :members:
+   :exclude-members: call, build
+
+
+------------
+
+Submodules
+----------
+
+.. toctree::
+    :maxdepth: 4
+
+    Time_Estimation/positioning.toaEstimation
+    Angle_Estimation/positioning.doaEstimation
+    Optimization_Algorithms/positioning.optimization_Algorithms

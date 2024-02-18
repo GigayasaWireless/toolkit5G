@@ -1,0 +1,43 @@
+Receiver Algorithms
+===================
+
+The 5G receiver design requires many algorithms to meet the different quality of service (QoS) metrics essential to
+support a variety of use-cases supported by 5G. This section covers only the receiver algorithms required in lower
+physical layer of 5G channels such as  time synchronization, frequency synchronization, channel estimation, and
+equalization. The remaining algorithms such as symbol demapping, channel decoding, ToA estimation, DoA estimation etc.
+are covered in the respective modules.
+
+.. note::
+    3rd Generation Partnership Project doesn't specify anything about how someone should design a receiver or receiver algorithms.
+
+-----------
+
+**Table of Contents**
+
+Channel Estimation and Equalization Methods
+-------------------------------------------
+This subsection lists the channel estimation and symbol equalization algorithms used by physical broadcast channel
+(PBCH) and physical downlink control channel (PDCCH).
+
+.. toctree::
+    :maxdepth: 1
+
+    ChannelEstimation_and_Equalization/receiverAlgorithms.channelEstimationAndEqualization
+    ChannelEstimation_and_Equalization/receiverAlgorithms.channelEstimationAndEqualizationPDCCH
+
+-----------
+
+Parameter Estimation Methods
+----------------------------
+This subsection covers the methods required to estimate the DMRS, PSS and SSS parameters. These modules also cover time
+and frequency synchronization. The details are provided in respective sections.
+
+.. toctree::
+    :maxdepth: 1
+
+    DL_Synchronization/receiverAlgorithms.dmrsParameterDetection
+    DL_Synchronization/receiverAlgorithms.pssDetection
+    DL_Synchronization/receiverAlgorithms.sssDetection
+
+
+

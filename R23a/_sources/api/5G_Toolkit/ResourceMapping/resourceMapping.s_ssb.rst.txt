@@ -1,0 +1,126 @@
+Sidelink Synchronization Signal Block (S-SSB) Grid Generation
+===========================================================
+THe modules maps the sidelink primary synchronization signal (S-PSS), sidelink secondary synchronization signal (S-SSS),
+demodulation reference signal (DMRS) for PSBCH and PSBCH payload to S-SSB grid. The S-SSB grid in 5G spans 11 or 13
+OFDM symbols and 132 subcarriers (11 RBs). This modules can return multiple SSBs carrying same S-PSS, S-SSS but DMRS and
+different PSBCH information which is typically the case when transmitting multiple S-SSBs in a half frame. In such cases,
+only the S-SSB index information changes across S-SSBs. The details about the S-SSB generation is provided in section
+8.4.2 of 3GPP TS 38.211 [3GPPTS38211_SSSBGrid]_.
+
+----
+
+**Examples:**
+
+**When** :math:`\text{N}_{\text{SSBs}} = 1`:
+
+.. code:: ipython3
+
+    flag    = np.random.randint(2)
+    numIDs  = 1 if flag else np.random.randint(1,10)
+
+    nid1    = 311
+    nid2    = 1
+    nSymb   = 11
+    psbch   = 1-2*np.random.randint(2, size=(99*(nSymb-4)))
+
+    sssbObj = SSSB_Grid(nid1, nid2, numSymbols = nSymb)
+    sssb    = sssbObj(psbch = psbch)
+
+    print("************ Simulation Parameters *************")
+    print()
+    print("                   nid1: "+str(nid1))
+    print("                   nid2: "+str(nid2))
+    print("Number of S-SSB Symbols: "+str(nSymb))
+    print("         Shape of psbch: "+str(psbch.shape))
+    print("          Shape of sssb: "+str(sssb.shape))
+    print()
+    print("********************************************")
+
+
+.. parsed-literal::
+
+    ************ Simulation Parameters *************
+
+                       nid1: 311
+                       nid2: 1
+    Number of S-SSB Symbols: 11
+             Shape of psbch: (693,)
+              Shape of sssb: (1, 132, 14)
+
+    ********************************************
+
+
+.. code:: ipython3
+
+    # Display the Sidelink-SSB Grid
+    fig, ax = sssbObj.displayGrid()
+
+.. image:: ../../figures/ResourceMapping/SSSB_Grid.png
+  :width: 400
+  :alt: Alternative text
+
+
+**When** :math:`\text{N}_{\text{SSBs}} > 1` :
+
+.. code:: ipython3
+
+    flag    = np.random.randint(2)
+    numIDs  = 1 if flag else np.random.randint(1,10)
+
+    nid1    = np.array([311, 210, 64])
+    nid2    = np.array([0, 1, 0])
+    nSymb   = 13
+    psbch   = 1-2*np.random.randint(2, size=(3, 99*(nSymb-4)))
+
+    sssbObj = SSSB_Grid(nid1, nid2, numSymbols = nSymb)
+    sssb    = sssbObj(psbch = psbch)
+
+    print("************ Simulation Parameters *************")
+    print()
+    print("                   nid1: "+str(nid1))
+    print("                   nid2: "+str(nid2))
+    print("Number of S-SSB Symbols: "+str(nSymb))
+    print("         Shape of psbch: "+str(psbch.shape))
+    print("          Shape of sssb: "+str(sssb.shape))
+    print()
+    print("********************************************")
+
+
+.. parsed-literal::
+
+    ************ Simulation Parameters *************
+
+                       nid1: [311 210  64]
+                       nid2: [0 1 0]
+    Number of S-SSB Symbols: 13
+             Shape of psbch: (3, 891)
+              Shape of sssb: (3, 132, 14)
+
+    ********************************************
+
+.. code:: ipython3
+
+    # Display the Sidelink-SSB Grid
+    fig, ax = sssbObj.displayGrid(option=0)
+
+.. image:: ../../figures/ResourceMapping/SSSB_Grid_Heatmap.svg
+  :width: 400
+  :alt: Alternative text
+
+
+----
+
+More example on S-SSB Resource mapping can be found in Tutorials. The details about the input-output interface of the
+SSSB_Grid implementation is provided below.
+
+
+.. autoclass:: toolkit5G.ResourceMapping.SSSB_Grid
+   :members:
+   :exclude-members: call, build
+
+.. automethod:: toolkit5G.ResourceMapping.SSSB_Grid.displayGrid
+    :noindex:
+
+
+References:
+    .. [3GPPTS38211_SSSBGrid] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'

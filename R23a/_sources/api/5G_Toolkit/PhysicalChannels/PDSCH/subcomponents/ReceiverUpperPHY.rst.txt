@@ -1,0 +1,64 @@
+Receiver Processing
+=======================
+
+Receiver
+------------
+
+Example -Transmission of 1 Transport Block
+
+.. code-block:: python
+
+   symbolsPerSlot     = 10 #Number of Symbols per slot
+   numRB              = 50 #Number of Resource Blocks
+   scalingField       = '00' #Scaling field
+   mcsIndex           = 5 #Modulation Coding scheme index
+   additionalOverhead = 12 #Additional Overheads
+   numlayers          = [4, 0] #Number of layers
+   numTBs             = 1 #Number of Transport Blocks
+   rvid               = [1] #Redundancy Version ID for transport block 
+   dmrsREs            = 3 #Number of Resource Elements allocated for the additional DMRS
+   verbose            = False #Provide information regarding the progress in the execution
+   enableLBRM         = [False] #Disabling the Limited Buffer Rate Matching
+   snr                = 1000
+   #symbolEstimates ---> Equalized Data
+   
+   pdschRxObj  = PDSCHDecoder(numTBs, mcsIndex, symbolsPerSlot, numRB, numlayers, rvid, additionalOverhead, dmrsREs, enableLBRM, verbose)
+   pdschRxBits = pdschRxObj(symbolEstimates, snr)
+   
+Example -Transmission of 2 Transport Block
+
+.. code-block:: python
+
+   symbolsPerSlot     = 5 #Number of Symbols per slot
+   numRB              = 30 #Number of Resource Blocks
+   scalingField       = '10' #Scaling field
+   mcsIndex           = 7 #Modulation Coding scheme index
+   additionalOverhead = 0 #Additional Overheads
+   numlayers          = [2, 3] #Number of layers for Transport Block respectively
+   numTBs             = 2 #Number of Transport Blocks
+   rvid               = [1, 2] #Redundancy Version ID for Transport Block respectively
+   dmrsREs            = 3 #Number of Resource Elements allocated for the additional DMRS
+   verbose            = False #Provide information regarding the progress in the execution
+   enableLBRM         = [False, False] #Disabling the Limited Buffer Rate Matching for both Transport Block processing
+   snr                = 1000
+   #symbolEstimates ---> Equalized Data
+   
+   pdschRxObj  = PDSCHDecoder(numTBs, mcsIndex, symbolsPerSlot, numRB, numlayers, rvid, additionalOverhead, dmrsREs, enableLBRM, verbose)
+   pdschRxBits = pdschRxObj(symbolEstimates, snr)
+      
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCH.PDSCHDecoder
+   :members:
+   :exclude-members: call, build   
+
+Receiver Chain
+------------------
+
+.. toctree::
+    :maxdepth: 4
+    
+    CBSegregation
+    DeRatematching
+    CBAggregation
+    TBRxProcessing
+         
+   

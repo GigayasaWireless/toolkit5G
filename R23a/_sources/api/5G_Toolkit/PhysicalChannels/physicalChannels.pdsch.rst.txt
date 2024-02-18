@@ -1,0 +1,92 @@
+Physical Downlink Shared Channel (PDSCH)
+=========================================
+This module implements the physical downlink shared channel. The complete physical layer chain at the transmitter and
+receiver is divided into upper physical layer chain (upperPhy) and lower physical layer chain (lowerPhy) as shown in
+figure-1. The upper physical layer consists of transport block processing, code-block processing, LDPC encoder/decoder,
+and, rate matching. On the other hand, the lower physical layer module implements modulation (symbol mapping), scrambling,
+layer mapping and resource mapping. It return the OFDM resource grid for sub-carrier/sub-band specific precoding/beamforming
+and other RF specific processing. These modules provides the  high level APIs for the PDSCH chains.
+
+
+PDSCH Transmitter
+*****************
+The details about the transmitter side of the PDSCH are provided in [3GPPTS38211pdsch]_, [3GPPTS38212pdsch]_,
+[3GPPTS38213pdsch]_ and, [3GPPTS38214pdsch]_. The chain is bi-parted into upper physical layer and lower physical layer
+section to entertain both the link-level and system level simulations. The details of the APIs is provided in following
+sub-sections.
+
+.. image:: ../../figures/PhysicalChannels/PDSCHTx.png
+  :width: 800
+  :alt: Alternative text
+
+
+.. toctree::
+    :maxdepth: 10
+
+    PDSCH/physicalChannels.pdsch.UpperPhy
+    PDSCH/physicalChannels.pdsch.LowerPhy
+
+    
+
+PDSCH Receiver
+**************
+The receiver implements the complementary operations of transmitter side PDSCH chain. The PDSCH upper phy decoder implements
+the receiver side version of the PDSCH upper physical layer and same for lower physical layer as well.
+
+.. image:: ../../figures/PhysicalChannels/PDSCHRxn.png
+  :width: 800
+  :alt: Alternative text
+
+.. toctree::
+    :maxdepth: 10
+
+    PDSCH/physicalChannels.pdsch.UpperPhyDecoder
+    PDSCH/physicalChannels.pdsch.LowerPhyDecoder
+
+    
+    
+
+PDSCH Components
+****************
+The PDSCH chain, as shown in fig-1, consists of multiple small modules arranged sequentially. These modules provides the
+low level APIs for developing the complete PDSCH chain. The low level APIs has been design to provide the modular design
+and support the plug and play feature. This allows to research independently on each module and enhance the performance
+of the complete chain.
+
+.. image:: ../../figures/PhysicalChannels/PDSCHUpperPhy.svg
+  :width: 800
+  :alt: Alternative text
+
+.. toctree::
+    :maxdepth: 10
+
+    PDSCH/subcomponents/physicalChannels.pdsch.components.computeTBsize.rst
+    PDSCH/subcomponents/physicalChannels.pdsch.components.transportblockProcessing.rst
+    PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockSegmentation.rst
+    PDSCH/subcomponents/physicalChannels.pdsch.components.ldpcCodec.rst
+    PDSCH/subcomponents/physicalChannels.pdsch.components.ratematching.rst
+    PDSCH/subcomponents/physicalChannels.pdsch.components.codeblockConcatenation.rst
+
+
+.. image:: ../../figures/PhysicalChannels/PDSCHLowerPhy.svg
+  :width: 550
+  :alt: Alternative text
+  :align: center
+
+
+.. toctree::
+    :maxdepth: 10
+
+    PDSCH/subcomponents/physicalChannels.pdsch.components.scrambling.rst
+    PDSCH/subcomponents/physicalChannels.pdsch.components.modulation.rst
+    PDSCH/subcomponents/physicalChannels.pdsch.components.layermapping.rst
+    PDSCH/subcomponents/physicalChannels.pdsch.components.resourceMapping.rst
+
+References:
+    .. [3GPPTS38211pdsch] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation.
+
+    .. [3GPPTS38212pdsch] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation.
+
+    .. [3GPPTS38213pdsch] (3GPP TS 38.213 version 16.5.0 Release 16) 5G;NR;Physical layer procedures for control.
+
+    .. [3GPPTS38214pdsch] (3GPP TS 38.214 version 17.0.0 Release 17) 5G;NR;Physical layer procedures for data.

@@ -1,0 +1,15 @@
+Challenge Of this Week
+======================
+On this page, we post a challenging problem related to wireless communication every week. In case you have a challenging
+problem on your mind, you can send it to us on this `email <vikram@gigayasa.com>`_.
+
+This is the problem of the week:
+.. code-block::
+
+    Predict wireless Channel
+
+.. toctree::
+    :maxdepth: 4
+
+    challengeOftheWeek
+    challengeArxiv

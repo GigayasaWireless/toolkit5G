@@ -1,0 +1,70 @@
+.. _Node-Mobility:
+
+Node Mobility
+=============
+
+
+This module provides classes and the functions that implements Node Mobility.
+The class :class:`NodeMobility` implement the mobility of each node in the simulation.
+A call to a method :method:`displayRoute` displays the node route after instantiating this class and creating an object. 
+
+
+.. autoclass:: toolkit5G.ChannelModels.NodeMobility
+   :members:
+   :exclude-members: call, build
+
+
+.. automethod:: toolkit5G.ChannelModels.nodeMobility.nodeMobility.NodeMobility.displayRoute
+    :noindex:   
+
+
+.. _Mobility-Models:
+
+Mobility Models
+---------------
+
+This module provides classes and functions that implement different types of mobility models to support node mobility.
+Current implementation support three mobility models namely Random-Walk, Circular and Highway drops.
+Classes :class:`RandomWalk` implement Random-Walk, :class:`CircularRoute` implement Circular route and :class:`DropVehiclesHighway` implements vehicle drops
+in highway respectively.
+
+
+
+
+.. _RandomWalk:
+
+Random-Walk
+~~~~~~~~~~~
+
+.. autoclass:: toolkit5G.ChannelModels.nodeMobility.RandomWalk
+   :members:
+   :exclude-members: call, build
+
+
+
+.. _CircularRoute:
+
+Circular Route
+~~~~~~~~~~~~~~
+
+.. autoclass:: toolkit5G.ChannelModels.nodeMobility.CircularRoute
+   :members:
+   :exclude-members: call, build
+
+
+
+.. _VehicleHighwayDrops:
+
+Vehicle Drops on HighWays
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: toolkit5G.ChannelModels.nodeMobility.DropVehiclesHighway
+   :members:
+   :exclude-members: call, build
+
+
+
+.. note::
+   All the classes have the following attributes :attr:`nodeRoute`, :attr:`velocityVector` from which the user can access the
+   route and the velocity of each node respectively.
+

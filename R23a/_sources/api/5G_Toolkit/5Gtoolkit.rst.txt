@@ -1,0 +1,63 @@
+API Documentation
+=================
+5G Toolkit supports wide range of procedures, usecases and features. Some of them are captured directly via the APIs as
+discussed below in table-1.
+
+
+.. list-table:: Table-1: The modules and packages supported by 5G Toolkit
+   :widths: 25 50
+   :header-rows: 1
+
+   * - Module/Package
+     - Purpose
+   * - Sequence Generation
+     - Generate all the sequences used for wide variety of purposes in 5G such as channel state acquisition, positioning etc.
+   * - Resource Mapping
+     - This modules maps various sequences and physical channels payload to the time frequency OFDM grid/resources.
+   * - Physical Channels
+     - Implements uplink and downlink control, shared and broadcast/random channels.
+   * - Payload Generation
+     - Generate MIB and DCI payloads,
+   * - Forward Error Correction
+     - Implements Polar codec, LDPC Codec and Reed Muller Codec for 5G.
+   * - Rate matching
+     - Supports rate matching for Polar codec, LDPC Codec and Reed Muller Codec.
+   * - Interleavers
+     - Presents all the Interleavers/Deinterleavers available for various chains in 5G.
+   * - OFDM
+     - Implements Orthogonal frequency division multiplexing modulator and demodulator.
+   * - Channel processing
+     - Provides packages for passing a Transmitted signal though the channel in time/frequency domain and adding noise to the input signal based on the SNR.
+   * - Symbol Mapping
+     - Supports the symbol mapping and symbol demapping to convert the bits to symbols and recovering the llrs/bits from symbols.
+   * - Scrambling
+     - Implements 5G complaint scrambler and descrambler to randomize the input bits and undo this randomization at receiver.
+   * - CRC
+     - Implements Cyclic redundancy check encoder and decoder for all the generator polynomial supported by 5G.
+   * - Positioning
+     - Provides algorithms for delay estimation and position estimation using delay estimates.
+
+
+
+
+.. toctree::
+    :maxdepth: 3
+
+    SequenceGeneration/sequenceGeneration
+    ResourceMapping/resourceMapping
+    PhysicalChannels/physicalChannels
+    PayloadGeneration/payloadGeneration
+    ChannelCoder/channelCoder
+    Ratematcher/ratematcher
+    Interleaver/interleavers
+    OFDM/ofdm
+    ChannelProcessing/channelProcessing
+    SymbolMapping/symbolMapping
+    Scrambler/scrambler
+    ChannelModels/channelModels
+    CRC/crc
+    MIMOProcessing/mimoprocessing
+    ReceiverAlgorithms/receiverAlgorithms
+    Positioning/positioning
+    Configurations/configurations
+    Utils/utils

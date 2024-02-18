@@ -1,0 +1,35 @@
+Layer Mapper
+************
+The layer mapper divides the symbols across
+
+Layer Mapper: Transmitter
+-------------------------
+Example
+
+.. code-block:: python
+
+   coderate = 0.650390625 #Code Rate
+   #crcTBlock ---> Transport Block with CRC bits attached
+   
+   cbSegment   = CodeBlockSegmentation(coderate) # Object for processing the code blocks
+   codeblocks  = cbSegment(crcTBlock) # Attach the segment the TB and attach the CRC to TB based on 38.212
+
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCH.LayerMapper
+   :members:
+   :exclude-members: call, build
+
+
+
+Layer Demapper: Receiver
+-------------------------
+Example
+
+.. code-block:: python
+
+   # rmBits ---> Rate Matched Output Block after Interleaving
+   
+   codeword   = CodeBlockConcatenation()(rmBits) #Performs Code Block Concatenation
+   
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCH.LayerDemapper
+   :members:
+   :exclude-members: call, build  

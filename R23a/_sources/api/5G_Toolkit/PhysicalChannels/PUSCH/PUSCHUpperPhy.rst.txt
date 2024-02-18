@@ -1,0 +1,98 @@
+Transmitter Chain
+==================
+
+Transmitter chain of Upper Physical Layer Processing of Physical Uplink Shared Channel.
+
+    the transmitting chain of Upper Physical Layer Processing of Physical Uplink Shared Channel which involves the following algorithms.
+    
+    * Transport Block Size computation
+        
+        The size of the transport block is computed with reference to the concept specified in the Section 6.1.4.2 of [3GPPTS38214_pusch]
+        
+    * Transport Block Processing (CRC Attachment) to the Transport Block
+    
+        Attachment of CRC bits to the transport block as described in the Section 6.2.1 of [3GPPTS38212_pusch]
+    
+    * Code Block Segmentation 
+    
+        Then the transport block involves segmentation wherein the block is divided into number of code blocks as described in the Section 6.2.3 of [3GPPTS38212_pusch]
+    
+    * Channel Encoding (LDPC)
+    
+        The segmented blocks are then LDPC coded as described in the Section 6.2.4 of [3GPPTS38212_pusch]
+    
+    * Rate Matching
+    
+        Rate matching of LDPC coded blocks involves two process as described in the Section 6.2.5 of [3GPPTS38212_pusch]
+    
+            * *Bit Selection*
+
+            * *Bit Interleaver*
+        
+    * Code Block Concatenation
+    
+        The code blocks after rate matching is then concatenated according to the description given in the Section 6.2.6 of [3GPPTS38212_pusch]
+    
+    * Symbol Mapping
+    
+        The codeword is then modulated based on the modulation order specified in the Section 6.3.1.2 of [3GPPTS38211_pusch]
+    
+
+Example : Transmission of Transport Block wherein the transport block not given as an input.
+
+.. code-block:: python
+
+   symbolsPerSlot     = 10 #Number of Symbols per slot
+   numRB              = 50 #Number of Resource Blocks
+   scalingField       = '00' #Scaling field
+   mcsIndex           = 5 #Modulation Coding scheme index
+   additionalOverhead = 12 #Additional Overheads
+   numlayers          = [4, 0] #Number of layers
+   numTBs             = 1 #Number of Transport Blocks
+   enableLBRM         = 0 #enable / disable Limited Buffer Rate Matching
+   rvid1              = 1 #Redundancy Version ID for transport block 1
+   numBatch           = 5 #Number of User equipments
+   tbLen1             = None #Transport Block Size 1   
+   tblock1            = None  # Generate the bits for transport block1   
+   verbose            = False ##Disabling from displaying information about the progress in the execution of the modules.                   
+                             
+   puschTx            = PUSCHUpperPhy(symbolsPerSlot, numRB, mcsIndex, numlayers, scalingField, additionalOverhead, numTBs, verbose ) #Object processing the transmitter chain of Upper Physial Layer processing of PUSCH
+   puschData          = puschTx(enableLBRM, rvid1, numBatch) # Returns the Modulated Symbols       
+
+Example : Transmission of Transport Block where the transport block is also inputed.
+
+.. code-block:: python
+
+   symbolsPerSlot     = 8 #Number of Symbols per slot
+   numRB              = 20 #Number of Resource Blocks
+   scalingField       = '01' #Scaling field
+   mcsIndex           = 14 #Modulation Coding scheme index
+   additionalOverhead = 0 #Additional Overheads
+   numlayers          = [2, 3] #Number of layers
+   numTBs             = 2 #Number of Transport Blocks
+   enableLBRM         = 0 #enable / disable Limited Buffer Rate Matching
+   rvid1              = 1 #Redundancy Version ID
+   numBatch           = 3 #Number of User equipments
+   tbLen1             = 213176 #Transport Block Size 1   
+   tblock1            = np.random.randint(2,                  
+                             size  = (numBatch, tbLen1), 
+                             dtype = int)  # Generate the bits for transport block1 
+   verbose            = False ##Disabling from displaying information about the progress in the execution of the modules.                   
+                             
+   puschTx            = PUSCHUpperPhy(symbolsPerSlot, numRB, mcsIndex, numlayers, scalingField, additionalOverhead, numTBs, verbose ) #Object processing the transmitter chain of Upper Physial Layer processing of PUSCH
+   puschData          = puschTx(enableLBRM, rvid1, numBatch, tblock1)  # Returns the Modulated Symbols                            
+                             
+
+.. autoclass:: toolkit5G.PhysicalChannels.PUSCHUpperPhy
+   :members:
+   :exclude-members: call, build   
+   
+.. rubric:: References
+
+[1]. 5G NR in Bullets, edition 1, Chris Jhonson.
+
+[2]. 3GPP TS 38.212 version 16 Section 6.2
+
+[3]. 3GPP TS 38.212 version 16 Section 6.3.1.2
+          
+

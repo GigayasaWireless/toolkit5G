@@ -1,0 +1,21 @@
+Bit Interleavers
+================
+This interleaver is used by LDPC rate matcher.
+
+
+Bit Interleaver
+***************
+The details about the implementation, usage and application interface is provided in following sections.
+
+
+.. autoclass:: toolkit5G.Ratematcher.LDPC.BitInterleaver
+    :members:
+    :exclude-members: call, build
+
+
+Bit Deinterleaver
+******************
+.. autoclass:: toolkit5G.Ratematcher.LDPC.BitDeinterleaver
+    :members:
+    :exclude-members: call, build
+

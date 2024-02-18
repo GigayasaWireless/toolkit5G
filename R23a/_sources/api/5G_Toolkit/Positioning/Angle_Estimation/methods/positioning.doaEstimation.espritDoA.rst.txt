@@ -1,0 +1,26 @@
+ESPRIT based DoA Estimation 
+===========================
+This module implements a method for estimating the delays using Estimation of Signal Parameters via Rotational Invariance
+Techniques (ESPRIT) method.
+
+------------
+
+**Code example**
+
+.. code-block:: Python
+
+    # Ntx, Nty, dtx, dty will be taken from antenna arrays propoerties
+    # Hk is estimated at the receiver.
+    # However, for perfect CSI, it can be directly taken from channel.OFDM.
+    Lpath      = 5 # Returns DoAs for 5 strongest paths
+    espritDoa  = ESPRIT_DoA(Ntx, Nty, Hk.shape[1]) # Create a ESPRIT DoA Object
+    xoA_est    = espritDoa(Hk, Lpath, dtx, dty)    # Return 2 x 5 DoA matrix
+    # row-0 is azimuth angles for each path
+    # row-1 is elevation angles for each path
+
+
+------------
+
+.. autoclass:: toolkit5G.Positioning.ESPRIT_DoA
+   :members:
+   :exclude-members: call, build

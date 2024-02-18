@@ -1,0 +1,81 @@
+Reed Muller Codes
+========================
+5G is required to transport payload of various sizes. The very small payload sizes are forward error corrected using Reed
+Muller codes which are designed to provide protection to control information bit with length between 3 to 11. The figure-1
+demonstrates the bit error rate (BER) vs signal to noise ratio (SNR) performance of Reed Muller codes for AWGN channels.
+The details of this are provided in tutorial-x.
+
+.. image:: ../../../figures/ChannelCoding/SNRvsBER_RM.png
+  :width: 800
+  :alt: Alternative text
+
+
+..  important::
+    * The Reed Muller Codes are used in 5G to encode downlink control information bits of length 3 to 11. The length of the codeword is fixed to 32.
+
+
+Reed Muller Encoder 5G
+**********************
+This coder can process multiple batches and codewords simultaneous shown in following three examples:
+
+**When input is a vector**:
+
+.. code-block:: Python
+
+    K            = 5  # Number of Information bits
+    # Generate information bits
+    bits         = np.random.randint(2, size = K)
+    codeword     = ReedMullerEncoder5G()(bits) # Encode the information bits
+
+**When input is a 2D array**:
+
+.. code-block:: Python
+
+    K            = 5  # Number of Information bits
+    numBatches   = 20 # Number of Batches
+    # Generate information bits
+    bits         = np.random.randint(2, size = (numBatches, K))
+    codeword     = ReedMullerEncoder5G()(bits) # Encode the information bits
+
+
+**When input is a tensor**:
+
+.. code-block:: Python
+
+    K            = 5  # Number of Information bits
+    numBatches   = 20 # Number of Batches
+    numCodewords = 2  # umber of codewords
+    # Generate information bits
+    bits         = np.random.randint(2, size = (numBatches, numCodewords, K))
+    codeword     = ReedMullerEncoder5G()(bits) # Encode the information bits
+
+
+The details about the input-output interface of the Reed Muller modules is provided below.
+
+
+.. autoclass:: toolkit5G.ChannelCoder.ReedMullerEncoder5G
+    :members:
+    :exclude-members: call, build
+
+Reed Muller Decoder 5G
+**********************
+The following example demonstrate the way to use the Reed Muller for decoding the codeword. Note that, the ``hardIn`` must
+be set to False if the input codeword contains the log likelihood ratio (**LLR**) values of each bit and True otherwise.
+
+.. code-block:: Python
+
+    hard_in = False
+    decoder = ReedMullerDecoder5G(K, hard_in)
+    rxBits  = decoder(llrEst)
+
+
+
+The details about the input-output interface of the Reed Muller modules is provided below.
+
+.. autoclass:: toolkit5G.ChannelCoder.ReedMullerDecoder5G
+    :members:
+    :exclude-members: call, build
+
+
+References:
+    .. [3GPPTS38211_RM] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

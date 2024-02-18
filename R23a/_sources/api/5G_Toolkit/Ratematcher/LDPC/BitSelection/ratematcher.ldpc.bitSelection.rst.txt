@@ -1,0 +1,35 @@
+Bit Selection for LDPC
+======================
+Bit Selection is used to match the encoded bits to target bits using the circular buffer. The target bits is a reflection
+of the number of time-frequency resources allocated for payload transmission. Bit Selection performs one of the three
+operations based on the number of information bits, number of target bits and number of coded bits:
+
+* Truncation (N>E)
+* Puncturing (N>E)
+* Repetition (N<E)
+
+The rate matching is carried out using on a match pattern. The number of rate matched bits are reduced in the case of
+truncation and puncturing which perform similar function but differ only in the rate match pattern.
+
+.. note::
+    Truncation selects first E bits whereas puncturing selects E bits starting from a certain defined location.
+
+.. note::
+    Puncturing rate match patterns enables the hybrid repeat request (HARQ) via incremental redundancy technique.
+
+Bit Selection
+*************
+The details about the input-output interface of the bit selection modules is provided below.
+
+.. autoclass:: toolkit5G.Ratematcher.LDPC.BitSelection
+    :members:
+    :exclude-members: call, build
+
+
+Bit De-selection
+****************
+The details about the input-output interface of the bit de-selection  modules is provided below.
+
+.. autoclass:: toolkit5G.Ratematcher.LDPC.BitDeselection
+    :members:
+    :exclude-members: call, build

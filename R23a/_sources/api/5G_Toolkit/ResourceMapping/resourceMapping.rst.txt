@@ -1,0 +1,23 @@
+Resource Mapping
+================
+Resource mapping package is used to fill the reference signals and Physical channel payload into OFDM resource grid
+(t-f locations). The resource mapping allows mapping the PUCCH-format 0, PUCCH-format 1, SSB, CSI-RS, PDCCH and DMRS for
+PDSCH. The resource mapping for different channels and reference signal is illustrated below:
+
+**Table of Content**
+
+.. toctree::
+    :maxdepth: 3
+
+    resourceMapping.ssb
+    resourceMapping.ssbGeneration
+    resourceMapping.dmrsPDSCH
+    resourceMapping.ptrsPDSCH
+    resourceMapping.pdcch
+    resourceMapping.coreset
+    resourceMapping.searchSpace
+    resourceMapping.csirs
+    resourceMapping.prs
+    resourceMapping.pucch
+    resourceMapping.s_ssb
+    resourceMapping.pscch

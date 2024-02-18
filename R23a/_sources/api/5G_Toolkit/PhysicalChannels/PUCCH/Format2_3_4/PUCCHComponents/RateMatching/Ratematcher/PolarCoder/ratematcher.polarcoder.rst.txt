@@ -1,0 +1,12 @@
+Rate matching for Polar coder
+=============================
+Forward error correction is used in 5G for correction of bits in error. 5G supports primarily three channel coders:
+
+
+.. toctree::
+    :maxdepth: 1
+
+
+    Interleavers/ratematcher.polarcoder.subBlockInterleaver
+    BitSelection/ratematcher.polarcoder.bitSelection
+    Interleavers/ratematcher.polarcoder.channelInterleavers

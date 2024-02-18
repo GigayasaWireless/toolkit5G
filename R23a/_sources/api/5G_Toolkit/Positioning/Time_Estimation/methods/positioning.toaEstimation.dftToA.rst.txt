@@ -1,0 +1,43 @@
+DFT based Method
+================
+This module implements a method for estimating the delays using Discrete Fourier Transform (DFT) method. This method
+uses the discrete Fourier transform to compute the power delay profile (PDP) and estimates delays by finding the spikes
+the PDP. It can also the Fourier oversampling to up sample the time domain channel to further improve the resolution of
+ToA estimates, However, this method suffers performance degradation if channel state information (CSI) is not available
+across all the sub-carriers which is very common in practical scenarios.
+
+.. note::
+    DFT based method suffers performance degradation if channel state information (CSI) is not available across all the sub-carriers which is very common in practical scenarios.
+
+------------
+
+**Code example**
+
+.. code-block:: Python
+
+    # shape of Hf: (numSubcarriers, numObservations)
+    osFactor   = 16
+    Lpath      = 12
+    dftToA     = DFT_ToA(osFactor)
+    delays     = dftToA(H, Lpath, scs, prominence=0.05, height=0.05)
+
+
+.. code-block:: Python
+
+    fig, ax = dftToA.displayPDPs(delays[0]*0.25, delays[-1]*1.25)
+
+.. image:: ../../../../figures/Positioning/ToAEstimation/dftPDP.svg
+  :width: 800
+  :align: center
+  :alt: Alternative text
+
+------------
+
+**API Documentation**
+
+The following documentation provides the details about the input and output API for discrete Fourier transform based ToA
+Estimation.
+
+.. autoclass:: toolkit5G.Positioning.DFT_ToA
+   :members:
+   :exclude-members: call, build

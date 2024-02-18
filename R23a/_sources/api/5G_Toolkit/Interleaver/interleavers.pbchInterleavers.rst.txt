@@ -1,0 +1,57 @@
+PBCH Interleaver
+================
+This interleaver is used by PBCH chain before CRC encoder. The payload size of PBCHInterleaver must be 32.
+
+.. Important::
+    The payload size to be PBCHInterleaved/PBCHDeInterleaved must be 32.
+
+PBCH Interleaver
+****************
+The usage of PBCHInterleaver module can be understood using following examples:
+**If** ``input_bits`` **is vector:**
+
+.. code-block:: Python
+
+    bits   = np.random.randint(2, size = (1,32)) # Bits to be interleaved
+
+    interleavedBits   = PBCHInterleaver()(bits) # Interleaved Bits
+
+**If** ``input_bits`` **is 2D array:**
+
+.. code-block:: Python
+
+    numBatches = 8 # Number of batches
+    bits       = np.random.randint(2, size = (numBatches, 32)) # Bits to be interleaved
+
+    interleavedBits   = PBCHInterleaver()(bits)  # Interleaved Bits
+
+
+**If** ``input_bits`` **is tensor:**
+
+.. code-block:: Python
+
+    numBatches = 5  # Number of batches
+    numPBCHs   = 10 # Number of PBCH payloads/MIBs
+    bits       = np.random.randint(2, size = (numBatches, numPBCHs, 32)) # Bits to be interleaved
+
+    interleavedBits   = PBCHInterleaver()(bits) # Interleaved Bits
+
+The details about the implementation, usage and application interface is provided in following sections.
+
+.. autoclass:: toolkit5G.PhysicalChannels.PBCH.PBCHInterleaver
+    :members:
+    :exclude-members: call, build
+
+
+PBCH DeInterleaver
+******************
+The usage of PBCHInterleaver module can be understood using following examples:
+
+.. code-block:: Python
+
+    deInterleavedBits = PBCHDeInterleaver()(interleavedBits) # De-Interleaved Bits
+
+.. autoclass:: toolkit5G.PhysicalChannels.PBCH.PBCHDeInterleaver
+    :members:
+    :exclude-members: call, build
+

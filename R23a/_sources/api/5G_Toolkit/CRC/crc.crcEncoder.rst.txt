@@ -1,0 +1,50 @@
+CRC Encoder
+===========
+CRC Encoder attaches the parity bits to inputs sequence based on the crc polynomial configured. It supports all the CRC
+polynomials standardized by 3GPP for 5G. It supports the CRC polynomial "CRC24A", "CRC24B", "CRC24C", "CRC16", "CRC11",
+and "CRC6". The details of these polynomial are provided in Section 5.1 of [3GPPTS38211_crc]_. CRC Encoder uses `Sionna CRC Encoder <https://nvlabs.github.io/sionna/api/mapping.html#demapping>`_
+internally. The has been design to pass input exactly same as `Sionna CRC Encoder <https://nvlabs.github.io/sionna/api/mapping.html#demapping>`_
+for compatibility.
+
+..  important::
+    * CRC Encoder doesn't support 1D arrays as inputs. The arrays of dimension (N,) can be passed by reshaping it to (1,N).
+
+The CRC encoding is performed as follows:
+
+**CRC Encoding for 1D NumPy Arrays**
+
+.. code-block:: Python
+
+    bits       = np.random.randint(0, 2, size = (1,32)) # Bits to be Encoded
+    crcType    = "CRC24C"
+    crcEncoder = CRCEncoder(crcType) # Create object of CRC Encoder
+    crcBits    = crcEncoder(bits)    # Encode the bits (attach the CRC at the end)
+    ## Shape of crcBits will be (1, 56)
+
+
+**CRC Encoding for 2D NumPy Arrays**
+
+.. code-block:: Python
+
+    bits       = np.random.randint(0, 2, size = (21,64)) # Bits to be Encoded
+    crcType    = "CRC16"
+    crcBits    = CRCEncoder(crcType)(bits)    # Encode the bits (attach the CRC at the end)
+    ## Shape of crcBits will be (21, 80)
+
+**CRC Encoding for Higher dimension NumPy Arrays**
+
+.. code-block:: Python
+
+    bits       = np.random.randint(0, 2, size = (8,6,119)) # Bits to be Encoded
+    crcType    = "CRC6"
+    crcBits    = CRCEncoder(crcType)(bits)    # Encode the bits (attach the CRC at the end)
+    ## Shape of crcBits will be (8,6,125)
+
+The details about the input-output interface of the Symbol demapper detailed below.
+
+.. autoclass:: toolkit5G.CRC.CRCEncoder
+    :members:
+    :exclude-members: call, build
+
+References:
+    .. [3GPPTS38211_crc] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).

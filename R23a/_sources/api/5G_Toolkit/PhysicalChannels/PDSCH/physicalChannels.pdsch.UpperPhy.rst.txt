@@ -1,0 +1,51 @@
+PDSCH: Upper Physical layer Chain
+=================================
+This module implements the upper physical layer of physical downlink shared channel (PDSCH). It consists of transport
+block processing, code-block segmentation, LDPC encoder, rate matching and code-block concatenation as shown below.
+
+.. image:: ../../../figures/PhysicalChannels/PDSCHUpperPhy.svg
+  :width: 800
+  :alt: Alternative text
+
+------------
+
+An Example of how to initialize and call the PDSCH upper PHY to generate codewords
+
+.. code-block:: Python
+
+    numSymbols         = 13
+    numRB              = 25
+    mcsIndex           = 2
+    numlayers          = [1]
+    scalingField       = '00'
+    additionalOverhead = 0
+    dmrsREs            = 3
+    numTBs             = 1
+    mcsTable           = 'pdschTable1'
+
+
+
+    pdschUpperPhy = PDSCHUpperPhy(symbolsPerSlot = numSymbols, numRB = numRB, mcsIndex = mcsIndex,
+                              numlayers = numlayers, scalingField = scalingField, additionalOverhead = additionalOverhead,
+                              dmrsREs = dmrsREs, numTBs=numTBs, pdschTable = mcsTable, verbose = True)
+
+    codeword      = pdschUpperPhy(tblock = [None, None], rvid = [0, 0], enableLBRM = [False, False], numBatch = 1, numBSs = 1)
+
+
+
+
+------------
+
+The details of the input-output interface are provided in following sub-section.
+
+.. autoclass:: toolkit5G.PhysicalChannels.PDSCHUpperPhy
+   :members:
+   :exclude-members: call, build
+
+------------
+
+.. tip::
+
+    The PDSCH UpperPhy configurations is recommended to generate standard compliant parameters that does not conflict with one another
+
+

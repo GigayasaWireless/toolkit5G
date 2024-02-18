@@ -1,0 +1,125 @@
+Synchronization Signal Block (SSB) Grid Generation
+==================================================
+THe modules maps the primary synchronization signal (PSS), secondary synchronization signal (SSS), demodulation reference
+signal (DMRS) for PBCH and PBCH payload to SSB grid. The SSB grid in 5G spans 4 OFDM symbols and 240 subcarriers (12 RBs).
+This modules can return multiple SSBs carrying same PSS, SSS but DMRS and different PBCH information which is typically
+the case when transmitting multiple SSBs in a half frame. In such cases, only the SSB index information changes across SSBs.
+The shape of the variable is shown in table-1.
+
+..  important::
+    The cell-ID (:math:`\text{N}_{\text{ID}}`), half frame index (:math:`\text{n}_{\text{HF}}`) and maximum number of SSBs in a half frame (:math:`\text{L}_{\text{max}}`) should be same for all the components of SSB.
+
+.. list-table:: Table-1: Sizes of the components of SSBs
+   :widths: 25 25
+   :header-rows: 1
+
+   * - Reference Signal/Payload
+     - Dimension
+   * - Primary synchronization signal (PSS)
+     - :math:`1 \times 127`
+   * - Secondary synchronization signal (PSS)
+     - :math:`1 \times 127`
+   * - Demodulation reference signal (DMRS)
+     - :math:`\text{N}_{\text{SSBs}} \times 144`
+   * - PBCH Payload
+     - :math:`\text{N}_{\text{SSBs}} \times 432`
+
+
+
+**When** :math:`\text{N}_{\text{SSBs}} = 1`:
+
+.. code-block:: Python
+
+    numSSBs      = 1
+    N_ID1        = np.random.randint(336)
+    N_ID2        = np.random.randint(3)
+    N_ID         = 3*N_ID1 + N_ID2
+
+    nssbCandidatesInHrf = int(np.random.choice([4,8,64]))
+    ssbIndex            = np.random.choice(nssbCandidatesInHrf, size = numSSBs)
+    hrfBit              = 0
+
+    # Generate PSS sequence
+    pssObject    = PSS(N_ID2);
+    pssSequence  = pssObject()
+
+    # Generate SSS sequence
+    sssObject    = SSS(N_ID1, N_ID2);
+    sssSequence  = sssObject()
+
+    # Generate DMRS sequence
+    dmrsLen      = 144;
+    dmrsObject   = DMRS("PBCH", N_ID, ssbIndex, nssbCandidatesInHrf, hrfBit)
+    dmrsSequence = dmrsObject(dmrsLen)
+
+    # Symbol mapping object
+    mapper       = Mapper("qam", 2)
+    pbchSymbols  = mapper(np.random.randint(2, size = (numSSBs, 864))) # Generate symbols from the bits.
+
+    # Generate SSB Grid
+    ssbObject    = SSB_Grid(N_ID)
+    ssb          = ssbObject(pssSequence, sssSequence, dmrsSequence, pbchSymbols) # Generate SSB Grid of shape (1, 4, 240)
+
+    # Display the location of PSS, SSS, DMRS and PBCH in SSB
+    ssbObject.displayGrid(option=1)
+
+.. image:: ../../figures/ResourceMapping/ssbGrid.png
+  :width: 400
+  :alt: Alternative text
+
+
+**When** :math:`\text{N}_{\text{SSBs}} > 1` :
+
+.. code-block:: Python
+
+    numSSBs      = 10
+    N_ID1        = np.random.randint(336)
+    N_ID2        = np.random.randint(3)
+    N_ID         = 3*N_ID1 + N_ID2
+
+    nssbCandidatesInHrf = int(np.random.choice([4,8,64]))
+    ssbIndex            = np.random.choice(nssbCandidatesInHrf, size = numSSBs)
+    hrfBit              = 0
+
+    # Generate PSS sequence
+    pssObject    = PSS(N_ID2);
+    pssSequence  = pssObject()
+
+    # Generate SSS sequence
+    sssObject    = SSS(N_ID1, N_ID2);
+    sssSequence  = sssObject()
+
+    # Generate DMRS sequence
+    dmrsLen      = 144;
+    dmrsObject   = DMRS("PBCH", N_ID, ssbIndex, nssbCandidatesInHrf, hrfBit)
+    dmrsSequence = dmrsObject(dmrsLen)
+
+    # Symbol mapping object
+    mapper       = Mapper("qam", 2)
+    pbchSymbols  = mapper(np.random.randint(2, size = (numSSBs, 864))) # Generate symbols from the bits.
+
+    # Generate SSB Grid
+    ssbObject    = SSB_Grid(N_ID)
+    ssb          = ssbObject(pssSequence, sssSequence, dmrsSequence, pbchSymbols) # Generate SSB Grid of shape (10, 4, 240)
+    # Display the location of PSS, SSS, DMRS and PBCH in SSB
+    ssbObject.displayGrid(option=0)
+
+.. image:: ../../figures/ResourceMapping/ssbHeatmap.svg
+  :width: 400
+  :alt: Alternative text
+
+More example on SSB Resource mapping can be found in Tutorials. The details about the input-output interface of the SSB_Grid
+implementation is provided below.
+
+
+.. autoclass:: toolkit5G.ResourceMapping.SSB_Grid
+   :members:
+   :exclude-members: call, build, displayGrid
+
+
+.. automethod:: toolkit5G.ResourceMapping.SSB_Grid.displayGrid
+    :noindex:
+
+
+References:
+    .. [3GPPTS38211_SSBGrid] (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '5.2.2 Low-PAPR sequence generation type 1'

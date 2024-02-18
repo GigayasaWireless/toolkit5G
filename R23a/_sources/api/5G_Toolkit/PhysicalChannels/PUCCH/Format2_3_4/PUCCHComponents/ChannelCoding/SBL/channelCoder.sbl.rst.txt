@@ -1,0 +1,92 @@
+Channel Coding of Small Block Length
+=====================================
+
+The channel coding of small block lengths is applicable for thr payload size less than 12. 
+It includes three coding algorithm based on the payload size.The implementation is compliant with
+section 5.3.3 of [3GPPTS38212]_.
+
+   * Encoding of 1-bit information
+
+   * Encoding of 2-bit information
+
+   * Encoding of other small block lengths (Reed Muller Coding)
+   
+The implementation of Reed Muller code is explained in detail in the channel Coder of the 5G ToolKit.
+   
+Examples to understand the implementation is given below.
+
+Encoding of 1-bit Information
+------------------------------
+
+This implements the channel coding of payload which is of size 1 bit. The length of channel coded output is equal to the modulation order.
+
+Example:
+         
+.. code-block:: python
+
+   numInfoBits = 1   # Payload Size (Number of information bits | Number of bits to be encoded) 
+   numBatches  = 4   # Number of User equipments
+   modOrder    = 1   # Modulation order
+   UCIBlock    = np.random.randint(2, size = (numBatches, numInfoBits)) # UCI Block (2D array)
+   
+   ChSBLObj    = ChannelcodingSmallBlockLen()(modOrder, UCIBlock)       # Returns the channel coded block
+   
+Encoding of 2-bit Information
+------------------------------
+
+This implements the channel coding of payload which is of size 2 bits. The length of channel coded output is equal to 3 times the modulation order.
+   
+Example: 
+         
+.. code-block:: python
+
+   numInfoBits = 2   # Payload Size (Number of information bits | Number of bits to be encoded)
+   numBatches  = 2   # Number of User equipments
+   modOrder    = 2   # Modulation order
+   UCIBlock    = np.random.randint(2, size = (numBatches, 1, numInfoBits)) # UCI Block (3D array - [Number of User Equipments, Number of code blocks, Number of bits to be encoded)
+   
+   ChSBLObj    = ChannelcodingSmallBlockLen()(modOrder, UCIBlock)       # Returns the channel coded block
+   
+Encoding of other small block lengths (Reed Muller Coder)
+-----------------------------------------------------------
+
+This implements the channel coding of payload of size between 3 and 11. The length of channel coded output is equal to 32.
+The implementation of Reed Muller is explained in detail in the Channel coder part of 5G ToolKit.
+   
+Example: 
+
+.. code-block:: python
+
+   numInfoBits = 10  # Payload Size (Number of information bits | Number of bits to be encoded) 
+   numBatches  = 5   # Number of User equipments
+   modOrder    = 2   # Modulation order
+   UCIBlock    = np.random.randint(2, size = (numBatches, numInfoBits)) # UCI Block (2D array)
+   
+   ChSBLObj    = ChannelcodingSmallBlockLen()(modOrder, UCIBlock)       # Returns the channel coded block
+   
+   
+.. autoclass:: toolkit5G.ChannelCoder.ChannelcodingSmallBlockLen
+   :members:
+   :exclude-members: call, build
+
+Channel De-Coding of Small Block Length
+========================================
+
+This class provides channel decoder of small block length in accordance with the 3GPP standard which is exactly inverse of channel coding of small block length.
+An example of how to use channel decoder of small block lengths is given below.
+
+
+.. code-block:: python
+  
+   numInfoBits   = 5      # Payload Size (Number of information bits | Number of bits to be encoded) 
+   numOfSegments = 1      # Number of code blocks
+   hard_out      = False  # Disabling Hard decision coding
+   
+   inputBits  --> Input block to be decoded
+   
+   ChDeSBLObj = ChannelDecodingSmallBlockLen(numInfoBits, numOfSegments, hard_out)(inputBits)
+   
+.. autoclass:: toolkit5G.ChannelCoder.ChannelDecodingSmallBlockLen
+   :members:
+   :exclude-members: call, build
+   

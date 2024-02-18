@@ -1,0 +1,45 @@
+SSS/Cell ID-1 Detection
+=======================
+The downlink synchronization requires the UE to estimate/decode many parameters. One of these parameters is physical
+layer cell ID (:math:`\text{N}_\text{ID}`) which consists of 2 elements physical layer cell ID-1
+(:math:`\text{N}_\text{ID}^\text{1}`) and physical layer cell ID-2 (:math:`\text{N}_\text{ID}^\text{2}`). This module
+aims to estimate **physical layer cell ID-1** (:math:`\text{N}_\text{ID}^\text{1} \in \{0,1,2,\dots,335\}`).
+
+.. note::
+    ``SSSDetection`` aims to estimate **physical layer cell ID-1** (:math:`\text{N}_\text{ID}^\text{1}`).
+
+
+---------
+
+**Example:**
+
+
+.. code:: ipython3
+
+    method = 'channelAssisted'
+    nID2   = np.random.randint(3)
+
+    sssdet = SSSDetection(method=method, nID2 = nID2)
+
+    ssbEst = np.random.randn(4,240) + 1j*np.random.randn(4,240)
+
+    nID1   = sssdet(ssbEstimate = ssbEst)
+
+    print(nID1)
+
+.. parsed-literal::
+
+    312
+
+
+---------
+
+**API Documentation**
+
+
+The details about the input-output interface of the ReceiveCombining modules is provided below.
+
+.. autoclass:: toolkit5G.ReceiverAlgorithms.SSSDetection
+    :members:
+    :exclude-members: call, build
+

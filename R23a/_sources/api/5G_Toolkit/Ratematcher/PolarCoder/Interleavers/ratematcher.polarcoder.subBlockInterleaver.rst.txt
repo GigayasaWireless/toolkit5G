@@ -1,0 +1,27 @@
+Sub Block Interleaver for Polar Coder
+=====================================
+The sub-block interleaver divides the encoded bits into sub-blocks of size 32 and these sub-blocks are interleaved before
+bit-selection.
+
+.. note::
+    The sub-block interleaver divides the input blocks into sub-blocks of size 32 each.
+
+Sub-block Interleaver
+**********************
+
+The details about the input-output interface of the sub-block interleaver is provided in following module:
+
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_Interleaver
+    :members:
+    :exclude-members: call, build
+
+
+Sub-block De-interleaver
+************************
+
+The details about the input-output interface of the sub-block de-interleaver used at the decoder is provided in following
+module:
+
+.. autoclass:: toolkit5G.Ratematcher.PolarCoder.Subblock_DeInterleaver
+    :members:
+    :exclude-members: call, build

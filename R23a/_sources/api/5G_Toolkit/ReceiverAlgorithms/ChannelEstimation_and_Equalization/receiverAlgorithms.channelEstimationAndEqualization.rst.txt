@@ -1,0 +1,61 @@
+Channel Estimation and Equalization for PBCH
+============================================
+This module provides the channel estimator and equalizer for physical broadcast channel (PBCH). The implementation
+consists of 3 parts:
+
+    1. Channel estimation
+    2. Channel interpolation
+    3. Symbol Equalization
+
+The channel estimator supports **zero-forcing** (ZF) and **minimum mean square error** (MMSE) estimator. The channel
+estimation is followed by interpolating the channel at time-frequency locations where information symbols are
+transmitted. Currently, only nearest neighbour interpolator is supported but it will soon be extended to linear and 2D
+spline interpolator as well. Finally once the channel is estimated at the symbol location, the equalization is performed
+to offset the phase and scaling effect of the wireless channels.
+
+.. note::
+    Channel estimator supports zero-forcing (ZF) and minimum mean square error (MMSE) estimation methods.
+
+.. note::
+    Currently, only nearest neighbour interpolator is supported but it will soon be extended to linear and 2D spline interpolator as well.
+
+.. note::
+    For symbol Equalization, Least square method is used.
+
+
+--------
+
+**Examples**
+
+.. code:: ipython3
+
+    estimatorType    = 'ZF'
+    # estimatorType    = np.random.choice(['ZF', "MMSE"])
+    interpolatorType = 'NN'
+    chEst            = ChannelEstimationAndEqualization(estimatorType = estimatorType,
+                                                        interpolatorType = interpolatorType)
+
+    rxGrid        = np.random.randn(4,240) + 1j*np.random.randn(4,240) # SSB grid of size (4, 240)
+    pilots        = np.random.randn(144)   + 1j*np.random.randn(144)   # dmrs Sequence of length (144,)
+    pilotLocation = tk.ResourceMapping.SSB_Grid(0).dmrsIndices         # Indices where DMRS: Tuple of 2 numpy arrays each of size 144
+    dataLocation  = tk.ResourceMapping.SSB_Grid(0).pbchIndices         # Indices where PBCH: Tuple of 2 numpy arrays each of size 432
+    snr           = 10                                                 # Signal to noise ratio
+
+    pbchSymbols = chEst(rxGrid = rxGrid, pilots = pilots,
+                        pilotLocation = pilotLocation,
+                        dataLocations = dataLocation, snr=snr)
+
+    print(pbchSymbols.shape)
+
+.. parsed-literal::
+
+    (432,)
+
+
+--------
+
+The details about the input-output interface of the module are detailed below.
+
+.. autoclass:: toolkit5G.ReceiverAlgorithms.ChannelEstimationAndEqualization
+    :members:
+    :exclude-members: call, build

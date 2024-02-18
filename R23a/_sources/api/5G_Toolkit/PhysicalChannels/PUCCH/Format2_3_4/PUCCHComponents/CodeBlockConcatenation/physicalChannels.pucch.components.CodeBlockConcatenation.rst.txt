@@ -1,0 +1,55 @@
+Code Block Concatenation
+************************
+
+Code Block Concatenation: Transmitter
+--------------------------------------
+Each codeblock is individually channel coded and broken further into 1 or 2 codeblock segments. All these codeblock
+segments are concatenated by the last module of the upper physical layer chain. The implementation is compliant with
+section 5.5 of [3GPPTS38212]_. An example to demonstrate the implementation is shown below:
+
+Example: 
+
+.. code-block:: python
+
+   numBatches = 5    # Number of user equipments
+   numCBs     = 2    # Number of code blocks
+   #bit generation
+   bits = np.random.randint(2, size = (numBatches, numCBs, 200))
+
+   numTargetBits  = 4224  # Number of target bits 
+   
+   cbConcatenated = CodeBlockConcatenation(numTargetBits)(bits) # Returns the concatenated code blocks
+
+The details of the API of **codeblock concatenation** is detailed below.
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.CodeBlockConcatenation
+    :members:
+    :exclude-members: call, build
+
+
+Code Block Segregation: Receiver
+--------------------------------
+
+The block performs the opposite of code-block concatenation. It breaks the received codeword into multiple codeblock-segments
+for rate matching.
+
+Example:
+
+.. code-block:: python
+
+   numInfoBits   = 1555  # Payload size (Number of Information bits)
+   numOfSegments = 2     # Number of codeblocks
+   E             = 2112  # Rate matching output sequence length
+   
+   #bit generation
+   bits = np.random.randint(2, size = (numBatches, 4224))
+
+	 
+   codewordSegregation = CodeBlockSegregation(numInfoBits)(bits, E, numOfSegments) # Returns the code blocks
+
+
+The details of the input output interface of **codeblock segregation** is shown below:
+
+.. autoclass:: toolkit5G.ChannelCoder.PolarCoder.CodeBlockSegregation
+    :members:
+    :exclude-members: call, build

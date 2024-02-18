@@ -1,0 +1,61 @@
+Physical Uplink Control Channel (PUCCH)
+=======================================
+5G-NR has designed 5 PUCCH formats for physical uplink control channel (PUCCH) to support diverse UCI payload lengths, reliability,
+latency, and coverage requirements. These formats are classified into short PUCCH formats and long PUCCH formats as illustrated
+in figure-[?]. The short format spans 1 or 2 OFDM symbols can be time multiplexed with uplink or downlink shared/data channels.
+The short format can occupy last 1 or two symbols of a slot to facilitate quick reporting of HARQ acknowledgement. The short
+formats are not suitable for coverage and large payloads. Hence, long PUCHH formats are designed which span 4 to 14 OFDM
+symbols across 1 to 16 RBs and can carry both small and large payload sizes. Unlike small format where 12-24 length are
+transmitted by UE and detected based on energy detection at the BS, the long formats are decoded based on the coherent detection
+using demodulation reference signal (DMRS).
+
+
+.. list-table:: Table-1: PUCCH Format in 5G-NR
+   :widths: 10 20 10 20 20
+   :header-rows: 1
+
+   * - PUCCH Format
+     - Duration
+     - UCI Payload Size
+     - Symbols
+     - Number of RBs
+   * - 0
+     - Short
+     - 1-2
+     - 1-2
+     - 1
+   * - 1
+     - Long
+     - 1-2
+     - 4-14
+     - 1
+   * - 2
+     - Short
+     - >2
+     - 1-2
+     - 1-16
+   * - 3
+     - Long
+     - >2
+     - 4-14
+     - 1,2,3,4,5,6,8,9,10,12,15,16
+   * - 2
+     - Long
+     - >2
+     - 4-14
+     - 1
+
+
+
+
+**Table of Contents**
+
+.. toctree::
+    :maxdepth: 2
+
+
+    PUCCH/resourceMapping.pucch.format0.rst
+    PUCCH/resourceMapping.pucch.format1.rst
+    PUCCH/resourceMapping.pucch.format2.rst
+    PUCCH/resourceMapping.pucch.format3.rst
+    PUCCH/resourceMapping.pucch.format4.rst

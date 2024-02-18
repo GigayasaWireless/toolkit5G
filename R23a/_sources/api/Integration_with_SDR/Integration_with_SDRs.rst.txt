@@ -1,0 +1,33 @@
+Integration with SDRs
+=====================
+5G Toolkit can be easily integrated with most of the available software defined radios (SDRs) boards which supports
+an Python based application programming interfaces (APIs). The users can replace the wireless channel models from our
+tutorials or projects with the SDR for simulations and prototyping. Currently, we have integrated and tested only with
+following SDRs:
+
+- Xilinx Zynq UltraScale + RFSoC Boards and other similar boards
+    - Boards compatible with `PYNQ API <https://nvlabs.github.io/sionna/api/mapping.html#demapping>`_.
+- NI USRPs
+    - SDR Boards Compatible with `UHD Python API <https://kb.ettus.com/UHD_Python_API>`_.
+- Analog Devices SDR Boards such as Pluto, Phasor
+    - SDR Boards compatible with `ADI Python API <https://analogdevicesinc.github.io/pyadi-iio/>`_.
+
+.. note::
+    In any form, the above list is not exhaustive. There are many SDRs outside of above list which can be integrated with the 5G Toolkit but are not included solely because of their unavailability with us at this point of time.
+
+This section provides the tutorials to demonstrate how these SDRs can be integrated with some of these SDRs. We aim to
+show case atleast one tutorial with each of SDR families mentioned above. For the other SDRs belonging to a particular
+class of SDRs family, the implementation is expected to be similar. But in-case if it isn't so and you are facing any the
+difficulty in integrating your SDR with our toolkit, please feel free to reach us at toolkit5G@gigayasa.com. We will be
+happy to assist you.
+
+.. note::
+    In case you are working with any other SDR which has a well defined API for Python
+
+** Tutorial **
+
+
+.. toctree::
+    :maxdepth: 4
+
+    SSB_1/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.ipynb

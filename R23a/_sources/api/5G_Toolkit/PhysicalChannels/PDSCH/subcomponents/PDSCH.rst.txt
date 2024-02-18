@@ -1,0 +1,29 @@
+PDSCH Chain
+=============
+This involves the processesing of data in the Physical Downlink Shared Channel. The Physical layer processes either I or 2 Transport Blocks for each resource allocation. In the downlink direction, a maximum of 8 layers can be generated for MIMO. A single Transport Block is processed if 1 to 4 layers are allocated, whereas two Transport Blocks are processed if 5 to 8 layers are allocated. This describes the Physical layer processing for the PDSCH in two parts
+
+	* *Upper Physical layer Processing*
+	
+	* *Lower Physical layer Processing*
+
+**Upper Physical layer Processing**
+   
+**Transmitter**
+
+.. image:: upperPHY.png
+   :width: 200
+   :alt: Alternative text
+			
+**Receiver**
+
+.. image:: lowerPHY.png
+   :width: 180
+   :alt: Alternative text
+
+**Lower Physical layer Processing**
+   		
+.. toctree::	
+    :maxdepth: 4
+
+    UpperPHY
+    LowerPHY

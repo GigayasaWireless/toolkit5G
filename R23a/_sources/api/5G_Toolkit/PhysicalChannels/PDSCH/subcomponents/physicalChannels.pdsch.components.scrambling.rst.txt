@@ -1,0 +1,9 @@
+Scrambling: PDSCH
+*****************
+
+.. toctree::
+    :maxdepth: 10
+
+    physicalChannels.pdsch.components.scrambling.scrambler.rst
+    physicalChannels.pdsch.components.scrambling.descrambler.rst
+

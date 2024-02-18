@@ -1,0 +1,44 @@
+
+
+Spreading
+====================
+In this example, 
+	* ``interlacedTransmission`` - Interlaced Transmission is disabled 
+	* ``pucch_ResourceCommon``   - Common resource configuration 
+	* ``intraSlotFreqHopping``   - Disabling Intra Slot Frequency Hopping 
+	* ``pucch_GroupHopping``     - Disabling Group Hopping 
+	
+.. code-block:: python
+
+   pucch_ResourceCommon    = True #Selecting the resource set
+   interlacedTransmission  = True #Enabling/Disabling the Interlaced Transmission
+   intraSlotFreqHopping    = False #Enabling/Disabling the Intra Slot Frequency Hopping
+   numofSymbols            = None #Number of Symbols
+   symbolIndex_start       = None #Starting Symbol Index
+   indexPUCCH              = 3 #Index of the resource set, if Common resource configuration is enabled
+   timedomainOCC           = 0 #Orthogonal Cover code Index
+   Format1_Sequence --> PUCCH Format 1 Sequence
+
+   spreadingObj         = SpreadingFormat1(pucch_ResourceCommon, intraSlotFreqHopping) #Spreading object
+   spreadedSeq          = spreadingObj(timedomainOCC, Format1_Sequence, symbolIndex_start, numofSymbols, indexPUCCH) #Spreads along the allocated resource elements
+   
+.. autoclass:: toolkit5G.ResourceMapping.SpreadingFormat1
+   :members:
+   :exclude-members: call, build, resourceSet, Phi
+   
+.. rubric:: References
+
+[1]. (3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '6.3.2.4 PUCCH Format 1'
+
+[2]. (3GPP TS 38.213 version 16.5.0 Release 16) 5G;NR;Physical layer procedures for control ' 9.2.1 PUCCH Resource Sets'
+
+[3]. Book - 5G NR in Bullets, Edition 1
+
+   
+
+
+   
+     
+
+
+  

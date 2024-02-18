@@ -1,0 +1,10 @@
+Apply Channel to Transmitted Signal
+===================================
+Forward error correction is used in 5G for correction of bits in error. 5G supports primarily three channel coders:
+
+
+
+.. autoclass:: toolkit5G.ChannelProcessing.ApplyChannel
+    :members:
+    :exclude-members: call, build
+

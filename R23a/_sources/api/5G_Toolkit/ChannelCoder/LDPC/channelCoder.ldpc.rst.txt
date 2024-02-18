@@ -1,0 +1,94 @@
+Low Density Parity Check Codes
+==============================
+5G networks uses low density parity check codes (ldpc) for forward error correction of shared channels used to communicate
+user data over air interface. These channel codes:
+
+    - achieve channel capacity for large block lengths
+    - extremely robust against noise
+    - scalable and efficient hardware implementation.
+    - Low power consumption and silicon footprint.
+    - Can be enhanced to support diverse payload sizes and code-rates.
+    - easy to design and implement the low complexity decoder.
+    - capable of considering both reliability and high data rates.
+
+..  important::
+    * LDPC codes are capacity achieving codes for large block-lengths which makes them suitable for high data rate applications.
+
+..  important::
+    * LDPC codes are used for forward error correction in PDSCH and PUSCH channels which carry user data in downlink and uplink respectively.
+
+The reliability results of LDPC codes for a block size of 80 is shown below. For more comprehensive, analysis of LDPC
+codes, please refer to Tutorial-4.
+
+.. image:: ../../../figures/ChannelCoding/SNRvsBER_LDPC.png
+  :width: 800
+  :alt: Alternative text
+
+
+LDPC Encoder
+************
+The details of the implementation of the LDPC encoder is provided in section 5.3.2 of [3GPPTS38212_LDPC]_. There are few
+examples to illustrate how to use 5G complaint LDPC Encoder for simulations. The usage of 5G LDPC Encoder is slightly complex
+in comparison to standard LDPC coder because it allows only a certain fixed input sizes based on the lifting factor computed
+ based on transport block size and code-rate. This was done to have a flexible and scalable implementation of LDPC for
+realtime fast and efficient use-cases.
+
+.. code-block:: Python
+
+    tbSize     = 32                   # Transport block size
+    codeRate   = 0.5                  # code-rate = k/n
+    lpdcConfig = LDPCparameters(tbSize, codeRate)
+
+    k        = lpdcConfig.k_ldpc        # Value is 80
+    bg       = lpdcConfig.baseGraph     # Base-graph type "BG1" or "BG2"
+    zc       = lpdcConfig.liftingfactor # Lifting factor
+    numCBs   = lpdcConfig.numCodeBlocks # Number of code-blocks
+
+    numBatch = np.random.randint(1,10)  # Number of Batches
+    # block of Bits to encode
+    bits     = np.float32(np.random.randint(2, size = (numBatch, numCBs, k), dtype=np.int8))
+
+    encoder  = LDPCEncoder5G(k, bg, zc) # Create LDPC Encoder Object
+    encBits  = encoder(bits)            # LDPC encoded bits
+    n        = encBits.shape[-1]        # size of the codeword
+
+The details about the input-output interface of the **LDPC Encoder** is provided below.
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPCEncoder5G
+    :members:
+    :exclude-members: call, build
+
+LDPC Decoder
+************
+The class provides a belief propagation based 3GPP standards compliant LDPC decoder inherited from **Sionna** library. An
+example of how to use the LDPC decoder is given below.
+
+.. code-block:: Python
+
+    # rxCodeword: Denotes the LLRs or the logits of the bits of dimension [..., n]
+    decoder    = LDPCDecoder5G(bg, zc) # Creates an object for LDPC Decoder
+    decBits    = decoder(rxCodeword)   # Decoded Bits
+
+
+The details of the input output interface of **LDPC Decoder** are detailed below.
+
+.. autoclass:: toolkit5G.ChannelCoder.LDPCDecoder5G
+    :members:
+    :exclude-members: call, build
+
+LDPC Codec Subcomponents
+************************
+LDPC codec uses following submodules for preprocessing and post-processing which performs error detection, codeblock segmentation
+rate matching and codeblock concatenation. The details of these procedures are provided below.
+
+.. toctree::
+    :maxdepth: 3
+
+    channelCoder.ldpc.ldpcParameters
+    channelCoder.ldpc.codeblockprocessingTransmitter
+    channelCoder.ldpc.codeblockprocessingReceiver
+
+References:
+    .. [3GPPTS38212_LDPC] 3GPP TS 38.211 "Physical channels and modulation (Release 17)", V17.1.0 (2022-03).
+    .. [Ryan] W. Ryan, “An Introduction to LDPC codes”, CRC Handbook for Coding and Signal Processing for Recording Systems, 2004.
+    .. [Cammerer] S. Cammerer, M. Ebada, A. Elkelesh, and S. ten Brink. “Sparse graphs for belief propagation decoding of polar codes.” IEEE International Symposium on Information Theory (ISIT), 2018.

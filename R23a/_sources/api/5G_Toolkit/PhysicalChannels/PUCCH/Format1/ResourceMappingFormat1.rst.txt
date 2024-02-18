@@ -1,0 +1,39 @@
+
+
+Resource Mapping
+==================
+
+In this example, 
+	* ``interlacedTransmission`` - Interlaced Transmission is disabled 
+	* ``pucch_ResourceCommon``   - Common resource configuration 
+	
+.. code-block:: python
+
+   pucch_ResourceCommon    = True #Selecting the resource set
+   interlacedTransmission  = True #Enabling/Disabling the Interlaced Transmission
+   intraSlotFreqHopping    = False #Enabling/Disabling the Intra Slot Frequency Hopping
+   numofSymbols            = None #Number of Symbols
+   symbolIndex_start       = None #Starting Symbol Index
+   indexPUCCH              = 3 #Index of the resource set, if Common resource configuration is enabled
+   numInterlacedRBs        = 10 #Number of Interlaced Resource Blocks
+   startingPRB             = None #Index of Starting Physical Resource Block
+   secondHopPRB            = None #Index of Starting Physical Resource Block, if Intra slot Hopping is enabled 
+   numOfInterlaces         = 1 #Number of Interlaces
+   interlaceIndex_0        = 9 #Index of first Interlace
+   interlaceIndex_1        = None #Index of second Interlace
+   spreadedSeq --> Spreaded Sequence
+
+   rmObj = ResourceMapperFormat1(pucch_ResourceCommon, intraSlotFreqHopping, interlacedTransmission) #Resource Mapping Object
+   rmOp  = rmObj(spreadedSeq, numofSymbols, symbolIndex_start, startingPRB, secondHopPRB, indexPUCCH, numInterlacedRBs, numOfInterlaces, interlaceIndex_0, interlaceIndex_1) # Maps spreaded sequence onto the resource elements
+   
+.. autoclass:: toolkit5G.ResourceMapping.ResourceMapperFormat1
+   :members:
+   :exclude-members: call, build,  resourceSet  
+
+.. rubric:: References
+
+[1].(3GPP TS 38.211 version 17.1.0 Release 17) 5G;NR;Physical channels and modulation '6.3.2.4 PUCCH Format 1'
+
+[2].(3GPP TS 38.213 version 16.5.0 Release 16) 5G;NR;Physical layer procedures for control ' 9.2.1 PUCCH Resource Sets'
+
+[3].Book - 5G NR in Bullets, Edition 1

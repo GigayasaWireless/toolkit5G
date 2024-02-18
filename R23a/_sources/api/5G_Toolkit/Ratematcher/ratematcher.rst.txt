@@ -1,0 +1,17 @@
+Rate matching
+=============
+Rate matching is a technique used in channel coding to match the channel coded bits to the number of target bits. It serves
+many purposes few of which are listed below.
+
+* controls the rate of the channel codes using bit selection.
+* provides robustness against burst/block errors using bit/sub-block interleavers.
+* improves the forward error correction performance for higher modulation orders using channel interleavers.
+
+In 5G, the rate matching is required for all the possible chains/channel codecs. The details of the rate matching for
+both LDPC codes and Polar codes are discussed in following sections.
+
+.. toctree::
+    :maxdepth: 1
+
+    LDPC/ratematcher.ldpc
+    PolarCoder/ratematcher.polarcoder

@@ -1,0 +1,10 @@
+Research work carried out using 5G Toolkit
+==========================================
+The following research has been carried out using different versions of this Toolkit:
+
+#. A. Ravi, V. Singh and P. Kumar "*Super-resolution Based Channel Estimation for PBCH Data Decoding in 5G NR System*" manuscript ID is ISJ-RE-22-15236 submitted to **IEEE Systems Journal**.
+#. V. Singh, A. A. Masal, J. Klutto Milleth and B. Ramamurthi, "`High Precision Positioning using Multi-cell Massive MIMO system for 5G and beyond <https://ieeexplore.ieee.org/document/9569480>`_," 2021 **IEEE 32nd Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC)**, Helsinki, Finland, 2021, pp. 1234-1240, doi: 10.1109/PIMRC50174.2021.9569480.
+
+
+
+

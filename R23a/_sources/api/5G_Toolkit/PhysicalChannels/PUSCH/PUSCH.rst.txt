@@ -1,0 +1,14 @@
+PUSCH Chain
+=============
+This involves the processesing of data in the Physical Downlink Shared Channel. The Physical layer processes 1 Transport Block for each resource allocation. In the Uplink direction, a maximum of 4 layers can be generated for MIMO. This describes the Physical layer processing for the PUSCH in two parts
+
+**Upper Physical Layer Processing**
+
+.. toctree::	
+    :maxdepth: 4
+
+    PUSCHUpperPhy
+    PUSCHDecoderUpperPhy
+
+**Lower Physical layer Processing**
+   		

@@ -1,0 +1,9 @@
+Scrambling: PDCCH
+*****************
+
+.. toctree::
+    :maxdepth: 10
+
+    physicalChannels.pbch.components.scrambling.scrambler.rst
+    physicalChannels.pbch.components.scrambling.descrambler.rst
+
