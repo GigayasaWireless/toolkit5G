@@ -224,7 +224,7 @@ or perpetual license `Purchase License <https://gigayasa.com/request-pricing/>`_
 Activate the 5G Toolkit License
 -------------------------------
 
- #. Download the **Central-Hub** shared with you over the email.
+ #. Download the **Central-Hub** from following links:
 
     * `Central Hub for Window <https://gigayasa-my.sharepoint.com/:u:/p/vikram/Ear-y3gAghlIpxhXEDC6zmABcPhfUKkqu5crpzpo8yS9MQ?e=cf5t9s>`_
     * `Central Hub for Linux <https://gigayasa-my.sharepoint.com/:u:/p/vikram/EU4tcBvjwLZGmlzKtEn4ssUBp8OI6UaKmYIAe9lhowlRrQ?e=Mggra2>`_
@@ -235,7 +235,7 @@ Activate the 5G Toolkit License
    #. Create an account with Gigayasa.
    #. Verify your email
    #. Log into the Central-Hub.
- #. Now fetch the License key shared with you over the email.
+ #. Now fetch the License key **shared with you over the email**.
  #. Activate your License.
  #. If activation is successful, please close the Central-Hub.
  #. You are good to go please open the jupyter Notebook and try to "import toolkit5G as tk"
