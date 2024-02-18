@@ -225,6 +225,10 @@ Activate the 5G Toolkit License
 -------------------------------
 
  #. Download the **Central-Hub** shared with you over the email.
+
+    * `Central Hub for Window <https://gigayasa-my.sharepoint.com/:u:/p/vikram/Ear-y3gAghlIpxhXEDC6zmABcPhfUKkqu5crpzpo8yS9MQ?e=cf5t9s>`_
+    * `Central Hub for Linux <https://gigayasa-my.sharepoint.com/:u:/p/vikram/EU4tcBvjwLZGmlzKtEn4ssUBp8OI6UaKmYIAe9lhowlRrQ?e=Mggra2>`_
+
  #. Unzip and run the executable file.
  #. Once the installation is complete, open the **Central-Hub** from your applications.
  #. Login if you have the Gigayasa account, otherwise:
