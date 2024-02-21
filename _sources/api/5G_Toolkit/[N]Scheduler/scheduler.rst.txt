@@ -1,20 +1,34 @@
-
 Scheduler
 =========
+The Physical Layer (PHY) scheduler in a 5G base station (gNodeB) is responsible for managing the transmission of data
+over the radio interface. It operates at the PHY layer, which is the lowest layer in the protocol stack and deals
+directly with the transmission and reception of radio signals. The PHY scheduler makes decisions about how to allocate
+radio resources, such as frequency, time, and transmit power, to different users or services to maximize system
+performance and meet Quality of Service (QoS) requirements.
 
-This is the module which provides functions and classes that implement scheduler functionality at Tx or Base Station (BS) side of a communication link. 
-Typically a lower MAC functionality, using which a BS chooses a particular mcs index, code rate etc,. to each serving UE in a cell.   
+Components of the Physical Layer Scheduler in a 5G base station typically include:
 
+- Resource Allocation: The scheduler determines which resources (frequency bands, time slots, etc.) to allocate to each user or service based on factors such as channel conditions, data rate requirements, and Quality of Service (QoS) constraints.
 
+- Precoder Matrix Selection for Beam-forming and MIMO (Multiple Input Multiple Output): In systems with multiple antennas, the scheduler may also decide on the beamforming weights or MIMO transmission schemes to improve signal quality and spatial efficiency.
 
+- Link Adaptation: The scheduler dynamically adjusts transmission parameters such as modulation, coding, and transmit power to adapt to changing channel conditions and optimize spectral efficiency. The scheduler selects the appropriate modulation and coding scheme for each transmission based on channel conditions and user requirements. Higher modulation and coding schemes offer higher data rates but may be less robust in noisy or fading channels.
 
+- Interference Management: The scheduler may also consider interference from other cells or users and mitigate its effects through techniques such as interference coordination, power control, or resource partitioning.
+
+- PDCCH Scheduling: In 5G, monitoring and optimizing the blocking probability for PDCCH are essential for ensuring efficient resource allocation, maximizing system capacity, and delivering satisfactory performance in wireless networks. PDCCH Scheduler allocates resource for DCI transmission based on the coverage, resource available, QoS and scheduling strategy.
+
+- Scheduling Metrics: Various metrics such as throughput, fairness, delay, and packet error rate are considered by the scheduler to make efficient scheduling decisions that optimize overall system performance and user experience.
+
+Overall, the Physical Layer Scheduler plays a critical role in managing the radio resources of a 5G base station to
+ensure efficient and reliable communication for all users and services within the network.
 
 
 .. toctree::
    :maxdepth: 5
 
    PDCCHScheduler/pdcchScheduler
-      
+   PDSCHScheduler/linkAdpatation
+   PDSCHScheduler/rankAdaptation
+   PDSCHScheduler/ResourceAllocation/roundRobinScheduler
 
-
-   

@@ -187,6 +187,7 @@ The installation will be truly successful if we are able to import the toolkit5G
 **Jupyter Notebook**, open the jupyter notebook using following command in your browser.
 
 .. code-block:: bash
+
     jupyter notebook
 
 

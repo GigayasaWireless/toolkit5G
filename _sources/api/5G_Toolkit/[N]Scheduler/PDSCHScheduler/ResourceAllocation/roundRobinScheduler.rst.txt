@@ -1,0 +1,33 @@
+Round Robin Scheduler
+=====================
+
+In 5G networks, a Round Robin scheduler is a type of scheduling algorithm used by the base station (gNodeB) to allocate
+resources among multiple user equipment (UEs) in a fair and equitable manner. The Round Robin scheduler ensures that
+each UE gets an equal opportunity to access network resources over time, regardless of factors such as channel
+conditions or priority levels.
+
+Here's how the Round Robin scheduler works:
+
+- **Resource Allocation**: The Round Robin scheduler allocates resources, such as frequency bands, time slots, or transmission power, to UEs in a sequential manner, cycling through each UE in a round-robin fashion.
+
+- **Fairness**: The scheduler ensures fairness by giving each UE an equal share of available resources during each scheduling cycle. This prevents any single UE from monopolizing network resources and ensures that all UEs have an opportunity to transmit data or receive service.
+
+- **Scheduling Cycles**: In each scheduling cycle, the Round Robin scheduler iterates through the list of active UEs and assigns resources to each UE in turn. Once all UEs have been served, the scheduler begins a new cycle, repeating the process.
+
+- **Efficiency**: While the Round Robin scheduler provides fairness among UEs, it may not always be the most efficient scheduling algorithm in terms of maximizing system throughput or meeting quality of service (QoS) requirements. Other scheduling algorithms, such as proportional fair scheduling or dynamic scheduling based on channel conditions, may be employed to optimize resource allocation and improve overall system performance.
+
+- **Use Cases**: Round Robin scheduling is often used in scenarios where fairness is a primary concern and there are no strict QoS requirements or variations in channel conditions among UEs. It is commonly employed in low-complexity systems or in situations where the network load is relatively balanced across UEs.
+
+Overall, the Round Robin scheduler provides a simple and straightforward approach to resource allocation in 5G networks,
+ensuring fairness among UEs while maintaining a relatively uniform distribution of network resources. However, in more
+complex scenarios, alternative scheduling algorithms may be employed to achieve better performance and efficiency.
+
+
+.. autoclass:: toolkit5G.Scheduler.RoundRobinScheduler
+    :members:
+    :exclude-members: call, build, displayUEallocation
+
+
+.. automethod:: toolkit5G.Scheduler.RoundRobinScheduler.displayUEallocation
+    :noindex:
+

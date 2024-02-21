@@ -1,0 +1,34 @@
+Link Adaptation
+===============
+
+Link adaptation in 5G networks refers to the process of dynamically adjusting transmission parameters, such as
+modulation, coding, and transmit power, to optimize the communication link between the base station (gNodeB) and the
+user equipment (UE). The goal of link adaptation is to maximize spectral efficiency, throughput, and reliability while
+adapting to changing channel conditions and user requirements.
+
+Key aspects of link adaptation in 5G networks include:
+
+- **Modulation and Coding Scheme (MCS) Selection**: Link adaptation involves selecting the appropriate modulation and coding scheme based on channel conditions, signal-to-noise ratio (SNR), and interference levels. Higher modulation schemes offer higher data rates but require better channel conditions, while lower modulation schemes provide greater robustness in adverse conditions.
+
+- **Transmit Power Control**: Link adaptation also includes adjusting the transmit power level to optimize signal quality and coverage while minimizing interference and power consumption. Transmit power control helps maintain a balance between signal strength and interference levels, particularly in dense network deployments.
+
+- **Channel Quality Feedback**: Link adaptation relies on feedback mechanisms to provide information about channel conditions, such as channel state information (CSI), received signal strength (RSSI), and signal-to-interference-plus-noise ratio (SINR). This feedback allows the gNodeB to make informed decisions about modulation, coding, and power adjustments.
+
+- **Adaptive Modulation and Coding (AMC)**: AMC is a key feature of link adaptation that dynamically adjusts modulation and coding parameters based on real-time channel conditions. By adapting to variations in channel quality, AMC maximizes data rate and spectral efficiency while ensuring reliable communication.
+
+- **Fast Link Adaptation**: In fast-changing channel environments, such as high-mobility scenarios or fading channels, fast link adaptation techniques are employed to quickly adjust transmission parameters in response to channel fluctuations. This helps maintain a stable and reliable communication link despite varying channel conditions.
+
+Overall, link adaptation plays a crucial role in optimizing the performance of wireless communication systems by
+continuously adjusting transmission parameters to match the prevailing channel conditions and user requirements. By
+maximizing spectral efficiency and reliability, link adaptation contributes to achieving high data rates, low latency,
+and seamless connectivity in 5G networks.
+
+.. important::
+    Currently, link adaptation doesn't support power control.
+
+.. autoclass:: toolkit5G.Scheduler.LinkAdaptation
+    :members:
+    :exclude-members: call, build, minSNRvalue
+
+.. automethod:: toolkit5G.Scheduler.LinkAdaptation.minSNRvalue
+    :noindex:

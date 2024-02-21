@@ -5,8 +5,10 @@ Blockage Probability Analysis for RedCap Devices in 5G Networks
 .. toctree::
     :maxdepth: 4
 
+    Blocking Probability for Different AL distributions.ipynb
     Blocking Probability for Different ALs.ipynb
-    Blocking Probability for Different Coverage Conditions.ipynb
     Blocking Probability vs Number of Candidates per Aggregation Level.ipynb
+    Impact of Scheduling Strategy on Blocking Probability.ipynb
     Impact of UEs Capability on Blocking Probability.ipynb
+    Minimum CORESET Size for a Target Blocking Probability.ipynb
     

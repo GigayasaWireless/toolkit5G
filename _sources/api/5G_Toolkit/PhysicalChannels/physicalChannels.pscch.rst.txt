@@ -13,18 +13,19 @@ The details about the transmitter side of the PDSCH are provided in [3GPPTS38211
 [COMST.2021.3057017]_. The chain is bi-parted into upper physical layer and lower physical layer section to entertain
 both the link-level and system level simulations. The details of the APIs is provided in following sub-sections.
 
+
 .. image:: ../../figures/PhysicalChannels/PSCCHE2ETx.png
   :width: 800
   :alt: Alternative text
   :align: center
 
 
-.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhy.PscchUpperPhy
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCHUpperPhy
    :members:
    :exclude-members: call, build
 
 
-.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhy.PscchLowerPhy
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCHLowerPhy
    :members:
    :exclude-members: call, build
 
@@ -42,12 +43,12 @@ both the link-level and system level simulations. The details of the APIs is pro
   :align: center
 
 
-.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchLowerPhyDecoder.PscchLowerPhyDecoder
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCHUpperPhyDecoder
    :members:
    :exclude-members: call, build
 
 
-.. autoclass:: toolkit5G.PhysicalChannels.PSCCH.pscchUpperPhyDecoder.PscchUpperPhyDecoder
+.. autoclass:: toolkit5G.PhysicalChannels.PSCCHLowerPhyDecoder
    :members:
    :exclude-members: call, build
 

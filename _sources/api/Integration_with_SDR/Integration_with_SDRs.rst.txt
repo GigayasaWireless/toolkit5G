@@ -36,4 +36,6 @@ toolkit, please don't hesitate to contact us at toolkit5G@gigayasa.com. We would
 .. toctree::
     :maxdepth: 4
 
-    5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.ipynb
+    1.Time_Synchronization_using_PSS/Time_Synchronization.rst
+    2.CFO_Estimation_and_Correction_using_SSB/CFO_Correction.rst
+    3.Downlink_Synchronization_in_5G_using_SSB/Downlink_Synchronization.rst

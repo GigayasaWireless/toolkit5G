@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DFT based AoA Method &mdash; 5G Toolkit R23a documentation</title>
+  <title>DFT based AoA Method &mdash; 5G Toolkit R24a documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
@@ -367,8 +367,16 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.prach.html">Physical Random Access Channel (PRACH)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.pscch.html#pscch-transmitter">PSCCH Transmitter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.pscch.html#pscch-receiver">PSCCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.pscch.html#pscch-transmitter">PSCCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCHUpperPhy"><code class="docutils literal notranslate"><span class="pre">PSCCHUpperPhy</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCHLowerPhy"><code class="docutils literal notranslate"><span class="pre">PSCCHLowerPhy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.pscch.html#pscch-receiver">PSCCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCHUpperPhyDecoder"><code class="docutils literal notranslate"><span class="pre">PSCCHUpperPhyDecoder</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCHLowerPhyDecoder"><code class="docutils literal notranslate"><span class="pre">PSCCHLowerPhyDecoder</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../../PhysicalChannels/physicalChannels.pscch.html#pscch-components">PSCCH Components</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.crc.html">Cyclic Redundency Check</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../PhysicalChannels/PSCCH/subcomponents/physicalChannels.pdcch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
@@ -758,6 +766,28 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../%5BN%5DScheduler/scheduler.html">Scheduler</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../%5BN%5DScheduler/PDCCHScheduler/pdcchScheduler.html">PDCCH Scheduler</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../%5BN%5DScheduler/PDCCHScheduler/pdcchScheduler.html#toolkit5G.Scheduler.PDCCHScheduler"><code class="docutils literal notranslate"><span class="pre">PDCCHScheduler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/linkAdpatation.html">Link Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/linkAdpatation.html#toolkit5G.Scheduler.LinkAdaptation"><code class="docutils literal notranslate"><span class="pre">LinkAdaptation</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/linkAdpatation.html#toolkit5G.Scheduler.LinkAdaptation.selectMCS"><code class="docutils literal notranslate"><span class="pre">LinkAdaptation.selectMCS()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/rankAdaptation.html">Rank Adaptation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/rankAdaptation.html#toolkit5G.Scheduler.RankAdaptation"><code class="docutils literal notranslate"><span class="pre">RankAdaptation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/ResourceAllocation/roundRobinScheduler.html">Round Robin Scheduler</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/ResourceAllocation/roundRobinScheduler.html#toolkit5G.Scheduler.RoundRobinScheduler"><code class="docutils literal notranslate"><span class="pre">RoundRobinScheduler</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/ResourceAllocation/roundRobinScheduler.html#toolkit5G.Scheduler.RoundRobinScheduler.firstAcrossTime"><code class="docutils literal notranslate"><span class="pre">RoundRobinScheduler.firstAcrossTime</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/ResourceAllocation/roundRobinScheduler.html#toolkit5G.Scheduler.RoundRobinScheduler.numRB"><code class="docutils literal notranslate"><span class="pre">RoundRobinScheduler.numRB</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/ResourceAllocation/roundRobinScheduler.html#toolkit5G.Scheduler.RoundRobinScheduler.numSymbol"><code class="docutils literal notranslate"><span class="pre">RoundRobinScheduler.numSymbol</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/ResourceAllocation/roundRobinScheduler.html#toolkit5G.Scheduler.RoundRobinScheduler.numUEscheduledAcrossFreq"><code class="docutils literal notranslate"><span class="pre">RoundRobinScheduler.numUEscheduledAcrossFreq</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../%5BN%5DScheduler/PDSCHScheduler/ResourceAllocation/roundRobinScheduler.html#toolkit5G.Scheduler.RoundRobinScheduler.numUEscheduledAcrossTime"><code class="docutils literal notranslate"><span class="pre">RoundRobinScheduler.numUEscheduledAcrossTime</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1228,6 +1258,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial9/Link_Level_Simulation_for_PDSCH_in_5G.html#Save-Results">Save Results</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Tutorials/Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html">SVD based Downlink Precoding and Combining for Massive MIMO 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Import-Python-Libraries">Import Python Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#import-python-libraries-1">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Import-5G-Toolkit-Libraries">Import 5G-Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Generate-Wireless-Channel:-CDL-A">Generate Wireless Channel: CDL-A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Link-level-simulation:-BLER/BER/Throughput/SE-vs-SNR-for-different-ranks">Link level simulation: BLER/BER/Throughput/SE vs SNR for different ranks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Simulation-Results">Simulation Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Simulation-Results:-Averaged-over-10000-batches">Simulation Results: Averaged over 10000 batches</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html">P1 Procedure: Beam management in 5G networks using SSB</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Import-librariers">Import librariers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Import-Python-libraries">Import Python libraries</a></li>
@@ -1245,6 +1288,141 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Visualization-of-All-Beam-RSRP">Visualization of All Beam RSRP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Selected-Base-station-and-Beam">Selected Base-station and Beam</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Simulation-Topology">Simulation Topology</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html">Downlink Time of Arrival based Positioning in 5G and Beyond Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Positioning-Procedure">Positioning Procedure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Table-of-Content:">Table of Content:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Import-Libraries">Import Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Channel-Generation">Channel Generation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Channel-Parameters:">Channel Parameters:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Position-Reference-Signal">Position Reference Signal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#OFDM-Transmitter:-Create-Transmission-Grid">OFDM Transmitter: Create Transmission Grid</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Display-Transmission-Grid">Display Transmission Grid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Transmit-Beamforming">Transmit Beamforming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Pass-the-Beamformed-Grid-Through-Wireless-Channel">Pass the Beamformed Grid Through Wireless Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Add-Noise">Add Noise</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Extracting-the-Resource-Grid">Extracting the Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Channel-Estimation-+-Interpolation">Channel Estimation + Interpolation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Display-the-quality-of-Channel-Estimates">Display the quality of Channel Estimates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#ToA-Estimation">ToA Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Visualization:-Time-of-Arrival-locus-Circles">Visualization: Time of Arrival locus Circles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Position-Estimation-+-K-Best-Measurement-Selection-(Genie-Aided)">Position Estimation + K-Best Measurement Selection (Genie Aided)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Measurement-Selection:">Measurement Selection:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Visualization-of-Positioning">Visualization of Positioning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Performance-Analysis-of-Positioning-Error-for-ToA-based-method">Performance Analysis of Positioning Error for ToA based method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Performance-Analysis:-For-2000-UEs">Performance Analysis: For 2000 UEs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Further-Study">Further Study</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html">Downlink TDoA Based Positioning for Industrial IoT Devices in Millimeter Wave 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Channel-Generation">Channel Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Channel-Parameters:">Channel Parameters:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Position-Reference-Signal">Position Reference Signal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#OFDM-Transmitter:-Create-Transmission-Grid">OFDM Transmitter: Create Transmission Grid</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Display-Transmission-Grid">Display Transmission Grid</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Transmit-Beamforming">Transmit Beamforming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Pass-the-Beamformed-Grid-Through-Wireless-Channel">Pass the Beamformed Grid Through Wireless Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Add-Noise">Add Noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Extracting-the-Resource-Grid">Extracting the Resource Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Channel-Estimation-+-Interpolation">Channel Estimation + Interpolation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Display-the-quality-of-Channel-Estimates">Display the quality of Channel Estimates</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#ToA-Estimation">ToA Estimation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Visualization:-Time-of-Arrival-locus-Circles">Visualization: Time of Arrival locus Circles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Position-Estimation-+-K-Best-Measurement-Selection-(Genie-Aided)">Position Estimation + K-Best Measurement Selection (Genie Aided)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Measurement-Selection:">Measurement Selection:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Visualization-of-Positioning">Visualization of Positioning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Performance-Analysis-of-Positioning-Error-for-ToA-based-method">Performance Analysis of Positioning Error for ToA based method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Performance-Analysis:-For-2000-UEs">Performance Analysis: For 2000 UEs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Further-Study">Further Study</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html">Uplink AoA (UL-AoA) based Localization of the Indoor Factory UEs using millimeter 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#Generate-Wireless-Channels">Generate Wireless Channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#SRS-Configurations">SRS Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#Slot-by-Slot-Simulation">Slot by Slot Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#Position-Estimation:-Based-on-UL-ToA">Position Estimation: Based on UL-ToA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#Visualization:-Direction-of-Arrival-Locus-Lines">Visualization: Direction of Arrival Locus Lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#Visualization-of-Estimated-Position-and-its-accuracy">Visualization of Estimated Position and its accuracy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#Performance-Analysis-of-Positioning-Error-for-UL-AoA-method">Performance Analysis of Positioning Error for UL-AoA method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html#Performance-Analysis-for-UL-AoA-method:-1300-UEs">Performance Analysis for UL-AoA method: 1300 UEs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html">Downlink Angle of Departure based Positioning for Rural Macro Terrain in 5G and Beyond Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Positioning-Procedure">Positioning Procedure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Table-of-Content:">Table of Content:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Import-Libraries">Import Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Channel-Generation">Channel Generation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Channel-Parameters:">Channel Parameters:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Position-Reference-Signal">Position Reference Signal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#OFDM-Transmitter:-Create-Transmission-Grid">OFDM Transmitter: Create Transmission Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Compute-the-Measurement-Windows">Compute the Measurement Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Transmit-Beamforming">Transmit Beamforming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Add-Noise">Add Noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Pass-the-Beamformed-Grid-Through-Wireless-Channel">Pass the Beamformed Grid Through Wireless Channel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#RSRP-vs-beam-Index">RSRP vs beam Index</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#AoD-Estimation">AoD Estimation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Position-Estimation-+-K-Best-Measurement-Selection-(Genie-Aided)">Position Estimation + K-Best Measurement Selection (Genie Aided)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Measurement-Selection:">Measurement Selection:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Visualization-of-Positioning">Visualization of Positioning</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Performance-Analysis-of-Positioning-Error-for-ToA-based-method">Performance Analysis of Positioning Error for ToA based method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Performance-Analysis-for-DL-AoD-method:-2000-UEs">Performance Analysis for DL-AoD method: 2000 UEs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/Tutorial25%2B/%5BLLS%5DDL-AoD_Based_Positioning_in_5G_Networks.html#Further-Study">Further Study</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1304,27 +1482,34 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../Projects/Project2/project2.html">Blockage Probability Analysis for RedCap Devices in 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20AL%20distributions.html">Analysis of Blocking Probability for different Coverage Conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20AL%20distributions.html#Import-Python-Libraries">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20AL%20distributions.html#Import-5G-Toolkit-Libraries">Import 5G Toolkit Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20AL%20distributions.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20AL%20distributions.html#PDCCH-Scheduling-Parameters">PDCCH Scheduling Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20AL%20distributions.html#PDCCH-Scheduling-for-Good-Coverage-Scenarios">PDCCH Scheduling for <code class="docutils literal notranslate"><span class="pre">Good</span> <span class="pre">Coverage</span></code> Scenarios</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20AL%20distributions.html#PDCCH-Scheduling-for-Medium-Coverage-Scenarios">PDCCH Scheduling for <code class="docutils literal notranslate"><span class="pre">Medium</span> <span class="pre">Coverage</span></code> Scenarios</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20AL%20distributions.html#PDCCH-Scheduling-for-Extreme-Coverage-Scenarios">PDCCH Scheduling for <code class="docutils literal notranslate"><span class="pre">Extreme</span> <span class="pre">Coverage</span></code> Scenarios</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20AL%20distributions.html#Plotting-the-results">Plotting the results</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20AL%20distributions.html#References">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html">Variation in Blocking Probability with Different Aggregation Levels (ALs)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#Python-Libraries">Python Libraries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#5G-Toolkit-Libraries">5G-Toolkit Libraries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#Simulation-Parameters">Simulation Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#PDCCH-Scheduling-Parameters">PDCCH Scheduling Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#PDCCH-Scheduling-Parameters">PDCCH Scheduling Parameters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#Impact-of-AL-1">Impact of AL 1</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#Impact-of-AL-2">Impact of AL 2</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#Impact-of-AL-4">Impact of AL 4</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#Impact-of-AL-8">Impact of AL 8</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#Impact-of-AL-16">Impact of AL 16</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#Plot-the-Variation-in-Blocking-Probability-with-number-of-UEs-for-different-Aggregation-levels.">Plot the Variation in Blocking Probability with number of UEs for different Aggregation levels.</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20ALs.html#References">References</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20Coverage%20Conditions.html">Variation in Blocking Probability for Different Coverage Conditions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20Coverage%20Conditions.html#Import-Python-Libraries">Import Python Libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20Coverage%20Conditions.html#Import-5G-Toolkit-Libraries">Import 5G Toolkit Libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20Coverage%20Conditions.html#Simulation-Parameters">Simulation Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20Coverage%20Conditions.html#PDCCH-Scheduling-Parameters">PDCCH Scheduling Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20Coverage%20Conditions.html#PDCCH-Scheduling-for-Good-Coverage-Scenarios">PDCCH Scheduling for <code class="docutils literal notranslate"><span class="pre">Good</span> <span class="pre">Coverage</span></code> Scenarios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20Coverage%20Conditions.html#PDCCH-Scheduling-for-Medium-Coverage-Scenarios">PDCCH Scheduling for <code class="docutils literal notranslate"><span class="pre">Medium</span> <span class="pre">Coverage</span></code> Scenarios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20Coverage%20Conditions.html#PDCCH-Scheduling-for-Extreme-Coverage-Scenarios">PDCCH Scheduling for <code class="docutils literal notranslate"><span class="pre">Extreme</span> <span class="pre">Coverage</span></code> Scenarios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20Coverage%20Conditions.html#Plotting-the-results">Plotting the results</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20for%20Different%20Coverage%20Conditions.html#References">References</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20vs%20Number%20of%20Candidates%20per%20Aggregation%20Level.html">Analyzing the effect of Number of Candidates on <em>Blocking Probability</em></a><ul>
@@ -1332,6 +1517,22 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20vs%20Number%20of%20Candidates%20per%20Aggregation%20Level.html#PDCCH-Scheduling-Parameters">PDCCH Scheduling Parameters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20vs%20Number%20of%20Candidates%20per%20Aggregation%20Level.html#Plot-the-Variation-in-Blocking-Probability-with-number-of-PDCCH-candidates">Plot the Variation in Blocking Probability with number of PDCCH candidates</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Blocking%20Probability%20vs%20Number%20of%20Candidates%20per%20Aggregation%20Level.html#References">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20Scheduling%20Strategy%20on%20Blocking%20Probability.html">Analyzing the Impact of Scheduling Strategy on Blocking Probability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20Scheduling%20Strategy%20on%20Blocking%20Probability.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20Scheduling%20Strategy%20on%20Blocking%20Probability.html#5G-Toolkit-Libraries">5G-Toolkit Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20Scheduling%20Strategy%20on%20Blocking%20Probability.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20Scheduling%20Strategy%20on%20Blocking%20Probability.html#PDCCH-Scheduling-Parameters">PDCCH Scheduling Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20Scheduling%20Strategy%20on%20Blocking%20Probability.html#Simulation-for-Scheduling-Strategy-I">Simulation for Scheduling Strategy-I</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20Scheduling%20Strategy%20on%20Blocking%20Probability.html#Blocking-probability-vs-number-of-UEs-to-be-scheduled.">Blocking probability vs number of UEs to be scheduled.</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20Scheduling%20Strategy%20on%20Blocking%20Probability.html#Simulation-for-Scheduling-Strategy-II">Simulation for Scheduling Strategy-II</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20Scheduling%20Strategy%20on%20Blocking%20Probability.html#Plotting-Blocking-Probability-vs-Number-of-UEs-for-Scheduling-Strategy">Plotting Blocking Probability vs Number of UEs for Scheduling Strategy</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20Scheduling%20Strategy%20on%20Blocking%20Probability.html#References">References</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20UEs%20Capability%20on%20Blocking%20Probability.html">Analyze the Impact of UE Capability on Blocking Probability</a><ul>
@@ -1347,6 +1548,20 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20UEs%20Capability%20on%20Blocking%20Probability.html#Simulating-Reduced-Blind-Decoding-Case-B">Simulating Reduced Blind Decoding Case-B</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20UEs%20Capability%20on%20Blocking%20Probability.html#id1">Plot Blocking Probability for Different CORESET Sizes for Different UEs</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Impact%20of%20UEs%20Capability%20on%20Blocking%20Probability.html#References">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Projects/Project2/Minimum%20CORESET%20Size%20for%20a%20Target%20Blocking%20Probability.html">Selection of minimum CORESET Size for a Given Target Block Probability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Minimum%20CORESET%20Size%20for%20a%20Target%20Blocking%20Probability.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Minimum%20CORESET%20Size%20for%20a%20Target%20Blocking%20Probability.html#5G-Toolkit-Libraries">5G-Toolkit Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Minimum%20CORESET%20Size%20for%20a%20Target%20Blocking%20Probability.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Minimum%20CORESET%20Size%20for%20a%20Target%20Blocking%20Probability.html#PDCCH-Scheduling-Parameters">PDCCH Scheduling Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Minimum%20CORESET%20Size%20for%20a%20Target%20Blocking%20Probability.html#Compute-minimum-coreset-size-for-numUEs-=-5.">Compute minimum coreset size for <code class="docutils literal notranslate"><span class="pre">numUEs</span></code> = 5.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Minimum%20CORESET%20Size%20for%20a%20Target%20Blocking%20Probability.html#Compute-minimum-coreset-size-for-numUEs-=-10.">Compute minimum coreset size for <code class="docutils literal notranslate"><span class="pre">numUEs</span></code> = 10.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Minimum%20CORESET%20Size%20for%20a%20Target%20Blocking%20Probability.html#Compute-minimum-coreset-size-for-numUEs-=-15.">Compute minimum coreset size for <code class="docutils literal notranslate"><span class="pre">numUEs</span></code> = 15.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Projects/Project2/Minimum%20CORESET%20Size%20for%20a%20Target%20Blocking%20Probability.html#Display-Minimum-CORESET-size-required-to-meet-the-Target-Blocking-Probability-for-different-number-of-UEs.">Display Minimum CORESET size required to meet the Target Blocking Probability for different number of UEs.</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Projects/Project2/Minimum%20CORESET%20Size%20for%20a%20Target%20Blocking%20Probability.html#References">References</a></li>
 </ul>
 </li>
 </ul>
@@ -1388,28 +1603,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../Integration_with_SDR/Integration_with_SDRs.html">Integration with SDRs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html">Downlink Synchronization in 5G Networks: SSB</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-Python-and-SDR-Libraries">Import Python and SDR Libraries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-5G-Toolkit-Libraries">Import 5G Toolkit Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/1.Time_Synchronization_using_PSS/Time_Synchronization.html">Integration with SDRs</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Emulation-Configurations">Emulation Configurations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Transmitter-Implementation">Transmitter Implementation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Generate-the-SSB-Grid-for-synchronization">Generate the SSB Grid for synchronization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Constellation-Diagram">Constellation Diagram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#OFDM-Modulation:-Tx">OFDM Modulation: Tx</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Receiver-Implementation">Receiver Implementation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#OFDM-Demodulation-and-SSB-Extraction">OFDM Demodulation and SSB Extraction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#SSB-Grid:-Transmitter-and-Receiver">SSB Grid: Transmitter and Receiver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Spectrum:-Transmitted-Grid-and-Received-Grid">Spectrum: Transmitted Grid and Received Grid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Parameter-Estimation-for-SSB-and-PBCH">Parameter Estimation for SSB and PBCH</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Channel-Estimation-and-PBCH-Symbol-Equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#PBCH-Decoding-and-Constellation">PBCH Decoding and Constellation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Performance-Verification">Performance Verification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/2.CFO_Estimation_and_Correction_using_SSB/CFO_Correction.html">Integration with SDRs</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../Integration_with_SDR/3.Downlink_Synchronization_in_5G_using_SSB/Downlink_Synchronization.html">Integration with SDRs</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../LearningResources/LearningResources.html">Learning Resources</a><ul>
@@ -1491,7 +1693,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022-2023, Gigayasa Wireless Private Limited.</p>
+    <p>&#169; Copyright 2022-2024, Gigayasa Wireless Private Limited.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -122,6 +122,7 @@ The **template command** for installation is given below:
 To confirm installation of the library, you can check the installation library:
 
 .. code-block:: bash
+
     pip show toolkit5G
 
 
@@ -132,6 +133,7 @@ The installation will be truly successful if we are able to import the toolkit5G
 **Jupyter Notebook**, open the jupyter notebook using following command in your browser.
 
 .. code-block:: bash
+
     jupyter notebook
 
 
