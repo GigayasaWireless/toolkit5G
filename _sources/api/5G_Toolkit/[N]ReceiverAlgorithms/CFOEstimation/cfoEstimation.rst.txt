@@ -1,0 +1,31 @@
+Carrier Frequency Offset (CFO) Estimation
+==========================================
+Carrier Frequency Offset, which refers to the difference between the transmitted carrier frequency and the receiver's
+local oscillator frequency. In wireless communication systems like 5G, accurate synchronization of carrier frequencies
+between the transmitter and receiver is crucial for successful signal demodulation. CFO can occur due to various factors
+such as oscillator inaccuracies, Doppler effects, and multipath propagation.
+
+CFO estimation in 5G wireless systems involves the process of estimating the CFO value at the receiver to compensate for
+frequency offsets and ensure proper signal reception. This estimation is typically performed using dedicated
+synchronization signals or pilot symbols embedded in the transmitted signal. By accurately estimating the CFO, the
+receiver can adjust its local oscillator frequency to align with the transmitter's carrier frequency, mitigating the
+effects of frequency offsets and enabling successful demodulation of the received signal.
+
+CFO estimation techniques in 5G networks can vary depending on factors such as channel conditions, modulation schemes,
+and system specifications. Common CFO estimation methods include:
+
+1. **Pilot-Based Estimation**: In pilot-based estimation, known symbols or pilot tones are inserted into the transmitted signal at specific intervals. The receiver uses these pilot symbols to estimate the channel and CFO. Techniques such as least squares estimation or maximum likelihood estimation may be employed to estimate the CFO based on the phase or frequency offset between the received and expected pilot symbols.
+2. **Blind Estimation**: Blind CFO estimation techniques do not require explicit pilot symbols but instead rely on the statistical properties of the received signal to estimate the CFO. These methods often involve analyzing the cyclic properties of the received signal or exploiting cyclostationarity to estimate the frequency offset without prior knowledge of the transmitted signal.
+3. **Joint CFO and Channel Estimation**: Some advanced estimation techniques jointly estimate the CFO and channel parameters to improve overall system performance. These methods leverage the inherent correlations between channel and frequency offset estimation to achieve more accurate and robust estimation results.
+
+Accurate CFO estimation is essential for maintaining synchronization between the transmitter and receiver in 5G wireless
+systems. It enables reliable signal demodulation, improves system performance, and enhances overall spectral efficiency
+and throughput. Therefore, robust CFO estimation algorithms are critical components of 5G communication systems,
+ensuring seamless operation in diverse deployment scenarios and environmental conditions.
+
+
+.. autoclass:: toolkit5G.ReceiverAlgorithms.CarrierFrequencyOffsetEstimation
+    :members:
+    :exclude-members: call, build
+    
+

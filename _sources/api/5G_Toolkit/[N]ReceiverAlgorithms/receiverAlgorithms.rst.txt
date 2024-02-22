@@ -1,0 +1,12 @@
+Receiver Algorithms
+===================
+
+In 5G networks, various receiver algorithms are employed to process received signals efficiently and extract useful
+information. Some common receiver algorithms used in 5G include:
+
+
+.. toctree::
+   :maxdepth: 5
+
+   CFOEstimation/cfoEstimation
+

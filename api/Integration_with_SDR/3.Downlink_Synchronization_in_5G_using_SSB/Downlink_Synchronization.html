@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Integration with SDRs &mdash; 5G Toolkit R24a documentation</title>
+  <title>Downlink Synchronization using SSB in 5G Networks &mdash; 5G Toolkit R24a documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
@@ -26,8 +26,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Learning Resources" href="../../LearningResources/LearningResources.html" />
-    <link rel="prev" title="Integration with SDRs" href="../2.CFO_Estimation_and_Correction_using_SSB/CFO_Correction.html" /> 
+    <link rel="next" title="Downlink Synchronization in 5G Networks: SSB" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html" />
+    <link rel="prev" title="[UE Side Implementation]-Downlink Time/Frame Synchronization using PSS in 5G Networks" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -799,6 +799,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.crcDecoder.html">CRC Decoder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.crcDecoder.html#toolkit5G.CRC.CRCDecoder"><code class="docutils literal notranslate"><span class="pre">CRCDecoder</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/%5BN%5DReceiverAlgorithms/receiverAlgorithms.html">Receiver Algorithms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/%5BN%5DReceiverAlgorithms/CFOEstimation/cfoEstimation.html">Carrier Frequency Offset (CFO) Estimation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/%5BN%5DReceiverAlgorithms/CFOEstimation/cfoEstimation.html#toolkit5G.ReceiverAlgorithms.CarrierFrequencyOffsetEstimation"><code class="docutils literal notranslate"><span class="pre">CarrierFrequencyOffsetEstimation</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1603,13 +1610,109 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Integration_with_SDRs.html">Integration with SDRs</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/Time_Synchronization.html">Integration with SDRs</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/Time_Synchronization.html">Time/OFDM Symbol Synchronization using PSS in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html">Downlink Time/Frame Synchronization using PSS in 5G Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Some-Basic-Python-Libraries">Import Some Basic Python Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-5G-Libraries">Import 5G Libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../2.CFO_Estimation_and_Correction_using_SSB/CFO_Correction.html">Integration with SDRs</a><ul class="simple">
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Emulation-Parameters">Emulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Generate-SSB-Parameters">Generate SSB Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Construct-Transmission-Grid-and-Generate-Time-Domain-Samples">Construct Transmission Grid and Generate Time Domain Samples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Frame-Synchronization:-Visualization">Frame Synchronization: Visualization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Saving-Running-frames">Saving Running frames</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Integration with SDRs</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html">[BS Side Implementation]-Downlink Time/Frame Synchronization using PSS in 5G Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Some-Basic-Python-Libraries">Import Some Basic Python Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-5G-Libraries">Import 5G Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Emulation-Parameters">Emulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Generate-SSB-Parameters">Generate SSB Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Construct-Transmission-Grid-and-Generate-Time-Domain-Samples">Construct Transmission Grid and Generate Time Domain Samples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html">[UE Side Implementation]-Downlink Time/Frame Synchronization using PSS in 5G Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Some-Basic-Python-Libraries">Import Some Basic Python Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-5G-Libraries">Import 5G Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Emulation-Parameters">Emulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Time-Frequency-Configurations">Time Frequency Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Downlink Synchronization using SSB in 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html">Downlink Synchronization in 5G Networks: SSB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-Python-and-SDR-Libraries">Import Python and SDR Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-5G-Toolkit-Libraries">Import 5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Emulation-Configurations">Emulation Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Transmitter-Implementation">Transmitter Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Generate-the-SSB-Grid-for-synchronization">Generate the SSB Grid for synchronization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Constellation-Diagram">Constellation Diagram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#OFDM-Modulation:-Tx">OFDM Modulation: Tx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Receiver-Implementation">Receiver Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#OFDM-Demodulation-and-SSB-Extraction">OFDM Demodulation and SSB Extraction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#SSB-Grid:-Transmitter-and-Receiver">SSB Grid: Transmitter and Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Spectrum:-Transmitted-Grid-and-Received-Grid">Spectrum: Transmitted Grid and Received Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Parameter-Estimation-for-SSB-and-PBCH">Parameter Estimation for SSB and PBCH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Channel-Estimation-and-PBCH-Symbol-Equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#PBCH-Decoding-and-Constellation">PBCH Decoding and Constellation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Performance-Verification">Performance Verification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication.html">Downlink Data Communication using PDSCH in 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html">Downlink Data Communication in 5G Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Import-Python-Libraries">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#PDSCH-Transmitter-Implementation">PDSCH Transmitter Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Generate-the-PDSCH-related-parameters:-Use-PDSCH-Configurations">Generate the PDSCH related parameters: Use PDSCH Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Generate-the-PDSCH-Resource-Grid">Generate the PDSCH Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#SSB-Transmitter-Implementation">SSB Transmitter Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Generate-the-SSB-Resource-Grid">Generate the SSB Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Receiver-Implementation:-SSB">Receiver Implementation: SSB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#PBCH-Receiver">PBCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#SSB-Grid:-Transmitter-and-Receiver">SSB Grid: Transmitter and Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Spectrum:-Transmitted-Grid-and-Received-Grid">Spectrum: Transmitted Grid and Received Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#PBCH-Decoding-and-Constellation">PBCH Decoding and Constellation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Performance-Verification">Performance Verification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#PDSCH-Recourse-Implementation">PDSCH Recourse Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Extract-PDSCH-Resource-Grid">Extract PDSCH Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#PDSCH-Receiver">PDSCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Constellation-Diagram">Constellation Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Key-Performance-Indicators">Key Performance Indicators</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1660,7 +1763,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../Integration_with_SDRs.html">Integration with SDRs</a></li>
-      <li class="breadcrumb-item active">Integration with SDRs</li>
+      <li class="breadcrumb-item active">Downlink Synchronization using SSB in 5G Networks</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -1669,56 +1772,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="integration-with-sdrs">
-<h1>Integration with SDRs<a class="headerlink" href="#integration-with-sdrs" title="Permalink to this heading"></a></h1>
-<p>5G Toolkit can be easily integrated with most of the available software-defined radios (SDRs) boards which support
-Python-based application programming interfaces (APIs). The users can replace the wireless channel models from our
-tutorials or projects with the SDR for simulations and prototyping. Currently, we have integrated and tested only with
-the following SDRs:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>Xilinx Zynq UltraScale + RFSoC Boards and other similar boards</dt><dd><ul>
-<li><p>Boards compatible with <a class="reference external" href="https://nvlabs.github.io/sionna/api/mapping.html#demapping">PYNQ API</a>.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>NI USRPs (B200, B205-mini, B210)</dt><dd><ul>
-<li><p>SDR Boards Compatible with <a class="reference external" href="https://kb.ettus.com/UHD_Python_API">UHD Python API</a>.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Analog Devices SDR Boards such as Pluto, Phasor</dt><dd><ul>
-<li><p>SDR Boards compatible with <a class="reference external" href="https://analogdevicesinc.github.io/pyadi-iio/">ADI Python API</a>.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In any form, the above list of SDRs is not exhaustive. There are many SDRs outside of above list which can be integrated with the 5G Toolkit but are not included solely because of their unavailability with us at this point of time.</p>
-</div>
-<p>This section contains tutorials that demonstrate how to integrate various SDRs with the 5G Toolkit. Our goal is to
-provide at least one tutorial for each SDR family mentioned above. For SDRs belonging to the same family, the
-implementation process should be similar. However, if you encounter any difficulties while integrating your SDR with our
-toolkit, please don’t hesitate to contact us at <a class="reference external" href="mailto:toolkit5G&#37;&#52;&#48;gigayasa&#46;com">toolkit5G<span>&#64;</span>gigayasa<span>&#46;</span>com</a>. We would be glad to assist you.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<dl class="simple">
-<dt>All the tutorials will be organized in three scripts where</dt><dd><ul class="simple">
-<li><p>Script-1: End to End emulation using a single SDR.</p></li>
-<li><p>Script-2: Transmitter side script implemented over SDR-1.</p></li>
-<li><p>Script-3: Receiver side script implemented over SDR-2.</p></li>
-</ul>
-</dd>
-</dl>
-</div>
+  <section id="downlink-synchronization-using-ssb-in-5g-networks">
+<h1>Downlink Synchronization using SSB in 5G Networks<a class="headerlink" href="#downlink-synchronization-using-ssb-in-5g-networks" title="Permalink to this heading"></a></h1>
 <p>** Tutorial **</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html">Downlink Synchronization in 5G Networks: SSB</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-Python-and-SDR-Libraries">Import Python and SDR Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Import-5G-Toolkit-Libraries">Import 5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Emulation-Configurations">Emulation Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Transmitter-Implementation">Transmitter Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Generate-the-SSB-Grid-for-synchronization">Generate the SSB Grid for synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Constellation-Diagram">Constellation Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#OFDM-Modulation:-Tx">OFDM Modulation: Tx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Receiver-Implementation">Receiver Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#OFDM-Demodulation-and-SSB-Extraction">OFDM Demodulation and SSB Extraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#SSB-Grid:-Transmitter-and-Receiver">SSB Grid: Transmitter and Receiver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Spectrum:-Transmitted-Grid-and-Received-Grid">Spectrum: Transmitted Grid and Received Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Parameter-Estimation-for-SSB-and-PBCH">Parameter Estimation for SSB and PBCH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Channel-Estimation-and-PBCH-Symbol-Equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#PBCH-Decoding-and-Constellation">PBCH Decoding and Constellation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html#Performance-Verification">Performance Verification</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 
@@ -1726,8 +1810,8 @@ toolkit, please don’t hesitate to contact us at <a class="reference external" 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../2.CFO_Estimation_and_Correction_using_SSB/CFO_Correction.html" class="btn btn-neutral float-left" title="Integration with SDRs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../LearningResources/LearningResources.html" class="btn btn-neutral float-right" title="Learning Resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html" class="btn btn-neutral float-left" title="[UE Side Implementation]-Downlink Time/Frame Synchronization using PSS in 5G Networks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="5G_Downlink_Synchronization_in_5G_on_Plutto-SDR.html" class="btn btn-neutral float-right" title="Downlink Synchronization in 5G Networks: SSB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

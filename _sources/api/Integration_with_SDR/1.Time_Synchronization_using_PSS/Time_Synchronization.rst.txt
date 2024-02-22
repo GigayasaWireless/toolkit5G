@@ -1,39 +1,10 @@
-Integration with SDRs
-=====================
-5G Toolkit can be easily integrated with most of the available software-defined radios (SDRs) boards which support
-Python-based application programming interfaces (APIs). The users can replace the wireless channel models from our
-tutorials or projects with the SDR for simulations and prototyping. Currently, we have integrated and tested only with
-the following SDRs:
-
-
-- Xilinx Zynq UltraScale + RFSoC Boards and other similar boards
-    - Boards compatible with `PYNQ API <https://nvlabs.github.io/sionna/api/mapping.html#demapping>`_.
-- NI USRPs (B200, B205-mini, B210)
-    - SDR Boards Compatible with `UHD Python API <https://kb.ettus.com/UHD_Python_API>`_.
-- Analog Devices SDR Boards such as Pluto, Phasor
-    - SDR Boards compatible with `ADI Python API <https://analogdevicesinc.github.io/pyadi-iio/>`_.
-
-.. note::
-    In any form, the above list of SDRs is not exhaustive. There are many SDRs outside of above list which can be integrated with the 5G Toolkit but are not included solely because of their unavailability with us at this point of time.
-
-This section contains tutorials that demonstrate how to integrate various SDRs with the 5G Toolkit. Our goal is to
-provide at least one tutorial for each SDR family mentioned above. For SDRs belonging to the same family, the
-implementation process should be similar. However, if you encounter any difficulties while integrating your SDR with our
-toolkit, please don't hesitate to contact us at toolkit5G@gigayasa.com. We would be glad to assist you.
-
-.. note::
-
-    All the tutorials will be organized in three scripts where
-        - Script-1: End to End emulation using a single SDR.
-        - Script-2: Transmitter side script implemented over SDR-1.
-        - Script-3: Receiver side script implemented over SDR-2.
-
-
-
-** Tutorial **
+Time/OFDM Symbol Synchronization using PSS in 5G
+==================================================
 
 
 .. toctree::
     :maxdepth: 4
 
-    1.Time_Synchronization_using_PSS/Time_Synchronization.rst
+    DL_Time(Frame)_Synchronization_using_PSS_in_5G.ipynb
+    [BS-Implementation]DL_Time(Frame)_Synchronization_using_PSS_in_5G.ipynb
+    [UE-Implementation]DL_Time(Frame)_Synchronization_using_PSS_in_5G.ipynb

@@ -28,7 +28,9 @@
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Downlink Data Communication using PDSCH in 5G Networks" href="../4.Data_Communication_in_5G/5G_Data_Communication.html" />
+    <link rel="prev" title="Downlink Synchronization using SSB in 5G Networks" href="Downlink_Synchronization.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -55,7 +57,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../releaseNotes.html">Release Notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">Install 5G Toolkit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../install.html#system-requirements">System Requirements:</a></li>
@@ -800,6 +802,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.crcDecoder.html">CRC Decoder</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/CRC/crc.crcDecoder.html#toolkit5G.CRC.CRCDecoder"><code class="docutils literal notranslate"><span class="pre">CRCDecoder</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../5G_Toolkit/%5BN%5DReceiverAlgorithms/receiverAlgorithms.html">Receiver Algorithms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../5G_Toolkit/%5BN%5DReceiverAlgorithms/CFOEstimation/cfoEstimation.html">Carrier Frequency Offset (CFO) Estimation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../5G_Toolkit/%5BN%5DReceiverAlgorithms/CFOEstimation/cfoEstimation.html#toolkit5G.ReceiverAlgorithms.CarrierFrequencyOffsetEstimation"><code class="docutils literal notranslate"><span class="pre">CarrierFrequencyOffsetEstimation</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1603,14 +1612,110 @@
 <li class="toctree-l2"><a class="reference internal" href="../../Projects/Project10/project10.html">Physical downlink control Channel in 5G</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Integration_with_SDRs.html">Integration with SDRs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/Time_Synchronization.html">Integration with SDRs</a><ul class="simple">
+<li class="toctree-l1 current"><a class="reference internal" href="../Integration_with_SDRs.html">Integration with SDRs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/Time_Synchronization.html">Time/OFDM Symbol Synchronization using PSS in 5G</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html">Downlink Time/Frame Synchronization using PSS in 5G Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Some-Basic-Python-Libraries">Import Some Basic Python Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-5G-Libraries">Import 5G Libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../2.CFO_Estimation_and_Correction_using_SSB/CFO_Correction.html">Integration with SDRs</a><ul class="simple">
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Emulation-Parameters">Emulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Generate-SSB-Parameters">Generate SSB Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Construct-Transmission-Grid-and-Generate-Time-Domain-Samples">Construct Transmission Grid and Generate Time Domain Samples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Frame-Synchronization:-Visualization">Frame Synchronization: Visualization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/DL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Saving-Running-frames">Saving Running frames</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Downlink_Synchronization.html">Integration with SDRs</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html">[BS Side Implementation]-Downlink Time/Frame Synchronization using PSS in 5G Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Some-Basic-Python-Libraries">Import Some Basic Python Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-5G-Libraries">Import 5G Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Emulation-Parameters">Emulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Generate-SSB-Parameters">Generate SSB Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Construct-Transmission-Grid-and-Generate-Time-Domain-Samples">Construct Transmission Grid and Generate Time Domain Samples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BBS-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html">[UE Side Implementation]-Downlink Time/Frame Synchronization using PSS in 5G Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-Some-Basic-Python-Libraries">Import Some Basic Python Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Import-5G-Libraries">Import 5G Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Emulation-Parameters">Emulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Time-Frequency-Configurations">Time Frequency Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1.Time_Synchronization_using_PSS/%5BUE-Implementation%5DDL_Time%28Frame%29_Synchronization_using_PSS_in_5G.html#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="Downlink_Synchronization.html">Downlink Synchronization using SSB in 5G Networks</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Downlink Synchronization in 5G Networks: SSB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#Import-Python-and-SDR-Libraries">Import Python and SDR Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#Import-5G-Toolkit-Libraries">Import 5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#Emulation-Configurations">Emulation Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Transmitter-Implementation">Transmitter Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Generate-the-SSB-Grid-for-synchronization">Generate the SSB Grid for synchronization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Constellation-Diagram">Constellation Diagram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OFDM-Modulation:-Tx">OFDM Modulation: Tx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Receiver-Implementation">Receiver Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OFDM-Demodulation-and-SSB-Extraction">OFDM Demodulation and SSB Extraction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#SSB-Grid:-Transmitter-and-Receiver">SSB Grid: Transmitter and Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Spectrum:-Transmitted-Grid-and-Received-Grid">Spectrum: Transmitted Grid and Received Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Parameter-Estimation-for-SSB-and-PBCH">Parameter Estimation for SSB and PBCH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Channel-Estimation-and-PBCH-Symbol-Equalization">Channel Estimation and PBCH Symbol Equalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#PBCH-Decoding-and-Constellation">PBCH Decoding and Constellation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Performance-Verification">Performance Verification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication.html">Downlink Data Communication using PDSCH in 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html">Downlink Data Communication in 5G Networks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Import-Python-Libraries">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#PDSCH-Transmitter-Implementation">PDSCH Transmitter Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Generate-the-PDSCH-related-parameters:-Use-PDSCH-Configurations">Generate the PDSCH related parameters: Use PDSCH Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Generate-the-PDSCH-Resource-Grid">Generate the PDSCH Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#SSB-Transmitter-Implementation">SSB Transmitter Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Generate-the-SSB-Resource-Grid">Generate the SSB Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#SDR-Setup-Configurations">SDR-Setup Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Transmission:-SDR-RF-Transmitter">Transmission: SDR RF Transmitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Receiver-Implementation:-SSB">Receiver Implementation: SSB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Reception:-SDR-RF-Receiver">Reception: SDR RF Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Time-Synchronization:-Based-on-PSS-Correlation">Time Synchronization: Based on PSS Correlation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#PBCH-Receiver">PBCH Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#SSB-Grid:-Transmitter-and-Receiver">SSB Grid: Transmitter and Receiver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Spectrum:-Transmitted-Grid-and-Received-Grid">Spectrum: Transmitted Grid and Received Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#PBCH-Decoding-and-Constellation">PBCH Decoding and Constellation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Performance-Verification">Performance Verification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#PDSCH-Recourse-Implementation">PDSCH Recourse Implementation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Extract-PDSCH-Resource-Grid">Extract PDSCH Resource Grid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#PDSCH-Receiver">PDSCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Constellation-Diagram">Constellation Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../4.Data_Communication_in_5G/5G_Data_Communication_using_PDSCH.html#Key-Performance-Indicators">Key Performance Indicators</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1660,6 +1765,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../Integration_with_SDRs.html">Integration with SDRs</a></li>
+          <li class="breadcrumb-item"><a href="Downlink_Synchronization.html">Downlink Synchronization using SSB in 5G Networks</a></li>
       <li class="breadcrumb-item active">Downlink Synchronization in 5G Networks: SSB</li>
       <li class="wy-breadcrumbs-aside">
       </li>
@@ -1674,10 +1781,10 @@
     <table>
         <td style="padding: 0px 0px;">
             <a href="https://www.youtube.com/@gigayasa/videos" style="vertical-align:text-bottom">
-                <img alt="YouTube logo" src="../../../_static/YouTube.svg" style="width: 40px; min-width: 40px">
+                <img alt="YouTube logo" src="../../../_static/YouTube.svg" style="width: 30px; min-width: 30px">
             </a>
         </td>
-        <td style="padding: 6px 4px;">
+        <td style="padding: 2px 4px;">
             <a href="https://www.youtube.com/@gigayasa/videos" style="vertical-align:text-bottom">
                 Watch on YouTube
             </a>
@@ -1780,7 +1887,7 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> widget
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %matplotlib widget</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CUDA_VISIBLE_DEVICES&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-1&quot;</span>
@@ -1789,14 +1896,6 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">adi</span>
 <br/></pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 </div>
 </section>
@@ -1812,6 +1911,7 @@
 <span class="kn">from</span> <span class="nn">toolkit5G.OFDM</span>               <span class="kn">import</span> <span class="n">OFDMModulator</span><span class="p">,</span> <span class="n">OFDMDemodulator</span>
 <span class="kn">from</span> <span class="nn">toolkit5G.MIMOProcessing</span>     <span class="kn">import</span> <span class="n">AnalogBeamforming</span><span class="p">,</span> <span class="n">ReceiveCombining</span>
 <span class="kn">from</span> <span class="nn">toolkit5G.ReceiverAlgorithms</span> <span class="kn">import</span> <span class="n">PSSDetection</span><span class="p">,</span> <span class="n">SSSDetection</span><span class="p">,</span> <span class="n">ChannelEstimationAndEqualization</span><span class="p">,</span> <span class="n">DMRSParameterDetection</span>
+<span class="kn">from</span> <span class="nn">toolkit5G.ReceiverAlgorithms</span> <span class="kn">import</span> <span class="n">ChannelEstimationAndEqualizationPBCH</span>
 <span class="kn">from</span> <span class="nn">toolkit5G.Configurations</span>     <span class="kn">import</span> <span class="n">TimeFrequency5GParameters</span><span class="p">,</span> <span class="n">GenerateValidSSBParameters</span>
 </pre></div>
 </div>
@@ -1825,11 +1925,11 @@
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># System Parameters</span>
-<span class="n">center_frequency</span>    <span class="o">=</span> <span class="mf">1e9</span> <span class="c1"># Hz</span>
+<span class="n">center_frequency</span>    <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mf">1e9</span> <span class="c1"># Hz</span>
 
 <span class="c1"># OFDM Parameters</span>
 <span class="n">Bandwidth</span>           <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
-<span class="n">fftSize</span>             <span class="o">=</span> <span class="mi">256</span>
+<span class="n">fftSize</span>             <span class="o">=</span> <span class="mi">2048</span>
 <span class="n">subcarrier_spacing</span>  <span class="o">=</span> <span class="mi">15000</span>
 <span class="n">numOFDMSymbols</span>      <span class="o">=</span> <span class="mi">14</span>
 <span class="n">sample_rate</span>         <span class="o">=</span> <span class="n">fftSize</span><span class="o">*</span><span class="n">subcarrier_spacing</span>
@@ -1855,11 +1955,13 @@
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## This class fetches valid set of 5G parameters for the system configurations</span>
 <span class="n">nSymbolFrame</span><span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">140</span><span class="o">*</span><span class="n">subcarrier_spacing</span><span class="o">/</span><span class="mi">15000</span><span class="p">)</span>
+<span class="c1">## This class fetches valid set of 5G parameters for the system configurations</span>
 <span class="n">tfParams</span>    <span class="o">=</span> <span class="n">TimeFrequency5GParameters</span><span class="p">(</span><span class="n">Bandwidth</span><span class="p">,</span> <span class="n">subcarrier_spacing</span><span class="p">)</span>
 <span class="n">tfParams</span><span class="p">(</span><span class="n">nSymbolFrame</span><span class="p">,</span> <span class="n">typeCP</span> <span class="o">=</span> <span class="s2">&quot;normal&quot;</span><span class="p">)</span>
-<span class="n">nRB</span>         <span class="o">=</span> <span class="mi">20</span>        <span class="c1"># SSB Grid size (Number of RBs considered for SSB transition)</span>
-<span class="n">Neff</span>        <span class="o">=</span> <span class="n">nRB</span><span class="o">*</span><span class="mi">12</span>
-<span class="n">lengthCP</span>    <span class="o">=</span> <span class="p">(</span><span class="n">tfParams</span><span class="o">.</span><span class="n">lengthCP</span><span class="o">*</span><span class="p">(</span><span class="n">fftSize</span><span class="o">/</span><span class="n">tfParams</span><span class="o">.</span><span class="n">Nfft</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>    <span class="c1"># CP length</span>
+<span class="n">nRB</span>         <span class="o">=</span> <span class="n">tfParams</span><span class="o">.</span><span class="n">numRBs</span>        <span class="c1"># SSB Grid size (Number of RBs considered for SSB transition)</span>
+<span class="n">Neff</span>        <span class="o">=</span> <span class="n">tfParams</span><span class="o">.</span><span class="n">Neff</span>        <span class="c1"># Number of resource blocks for Resource Grid ( exclude gaurd band | offsets : BWP)</span>
+<span class="n">Nfft</span>        <span class="o">=</span> <span class="mi">512</span>                 <span class="c1"># FFT-size for OFDM</span>
+<span class="n">lengthCP</span>    <span class="o">=</span> <span class="n">tfParams</span><span class="o">.</span><span class="n">lengthCP</span>    <span class="c1"># CP length</span>
 <span class="c1">#___________________________________________________________________</span>
 
 <span class="c1">#### Generate MIB Information</span>
@@ -1928,14 +2030,12 @@
 <span class="n">ssbPositionInBurst</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nssbCandidatesInHrf</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
 <span class="n">ssbPositionInBurst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 
-<span class="n">ssbRGobject</span> <span class="o">=</span> <span class="n">ResourceMapperSSB</span><span class="p">(</span><span class="n">ssbType</span><span class="o">=</span><span class="n">ssbType</span><span class="p">,</span> <span class="n">carrierFrequency</span> <span class="o">=</span> <span class="n">center_frequency</span><span class="p">,</span> <span class="n">N_RB</span><span class="o">=</span><span class="n">nRB</span><span class="p">,</span>
-                              <span class="n">kssb</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">offsetToPointA</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">nRB</span><span class="o">*</span><span class="mf">0.5</span><span class="o">-</span><span class="mi">10</span><span class="p">),</span>
-                              <span class="n">scsCarrier</span> <span class="o">=</span> <span class="n">subCarrierSpacingCommon</span><span class="p">,</span>
-                              <span class="n">ssbPositionInBurst</span> <span class="o">=</span> <span class="n">ssbPositionInBurst</span><span class="p">,</span> <span class="n">ssbPeriodicity</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">nHF</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                              <span class="n">nFrames</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="p">(</span><span class="n">subcarrier_spacing</span><span class="o">/</span><span class="n">subCarrierSpacingCommon</span><span class="p">),</span> <span class="n">isPairedBand</span> <span class="o">=</span> <span class="n">isPairedBand</span><span class="p">,</span>
-                              <span class="n">withSharedSpectrumChannelAccess</span> <span class="o">=</span> <span class="n">withSharedSpectrumChannelAccess</span><span class="p">)</span>
+<span class="n">ssbRGobject</span>    <span class="o">=</span> <span class="n">ResourceMapperSSB</span><span class="p">(</span><span class="n">ssbType</span><span class="o">=</span><span class="n">ssbType</span><span class="p">,</span> <span class="n">carrierFrequency</span> <span class="o">=</span> <span class="n">center_frequency</span><span class="p">,</span>
+                                   <span class="n">isPairedBand</span> <span class="o">=</span> <span class="n">isPairedBand</span><span class="p">,</span>
+                                   <span class="n">withSharedSpectrumChannelAccess</span> <span class="o">=</span> <span class="n">withSharedSpectrumChannelAccess</span><span class="p">)</span>
 
-<span class="n">ssbGrid</span>     <span class="o">=</span> <span class="n">ssbRGobject</span><span class="p">(</span><span class="n">ssb</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ssbGrid</span> <span class="o">=</span> <span class="n">ssbRGobject</span><span class="p">(</span><span class="n">ssb</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ssbPositionInBurst</span><span class="p">,</span> <span class="n">offsetInSubcarriers</span> <span class="o">=</span> <span class="n">ssbSubCarrierOffset</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                      <span class="n">offsetInRBs</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numRBs</span> <span class="o">=</span> <span class="n">nRB</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">14</span><span class="p">]</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ssbObject</span><span class="o">.</span><span class="n">displayGrid</span><span class="p">(</span><span class="n">option</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <br/></pre></div>
 </div>
@@ -1944,22 +2044,14 @@
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0623d660211a44ec8f073b895ced1599", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;SSB.svg&quot;</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;svg&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;SSB.png&quot;</span><span class="p">,</span> <span class="n">transparent</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;png&quot;</span><span class="p">)</span>
-</pre></div>
+<img alt="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_8_0.png" src="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_8_0.png" />
 </div>
 </div>
 </section>
 <section id="Constellation-Diagram">
 <h2>Constellation Diagram<a class="headerlink" href="#Constellation-Diagram" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -1980,22 +2072,24 @@
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "06c4168b3d98473b8e7750d6f26f5cbf", "version_major": 2, "version_minor": 0}</script></div>
+<img alt="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_10_0.png" src="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_10_0.png" />
+</div>
 </div>
 </section>
 <section id="OFDM-Modulation:-Tx">
 <h2>OFDM Modulation: Tx<a class="headerlink" href="#OFDM-Modulation:-Tx" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">firstSymbolIndex</span>   <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Loading SSB to Resource Grid</span>
 <span class="n">numofGuardCarriers</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">fftSize</span> <span class="o">-</span> <span class="n">Neff</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">((</span><span class="n">fftSize</span> <span class="o">-</span> <span class="n">Neff</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">offsetToPointA</span>     <span class="o">=</span> <span class="mi">0</span>
 <span class="n">firstSCIndex</span>       <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">numofGuardCarriers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">offsetToPointA</span><span class="p">)</span>
+<span class="n">numOFDMSymbols</span>     <span class="o">=</span> <span class="n">ssbGrid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">numOFDMSymbols</span><span class="p">,</span> <span class="n">fftSize</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span>
-<span class="n">X</span><span class="p">[:,</span> <span class="n">firstSCIndex</span><span class="p">:</span><span class="n">firstSCIndex</span><span class="o">+</span><span class="mi">240</span><span class="p">]</span> <span class="o">=</span> <span class="n">ssbGrid</span>
+<span class="n">X</span><span class="p">[:,</span> <span class="n">firstSCIndex</span><span class="p">:</span><span class="n">firstSCIndex</span><span class="o">+</span><span class="n">ssbGrid</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">ssbGrid</span>
 
 <span class="c1">#__________________________________________________</span>
 
@@ -2023,146 +2117,26 @@
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "40e9aea87774414892e4bba670924c96", "version_major": 2, "version_minor": 0}</script></div>
+<img alt="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_12_0.png" src="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_12_0.png" />
+</div>
 </div>
 </section>
 <section id="SDR-Setup-Configurations">
 <h2>SDR-Setup Configurations<a class="headerlink" href="#SDR-Setup-Configurations" title="Permalink to this heading"></a></h2>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic SDR Setup</span>
-<span class="n">sdr</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">Pluto</span><span class="p">(</span><span class="s2">&quot;ip:192.168.2.1&quot;</span><span class="p">)</span>
+<span class="n">sdr</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">Pluto</span><span class="p">(</span><span class="s2">&quot;ip:192.168.3.1&quot;</span><span class="p">)</span>
 <span class="n">sdr</span><span class="o">.</span><span class="n">sample_rate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sample_rate</span><span class="p">)</span>
 
 <span class="c1"># Config Tx</span>
 <span class="n">sdr</span><span class="o">.</span><span class="n">tx_rf_bandwidth</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sample_rate</span><span class="p">)</span> <span class="c1"># filter cutoff, just set it to the same as sample rate</span>
 <span class="n">sdr</span><span class="o">.</span><span class="n">tx_lo</span>           <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">center_frequency</span><span class="p">)</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">tx_hardwaregain_chan0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span> <span class="c1"># Increase to increase tx power, valid range is -90 to 0 dB</span>
+<span class="n">sdr</span><span class="o">.</span><span class="n">tx_hardwaregain_chan0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">30</span> <span class="c1"># Increase to increase tx power, valid range is -90 to 0 dB</span>
 
 <span class="c1"># Config Rx</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">gain_control_mode_chan0</span> <span class="o">=</span> <span class="s1">&#39;manual&#39;</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">rx_hardwaregain_chan0</span>   <span class="o">=</span> <span class="mf">40.0</span>      <span class="c1"># dB</span>
-<span class="c1"># The receive gain on the Pluto has a range from 0 to 74.5 dB.</span>
-
-<span class="c1"># sdr.gain_control_mode_chan0 = &#39;slow_attack&#39;</span>
-<span class="c1"># # AGC modes:</span>
-<span class="c1">#     # 1. &quot;manual&quot;</span>
-<span class="c1">#     # 2. &quot;slow_attack&quot;</span>
-<span class="c1">#     # 3. &quot;fast_attack&quot;</span>
-
-<span class="n">sdr</span><span class="o">.</span><span class="n">rx_lo</span>           <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">center_frequency</span><span class="p">)</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">rx_rf_bandwidth</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">60</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># filter width, just set it to the same as sample rate for now</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">rx_buffer_size</span>  <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">buffer_size</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TimeoutError</span>                              Traceback (most recent call last)
-File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-packages/adi/context_manager.py:36</span>, in <span class="ansi-cyan-fg">context_manager.__init__</span><span class="ansi-blue-fg">(self, uri, _device_name)</span>
-<span class="ansi-green-intense-fg ansi-bold">     35</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-fg">---&gt; 36</span>         <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_ctx <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">iio</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">Context</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">uri</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     37</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">BaseException</span>:
-
-File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-packages/iio.py:1358</span>, in <span class="ansi-cyan-fg">Context.__init__</span><span class="ansi-blue-fg">(self, _context)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1357</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> _isstring(_context):
-<span class="ansi-green-fg">-&gt; 1358</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_context <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_new_uri</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">_context</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">encode</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">ascii</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1359</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-
-File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-packages/iio.py:56</span>, in <span class="ansi-cyan-fg">_check_null</span><span class="ansi-blue-fg">(result, func, arguments)</span>
-<span class="ansi-green-intense-fg ansi-bold">     55</span> err <span style="color: rgb(98,98,98)">=</span> get_last_error() <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Windows</span><span style="color: rgb(175,0,0)">&#34;</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> _system() <span class="ansi-bold" style="color: rgb(0,135,0)">else</span> get_errno()
-<span class="ansi-green-fg">---&gt; 56</span> <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">OSError</span>(err, _strerror(err))
-
-<span class="ansi-red-fg">TimeoutError</span>: [Errno 110] Connection timed out
-
-During handling of the above exception, another exception occurred:
-
-<span class="ansi-red-fg">Exception</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[8], line 2</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)"># Basic SDR Setup</span>
-<span class="ansi-green-fg">----&gt; 2</span> sdr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">adi</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">Pluto</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">ip:192.168.2.1</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> sdr<span style="color: rgb(98,98,98)">.</span>sample_rate <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">int</span>(sample_rate)
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span style="color: rgb(95,135,135)"># Config Tx</span>
-
-File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-packages/adi/rx_tx.py:717</span>, in <span class="ansi-cyan-fg">rx_tx_def.__init__</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    714</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">__init__</span>(
-<span class="ansi-green-intense-fg ansi-bold">    715</span>     <span style="color: rgb(0,135,0)">self</span>, <span style="color: rgb(98,98,98)">*</span>args: Union[<span style="color: rgb(0,135,0)">str</span>, iio<span style="color: rgb(98,98,98)">.</span>Context], <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs: Union[<span style="color: rgb(0,135,0)">str</span>, iio<span style="color: rgb(98,98,98)">.</span>Context]
-<span class="ansi-green-intense-fg ansi-bold">    716</span> ) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
-<span class="ansi-green-fg">--&gt; 717</span>     <span class="ansi-yellow-bg">rx_def</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg" style="color: rgb(0,0,255)">__init__</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    718</span>     tx_def<span style="color: rgb(98,98,98)">.</span><span style="color: rgb(0,0,255)">__init__</span>(<span style="color: rgb(0,135,0)">self</span>, <span style="color: rgb(98,98,98)">*</span>args, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs)
-<span class="ansi-green-intense-fg ansi-bold">    720</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>__post_init__()
-
-File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-packages/adi/rx_tx.py:636</span>, in <span class="ansi-cyan-fg">rx_def.__init__</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    632</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">__init__</span>(
-<span class="ansi-green-intense-fg ansi-bold">    633</span>     <span style="color: rgb(0,135,0)">self</span>, <span style="color: rgb(98,98,98)">*</span>args: Union[<span style="color: rgb(0,135,0)">str</span>, iio<span style="color: rgb(98,98,98)">.</span>Context], <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs: Union[<span style="color: rgb(0,135,0)">str</span>, iio<span style="color: rgb(98,98,98)">.</span>Context]
-<span class="ansi-green-intense-fg ansi-bold">    634</span> ) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
-<span class="ansi-green-fg">--&gt; 636</span>     <span class="ansi-yellow-bg">shared_def</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg" style="color: rgb(0,0,255)">__init__</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    638</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_rx_data_device_name:
-<span class="ansi-green-intense-fg ansi-bold">    639</span>         <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_rxadc <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_ctx<span style="color: rgb(98,98,98)">.</span>find_device(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_rx_data_device_name)
-
-File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-packages/adi/rx_tx.py:586</span>, in <span class="ansi-cyan-fg">shared_def.__init__</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    584</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> uri_ctx:
-<span class="ansi-green-intense-fg ansi-bold">    585</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>uri <span style="color: rgb(98,98,98)">=</span> uri_ctx
-<span class="ansi-green-fg">--&gt; 586</span>     <span class="ansi-yellow-bg">context_manager</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg" style="color: rgb(0,0,255)">__init__</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">uri_ctx</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_device_name</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    587</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-intense-fg ansi-bold">    588</span>     required_devices <span style="color: rgb(98,98,98)">=</span> [<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_rx_data_device_name, <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_control_device_name]
-
-File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-packages/adi/context_manager.py:38</span>, in <span class="ansi-cyan-fg">context_manager.__init__</span><span class="ansi-blue-fg">(self, uri, _device_name)</span>
-<span class="ansi-green-intense-fg ansi-bold">     36</span>         <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_ctx <span style="color: rgb(98,98,98)">=</span> iio<span style="color: rgb(98,98,98)">.</span>Context(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>uri)
-<span class="ansi-green-intense-fg ansi-bold">     37</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">BaseException</span>:
-<span class="ansi-green-fg">---&gt; 38</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">No device found</span><span style="color: rgb(175,0,0)">&#34;</span>)
-
-<span class="ansi-red-fg">Exception</span>: No device found
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mf">1.3</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="mi">17</span><span class="o">*</span><span class="p">(</span><span class="n">x_time</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x_time</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</section>
-<section id="Transmission:-SDR-RF-Transmitter">
-<h2>Transmission: SDR RF Transmitter<a class="headerlink" href="#Transmission:-SDR-RF-Transmitter" title="Permalink to this heading"></a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="c1"># Start the transmitter</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">tx_cyclic_buffer</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># Enable cyclic buffers</span>
-<span class="c1"># sdr.tx_cyclic_buffer = False # Enable cyclic buffers</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">tx</span><span class="p">(</span><span class="mf">1.3</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="mi">17</span><span class="o">*</span><span class="p">(</span><span class="n">x_time</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span> <span class="c1"># start transmitting</span>
-<br/></pre></div>
-</div>
-</div>
-</section>
-<section id="Receiver-Implementation">
-<h2>Receiver Implementation<a class="headerlink" href="#Receiver-Implementation" title="Permalink to this heading"></a></h2>
-<img alt="Receiver_Implementation" src="api/Integration_with_SDR/3.Downlink_Synchronization_in_5G_using_SSB/images/PBCH_SDR_Rx.svg" /></section>
-<section id="Reception:-SDR-RF-Receiver">
-<h2>Reception: SDR RF Receiver<a class="headerlink" href="#Reception:-SDR-RF-Receiver" title="Permalink to this heading"></a></h2>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Basic SDR Setup</span>
-<span class="n">sdr</span> <span class="o">=</span> <span class="n">adi</span><span class="o">.</span><span class="n">Pluto</span><span class="p">(</span><span class="s2">&quot;ip:192.168.2.1&quot;</span><span class="p">)</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">sample_rate</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sample_rate</span><span class="p">)</span>
-
-<span class="c1"># Config Tx</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">tx_rf_bandwidth</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sample_rate</span><span class="p">)</span> <span class="c1"># filter cutoff, just set it to the same as sample rate</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">tx_lo</span>           <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">center_frequency</span><span class="p">)</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">tx_hardwaregain_chan0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span> <span class="c1"># Increase to increase tx power, valid range is -90 to 0 dB</span>
-
-<span class="c1"># # Config Rx</span>
 <span class="n">sdr</span><span class="o">.</span><span class="n">gain_control_mode_chan0</span> <span class="o">=</span> <span class="s1">&#39;slow_attack&#39;</span>
 <span class="c1"># sdr.rx_hardwaregain_chan0   = 40.0      # dB</span>
 <span class="c1"># The receive gain on the Pluto has a range from 0 to 74.5 dB.</span>
@@ -2179,26 +2153,28 @@ File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-pac
 </pre></div>
 </div>
 </div>
+</section>
+<section id="Transmission:-SDR-RF-Transmitter">
+<h2>Transmission: SDR RF Transmitter<a class="headerlink" href="#Transmission:-SDR-RF-Transmitter" title="Permalink to this heading"></a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sdr</span><span class="o">.</span><span class="n">tx_destroy_buffer</span><span class="p">()</span>
-
-<span class="c1"># Start the transmitter</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="c1"># Start the transmitter</span>
 <span class="n">sdr</span><span class="o">.</span><span class="n">tx_cyclic_buffer</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># Enable cyclic buffers</span>
 <span class="c1"># sdr.tx_cyclic_buffer = False # Enable cyclic buffers</span>
-
-<span class="c1"># while(True):</span>
-<span class="n">sdr</span><span class="o">.</span><span class="n">tx</span><span class="p">(</span><span class="mf">1.2</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="mi">17</span><span class="o">*</span><span class="p">(</span><span class="n">x_time</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span> <span class="c1"># start transmitting</span>
-
-<span class="c1"># # # Stop transmitting</span>
-<span class="c1"># sdr.tx_destroy_buffer()</span>
-<br/><br/></pre></div>
+<span class="n">sdr</span><span class="o">.</span><span class="n">tx</span><span class="p">(</span><span class="mf">1.3</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="mi">17</span><span class="o">*</span><span class="p">(</span><span class="n">x_time</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span> <span class="c1"># start transmitting</span>
+<br/></pre></div>
 </div>
 </div>
+</section>
+<section id="Receiver-Implementation">
+<h2>Receiver Implementation<a class="headerlink" href="#Receiver-Implementation" title="Permalink to this heading"></a></h2>
+<img alt="Receiver_Implementation" src="api/Integration_with_SDR/3.Downlink_Synchronization_in_5G_using_SSB/images/PBCH_SDR_Rx.svg" /></section>
+<section id="Reception:-SDR-RF-Receiver">
+<h2>Reception: SDR RF Receiver<a class="headerlink" href="#Reception:-SDR-RF-Receiver" title="Permalink to this heading"></a></h2>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><br/><span></span><span class="c1"># Clear buffer just to be safe</span>
@@ -2217,7 +2193,7 @@ File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-pac
 <section id="Time-Synchronization:-Based-on-PSS-Correlation">
 <h2>Time Synchronization: Based on PSS Correlation<a class="headerlink" href="#Time-Synchronization:-Based-on-PSS-Correlation" title="Permalink to this heading"></a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## PSS Detection: Based on time domain PSS Correlation</span>
@@ -2226,14 +2202,16 @@ File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-pac
 <span class="c1">#                                                       height = 0.75, prominence = 0.65, width=10)</span>
 <span class="c1">## PSS Detection: Based on time domain PSS Correlation</span>
 <span class="c1"># pssDetection   = PSSDetection(&quot;correlation&quot;, &quot;threshold&quot;)</span>
+
 <span class="n">pssDetection</span>   <span class="o">=</span> <span class="n">PSSDetection</span><span class="p">(</span><span class="s2">&quot;largestPeak&quot;</span><span class="p">)</span>
 <span class="n">ssboffset</span>      <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">fftSize</span><span class="o">-</span><span class="n">Neff</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">ssbRGobject</span><span class="o">.</span><span class="n">startingSubcarrierIndices</span><span class="p">)</span>
 <span class="n">pssPeakIndices</span><span class="p">,</span> <span class="n">pssCorrelation</span><span class="p">,</span> <span class="n">rN_ID2</span><span class="p">,</span> <span class="n">freqOffset</span> <span class="o">=</span> <span class="n">pssDetection</span><span class="p">(</span><span class="n">rx_samples</span><span class="p">,</span> <span class="n">fftSize</span><span class="p">,</span> <span class="n">lengthCP</span> <span class="o">=</span> <span class="n">lengthCP</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                                                                  <span class="n">N_ID2</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">freqOffset</span> <span class="o">=</span> <span class="n">ssboffset</span><span class="p">)</span>
+                                                                  <span class="n">nID2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">freqOffset</span> <span class="o">=</span> <span class="n">ssboffset</span><span class="p">)</span>
 
 <span class="c1">## PSS Detection Plot</span>
 <span class="c1">#################################################################</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">scaleFig</span> <span class="o">=</span> <span class="mf">1.75</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="o">/</span><span class="n">scaleFig</span><span class="p">,</span> <span class="mi">15</span><span class="o">/</span><span class="n">scaleFig</span><span class="p">))</span>
 
 <span class="c1"># single line</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pssCorrelation</span><span class="p">)</span>
@@ -2253,16 +2231,328 @@ File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-pac
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-**(rasterOffset, PSS-ID) (8, 0)
-**(rasterOffset, PSS-ID) (8, 1)
-**(rasterOffset, PSS-ID) (8, 2)
+**(rasterOffset, PSS-ID) (894, 0)
+**(rasterOffset, PSS-ID) (894, 1)
+**(rasterOffset, PSS-ID) (894, 2)
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "3d47e6bff196487cae27b5b0dfc077f2", "version_major": 2, "version_minor": 0}</script></div>
+<img alt="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_20_1.png" src="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_20_1.png" />
+</div>
+</div>
+</section>
+<section id="OFDM-Demodulation-and-SSB-Extraction">
+<h2>OFDM Demodulation and SSB Extraction<a class="headerlink" href="#OFDM-Demodulation-and-SSB-Extraction" title="Permalink to this heading"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## OFDM Demodulator Object</span>
+<span class="n">ofdmDemodulator</span> <span class="o">=</span> <span class="n">OFDMDemodulator</span><span class="p">(</span><span class="n">fftSize</span><span class="p">,</span> <span class="n">lengthCP</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">pssStartIndex</span>   <span class="o">=</span> <span class="n">pssPeakIndices</span>
+<span class="c1"># pssStartIndex   = pssPeakIndices[0][0]</span>
+<span class="n">rxGrid</span>          <span class="o">=</span> <span class="n">ofdmDemodulator</span><span class="p">((</span><span class="n">rx_samples</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))[</span><span class="o">...</span><span class="p">,</span><span class="n">pssStartIndex</span><span class="p">:(</span><span class="n">pssStartIndex</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">fftSize</span><span class="o">+</span><span class="n">lengthCP</span><span class="p">[</span><span class="mi">1</span><span class="p">]))])</span>
+
+<span class="n">ssbSCSoffset</span>   <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">fftSize</span><span class="o">-</span><span class="n">Neff</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">ssbRGobject</span><span class="o">.</span><span class="n">startingSubcarrierIndices</span><span class="p">)</span>
+<span class="n">ssbEstimate</span>    <span class="o">=</span> <span class="n">rxGrid</span><span class="p">[:,:,</span><span class="n">ssbSCSoffset</span><span class="p">:(</span><span class="n">ssbSCSoffset</span><span class="o">+</span><span class="mi">240</span><span class="p">)]</span>
+
+<span class="c1"># Plot SSB</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ssbEstimate</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">aspect</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">();</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Subcarrier-Index (k)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Normalized Magnitude&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Heat-map of Received and SSB Grid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_22_0.png" src="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_22_0.png" />
+</div>
+</div>
+</section>
+<section id="SSB-Grid:-Transmitter-and-Receiver">
+<h2>SSB Grid: Transmitter and Receiver<a class="headerlink" href="#SSB-Grid:-Transmitter-and-Receiver" title="Permalink to this heading"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot SSB</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ssbEstimate</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">aspect</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Subcarrier-Index (k)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Normalized Magnitude&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ssb</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;hot&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">aspect</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Subcarrier-Index (k)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Normalized Magnitude&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Heat-map of Received and Transmitted SSB Grid&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_24_0.png" src="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_24_0.png" />
+</div>
+</div>
+</section>
+<section id="Spectrum:-Transmitted-Grid-and-Received-Grid">
+<h2>Spectrum: Transmitted Grid and Received Grid<a class="headerlink" href="#Spectrum:-Transmitted-Grid-and-Received-Grid" title="Permalink to this heading"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot SSB</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rxGrid</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rxGrid</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Subcarrier-Index (k)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Normalized Magnitude&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Magnitude Spreactrum of Transmitted and Received $1^</span><span class="si">{st}</span><span class="s2">$ SSB OFDM Symbol&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_26_0.png" src="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_26_0.png" />
+</div>
+</div>
+</section>
+<section id="Parameter-Estimation-for-SSB-and-PBCH">
+<h2>Parameter Estimation for SSB and PBCH<a class="headerlink" href="#Parameter-Estimation-for-SSB-and-PBCH" title="Permalink to this heading"></a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## N_ID_1 Estimation: SSS based</span>
+<span class="n">sssDetection</span>   <span class="o">=</span> <span class="n">SSSDetection</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;channelAssisted&quot;</span><span class="p">,</span> <span class="n">nID2</span><span class="o">=</span><span class="n">rN_ID2</span><span class="p">)</span>
+<span class="n">rN_ID1</span>         <span class="o">=</span> <span class="n">sssDetection</span><span class="p">(</span><span class="n">ssbEstimate</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">rN_ID</span>          <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">rN_ID1</span> <span class="o">+</span> <span class="n">rN_ID2</span>
+
+<span class="c1">## Generate SSB object to get DMRS and PBCH Indices</span>
+<span class="n">rxSSBobject</span>    <span class="o">=</span> <span class="n">SSB_Grid</span><span class="p">(</span><span class="n">rN_ID</span><span class="p">)</span>
+<span class="n">rxDMRSIndices</span>  <span class="o">=</span> <span class="n">rxSSBobject</span><span class="o">.</span><span class="n">dmrsIndices</span>
+
+<span class="c1">## Generate DMRS sequence</span>
+<span class="n">dmrsDetection</span>  <span class="o">=</span> <span class="n">DMRSParameterDetection</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">rN_ID</span><span class="p">),</span> <span class="n">nssbCandidatesInHrf</span><span class="p">)</span>
+<span class="n">rssbIndex</span><span class="p">,</span> <span class="n">rHrfBit</span> <span class="o">=</span> <span class="n">dmrsDetection</span><span class="p">(</span><span class="n">ssbEstimate</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">rxDMRSobject</span>   <span class="o">=</span> <span class="n">DMRS</span><span class="p">(</span><span class="s2">&quot;PBCH&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">rN_ID</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">rssbIndex</span><span class="p">),</span> <span class="n">nssbCandidatesInHrf</span><span class="p">,</span> <span class="n">rHrfBit</span><span class="p">)</span>
+<span class="n">rxDMRSseq</span>      <span class="o">=</span> <span class="n">rxDMRSobject</span><span class="p">(</span><span class="n">dmrsLen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Channel-Estimation-and-PBCH-Symbol-Equalization">
+<h2>Channel Estimation and PBCH Symbol Equalization<a class="headerlink" href="#Channel-Estimation-and-PBCH-Symbol-Equalization" title="Permalink to this heading"></a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ## Estimating the channel at DMRS (t-f) location, interpolting for data (t-f) location and equalizing the symbols</span>
+<span class="c1"># ## Object for Channel Estimation</span>
+<span class="c1"># chanEst        = ChannelEstimationAndEqualization(estimatorType = &quot;ZF&quot;, interpolatorType = &quot;NN&quot;)</span>
+<span class="c1"># rxPBCHIndices  = rxSSBobject.pbchIndices</span>
+<span class="c1"># pbchEstimate   = chanEst(ssbEstimate, rxDMRSseq, rxDMRSIndices, rxPBCHIndices, 10)</span>
+
+<span class="n">chanEst</span>        <span class="o">=</span> <span class="n">ChannelEstimationAndEqualizationPBCH</span><span class="p">(</span><span class="n">estimatorType</span> <span class="o">=</span> <span class="s2">&quot;ZF&quot;</span><span class="p">,</span> <span class="n">interpolatorType</span> <span class="o">=</span> <span class="s2">&quot;Linear&quot;</span><span class="p">,</span> <span class="n">isUEmobile</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pbchEstimate</span>   <span class="o">=</span> <span class="n">chanEst</span><span class="p">(</span><span class="n">ssbEstimate</span><span class="p">,</span> <span class="n">rxDMRSseq</span><span class="p">,</span> <span class="n">rN_ID</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="PBCH-Decoding-and-Constellation">
+<h2>PBCH Decoding and Constellation<a class="headerlink" href="#PBCH-Decoding-and-Constellation" title="Permalink to this heading"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## PBCH Chain for Decoding information</span>
+<span class="n">polarDecoder</span>   <span class="o">=</span> <span class="s2">&quot;SCL&quot;</span>
+<span class="n">symbolDemapper</span> <span class="o">=</span> <span class="s2">&quot;maxlog&quot;</span>
+<span class="c1"># extractMIBinfo = False</span>
+<span class="n">extractMIBinfo</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="c1"># carrierFreq, cellID, nssbCandidatesInHrf, ssbIndex, polarDecType, symbolDemapperType</span>
+<span class="n">pbchDecoder</span>    <span class="o">=</span> <span class="n">PBCHDecoder</span><span class="p">(</span><span class="n">center_frequency</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">rN_ID</span><span class="p">),</span> <span class="n">nssbCandidatesInHrf</span><span class="p">,</span> <span class="n">rssbIndex</span><span class="p">,</span> <span class="n">polarDecoder</span><span class="p">,</span> <span class="n">symbolDemapper</span><span class="p">)</span>
+<span class="n">rxMIB</span><span class="p">,</span> <span class="n">check</span>   <span class="o">=</span> <span class="n">pbchDecoder</span><span class="p">(</span><span class="n">pbchEstimate</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">extractMIBinfo</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">pbchEstimate</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">pbchEstimate</span><span class="p">),</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Equalized Symbols&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">pbchSymbols</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">imag</span><span class="p">(</span><span class="n">pbchSymbols</span><span class="p">),</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Transmitted Symbols&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Real </span><span class="si">{x}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Imag </span><span class="si">{x}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Constellation Diagram: QPSK&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+&lt;frozen toolkit5G.ChannelCoder.PolarCoder.polarDecoder&gt;:494: UserWarning: Required ressource allocation is large for the selected blocklength. Consider option `cpu_only=True`.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_33_1.png" src="../../../_images/api_Integration_with_SDR_3.Downlink_Synchronization_in_5G_using_SSB_5G_Downlink_Synchronization_in_5G_on_Plutto-SDR_33_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[ True]])
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pbchDecoder</span><span class="o">.</span><span class="n">mibRx</span><span class="o">.</span><span class="n">displayParameters</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Carrier Frequency:      2000000000.0
+ChoiceBit:              1
+nSsbCandidatesInHrf:    4
+subCarrierSpacingCommon:15000
+DMRSTypeAPosition:      typeA
+controlResourceSet0:    14
+searchSpace0:           12
+cellBarred:             barred
+intraFreqReselection:   notAllowed
+systemFrameNumber:      303
+ssbSubCarrierOffset:    20
+HRFBit:                 0
+iSSBindex:              0
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pbchObject</span><span class="o">.</span><span class="n">mib</span><span class="o">.</span><span class="n">displayParameters</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Carrier Frequency:      2000000000.0
+ChoiceBit:              1
+nSsbCandidatesInHrf:    4
+subCarrierSpacingCommon:15000
+DMRSTypeAPosition:      typeA
+controlResourceSet0:    14
+searchSpace0:           12
+cellBarred:             barred
+intraFreqReselection:   notAllowed
+systemFrameNumber:      303
+ssbSubCarrierOffset:    20
+HRFBit:                 0
+iSSBindex:              0
+</pre></div></div>
+</div>
+</section>
+<section id="Performance-Verification">
+<h2>Performance Verification<a class="headerlink" href="#Performance-Verification" title="Permalink to this heading"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">rN_ID</span> <span class="o">==</span> <span class="n">N_ID</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Success]: Cell-IDs correctly detected!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">rN_ID1</span> <span class="o">!=</span> <span class="n">N_ID1</span> <span class="ow">and</span> <span class="n">rN_ID2</span> <span class="o">!=</span> <span class="n">N_ID2</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Failed]: Receiver couldn&#39;t detect the Cell-ID1 and cell-ID2 correctly!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span><span class="p">(</span><span class="n">rN_ID1</span> <span class="o">!=</span> <span class="n">N_ID1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Failed]: Receiver couldn&#39;t detect the Cell-ID1 correctly!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Failed]: Receiver couldn&#39;t detect the cell-ID2 correctly!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">rssbIndex</span> <span class="o">==</span> <span class="n">ssbIndex</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Success]: DMRS parameters correctly detected!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[Failed]: Receiver couldn&#39;t detect the ssbIndex correctly!&quot;</span><span class="p">)</span>
+
+<span class="c1">## Computing BER: Coded and Uncoded</span>
+<span class="n">numUEs</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">nBatch</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">uncodedBER</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">numUEs</span><span class="p">,</span> <span class="n">nBatch</span><span class="p">))</span>
+<span class="n">codedBER</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">numUEs</span><span class="p">,</span> <span class="n">nBatch</span><span class="p">))</span>
+
+<span class="n">bitEst</span>         <span class="o">=</span> <span class="n">pbchDecoder</span><span class="o">.</span><span class="n">llr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">bitEst</span><span class="p">[</span><span class="n">pbchDecoder</span><span class="o">.</span><span class="n">llr</span>  <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>   <span class="o">=</span> <span class="mi">1</span>
+<span class="n">bitEst</span><span class="p">[</span><span class="n">pbchDecoder</span><span class="o">.</span><span class="n">llr</span>  <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span>   <span class="o">=</span> <span class="mi">0</span>
+<span class="n">uncodedBER</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">bitEst</span> <span class="o">-</span> <span class="n">pbchObject</span><span class="o">.</span><span class="n">scr2bits</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">codedBER</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">pbchDecoder</span><span class="o">.</span><span class="n">pbchDeInterleavedBits</span> <span class="o">-</span> <span class="n">pbchObject</span><span class="o">.</span><span class="n">mibSequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; (uncoded-BER, codedBER): &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">((</span><span class="n">uncodedBER</span><span class="p">,</span> <span class="n">codedBER</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[Success]: Cell-IDs correctly detected!
+[Success]: DMRS parameters correctly detected!
+ (uncoded-BER, codedBER): (0.0, 0.0)
+</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2278,7 +2568,10 @@ File <span class="ansi-green-fg">~/miniconda3/envs/mysdr/lib/python3.11/site-pac
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Downlink_Synchronization.html" class="btn btn-neutral float-left" title="Downlink Synchronization using SSB in 5G Networks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../4.Data_Communication_in_5G/5G_Data_Communication.html" class="btn btn-neutral float-right" title="Downlink Data Communication using PDSCH in 5G Networks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

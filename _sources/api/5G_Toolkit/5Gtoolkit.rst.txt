@@ -57,5 +57,6 @@ discussed below in table-1.
     MIMOProcessing/mimoProcessing
     [N]Scheduler/scheduler
     CRC/crc
+    [N]ReceiverAlgorithms/receiverAlgorithms
     Positioning/positioning
     [N]Configurations/configurations
