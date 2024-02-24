@@ -9,4 +9,11 @@ information. Some common receiver algorithms used in 5G include:
    :maxdepth: 5
 
    CFOEstimation/cfoEstimation
-
+   ChannelEstimation_and_Equalization/channelEstimationAndEqualizationPBCH
+   ChannelEstimation_and_Equalization/channelEstimationAndEqualizationPDCCH
+   ChannelEstimation_and_Equalization/channelEstimationAndEqualizationPDSCH
+   DL_Synchronization/receiverAlgorithms.dmrsParameterDetection
+   DL_Synchronization/receiverAlgorithms.pssDetection
+   DL_Synchronization/receiverAlgorithms.sssDetection
+   Downlink_CSI_Acquisition/channelEstimationCSIRS
+   Positioning/channelEstimationSRS

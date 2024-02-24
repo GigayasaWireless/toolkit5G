@@ -251,7 +251,7 @@ Installation Tutorial: Video
         .. raw:: html
 
             <center>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/QuVvtV4LDoA?si=U0GRkUsUpyvcl2x8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="665" height="387" src="https://www.youtube.com/embed/QuVvtV4LDoA?si=U0GRkUsUpyvcl2x8" title="YouTube video player" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </center>
 
 
@@ -260,6 +260,6 @@ Installation Tutorial: Video
         .. raw:: html
 
             <center>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/BFOCwUYx92E?si=uMx1SOML9_bZ10xS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="665" height="387" src="https://www.youtube.com/embed/BFOCwUYx92E?si=uMx1SOML9_bZ10xS" title="YouTube video player" frameborder="2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </center>
 

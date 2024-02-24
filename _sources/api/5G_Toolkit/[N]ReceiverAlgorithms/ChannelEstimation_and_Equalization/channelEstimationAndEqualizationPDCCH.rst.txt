@@ -1,0 +1,35 @@
+Channel Estimation and Symbol Equalization for PDCCH
+====================================================
+
+The Physical Downlink Control Channel (PDCCH) is a crucial channel used for transmitting control information from the
+base station (gNB) to user equipment (UE). Channel estimation and symbol equalization for PDCCH are essential processes
+that ensure reliable reception of control information despite channel impairments and variations. Here's an overview of
+these processes:
+
+1. **Channel Estimation for PDCCH**: Channel estimation for PDCCH involves estimating the characteristics of the radio channel between the gNB and the UE. This estimation is necessary to compensate for the effects of fading, interference, and other impairments that can degrade the received signal quality. In the context of PDCCH, channel estimation typically involves the following steps:
+
+    - **Reference Signal (RS) Transmission**: The gNB periodically transmits known reference signals (RS) along with the PDCCH data. These RSs are designed to facilitate accurate channel estimation at the UE.
+
+    - **Channel Estimation at UE**: Upon receiving the PDCCH signal along with the RSs, the UE performs channel estimation using the received RSs. Common techniques for channel estimation include least squares estimation, minimum mean square error (MMSE) estimation, and linear interpolation.
+
+    - **Frequency Domain Equalization (FDE)**: After estimating the channel response, the UE applies frequency domain equalization techniques to compensate for the channel distortions. FDE aims to restore the transmitted symbols to their original form by dividing the received signal by the estimated channel frequency response.
+
+2. **Symbol Equalization for PDCCH**: Symbol equalization is the process of adjusting the received symbols to mitigate the effects of channel distortions and interference, ensuring accurate symbol detection at the receiver. In the context of PDCCH, symbol equalization is crucial for recovering the transmitted control information correctly. The following steps are typically involved in symbol equalization for PDCCH:
+
+    - **Channel Frequency Response Estimation**: Based on the estimated channel response obtained during channel estimation, the UE calculates the frequency domain equalization (FDE) coefficients.
+
+    - **Frequency Domain Equalization (FDE)**: The UE applies the FDE coefficients to the received PDCCH symbols in the frequency domain to compensate for the channel distortions.
+
+    - **Symbol Detection**: Finally, the UE performs symbol detection on the equalized symbols to decode the transmitted control information accurately.
+
+By performing channel estimation and symbol equalization, the UE can mitigate the effects of channel impairments and
+accurately decode the PDCCH control information, ensuring reliable reception of control signals in 5G networks. These
+processes are essential for enabling proper operation of the UE within the 5G network and supporting various control
+functions such as resource allocation, scheduling, and handover management.
+
+
+.. autoclass:: toolkit5G.ReceiverAlgorithms.ChannelEstimationAndEqualizationPDCCH
+    :members:
+    :exclude-members: call, build
+    
+

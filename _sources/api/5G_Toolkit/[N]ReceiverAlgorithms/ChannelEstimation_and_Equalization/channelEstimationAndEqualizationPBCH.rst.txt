@@ -1,0 +1,79 @@
+Channel Estimation and Symbol Equalization for PBCH
+===================================================
+
+Physical Broadcast Channel (PBCH) is a critical channel used for broadcasting system information and synchronization
+signals to all user equipment (UE) within the coverage area of the base station. Channel estimation and symbol
+equalization for PBCH are essential processes that ensure reliable reception of the broadcasted information despite
+channel impairments and variations. Here's an overview of these processes:
+
+1. **Channel Estimation for PBCH**: Channel estimation for PBCH involves estimating the characteristics of the radio channel between the base station (gNB) and the UE. This estimation is necessary to compensate for the effects of fading, interference, and other impairments that can degrade the received signal quality. In the context of PBCH, channel estimation typically involves the following steps:
+
+    - **Reference Signal (RS) Transmission**: The gNB periodically transmits known reference signals (RS) along with the PBCH data. These RSs are designed to facilitate accurate channel estimation at the UE.
+
+    - **Channel Estimation at UE**: Upon receiving the PBCH signal along with the RSs, the UE performs channel estimation using the received RSs. Common techniques for channel estimation include least squares estimation, minimum mean square error (MMSE) estimation, and linear interpolation.
+
+    - **Frequency Domain Equalization (FDE)**: After estimating the channel response, the UE applies frequency domain equalization techniques to compensate for the channel distortions. FDE aims to restore the transmitted symbols to their original form by dividing the received signal by the estimated channel frequency response.
+
+2. **Symbol Equalization for PBCH**: Symbol equalization is the process of adjusting the received symbols to mitigate the effects of channel distortions and interference, ensuring accurate symbol detection at the receiver. In the context of PBCH, symbol equalization is crucial for recovering the transmitted PBCH symbols correctly. The following steps are typically involved in symbol equalization for PBCH:
+
+    - **Channel Frequency Response Estimation**: Based on the estimated channel response obtained during channel estimation, the UE calculates the frequency domain equalization (FDE) coefficients.
+
+    - **Frequency Domain Equalization (FDE)**: The UE applies the FDE coefficients to the received PBCH symbols in the frequency domain to compensate for the channel distortions.
+
+    - **Symbol Detection**: Finally, the UE performs symbol detection on the equalized symbols to decode the transmitted PBCH data accurately.
+
+By performing channel estimation and symbol equalization, the UE can mitigate the effects of channel impairments and
+accurately decode the PBCH data, ensuring reliable reception of system information and synchronization signals in 5G
+networks. These processes are essential for maintaining synchronization and enabling proper operation of the UE within
+the 5G network.
+
+
+.. note::
+    Channel estimator supports zero-forcing (ZF) and minimum mean square error (MMSE) estimation methods.
+
+.. note::
+    Currently, only nearest neighbour interpolator is supported but it will soon be extended to linear and 2D spline interpolator as well.
+
+.. note::
+    For symbol Equalization, Least square method is used.
+
+
+--------
+
+**Examples**
+
+.. code:: ipython3
+
+    estimatorType    = 'ZF'
+    # estimatorType    = np.random.choice(['ZF', "MMSE"])
+    interpolatorType = 'NN'
+    chEst            = ChannelEstimationAndEqualization(estimatorType = estimatorType,
+                                                        interpolatorType = interpolatorType)
+
+    rxGrid        = np.random.randn(4,240) + 1j*np.random.randn(4,240) # SSB grid of size (4, 240)
+    pilots        = np.random.randn(144)   + 1j*np.random.randn(144)   # dmrs Sequence of length (144,)
+    pilotLocation = tk.ResourceMapping.SSB_Grid(0).dmrsIndices         # Indices where DMRS: Tuple of 2 numpy arrays each of size 144
+    dataLocation  = tk.ResourceMapping.SSB_Grid(0).pbchIndices         # Indices where PBCH: Tuple of 2 numpy arrays each of size 432
+    snr           = 10                                                 # Signal to noise ratio
+
+    pbchSymbols = chEst(rxGrid = rxGrid, pilots = pilots,
+                        pilotLocation = pilotLocation,
+                        dataLocations = dataLocation, snr=snr)
+
+    print(pbchSymbols.shape)
+
+.. parsed-literal::
+
+    (432,)
+
+
+--------
+
+The details about the input-output interface of the module are detailed below.
+
+
+.. autoclass:: toolkit5G.ReceiverAlgorithms.ChannelEstimationAndEqualizationPBCH
+    :members:
+    :exclude-members: call, build
+    
+

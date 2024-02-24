@@ -1,0 +1,45 @@
+SSB Parameters Estimation
+=========================
+The downlink synchronization requires UE to decode many parameters (listed blow). Some of these parameters has to be
+known in initial few steps itself involving channel estimation and decoding PBCH payload.
+
+    * Physical layer cell ID (:math:`\text{N}_\text{ID}`).
+        * Physical layer cell ID-1 (:math:`\text{N}_\text{ID}^\text{1}`)
+        * Physical layer cell ID-2  (:math:`\text{N}_\text{ID}^\text{2}`)
+    * Synchronization signal block (SSB) index.
+    * Half frame index (:math:`\text{n}_\text{HF}`).
+
+The Physical layer cell ID (:math:`\text{N}_\text{ID}`) is estimated using ``PSSDetection`` and ``SSSDetection``. The
+remaining 2 parameters are estimated using this module.
+
+**Example**
+
+.. code:: ipython3
+
+    nID     = np.random.randint(1008)
+    lMax    = np.random.choice([4,8,64])
+    dmrsdet = DMRSParameterDetection(cellID=nID, nssbCandidatesInHrf = lMax)
+
+    ssbEst = np.random.randn(4,240) + 1j*np.random.randn(4,240)
+
+    ssbIndex, nHF = dmrsdet(ssbEstimate = ssbEst)
+
+    print("         cell-ID: "+str(nID))
+    print("           L_max: "+str(lMax))
+    print("       SSB-Index: "+str(ssbIndex))
+    print("half Frame Index: "+str(nHF))
+
+
+.. parsed-literal::
+
+             cell-ID: 897
+               L_max: 64
+           SSB-Index: 18
+    half Frame Index: 1
+
+
+The details about the input-output interface of the DMRSParameterDetection detailed below.
+
+.. autoclass:: toolkit5G.ReceiverAlgorithms.DMRSParameterDetection
+    :members:
+    :exclude-members: call, build

@@ -1,0 +1,212 @@
+Time Synchronization and PSS/Cell ID-2 Detection
+================================================
+The time synchronization is required in all communication systems (wired or wireless) to communication the information
+to and fro the base-station (BS) and user equipment (UE). This module provides the the API for time synchronization
+during initial access phase using primary synchronization sequence which has excellent time correlation properties. It
+performs the following:
+    1. Physical Cell ID-2 Detection :math:`\text{N}_\text{ID}^\text{(2)}`.
+    2. Frequency Offset estimation.
+    3. Index of :math:`\text{1}^\text{st}` sample of the OFDM symbol in which the PSS was transmitted by the BS.
+
+
+---------
+
+**Both Cell ID-2 and Frequency Offset are unknown:**
+
+.. code:: ipython3
+
+    method       = 'largestPeak'
+    detectorType = 'peakDetector'
+
+    timeSynch    = PSSDetection(method, detectorType)
+
+    numSamples   = 1024
+    timeIndex    = np.random.rand()*1024
+    rxSamples    = np.fft.ifft(np.exp(-1j*2*np.pi*timeIndex*np.arange(numSamples)/numSamples))
+    fftSize      = 256
+    lengthCP     = 12
+    N_ID2        = None
+    freqOffset   = None
+    pssPeakIndices, pssCorrelation, N_ID2, freqOffset = timeSynch(rxSamples, fftSize, lengthCP, N_ID2, freqOffset)
+
+
+
+.. parsed-literal::
+
+    **(rasterOffset, PSS-ID) (0, 0)
+    **(rasterOffset, PSS-ID) (0, 1)
+    **(rasterOffset, PSS-ID) (0, 2)
+    **(rasterOffset, PSS-ID) (1, 0)
+    **(rasterOffset, PSS-ID) (1, 1)
+    **(rasterOffset, PSS-ID) (1, 2)
+    **(rasterOffset, PSS-ID) (2, 0)
+    **(rasterOffset, PSS-ID) (2, 1)
+    **(rasterOffset, PSS-ID) (2, 2)
+    **(rasterOffset, PSS-ID) (3, 0)
+    **(rasterOffset, PSS-ID) (3, 1)
+    **(rasterOffset, PSS-ID) (3, 2)
+    **(rasterOffset, PSS-ID) (4, 0)
+    **(rasterOffset, PSS-ID) (4, 1)
+    **(rasterOffset, PSS-ID) (4, 2)
+    **(rasterOffset, PSS-ID) (5, 0)
+    **(rasterOffset, PSS-ID) (5, 1)
+    **(rasterOffset, PSS-ID) (5, 2)
+    **(rasterOffset, PSS-ID) (6, 0)
+    **(rasterOffset, PSS-ID) (6, 1)
+    **(rasterOffset, PSS-ID) (6, 2)
+    **(rasterOffset, PSS-ID) (7, 0)
+    **(rasterOffset, PSS-ID) (7, 1)
+    **(rasterOffset, PSS-ID) (7, 2)
+    **(rasterOffset, PSS-ID) (8, 0)
+    **(rasterOffset, PSS-ID) (8, 1)
+    **(rasterOffset, PSS-ID) (8, 2)
+    **(rasterOffset, PSS-ID) (9, 0)
+    **(rasterOffset, PSS-ID) (9, 1)
+    **(rasterOffset, PSS-ID) (9, 2)
+    **(rasterOffset, PSS-ID) (10, 0)
+    **(rasterOffset, PSS-ID) (10, 1)
+    **(rasterOffset, PSS-ID) (10, 2)
+    **(rasterOffset, PSS-ID) (11, 0)
+    **(rasterOffset, PSS-ID) (11, 1)
+    **(rasterOffset, PSS-ID) (11, 2)
+    **(rasterOffset, PSS-ID) (12, 0)
+    **(rasterOffset, PSS-ID) (12, 1)
+    **(rasterOffset, PSS-ID) (12, 2)
+    **(rasterOffset, PSS-ID) (13, 0)
+    **(rasterOffset, PSS-ID) (13, 1)
+    **(rasterOffset, PSS-ID) (13, 2)
+    **(rasterOffset, PSS-ID) (14, 0)
+    **(rasterOffset, PSS-ID) (14, 1)
+    **(rasterOffset, PSS-ID) (14, 2)
+    **(rasterOffset, PSS-ID) (15, 0)
+    **(rasterOffset, PSS-ID) (15, 1)
+    **(rasterOffset, PSS-ID) (15, 2)
+
+
+.. code:: ipython3
+
+    ## PSS Detection Plot
+    #################################################################
+    fig, ax = plt.subplots()
+
+    # single line
+    ax.plot(pssCorrelation)
+    ax.vlines(x = pssPeakIndices, ymin = 0*pssCorrelation[pssPeakIndices],
+               ymax = pssCorrelation[pssPeakIndices], colors = 'purple', label = "PSS-Rx symbol Correlation")
+    ax.set_ylim([0,np.max(pssCorrelation)*1.1])
+    ax.legend()
+    ax.grid()
+    ax.set_xlabel("Time samples Indices")
+    ax.set_ylabel("Normalized Correlation Values")
+    ax.set_title("PSS and Recevied Correlation Plot")
+
+    plt.show()
+    #________________________________________________________________
+
+
+.. image:: output_3_0.png
+  :width: 400
+  :alt: Alternative text
+
+
+**Cell ID-2 is known but Frequency Offset is unknown:**
+
+.. code:: ipython3
+
+    method       = 'largestPeak'
+    detectorType = 'peakDetector'
+
+    timeSynch    = PSSDetection(method, detectorType)
+
+    numSamples   = 1024
+    timeIndex    = np.random.rand()*1024
+    rxSamples    = np.fft.ifft(np.exp(-1j*2*np.pi*timeIndex*np.arange(numSamples)/numSamples))
+    fftSize      = 256
+    lengthCP     = 12
+    N_ID2        = 0
+    freqOffset   = None
+    pssPeakIndices, pssCorrelation, N_ID2, freqOffset = timeSynch(rxSamples, fftSize, lengthCP, N_ID2, freqOffset)
+
+.. parsed-literal::
+
+    **(rasterOffset, PSS-ID) (0, 0)
+    **(rasterOffset, PSS-ID) (1, 0)
+    **(rasterOffset, PSS-ID) (2, 0)
+    **(rasterOffset, PSS-ID) (3, 0)
+    **(rasterOffset, PSS-ID) (4, 0)
+    **(rasterOffset, PSS-ID) (5, 0)
+    **(rasterOffset, PSS-ID) (6, 0)
+    **(rasterOffset, PSS-ID) (7, 0)
+    **(rasterOffset, PSS-ID) (8, 0)
+    **(rasterOffset, PSS-ID) (9, 0)
+    **(rasterOffset, PSS-ID) (10, 0)
+    **(rasterOffset, PSS-ID) (11, 0)
+    **(rasterOffset, PSS-ID) (12, 0)
+    **(rasterOffset, PSS-ID) (13, 0)
+    **(rasterOffset, PSS-ID) (14, 0)
+    **(rasterOffset, PSS-ID) (15, 0)
+
+
+**Cell ID-2 is unknown but Frequency Offset is known:**
+
+.. code:: ipython3
+
+    method       = 'largestPeak'
+    detectorType = 'peakDetector'
+
+    timeSynch    = PSSDetection(method, detectorType)
+
+    numSamples   = 1024
+    timeIndex    = np.random.rand()*1024
+    rxSamples    = np.fft.ifft(np.exp(-1j*2*np.pi*timeIndex*np.arange(numSamples)/numSamples))
+    fftSize      = 256
+    lengthCP     = 12
+    N_ID2        = None
+    freqOffset   = 12
+    pssPeakIndices, pssCorrelation, N_ID2, freqOffset = timeSynch(rxSamples, fftSize, lengthCP, N_ID2, freqOffset)
+
+
+.. parsed-literal::
+
+    **(rasterOffset, PSS-ID) (12, 0)
+    **(rasterOffset, PSS-ID) (12, 1)
+    **(rasterOffset, PSS-ID) (12, 2)
+
+
+
+**Both Cell ID-2 and Frequency Offset are known:**
+
+.. code:: ipython3
+
+    method       = 'largestPeak'
+    detectorType = 'peakDetector'
+
+    timeSynch    = PSSDetection(method, detectorType)
+
+    numSamples   = 1024
+    fftSize      = 256
+    lengthCP     = 12
+    N_ID2        = 0
+    freqOffset   = 1
+    timeIndex    = np.random.rand()*numSamples
+    rxSamples    = np.fft.ifft(np.exp(-1j*2*np.pi*timeIndex*np.arange(numSamples)/numSamples))
+
+    pssPeakIndices, pssCorrelation, N_ID2, freqOffset = timeSynch(rxSamples, fftSize, lengthCP, N_ID2, freqOffset)
+
+
+.. parsed-literal::
+
+    **(rasterOffset, PSS-ID) (1, 0)
+
+
+---------
+
+**API Documentation**
+
+
+The details about the input-output interface of the ``PSSDetection`` modules is provided below.
+
+.. autoclass:: toolkit5G.ReceiverAlgorithms.PSSDetection
+    :members:
+    :exclude-members: call, build
+

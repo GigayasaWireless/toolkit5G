@@ -1,0 +1,35 @@
+Channel Estimation and Symbol Equalization for PDSCH
+====================================================
+
+Channel Estimation and Symbol Equalization for the Physical Downlink Shared Channel (PDSCH) are vital processes for
+ensuring reliable and efficient communication. These processes are often facilitated by the use of PDSCH-DMRS
+(Physical Downlink Shared Channel - Demodulation Reference Signals), which are specific reference signals inserted
+into the transmitted signal to aid in channel estimation and symbol equalization. Let's delve into each of these
+concepts in more detail:
+
+1. **Channel Estimation using PDSCH-DMRS**:
+
+    - **Purpose**: Channel estimation involves estimating the characteristics of the wireless channel between the base station (gNodeB) and the user equipment (UE). This estimation helps compensate for the effects of channel distortion during signal reception.
+
+    - **Method**: PDSCH-DMRS are known reference signals inserted into the transmitted PDSCH. These reference signals have a known pattern at the transmitter, allowing the UE to estimate the channel characteristics based on the received signal and the known transmitted signal.
+
+    - **Techniques**: Channel estimation techniques using PDSCH-DMRS typically involve estimating the channel frequency response or channel impulse response. This can be achieved through methods such as least squares estimation, minimum mean square error estimation, or interpolation techniques based on the received PDSCH-DMRS.
+
+2. **Symbol Equalization using PDSCH-DMRS**:
+
+    - **Purpose**: Symbol equalization aims to compensate for the distortion introduced by the wireless channel, such as intersymbol interference (ISI) and frequency-selective fading, to ensure accurate reception of transmitted symbols.
+
+    - **Method**: PDSCH-DMRS are also used for symbol equalization. By comparing the received PDSCH-DMRS with the known transmitted PDSCH-DMRS, the UE can estimate the channel distortion and apply equalization techniques to adjust the received symbols accordingly.
+
+    - **Techniques**: Symbol equalization techniques using PDSCH-DMRS include zero forcing equalization, minimum mean square error equalization, and maximum likelihood sequence estimation. These techniques aim to minimize the distortion introduced by the channel and improve the accuracy of symbol detection at the receiver.
+
+Overall, Channel Estimation and Symbol Equalization for PDSCH using PDSCH-DMRS in 5G networks play a crucial role in
+optimizing the reception of downlink data symbols. By leveraging known reference signals and sophisticated estimation
+techniques, these processes help mitigate the effects of channel distortion and enhance the reliability and performance
+of communication systems in 5G networks.
+
+.. autoclass:: toolkit5G.ReceiverAlgorithms.ChannelEstimationAndEqualizationPDSCH
+    :members:
+    :exclude-members: call, build
+    
+

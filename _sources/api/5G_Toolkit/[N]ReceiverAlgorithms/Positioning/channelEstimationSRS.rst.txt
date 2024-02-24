@@ -1,0 +1,44 @@
+Uplink Channel Estimation using SRS for Positioning
+===================================================
+
+Channel estimation using Channel State Information Reference Signals (CSI-RS) in 5G networks is a fundamental technique
+employed to accurately estimate the characteristics of the wireless channel between the base station (gNodeB) and the
+user equipment (UE). Here's some technical information on how CSI-RS is utilized for channel estimation in 5G:
+
+1. **Purpose**: The primary goal of channel estimation using CSI-RS is to estimate the channel's frequency response, which includes parameters such as amplitude and phase shift, across different subcarriers in the frequency domain.
+
+2. **CSI-RS Structure**:
+
+    - CSI-RS is a set of reference signals specifically designed for channel estimation purposes in 5G networks.
+    - It is transmitted by the gNodeB periodically over a certain bandwidth and is known to the UE.
+    - CSI-RS signals are transmitted with different frequency and time configurations to cover various channel conditions and transmission scenarios.
+
+3. **CSI-RS Configuration**:
+
+    - The gNodeB configures the CSI-RS parameters, including frequency position, bandwidth, density, and periodicity, based on network requirements and channel conditions.
+    - CSI-RS can be configured with different beamforming schemes, such as beam sweeping or beamforming matrices, to adapt to varying channel conditions and UE locations.
+
+4. **Channel Estimation Process**:
+
+    - Upon receiving the CSI-RS signals, the UE utilizes them to estimate the channel's frequency response.
+    - The UE measures the received power and phase of the CSI-RS signals across different subcarriers and uses this information to estimate the channel response.
+    - Complex algorithms, such as linear interpolation or advanced signal processing techniques, may be employed to interpolate or extrapolate channel estimates between CSI-RS locations for improved accuracy.
+
+5. **Channel Quality Reporting**:
+
+    - The UE may use the estimated channel response to generate Channel Quality Indicator (CQI) feedback, which provides information about the channel quality to the gNodeB.
+    - The gNodeB utilizes the CQI feedback to adapt modulation and coding schemes, beamforming, and other transmission parameters to optimize communication performance based on channel conditions.
+
+6. **Dynamic Channel Adaptation**: Channel estimation using CSI-RS enables dynamic adaptation of transmission parameters to changing channel conditions, such as fading, interference, and mobility, ensuring reliable and efficient communication in 5G networks.
+
+In summary, channel estimation using CSI-RS in 5G networks plays a crucial role in accurately estimating the wireless
+channel's characteristics and optimizing communication performance. By utilizing dedicated reference signals and
+sophisticated estimation techniques, CSI-RS enables dynamic adaptation of transmission parameters and ensures reliable
+communication in varying channel conditions.
+
+
+.. autoclass:: toolkit5G.ReceiverAlgorithms.ChannelEstimationSRS
+    :members:
+    :exclude-members: call, build
+    
+
