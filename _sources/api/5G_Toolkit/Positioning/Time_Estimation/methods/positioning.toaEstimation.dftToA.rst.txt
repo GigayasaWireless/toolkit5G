@@ -1,10 +1,13 @@
 DFT based Method
 ================
-This module implements a method for estimating the delays using Discrete Fourier Transform (DFT) method. This method
-uses the discrete Fourier transform to compute the power delay profile (PDP) and estimates delays by finding the spikes
-the PDP. It can also the Fourier oversampling to up sample the time domain channel to further improve the resolution of
-ToA estimates, However, this method suffers performance degradation if channel state information (CSI) is not available
-across all the sub-carriers which is very common in practical scenarios.
+
+This module implements a method for estimating delays using the Discrete Fourier Transform (DFT) technique. This method
+utilizes the discrete Fourier transform to compute the power delay profile (PDP) and estimates delays by identifying the
+peaks in the PDP. Additionally, it can employ Fourier oversampling to up-sample the time-domain channel, further
+enhancing the resolution of Time of Arrival (ToA) estimates. However, this method experiences performance degradation in
+scenarios where channel state information (CSI) is unavailable across all sub-carriers, which is common in practical
+situations.
+
 
 .. note::
     DFT based method suffers performance degradation if channel state information (CSI) is not available across all the sub-carriers which is very common in practical scenarios.
@@ -40,4 +43,8 @@ Estimation.
 
 .. autoclass:: toolkit5G.Positioning.DFT_ToA
    :members:
-   :exclude-members: call, build
+   :exclude-members: call, build, displayPDPs
+
+
+.. automethod:: toolkit5G.Positioning.Time_Estimation.methods.dftToA.DFT_ToA.displayPDPs
+    :noindex:

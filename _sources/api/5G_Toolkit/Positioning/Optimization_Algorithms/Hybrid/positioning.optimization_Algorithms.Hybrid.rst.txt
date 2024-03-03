@@ -1,92 +1,70 @@
-Gradient Descent for DoA
-=========================
-The :math:`\text{5G}^\text{th}` generation of wireless networks are equipped with
-increased number of antennas and radio frequency RF chains at the transmitter and receiver. This allows the 5G systems
-to estimate the angles with improved resolution. In release-15, 3GPP defined standards to enable methods for estimating
-UE location based on angle of departure and angle of arrival measurements for 5G-NR systems. The nomenclature of the
-methods is detailed below.
+Least Square based Position Estimator for Hybrid ToA/mRTT and DoA
+====================================================================
 
 
-.. list-table:: Table-1: Angle od Departure and Arrival based Positioning in 5G Networks
-   :widths: 25 25 25 25
-   :header-rows: 1
+A hybrid positioning method that combines time measurements and Angle measurements leverages the strengths of both
+approaches to achieve more accurate and robust positioning in wireless communication systems.
 
-   * - Generation
-     - Method
-     - Measurement
-     - Optimization methods
-   * - 5G
-     - DL-AoD
-     - Beam-ID and RSRP
-     - Newton-Raphson, Gradient-Descent
-   * - 5G
-     - UL-AoA
-     - AOA, RToA, Beam-ID, and RSRP
-     - Newton-Raphson, Gradient-Descent
+- The hybrid positioning method combines ToA/TDoA and AoA measurements to enhance accuracy and reliability.
+- ToA/TDoA measurements provide accurate distance estimates, while AoA measurements offer directional information.
+- By fusing ToA/TDoA and AoA measurements using techniques such as multilateration or maximum likelihood estimation, the hybrid method can mitigate the limitations of each individual technique.
+- For example, ToA/TDoA measurements can help resolve ambiguity in AoA estimates, while AoA measurements can provide additional constraints for refining ToA/TDoA-based localization.
 
-Its not possible to find a close form estimator for 2D-DoAs. Hence, DoA based positioning methods rely on iterative
-optimization methods. One such optimization method is **Gradient Descent** (GD) which has low complexity iteration in
-comparison to **Newton Raphson** (NR) method but needs more iterations to converge to local/global optima. The
-comparison between the two methods is shown below:
+.. note::
+    Hybrid Positioning requires only 1-2 LoS reference nodes with strong links in comparison to TDoA/AoA which requires 3-4 LoS reference nodes.
 
-.. list-table:: Table-2: Performance comparison between Gradient Descent and Newton Raphson optimization algorithm.
-   :widths: 25 25 25 25
-   :header-rows: 1
-
-   * - Method
-     - Per iteration complexity
-     - Convergence
-     - Utility
-   * - Gradient Descent
-     - :math:`\text{N}`
-     - Slow
-     - Low power
-   * - Newton Raphson
-     - :math:`\text{N}^2`
-     - Fast
-     - Low latency
-
-where N denotes the number of measurements used for positioning. The implementation of both these methods provided in 5G
-Toolkit is inspired by [3gppDoA]_.
 
 ------------
 
 **Code example**
 
+
 .. code-block:: Python
 
-    # shape of refLocations: Nref x 3
-    # shape of xoA: Nref x 2
-    numEpoches    = 1
-    tolerance     = 10**-5
-    numIterations = 10000
-    stepsize      = 1
+    posEstimator  = HybridToAAoA()
+    # Position Estimation Object:
+        # Positioning based on: Hybrid ToA and DOA
+        # Optimization Method: Least Square
+        # txPosition: (numTranmitter, 3)
+        # doaEst: (numTranmitter, 2)
+        # ToAe: (numTranmitter, )
 
-    posEstimator  = GradientDescentDoA(numEpochs = numEpoches, numIterationPerEpoch = numIterations,
-                                        stepsize = stepsize, tolerance = tolerance, isd = 100)
-    positionEstimate = posEstimator(xoA, refLocations)
+    positionEstimate, error   = posEstimator(refPosition=txPosition, toa=ToAe, doa = doaEst)
 
 ------------
 
-The input output interface for usage of Gradient Descent algorithm is provided below.
 
-.. autoclass:: toolkit5G.Positioning.GradientDescentDoA
+The input output interface for usage of Hybrid ToA/mRTT and DoA algorithm is provided below.
+
+.. autoclass:: toolkit5G.Positioning.HybridToAAoA
    :members:
    :exclude-members: call, build
 
 ------------
 
-Newton Raphson for DoA
-=======================
-The details of input output interface for usage is detailed below.
+Least Square based Position Estimator for Hybrid TDoA and DoA
+====================================================================
 
-.. note::
-    The documentation and API for ``NewtonRaphsonDoA`` are not active yet. It will be provided in patch 23a.0.11 by July 28, 2023.
 
-.. autoclass:: toolkit5G.Positioning.NewtonRaphsonDoA
+**Code example: Position Estimation using Hybrid TDoA and Direction of Arrival Estimates**
+
+.. code-block:: Python
+
+    posEstimator  = HybridTDoAAoA()
+    # Position Estimation Object:
+        # Positioning based on: Hybrid TDoA and DOA
+        # Optimization Method: Least Square
+        # txPosition: (numTranmitter, 3)
+        # doaEst: (numTranmitter, 2)
+        # tdoaEst: (numTranmitter-1, )
+
+    positionEstimate, error   = posEstimator(refPosition=txPosition, tdoa=tdoaEst, doa = doaEst)
+
+------------
+
+
+The input output interface for usage of Hybrid TDoA and DoA algorithm is provided below.
+
+.. autoclass:: toolkit5G.Positioning.HybridTDoAAoA
    :members:
    :exclude-members: call, build
-
-
-References:
-    .. [3gppDoA] Y. Wang, Z. Shi, Y. Yu, S. Huang and L. Chen, "Enabling Angle-based Positioning to 3GPP NR Systems," 2019 16th Workshop on Positioning, Navigation and Communications (WPNC), Bremen, Germany, 2019, pp. 1-7, doi: 10.1109/WPNC47567.2019.8970182.

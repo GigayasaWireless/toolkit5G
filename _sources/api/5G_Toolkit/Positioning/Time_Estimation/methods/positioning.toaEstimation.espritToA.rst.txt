@@ -1,7 +1,23 @@
 ESPRIT based ToA Estimation
-=============================================================================
-This module implements a method for estimating the delays using Estimation of Signal Parameters via Rotational Invariance
-Techniques (ESPRIT) method.
+=============================
+ESPRIT (Estimation of Signal Parameters via Rotational Invariance Techniques) is a method used for estimating the Time
+of Arrival (ToA) of signals in wireless communication systems.
+
+1. **Principle**: ESPRIT is a high-resolution spectral estimation technique that exploits the rotational invariance property of the signal covariance matrix to estimate signal parameters accurately. In the context of ToA estimation, ESPRIT exploits the cyclostationarity of the received signal to estimate the delay parameters.
+
+2. **Signal Model**: ESPRIT assumes the received signal is modeled as a linear combination of delayed versions of a known waveform, corrupted by additive noise. Mathematically, the received signal can be expressed as a matrix equation involving the signal covariance matrix.
+
+3. **Eigenvalue Decomposition**: ESPRIT performs eigenvalue decomposition on the signal covariance matrix to extract the signal subspace corresponding to the delays of interest. By exploiting the orthogonality of the signal subspace, ESPRIT is able to estimate the delay parameters directly from the eigenvalues and eigenvectors of the covariance matrix.
+
+4. **ToA Estimation**: Once the signal subspace is obtained, ESPRIT estimates the delays by analyzing the phase differences between pairs of eigenvectors corresponding to adjacent eigenvalues. The delays are then calculated from the phase differences using trigonometric relationships.
+
+5. **Advantages**: ESPRIT offers several advantages for ToA estimation, including high resolution, robustness to noise, and computational efficiency. It can accurately estimate the ToA of signals even in the presence of strong interference or noise.
+
+6. **Implementation Considerations**: ESPRIT-based ToA estimation requires knowledge of the signal waveform and the number of delays to be estimated. It also assumes that the received signal is narrowband and exhibits cyclostationarity. Practical implementation may involve preprocessing steps such as synchronization, channel estimation, and interference cancellation to improve performance.
+
+Its a powerful technique that offers high accuracy and resolution for determining signal arrival times in wireless
+communication systems. It is particularly useful in scenarios where precise timing information is critical, such as in
+radar, localization, and synchronization applications.
 
 ------------
 

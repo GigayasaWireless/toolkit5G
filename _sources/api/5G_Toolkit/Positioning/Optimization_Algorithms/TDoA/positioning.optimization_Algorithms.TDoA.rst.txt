@@ -1,8 +1,9 @@
-Gradient Descent for TDoA
-=========================
-The :math:`\text{4G}^\text{th}` and :math:`\text{5G}^\text{th}` generation of wireless networks uses time difference of arrival
-methods to estimate the position of node. The nomenclature of the methods is detailed below. The implementation of
-Newton Raphson and Gradient Descent optimization methods is inspired from [handbookTDoA]_.
+Least Squares based Position Estimator for TDoA
+==================================================
+
+The :math:`\text{4G}^\text{th}` and :math:`\text{5G}^\text{th}` generation of wireless networks uses time difference of
+arrival methods to estimate the position of node. The nomenclature of the methods is detailed below. The implementation
+of Newton Raphson and Gradient Descent optimization methods is inspired from [handbookTDoA]_.
 
 
 .. list-table:: Table-1: TDoA in 4G and 5G Networks
@@ -16,49 +17,49 @@ Newton Raphson and Gradient Descent optimization methods is inspired from [handb
    * - 4G
      - OTDoA
      - RSTD
-     - NewtonRaphson, GradientDescent
+     - LeastSquares, NewtonRaphson, GradientDescent
    * - 5G
      - DL-TDoA
      - RSTD
-     - NewtonRaphson, GradientDescent
+     - LeastSquares, NewtonRaphson, GradientDescent
    * - 5G
      - UL-TDoA
      - UL-RTOA
-     - NewtonRaphson, GradientDescent
+     - LeastSquares, NewtonRaphson, GradientDescent
 
-In 5G, the ToA estimates suffers from calibration impairments and antenna to base-band delays which propagates in-accuracies
-in the position estimates. However, the TDoA measurements are computed by taking difference of all ToA measurements with respect to
-one reference ToA measurement which can cancel the fixed receiver antenna to base-band delay across all the measurements.
-This makes TDoA measurements more robust to these impairments in comparison to ToA measurements.
-The major challenges with TDoA based positioning are two.
+In 5G, the ToA estimates suffers from calibration impairments and antenna to base-band delays which propagates
+in-accuracies in the position estimates. However, the TDoA measurements are computed by taking difference of all ToA
+measurements with respect to one reference ToA measurement which can cancel the fixed receiver antenna to base-band
+delay across all the measurements. This makes TDoA measurements more robust to these impairments in comparison to ToA
+measurements. The major challenges with TDoA based positioning are two.
 
-- No close-form optimization method for estimating the nodes location.
-    - High complexity.
+- Require atleast 4 accurate ToA (3 accurate TDoA) measurements.
 
 - In case reference ToA measurement is NLoS, positioning accuracy degrades significantly.
 
 Hence, TDoA based positioning methods rely on iterative optimization methods. One such optimization method is **Gradient
-Descent** (GD) which has low complexity iteration in comparison to **Newton Raphson** (NR) method but needs more iterations to
-converge to local/global optima. The comparison between the two methods is shown below:
+Descent** (GD) which has low complexity iteration in comparison to **Newton Raphson** (NR) method but needs more
+iterations to converge to local/global optima. The comparison between the two methods is shown below:
 
-.. list-table:: Table-2: Performance comparison between Gradient Descent and Newton Raphson algorithm.
+.. list-table:: Table-2: Performance comparison between Least Squares, Gradient Descent and Newton Raphson algorithm.
    :widths: 25 25 25 25
    :header-rows: 1
 
    * - Method
-     - Per iteration complexity
+     - Computational Complexity
      - Convergence
-     - Utility
-   * - Gradient Descent
-     - :math:`\text{N}`
-     - Slow
-     - Low power, low cost
-   * - Newton Raphson
+   * - Least Square
      - :math:`\text{N}^2`
-     - Fast
-     - Low latency
+     - Fastest
+   * - Gradient Descent
+     - :math:`N_\text{iterations} \times \text{N}`
+     - Slowest
+   * - Newton Raphson
+     - :math:`N_\text{iterations} \times \text{N}^2`
+     - Slow
 
-where N denotes the number of measurements used for positioning.
+where N denotes the number of measurements used for positioning and :math:`N_\text{iterations}` denotes the number of
+iterations used by iterative methods.
 
 
 ------------
@@ -70,13 +71,41 @@ TDoA/RSTD measurement is passed to Newton Raphson optimization method to estimat
 
 .. code-block:: Python
 
+    positionEstimate = LeastSquareTDoA()
+    # Position Estimation Object:
+        # Positioning based on: TDoA
+        # Optimization Method: Least Squares
+        # ToAe: (Nref,)
+        # txPosition: (Nref,3)
+    tdoa = ToAe[1::] - ToAe[0] # Time difference of arrival/RSTD
+    rxPositionEstimate, error = positionEstimate(txPosition, tdoa) # Position estimation using TDoA/RSTD
+
+
+------------
+
+The details of input output interface for usage is detailed below.
+
+.. autoclass:: toolkit5G.Positioning.LeastSquareTDoA
+   :members:
+   :exclude-members: call, build
+
+Gradient Descent based Position Estimator for TDoA
+==================================================
+
+
+**Code example**
+
+.. code-block:: Python
+
     positionEstimate = GradientDescentTDoA(numIterations = 100000, numRepetition = 10,
                                          tolerance = 0.0000000001, stepsize = 0.1)
     # Position Estimation Object:
         # Positioning based on: TDoA
         # Optimization Method: Gradient Descent
+        # ToAe: (Nref,)
+        # txPosition: (Nref,3)
     tdoa = ToAe[1::] - ToAe[0] # Time difference of arrival/RSTD
-    rxPositionEstimate = positionEstimate(txPosition, tdoa) # Position estimation using TDoA/RSTD
+    rxPositionEstimate, error = positionEstimate(txPosition, tdoa) # Position estimation using TDoA/RSTD
 
 The input output interface for usage of Gradient Descent algorithm is provided below.
 
@@ -86,8 +115,9 @@ The input output interface for usage of Gradient Descent algorithm is provided b
 
 ------------
 
-Newton Raphson for TDoA
-=======================
+Newton Raphson based Position Estimator for TDoA
+==================================================
+
 The following code snippet illustrate the way to compute the time difference of arrival (TDoA) using time of arrival
 (ToA). The TDoA/RSTD measurement is passed to Newton Raphson optimization method to estimate the user equipment (UE)
 location.
@@ -100,9 +130,11 @@ location.
                                          tolerance = 0.0000000001, stepsize = 0.1)
     # Position Estimation Object:
         # Positioning based on: TDoA
-        # Optimization Method: Gradient Descent
+        # Optimization Method: Newton Raphson
+        # ToAe: (Nref,)
+        # txPosition: (Nref,3)
     tdoa = ToAe[1::] - ToAe[0] # Time difference of arrival/RSTD
-    rxPositionEstimate = positionEstimate(txPosition, tdoa) # Position estimation using TDoA/RSTD
+    rxPositionEstimate, error = positionEstimate(txPosition, tdoa) # Position estimation using TDoA/RSTD
 
 
 ------------

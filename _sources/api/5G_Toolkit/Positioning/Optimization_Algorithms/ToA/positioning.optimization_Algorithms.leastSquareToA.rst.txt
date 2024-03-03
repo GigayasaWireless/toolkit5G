@@ -1,5 +1,6 @@
-ToA Least Square Estimate
-=========================
+Least Squares based Position Estimator for ToA/mRTT
+====================================================
+
 This module estimates the position of the target node using time of arrival (ToA) measurements based on the least square
 framework. The implementation of ToA based least square estimator is inspired from [hppInF]_.
 
@@ -14,9 +15,8 @@ An example to estimate the position based on the ToA measurement is given in fol
     # Position Estimation Object:
         # Positioning based on: ToA
         # Optimization Method: Least Square
-
-    # Shape of txPosition: (Nref,3)
-    # Shape of ToAe: (Nref,)
+        # Shape of txPosition: (Nref,3)
+        # Shape of ToAe: (Nref,)
 
     locEstimate, posError = positionEstimator(txPosition, ToAe)
 
@@ -32,6 +32,7 @@ The details of the input output interface to use this module is provided in foll
 
 
 ------------
+
 
 References:
     .. [hppInF] V. Singh, A. A. Masal, J. Klutto Milleth and B. Ramamurthi, "High Precision Positioning using Multi-cell Massive MIMO system for 5G and beyond," 2021 IEEE 32nd Annual International Symposium on Personal, Indoor and Mobile Radio Communications (PIMRC), Helsinki, Finland, 2021, pp. 1234-1240, doi: 10.1109/PIMRC50174.2021.9569480.

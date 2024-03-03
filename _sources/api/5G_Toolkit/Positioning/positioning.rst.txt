@@ -18,7 +18,7 @@ measurements as illustrated in table-1.
      - NewtonRaphson, GradientDescent
    * - UL-TDoA
      - TDOA
-     - TDOA
+     - TDOA, Hybrid TDoA + AoA
      - NewtonRaphson, GradientDescent
    * - DL-AoD
      - RSRP, AoD
@@ -26,11 +26,11 @@ measurements as illustrated in table-1.
      - NewtonRaphson, GradientDescent
    * - UL-AoA
      - RSRP, AoD, RToA
-     - DOA
+     - DOA, Hybrid TDoA + AoA
      - NewtonRaphson, GradientDescent
    * - m-RTT
      - RSRP, RToA
-     - TOA
+     - TOA, Hybrid ToA + AoA
      - LeastSquare
    * - ECID
      - RSRP
@@ -43,30 +43,33 @@ measurements as illustrated in table-1.
 Position Estimation
 -------------------
 
-**Code example: Position Estimation using Time of Arrival Estimates**
+**Code example: Position Estimation using Time of Arrival (ToA/mRTT) Estimates**
 
 .. code-block:: Python
 
-    posEstimator = Position_Estimation(positioningMethod = "TOA", optimizationMethod = "LeastSquare")
+    posEstimator = PositionEstimation(optimizationMethod = "LeastSquare")
     # Position Estimation Object:
         # Positioning based on: ToA
         # Optimization Method: Least Square
         # txPosition: (numTranmitter, 3)
         # ToAe: (numTranmitter, )
 
-    posEstimate, errorEstimate = posEstimator(refPosition=txPosition, toa=ToAe)
+    posEstimate = posEstimator(refPosition=txPosition, toa=ToAe)
+
+        # posEstimate will have a shape (2, 3)
+        # Optimization Error can be accessed using posEstimate.error
 
 
 .. code-block:: Python
 
     posEstimator.display()
 
-.. image:: ../../figures/Positioning/PositionEstimation/locusToA.svg
+.. image:: ../../figures/Positioning/PositionEstimation/InF_ToA.png
   :width: 800
   :align: center
   :alt: Alternative text
 
-**Code example: Position Estimation using Time Difference of Arrival Estimates**
+**Code example: Position Estimation using Time Difference of Arrival (TDoA) Estimates**
 
 .. code-block:: Python
 
@@ -75,7 +78,7 @@ Position Estimation
     tolerance     = 0.00000001
     stepsize      = 0.1
     isd           = 100
-    posEstimator  = PositionEstimation(positioningMethod = "TDOA", optimizationMethod = "NewtonRaphson",
+    posEstimator  = PositionEstimation(optimizationMethod = "NewtonRaphson",
                                        numIterationPerEpoch = numIterations, numEpochs = numEpochs,
                                        tolerance = tolerance, stepsize = stepsize, isd = isd)
     # Position Estimation Object:
@@ -86,9 +89,19 @@ Position Estimation
 
     posEstimate   = posEstimator(refPosition=txPosition, tdoa = tdoaEst)
 
+.. code-block:: Python
+
+    posEstimator.display()
+
+.. image:: ../../figures/Positioning/PositionEstimation/UMa_TDoA.png
+  :width: 800
+  :align: center
+  :alt: Alternative text
+
+
 ------------
 
-**Code example: Position Estimation using Direction of Arrival Estimates**
+**Code example: Position Estimation using Direction of Arrival (DoA) Estimates**
 
 .. code-block:: Python
 
@@ -97,7 +110,7 @@ Position Estimation
     tolerance     = 0.00000001
     stepsize      = 0.1
     isd           = 100
-    posEstimator  = PositionEstimation(positioningMethod = "DOA", optimizationMethod = "GradientDescent",
+    posEstimator  = PositionEstimation(optimizationMethod = "GradientDescent",
                                        numIterationPerEpoch = numIterations, numEpochs = numEpochs,
                                        tolerance = tolerance, stepsize = stepsize, isd = isd)
     # Position Estimation Object:
@@ -106,7 +119,70 @@ Position Estimation
         # txPosition: (numTranmitter, 3)
         # doaEst: (numTranmitter, 2)
 
-    posEstimate   = posEstimator(refPosition=txPosition, doa = doaEst)
+    posEstimate   = posEstimator(refPosition=txPosition, xoA = doaEst)
+
+.. code-block:: Python
+
+    posEstimator.display()
+
+.. image:: ../../figures/Positioning/PositionEstimation/UMa_DoA.png
+  :width: 800
+  :align: center
+  :alt: Alternative text
+
+
+------------
+
+**Code example: Position Estimation using Hybrid ToA/mRTT and Direction of Arrival (DoA) Estimates**
+
+.. code-block:: Python
+
+    posEstimator  = PositionEstimation(optimizationMethod = "LeastSquare")
+    # Position Estimation Object:
+        # Positioning based on: Hybrid ToA + DOA
+        # Optimization Method: Least Square
+        # txPosition: (numTranmitter, 3)
+        # doaEst: (numTranmitter, 2)
+        # toaEst: (numTranmitter,)
+
+    posEstimate   = posEstimator(refPosition=txPositionToA, tdoa = toaEst, xoA = XoA)
+
+
+.. code-block:: Python
+
+    posEstimator.display()
+
+.. image:: ../../figures/Positioning/PositionEstimation/UMa_ToA-DoA.png
+  :width: 800
+  :align: center
+  :alt: Alternative text
+
+
+------------
+
+**Code example: Position Estimation using Hybrid TDoA and Direction of Arrival (DoA) Estimates**
+
+.. code-block:: Python
+
+    posEstimator  = PositionEstimation(optimizationMethod = "LeastSquare")
+    # Position Estimation Object:
+        # Positioning based on: Hybrid TDoA + DOA
+        # Optimization Method: Least Square
+        # txPosition: (numTranmitter, 3)
+        # doaEst: (numTranmitter, 2)
+        # tdoaEst: (numTranmitter-1,)
+
+    posEstimate   = posEstimator(refPosition=txPositionToA, tdoa = tdoaEst, xoA = XoA, refPositionAoA=txPositionAoA)
+
+
+.. code-block:: Python
+
+    posEstimator.display()
+
+.. image:: ../../figures/Positioning/PositionEstimation/InF_TDoA-DoA.png
+  :width: 800
+  :align: center
+  :alt: Alternative text
 
 ------------
 
@@ -114,9 +190,14 @@ Position Estimation
 
 The following section provides the details about the input and output interface for Position Estimator.
 
+
 .. autoclass:: toolkit5G.Positioning.PositionEstimation
    :members:
-   :exclude-members: call, build
+   :exclude-members: call, build, display
+
+
+.. automethod:: toolkit5G.Positioning.Position_Estimation.position_Estimation.PositionEstimation.display
+    :noindex:
 
 
 ------------

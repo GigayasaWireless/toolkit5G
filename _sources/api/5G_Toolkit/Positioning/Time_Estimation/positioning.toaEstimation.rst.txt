@@ -88,9 +88,11 @@ The following section provides the detailed documentation of the API for ToAEsti
 
 .. autoclass:: toolkit5G.Positioning.ToAEstimation
    :members:
-   :exclude-members: call, build
+   :exclude-members: call, build, display
 
 
+.. automethod:: toolkit5G.Positioning.Time_Estimation.toaEstimation.ToAEstimation.display
+    :noindex:
 
 
 ------------

@@ -32,3 +32,10 @@ Gradient descent and Newton Raphson based algorithms which are discussed below.
     :maxdepth: 1
 
     DoA/positioning.optimization_Algorithms.DoA
+
+**Optimizing Algorithm for Hybrid Positioning**
+
+.. toctree::
+    :maxdepth: 1
+
+    Hybrid/positioning.optimization_Algorithms.Hybrid.rst

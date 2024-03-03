@@ -1,7 +1,25 @@
 MUSIC based ToA Estimation
 ======================================
-This module implements a method for estimating the delays using **MU**\ ltiple **SI**\ gnal **C**\ lassification (MUSIC)
-method.
+MUSIC (Multiple Signal Classification) is a popular spectral estimation technique used for Time of Arrival (ToA)
+estimation in wireless communication systems.
+
+1. **Principle**: MUSIC is a high-resolution algorithm that exploits the eigenstructure of the received signal covariance matrix to estimate the ToA of signals. It works by decomposing the received signal into signal and noise subspaces and then exploiting the orthogonality between them to estimate the signal parameters.
+
+2. **Signal Model**: In MUSIC-based ToA estimation, the received signal is assumed to be a linear combination of delayed versions of a known waveform, corrupted by additive noise. The signal model is represented as a matrix equation involving the signal covariance matrix.
+
+3. **Eigenvalue Decomposition**: MUSIC performs eigenvalue decomposition on the signal covariance matrix to obtain its eigenvectors and eigenvalues. The eigenvectors corresponding to the noise subspace are orthogonal to the signal subspace, allowing for the separation of signal and noise components.
+
+4. **Spectral Estimation**: By projecting the received signal onto the noise subspace, MUSIC suppresses the signal component, leaving only the noise. The ToA estimates are then obtained by analyzing the spectral peaks of the projected noise.
+
+5. **ToA Estimation**: MUSIC estimates the ToA of signals by identifying the peaks in the pseudospectrum, which represents the spectral density of the received signal after projection onto the noise subspace. The peaks in the pseudospectrum correspond to the signal arrival times, allowing for accurate ToA estimation.
+
+6. **Advantages**: MUSIC offers several advantages for ToA estimation, including high resolution, robustness to noise and interference, and the ability to handle multiple signals simultaneously. It can accurately estimate the ToA of signals even in the presence of strong interference or noise.
+
+7. **Implementation Considerations**: Practical implementation of MUSIC-based ToA estimation requires knowledge of the signal waveform and the number of signals to be estimated. It also assumes that the received signal is narrowband and exhibits statistical stationarity. Preprocessing steps such as synchronization and channel estimation may be necessary to improve performance.
+
+It is a powerful technique that offers high accuracy and resolution for determining signal arrival times in wireless
+communication systems. It is particularly useful in scenarios where precise timing information is critical, such as in
+radar, localization, and synchronization applications.
 
 ------------
 
@@ -45,4 +63,12 @@ The following documentation provides the details about the input and output API 
 
 .. autoclass:: toolkit5G.Positioning.MUSIC_ToA
    :members:
-   :exclude-members: call, build
+   :exclude-members: call, build, displayEigenValues, displayMUSICSpectrum
+
+
+.. automethod:: toolkit5G.Positioning.Time_Estimation.methods.musicToA.MUSIC_ToA.displayEigenValues
+    :noindex:
+
+
+.. automethod:: toolkit5G.Positioning.Time_Estimation.methods.musicToA.MUSIC_ToA.displayMUSICSpectrum
+    :noindex:

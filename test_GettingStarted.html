@@ -845,10 +845,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/5G_Toolkit/Positioning/positioning.html">Position Estimation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/5G_Toolkit/Positioning/positioning.html#id1">Position Estimation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Positioning/positioning.html#toolkit5G.Positioning.PositionEstimation"><code class="docutils literal notranslate"><span class="pre">PositionEstimation</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/positioning.html#toolkit5G.Positioning.PositionEstimation.display"><code class="docutils literal notranslate"><span class="pre">PositionEstimation.display()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Positioning/positioning.html#toolkit5G.Positioning.PositionEstimation"><code class="docutils literal notranslate"><span class="pre">PositionEstimation</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="api/5G_Toolkit/Positioning/positioning.html#submodules">Submodules</a><ul>
@@ -867,11 +864,14 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/positioning.optimization_Algorithms.html">Optimization Algorithms</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.TDoA.html">Gradient Descent for TDoA</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.TDoA.html#newton-raphson-for-tdoa">Newton Raphson for TDoA</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/ToA/positioning.optimization_Algorithms.leastSquareToA.html">ToA Least Square Estimate</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/DoA/positioning.optimization_Algorithms.DoA.html">Gradient Descent for DoA</a></li>
-<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/DoA/positioning.optimization_Algorithms.DoA.html#newton-raphson-for-doa">Newton Raphson for DoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.TDoA.html">Least Squares based Position Estimator for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.TDoA.html#gradient-descent-based-position-estimator-for-tdoa">Gradient Descent based Position Estimator for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/TDoA/positioning.optimization_Algorithms.TDoA.html#newton-raphson-based-position-estimator-for-tdoa">Newton Raphson based Position Estimator for TDoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/ToA/positioning.optimization_Algorithms.leastSquareToA.html">Least Squares based Position Estimator for ToA/mRTT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/DoA/positioning.optimization_Algorithms.DoA.html">Least Squares based Position Estimator for DoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/DoA/positioning.optimization_Algorithms.DoA.html#gradient-descent-based-position-estimator-for-doa">Gradient Descent based Position Estimator for DoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/Hybrid/positioning.optimization_Algorithms.Hybrid.html">Least Square based Position Estimator for Hybrid ToA/mRTT and DoA</a></li>
+<li class="toctree-l5"><a class="reference internal" href="api/5G_Toolkit/Positioning/Optimization_Algorithms/Hybrid/positioning.optimization_Algorithms.Hybrid.html#least-square-based-position-estimator-for-hybrid-tdoa-and-doa">Least Square based Position Estimator for Hybrid TDoA and DoA</a></li>
 </ul>
 </li>
 </ul>
@@ -1344,6 +1344,20 @@
 <li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Simulation-Topology">Simulation Topology</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html">Search space, CORESET and blind decoding of PDCCH channels in 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html#CORESET-and-Search-Space-Set-Parameters">CORESET and Search Space Set Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html#Transmitter-Side-Processing">Transmitter Side Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html#Displaying-Resource-Grid">Displaying Resource Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html#Wireless-Channel-:-CDL-A">Wireless Channel : CDL-A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html#Receiver-Side-Processing-and-Blind-Decoding-of-UE">Receiver Side Processing and Blind Decoding of UE</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html">Downlink Time of Arrival based Positioning in 5G and Beyond Networks</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Positioning-Procedure">Positioning Procedure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.html#Table-of-Content:">Table of Content:</a><ul>
@@ -1424,6 +1438,35 @@
 <li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Performance-Analysis-of-Positioning-Error-for-ToA-based-method">Performance Analysis of Positioning Error for ToA based method</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Performance-Analysis:-For-2000-UEs">Performance Analysis: For 2000 UEs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.html#Further-Study">Further Study</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html">Positioning the Outdoor UEs using 5G Urban Micro cell sites based Uplink Time Difference of Arrival (UL-TDoA) method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#Import-Basic-Python-Libraries">Import Basic Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#Import-5G-Toolkit-Libraries">Import 5G Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#Generate-Wireless-Channels">Generate Wireless Channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#SRS-Configurations">SRS Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#Slot-by-Slot-Simulation">Slot by Slot Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#Position-Estimation:-Based-on-UL-ToA">Position Estimation: Based on UL-ToA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#Visualization-of-Estimated-Position">Visualization of Estimated Position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#Performance-Analysis-of-Positioning-Error-for-ToA-based-method">Performance Analysis of Positioning Error for ToA based method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA.html#Performance-Analysis:-For-2000-UEs">Performance Analysis: For 2000 UEs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html">Positioning the Indoor Open Office UEs using Uplink ToA method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html#Python-Libraries">Python Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html#5G-Toolkit-Libraries">5G Toolkit Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html#Generate-Wireless-Channels">Generate Wireless Channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html#SRS-Configurations">SRS Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html#Slot-by-Slot-Simulation">Slot by Slot Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html#Position-Estimation:-Based-on-UL-ToA">Position Estimation: Based on UL-ToA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html#Visualization-of-Estimated-Position">Visualization of Estimated Position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html#Performance-Analysis-of-Positioning-Error-for-Uplink-ToA-based-method">Performance Analysis of Positioning Error for Uplink-ToA based method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/Tutorials/Tutorial21%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-ToA.html#Performance-Analysis:-For-2000-UEs">Performance Analysis: For 2000 UEs</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api/Tutorials/Tutorial25%2B/%5BSLS%5DPositioning_in_IndoorFactory_5G_Networks_based_on_UL-AoA.html">Uplink AoA (UL-AoA) based Localization of the Indoor Factory UEs using millimeter 5G Networks</a><ul>
