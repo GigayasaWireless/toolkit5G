@@ -760,7 +760,9 @@
    "id": "5e294cdb",
    "metadata": {},
    "source": [
-    "### Simulation Animation"
+    "### Simulation Animation\n",
+    "\n",
+    "``Note``: Please uncomment the **%matplotlib widget** to run the animation."
    ]
   },
   {

@@ -707,7 +707,7 @@
     "error     = (np.abs(ToAe-channel.delays[0,0,...,0])/channel.delays[0,0,...,0]) # Compute the ToA error in each measurement\n",
     "bsIndices = (np.argsort(error,axis=0)[0:k]).T\n",
     "\n",
-    "positionEstimate = PositionEstimation(positioningMethod = \"TOA\", optimizationMethod = \"LeastSquare\")\n",
+    "positionEstimate = PositionEstimation(optimizationMethod = \"LeastSquare\")\n",
     "# Position Estimation Object:\n",
     "    # Positioning based on: ToA\n",
     "    # Optimization Method: Least Square\n",
