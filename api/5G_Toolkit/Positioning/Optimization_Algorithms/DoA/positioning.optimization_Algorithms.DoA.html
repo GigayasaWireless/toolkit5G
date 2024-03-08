@@ -22,7 +22,6 @@
         <script src="../../../../../_static/clipboard.min.js"></script>
         <script src="../../../../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../../../_static/js/theme.js"></script>
@@ -1919,7 +1918,7 @@ Toolkit is inspired by <a class="reference internal" href="#gppdoa" id="id1"><sp
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape of refLocations: Nref x 3</span>
 <span class="c1"># shape of xoA: Nref x 2</span>
 <span class="n">posEstimator</span>     <span class="o">=</span> <span class="n">LeastSquareDoA</span><span class="p">()</span>
-<span class="n">positionEstimate</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">posEstimator</span><span class="p">(</span><span class="n">xoA</span><span class="p">,</span> <span class="n">refLocations</span><span class="p">)</span>
+<span class="n">positionEstimate</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">posEstimator</span><span class="p">(</span><span class="n">refLocations</span><span class="p">,</span> <span class="n">xoA</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1992,7 +1991,7 @@ If the height of all the transmitter is same, then N=2 else N=1.</p>
 
 <span class="n">posEstimator</span>  <span class="o">=</span> <span class="n">GradientDescentDoA</span><span class="p">(</span><span class="n">numEpochs</span> <span class="o">=</span> <span class="n">numEpoches</span><span class="p">,</span> <span class="n">numIterationPerEpoch</span> <span class="o">=</span> <span class="n">numIterations</span><span class="p">,</span>
                                     <span class="n">stepsize</span> <span class="o">=</span> <span class="n">stepsize</span><span class="p">,</span> <span class="n">tolerance</span> <span class="o">=</span> <span class="n">tolerance</span><span class="p">,</span> <span class="n">isd</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">positionEstimate</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">posEstimator</span><span class="p">(</span><span class="n">xoA</span><span class="p">,</span> <span class="n">refLocations</span><span class="p">)</span>
+<span class="n">positionEstimate</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">posEstimator</span><span class="p">(</span><span class="n">refLocations</span><span class="p">,</span> <span class="n">xoA</span><span class="p">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />

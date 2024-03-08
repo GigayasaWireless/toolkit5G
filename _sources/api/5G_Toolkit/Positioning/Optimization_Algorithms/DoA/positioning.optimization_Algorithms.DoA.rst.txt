@@ -60,7 +60,7 @@ Toolkit is inspired by [3gppDoA]_.
     # shape of refLocations: Nref x 3
     # shape of xoA: Nref x 2
     posEstimator     = LeastSquareDoA()
-    positionEstimate, error = posEstimator(xoA, refLocations)
+    positionEstimate, error = posEstimator(refLocations, xoA)
 
 
 ------------
@@ -87,7 +87,7 @@ Gradient Descent based Position Estimator for DoA
 
     posEstimator  = GradientDescentDoA(numEpochs = numEpoches, numIterationPerEpoch = numIterations,
                                         stepsize = stepsize, tolerance = tolerance, isd = 100)
-    positionEstimate, error = posEstimator(xoA, refLocations)
+    positionEstimate, error = posEstimator(refLocations, xoA)
 
 ------------
 
