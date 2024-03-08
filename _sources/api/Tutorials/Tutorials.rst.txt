@@ -1,7 +1,7 @@
 Tutorials
 =========
 
-Pleas download all the tutorials from here: `Tutorials <https://gigayasawireless.github.io/toolkit5G/api/Tutorials.zip>`_
+Please download all the tutorials from here: `Tutorials <https://gigayasawireless.github.io/toolkit5G/api/Tutorials.zip>`_
 
 
 .. toctree::

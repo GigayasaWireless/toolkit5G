@@ -29,8 +29,10 @@ toolkit, please don't hesitate to contact us at toolkit5G@gigayasa.com. We would
         - Script-3: Receiver side script implemented over SDR-2.
 
 
+Please download all the SDR based tutorials from here: `5G on SDRs <https://gigayasawireless.github.io/toolkit5G/api/Integration_with_SDR.zip>`_
 
-** Tutorial **
+
+**Tutorials**
 
 
 .. toctree::

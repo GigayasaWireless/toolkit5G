@@ -1,7 +1,7 @@
 Projects
 ========
 
-Pleas download all the projects from here: `Tutorials <https://gigayasawireless.github.io/toolkit5G/api/Projects.zip>`_
+Please download all the projects from here: `Projects <https://gigayasawireless.github.io/toolkit5G/api/Projects.zip>`_
 
 
 .. toctree::
@@ -16,5 +16,5 @@ Pleas download all the projects from here: `Tutorials <https://gigayasawireless.
     Project7/E2E_Learning_for_Physical_Layer.ipynb
     Project8/project8
     Project9/project9
-    Project10/project10
+    Project10/[SLS]Hybrid_Positioning_in_IndoorFactory_5G_Networks_based_on_UL-TDoA_AoA.ipynb
 
