@@ -1,0 +1,32 @@
+Introductory Course on 5G Standards
+====================================
+This course introduces the audience to the basic framework of the 5G physical layer standards and the most important
+elements of 5G user equipment (UE) and 5G base-station (BS). The following is the typical content taught in introductory
+5G standards course.
+
+1. 3D spatial channel model
+2. Frame structure and OFDM resource grids
+3. Channel codes
+4. Air Interface of 5G
+    - Interleavers,
+    - Scramblers,
+    - Cyclic Redundancy Check,
+    - Channel Codes,
+    - Rate matching,
+    - Symbol Mapping,
+    - MIMO,
+    - OFDM.
+5. Reference Signals
+    - Demodulation Reference Signals
+    - Synchronization Signals,
+    - Reference Signals for Channel Sounding: CSI-RS | SRS.
+    - Position Reference Signal.
+    - Low PAPR sequence Type-I/II.
+    - Remote Interference Management Reference Signal.
+    - Phase Tracking Reference Signal.
+6. Physical Channels
+    - Broadcast Channel (PBCH).
+    - Random Access Channel (PRACH).
+    - Shared Channel: PDSCH | PUSCH.
+    - Control Channel: PDCCH | PUCCH.
+

@@ -10,4 +10,5 @@ Physical Channels
     physicalChannels.pusch
     physicalChannels.pucch
     physicalChannels.prach
+    physicalChannels.psbch
     physicalChannels.pscch

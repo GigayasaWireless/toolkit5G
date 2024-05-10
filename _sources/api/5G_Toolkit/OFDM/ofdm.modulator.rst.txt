@@ -1,0 +1,41 @@
+OFDM: Modulator
+---------------
+This module implements the cyclic prefix (CP) OFDM.  The 5G transmitter side modulate the physical resource grid using
+
+:math:`\bar{s}_l^{(p, \mu)}(t)=\sum_{k=0}^{N_{\mathrm{grid}, \mu}^{\mathrm{size}}, N_{\mathrm{sc}}^{\mathrm{RB}}-1}
+a_{k, l}^{(p, \mu)} e^{j 2 \pi\left(k+k_0^\mu-N_{\mathrm{grid},}^{\mathrm{size}, \mu} N_{\mathrm{sc}}^{\mathrm{RB}} /
+2\right) \Delta f\left(t-N_{\mathrm{c}, l}^\mu T_{\mathrm{c}}-t_{\mathrm{start}, l}^\mu\right)}`
+
+The module provided below implements the discrete version of the above equation as detailed below.
+
+:math:`\bar{s}_l^{(p, \mu)}(n)=\sum_{k=0}^{\text{N}_\text{FFT}-1}
+a_{k, l}^{(p, \mu)} e^\frac{j 2 \pi(k-\text{N}_\text{FFT} / 2) (n-N_{\mathrm{c}, l}^\mu )}{N_{\text{FFT}}}`.
+This expression is derived by setting
+
+
+.. list-table:: Table-1: Positioning in 5G Networks
+   :widths: 25 25 25
+   :header-rows: 1
+
+   * - Parameter
+     - Definition
+     - Value
+   * - :math:`k_0^\mu`
+     - 0
+     - Initial subcarrier offset
+   * - :math:`t`
+     - :math:`t = n.T_{c}`
+     - time instant
+   * - :math:`t_{\mathrm{start}, l}^\mu`
+     - 0
+     - Start of time window associated with symbol l and numerology :math:`\mu`
+   * - :math:`T_{c}`
+     - :math:`T_{c} = \frac{1}{\text{N}_\text{FFT} *\Delta f}`
+     - Sample Duration
+
+
+The details of the input and output interface for OFDM Modulator is shown below.
+
+.. autoclass:: toolkit5G.OFDM.OFDMModulator
+    :members:
+    :exclude-members: call, build

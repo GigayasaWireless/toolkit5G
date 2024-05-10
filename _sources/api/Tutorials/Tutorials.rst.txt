@@ -11,6 +11,7 @@ Please download all the tutorials from here: `Tutorials <https://gigayasawireles
     Tutorial2/Tutorial2_ReedMullerCodes.ipynb
     Tutorial3/Tutorial3_PolarCodes.ipynb
     Tutorial4/Tutorial4_LDPCCodes.ipynb
+    Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.ipynb
     Tutorial5/tutorial5
     Tutorial6/Downlink_Synchronization_procedure_using_SSB.ipynb
     Tutorial7/Link_Level_Simulation_for_Physical_Broadcast_Channels_using_CDL-A_Channels.ipynb
@@ -18,7 +19,9 @@ Please download all the tutorials from here: `Tutorials <https://gigayasawireles
     Tutorial9/Link_Level_Simulation_for_PDSCH_in_5G.ipynb
     Tutorial8/pucchFormat0_Tutorial.rst
     Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.ipynb
-    Tutorial13/Beam_management_in_5G_Networks_using_SSB[P1-Procedure].ipynb
+    Tutorial13/Type1_Codebook_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.ipynb
+    Tutorial14/Beam_management_in_5G_Networks_using_SSB[P1-Procedure].ipynb
+    Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.ipynb
     Tutorial18[PDCCH_Blind_Decoding]/PDCCH_Blind_Decoding.ipynb
     Tutorial21+/E2E_Downlink_ToA_Based_Positioning_in_5G_Networks.ipynb
     Tutorial21+/E2E_Downlink_TDoA_Based_Positioning_for_millimeter_Wave_5G_Networks_Deployed_in_Indoor_Factory.ipynb

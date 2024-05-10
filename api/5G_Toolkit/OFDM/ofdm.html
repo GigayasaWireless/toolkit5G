@@ -23,12 +23,10 @@
         <script src="../../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Channel Processing and Hardware Impairment" href="../ChannelProcessing/channelProcessing.html" />
+    <link rel="next" title="OFDM: Demodulator" href="ofdm.demodulator.html" />
     <link rel="prev" title="Bit Interleavers" href="../Interleaver/interleavers.lpdc.bitInterleaver.html" /> 
 </head>
 
@@ -45,7 +43,7 @@
               <img src="../../../_static/logo28.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                R24a.0.2
+                R24a.0.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -368,6 +366,27 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../PhysicalChannels/physicalChannels.prach.html">Physical Random Access Channel (PRACH)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html">Physical Sidelink Broadcast Channel (PSBCH)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#psbch-transmitter">PSBCH Transmitter</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#toolkit5G.PhysicalChannels.PSBCH"><code class="docutils literal notranslate"><span class="pre">PSBCH</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#psbch-receiver">PSBCH Receiver</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#toolkit5G.PhysicalChannels.PSBCHDecoder"><code class="docutils literal notranslate"><span class="pre">PSBCHDecoder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../PhysicalChannels/physicalChannels.psbch.html#psbch-components">PSBCH Components</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.crc.html">Cyclic Redundency Check</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.rnti.html">RNTI Masking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.html">Input Bit Interleaver</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.polar.html">Polar Coder</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.ratematching.html">Rate Matching</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.scrambling.html">Scrambling: PDCCH</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/PBCH/subcomponents/physicalChannels.pbch.components.modulation.html">Modulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../PhysicalChannels/physicalChannels.pscch.html">Physical Sidelink Control Channel (PSCCH)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../PhysicalChannels/physicalChannels.pscch.html#pscch-transmitter">PSCCH Transmitter</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../PhysicalChannels/physicalChannels.pscch.html#toolkit5G.PhysicalChannels.PSCCHUpperPhy"><code class="docutils literal notranslate"><span class="pre">PSCCHUpperPhy</span></code></a></li>
@@ -584,12 +603,28 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Orthogonal Frequency Division Multiplexing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ofdm-modulator">OFDM: Modulator</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#toolkit5G.OFDM.OFDMModulator"><code class="docutils literal notranslate"><span class="pre">OFDMModulator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ofdm.demodulator.html">OFDM: Demodulator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ofdm.demodulator.html#toolkit5G.OFDM.OFDMDemodulator"><code class="docutils literal notranslate"><span class="pre">OFDMDemodulator</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ofdm-demodulator">OFDM: Demodulator</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#toolkit5G.OFDM.OFDMDemodulator"><code class="docutils literal notranslate"><span class="pre">OFDMDemodulator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ofdm.modulator.html">OFDM: Modulator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ofdm.modulator.html#toolkit5G.OFDM.OFDMModulator"><code class="docutils literal notranslate"><span class="pre">OFDMModulator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ofdm.transformDecoding.html">Transform Decoding</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ofdm.transformDecoding.html#toolkit5G.OFDM.TransformPrecoding"><code class="docutils literal notranslate"><span class="pre">TransformPrecoding</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ofdm.transformDecoding5G.html">Transform Decoding for 5G</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ofdm.transformDecoding5G.html#toolkit5G.OFDM.TransformDecoding5G"><code class="docutils literal notranslate"><span class="pre">TransformDecoding5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ofdm.transformprecoding.html">Transform Precoding</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ofdm.transformprecoding.html#toolkit5G.OFDM.TransformPrecoding"><code class="docutils literal notranslate"><span class="pre">TransformPrecoding</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ofdm.transformprecoding5G.html">Transform Precoding for 5G</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ofdm.transformprecoding5G.html#toolkit5G.OFDM.TransformPrecoding5G"><code class="docutils literal notranslate"><span class="pre">TransformPrecoding5G</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1013,6 +1048,24 @@
 <li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial4/Tutorial4_LDPCCodes.html#BER-vs-TB-size">BER vs TB-size</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html">Performance comparison of OFDM and DFT-s-OFDM in 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#Import-Libraries">Import Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#Import-Python-Libraries">Import Python Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#Import-5G-Toolkit-Libraries">Import 5G-Toolkit Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#Peak-to-Average-Power-Ratio-(PAPR)-Analysis">Peak to Average Power Ratio (PAPR) Analysis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#PAPR-Analysis:-CP-OFDM">PAPR Analysis: CP-OFDM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#PAPR-Analysis:-DFT-s-OFDM">PAPR Analysis: DFT-s-OFDM</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#PAPR-Performance-Comparison:-CP-OFDM-vs-DFT-s-OFDM">PAPR Performance Comparison: CP-OFDM vs DFT-s-OFDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#ACLR-Analysis:-CP-OFDM-vs-DFT-s-OFDM">ACLR Analysis: CP-OFDM vs DFT-s-OFDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#ACLR-Comparison-of-OFDM-and-DFT-s-OFDM">ACLR Comparison of OFDM and DFT-s-OFDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial27/Performance_Comparison_of_OFDM_and_DFT-s-OFDM.html#References">References</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../Tutorials/Tutorial5/tutorial5.html">Detailed Tutorials on 3GPP Channel Models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial5/1.Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Outdoor_Terrains.html">Wireless Channel Generation for Outdoor Terrains deployed in Hexagonal Geometry</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial5/1.Channel_Generation_for_Multicell_Multi_Sector_MIMO_System_for_Outdoor_Terrains.html#Import-Libraries">Import Libraries</a><ul>
@@ -1326,23 +1379,60 @@
 <li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial12/SVD_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Simulation-Results:-Averaged-over-10000-batches">Simulation Results: Averaged over 10000 batches</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html">P1 Procedure: Beam management in 5G networks using SSB</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Import-librariers">Import librariers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Import-Python-libraries">Import Python libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Import-5G-Toolkit-libraries">Import 5G Toolkit libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/Tutorial13/Type1_Codebook_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html">Type-1 codebook based Downlink Precoding and Combining for Massive MIMO 5G Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Type1_Codebook_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Import-Python-Libraries">Import Python Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial13/Type1_Codebook_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#import-python-libraries-1">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial13/Type1_Codebook_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Import-5G-Toolkit-Libraries">Import 5G-Toolkit Libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Simulation-Parameters">Simulation Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Generate-Wireless-Channel">Generate Wireless Channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Generate-Time-Frequency-Parameters-and-MIB+ATI-Parameters">Generate Time Frequency Parameters and MIB+ATI Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Generate-OFDM-Resource/Transmission-Grid">Generate OFDM Resource/Transmission Grid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Pass-through-the-Wireless-Channel">Pass through the Wireless Channel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Power-Heatmap-of-Received-Grid">Power Heatmap of Received Grid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Add-Noise">Add Noise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#RSRP-Computation">RSRP Computation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Visualization-of-All-Beam-RSRP">Visualization of All Beam RSRP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Selected-Base-station-and-Beam">Selected Base-station and Beam</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Simulation-Topology">Simulation Topology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Type1_Codebook_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Type1_Codebook_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Generate-Wireless-Channel:-CDL-A">Generate Wireless Channel: CDL-A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Type1_Codebook_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Link-level-simulation:-BLER/BER/Throughput/SE-vs-SNR-for-different-ranks">Link level simulation: BLER/BER/Throughput/SE vs SNR for different ranks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Type1_Codebook_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Simulation-Results">Simulation Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial13/Type1_Codebook_based_Downlink_Precoding_and_Combining_for_Massive_MIMO_5G_Networks.html#Simulation-Results:-Averaged-over-10000-batches">Simulation Results: Averaged over 10000 batches</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html">P1 Procedure: Beam management in 5G networks using SSB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Import-librariers">Import librariers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Import-Python-libraries">Import Python libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Import-5G-Toolkit-libraries">Import 5G Toolkit libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Generate-Wireless-Channel">Generate Wireless Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Generate-Time-Frequency-Parameters-and-MIB+ATI-Parameters">Generate Time Frequency Parameters and MIB+ATI Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Generate-OFDM-Resource/Transmission-Grid">Generate OFDM Resource/Transmission Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Pass-through-the-Wireless-Channel">Pass through the Wireless Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Power-Heatmap-of-Received-Grid">Power Heatmap of Received Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Add-Noise">Add Noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#RSRP-Computation">RSRP Computation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Visualization-of-All-Beam-RSRP">Visualization of All Beam RSRP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Selected-Base-station-and-Beam">Selected Base-station and Beam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial14/Beam_management_in_5G_Networks_using_SSB%5BP1-Procedure%5D.html#Simulation-Topology">Simulation Topology</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html">Downlink Channel Estimation using CSI-RS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Import-Python-Libraries">Import Python Libraries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#import-python-libraries-1">Import Python Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Import-5G-Toolkit-Libraries">Import 5G-Toolkit Libraries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Simulation-Parameters">Simulation Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Generate-Channel">Generate Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#CSI-Configurations">CSI Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Generate-CSI-RS-Resource-Grid">Generate CSI-RS Resource Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Generate-the-Transmit-Grid">Generate the Transmit Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Transmit-Beamforming">Transmit Beamforming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Pass-through-the-Channel">Pass through the Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Add-noise-at-Receiver">Add noise at Receiver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Extract-the-Resource-Grid">Extract the Resource Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Estimate-the-Channel-using-CSI-RS">Estimate the Channel using CSI-RS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Display-the-Estimated-channel">Display the Estimated channel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Estimate-the-Rank-and-Condition-number">Estimate the Rank and Condition number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#SVD-of-Channel-and-Condition-number">SVD of Channel and Condition number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Tutorial28/Downliink_Channel_Estimation_using_CSI-RS.html#Estimate-the-Precoder:-Type-I">Estimate the Precoder: Type-I</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../Tutorials/Tutorial18%5BPDCCH_Blind_Decoding%5D/PDCCH_Blind_Decoding.html">Search space, CORESET and blind decoding of PDCCH channels in 5G Networks</a><ul>
@@ -1678,7 +1768,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../Projects/Project7/E2E_Learning_for_Physical_Layer.html#Hamming-Codes">Hamming Codes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../Projects/Project7/E2E_Learning_for_Physical_Layer.html#Importing-necessary-libraries">Importing necessary libraries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Projects/Project7/E2E_Learning_for_Physical_Layer.html#Transmitter">Transmitter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../Projects/Project7/E2E_Learning_for_Physical_Layer.html#BLER-plot-:-comparison-of-AutoEncoder-BLER-with-base-line-(n,k)-Hamming-Code-BLER">BLER plot : comparison of AutoEncoder BLER with base line (n,k) Hamming Code BLER</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../Projects/Project7/E2E_Learning_for_Physical_Layer.html#Constellation-Learning">Constellation Learning</a></li>
@@ -1817,8 +1906,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../LearningResources/LearningResources.html">Learning Resources</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../LearningResources/LearningResources.html#introductory-course-on-5g-standards">Introductory Course on 5G Standards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../LearningResources/LearningResources.html#hardware-emulations-using-5g-toolkit-and-sdrs">Hardware Emulations using 5G Toolkit and SDRs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../LearningResources/GW-IC5GS.html">Introductory Course on 5G Standards</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://gigayasawireless.github.io/5G-on-SDRs/">Hardware Emulations using 5G Toolkit and SDRs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../Preview_of_Next_Release/FeatureList.html">Tentetive list of Feature</a><ul>
@@ -1882,128 +1971,35 @@ in upcoming sections.</p>
 <p>Current implementation of OFDM assume that the cyclic prefix for OFDM is same for all the OFDM symbols. In 5G, the
 cyclic prefix size varies for different OFDM symbols.</p>
 </div>
-<section id="ofdm-modulator">
-<h2>OFDM: Modulator<a class="headerlink" href="#ofdm-modulator" title="Permalink to this heading"></a></h2>
-<p>This module implements the cyclic prefix (CP) OFDM.  The 5G transmitter side modulate the physical resource grid using</p>
-<p><span class="math notranslate nohighlight">\(\bar{s}_l^{(p, \mu)}(t)=\sum_{k=0}^{N_{\mathrm{grid}, \mu}^{\mathrm{size}}, N_{\mathrm{sc}}^{\mathrm{RB}}-1}
-a_{k, l}^{(p, \mu)} e^{j 2 \pi\left(k+k_0^\mu-N_{\mathrm{grid},}^{\mathrm{size}, \mu} N_{\mathrm{sc}}^{\mathrm{RB}} /
-2\right) \Delta f\left(t-N_{\mathrm{c}, l}^\mu T_{\mathrm{c}}-t_{\mathrm{start}, l}^\mu\right)}\)</span></p>
-<p>The module provided below implements the discrete version of the above equation as detailed below.</p>
-<p><span class="math notranslate nohighlight">\(\bar{s}_l^{(p, \mu)}(n)=\sum_{k=0}^{\text{N}_\text{FFT}-1}
-a_{k, l}^{(p, \mu)} e^\frac{j 2 \pi(k-\text{N}_\text{FFT} / 2) (n-N_{\mathrm{c}, l}^\mu )}{N_{\text{FFT}}}\)</span>.
-This expression is derived by setting</p>
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-number">Table 30 </span><span class="caption-text">Table-1: Positioning in 5G Networks</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Parameter</p></th>
-<th class="head"><p>Definition</p></th>
-<th class="head"><p>Value</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(k_0^\mu\)</span></p></td>
-<td><p>0</p></td>
-<td><p>Initial subcarrier offset</p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(t\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(t = n.T_{c}\)</span></p></td>
-<td><p>time instant</p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(t_{\mathrm{start}, l}^\mu\)</span></p></td>
-<td><p>0</p></td>
-<td><p>Start of time window associated with symbol l and numerology <span class="math notranslate nohighlight">\(\mu\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(T_{c}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(T_{c} = \frac{1}{\text{N}_\text{FFT} *\Delta f}\)</span></p></td>
-<td><p>Sample Duration</p></td>
-</tr>
-</tbody>
-</table>
-<p>The details of the input and output interface for OFDM Modulator is shown below.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="toolkit5G.OFDM.OFDMModulator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.OFDM.</span></span><span class="sig-name descname"><span class="pre">OFDMModulator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cyclic_prefix_length</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/OFDM/ofdmModulator.html#OFDMModulator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.OFDM.OFDMModulator" title="Permalink to this definition"></a></dt>
-<dd><p>Computes the time-domain representation of an OFDM resource grid
-with (optional) cyclic prefix.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>cyclic_prefix_length</strong> (<em>int</em>) – Integer indicating the length of the
-cyclic prefix that it prepended to each OFDM symbol. It cannot
-be longer than the FFT size.</p>
-</dd>
-<dt class="field-even">Input<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>[…,num_ofdm_symbols,fft_size], tf.complex</em> – A resource grid in the frequency domain.</p>
-</dd>
-<dt class="field-odd">Output<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>[…,num_ofdm_symbols*(fft_size+cyclic_prefix_length)], tf.complex</em> – Time-domain OFDM signal.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="ofdm-demodulator">
-<h2>OFDM: Demodulator<a class="headerlink" href="#ofdm-demodulator" title="Permalink to this heading"></a></h2>
-<p>This module implements the OFDM demodulator to recover the resource Grid back from the received samples.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="toolkit5G.OFDM.OFDMDemodulator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit5G.OFDM.</span></span><span class="sig-name descname"><span class="pre">OFDMDemodulator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fft_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cyclic_prefix_length</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/toolkit5G/OFDM/ofdmDemodulator.html#OFDMDemodulator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#toolkit5G.OFDM.OFDMDemodulator" title="Permalink to this definition"></a></dt>
-<dd><p>Computes the frequency-domain representation of an OFDM waveform
-with cyclic prefix removal.</p>
-<p>The demodulator assumes that the input sequence is generated by the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">TimeChannel</span></code>. For a single pair of antennas,
-the received signal sequence is given as:</p>
-<div class="math notranslate nohighlight">
-\[y_b = \sum_{\ell =L_\text{min}}^{L_\text{max}} \bar{h}_\ell x_{b-\ell} + w_b, \quad b \in[L_\text{min}, N_B+L_\text{max}-1]\]</div>
-<p>where <span class="math notranslate nohighlight">\(\bar{h}_\ell\)</span> are the discrete-time channel taps,
-<span class="math notranslate nohighlight">\(x_{b}\)</span> is the the transmitted signal,
-and <span class="math notranslate nohighlight">\(w_\ell\)</span> Gaussian noise.</p>
-<p>Starting from the first symbol, the demodulator cuts the input
-sequence into pieces of size <code class="docutils literal notranslate"><span class="pre">cyclic_prefix_length</span> <span class="pre">+</span> <span class="pre">fft_size</span></code>,
-and throws away any trailing symbols. For each piece, the cyclic
-prefix is removed and the <code class="docutils literal notranslate"><span class="pre">fft_size</span></code>-point discrete Fourier
-transform is computed.</p>
-<p>Since the input sequence starts at time <span class="math notranslate nohighlight">\(L_\text{min}\)</span>,
-the FFT-window has a timing offset of <span class="math notranslate nohighlight">\(L_\text{min}\)</span> symbols,
-which leads to a subcarrier-dependent phase shift of
-<span class="math notranslate nohighlight">\(e^{\frac{j2\pi k L_\text{min}}{N}}\)</span>, where <span class="math notranslate nohighlight">\(k\)</span>
-is the subcarrier index, <span class="math notranslate nohighlight">\(N\)</span> is the FFT size,
-and <span class="math notranslate nohighlight">\(L_\text{min} \le 0\)</span> is the largest negative time lag of
-the discrete-time channel impulse response. This phase shift
-is removed in this layer, by explicitly multiplying
-each subcarrier by  <span class="math notranslate nohighlight">\(e^{\frac{-j2\pi k L_\text{min}}{N}}\)</span>.
-This is a very important step to enable channel estimation with
-sparse pilot patterns that needs to interpolate the channel frequency
-response accross subcarriers. It also ensures that the
-channel frequency response <cite>seen</cite> by the time-domain channel
-is close to the <code class="xref py py-class docutils literal notranslate"><span class="pre">OFDMChannel</span></code>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fft_size</strong> (<em>int</em>) – FFT size (, i.e., the number of subcarriers).</p></li>
-<li><p><strong>l_min</strong> (<em>int</em>) – The largest negative time lag of the discrete-time channel
-impulse response. It should be the same value as that used by the
-<cite>cir_to_time_channel</cite> function.</p></li>
-<li><p><strong>cyclic_prefix_length</strong> (<em>int</em>) – Integer indicating the length of the cyclic prefix that
-is prepended to each OFDM symbol.</p></li>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ofdm.demodulator.html">OFDM: Demodulator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ofdm.demodulator.html#toolkit5G.OFDM.OFDMDemodulator"><code class="docutils literal notranslate"><span class="pre">OFDMDemodulator</span></code></a></li>
 </ul>
-</dd>
-<dt class="field-even">Input<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>[…,num_ofdm_symbols*(fft_size+cyclic_prefix_length)+n], tf.complex</em> – Tensor containing the time-domain signal along the last dimension.
-<cite>n</cite> is a nonnegative integer.</p>
-</dd>
-<dt class="field-odd">Output<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>[…,num_ofdm_symbols,fft_size], tf.complex</em> – Tensor containing the OFDM resource grid along the last
-two dimension.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ofdm.modulator.html">OFDM: Modulator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ofdm.modulator.html#toolkit5G.OFDM.OFDMModulator"><code class="docutils literal notranslate"><span class="pre">OFDMModulator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ofdm.transformDecoding.html">Transform Decoding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ofdm.transformDecoding.html#toolkit5G.OFDM.TransformPrecoding"><code class="docutils literal notranslate"><span class="pre">TransformPrecoding</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ofdm.transformDecoding5G.html">Transform Decoding for 5G</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ofdm.transformDecoding5G.html#toolkit5G.OFDM.TransformDecoding5G"><code class="docutils literal notranslate"><span class="pre">TransformDecoding5G</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ofdm.transformprecoding.html">Transform Precoding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ofdm.transformprecoding.html#toolkit5G.OFDM.TransformPrecoding"><code class="docutils literal notranslate"><span class="pre">TransformPrecoding</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ofdm.transformprecoding5G.html">Transform Precoding for 5G</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ofdm.transformprecoding5G.html#toolkit5G.OFDM.TransformPrecoding5G"><code class="docutils literal notranslate"><span class="pre">TransformPrecoding5G</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 
 
@@ -2011,7 +2007,7 @@ two dimension.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../Interleaver/interleavers.lpdc.bitInterleaver.html" class="btn btn-neutral float-left" title="Bit Interleavers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../ChannelProcessing/channelProcessing.html" class="btn btn-neutral float-right" title="Channel Processing and Hardware Impairment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ofdm.demodulator.html" class="btn btn-neutral float-right" title="OFDM: Demodulator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

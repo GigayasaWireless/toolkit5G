@@ -1,0 +1,9 @@
+Transform Decoding for 5G
+--------------------------
+
+This module implements the OFDM demodulator to recover the resource Grid back from the received samples.
+
+
+.. autoclass:: toolkit5G.OFDM.TransformDecoding5G
+    :members:
+    :exclude-members: call, build

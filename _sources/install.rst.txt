@@ -145,25 +145,25 @@ Finally, we are ready to install 5G Toolkit:
 
         .. code-block:: bash
 
-            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.1/package/python3_11/toolkit5G-0.1-py3-none-any.whl
+            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.3/package/python3_11/toolkit5G-0.3-py3-none-any.whl
 
    .. group-tab:: **Python 3.10**
 
         .. code-block:: bash
 
-            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.1/package/python3_10/toolkit5G-0.1-py3-none-any.whl
+            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.3/package/python3_10/toolkit5G-0.3-py3-none-any.whl
 
    .. group-tab:: **Python 3.9**
 
         .. code-block:: bash
 
-            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.1/package/python3_9/toolkit5G-0.1-py3-none-any.whl
+            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.3/package/python3_9/toolkit5G-0.3-py3-none-any.whl
 
    .. group-tab:: **Python 3.8**
 
         .. code-block:: bash
 
-            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.1/package/python3_8/toolkit5G-0.1-py3-none-any.whl
+            pip install --no-cache-dir https://github.com/GigayasaWireless/toolkit5G/raw/R24a.0.3/package/python3_8/toolkit5G-0.3-py3-none-any.whl
 
 
 To confirm installation of the library, you can check the installation library:

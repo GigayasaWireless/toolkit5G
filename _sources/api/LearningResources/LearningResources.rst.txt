@@ -2,43 +2,8 @@ Learning Resources
 ==================
 We are developing following courses which can be will help the audience understand how to the 5G Toolkit.
 
-Introductory Course on 5G Standards
-************************************
-This course introduces the audience to the basic framework of the 5G physical layer standards and the most important
-elements of 5G user equipment (UE) and 5G base-station (BS). The following is the typical content taught in introductory
-5G standards course.
+.. toctree::
+    :maxdepth: 3
 
-1. 3D spatial channel model
-2. Frame structure and OFDM resource grids
-3. Channel codes
-4. Air Interface of 5G
-    - Interleavers,
-    - Scramblers,
-    - Cyclic Redundancy Check,
-    - Channel Codes,
-    - Rate matching,
-    - Symbol Mapping,
-    - MIMO,
-    - OFDM.
-5. Reference Signals
-    - Demodulation Reference Signals
-    - Synchronization Signals,
-    - Reference Signals for Channel Sounding: CSI-RS | SRS.
-    - Position Reference Signal.
-    - Low PAPR sequence Type-I/II.
-    - Remote Interference Management Reference Signal.
-    - Phase Tracking Reference Signal.
-6. Physical Channels
-    - Broadcast Channel (PBCH).
-    - Random Access Channel (PRACH).
-    - Shared Channel: PDSCH | PUSCH.
-    - Control Channel: PDCCH | PUCCH.
-
-
-Hardware Emulations using 5G Toolkit and SDRs
-**********************************************
-This course will introduce the audience to some practical aspects related to 5G systems using the 5G toolkit and software
-defined radios (SDRs). We will be using ADALM-Pluto SDR primarily due to the availability, cost effectiveness and ease of
-use. However, the course can be experienced using any other SDR available with you as long as it supports the Python APIs.
-These APIs will be used for passing the I/Q samples of 5G signals and information generated using 5G -Toolkit to radio
-unit of the SDRs for analog processing followed by transmission of processed signal over the wireless channel using antennas.
+    GW-IC5GS.rst
+    Hardware Emulations using 5G Toolkit and SDRs <https://gigayasawireless.github.io/5G-on-SDRs/>

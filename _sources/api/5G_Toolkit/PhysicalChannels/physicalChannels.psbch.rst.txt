@@ -1,0 +1,48 @@
+Physical Sidelink Broadcast Channel (PSBCH)
+=============================================
+
+This module implements the physical sidelink broadcast channel. The implementation of these modules is based on [3GPPTS38211psbch]_.
+
+.. image:: ../../figures/PhysicalChannels/PSBCHE2E.png
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+PSBCH Transmitter
+------------------
+.. autoclass:: toolkit5G.PhysicalChannels.PSBCH
+   :members:
+   :exclude-members: call, build
+
+
+PSBCH Receiver
+---------------
+.. autoclass:: toolkit5G.PhysicalChannels.PSBCHDecoder
+   :members:
+   :exclude-members: call, build
+
+
+PSBCH Components
+-----------------
+
+.. image:: ../../figures/PhysicalChannels/PBCHn.svg
+  :width: 800
+  :alt: Alternative text
+  :align: center
+
+.. toctree::
+    :maxdepth: 10
+
+    PBCH/subcomponents/physicalChannels.pbch.components.crc.rst
+    PBCH/subcomponents/physicalChannels.pbch.components.rnti.rst
+    PBCH/subcomponents/physicalChannels.pbch.components.inputBitInterleaver.rst
+    PBCH/subcomponents/physicalChannels.pbch.components.polar.rst
+    PBCH/subcomponents/physicalChannels.pbch.components.ratematching.rst
+    PBCH/subcomponents/physicalChannels.pbch.components.scrambling.rst
+    PBCH/subcomponents/physicalChannels.pbch.components.modulation.rst
+
+
+
+    
+References:
+    .. [3GPPTS38211psbch] (Section 8.3.3 of 3GPP TS 38.211 version 17.1.0 Release 17) 5G; NR; Physical channels and modulation
