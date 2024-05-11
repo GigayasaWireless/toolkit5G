@@ -1,4 +1,11 @@
-Channel Interpolation based on SRCNN and DnCNN
-==============================================
-Project-3
+Artificial Intelligence and Machine Learning (AI-ML) for CSI Compression and Reconstruction in 5G Networks
+===============================================================================================================
 
+
+.. toctree::
+    :maxdepth: 4
+
+
+    CSI_Compression_and_Reconstruction_using_CSINet_for_TDD_Massive_MIMO_5G_Networks.ipynb
+    Generate_Channel_Datasets.ipynb
+    trainCSINet.ipynb
