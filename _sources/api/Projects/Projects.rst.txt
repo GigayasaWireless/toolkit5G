@@ -11,7 +11,7 @@ Please download all the projects from here: `Projects <https://gigayasawireless.
     Project2/project2
     Project3/project3
     Project4/project4
-    Project5/project5
+    Project5/LLS_for_5G-NTN.rst
     Project6/project6
     Project7/E2E_Learning_for_Physical_Layer.ipynb
     Project8/project8
