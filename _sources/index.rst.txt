@@ -93,7 +93,6 @@ In case you are looking for help, please post your question on our portal. We wi
 possible. Please feel free to request new features or reach us out on |Contact|.
 
 
-
 More Information
 ###################################
 
@@ -107,7 +106,7 @@ More Information
    api/5G_Toolkit/5Gtoolkit
    api/Tutorials/Tutorials
    api/Projects/Projects
-   api/Integration_with_SDR/Integration_with_SDRs
+   api/Integration_with_Other_Toolks/Integration_with_Other_Tools.rst
    api/LearningResources/LearningResources
    api/Preview_of_Next_Release/FeatureList
    api/Built_using_5G_Toolkit/builtUsing5GToolkit
